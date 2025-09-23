@@ -1,0 +1,529 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Spacing
+heading: Spacing System
+secondary: Spacing imported from CUI
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Swage.CSS spacing system provides consistent spacing variables and utility classes based on a 4px grid system, ensuring harmonious layouts and visual rhythm across all designs.
+    </p>
+</section>
+
+<!-- Spacing Scale -->
+<section class="component-section">
+    <h2>Spacing Scale</h2>
+    <p class="mb-24">A comprehensive spacing scale from 0px to 320px, following a structured progression for consistent spacing relationships.</p>
+    
+    <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+        <div style="display: grid; gap: var(--spacing-16); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-0); height: var(--spacing-16); min-width: 1px; border: 1px solid var(--color-gray-400);"></div>
+                <div>
+                    <code>--spacing-0</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">0px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-1); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-1</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">1px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-2); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-2</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">2px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-4); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-4</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">4px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-6); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-6</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">6px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-8); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-8</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">8px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-12); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-12</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">12px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-16); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-16</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">16px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-20); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-20</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">20px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-24); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-24</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">24px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-32); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-32</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">32px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-40); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-40</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">40px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-48); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-48</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">48px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-64); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-64</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">64px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-80); height: var(--spacing-16);"></div>
+                <div>
+                    <code>--spacing-80</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">80px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-160); height: var(--spacing-16); max-width: 100px;"></div>
+                <div>
+                    <code>--spacing-160</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">160px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-240); height: var(--spacing-16); max-width: 100px;"></div>
+                <div>
+                    <code>--spacing-240</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">240px</span>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div style="background: var(--color-foundation-primary); width: var(--spacing-320); height: var(--spacing-16); max-width: 100px;"></div>
+                <div>
+                    <code>--spacing-320</code>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">320px</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Margin Utilities -->
+<section class="component-section">
+    <h2>Margin Utility Classes</h2>
+    <p class="mb-24">Classes for applying margins to all sides, specific sides, or directional groupings.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>All Sides Margin</h3>
+        <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: grid; gap: var(--spacing-16); grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8); text-align: center;">
+                    <div class="m-0" style="background: var(--color-blue-100); padding: var(--spacing-4); border: 1px dashed var(--color-blue-400);">
+                        <code>.m-0</code>
+                    </div>
+                </div>
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8); text-align: center;">
+                    <div class="m-4" style="background: var(--color-blue-100); padding: var(--spacing-4); border: 1px dashed var(--color-blue-400);">
+                        <code>.m-4</code>
+                    </div>
+                </div>
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8); text-align: center;">
+                    <div class="m-8" style="background: var(--color-blue-100); padding: var(--spacing-4); border: 1px dashed var(--color-blue-400);">
+                        <code>.m-8</code>
+                    </div>
+                </div>
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8); text-align: center;">
+                    <div class="m-16" style="background: var(--color-blue-100); padding: var(--spacing-4); border: 1px dashed var(--color-blue-400);">
+                        <code>.m-16</code>
+                    </div>
+                </div>
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8); text-align: center;">
+                    <div class="m-24" style="background: var(--color-blue-100); padding: var(--spacing-4); border: 1px dashed var(--color-blue-400);">
+                        <code>.m-24</code>
+                    </div>
+                </div>
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8); text-align: center;">
+                    <div class="m-32" style="background: var(--color-blue-100); padding: var(--spacing-4); border: 1px dashed var(--color-blue-400);">
+                        <code>.m-32</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Directional Margins</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <h4>Horizontal (Left + Right)</h4>
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8);">
+                    <div class="mx-16" style="background: var(--color-green-100); padding: var(--spacing-8); border: 1px dashed var(--color-green-400);">
+                        <code>.mx-16</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Left and right margins</p>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Vertical (Top + Bottom)</h4>
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8);">
+                    <div class="my-16" style="background: var(--color-orange-100); padding: var(--spacing-8); border: 1px dashed var(--color-orange-400);">
+                        <code>.my-16</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Top and bottom margins</p>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Individual Side Margins</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8);">
+                    <div class="mt-16" style="background: var(--color-red-100); padding: var(--spacing-8); border: 1px dashed var(--color-red-400);">
+                        <code>.mt-16</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Top margin</p>
+            </div>
+            
+            <div class="demo-item">
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8);">
+                    <div class="mr-16" style="background: var(--color-red-100); padding: var(--spacing-8); border: 1px dashed var(--color-red-400);">
+                        <code>.mr-16</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Right margin</p>
+            </div>
+            
+            <div class="demo-item">
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8);">
+                    <div class="mb-16" style="background: var(--color-red-100); padding: var(--spacing-8); border: 1px dashed var(--color-red-400);">
+                        <code>.mb-16</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Bottom margin</p>
+            </div>
+            
+            <div class="demo-item">
+                <div style="background: var(--color-white); border: 1px solid var(--color-gray-300); padding: var(--spacing-8);">
+                    <div class="ml-16" style="background: var(--color-red-100); padding: var(--spacing-8); border: 1px dashed var(--color-red-400);">
+                        <code>.ml-16</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Left margin</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Padding Utilities -->
+<section class="component-section">
+    <h2>Padding Utility Classes</h2>
+    <p class="mb-24">Classes for applying internal spacing (padding) to elements.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>All Sides Padding</h3>
+        <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: grid; gap: var(--spacing-16); grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="p-0" style="background: var(--color-purple-100); border: 1px dashed var(--color-purple-400); text-align: center;">
+                        <code>.p-0</code>
+                    </div>
+                </div>
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="p-4" style="background: var(--color-purple-100); border: 1px dashed var(--color-purple-400); text-align: center;">
+                        <code>.p-4</code>
+                    </div>
+                </div>
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="p-8" style="background: var(--color-purple-100); border: 1px dashed var(--color-purple-400); text-align: center;">
+                        <code>.p-8</code>
+                    </div>
+                </div>
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="p-16" style="background: var(--color-purple-100); border: 1px dashed var(--color-purple-400); text-align: center;">
+                        <code>.p-16</code>
+                    </div>
+                </div>
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="p-24" style="background: var(--color-purple-100); border: 1px dashed var(--color-purple-400); text-align: center;">
+                        <code>.p-24</code>
+                    </div>
+                </div>
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="p-32" style="background: var(--color-purple-100); border: 1px dashed var(--color-purple-400); text-align: center;">
+                        <code>.p-32</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Directional Padding</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <h4>Horizontal (Left + Right)</h4>
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="px-24" style="background: var(--color-teal-100); border: 1px dashed var(--color-teal-400); text-align: center;">
+                        <code>.px-24</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Left and right padding</p>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Vertical (Top + Bottom)</h4>
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="py-24" style="background: var(--color-teal-100); border: 1px dashed var(--color-teal-400); text-align: center;">
+                        <code>.py-24</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Top and bottom padding</p>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Individual Side Padding</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="pt-20" style="background: var(--color-indigo-100); border: 1px dashed var(--color-indigo-400); text-align: center;">
+                        <code>.pt-20</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Top padding</p>
+            </div>
+            
+            <div class="demo-item">
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="pr-20" style="background: var(--color-indigo-100); border: 1px dashed var(--color-indigo-400); text-align: center;">
+                        <code>.pr-20</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Right padding</p>
+            </div>
+            
+            <div class="demo-item">
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="pb-20" style="background: var(--color-indigo-100); border: 1px dashed var(--color-indigo-400); text-align: center;">
+                        <code>.pb-20</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Bottom padding</p>
+            </div>
+            
+            <div class="demo-item">
+                <div style="border: 1px solid var(--color-gray-300);">
+                    <div class="pl-20" style="background: var(--color-indigo-100); border: 1px dashed var(--color-indigo-400); text-align: center;">
+                        <code>.pl-20</code>
+                    </div>
+                </div>
+                <p class="demo-item__label">Left padding</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gap Utilities -->
+<section class="component-section">
+    <h2>Gap Utility Classes</h2>
+    <p class="mb-24">Classes for controlling the space between flex and grid items.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Flexbox Gap</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <h4>Gap 8px</h4>
+                <div class="flex gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
+                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
+                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
+                </div>
+                <code>.gap-8</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Gap 16px</h4>
+                <div class="flex gap-16" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
+                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
+                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
+                </div>
+                <code>.gap-16</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Gap 24px</h4>
+                <div class="flex gap-24" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
+                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
+                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
+                </div>
+                <code>.gap-24</code>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Grid Gap</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <h4>Grid Gap 12px</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-12); background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
+                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
+                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
+                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
+                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">5</div>
+                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">6</div>
+                </div>
+                <code>.gap-12</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Grid Gap 20px</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-20); background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
+                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
+                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
+                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
+                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">5</div>
+                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">6</div>
+                </div>
+                <code>.gap-20</code>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Width and Height Utilities -->
+<section class="component-section">
+    <h2>Width and Height Utilities</h2>
+    <p class="mb-24">Classes for controlling element dimensions using the spacing scale.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Fixed Widths</h3>
+        <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: grid; gap: var(--spacing-12);">
+                <div>
+                    <div class="w-16" style="background: var(--color-blue-200); height: var(--spacing-12); border-radius: var(--spacing-2);"></div>
+                    <code>.w-16</code> <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">(16px)</span>
+                </div>
+                <div>
+                    <div class="w-24" style="background: var(--color-blue-200); height: var(--spacing-12); border-radius: var(--spacing-2);"></div>
+                    <code>.w-24</code> <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">(24px)</span>
+                </div>
+                <div>
+                    <div class="w-32" style="background: var(--color-blue-200); height: var(--spacing-12); border-radius: var(--spacing-2);"></div>
+                    <code>.w-32</code> <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">(32px)</span>
+                </div>
+                <div>
+                    <div class="w-48" style="background: var(--color-blue-200); height: var(--spacing-12); border-radius: var(--spacing-2);"></div>
+                    <code>.w-48</code> <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">(48px)</span>
+                </div>
+                <div>
+                    <div class="w-64" style="background: var(--color-blue-200); height: var(--spacing-12); border-radius: var(--spacing-2);"></div>
+                    <code>.w-64</code> <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">(64px)</span>
+                </div>
+                <div>
+                    <div class="w-80" style="background: var(--color-blue-200); height: var(--spacing-12); border-radius: var(--spacing-2);"></div>
+                    <code>.w-80</code> <span style="font-size: var(--font-size-sm); color: var(--color-gray-600);">(80px)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Fixed Heights</h3>
+        <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: flex; gap: var(--spacing-16); align-items: flex-end;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="h-16" style="background: var(--color-green-200); width: var(--spacing-24); border-radius: var(--spacing-2);"></div>
+                    <code style="margin-top: var(--spacing-4);">.h-16</code>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="h-24" style="background: var(--color-green-200); width: var(--spacing-24); border-radius: var(--spacing-2);"></div>
+                    <code style="margin-top: var(--spacing-4);">.h-24</code>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="h-32" style="background: var(--color-green-200); width: var(--spacing-24); border-radius: var(--spacing-2);"></div>
+                    <code style="margin-top: var(--spacing-4);">.h-32</code>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="h-48" style="background: var(--color-green-200); width: var(--spacing-24); border-radius: var(--spacing-2);"></div>
+                    <code style="margin-top: var(--spacing-4);">.h-48</code>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="h-64" style="background: var(--color-green-200); width: var(--spacing-24); border-radius: var(--spacing-2);"></div>
+                    <code style="margin-top: var(--spacing-4);">.h-64</code>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="h-80" style="background: var(--color-green-200); width: var(--spacing-24); border-radius: var(--spacing-2);"></div>
+                    <code style="margin-top: var(--spacing-4);">.h-80</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

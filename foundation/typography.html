@@ -1,0 +1,396 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Typography
+heading: Typography
+secondary: Typography imported from CUI
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Swage.CSS typography system uses the Figtree font family with a comprehensive type scale, providing semantic classes and utilities for consistent text styling across all designs.
+    </p>
+</section>
+
+<!-- Font Information -->
+<section class="component-section">
+    <h2>Font Stack</h2>
+    <p class="mb-24">Swage.CSS uses Figtree as the primary font with a comprehensive fallback stack.</p>
+    
+    <div class="usage-section">
+        <div class="code-block">
+--font-family-sans: 'Figtree', system-ui, -apple-system, BlinkMacSystemFont, 
+            'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 
+            sans-serif</div>
+        
+        <p style="font-family: var(--font-family-sans); font-size: var(--font-size-lg); margin-top: var(--spacing-16);">
+            This is how text looks with the Figtree font family. It provides excellent readability and modern aesthetics across all devices and platforms.
+        </p>
+    </div>
+</section>
+
+<!-- Font Weights -->
+<section class="component-section">
+    <h2>Font Weights</h2>
+    <p class="mb-24">Three carefully selected font weights for hierarchy and emphasis.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <p style="font-size: var(--font-size-lg); font-weight: var(--font-weight-normal);">Normal Weight (400)</p>
+            <code>--font-weight-normal</code>
+            <p class="demo-item__label">Body text, descriptions</p>
+        </div>
+        
+        <div class="demo-item">
+            <p style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">Semibold Weight (600)</p>
+            <code>--font-weight-semibold</code>
+            <p class="demo-item__label">Headings, emphasis</p>
+        </div>
+        
+        <div class="demo-item">
+            <p style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold);">Bold Weight (700)</p>
+            <code>--font-weight-bold</code>
+            <p class="demo-item__label">Strong emphasis, display</p>
+        </div>
+    </div>
+</section>
+
+<!-- Type Scale -->
+<section class="component-section">
+    <h2>Type Scale</h2>
+    <p class="mb-24">A harmonious type scale from extra small (12px) to 4XL (36px) with corresponding line heights.</p>
+    
+    <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8); margin-bottom: var(--spacing-24);">
+        <div style="margin-bottom: var(--spacing-16);">
+            <p style="font-size: var(--font-size-xs); line-height: var(--line-height-xs); margin-bottom: var(--spacing-4);">Extra Small (xs) - 12px / 16px</p>
+            <code>--font-size-xs, --line-height-xs</code>
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-16);">
+            <p style="font-size: var(--font-size-sm); line-height: var(--line-height-sm); margin-bottom: var(--spacing-4);">Small (sm) - 14px / 20px</p>
+            <code>--font-size-sm, --line-height-sm</code>
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-16);">
+            <p style="font-size: var(--font-size-md); line-height: var(--line-height-md); margin-bottom: var(--spacing-4);">Medium (md) - 16px / 24px</p>
+            <code>--font-size-md, --line-height-md</code>
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-16);">
+            <p style="font-size: var(--font-size-lg); line-height: var(--line-height-lg); margin-bottom: var(--spacing-4);">Large (lg) - 18px / 28px</p>
+            <code>--font-size-lg, --line-height-lg</code>
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-16);">
+            <p style="font-size: var(--font-size-xl); line-height: var(--line-height-xl); margin-bottom: var(--spacing-4);">Extra Large (xl) - 20px / 28px</p>
+            <code>--font-size-xl, --line-height-xl</code>
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-16);">
+            <p style="font-size: var(--font-size-2xl); line-height: var(--line-height-2xl); margin-bottom: var(--spacing-4);">2X Large (2xl) - 24px / 32px</p>
+            <code>--font-size-2xl, --line-height-2xl</code>
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-16);">
+            <p style="font-size: var(--font-size-3xl); line-height: var(--line-height-3xl); margin-bottom: var(--spacing-4);">3X Large (3xl) - 30px / 36px</p>
+            <code>--font-size-3xl, --line-height-3xl</code>
+        </div>
+        
+        <div>
+            <p style="font-size: var(--font-size-4xl); line-height: var(--line-height-4xl); margin-bottom: var(--spacing-4);">4X Large (4xl) - 36px / 40px</p>
+            <code>--font-size-4xl, --line-height-4xl</code>
+        </div>
+    </div>
+</section>
+
+<!-- Semantic Classes -->
+<section class="component-section">
+    <h2>Semantic Typography Classes</h2>
+    <p class="mb-24">Ready-to-use semantic classes that combine font size, line height, and weight for common use cases.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Heading Classes</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <h1 class="heading-4xl" style="margin-bottom: var(--spacing-8);">Heading 4XL</h1>
+            <code>.heading-4xl</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">36px semibold, 40px line-height</p>
+            
+            <h2 class="heading-3xl" style="margin-bottom: var(--spacing-8);">Heading 3XL</h2>
+            <code>.heading-3xl</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">30px semibold, 36px line-height</p>
+            
+            <h3 class="heading-2xl" style="margin-bottom: var(--spacing-8);">Heading 2XL</h3>
+            <code>.heading-2xl</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">24px semibold, 32px line-height</p>
+            
+            <h4 class="heading-xl" style="margin-bottom: var(--spacing-8);">Heading XL</h4>
+            <code>.heading-xl</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">20px semibold, 28px line-height</p>
+            
+            <h5 class="heading-lg" style="margin-bottom: var(--spacing-8);">Heading Large</h5>
+            <code>.heading-lg</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">18px semibold, 28px line-height</p>
+            
+            <h6 class="heading-md" style="margin-bottom: var(--spacing-8);">Heading Medium</h6>
+            <code>.heading-md</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">16px semibold, 24px line-height</p>
+            
+            <p class="heading-sm" style="margin-bottom: var(--spacing-8);">Heading Small</p>
+            <code>.heading-sm</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">14px semibold, 20px line-height</p>
+            
+            <p class="heading-xs" style="margin-bottom: var(--spacing-8);">Heading Extra Small</p>
+            <code>.heading-xs</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 0 0;">12px semibold, 16px line-height</p>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Body Text Classes</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <p class="body-lg" style="margin-bottom: var(--spacing-8);">Body Large - Perfect for introductory text, important descriptions, and emphasis within body content.</p>
+            <code>.body-lg</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">18px normal, 28px line-height</p>
+            
+            <p class="body-md" style="margin-bottom: var(--spacing-8);">Body Medium - The standard body text size for most content, paragraphs, and general reading.</p>
+            <code>.body-md</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">16px normal, 24px line-height</p>
+            
+            <p class="body-sm" style="margin-bottom: var(--spacing-8);">Body Small - Used for secondary information, captions, and supporting details.</p>
+            <code>.body-sm</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">14px normal, 20px line-height</p>
+            
+            <p class="body-xs" style="margin-bottom: var(--spacing-8);">Body Extra Small - For fine print, metadata, and minimal text elements.</p>
+            <code>.body-xs</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 0 0;">12px normal, 16px line-height</p>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Display Text Classes</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <h1 class="display-xl" style="margin-bottom: var(--spacing-8);">Display XL</h1>
+            <code>.display-xl</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">60px bold, 60px line-height</p>
+            
+            <h2 class="display-lg" style="margin-bottom: var(--spacing-8);">Display Large</h2>
+            <code>.display-lg</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">48px bold, 48px line-height</p>
+            
+            <h3 class="display-md" style="margin-bottom: var(--spacing-8);">Display Medium</h3>
+            <code>.display-md</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 var(--spacing-16) 0;">36px bold, 40px line-height</p>
+            
+            <h4 class="display-sm" style="margin-bottom: var(--spacing-8);">Display Small</h4>
+            <code>.display-sm</code>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: var(--spacing-4) 0 0 0;">30px bold, 36px line-height</p>
+        </div>
+    </div>
+</section>
+
+<!-- Text Utility Classes -->
+<section class="component-section">
+    <h2>Text Utility Classes</h2>
+    <p class="mb-24">Granular control over typography with individual utility classes.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Font Size Classes</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <p class="text-xs">Extra Small Text</p>
+                <code>.text-xs</code>
+            </div>
+            <div class="demo-item">
+                <p class="text-sm">Small Text</p>
+                <code>.text-sm</code>
+            </div>
+            <div class="demo-item">
+                <p class="text-md">Medium Text</p>
+                <code>.text-md</code>
+            </div>
+            <div class="demo-item">
+                <p class="text-lg">Large Text</p>
+                <code>.text-lg</code>
+            </div>
+            <div class="demo-item">
+                <p class="text-xl">Extra Large Text</p>
+                <code>.text-xl</code>
+            </div>
+            <div class="demo-item">
+                <p class="text-2xl">2X Large Text</p>
+                <code>.text-2xl</code>
+            </div>
+            <div class="demo-item">
+                <p class="text-3xl">3X Large Text</p>
+                <code>.text-3xl</code>
+            </div>
+            <div class="demo-item">
+                <p class="text-4xl">4X Large Text</p>
+                <code>.text-4xl</code>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Font Weight Classes</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <p class="font-normal" style="font-size: var(--font-size-lg);">Normal Weight</p>
+                <code>.font-normal</code>
+            </div>
+            <div class="demo-item">
+                <p class="font-semibold" style="font-size: var(--font-size-lg);">Semibold Weight</p>
+                <code>.font-semibold</code>
+            </div>
+            <div class="demo-item">
+                <p class="font-bold" style="font-size: var(--font-size-lg);">Bold Weight</p>
+                <code>.font-bold</code>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Text Alignment</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <p class="text-left" style="margin-bottom: var(--spacing-8); border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">Left aligned text (.text-left)</p>
+            <p class="text-center" style="margin-bottom: var(--spacing-8); border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">Center aligned text (.text-center)</p>
+            <p class="text-right" style="margin-bottom: var(--spacing-8); border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">Right aligned text (.text-right)</p>
+            <p class="text-justify" style="border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">Justified text that distributes text evenly across the available width, creating straight edges on both sides of the paragraph. This is useful for formal documents and layouts where alignment is important (.text-justify).</p>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Text Transform</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <p class="uppercase">Uppercase Text</p>
+                <code>.uppercase</code>
+            </div>
+            <div class="demo-item">
+                <p class="lowercase">LOWERCASE TEXT</p>
+                <code>.lowercase</code>
+            </div>
+            <div class="demo-item">
+                <p class="capitalize">capitalize each word</p>
+                <code>.capitalize</code>
+            </div>
+            <div class="demo-item">
+                <p class="normal-case">Normal Case Text</p>
+                <code>.normal-case</code>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Text Decoration</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <p class="underline">Underlined text</p>
+                <code>.underline</code>
+            </div>
+            <div class="demo-item">
+                <p class="line-through">Strikethrough text</p>
+                <code>.line-through</code>
+            </div>
+            <div class="demo-item">
+                <p class="no-underline" style="text-decoration: underline;">No underline</p>
+                <code>.no-underline</code>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Font Style</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <p class="italic">Italic text style</p>
+                <code>.italic</code>
+            </div>
+            <div class="demo-item">
+                <p class="not-italic" style="font-style: italic;">Not italic text</p>
+                <code>.not-italic</code>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Letter Spacing</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <p class="tracking-tighter" style="margin-bottom: var(--spacing-8);">Tighter letter spacing (.tracking-tighter)</p>
+            <p class="tracking-tight" style="margin-bottom: var(--spacing-8);">Tight letter spacing (.tracking-tight)</p>
+            <p class="tracking-normal" style="margin-bottom: var(--spacing-8);">Normal letter spacing (.tracking-normal)</p>
+            <p class="tracking-wide" style="margin-bottom: var(--spacing-8);">Wide letter spacing (.tracking-wide)</p>
+            <p class="tracking-wider" style="margin-bottom: var(--spacing-8);">Wider letter spacing (.tracking-wider)</p>
+            <p class="tracking-widest">Widest letter spacing (.tracking-widest)</p>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Line Clamp</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <div style="margin-bottom: var(--spacing-16);">
+                <p class="line-clamp-1" style="border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">This is a very long text that should be clamped to one line with an ellipsis at the end when it overflows the available space.</p>
+                <code>.line-clamp-1</code>
+            </div>
+            
+            <div style="margin-bottom: var(--spacing-16);">
+                <p class="line-clamp-2" style="border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">This is a longer text that should be clamped to exactly two lines with an ellipsis shown at the end of the second line when the content overflows beyond the available space in the container.</p>
+                <code>.line-clamp-2</code>
+            </div>
+            
+            <div style="margin-bottom: var(--spacing-16);">
+                <p class="line-clamp-3" style="border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">This is an even longer piece of text that should be clamped to exactly three lines. It will show an ellipsis at the end of the third line when the content is longer than what can fit in the three-line constraint. This is useful for creating consistent layouts with preview text.</p>
+                <code>.line-clamp-3</code>
+            </div>
+            
+            <div>
+                <p class="line-clamp-none" style="border: 1px dashed var(--color-gray-300); padding: var(--spacing-8);">This text has no line clamping applied, so it will flow naturally and wrap to as many lines as needed to display all the content without any truncation or ellipsis.</p>
+                <code>.line-clamp-none</code>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Typography Examples -->
+<section class="component-section">
+    <h2>Typography in Context</h2>
+    <p class="mb-24">Examples of how typography works together to create hierarchy and improve readability.</p>
+    
+    <div style="background: var(--color-white); padding: var(--spacing-32); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+        <article>
+            <h1 class="heading-3xl mb-16">The Power of Good Typography</h1>
+            
+            <p class="body-lg text-gray-600 mb-24">
+                Typography is more than just choosing fonts—it's about creating a visual hierarchy that guides readers through your content and enhances comprehension.
+            </p>
+            
+            <h2 class="heading-xl mb-16">Why Typography Matters</h2>
+            
+            <p class="body-md mb-16">
+                Good typography improves readability, creates visual interest, and helps establish brand identity. It's the foundation of effective communication in digital interfaces.
+            </p>
+            
+            <h3 class="heading-lg mb-12">Key Principles</h3>
+            
+            <ul style="margin-left: var(--spacing-20); margin-bottom: var(--spacing-16);">
+                <li class="body-md mb-8"><strong class="font-semibold">Hierarchy:</strong> Use different sizes and weights to create clear information hierarchy</li>
+                <li class="body-md mb-8"><strong class="font-semibold">Contrast:</strong> Ensure sufficient contrast between text and background</li>
+                <li class="body-md mb-8"><strong class="font-semibold">Consistency:</strong> Maintain consistent spacing and sizing throughout</li>
+                <li class="body-md"><strong class="font-semibold">Readability:</strong> Choose appropriate line lengths and spacing for comfortable reading</li>
+            </ul>
+            
+            <h4 class="heading-md mb-12">Implementation Tips</h4>
+            
+            <p class="body-sm text-gray-600 mb-8">
+                <em>Best practices for implementing the typography system:</em>
+            </p>
+            
+            <ol style="margin-left: var(--spacing-20);">
+                <li class="body-sm mb-4">Start with semantic classes like <code class="text-primary">.heading-lg</code> and <code class="text-primary">.body-md</code></li>
+                <li class="body-sm mb-4">Use utility classes for fine-tuning specific elements</li>
+                <li class="body-sm mb-4">Maintain consistent spacing between typographic elements</li>
+                <li class="body-sm">Test readability across different devices and screen sizes</li>
+            </ol>
+        </article>
+    </div>
+</section>

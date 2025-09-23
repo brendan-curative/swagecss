@@ -22,7 +22,7 @@ html, body {
   }
 
 body {
-	background: var(--swage-surface);
+	background: var(--swage-secondary);
     color: var(--swage-black);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -206,7 +206,9 @@ header {
         }
 
         .titleblock .descr {
-            padding-top: var(--spacing-8);
+            font-size: var(--font-size-sm);
+            line-height: var(--line-height-sm);
+            padding: var(--spacing-16) var(--spacing-8) var(--spacing-4) var(--spacing-16); 
             position: relative;
         }   
 
@@ -233,7 +235,10 @@ aside::before {
 }
 
 aside nav {
+    width: 200px;
+    padding: 0 var(--spacing-8) var(--spacing-24) var(--spacing-8); 
     position: relative;
+    text-transform: uppercase;
 }
 /* #endregion */
 
@@ -246,6 +251,10 @@ article::before {
     color: var(--swage-primary);
     text-transform: uppercase;
     font-size: var(--font-size-2xs);
+}
+
+section {
+    padding: 0 var(--spacing-24) var(--spacing-24) var(--spacing-24); 
 }
 /* #endregion */
 
@@ -274,7 +283,7 @@ main {
 }
 
 aside {
-    width: 201px;
+
     padding-top: var(--spacing-24);
     border-right: 1px solid var(--swage-black);
     border-left: 1px solid var(--swage-black);
@@ -291,3 +300,45 @@ article {
      /* #endregion */
 
 
+/* #region Demo Grid Layouts */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-24);
+    margin-top: var(--spacing-24);
+}
+
+.demo-item {
+    background-color: var(--color-surface-highlight);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--spacing-8);
+    padding: var(--spacing-24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-16);
+    min-height: 120px;
+}
+
+.demo-item--dark {
+    background-color: var(--color-gray-800);
+    color: var(--color-white);
+}
+
+.demo-item__label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-subdued);
+    margin-bottom: var(--spacing-8);
+}
+
+.demo-item--dark .demo-item__label {
+    color: var(--color-gray-300);
+}
+
+.flex-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+}
+/* #endregion */

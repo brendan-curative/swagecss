@@ -1,0 +1,544 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Icons
+heading: Heroicons
+secondary: Icons imported from Heroicons
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Swage.CSS icon system includes the complete <a href="https://heroicons.dev/">Heroicons library</a> with utility classes for solid and outline variants across 16px, 20px, and 24px sizes. All icons are implemented as CSS background images for optimal performance and styling flexibility. 
+    </p>
+</section>
+
+<!-- Icon Sizes -->
+<section class="component-section">
+    <h2>Icon Sizes</h2>
+    <p class="mb-24">Three standard icon sizes to accommodate different UI needs and contexts.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
+                <div class="heroicon heroicon-16 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+            </div>
+            <h4>16px Icons</h4>
+            <code>.heroicon-16.heroicon-[name]</code>
+            <p class="demo-item__label">Small UI elements, buttons</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
+                <div class="heroicon heroicon-20 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+            </div>
+            <h4>20px Icons</h4>
+            <code>.heroicon-20.heroicon-[name]</code>
+            <p class="demo-item__label">Form elements, compact UI</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
+                <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+            </div>
+            <h4>24px Icons (Default)</h4>
+            <code>.heroicon.heroicon-[name]</code>
+            <p class="demo-item__label">Standard UI, navigation</p>
+        </div>
+    </div>
+</section>
+
+<!-- Icon Variants -->
+<section class="component-section">
+    <h2>Icon Variants</h2>
+    <p class="mb-24">Solid and outline variants for different visual weights and contexts.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div style="display: flex; align-items: center; gap: var(--spacing-16); justify-content: center; margin-bottom: var(--spacing-16);">
+                <div class="heroicon heroicon-24 heroicon-heart" style="background-color: var(--color-foundation-critical);"></div>
+                <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
+                <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-foundation-success);"></div>
+            </div>
+            <h4>Solid Icons</h4>
+            <code>.heroicon-[name]</code>
+            <p class="demo-item__label">Filled icons for emphasis</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="display: flex; align-items: center; gap: var(--spacing-16); justify-content: center; margin-bottom: var(--spacing-16);">
+                <div class="heroicon heroicon-24 heroicon-outline-heart" style="background-color: var(--color-foundation-critical);"></div>
+                <div class="heroicon heroicon-24 heroicon-outline-star" style="background-color: var(--color-foundation-warning);"></div>
+                <div class="heroicon heroicon-24 heroicon-outline-check-circle" style="background-color: var(--color-foundation-success);"></div>
+            </div>
+            <h4>Outline Icons</h4>
+            <code>.heroicon-outline-[name]</code>
+            <p class="demo-item__label">Outlined icons for subtlety</p>
+        </div>
+    </div>
+</section>
+
+<!-- Common Icons -->
+<section class="component-section">
+    <h2>Common Icons</h2>
+    <p class="mb-24">Frequently used icons in UI design and their corresponding class names.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Navigation & Actions</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-home</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Home</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-bars-3" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-bars-3</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Menu</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-x-mark" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-x-mark</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Close</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-plus" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-plus</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Add</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-minus" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-minus</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Remove</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-chevron-down" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-chevron-down</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Expand</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-chevron-right" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-chevron-right</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Next</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-chevron-left" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-chevron-left</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Back</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Communication & Social</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-envelope" style="background-color: var(--color-blue-600);"></div>
+                <div>
+                    <code>.heroicon-envelope</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Email</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-phone" style="background-color: var(--color-blue-600);"></div>
+                <div>
+                    <code>.heroicon-phone</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Phone</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-chat-bubble-left" style="background-color: var(--color-blue-600);"></div>
+                <div>
+                    <code>.heroicon-chat-bubble-left</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Message</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-share" style="background-color: var(--color-blue-600);"></div>
+                <div>
+                    <code>.heroicon-share</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Share</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-bell" style="background-color: var(--color-blue-600);"></div>
+                <div>
+                    <code>.heroicon-bell</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Notifications</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-video-camera" style="background-color: var(--color-blue-600);"></div>
+                <div>
+                    <code>.heroicon-video-camera</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Video</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Status & Feedback</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-green-600);"></div>
+                <div>
+                    <code>.heroicon-check-circle</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Success</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-x-circle" style="background-color: var(--color-red-600);"></div>
+                <div>
+                    <code>.heroicon-x-circle</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Error</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-exclamation-triangle" style="background-color: var(--color-orange-600);"></div>
+                <div>
+                    <code>.heroicon-exclamation-triangle</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Warning</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-information-circle" style="background-color: var(--color-blue-600);"></div>
+                <div>
+                    <code>.heroicon-information-circle</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Info</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-question-mark-circle" style="background-color: var(--color-purple-600);"></div>
+                <div>
+                    <code>.heroicon-question-mark-circle</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Help</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-clock" style="background-color: var(--color-gray-600);"></div>
+                <div>
+                    <code>.heroicon-clock</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Time/Pending</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Media & Documents</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-photo" style="background-color: var(--color-purple-600);"></div>
+                <div>
+                    <code>.heroicon-photo</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Image</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-document" style="background-color: var(--color-purple-600);"></div>
+                <div>
+                    <code>.heroicon-document</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Document</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-folder" style="background-color: var(--color-purple-600);"></div>
+                <div>
+                    <code>.heroicon-folder</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Folder</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-arrow-down-tray" style="background-color: var(--color-purple-600);"></div>
+                <div>
+                    <code>.heroicon-arrow-down-tray</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Download</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-arrow-up-tray" style="background-color: var(--color-purple-600);"></div>
+                <div>
+                    <code>.heroicon-arrow-up-tray</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Upload</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+                <div class="heroicon heroicon-24 heroicon-play" style="background-color: var(--color-purple-600);"></div>
+                <div>
+                    <code>.heroicon-play</code>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Play</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Icon with Text -->
+<section class="component-section">
+    <h2>Icons with Text</h2>
+    <p class="mb-24">Examples of how to use icons alongside text elements for enhanced user interfaces.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Button Icons</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <button class="button button--primary">
+                    <div class="heroicon heroicon-16 heroicon-plus" style="background-color: currentColor; margin-right: var(--spacing-8);"></div>
+                    Add Item
+                </button>
+                <p class="demo-item__label">Leading icon</p>
+            </div>
+            
+            <div class="demo-item">
+                <button class="button button--outline">
+                    Save Changes
+                    <div class="heroicon heroicon-16 heroicon-check" style="background-color: currentColor; margin-left: var(--spacing-8);"></div>
+                </button>
+                <p class="demo-item__label">Trailing icon</p>
+            </div>
+            
+            <div class="demo-item">
+                <button class="button button--accent-a">
+                    <div class="heroicon heroicon-16 heroicon-arrow-down-tray" style="background-color: currentColor;"></div>
+                </button>
+                <p class="demo-item__label">Icon only</p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Navigation Items</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <nav>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: var(--spacing-8);">
+                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
+                            <div class="heroicon heroicon-20 heroicon-home" style="background-color: var(--color-gray-600);"></div>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li style="margin-bottom: var(--spacing-8);">
+                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
+                            <div class="heroicon heroicon-20 heroicon-users" style="background-color: var(--color-gray-600);"></div>
+                            <span>Team</span>
+                        </a>
+                    </li>
+                    <li style="margin-bottom: var(--spacing-8);">
+                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
+                            <div class="heroicon heroicon-20 heroicon-folder" style="background-color: var(--color-gray-600);"></div>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
+                            <div class="heroicon heroicon-20 heroicon-cog-6-tooth" style="background-color: var(--color-gray-600);"></div>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Status Messages</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div class="alert alert--success">
+                    <div class="alert__content">
+                        <div class="alert__icon">
+                            <div class="heroicon heroicon-24 heroicon-check-circle"></div>
+                        </div>
+                        <div class="alert__text">
+                            <div class="alert__title">Success</div>
+                            <div class="alert__message">Your changes have been saved successfully.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-item">
+                <div class="alert alert--critical">
+                    <div class="alert__content">
+                        <div class="alert__icon">
+                            <div class="heroicon heroicon-24 heroicon-x-circle"></div>
+                        </div>
+                        <div class="alert__text">
+                            <div class="alert__title">Error</div>
+                            <div class="alert__message">There was an error processing your request.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Icon Styling -->
+<section class="component-section">
+    <h2>Icon Styling</h2>
+    <p class="mb-24">How to style icons with colors, sizes, and other properties using CSS.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Color Styling</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12);">
+                    <div class="heroicon heroicon-24 heroicon-heart" style="background-color: var(--color-foundation-critical);"></div>
+                    <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
+                    <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-foundation-success);"></div>
+                </div>
+                <h4>Semantic Colors</h4>
+                <code>background-color: var(--color-foundation-*)</code>
+            </div>
+            
+            <div class="demo-item">
+                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12);">
+                    <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-blue-500);"></div>
+                    <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-green-500);"></div>
+                    <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-purple-500);"></div>
+                </div>
+                <h4>Brand Colors</h4>
+                <code>background-color: var(--color-*-500)</code>
+            </div>
+            
+            <div class="demo-item">
+                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12);">
+                    <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-400);"></div>
+                    <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-600);"></div>
+                    <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-800);"></div>
+                </div>
+                <h4>Neutral Colors</h4>
+                <code>background-color: var(--color-gray-*)</code>
+            </div>
+            
+            <div class="demo-item">
+                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12); color: var(--color-foundation-primary);">
+                    <div class="heroicon heroicon-24 heroicon-envelope" style="background-color: currentColor;"></div>
+                    <div class="heroicon heroicon-24 heroicon-phone" style="background-color: currentColor;"></div>
+                    <div class="heroicon heroicon-24 heroicon-chat-bubble-left" style="background-color: currentColor;"></div>
+                </div>
+                <h4>Current Color</h4>
+                <code>background-color: currentColor</code>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Size Combinations</h3>
+        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-16); margin-bottom: var(--spacing-16);">
+                <div class="heroicon heroicon-16 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
+                <span class="body-sm">Small star for compact elements</span>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-16); margin-bottom: var(--spacing-16);">
+                <div class="heroicon heroicon-20 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
+                <span class="body-md">Medium star for standard UI</span>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: var(--spacing-16);">
+                <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
+                <span class="body-lg">Large star for prominent elements</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Icon Browser -->
+<section class="component-section">
+    <h2>Icon Browser</h2>
+    <p class="mb-24">Browse available icons by category. All icons are available in solid, outline, and all three sizes.</p>
+    
+    <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
+        <div style="margin-bottom: var(--spacing-16);">
+            <h4>Popular Icons</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin-bottom: var(--spacing-12);">Most commonly used icons in UI design</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: var(--spacing-8); max-width: 400px;">
+                <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-gray-600);" title="home"></div>
+                <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-600);" title="user"></div>
+                <div class="heroicon heroicon-24 heroicon-envelope" style="background-color: var(--color-gray-600);" title="envelope"></div>
+                <div class="heroicon heroicon-24 heroicon-phone" style="background-color: var(--color-gray-600);" title="phone"></div>
+                <div class="heroicon heroicon-24 heroicon-cog-6-tooth" style="background-color: var(--color-gray-600);" title="cog-6-tooth"></div>
+                <div class="heroicon heroicon-24 heroicon-magnifying-glass" style="background-color: var(--color-gray-600);" title="magnifying-glass"></div>
+                <div class="heroicon heroicon-24 heroicon-heart" style="background-color: var(--color-gray-600);" title="heart"></div>
+                <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-gray-600);" title="star"></div>
+                <div class="heroicon heroicon-24 heroicon-shopping-cart" style="background-color: var(--color-gray-600);" title="shopping-cart"></div>
+                <div class="heroicon heroicon-24 heroicon-bell" style="background-color: var(--color-gray-600);" title="bell"></div>
+                <div class="heroicon heroicon-24 heroicon-check" style="background-color: var(--color-gray-600);" title="check"></div>
+                <div class="heroicon heroicon-24 heroicon-x-mark" style="background-color: var(--color-gray-600);" title="x-mark"></div>
+            </div>
+        </div>
+        
+        <div style="margin-bottom: var(--spacing-16);">
+            <h4>Arrows & Navigation</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin-bottom: var(--spacing-12);">Directional and navigation icons</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: var(--spacing-8); max-width: 400px;">
+                <div class="heroicon heroicon-24 heroicon-arrow-up" style="background-color: var(--color-gray-600);" title="arrow-up"></div>
+                <div class="heroicon heroicon-24 heroicon-arrow-down" style="background-color: var(--color-gray-600);" title="arrow-down"></div>
+                <div class="heroicon heroicon-24 heroicon-arrow-left" style="background-color: var(--color-gray-600);" title="arrow-left"></div>
+                <div class="heroicon heroicon-24 heroicon-arrow-right" style="background-color: var(--color-gray-600);" title="arrow-right"></div>
+                <div class="heroicon heroicon-24 heroicon-chevron-up" style="background-color: var(--color-gray-600);" title="chevron-up"></div>
+                <div class="heroicon heroicon-24 heroicon-chevron-down" style="background-color: var(--color-gray-600);" title="chevron-down"></div>
+                <div class="heroicon heroicon-24 heroicon-chevron-left" style="background-color: var(--color-gray-600);" title="chevron-left"></div>
+                <div class="heroicon heroicon-24 heroicon-chevron-right" style="background-color: var(--color-gray-600);" title="chevron-right"></div>
+                <div class="heroicon heroicon-24 heroicon-bars-3" style="background-color: var(--color-gray-600);" title="bars-3"></div>
+                <div class="heroicon heroicon-24 heroicon-ellipsis-horizontal" style="background-color: var(--color-gray-600);" title="ellipsis-horizontal"></div>
+                <div class="heroicon heroicon-24 heroicon-ellipsis-vertical" style="background-color: var(--color-gray-600);" title="ellipsis-vertical"></div>
+            </div>
+        </div>
+        
+        <div>
+            <h4>Status & Feedback</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin-bottom: var(--spacing-12);">Icons for states and user feedback</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: var(--spacing-8); max-width: 400px;">
+                <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-green-600);" title="check-circle"></div>
+                <div class="heroicon heroicon-24 heroicon-x-circle" style="background-color: var(--color-red-600);" title="x-circle"></div>
+                <div class="heroicon heroicon-24 heroicon-exclamation-triangle" style="background-color: var(--color-orange-600);" title="exclamation-triangle"></div>
+                <div class="heroicon heroicon-24 heroicon-information-circle" style="background-color: var(--color-blue-600);" title="information-circle"></div>
+                <div class="heroicon heroicon-24 heroicon-question-mark-circle" style="background-color: var(--color-purple-600);" title="question-mark-circle"></div>
+                <div class="heroicon heroicon-24 heroicon-clock" style="background-color: var(--color-gray-600);" title="clock"></div>
+                <div class="heroicon heroicon-24 heroicon-bolt" style="background-color: var(--color-yellow-600);" title="bolt"></div>
+                <div class="heroicon heroicon-24 heroicon-shield-check" style="background-color: var(--color-green-600);" title="shield-check"></div>
+            </div>
+        </div>
+    </div>
+</section>

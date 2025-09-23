@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks</title>
+    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Color</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,8 +22,8 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Swage.css</h1> 
-                <p>Building blocks for rapid, high-fidelity prototyping</p>
+                <h1>Colors</h1> 
+                <p>Colors imported from CUI</p>
 
               </div>
           </div>
@@ -45,7 +45,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 
-           </a> <span>Tue Sep 23 2025 17:59:40 GMT-0400 (Eastern Daylight Time)</span> 
+           </a> <span></span> 
         </div>
 
 </div>
@@ -78,8 +78,448 @@
   
               <article>
 <section>
-    <p><strong><em>/sw&amacr;j/</em></strong> a shaped tool or die for giving a desired form to metal by hammering or pressure.</p>
-</section></article>
+    <p class="body-lg text-gray-600 mb-24">
+        The Swage.CSS color system provides a structured approach to colors with primitives, scales, semantic aliases, and utility classes for consistent design implementation.
+    </p>
+</section>
+
+<!-- Primitive Colors -->
+<section class="component-section">
+    <h2>Primitive Colors</h2>
+    <p class="mb-24">Base color values that form the foundation of the design system.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div style="background-color: var(--color-primary-signal-orange); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Signal Orange</h4>
+            <code>--color-primary-signal-orange</code>
+            <p class="demo-item__label">#FC5C50</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-primary-sky-blue); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Sky Blue</h4>
+            <code>--color-primary-sky-blue</code>
+            <p class="demo-item__label">#00B2FF</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-neutral-black); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Neutral Black</h4>
+            <code>--color-neutral-black</code>
+            <p class="demo-item__label">#181B25</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-neutral-eggshell); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8); border: 1px solid var(--color-gray-300);"></div>
+            <h4>Neutral Eggshell</h4>
+            <code>--color-neutral-eggshell</code>
+            <p class="demo-item__label">#EBE5D8</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-neutral-off-white); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8); border: 1px solid var(--color-gray-300);"></div>
+            <h4>Neutral Off-White</h4>
+            <code>--color-neutral-off-white</code>
+            <p class="demo-item__label">#F6F3EB</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-neutral-white); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8); border: 1px solid var(--color-gray-300);"></div>
+            <h4>Neutral White</h4>
+            <code>--color-neutral-white</code>
+            <p class="demo-item__label">#FDFDFD</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-white); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8); border: 1px solid var(--color-gray-300);"></div>
+            <h4>Pure White</h4>
+            <code>--color-white</code>
+            <p class="demo-item__label">#FFFFFF</p>
+        </div>
+    </div>
+</section>
+
+<!-- Semantic Colors -->
+<section class="component-section">
+    <h2>Semantic Color Aliases</h2>
+    <p class="mb-24">Semantic color names that provide meaning and context for consistent usage across the design system.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div style="background-color: var(--color-foundation-primary); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Primary</h4>
+            <code>--color-foundation-primary</code>
+            <p class="demo-item__label">Main brand color</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-foundation-secondary); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8); border: 1px solid var(--color-gray-300);"></div>
+            <h4>Secondary</h4>
+            <code>--color-foundation-secondary</code>
+            <p class="demo-item__label">Neutral background</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-foundation-accent-a); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Accent A</h4>
+            <code>--color-foundation-accent-a</code>
+            <p class="demo-item__label">Sky blue highlights</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-foundation-accent-b); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Accent B</h4>
+            <code>--color-foundation-accent-b</code>
+            <p class="demo-item__label">Signal orange attention</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-foundation-critical); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Critical</h4>
+            <code>--color-foundation-critical</code>
+            <p class="demo-item__label">Error states</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-foundation-warning); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Warning</h4>
+            <code>--color-foundation-warning</code>
+            <p class="demo-item__label">Caution states</p>
+        </div>
+        
+        <div class="demo-item">
+            <div style="background-color: var(--color-foundation-success); width: 100px; height: 100px; border-radius: var(--spacing-8); margin-bottom: var(--spacing-8);"></div>
+            <h4>Success</h4>
+            <code>--color-foundation-success</code>
+            <p class="demo-item__label">Success states</p>
+        </div>
+    </div>
+</section>
+
+<!-- Color Scales -->
+<section class="component-section">
+    <h2>Color Scales</h2>
+    <p class="mb-24">9-step color scales from 100 (lightest) to 900 (darkest) for each color family.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Blue Scale</h3>
+        <div style="display: flex; gap: var(--spacing-4); flex-wrap: wrap; margin-bottom: var(--spacing-16);">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-100); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">100</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-200); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">200</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-300); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">300</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-400); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">400</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-500); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">500</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-600); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">600</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-700); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">700</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-800); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">800</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-blue-900); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">900</span>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Gray Scale</h3>
+        <div style="display: flex; gap: var(--spacing-4); flex-wrap: wrap; margin-bottom: var(--spacing-16);">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-100); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4); border: 1px solid var(--color-gray-300);"></div>
+                <span style="font-size: var(--font-size-xs);">100</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-200); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">200</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-300); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">300</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-400); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">400</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-500); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">500</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-600); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">600</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-700); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">700</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-800); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">800</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-gray-900); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">900</span>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Red Scale</h3>
+        <div style="display: flex; gap: var(--spacing-4); flex-wrap: wrap; margin-bottom: var(--spacing-16);">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-100); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">100</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-200); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">200</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-300); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">300</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-400); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">400</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-500); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">500</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-600); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">600</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-700); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">700</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-800); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">800</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-red-900); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">900</span>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Green Scale</h3>
+        <div style="display: flex; gap: var(--spacing-4); flex-wrap: wrap; margin-bottom: var(--spacing-16);">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-100); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">100</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-200); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">200</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-300); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">300</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-400); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">400</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-500); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">500</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-600); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">600</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-700); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">700</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-800); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">800</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-green-900); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">900</span>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Orange Scale</h3>
+        <div style="display: flex; gap: var(--spacing-4); flex-wrap: wrap; margin-bottom: var(--spacing-16);">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-100); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">100</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-200); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">200</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-300); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">300</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-400); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs);">400</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-500); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">500</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-600); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">600</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-700); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">700</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-800); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">800</span>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="background-color: var(--color-orange-900); width: 60px; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-4);"></div>
+                <span style="font-size: var(--font-size-xs); color: var(--color-white);">900</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Utility Classes -->
+<section class="component-section">
+    <h2>Color Utility Classes</h2>
+    <p class="mb-24">Ready-to-use utility classes for backgrounds, text, and borders.</p>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Background Colors</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div class="bg-primary" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center; color: var(--color-white);">
+                    .bg-primary
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="bg-secondary" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-gray-300);">
+                    .bg-secondary
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="bg-accent-a" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center; color: var(--color-white);">
+                    .bg-accent-a
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="bg-accent-b" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center; color: var(--color-white);">
+                    .bg-accent-b
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="bg-critical" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center; color: var(--color-white);">
+                    .bg-critical
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="bg-warning" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center; color: var(--color-white);">
+                    .bg-warning
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="bg-success" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center; color: var(--color-white);">
+                    .bg-success
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Text Colors</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <p class="text-primary" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">.text-primary</p>
+            </div>
+            <div class="demo-item">
+                <p class="text-accent-a" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">.text-accent-a</p>
+            </div>
+            <div class="demo-item">
+                <p class="text-accent-b" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">.text-accent-b</p>
+            </div>
+            <div class="demo-item">
+                <p class="text-critical" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">.text-critical</p>
+            </div>
+            <div class="demo-item">
+                <p class="text-warning" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">.text-warning</p>
+            </div>
+            <div class="demo-item">
+                <p class="text-success" style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">.text-success</p>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Border Colors</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div class="border border-primary" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center;">
+                    .border-primary
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="border border-accent-a" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center;">
+                    .border-accent-a
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="border border-accent-b" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center;">
+                    .border-accent-b
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="border border-critical" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center;">
+                    .border-critical
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="border border-warning" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center;">
+                    .border-warning
+                </div>
+            </div>
+            <div class="demo-item">
+                <div class="border border-success" style="width: 100%; height: 60px; border-radius: var(--spacing-4); margin-bottom: var(--spacing-8); display: flex; align-items: center; justify-content: center;">
+                    .border-success
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</article>
         
       </main>
   
