@@ -1,0 +1,303 @@
+---
+globs: "src/components/**/*"
+description: Quick reference for component architecture and file organization.
+---
+# Component Architecture Reference
+
+This file provides quick reference for the Swage.CSS component architecture and integration system.
+
+## File Organization
+
+### Core Architecture
+```
+src/
+├── swage.css                    # Main entry point
+├── foundation/                  # Foundation CSS system
+│   ├── foundation.css           # Foundation imports
+│   ├── colors.css              # Color system
+│   ├── spacing.css             # Spacing variables
+│   ├── typography.css          # Font system
+│   └── ...                     # Other foundation files
+├── components/                  # Simple UI components
+│   ├── components.css          # Component imports registry
+│   └── {component-name}/       # Individual component directories
+│       ├── {component-name}.css    # Component styles
+│       ├── {component-name}.js     # Component JS (if needed)
+│       └── index.html          # Component demo
+└── blocks/                      # Complex block components
+    ├── blocks.css              # Block imports registry
+    └── {block-name}/           # Individual block directories
+        ├── {block-name}.css        # Block styles
+        ├── {block-name}.js         # Block JavaScript
+        └── index.html          # Block demo
+```
+
+### Import Chain
+```css
+/* swage.css */
+@import 'foundation/foundation.css';
+@import 'components/components.css';
+@import 'blocks/blocks.css';
+
+/* components/components.css */
+@import 'textfield/textfield.css';
+@import 'button/button.css';
+@import '{next-component}/{next-component}.css';
+/* Add new component imports here */
+
+/* blocks/blocks.css */
+@import 'sidenavbar/sidenavbar.css';
+@import '{next-block}/{next-block}.css';
+/* Add new block imports here */
+```
+
+**CRITICAL**: Component demo pages must ONLY import `../../swage.css`. Never import component CSS files directly as this causes:
+- Duplicate CSS loading
+- CSS specificity conflicts
+- Broken icon display
+- Inconsistent styling
+
+## Component Creation Quick Steps
+
+### 1. Create Directory Structure
+```bash
+mkdir -p src/components/{component-name}
+touch src/components/{component-name}/{component-name}.css
+touch src/components/{component-name}/index.html
+```
+
+### 2. Register Component
+Add to `[src/components/components.css](mdc:src/components/components.css)`:
+```css
+@import '{component-name}/{component-name}.css';
+```
+
+### 3. CSS Template (BEM Pattern)
+```css
+/* #region {Component Name} Component */
+
+.{component-name} {
+    /* Base component styles using foundation variables */
+}
+
+.{component-name}__{element} {
+    /* Component element styles */
+}
+
+.{component-name}--{modifier} {
+    /* Component state/variant styles */
+}
+
+/* #endregion */
+```
+
+### 4. HTML Template
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{Component Name} Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <!-- NEVER import component CSS directly - it comes through swage.css -->
+</head>
+<body class="bg-neutral-off-white p-24 font-sans">
+    <!-- Component demo content -->
+</body>
+</html>
+```
+
+## Foundation Variables Quick Reference
+
+### Colors (Use semantic aliases first)
+```css
+--color-foundation-primary       /* Main brand color */
+--color-foundation-secondary     /* Secondary brand color */
+--color-foundation-critical      /* Error states */
+--color-foundation-success       /* Success states */
+--color-foundation-warning       /* Warning states */
+```
+
+### Spacing Scale
+```css
+--spacing-4, --spacing-8, --spacing-12, --spacing-16
+--spacing-20, --spacing-24, --spacing-32, --spacing-40
+/* Use these for consistent spacing */
+```
+
+### Typography
+```css
+--font-family-sans              /* Figtree font family */
+--font-size-sm, --font-size-md, --font-size-lg
+--font-weight-normal, --font-weight-semibold, --font-weight-bold
+```
+
+## Block Creation Quick Steps
+
+### 1. Create Block Directory Structure
+```bash
+mkdir -p src/blocks/{block-name}
+touch src/blocks/{block-name}/{block-name}.css
+touch src/blocks/{block-name}/{block-name}.js
+touch src/blocks/{block-name}/index.html
+```
+
+### 2. Register Block
+Add to `[src/blocks/blocks.css](mdc:src/blocks/blocks.css)`:
+```css
+@import '{block-name}/{block-name}.css';
+```
+
+### 3. Block CSS Template
+```css
+/* #region {Block Name} Block Component */
+
+.{block-name} {
+    /* Base block styles using foundation variables */
+    /* Can include multiple component integrations */
+}
+
+.{block-name}__{element} {
+    /* Block element styles */
+}
+
+.{block-name}--{modifier} {
+    /* Block state/variant styles */
+}
+
+/* #endregion */
+```
+
+### 4. Block JavaScript Template
+```javascript
+(function() {
+    'use strict';
+
+    function initialize{BlockName}() {
+        // Block initialization logic
+        const blocks = document.querySelectorAll('.{block-name}');
+        
+        blocks.forEach(block => {
+            // Individual block setup
+        });
+    }
+
+    // Public API
+    window.{BlockName}Component = {
+        init: initialize{BlockName},
+        // Additional methods
+    };
+
+    // Auto-initialize
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize{BlockName});
+    } else {
+        initialize{BlockName}();
+    }
+})();
+```
+
+### 5. Block Demo Template
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{Block Name} Block Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+</head>
+<body>
+    <!-- Block demo content -->
+    <script src="{block-name}.js"></script>
+</body>
+</html>
+```
+
+## Component vs Block Guidelines
+
+### Use Components For:
+- Simple, reusable UI elements (buttons, inputs, badges)
+- Single-purpose functionality
+- Minimal or no JavaScript requirements
+- Can be used within other components/blocks
+
+### Use Blocks For:
+- Complex, multi-part functionality (navigation, modals, complex forms)
+- Components that combine multiple simpler components
+- Significant JavaScript interaction requirements
+- Application-level layout components
+- Components that manage state or complex user interactions
+
+## Component States Pattern
+
+### Standard Interactive States
+```css
+.component { }                   /* Default */
+.component:hover { }             /* Hover */
+.component:focus { }             /* Focus */
+.component:active { }            /* Active */
+.component--disabled { }         /* Disabled */
+.component--error { }            /* Error state */
+.component--success { }          /* Success state */
+```
+
+### Size Variants
+```css
+.component--small { }            /* Compact size */
+.component { }                   /* Default size */
+.component--large { }            /* Larger size */
+```
+
+## Integration Checklist
+
+### When adding a new component:
+- [ ] Created proper directory structure
+- [ ] Added CSS import to `components.css`
+- [ ] Uses only foundation variables
+- [ ] Follows BEM naming convention
+- [ ] Demo page imports ONLY `../../swage.css` (no direct component CSS imports)
+- [ ] Includes comprehensive demo page
+- [ ] Implements standard states (hover, focus, disabled, etc.)
+- [ ] Icons display correctly (no duplicate CSS loading)
+- [ ] Tested keyboard accessibility
+- [ ] Added to main demo page (optional)
+
+### When adding a new block:
+- [ ] Created proper directory structure (`src/blocks/{block-name}/`)
+- [ ] Added CSS import to `blocks.css`
+- [ ] Uses only foundation variables and existing components
+- [ ] Follows BEM naming convention for block-specific classes
+- [ ] Includes JavaScript file for interactivity
+- [ ] Demo page imports `../../swage.css` and includes `{block-name}.js`
+- [ ] Implements comprehensive demo with all functionality
+- [ ] Provides JavaScript API for programmatic control
+- [ ] Includes event system for integration
+- [ ] Tested responsive behavior (mobile/desktop)
+- [ ] Tested keyboard accessibility and screen readers
+- [ ] Added to main demo page in blocks section
+- [ ] Follows established component integration patterns
+
+## Example References
+
+### Component Example
+See `[src/components/textfield/](mdc:src/components/textfield/)` for a complete component example that demonstrates:
+- Proper BEM class structure
+- Foundation variable usage
+- State management (error, success, disabled)
+- Size variants (small, default, large)
+- Icon integration
+- Comprehensive demo page
+- Accessibility features
+
+### Block Example
+See `[src/blocks/sidenavbar/](mdc:src/blocks/sidenavbar/)` for a complete block example that demonstrates:
+- Complex multi-component integration
+- JavaScript interactivity and state management
+- Responsive behavior (desktop/mobile)
+- Event system for integration
+- Accessibility features (ARIA, keyboard navigation)
+- Using existing components (Logo, Heroicons)
+- Comprehensive demo with programmatic controls

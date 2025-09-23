@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Banner Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Banner Component</h1>
+        <p class="body-lg text-gray-600 mb-24">
+            The Banner component renders a responsive banner which shows different views for desktop and mobile, 
+            exactly as implemented in the Curative UI design system using Headless UI Disclosure.
+        </p>
+
+        <section class="component-section">
+            <h2>Responsive Banner (Auto)</h2>
+            <p class="mb-24">This banner automatically adapts to screen size - desktop shows static content, mobile shows collapsible disclosure.</p>
+            
+            <div class="viewport-note">
+                <strong>Note:</strong> Resize your browser window to see the responsive behavior. Desktop view shows at 768px+ width, mobile view shows below 768px.
+            </div>
+            
+            <!-- Auto-responsive banner - matches Primary story -->
+            <div class="banner demo-banner" data-testid="Banner">
+                <!-- Desktop View -->
+                <div class="banner--desktop">
+                    <div class="banner__content">
+                        <p>
+                            If you are visually impaired or need additional assistance, please call
+                            our support line at 
+                            <span class="semibold-text">888-702-9042</span> to find and
+                            book an appointment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mobile View -->
+                <div class="banner--mobile">
+                    <!-- Mobile Toggle Button -->
+                    <button class="banner__toggle" data-testid="Banner__Toggle" aria-expanded="true">
+                        <div class="banner__toggle-left">
+                            <span class="banner__toggle-icon">
+                                <span class="heroicon heroicon-16 heroicon-exclamation-circle"></span>
+                            </span>
+                            <span class="banner__toggle-title">Important information</span>
+                        </div>
+                        <span class="banner__toggle-chevron">
+                            <span class="heroicon heroicon-16 heroicon-chevron-up"></span>
+                        </span>
+                    </button>
+                    
+                    <!-- Mobile Panel (starts open - shouldStartOpen: true) -->
+                    <div class="banner__panel banner__panel--visible">
+                        <div class="banner__panel-content">
+                            <p>
+                                If you are visually impaired or need additional assistance, please call
+                                our support line at 
+                                <span class="semibold-text">888-702-9042</span> to find and
+                                book an appointment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Desktop View (Forced)</h2>
+            <p class="mb-24">This shows how the banner appears on desktop screens (768px+) with static content display.</p>
+            
+            <!-- Forced Desktop View -->
+            <div class="banner demo-banner force-desktop" data-testid="Banner-Desktop">
+                <div class="banner--desktop">
+                    <div class="banner__content">
+                        <p>
+                            Desktop view always shows the content directly without any toggle functionality. 
+                            This provides immediate visibility of important information on larger screens.
+                        </p>
+                    </div>
+                </div>
+                <div class="banner--mobile">
+                    <!-- This won't show due to force-desktop class -->
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Mobile View (Forced)</h2>
+            <p class="mb-24">This shows how the banner appears on mobile screens (&lt;768px) with collapsible disclosure functionality.</p>
+            
+            <!-- Forced Mobile View - Starts Closed -->
+            <div class="banner demo-banner force-mobile" data-testid="Banner-Mobile-Closed">
+                <div class="banner--desktop">
+                    <!-- This won't show due to force-mobile class -->
+                </div>
+                <div class="banner--mobile">
+                    <button class="banner__toggle" data-testid="Banner-Mobile-Closed__Toggle" aria-expanded="false">
+                        <div class="banner__toggle-left">
+                            <span class="banner__toggle-icon">
+                                <span class="heroicon heroicon-16 heroicon-exclamation-circle"></span>
+                            </span>
+                            <span class="banner__toggle-title">Mobile Banner (Closed)</span>
+                        </div>
+                        <span class="banner__toggle-chevron">
+                            <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
+                        </span>
+                    </button>
+                    
+                    <div class="banner__panel banner__panel--hidden">
+                        <div class="banner__panel-content">
+                            <p>
+                                This content is initially hidden on mobile and can be revealed by tapping the banner toggle. 
+                                This helps save space on smaller screens while keeping important information accessible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forced Mobile View - Starts Open -->
+            <div class="banner demo-banner force-mobile" data-testid="Banner-Mobile-Open">
+                <div class="banner--desktop">
+                    <!-- This won't show due to force-mobile class -->
+                </div>
+                <div class="banner--mobile">
+                    <button class="banner__toggle" data-testid="Banner-Mobile-Open__Toggle" aria-expanded="true">
+                        <div class="banner__toggle-left">
+                            <span class="banner__toggle-icon">
+                                <span class="heroicon heroicon-16 heroicon-exclamation-circle"></span>
+                            </span>
+                            <span class="banner__toggle-title">Mobile Banner (Open)</span>
+                        </div>
+                        <span class="banner__toggle-chevron">
+                            <span class="heroicon heroicon-16 heroicon-chevron-up"></span>
+                        </span>
+                    </button>
+                    
+                    <div class="banner__panel banner__panel--visible">
+                        <div class="banner__panel-content">
+                            <p>
+                                This content is initially visible on mobile (shouldStartOpen=true). 
+                                Users can collapse it by tapping the banner toggle to save screen space when desired.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Custom Content Examples</h2>
+            <p class="mb-24">Banners with different types of content to demonstrate flexibility.</p>
+            
+            <!-- Rich Content Banner -->
+            <div class="banner demo-banner" data-testid="Banner-Rich">
+                <div class="banner--desktop">
+                    <div class="banner__content">
+                        <p>
+                            <strong>System Maintenance:</strong> Our services will be temporarily unavailable on 
+                            <strong>Sunday, Sept 22nd from 2:00-4:00 AM PST</strong> for scheduled maintenance. 
+                            <a href="#" class="primary-link">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="banner--mobile">
+                    <button class="banner__toggle" data-testid="Banner-Rich__Toggle" aria-expanded="false">
+                        <div class="banner__toggle-left">
+                            <span class="banner__toggle-icon">
+                                <span class="heroicon heroicon-16 heroicon-exclamation-circle"></span>
+                            </span>
+                            <span class="banner__toggle-title">System Maintenance</span>
+                        </div>
+                        <span class="banner__toggle-chevron">
+                            <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
+                        </span>
+                    </button>
+                    
+                    <div class="banner__panel banner__panel--hidden">
+                        <div class="banner__panel-content">
+                            <p>
+                                Our services will be temporarily unavailable on 
+                                <strong>Sunday, Sept 22nd from 2:00-4:00 AM PST</strong> for scheduled maintenance. 
+                                <a href="#" class="primary-link">Learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Usage</h2>
+            <p class="mb-24">How to implement the Banner component with the exact Curative UI structure.</p>
+            
+            <h3>Props Interface</h3>
+            <div class="code-block">
+export type BannerProps = CUIComponentProps&lt;
+  PropsWithChildren&lt;{
+    title: string;
+    shouldStartOpen?: boolean;
+    className?: string;
+    textVariant?: TextVariant;
+  }&gt;
+&gt;;
+            </div>
+
+            <h3>Desktop HTML Structure</h3>
+            <div class="code-block">
+&lt;div class="banner"&gt;
+  &lt;div class="banner--desktop"&gt;
+    &lt;div class="banner__content"&gt;
+      {children}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>Mobile HTML Structure</h3>
+            <div class="code-block">
+&lt;div class="banner"&gt;
+  &lt;div class="banner--mobile"&gt;
+    &lt;button class="banner__toggle" aria-expanded="true|false"&gt;
+      &lt;div class="banner__toggle-left"&gt;
+        &lt;span class="banner__toggle-icon"&gt;
+          &lt;span class="heroicon heroicon-16 heroicon-exclamation-circle"&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class="banner__toggle-title"&gt;{title}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;span class="banner__toggle-chevron"&gt;
+        &lt;span class="heroicon heroicon-16 heroicon-chevron-up|down"&gt;&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/button&gt;
+    
+    &lt;div class="banner__panel banner__panel--visible|hidden"&gt;
+      &lt;div class="banner__panel-content"&gt;
+        {children}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>Responsive Behavior</h3>
+            <div class="code-block">
+/* Desktop: 768px+ (desktopBreakpoint = BREAKPOINT_MD) */
+const desktop = useMediaPredicate(`(min-width: 768px)`);
+
+// Desktop View:
+- Shows content directly without toggle
+- Uses: justify-center p-4 pt-3
+
+// Mobile View:  
+- Shows collapsible disclosure with toggle
+- Uses: flex-col py-2 px-4
+- shouldStartOpen controls initial state
+            </div>
+
+            <h3>Tailwind Class Mappings</h3>
+            <div class="code-block">
+/* Base Banner Classes */
+.banner {
+  display: flex;                    /* flex */
+  border-top: 4px solid;           /* border-t-4 */
+  border-color: var(--color-border-control); /* border-t-borderColor-control */
+  background-color: var(--color-surface-highlight); /* bg-surface-highlight */
+}
+
+/* Desktop */
+.banner--desktop {
+  justify-content: center;         /* justify-center */
+  padding: 16px;                   /* p-4 */
+  padding-top: 12px;               /* pt-3 */
+}
+
+/* Mobile */
+.banner--mobile {
+  flex-direction: column;          /* flex-col */
+  padding: 8px 16px;               /* py-2 px-4 */
+}
+
+/* Toggle */
+.banner__toggle {
+  display: flex;                   /* flex */
+  width: 100%;                     /* w-full */
+  justify-content: space-between;  /* justify-between */
+}
+
+/* Text Color */
+.banner__content,
+.banner__toggle-title,
+.banner__panel-content {
+  color: var(--color-text-highlight-default); /* text-textColor-highlight-default */
+}
+
+/* Icon Sizes */
+.banner__toggle-icon,
+.banner__toggle-chevron {
+  width: 16px;  /* SpacingVariant.S16 */
+  height: 16px;
+}
+
+/* Spacing */
+.banner__toggle-title {
+  margin-left: 8px;   /* margin: { left: SpacingVariant.S8 } */
+}
+
+.banner__panel {
+  margin-top: 8px;    /* mt-2 */
+}
+
+.banner__panel-content {
+  margin-left: 24px;  /* margin: { left: SpacingVariant.S24 } */
+  padding-right: 16px; /* padding: { right: SpacingVariant.S16 } */
+}
+            </div>
+
+            <h3>Text Variants</h3>
+            <div class="code-block">
+/* Default: TextVariant.SmRegularTall */
+font-size: var(--font-size-sm);
+line-height: var(--line-height-sm);
+
+/* Title: TextVariant.SmBold */
+font-size: var(--font-size-sm);
+line-height: var(--line-height-sm);
+font-weight: var(--font-weight-bold);
+            </div>
+
+            <h3>Icons Used</h3>
+            <div class="code-block">
+/* Toggle Icon: IconVariant.EXCLAMATION_CIRCLE */
+&lt;span class="heroicon heroicon-16 heroicon-exclamation-circle"&gt;&lt;/span&gt;
+
+/* Chevron Icons: Based on open state */
+// Closed: IconVariant.CHEVRON_DOWN
+&lt;span class="heroicon heroicon-16 heroicon-chevron-down"&gt;&lt;/span&gt;
+
+// Open: IconVariant.CHEVRON_UP  
+&lt;span class="heroicon heroicon-16 heroicon-chevron-up"&gt;&lt;/span&gt;
+            </div>
+        </section>
+    </div>
+
+    <script src="banner.js"></script>
+    <script>
+        // Component demo initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Banner component demo loaded');
+            console.log('Found banners:', document.querySelectorAll('.banner').length);
+            console.log('Found banner toggles:', document.querySelectorAll('.banner__toggle').length);
+            
+            // Expose utility function for demo purposes
+            window.toggleBannerByTestId = function(testId) {
+                if (window.BannerComponent) {
+                    window.BannerComponent.toggleByTestId(testId);
+                }
+            };
+        });
+    </script>
+</body>
+</html>

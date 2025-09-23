@@ -1,0 +1,80 @@
+---
+globs: *.css,*.html,*.js,*.ts,*.jsx,*.tsx
+description: Color system variables and utility classes from foundation
+---
+
+# Color System Reference
+
+The color system is defined in [src/css/foundation/colors.css](mdc:src/css/foundation/colors.css) and follows a structured approach with primitives, scales, semantic aliases, and utility classes.
+
+## Color Variable Structure
+
+### Primitive Colors
+```css
+--color-primary-signal-orange: #FC5C50
+--color-primary-sky-blue: #00B2FF
+--color-neutral-black: #181B25
+--color-neutral-eggshell: #EBE5D8
+--color-neutral-off-white: #F6F3EB
+--color-neutral-white: #FDFDFD
+--color-white: #FFFFFF
+```
+
+### Color Scales
+Each color has a 9-step scale (100-900):
+- Blue: `--color-blue-100` through `--color-blue-900`
+- Red: `--color-red-100` through `--color-red-900`
+- Green: `--color-green-100` through `--color-green-900`
+- Orange: `--color-orange-100` through `--color-orange-900`
+- Gray: `--color-gray-100` through `--color-gray-900`
+
+### Semantic Color Aliases
+Use semantic names instead of literal colors:
+```css
+--color-foundation-primary: var(--color-blue-700)
+--color-foundation-secondary: var(--color-neutral-off-white)
+--color-foundation-accent-a: var(--color-primary-sky-blue)
+--color-foundation-accent-b: var(--color-primary-signal-orange)
+--color-foundation-critical: var(--color-red-700)
+--color-foundation-warning: var(--color-orange-700)
+--color-foundation-success: var(--color-green-700)
+```
+
+## Utility Classes
+
+### Background Colors
+```css
+.bg-primary, .bg-secondary, .bg-accent-a, .bg-accent-b
+.bg-critical, .bg-warning, .bg-success
+.bg-white, .bg-black
+```
+
+### Text Colors
+```css
+.text-primary, .text-secondary, .text-accent-a, .text-accent-b
+.text-critical, .text-warning, .text-success
+.text-white, .text-black
+```
+
+### Border Colors
+```css
+.border-primary, .border-secondary, .border-accent-a, .border-accent-b
+.border-critical, .border-warning, .border-success
+.border-white, .border-black
+```
+
+## Best Practices
+1. **Use semantic aliases** like `--color-foundation-primary` instead of literal colors
+2. **Prefer utility classes** for simple styling
+3. **Use CSS variables** when creating custom components
+4. **Follow the scale system** for consistent color relationships
+5. **Test color contrast** for accessibility compliance
+
+## Color Context
+- **Primary**: Main brand color (blue-700)
+- **Secondary**: Neutral background color  
+- **Accent A**: Sky blue for highlights
+- **Accent B**: Signal orange for attention
+- **Critical**: Error states (red-700)
+- **Warning**: Caution states (orange-700) 
+- **Success**: Success states (green-700)

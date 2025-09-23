@@ -1,0 +1,78 @@
+---
+globs: *.css,*.html,*.js,*.ts,*.jsx,*.tsx
+description: Heroicon utility class system and usage patterns
+---
+
+# Heroicon Utility Class System
+
+This project includes a comprehensive Heroicon utility class system in [src/css/foundation/icons.css](mdc:src/css/foundation/icons.css).
+
+## Available Icon Classes
+
+### 24px Solid Icons (Default)
+```css
+.heroicon.heroicon-[iconname]
+```
+- 318 icons available
+- Default size when using base `.heroicon` class
+
+### 24px Outline Icons
+```css
+.heroicon.heroicon-outline-[iconname]
+```
+- 318 icons available
+- Outline versions of the icon set
+
+### 20px Solid Icons
+```css
+.heroicon.heroicon-20.heroicon-[iconname]
+```
+- 318 icons available
+- Compound selector for 20px sizing
+
+### 16px Solid Icons
+```css
+.heroicon.heroicon-16.heroicon-[iconname]
+```
+- 275 icons available
+- Compound selector for 16px sizing
+
+## Usage Patterns
+
+### Basic Usage
+```html
+<!-- Default 24px solid -->
+<div class="heroicon heroicon-user"></div>
+<div class="heroicon heroicon-home"></div>
+
+<!-- 24px outline -->
+<div class="heroicon heroicon-outline-user"></div>
+
+<!-- 20px solid -->
+<div class="heroicon heroicon-20 heroicon-user"></div>
+
+<!-- 16px solid -->
+<div class="heroicon heroicon-16 heroicon-user"></div>
+```
+
+### Base Heroicon Class
+Always include the base `.heroicon` class which provides:
+- `display: inline-block`
+- `width: var(--spacing-24)` (24px default)
+- `height: var(--spacing-24)` (24px default)
+- `background-size: contain`
+- `background-repeat: no-repeat`
+- `background-position: center`
+- `flex-shrink: 0`
+
+## Common Icon Names
+Popular icons include: `user`, `home`, `chevron-down`, `chevron-up`, `chevron-left`, `chevron-right`, `x-mark`, `plus`, `minus`, `check`, `arrow-left`, `arrow-right`, `heart`, `star`, `envelope`, `phone`, `calendar`, `clock`, `cog`, `bell`, `trash`, `pencil`, `eye`, `lock-closed`, `magnifying-glass`
+
+## File Organization
+The icon classes are organized in [icons.css](mdc:src/css/foundation/icons.css) with these regions:
+- Helper Classes
+- Heroicon Base Classes  
+- Heroicon Utility Classes (24px solid)
+- Heroicon Outline Utility Classes (24px outline)
+- Heroicon 20px Utility Classes (20px solid)
+- Heroicon 16px Utility Classes (16px solid)

@@ -1,0 +1,335 @@
+Quick reference for component architecture and file organization.
+
+# Component Architecture Reference
+
+This file provides quick reference for the Swage.CSS component architecture and integration system.
+
+## File Organization
+
+### Core Architecture
+```
+src/
+├── swage.css                    # Main entry point
+├── foundation/                  # Foundation CSS system
+│   ├── foundation.css           # Foundation imports
+│   ├── colors.css              # Color system
+│   ├── spacing.css             # Spacing variables
+│   ├── typography.css          # Font system
+│   └── ...                     # Other foundation files
+└── components/
+    ├── components.css          # Component imports registry
+    └── {component-name}/       # Individual component directories
+        ├── {component-name}.css    # Component styles
+        ├── {component-name}.js     # Component JavaScript (if interactive)
+        └── index.html          # Component demo
+```
+
+### Import Chain
+```css
+/* swage.css */
+@import 'foundation/foundation.css';
+@import 'components/components.css';
+
+/* components/components.css */
+@import 'textfield/textfield.css';
+@import 'button/button.css';
+@import '{next-component}/{next-component}.css';
+/* Add new component imports here */
+```
+
+**CRITICAL**: Component demo pages must ONLY import `../../swage.css`. Never import component CSS files directly as this causes:
+- Duplicate CSS loading
+- CSS specificity conflicts
+- Broken icon display
+- Inconsistent styling
+
+## Component Creation Quick Steps
+
+### 1. Create Directory Structure
+```bash
+mkdir -p src/components/{component-name}
+touch src/components/{component-name}/{component-name}.css
+touch src/components/{component-name}/index.html
+# If component needs interactivity:
+touch src/components/{component-name}/{component-name}.js
+```
+
+### 2. Register Component
+Add to `[src/components/components.css](mdc:src/components/components.css)`:
+```css
+@import '{component-name}/{component-name}.css';
+```
+
+### 3. CSS Template (BEM Pattern)
+```css
+/* #region {Component Name} Component */
+
+.{component-name} {
+    /* Base component styles using foundation variables */
+}
+
+.{component-name}__{element} {
+    /* Component element styles */
+}
+
+.{component-name}--{modifier} {
+    /* Component state/variant styles */
+}
+
+/* #endregion */
+```
+
+### 4. JavaScript Template (If Interactive)
+```javascript
+/**
+ * {Component Name} Component JavaScript
+ * Provides {description of functionality}
+ * Matches Curative UI {ComponentName} component pattern
+ */
+
+(function() {
+    'use strict';
+
+    // Initialize component functionality
+    function initialize{ComponentName}s() {
+        const components = document.querySelectorAll('.{component-name}');
+        
+        components.forEach(component => {
+            // Component initialization logic
+            setupEventListeners(component);
+        });
+    }
+
+    function setupEventListeners(component) {
+        // Event listener setup
+    }
+
+    // Public API
+    window.{ComponentName}Component = {
+        init: initialize{ComponentName}s,
+        // Additional public methods
+    };
+
+    // Auto-initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize{ComponentName}s);
+    } else {
+        initialize{ComponentName}s();
+    }
+
+    console.log('{ComponentName} component JavaScript loaded');
+})();
+```
+
+### 5. HTML Template
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{Component Name} Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+    <!-- NEVER import component CSS directly - it comes through swage.css -->
+    <!-- NEVER use inline CSS or <style> blocks - use classes from demo.css -->
+</head>
+<body>
+    <div class="container">
+        <h1>{Component Name} Component</h1>
+        <p class="body-lg text-gray-600 mb-24">Component description...</p>
+        
+        <section class="component-section">
+            <h2>Section Title</h2>
+            <p class="mb-24">Section description...</p>
+            
+            <!-- Component demo content using demo.css classes -->
+        </section>
+    </div>
+    
+    <!-- If component has JavaScript: -->
+    <script src="{component-name}.js"></script>
+    <script>
+        // Component demo initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('{Component Name} demo loaded');
+            
+            // Demo-specific functionality if needed
+        });
+    </script>
+</body>
+</html>
+```
+
+## JavaScript Organization Pattern
+
+### When to Create JavaScript Files
+Create a `{component-name}.js` file for components that have:
+- User interactions (clicks, keyboard navigation)
+- State management (open/closed, selected/unselected)
+- Dynamic content updates
+- Form functionality
+- Animation or transition logic
+
+### JavaScript File Structure
+1. **IIFE Wrapper**: Encapsulate functionality to avoid global pollution
+2. **Initialization Function**: Main setup function for the component
+3. **Event Handlers**: Specific functions for user interactions
+4. **Utility Functions**: Helper functions for state management
+5. **Public API**: Expose necessary functions via `window.{ComponentName}Component`
+6. **Auto-initialization**: Automatically set up components when DOM loads
+
+### Examples of Interactive Components
+- **Accordion**: `accordion.js` - Toggle expand/collapse functionality
+- **Banner**: `banner.js` - Mobile disclosure toggle, responsive behavior
+- **Select**: `select.js` - Dropdown opening, option selection, search
+- **Toggle**: `toggle.js` - Switch state management
+- **Modal**: `modal.js` - Open/close, backdrop clicks, keyboard navigation
+- **Tabs**: `tabs.js` - Tab switching, keyboard navigation
+
+### Examples of Static Components
+- **Badge**: No JavaScript needed - purely visual
+- **Logo**: No JavaScript needed - static display
+- **Card**: No JavaScript needed - layout component
+- **Button**: Basic styling only - interactions handled by parent components
+
+## Foundation Variables Quick Reference
+
+### Colors (Use semantic aliases first)
+```css
+--color-foundation-primary       /* Main brand color */
+--color-foundation-secondary     /* Secondary brand color */
+--color-foundation-critical      /* Error states */
+--color-foundation-success       /* Success states */
+--color-foundation-warning       /* Warning states */
+```
+
+### Spacing Scale
+```css
+--spacing-4, --spacing-8, --spacing-12, --spacing-16
+--spacing-20, --spacing-24, --spacing-32, --spacing-40
+/* Use these for consistent spacing */
+```
+
+### Typography
+```css
+--font-family-sans              /* Figtree font family */
+--font-size-sm, --font-size-md, --font-size-lg
+--font-weight-normal, --font-weight-semibold, --font-weight-bold
+```
+
+## Component States Pattern
+
+### Standard Interactive States
+```css
+.component { }                   /* Default */
+.component:hover { }             /* Hover */
+.component:focus { }             /* Focus */
+.component:active { }            /* Active */
+.component--disabled { }         /* Disabled */
+.component--error { }            /* Error state */
+.component--success { }          /* Success state */
+```
+
+### Size Variants
+```css
+.component--small { }            /* Compact size */
+.component { }                   /* Default size */
+.component--large { }            /* Larger size */
+```
+
+## Demo CSS Organization
+
+### Using Demo CSS Classes
+All component demo pages must use classes from `[src/demo.css](mdc:src/demo.css)` instead of inline CSS or `<style>` blocks. This ensures:
+- Consistent styling across all demo pages
+- Centralized demo-specific CSS management
+- Better maintainability and reusability
+- Cleaner HTML code
+
+### Available Demo CSS Classes
+
+#### Layout Classes
+```css
+.container              /* Main demo container with max-width and grid layout */
+.component-section      /* Individual component section styling */
+.demo-grid             /* Grid layout for component examples */
+.demo-item             /* Individual demo item container */
+```
+
+#### Container Sizes
+```css
+.main-container        /* 800px max-width for main content */
+.wide-container        /* 1000px max-width for wider content */
+.extra-wide-container  /* 1200px max-width for extra wide content */
+```
+
+#### Typography Classes
+```css
+.body-lg              /* Large body text */
+.text-gray-600        /* Gray text color */
+.mb-24               /* 24px bottom margin */
+.semibold-text       /* Semibold font weight */
+.primary-link        /* Primary colored link with underline */
+.white-text          /* White text color */
+.white-heading       /* White heading color */
+```
+
+#### Common Demo Styles
+```css
+.code-block          /* Code example styling */
+.code-example        /* Code example with background */
+.usage-section       /* Usage documentation section */
+.list-style          /* Bulleted list styling */
+.list-style-nested   /* Nested list styling */
+.viewport-note       /* Banner component viewport notes */
+.interactive-controls /* Interactive demo controls */
+```
+
+### Demo CSS Rules
+1. **NO inline CSS**: Never use `style="..."` attributes in demo pages
+2. **NO style blocks**: Never use `<style>...</style>` blocks in demo pages
+3. **Use demo classes**: Always use predefined classes from `demo.css`
+4. **Add new classes**: If you need new styling, add it to `demo.css` with proper naming
+5. **Keep it semantic**: Use meaningful class names that describe purpose, not appearance
+
+## Integration Checklist
+
+When adding a new component:
+- [ ] Created proper directory structure
+- [ ] Added CSS import to `components.css`
+- [ ] Uses only foundation variables
+- [ ] Follows BEM naming convention
+- [ ] Demo page imports ONLY `../../swage.css` (no direct component CSS imports)
+- [ ] **NEW**: Demo page uses ONLY classes from `demo.css` (no inline CSS or style blocks)
+- [ ] Includes comprehensive demo page
+- [ ] **NEW**: If interactive, created `{component-name}.js` file
+- [ ] **NEW**: JavaScript follows IIFE pattern with public API
+- [ ] **NEW**: JavaScript auto-initializes on DOM ready
+- [ ] Implements standard states (hover, focus, disabled, etc.)
+- [ ] Icons display correctly (no duplicate CSS loading)
+- [ ] Tested keyboard accessibility
+- [ ] Added to main demo page (optional)
+
+## Example Component Reference
+
+### Static Component
+See `[src/components/badge/](mdc:src/components/badge/)` for a static component example.
+
+### Interactive Component
+See `[src/components/accordion/](mdc:src/components/accordion/)` for an interactive component example that demonstrates:
+- Proper JavaScript file organization
+- IIFE wrapper pattern
+- Public API exposure
+- Auto-initialization
+- Event handling
+- State management
+- Accessibility support
+
+### Complex Interactive Component
+See `[src/components/select/](mdc:src/components/select/)` for a complex interactive component with:
+- Multiple interaction patterns
+- Search functionality
+- Keyboard navigation
+- State persistence
+- Public utility methods

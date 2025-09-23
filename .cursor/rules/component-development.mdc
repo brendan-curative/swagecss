@@ -1,0 +1,283 @@
+---
+alwaysApply: true
+description: Guide for developing new components following the established Swage.CSS component architecture.
+---
+# Component Development Guide
+
+This project follows a structured component architecture where each component is self-contained and follows established patterns. Use this guide when creating new components.
+
+## Component Architecture Overview
+
+The component system is organized as follows:
+- `[src/swage.css](mdc:src/swage.css)` - Main entry point that imports foundation and components
+- `[src/components/components.css](mdc:src/components/components.css)` - Imports all individual component CSS files
+- `[src/components/{component-name}/](mdc:src/components/)` - Individual component directories
+
+## Directory Structure Pattern
+
+Each component must follow this exact structure:
+
+```
+src/components/{component-name}/
+├── {component-name}.css         # Component-specific styles
+└── index.html                   # Component demo and documentation
+```
+
+### Example: Textfield Component
+```
+src/components/textfield/
+├── textfield.css               # All textfield styles
+└── index.html                  # Textfield demo page
+```
+
+## Component CSS Guidelines
+
+### 1. File Structure
+- **Location**: `src/components/{component-name}/{component-name}.css`
+- **Naming**: Use kebab-case for component names (e.g., `text-field`, `dropdown-menu`)
+- **Organization**: Use `/* #region */` and `/* #endregion */` comments for code sections
+
+### 2. CSS Class Naming (BEM Methodology)
+```css
+/* Base component */
+.{component-name} { }
+
+/* Elements (parts of the component) */
+.{component-name}__{element} { }
+
+/* Modifiers (variants/states) */
+.{component-name}--{modifier} { }
+.{component-name}__{element}--{modifier} { }
+```
+
+### 3. Foundation CSS Variables
+**CRITICAL**: Only use CSS variables defined in `[src/foundation/](mdc:src/foundation/)`:
+
+#### Colors
+```css
+/* Semantic colors (preferred) */
+var(--color-foundation-primary)
+var(--color-foundation-secondary)
+var(--color-foundation-critical)
+var(--color-foundation-success)
+var(--color-foundation-warning)
+
+/* Color scales when semantic colors don't apply */
+var(--color-gray-100) through var(--color-gray-900)
+var(--color-blue-100) through var(--color-blue-900)
+/* etc. */
+```
+
+#### Spacing
+```css
+var(--spacing-0) through var(--spacing-320)
+```
+
+#### Typography
+```css
+var(--font-family-sans)
+var(--font-size-xs) through var(--font-size-4xl)
+var(--line-height-xs) through var(--line-height-4xl)
+var(--font-weight-normal), var(--font-weight-semibold), var(--font-weight-bold)
+```
+
+### 4. Component CSS Template
+```css
+/* #region {Component Name} Component */
+
+/* Base component wrapper */
+.{component-name} {
+    /* Base styles using foundation variables */
+    font-family: var(--font-family-sans);
+    /* Additional base styles */
+}
+
+/* Component elements */
+.{component-name}__{element} {
+    /* Element styles */
+}
+
+/* Component states/modifiers */
+.{component-name}--{state} {
+    /* State-specific styles */
+}
+
+.{component-name}--{state} .{component-name}__{element} {
+    /* Element styles within states */
+}
+
+/* Size variants */
+.{component-name}--small { }
+.{component-name}--large { }
+
+/* Interactive states */
+.{component-name}:hover { }
+.{component-name}:focus { }
+.{component-name}:disabled { }
+
+/* #endregion */
+```
+
+## Component HTML Guidelines
+
+### 1. Demo Page Structure
+Each component must have an `index.html` file that serves as both demo and documentation:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{Component Name} Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+</head>
+<body class="bg-neutral-off-white p-24 font-sans">
+    <div class="mx-auto" style="max-width: 800px;">
+        <!-- Component demo content -->
+    </div>
+</body>
+</html>
+```
+
+### 2. Required Demo Sections
+Include these sections in your component demo:
+
+1. **Header** - Component name and description
+2. **Basic Examples** - Default component usage
+3. **States** - Error, success, disabled, etc.
+4. **Variants** - Different sizes, styles, configurations
+5. **Interactive Examples** - Working forms or interactions
+6. **Usage Documentation** - HTML code examples
+
+### 3. Semantic HTML
+- Use proper semantic HTML elements
+- Include ARIA attributes for accessibility
+- Ensure proper label associations for form elements
+- Use meaningful IDs and classes
+
+## Integration Process
+
+### 1. Component Registration
+After creating a component, register it in the components system:
+
+#### Add to components.css
+```css
+/* In src/components/components.css */
+@import '{component-name}/{component-name}.css';
+```
+
+**CRITICAL**: Component demo pages must ONLY import `../../swage.css` and never import component CSS directly. All component styles are automatically included through the CSS import chain:
+
+**CSS Import Chain:**
+```
+swage.css → components/components.css → {component-name}/{component-name}.css
+```
+
+This ensures:
+- No duplicate CSS loading
+- Proper CSS specificity and cascade order
+- Consistent styling across all components
+- Proper foundation variable inheritance
+
+#### Update main demo page
+```html
+<!-- In index.html, add component link -->
+<div class="bg-white border rounded p-24">
+    <div class="flex items-center justify-between mb-16">
+        <div>
+            <h3 class="heading-lg mb-4">{Component Name}</h3>
+            <p class="body-sm text-gray-600">Component description</p>
+        </div>
+        <a href="src/components/{component-name}/" class="bg-primary text-white px-16 py-8 rounded font-semibold text-sm">
+            View Component
+        </a>
+    </div>
+    <!-- Quick preview examples -->
+</div>
+```
+
+### 2. Component States Standard
+All interactive components should support these states:
+- **Default** - Normal state
+- **Hover** - Mouse hover state
+- **Focus** - Keyboard/mouse focus state
+- **Active** - Currently being interacted with
+- **Disabled** - Non-interactive state
+- **Error** - Invalid/error state
+- **Success** - Valid/success state (if applicable)
+
+### 3. Accessibility Requirements
+- Keyboard navigation support
+- Screen reader compatibility
+- Proper contrast ratios
+- Focus indicators
+- ARIA labels and descriptions
+
+## Development Workflow
+
+### 1. Planning
+- Define component purpose and API
+- Identify required states and variants
+- Plan HTML structure and CSS classes
+
+### 2. Implementation
+- Create component directory structure
+- Write CSS following foundation system rules
+- Create comprehensive demo page
+- Test all states and variants
+
+### 3. Integration
+- Add component to `components.css`
+- Update main demo page
+- Test integration with foundation system
+
+### 4. Documentation
+- Ensure demo page includes usage examples
+- Document any special requirements
+- Add component to this guide if it introduces new patterns
+
+## Best Practices
+
+### CSS
+- Use semantic naming for classes and modifiers
+- Prefer foundation variables over hardcoded values
+- Keep specificity low and avoid `!important`
+- Use logical property groupings in CSS regions
+
+### HTML
+- Write semantic, accessible markup
+- Use consistent naming conventions
+- Include proper form labels and ARIA attributes
+- Test keyboard navigation
+
+### Organization
+- Keep components self-contained
+- Use consistent file naming
+- Follow established patterns from existing components
+- Document any deviations from standard patterns
+
+## Examples and References
+
+### Study These Components
+- **Textfield**: `[src/components/textfield/](mdc:src/components/textfield/)` - Form input with states, sizes, and icons
+- Reference this component for form element patterns, state management, and BEM class structure
+
+### Common Patterns
+- State management with CSS classes
+- Icon integration using Heroicon system
+- Responsive design with foundation utilities
+- Interactive behavior with vanilla JavaScript
+
+## Validation Checklist
+
+Before considering a component complete, verify:
+- [ ] Follows directory structure pattern
+- [ ] Uses only foundation CSS variables
+- [ ] Implements all required states
+- [ ] Includes comprehensive demo page
+- [ ] Registered in `components.css`
+- [ ] Accessible and keyboard navigable
+- [ ] Responsive across device sizes
+- [ ] Follows BEM naming methodology
+- [ ] Uses proper code region organization

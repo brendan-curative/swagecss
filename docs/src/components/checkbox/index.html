@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Checkbox Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+</head>
+<body class="bg-neutral-off-white p-24 font-sans">
+    <div class="mx-auto wide-container">
+        <!-- Header -->
+        <div class="mb-32">
+            <h1 class="heading-3xl mb-8">Checkbox Component</h1>
+            <p class="body-lg text-gray-600">Checkbox components render an interface for representing a selection the user can make. They usually appear as a group in which one or more options may be selected.</p>
+        </div>
+
+        <!-- Basic Checkboxes -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Basic Checkboxes</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                    <!-- Default State -->
+                    <div>
+                        <h3 class="heading-sm mb-12">Default</h3>
+                        <div class="space-y-12">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" id="default-1" name="default-group" value="option1" checked>
+                                <span class="checkbox__label">Checked Option</span>
+                            </label>
+                            
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" id="default-2" name="default-group" value="option2">
+                                <span class="checkbox__label">Unchecked Option</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Disabled State -->
+                    <div>
+                        <h3 class="heading-sm mb-12">Disabled</h3>
+                        <div class="space-y-12">
+                            <label class="checkbox checkbox--disabled">
+                                <input type="checkbox" class="checkbox__input" id="disabled-1" name="disabled-group" value="option1" checked disabled>
+                                <span class="checkbox__label">Disabled Checked</span>
+                            </label>
+                            
+                            <label class="checkbox checkbox--disabled">
+                                <input type="checkbox" class="checkbox__input" id="disabled-2" name="disabled-group" value="option2" disabled>
+                                <span class="checkbox__label">Disabled Unchecked</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error State -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Error State</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="space-y-16">
+                    <div>
+                        <label class="checkbox checkbox--error">
+                            <input type="checkbox" class="checkbox__input" id="error-1" name="error-group" value="option1" checked>
+                            <span class="checkbox__label">Error Checked</span>
+                        </label>
+                        <div class="checkbox__error-message">
+                            <div class="heroicon heroicon-exclamation-circle heroicon-16"></div>
+                            <p>This option has an error.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="checkbox checkbox--error">
+                            <input type="checkbox" class="checkbox__input" id="error-2" name="error-group" value="option2">
+                            <span class="checkbox__label">Error Unchecked</span>
+                        </label>
+                        <div class="checkbox__error-message">
+                            <div class="heroicon heroicon-exclamation-circle heroicon-16"></div>
+                            <p>This option also has an error.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Small Variant -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Small Variant</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="space-y-12">
+                    <label class="checkbox checkbox--small">
+                        <input type="checkbox" class="checkbox__input" id="small-1" name="small-group" value="option1" checked>
+                        <span class="checkbox__label">Small Checked</span>
+                    </label>
+                    
+                    <label class="checkbox checkbox--small">
+                        <input type="checkbox" class="checkbox__input" id="small-2" name="small-group" value="option2">
+                        <span class="checkbox__label">Small Unchecked</span>
+                    </label>
+                    
+                    <label class="checkbox checkbox--small checkbox--disabled">
+                        <input type="checkbox" class="checkbox__input" id="small-3" name="small-group" value="option3" disabled>
+                        <span class="checkbox__label">Small Disabled</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- With Titles -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Checkboxes with Titles</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="space-y-20">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" id="title-1" name="title-group" value="oral-test">
+                        <span class="checkbox__label">
+                            <span class="checkbox__label-title">COVID-19 Oral Test</span>
+                            <span class="checkbox__label-text">Self-collected oral swab test with 24-48 hours turnaround.</span>
+                        </span>
+                    </label>
+                    
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" id="title-2" name="title-group" value="nasal-test" checked>
+                        <span class="checkbox__label">
+                            <span class="checkbox__label-title">COVID-19 Nasal Test</span>
+                            <span class="checkbox__label-text">Professional-administered nasal swab test with same-day results.</span>
+                        </span>
+                    </label>
+                    
+                    <label class="checkbox checkbox--disabled">
+                        <input type="checkbox" class="checkbox__input" id="title-3" name="title-group" value="blood-test" disabled>
+                        <span class="checkbox__label">
+                            <span class="checkbox__label-title">COVID-19 Blood Test</span>
+                            <span class="checkbox__label-text">Antibody blood test to determine past infection (currently unavailable).</span>
+                        </span>
+                    </label>
+                    
+                    <div>
+                        <label class="checkbox checkbox--error">
+                            <input type="checkbox" class="checkbox__input" id="title-4" name="title-group" value="rapid-test" checked>
+                            <span class="checkbox__label">
+                                <span class="checkbox__label-title">COVID-19 Rapid Test</span>
+                                <span class="checkbox__label-text">Quick antigen test with results in 15 minutes.</span>
+                            </span>
+                        </label>
+                        <div class="checkbox__error-message">
+                            <div class="heroicon heroicon-exclamation-circle heroicon-16"></div>
+                            <p>Rapid tests are currently unavailable at this location.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Control Variants -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Control Variants</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="space-y-24">
+                    <!-- Control Normal -->
+                    <div>
+                        <h3 class="heading-sm mb-12">Control Normal</h3>
+                        <div class="space-y-16">
+                            <label class="checkbox checkbox--control">
+                                <input type="checkbox" class="checkbox__input" id="control-1" name="control-group" value="option1" checked>
+                                <span class="checkbox__label">
+                                    <span class="checkbox__label-title">Service Option A</span>
+                                    <span class="checkbox__label-text">Comprehensive service with full support and extended warranty.</span>
+                                </span>
+                            </label>
+                            
+                            <label class="checkbox checkbox--control">
+                                <input type="checkbox" class="checkbox__input" id="control-2" name="control-group" value="option2">
+                                <span class="checkbox__label">
+                                    <span class="checkbox__label-title">Service Option B</span>
+                                    <span class="checkbox__label-text">Basic service with standard support and limited warranty.</span>
+                                </span>
+                            </label>
+                            
+                            <label class="checkbox checkbox--control checkbox--disabled">
+                                <input type="checkbox" class="checkbox__input" id="control-3" name="control-group" value="option3" disabled>
+                                <span class="checkbox__label">
+                                    <span class="checkbox__label-title">Service Option C</span>
+                                    <span class="checkbox__label-text">Premium service currently unavailable in your area.</span>
+                                </span>
+                            </label>
+                            
+                            <div>
+                                <label class="checkbox checkbox--control checkbox--error">
+                                    <input type="checkbox" class="checkbox__input" id="control-4" name="control-group" value="option4">
+                                    <span class="checkbox__label">
+                                        <span class="checkbox__label-title">Service Option D</span>
+                                        <span class="checkbox__label-text">Expedited service with additional fees.</span>
+                                    </span>
+                                </label>
+                                <div class="checkbox__error-message">
+                                    <div class="heroicon heroicon-exclamation-circle heroicon-16"></div>
+                                    <p>This service requires additional verification.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Control Short Variants -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Control Short Variants</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="space-y-16">
+                    <label class="checkbox checkbox--control-short checkbox--checked">
+                        <input type="checkbox" class="checkbox__input" id="control-short-1" name="control-short-group" value="option1" checked>
+                        <span class="checkbox__label">Selected Option</span>
+                    </label>
+                    
+                    <label class="checkbox checkbox--control-short">
+                        <input type="checkbox" class="checkbox__input" id="control-short-2" name="control-short-group" value="option2">
+                        <span class="checkbox__label">Unselected Option</span>
+                    </label>
+                    
+                    <label class="checkbox checkbox--control-short checkbox--disabled">
+                        <input type="checkbox" class="checkbox__input" id="control-short-3" name="control-short-group" value="option3" disabled>
+                        <span class="checkbox__label">Disabled Option</span>
+                    </label>
+                    
+                    <div>
+                        <label class="checkbox checkbox--control-short checkbox--error">
+                            <input type="checkbox" class="checkbox__input" id="control-short-4" name="control-short-group" value="option4">
+                            <span class="checkbox__label">Error Option</span>
+                        </label>
+                        <div class="checkbox__error-message">
+                            <div class="heroicon heroicon-exclamation-circle heroicon-16"></div>
+                            <p>This option has validation errors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decorative Checkbox -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Decorative Checkbox</h2>
+            <div class="bg-white border rounded p-24">
+                <p class="body-md mb-16 text-gray-600">Non-interactive checkboxes for display purposes only:</p>
+                <div class="flex items-center gap-16">
+                    <div class="checkbox--decorative">
+                        <div class="heroicon heroicon-check heroicon-16"></div>
+                    </div>
+                    <span class="body-md">Checked (decorative)</span>
+                    
+                    <div class="checkbox--decorative"></div>
+                    <span class="body-md">Unchecked (decorative)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Examples -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Interactive Examples</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="space-y-24">
+                    <!-- Multi-select Form -->
+                    <div>
+                        <h3 class="heading-lg mb-16">Service Selection</h3>
+                        <form class="space-y-16" onsubmit="handleFormSubmit(event)">
+                            <fieldset>
+                                <legend class="heading-sm mb-12">Choose your services:</legend>
+                                <div class="space-y-12">
+                                    <label class="checkbox">
+                                        <input type="checkbox" class="checkbox__input" name="services" value="consultation" id="service-1">
+                                        <span class="checkbox__label">
+                                            <span class="checkbox__label-title">Medical Consultation</span>
+                                            <span class="checkbox__label-text">30-minute video consultation with a licensed physician.</span>
+                                        </span>
+                                    </label>
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" class="checkbox__input" name="services" value="prescription" id="service-2">
+                                        <span class="checkbox__label">
+                                            <span class="checkbox__label-title">Prescription Review</span>
+                                            <span class="checkbox__label-text">Review and refill existing prescriptions.</span>
+                                        </span>
+                                    </label>
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" class="checkbox__input" name="services" value="lab-work" id="service-3">
+                                        <span class="checkbox__label">
+                                            <span class="checkbox__label-title">Lab Work</span>
+                                            <span class="checkbox__label-text">Blood work and diagnostic tests at nearby facilities.</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                            
+                            <div class="flex items-center gap-16">
+                                <button type="submit" class="button button--primary">Submit Selection</button>
+                                <button type="reset" class="button button--outline">Clear All</button>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-16">
+                            <h4 class="heading-sm mb-8">Selected Services:</h4>
+                            <div id="selected-services" class="body-sm text-gray-600">None selected</div>
+                        </div>
+                    </div>
+
+                    <!-- Agreement Checkboxes -->
+                    <div>
+                        <h3 class="heading-lg mb-16">Terms and Agreements</h3>
+                        <div class="space-y-16">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" id="terms" name="agreements" value="terms" required>
+                                <span class="checkbox__label">
+                                    I agree to the <a href="#" class="text-foundation-primary underline">Terms of Service</a>
+                                </span>
+                            </label>
+                            
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" id="privacy" name="agreements" value="privacy" required>
+                                <span class="checkbox__label">
+                                    I agree to the <a href="#" class="text-foundation-primary underline">Privacy Policy</a>
+                                </span>
+                            </label>
+                            
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox__input" id="marketing" name="agreements" value="marketing">
+                                <span class="checkbox__label">
+                                    I would like to receive marketing communications (optional)
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HTML Code Examples -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">HTML Code Examples</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="space-y-16">
+                    <div>
+                        <h3 class="heading-sm mb-8">Basic Checkbox</h3>
+                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;label class="checkbox"&gt;
+  &lt;input type="checkbox" class="checkbox__input" id="basic" name="group" value="option"&gt;
+  &lt;span class="checkbox__label"&gt;Basic Checkbox&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-8">Checkbox with Title</h3>
+                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;label class="checkbox"&gt;
+  &lt;input type="checkbox" class="checkbox__input" id="title" name="group" value="option"&gt;
+  &lt;span class="checkbox__label"&gt;
+    &lt;span class="checkbox__label-title"&gt;Option Title&lt;/span&gt;
+    &lt;span class="checkbox__label-text"&gt;Option description text.&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-8">Disabled Checkbox</h3>
+                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;label class="checkbox checkbox--disabled"&gt;
+  &lt;input type="checkbox" class="checkbox__input" id="disabled" name="group" value="option" disabled&gt;
+  &lt;span class="checkbox__label"&gt;Disabled Checkbox&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-8">Error State</h3>
+                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;div&gt;
+  &lt;label class="checkbox checkbox--error"&gt;
+    &lt;input type="checkbox" class="checkbox__input" id="error" name="group" value="option"&gt;
+    &lt;span class="checkbox__label"&gt;Error Checkbox&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;div class="checkbox__error-message"&gt;
+    &lt;div class="heroicon heroicon-exclamation-circle heroicon-16"&gt;&lt;/div&gt;
+    &lt;p&gt;Error message text.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-8">Control Variant</h3>
+                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;label class="checkbox checkbox--control"&gt;
+  &lt;input type="checkbox" class="checkbox__input" id="control" name="group" value="option"&gt;
+  &lt;span class="checkbox__label"&gt;
+    &lt;span class="checkbox__label-title"&gt;Control Title&lt;/span&gt;
+    &lt;span class="checkbox__label-text"&gt;Control description.&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/label&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Classes -->
+        <section class="mb-32">
+            <h2 class="heading-xl mb-16">Available Classes</h2>
+            <div class="bg-white border rounded p-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
+                    <div>
+                        <h3 class="heading-sm mb-12">Base Classes</h3>
+                        <ul class="space-y-4 text-sm font-mono">
+                            <li class="p-8 bg-gray-100 rounded">.checkbox</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox__input</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox__label</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox__label-title</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox__label-text</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-12">State Modifiers</h3>
+                        <ul class="space-y-4 text-sm font-mono">
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--disabled</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--error</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--checked</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--no-margin</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-12">Variant Modifiers</h3>
+                        <ul class="space-y-4 text-sm font-mono">
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--small</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--control</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--control-short</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--column</li>
+                            <li class="p-8 bg-gray-100 rounded">.checkbox--decorative</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-12">Error Classes</h3>
+                        <ul class="space-y-4 text-sm font-mono">
+                            <li class="p-8 bg-gray-100 rounded">.checkbox__error-message</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="heading-sm mb-12">Utility Classes</h3>
+                        <ul class="space-y-4 text-sm font-mono">
+                            <li class="p-8 bg-gray-100 rounded">.checkbox__sr-only</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Track selected services
+        function updateSelectedServices() {
+            const checkboxes = document.querySelectorAll('input[name="services"]:checked');
+            const selectedDiv = document.getElementById('selected-services');
+            
+            if (checkboxes.length === 0) {
+                selectedDiv.textContent = 'None selected';
+                selectedDiv.className = 'body-sm text-gray-600';
+            } else {
+                const services = Array.from(checkboxes).map(cb => {
+                    const label = cb.closest('.checkbox').querySelector('.checkbox__label-title');
+                    return label ? label.textContent : cb.value;
+                });
+                selectedDiv.textContent = services.join(', ');
+                selectedDiv.className = 'body-sm text-foundation-primary';
+            }
+        }
+
+        // Add event listeners to service checkboxes
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCheckboxes = document.querySelectorAll('input[name="services"]');
+            serviceCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateSelectedServices);
+            });
+
+            // Handle control-short variant checked class
+            const controlShortCheckboxes = document.querySelectorAll('.checkbox--control-short input[type="checkbox"]');
+            controlShortCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const label = this.closest('.checkbox');
+                    if (this.checked) {
+                        label.classList.add('checkbox--checked');
+                    } else {
+                        label.classList.remove('checkbox--checked');
+                    }
+                });
+            });
+
+            // Initialize selected services display
+            updateSelectedServices();
+        });
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const services = formData.getAll('services');
+            
+            if (services.length === 0) {
+                alert('Please select at least one service.');
+                return;
+            }
+            
+            alert(`Services selected: ${services.join(', ')}`);
+        }
+    </script>
+</body>
+</html>

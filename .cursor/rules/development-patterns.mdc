@@ -1,0 +1,143 @@
+---
+alwaysApply: true
+description: Development patterns and best practices for this codebase
+---
+
+# Development Patterns and Best Practices
+
+## CSS Code Organization
+
+### Code Regions
+All CSS files must use the standardized code region pattern:
+```css
+/* #region {section name} */
+/* CSS code here */
+/* #endregion */
+```
+
+### File Structure
+- Keep CSS modular in separate foundation files
+- Use [foundation.css](mdc:src/css/foundation/foundation.css) as the main entry point
+- Import order: reset → display → colors → spacing → typography → icons
+
+### Variable Naming
+- Colors: `--color-{category}-{name}-{variant}`
+- Spacing: `--spacing-{size}`
+- Typography: `--font-{property}-{variant}`
+- Line heights: `--line-height-{size}`
+
+## Utility Class Patterns
+
+### Compound Selectors for Size Variants
+Use compound selectors for size-specific variants:
+```css
+.heroicon-16.heroicon-[name]    /* 16px icons */
+.heroicon-20.heroicon-[name]    /* 20px icons */
+.heroicon.heroicon-[name]       /* 24px icons (default) */
+```
+
+### Semantic vs Utility Classes
+- **Semantic classes**: `.heading-lg`, `.body-md`, `.display-xl`
+- **Utility classes**: `.text-lg`, `.font-semibold`, `.m-16`
+- Prefer semantic classes for components, utility classes for layout
+
+### Responsive Naming
+Use standard responsive prefixes:
+- `sm:` - Small screens (640px+)
+- `md:` - Medium screens (768px+)  
+- `lg:` - Large screens (1024px+)
+- `xl:` - Extra large screens (1280px+)
+
+## Icon System Patterns
+
+### Heroicon Usage
+Always include base class with size modifier:
+```html
+<!-- Correct -->
+<div class="heroicon heroicon-user"></div>
+<div class="heroicon heroicon-16 heroicon-user"></div>
+
+<!-- Incorrect -->
+<div class="heroicon-user"></div>
+```
+
+### Icon Naming Convention
+- Solid 24px: `.heroicon-[name]`
+- Outline 24px: `.heroicon-outline-[name]`
+- Solid 20px: `.heroicon-20.heroicon-[name]`
+- Solid 16px: `.heroicon-16.heroicon-[name]`
+
+## Layout Patterns
+
+### Container Patterns
+```html
+<!-- Page container -->
+<div class="min-h-screen bg-neutral-white">
+  <div class="mx-auto px-16 py-24">
+    <!-- Content -->
+  </div>
+</div>
+
+<!-- Card container -->
+<div class="bg-white border rounded p-24 shadow">
+  <!-- Card content -->
+</div>
+```
+
+### Navigation Patterns
+```html
+<nav class="flex items-center justify-between p-16 border-b bg-white">
+  <div class="flex items-center gap-16">
+    <!-- Logo/brand -->
+  </div>
+  <div class="flex items-center gap-24">
+    <!-- Navigation items -->
+  </div>
+</nav>
+```
+
+## Color Usage Guidelines
+
+### Semantic Color Usage
+- **Primary**: Main actions, links, brand elements
+- **Secondary**: Background, subtle elements
+- **Accent A**: Highlights, information
+- **Accent B**: Attention, calls-to-action
+- **Critical**: Errors, destructive actions
+- **Warning**: Cautions, alerts
+- **Success**: Confirmations, positive feedback
+
+### Color Accessibility
+- Ensure sufficient contrast ratios
+- Test with color blindness simulators
+- Use semantic meaning, not just color for status
+
+## Performance Considerations
+
+### CSS Organization
+- Keep related styles together in regions
+- Use CSS custom properties for reusable values
+- Minimize specificity conflicts
+- Group utility classes logically
+
+### Asset Loading
+- Icons are loaded as background images
+- Use appropriate image formats (SVG for icons)
+- Consider image optimization for production
+
+## Development Workflow
+
+### Making Changes
+1. **Read constraints** in [agents.md](mdc:agents.md)
+2. **Use existing foundation classes** before creating new ones
+3. **Follow naming conventions** established in the system
+4. **Test across different sizes** and breakpoints
+5. **Document new patterns** if they become reusable
+
+### Code Review Checklist
+- [ ] Uses only foundation CSS variables
+- [ ] Follows code region organization
+- [ ] Uses semantic naming conventions
+- [ ] Includes responsive considerations
+- [ ] Maintains accessibility standards
+- [ ] Follows established patterns

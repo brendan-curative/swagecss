@@ -1,0 +1,96 @@
+---
+globs: *.css,*.html,*.js,*.ts,*.jsx,*.tsx
+description: Spacing system variables and utility classes
+---
+
+# Spacing System Reference
+
+The spacing system is defined in [src/css/foundation/spacing.css](mdc:src/css/foundation/spacing.css) and provides consistent spacing variables and utility classes.
+
+## Spacing Scale Variables
+```css
+--spacing-0: 0px
+--spacing-1: 1px
+--spacing-2: 2px
+--spacing-4: 4px
+--spacing-6: 6px
+--spacing-8: 8px
+--spacing-12: 12px
+--spacing-16: 16px
+--spacing-20: 20px
+--spacing-24: 24px
+--spacing-32: 32px
+--spacing-40: 40px
+--spacing-48: 48px
+--spacing-64: 64px
+--spacing-80: 80px
+--spacing-160: 160px
+--spacing-240: 240px
+--spacing-320: 320px
+```
+
+## Margin Utility Classes
+
+### All Sides
+`.m-0`, `.m-1`, `.m-2`, `.m-4`, `.m-6`, `.m-8`, `.m-12`, `.m-16`, `.m-20`, `.m-24`, `.m-32`, `.m-40`, `.m-48`, `.m-64`, `.m-80`
+
+### Horizontal (left + right)
+`.mx-0`, `.mx-1`, `.mx-2`, `.mx-4`, `.mx-6`, `.mx-8`, `.mx-12`, `.mx-16`, `.mx-20`, `.mx-24`, `.mx-32`, `.mx-40`, `.mx-48`, `.mx-64`, `.mx-80`
+
+### Vertical (top + bottom)
+`.my-0`, `.my-1`, `.my-2`, `.my-4`, `.my-6`, `.my-8`, `.my-12`, `.my-16`, `.my-20`, `.my-24`, `.my-32`, `.my-40`, `.my-48`, `.my-64`, `.my-80`
+
+### Individual Sides
+- Top: `.mt-*`
+- Right: `.mr-*`  
+- Bottom: `.mb-*`
+- Left: `.ml-*`
+
+## Padding Utility Classes
+
+### All Sides
+`.p-0`, `.p-1`, `.p-2`, `.p-4`, `.p-6`, `.p-8`, `.p-12`, `.p-16`, `.p-20`, `.p-24`, `.p-32`, `.p-40`, `.p-48`, `.p-64`, `.p-80`
+
+### Horizontal (left + right)
+`.px-0`, `.px-1`, `.px-2`, `.px-4`, `.px-6`, `.px-8`, `.px-12`, `.px-16`, `.px-20`, `.px-24`, `.px-32`, `.px-40`, `.px-48`, `.px-64`, `.px-80`
+
+### Vertical (top + bottom)
+`.py-0`, `.py-1`, `.py-2`, `.py-4`, `.py-6`, `.py-8`, `.py-12`, `.py-16`, `.py-20`, `.py-24`, `.py-32`, `.py-40`, `.py-48`, `.py-64`, `.py-80`
+
+### Individual Sides
+- Top: `.pt-*`
+- Right: `.pr-*`
+- Bottom: `.pb-*`
+- Left: `.pl-*`
+
+## Gap Utility Classes (for flexbox/grid)
+`.gap-0`, `.gap-1`, `.gap-2`, `.gap-4`, `.gap-6`, `.gap-8`, `.gap-12`, `.gap-16`, `.gap-20`, `.gap-24`, `.gap-32`, `.gap-40`, `.gap-48`, `.gap-64`, `.gap-80`
+
+## Width and Height Utilities
+### Width
+`.w-0`, `.w-1`, `.w-2`, `.w-4`, `.w-6`, `.w-8`, `.w-12`, `.w-16`, `.w-20`, `.w-24`, `.w-32`, `.w-40`, `.w-48`, `.w-64`, `.w-80`
+
+### Height  
+`.h-0`, `.h-1`, `.h-2`, `.h-4`, `.h-6`, `.h-8`, `.h-12`, `.h-16`, `.h-20`, `.h-24`, `.h-32`, `.h-40`, `.h-48`, `.h-64`, `.h-80`
+
+## Usage Examples
+```html
+<!-- Margin examples -->
+<div class="m-16">16px margin on all sides</div>
+<div class="mx-24 my-8">24px horizontal, 8px vertical margins</div>
+
+<!-- Padding examples -->
+<div class="p-12">12px padding on all sides</div>
+<div class="px-16 py-8">16px horizontal, 8px vertical padding</div>
+
+<!-- Gap for layouts -->
+<div class="flex gap-16">16px gap between flex items</div>
+<div class="grid gap-24">24px gap between grid items</div>
+```
+
+## Best Practices
+1. **Use the spacing scale** - stick to provided variables for consistency
+2. **Prefer utility classes** for simple spacing needs
+3. **Use CSS variables** for custom components: `margin: var(--spacing-16)`
+4. **Follow the 4px base grid** - most spacing values are multiples of 4px
+5. **Use logical spacing** - larger values for larger visual separation

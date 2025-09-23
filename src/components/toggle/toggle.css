@@ -1,0 +1,98 @@
+/* #region Toggle Component */
+
+/* Base toggle styles - matches Headless UI Switch */
+.toggle {
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-4); /* p-1 */
+    position: relative;
+    border-radius: 50px; /* rounded-full */
+    transition: background-color 0.2s ease-in-out; /* duration-200 ease-in-out transition-colors */
+    outline: none;
+    font-family: var(--font-family-sans);
+}
+
+/* Toggle checked/unchecked states */
+.toggle--checked {
+    background-color: var(--color-foundation-primary); /* bg-foundation-primary */
+}
+
+.toggle--unchecked {
+    background-color: var(--color-text-subdued); /* bg-textColor-subdued */
+}
+
+/* Disabled state */
+.toggle:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Focus ring - matches FOCUS_RING_CLASS_NAMES */
+.toggle:focus {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+}
+
+/* Toggle indicator (sliding circle) */
+.toggle__indicator {
+    background-color: var(--color-surface-default); /* bg-surface-default */
+    border-radius: 50%; /* rounded-full */
+    display: inline-block;
+    transition: transform 0.2s ease-in-out; /* duration-200 ease-in-out transition */
+}
+
+/* Size variants - exact Tailwind class mappings */
+
+/* Large toggle (default) */
+.toggle--large {
+    width: var(--spacing-64); /* w-16 */
+}
+
+.toggle--large .toggle__indicator {
+    height: var(--spacing-24); /* h-6 */
+    width: var(--spacing-24); /* w-6 */
+}
+
+.toggle--large.toggle--checked .toggle__indicator {
+    transform: translateX(var(--spacing-32)); /* translate-x-8 */
+}
+
+.toggle--large.toggle--unchecked .toggle__indicator {
+    transform: translateX(0); /* translate-x-0 */
+}
+
+/* Small toggle */
+.toggle--small {
+    width: var(--spacing-32); /* w-8 */
+}
+
+.toggle--small .toggle__indicator {
+    height: var(--spacing-12); /* h-3 */
+    width: var(--spacing-12); /* w-3 */
+}
+
+.toggle--small.toggle--checked .toggle__indicator {
+    transform: translateX(var(--spacing-12)); /* translate-x-3 */
+}
+
+.toggle--small.toggle--unchecked .toggle__indicator {
+    transform: translateX(0); /* translate-x-0 */
+}
+
+/* Screen reader only label */
+.toggle__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+    color: var(--color-text-on-bg-primary); /* text-textColor-onBg-primary */
+}
+
+/* #endregion */

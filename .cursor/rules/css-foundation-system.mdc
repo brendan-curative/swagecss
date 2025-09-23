@@ -1,0 +1,36 @@
+---
+alwaysApply: true
+description: CSS Foundation System Architecture and Constraints
+---
+
+# CSS Foundation System Rules
+
+This project uses a strict CSS foundation system with specific constraints and patterns that must be followed.
+
+## Core Constraint
+**CRITICAL**: Only use CSS rules defined in [src/css/foundation/](mdc:src/css/foundation/) directory. Do not create, modify, or reference any CSS rules outside this directory unless explicitly instructed.
+
+## Foundation Structure
+The CSS foundation is organized into modular files:
+- [src/css/foundation/foundation.css](mdc:src/css/foundation/foundation.css) - Main entry point that imports all modules
+- [src/css/foundation/reset.css](mdc:src/css/foundation/reset.css) - Base reset styles
+- [src/css/foundation/colors.css](mdc:src/css/foundation/colors.css) - Color system with primitives, scales, and semantic aliases
+- [src/css/foundation/spacing.css](mdc:src/css/foundation/spacing.css) - Spacing variables and utilities
+- [src/css/foundation/typography.css](mdc:src/css/foundation/typography.css) - Font system and text utilities
+- [src/css/foundation/display.css](mdc:src/css/foundation/display.css) - Layout and display utilities
+- [src/css/foundation/icons.css](mdc:src/css/foundation/icons.css) - Heroicon utility classes
+
+## Code Organization Pattern
+All CSS files use `/* #region {section name} */` and `/* #endregion */` comments to organize code sections.
+
+## Main CSS Output
+The compiled CSS is output to [src/css/swage.css](mdc:src/css/swage.css) which imports the foundation system.
+
+## Variable Usage
+- Use CSS custom properties (variables) defined in the foundation files
+- Colors: `var(--color-*)` from [colors.css](mdc:src/css/foundation/colors.css)
+- Spacing: `var(--spacing-*)` from [spacing.css](mdc:src/css/foundation/spacing.css)
+- Typography: `var(--font-*)` and `var(--line-height-*)` from [typography.css](mdc:src/css/foundation/typography.css)
+
+## Agent Constraints Reference
+See [agents.md](mdc:agents.md) for the complete AI agent configuration and constraints.

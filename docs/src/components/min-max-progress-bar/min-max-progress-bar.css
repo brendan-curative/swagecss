@@ -1,0 +1,387 @@
+/* #region MinMaxProgressBar Component */
+
+/* Base progress bar container */
+.min-max-progress-bar {
+    width: 100%;
+    font-family: var(--font-family-sans);
+}
+
+/* Text container above the progress bar */
+.min-max-progress-bar__text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--spacing-24); /* h-6 */
+    margin-bottom: var(--spacing-4); /* mt-1 */
+}
+
+/* Text elements */
+.min-max-progress-bar__start-text {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    color: var(--color-text-default);
+}
+
+.min-max-progress-bar__end-text {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    color: var(--color-text-default);
+}
+
+.min-max-progress-bar__max-met-text {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Progress bar states - text styling when progress is active */
+.min-max-progress-bar--active .min-max-progress-bar__start-text {
+    font-weight: var(--font-weight-bold);
+}
+
+/* Color variants for text when active */
+.min-max-progress-bar--blue.min-max-progress-bar--active .min-max-progress-bar__start-text,
+.min-max-progress-bar--blue.min-max-progress-bar--active .min-max-progress-bar__max-met-text {
+    color: var(--color-text-highlight-default);
+}
+
+.min-max-progress-bar--gray.min-max-progress-bar--active .min-max-progress-bar__start-text,
+.min-max-progress-bar--gray.min-max-progress-bar--active .min-max-progress-bar__max-met-text {
+    color: var(--color-text-default);
+}
+
+/* Progress bar track container */
+.min-max-progress-bar__track-container {
+    position: relative;
+    margin-top: var(--spacing-4); /* mt-1 */
+}
+
+/* Background bar (track) */
+.min-max-progress-bar__track {
+    height: var(--spacing-12); /* h-3 */
+    border-radius: var(--spacing-2); /* rounded-sm */
+    width: 100%;
+}
+
+/* Track background colors */
+.min-max-progress-bar--blue .min-max-progress-bar__track {
+    background-color: var(--color-blue-200);
+}
+
+.min-max-progress-bar--gray .min-max-progress-bar__track {
+    background-color: var(--color-gray-200);
+}
+
+/* Fill bar (progress indicator) */
+.min-max-progress-bar__fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--spacing-12); /* h-3 */
+    border-radius: var(--spacing-2); /* rounded-sm */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Fill background colors */
+.min-max-progress-bar--blue .min-max-progress-bar__fill {
+    background-color: var(--color-foundation-primary);
+}
+
+.min-max-progress-bar--gray .min-max-progress-bar__fill {
+    background-color: var(--color-gray-500);
+}
+
+/* Width states - handled via inline styles in HTML */
+.min-max-progress-bar__fill--empty {
+    width: 0%;
+}
+
+.min-max-progress-bar__fill--partial {
+    /* Width set via inline style */
+}
+
+.min-max-progress-bar__fill--complete {
+    width: 100%;
+}
+
+/* Animation support */
+.min-max-progress-bar--animated .min-max-progress-bar__fill {
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading state */
+.min-max-progress-bar--loading .min-max-progress-bar__fill {
+    position: relative;
+    overflow: hidden;
+}
+
+.min-max-progress-bar--loading .min-max-progress-bar__fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: progressBarShimmer 1.5s infinite;
+}
+
+@keyframes progressBarShimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Size variants */
+.min-max-progress-bar--small .min-max-progress-bar__track,
+.min-max-progress-bar--small .min-max-progress-bar__fill {
+    height: var(--spacing-8); /* h-2 */
+}
+
+.min-max-progress-bar--large .min-max-progress-bar__track,
+.min-max-progress-bar--large .min-max-progress-bar__fill {
+    height: var(--spacing-16); /* h-4 */
+}
+
+.min-max-progress-bar--extra-large .min-max-progress-bar__track,
+.min-max-progress-bar--extra-large .min-max-progress-bar__fill {
+    height: var(--spacing-20); /* h-5 */
+}
+
+/* Text size adjustments for variants */
+.min-max-progress-bar--small .min-max-progress-bar__start-text,
+.min-max-progress-bar--small .min-max-progress-bar__end-text,
+.min-max-progress-bar--small .min-max-progress-bar__max-met-text {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+}
+
+.min-max-progress-bar--large .min-max-progress-bar__start-text,
+.min-max-progress-bar--large .min-max-progress-bar__end-text,
+.min-max-progress-bar--large .min-max-progress-bar__max-met-text {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+}
+
+/* Status variants */
+.min-max-progress-bar--success .min-max-progress-bar__fill {
+    background-color: var(--color-foundation-success);
+}
+
+.min-max-progress-bar--warning .min-max-progress-bar__fill {
+    background-color: var(--color-foundation-warning);
+}
+
+.min-max-progress-bar--error .min-max-progress-bar__fill {
+    background-color: var(--color-foundation-critical);
+}
+
+.min-max-progress-bar--success .min-max-progress-bar__track {
+    background-color: var(--color-green-200);
+}
+
+.min-max-progress-bar--warning .min-max-progress-bar__track {
+    background-color: var(--color-yellow-200);
+}
+
+.min-max-progress-bar--error .min-max-progress-bar__track {
+    background-color: var(--color-red-200);
+}
+
+/* Accessibility improvements */
+.min-max-progress-bar__track-container[role="meter"] {
+    /* Ensure proper ARIA meter role styling */
+}
+
+/* Focus states for accessibility */
+.min-max-progress-bar:focus-within .min-max-progress-bar__track {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .min-max-progress-bar__track {
+        border: 1px solid var(--color-text-default);
+    }
+    
+    .min-max-progress-bar__fill {
+        border: 1px solid var(--color-text-default);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .min-max-progress-bar__fill,
+    .min-max-progress-bar--animated .min-max-progress-bar__fill {
+        transition: none;
+    }
+    
+    .min-max-progress-bar--loading .min-max-progress-bar__fill::after {
+        animation: none;
+    }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 640px) {
+    .min-max-progress-bar__text-container {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: var(--spacing-4);
+    }
+    
+    .min-max-progress-bar__start-text,
+    .min-max-progress-bar__end-text,
+    .min-max-progress-bar__max-met-text {
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-sm);
+    }
+}
+
+/* Compact variant for tables and cards */
+.min-max-progress-bar--compact .min-max-progress-bar__text-container {
+    height: var(--spacing-20);
+    margin-bottom: var(--spacing-2);
+}
+
+.min-max-progress-bar--compact .min-max-progress-bar__track-container {
+    margin-top: var(--spacing-2);
+}
+
+.min-max-progress-bar--compact .min-max-progress-bar__track,
+.min-max-progress-bar--compact .min-max-progress-bar__fill {
+    height: var(--spacing-8);
+}
+
+.min-max-progress-bar--compact .min-max-progress-bar__start-text,
+.min-max-progress-bar--compact .min-max-progress-bar__end-text,
+.min-max-progress-bar--compact .min-max-progress-bar__max-met-text {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+}
+
+/* Striped progress fill (optional styling) */
+.min-max-progress-bar--striped .min-max-progress-bar__fill {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: var(--spacing-16) var(--spacing-16);
+}
+
+.min-max-progress-bar--striped.min-max-progress-bar--animated .min-max-progress-bar__fill {
+    animation: progressBarStripes 1s linear infinite;
+}
+
+@keyframes progressBarStripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: var(--spacing-16) 0;
+    }
+}
+
+/* Progress bar in card layouts */
+.card .min-max-progress-bar {
+    margin-top: var(--spacing-16);
+}
+
+.card .min-max-progress-bar__text-container {
+    margin-bottom: var(--spacing-8);
+}
+
+/* Progress bar in table cells */
+.table .min-max-progress-bar {
+    min-width: 200px;
+}
+
+.table .min-max-progress-bar__text-container {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-2);
+}
+
+.table .min-max-progress-bar__track,
+.table .min-max-progress-bar__fill {
+    height: var(--spacing-8);
+}
+
+/* Multiple progress bars in a group */
+.min-max-progress-bar-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+}
+
+.min-max-progress-bar-group__title {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-default);
+    margin-bottom: var(--spacing-8);
+}
+
+.min-max-progress-bar-group__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.min-max-progress-bar-group__item-label {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    color: var(--color-text-subdued);
+    margin-bottom: var(--spacing-4);
+}
+
+/* Dark mode support (if needed) */
+.min-max-progress-bar--dark .min-max-progress-bar__track {
+    background-color: var(--color-gray-700);
+}
+
+.min-max-progress-bar--dark .min-max-progress-bar__start-text,
+.min-max-progress-bar--dark .min-max-progress-bar__end-text,
+.min-max-progress-bar--dark .min-max-progress-bar__max-met-text {
+    color: var(--color-white);
+}
+
+/* Percentage display variant */
+.min-max-progress-bar--show-percentage .min-max-progress-bar__text-container::after {
+    content: attr(data-percentage) '%';
+    font-size: var(--font-size-sm);
+    color: var(--color-text-subdued);
+    margin-left: auto;
+}
+
+/* Tooltip support for additional information */
+.min-max-progress-bar[title] {
+    cursor: help;
+}
+
+/* Print styles */
+@media print {
+    .min-max-progress-bar__fill {
+        background-color: #000 !important;
+    }
+    
+    .min-max-progress-bar__track {
+        background-color: #ccc !important;
+        border: 1px solid #000;
+    }
+}
+
+/* #endregion */

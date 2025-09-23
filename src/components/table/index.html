@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Table Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+    <style>
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-background-default);
+            padding: var(--spacing-32);
+            color: var(--color-text-default);
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            gap: var(--spacing-32);
+        }
+        .component-section {
+            background-color: var(--color-surface-default);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--spacing-8);
+            padding: var(--spacing-24);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-24);
+            color: var(--color-text-default);
+        }
+        h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-20);
+            color: var(--color-text-default);
+        }
+        h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-16);
+            color: var(--color-text-default);
+        }
+        .mb-24 { margin-bottom: var(--spacing-24); }
+        .text-gray-600 { color: var(--color-gray-600); }
+        .body-lg {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-lg);
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-8) var(--spacing-16);
+            border-radius: var(--spacing-6);
+            font-size: var(--font-size-md);
+            font-weight: var(--font-weight-semibold);
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            border: 1px solid var(--color-border-control);
+            background-color: var(--color-surface-default);
+            color: var(--color-text-highlight-default);
+            margin-right: var(--spacing-8);
+            margin-bottom: var(--spacing-16);
+        }
+        .button:hover {
+            background-color: var(--color-surface-highlight);
+        }
+        .button--primary {
+            background-color: var(--color-foundation-primary);
+            border-color: var(--color-foundation-primary);
+            color: var(--color-text-on-bg-primary);
+        }
+        .button--primary:hover {
+            background-color: var(--color-blue-600);
+            border-color: var(--color-blue-600);
+        }
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: var(--spacing-8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Table Component</h1>
+        <p class="body-lg text-gray-600 mb-24">
+            Responsive table component that displays as a traditional table on desktop and as description lists on mobile.
+            Supports text and numeric alignment, striped rows, clickable rows, and interactive elements.
+        </p>
+
+        <section class="component-section">
+            <h2>Basic Table</h2>
+            <p class="mb-24">Default table with text and numeric content types, responsive design with mobile-friendly description lists.</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">Gibberish</th>
+                            <th class="table__head-cell table__head-cell--numeric">Random number</th>
+                            <th class="table__head-cell table__head-cell--text">It's probably fine to click this link</th>
+                            <th class="table__head-cell table__head-cell--text">Collection of Nonsense Latin Badges</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla felis, Morbi nulla felis, tincidunt nec tempor a, cursus a
+                                </div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Gibberish</dt>
+                                        <dd class="table__description-details">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla felis, Morbi nulla felis, tincidunt nec tempor a, cursus a</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Random number</dt>
+                                        <dd class="table__description-details">12342134987897</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">It's probably fine to click this link</dt>
+                                        <dd class="table__description-details">
+                                            <a href="#" class="table__cell-control table__cell-control--link">cursus nibh eu</a>
+                                        </dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Collection of Nonsense Latin Badges</dt>
+                                        <dd class="table__description-details">
+                                            <div class="table__badge-collection">
+                                                <span class="badge badge--default badge--small">Sed eros</span>
+                                                <span class="badge badge--default badge--small">ipsum vitae</span>
+                                            </div>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">12342134987897</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <a href="#" class="table__cell-control table__cell-control--link">cursus nibh eu</a>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <div class="table__badge-collection">
+                                    <span class="badge badge--default badge--small">Sed eros</span>
+                                    <span class="badge badge--default badge--small">ipsum vitae</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">
+                                    Sed ut nisl rhoncus, sagittis ipsum sit Sed ut nisl rhoncus, sagittis Sed ut nisl rhoncus, sagittis Sed ut nisl rhoncus, sagittis ipsum sit ame
+                                </div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Gibberish</dt>
+                                        <dd class="table__description-details">Sed ut nisl rhoncus, sagittis ipsum sit Sed ut nisl rhoncus, sagittis Sed ut nisl rhoncus, sagittis Sed ut nisl rhoncus, sagittis ipsum sit ame</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Random number</dt>
+                                        <dd class="table__description-details">378934789</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">It's probably fine to click this link</dt>
+                                        <dd class="table__description-details">
+                                            <a href="#" class="table__cell-control table__cell-control--link">enatis. In elementum</a>
+                                        </dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Collection of Nonsense Latin Badges</dt>
+                                        <dd class="table__description-details">
+                                            <div class="table__badge-collection">
+                                                <span class="badge badge--default badge--small">mod purus a, condim</span>
+                                                <span class="badge badge--default badge--small">nte eget moles</span>
+                                            </div>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">378934789</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <a href="#" class="table__cell-control table__cell-control--link">enatis. In elementum</a>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <div class="table__badge-collection">
+                                    <span class="badge badge--default badge--small">mod purus a, condim</span>
+                                    <span class="badge badge--default badge--small">nte eget moles</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">
+                                    nc vulputate gravida viverra. Ut tristique gravida viverra. Ut tristique tellus mauris
+                                </div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Gibberish</dt>
+                                        <dd class="table__description-details">nc vulputate gravida viverra. Ut tristique gravida viverra. Ut tristique tellus mauris</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Random number</dt>
+                                        <dd class="table__description-details">23840</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">It's probably fine to click this link</dt>
+                                        <dd class="table__description-details">
+                                            <a href="#" class="table__cell-control table__cell-control--link">gnissim, pulvina</a>
+                                        </dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Collection of Nonsense Latin Badges</dt>
+                                        <dd class="table__description-details">
+                                            <div class="table__badge-collection">
+                                                <span class="badge badge--default badge--small">uctor, aliq</span>
+                                                <span class="badge badge--default badge--small">sapien enim, sempe</span>
+                                            </div>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">23840</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <a href="#" class="table__cell-control table__cell-control--link">gnissim, pulvina</a>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <div class="table__badge-collection">
+                                    <span class="badge badge--default badge--small">uctor, aliq</span>
+                                    <span class="badge badge--default badge--small">sapien enim, sempe</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">
+                                    nc vulputate gravida viverra. Ut tristique gravida viverra. Ut tristique tellus mauris
+                                </div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Gibberish</dt>
+                                        <dd class="table__description-details">nc vulputate gravida viverra. Ut tristique gravida viverra. Ut tristique tellus mauris</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Random number</dt>
+                                        <dd class="table__description-details">23840</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">It's probably fine to click this link</dt>
+                                        <dd class="table__description-details">
+                                            <a href="#" class="table__cell-control table__cell-control--link">gnissim, pulvina</a>
+                                        </dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Collection of Nonsense Latin Badges</dt>
+                                        <dd class="table__description-details">
+                                            <div class="table__badge-collection">
+                                                <span class="badge badge--default badge--small">uctor, aliq</span>
+                                                <span class="badge badge--default badge--small">sapien enim, sempe</span>
+                                            </div>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">23840</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <a href="#" class="table__cell-control table__cell-control--link">gnissim, pulvina</a>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <div class="table__badge-collection">
+                                    <span class="badge badge--default badge--small">uctor, aliq</span>
+                                    <span class="badge badge--default badge--small">sapien enim, sempe</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Table with Striped Rows</h2>
+            <p class="mb-24">Table with alternating row background colors for better readability.</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">Product</th>
+                            <th class="table__head-cell table__head-cell--numeric">Price</th>
+                            <th class="table__head-cell table__head-cell--numeric">Quantity</th>
+                            <th class="table__head-cell table__head-cell--text">Category</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__body-row table__body-row--striped">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Wireless Headphones</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Product</dt>
+                                        <dd class="table__description-details">Wireless Headphones</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Price</dt>
+                                        <dd class="table__description-details">$199.99</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Quantity</dt>
+                                        <dd class="table__description-details">42</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Category</dt>
+                                        <dd class="table__description-details">Electronics</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">$199.99</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">42</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Electronics</td>
+                        </tr>
+                        <tr class="table__body-row table__body-row--striped">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">USB-C Cable</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Product</dt>
+                                        <dd class="table__description-details">USB-C Cable</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Price</dt>
+                                        <dd class="table__description-details">$24.99</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Quantity</dt>
+                                        <dd class="table__description-details">156</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Category</dt>
+                                        <dd class="table__description-details">Accessories</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">$24.99</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">156</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Accessories</td>
+                        </tr>
+                        <tr class="table__body-row table__body-row--striped">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Laptop Stand</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Product</dt>
+                                        <dd class="table__description-details">Laptop Stand</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Price</dt>
+                                        <dd class="table__description-details">$79.99</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Quantity</dt>
+                                        <dd class="table__description-details">23</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Category</dt>
+                                        <dd class="table__description-details">Office</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">$79.99</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">23</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Office</td>
+                        </tr>
+                        <tr class="table__body-row table__body-row--striped">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Mechanical Keyboard</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Product</dt>
+                                        <dd class="table__description-details">Mechanical Keyboard</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Price</dt>
+                                        <dd class="table__description-details">$149.99</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Quantity</dt>
+                                        <dd class="table__description-details">31</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Category</dt>
+                                        <dd class="table__description-details">Electronics</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">$149.99</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">31</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Electronics</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Table with Clickable Rows</h2>
+            <p class="mb-24">Table rows that can be clicked to navigate to detail pages, with hover and focus states.</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">Customer</th>
+                            <th class="table__head-cell table__head-cell--text">Email</th>
+                            <th class="table__head-cell table__head-cell--numeric">Orders</th>
+                            <th class="table__head-cell table__head-cell--text">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__body-row table__body-row--clickable table__body-row--striped">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <a href="#customer-1" class="table__clickable-control">
+                                    <span class="table__sr-only">View customer details for John Smith</span>
+                                </a>
+                                <div class="table__cell-content--desktop">John Smith</div>
+                                <dl class="table__description-list">
+                                    <a href="#customer-1" class="table__clickable-control">
+                                        <span class="table__sr-only">View customer details for John Smith</span>
+                                    </a>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Customer</dt>
+                                        <dd class="table__description-details">John Smith</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Email</dt>
+                                        <dd class="table__description-details">john.smith@example.com</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Orders</dt>
+                                        <dd class="table__description-details">7</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Status</dt>
+                                        <dd class="table__description-details">
+                                            <span class="badge badge--default badge--small">Active</span>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">john.smith@example.com</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">7</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <span class="badge badge--default badge--small">Active</span>
+                            </td>
+                        </tr>
+                        <tr class="table__body-row table__body-row--clickable table__body-row--striped">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <a href="#customer-2" class="table__clickable-control">
+                                    <span class="table__sr-only">View customer details for Sarah Johnson</span>
+                                </a>
+                                <div class="table__cell-content--desktop">Sarah Johnson</div>
+                                <dl class="table__description-list">
+                                    <a href="#customer-2" class="table__clickable-control">
+                                        <span class="table__sr-only">View customer details for Sarah Johnson</span>
+                                    </a>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Customer</dt>
+                                        <dd class="table__description-details">Sarah Johnson</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Email</dt>
+                                        <dd class="table__description-details">sarah.j@example.com</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Orders</dt>
+                                        <dd class="table__description-details">12</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Status</dt>
+                                        <dd class="table__description-details">
+                                            <span class="badge badge--default badge--small">Premium</span>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">sarah.j@example.com</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">12</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <span class="badge badge--default badge--small">Premium</span>
+                            </td>
+                        </tr>
+                        <tr class="table__body-row table__body-row--clickable table__body-row--striped">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <a href="#customer-3" class="table__clickable-control">
+                                    <span class="table__sr-only">View customer details for Mike Wilson</span>
+                                </a>
+                                <div class="table__cell-content--desktop">Mike Wilson</div>
+                                <dl class="table__description-list">
+                                    <a href="#customer-3" class="table__clickable-control">
+                                        <span class="table__sr-only">View customer details for Mike Wilson</span>
+                                    </a>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Customer</dt>
+                                        <dd class="table__description-details">Mike Wilson</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Email</dt>
+                                        <dd class="table__description-details">mike.wilson@example.com</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Orders</dt>
+                                        <dd class="table__description-details">3</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Status</dt>
+                                        <dd class="table__description-details">
+                                            <span class="badge badge--default badge--small">Inactive</span>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">mike.wilson@example.com</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">3</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <span class="badge badge--default badge--small">Inactive</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Table with Empty Values</h2>
+            <p class="mb-24">Table demonstrating how empty, null, or undefined values are handled.</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">Name</th>
+                            <th class="table__head-cell table__head-cell--text">Value</th>
+                            <th class="table__head-cell table__head-cell--text">Notes</th>
+                            <th class="table__head-cell table__head-cell--text">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">—</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Name</dt>
+                                        <dd class="table__description-details">—</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Value</dt>
+                                        <dd class="table__description-details">123</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Notes</dt>
+                                        <dd class="table__description-details">Some notes here</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Status</dt>
+                                        <dd class="table__description-details">Active</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">123</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Some notes here</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Active</td>
+                        </tr>
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Sample Item</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Name</dt>
+                                        <dd class="table__description-details">Sample Item</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Value</dt>
+                                        <dd class="table__description-details">—</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Notes</dt>
+                                        <dd class="table__description-details">More information</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Status</dt>
+                                        <dd class="table__description-details">Pending</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">—</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">More information</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Table Variants</h2>
+            <p class="mb-24">Different styling options for tables including borders, shadows, and sizing.</p>
+            
+            <h3>Bordered Table</h3>
+            <div class="table-container">
+                <table class="table table--bordered">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">Task</th>
+                            <th class="table__head-cell table__head-cell--text">Priority</th>
+                            <th class="table__head-cell table__head-cell--text">Assignee</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Complete project documentation</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Task</dt>
+                                        <dd class="table__description-details">Complete project documentation</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Priority</dt>
+                                        <dd class="table__description-details">High</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Assignee</dt>
+                                        <dd class="table__description-details">Alex Chen</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">High</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Alex Chen</td>
+                        </tr>
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Update user interface</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Task</dt>
+                                        <dd class="table__description-details">Update user interface</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Priority</dt>
+                                        <dd class="table__description-details">Medium</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Assignee</dt>
+                                        <dd class="table__description-details">Jordan Kim</dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Medium</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Jordan Kim</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="margin-top: 32px;">Table with Shadow</h3>
+            <div class="table-container">
+                <table class="table table--shadow">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">Feature</th>
+                            <th class="table__head-cell table__head-cell--text">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Dark mode support</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Feature</dt>
+                                        <dd class="table__description-details">Dark mode support</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Status</dt>
+                                        <dd class="table__description-details">
+                                            <span class="badge badge--default badge--small">In Progress</span>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <span class="badge badge--default badge--small">In Progress</span>
+                            </td>
+                        </tr>
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">Mobile responsiveness</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Feature</dt>
+                                        <dd class="table__description-details">Mobile responsiveness</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Status</dt>
+                                        <dd class="table__description-details">
+                                            <span class="badge badge--default badge--small">Complete</span>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <span class="badge badge--default badge--small">Complete</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Interactive Features</h2>
+            <p class="mb-24">Demonstration of dynamic table features and state management.</p>
+            
+            <button class="button button--primary" id="toggleStriped">Toggle Striped Rows</button>
+            <button class="button" id="addRow">Add Row</button>
+            <button class="button" id="toggleLoading">Toggle Loading</button>
+            
+            <div class="table-container" style="margin-top: 24px;">
+                <table class="table" id="dynamicTable">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">ID</th>
+                            <th class="table__head-cell table__head-cell--text">Name</th>
+                            <th class="table__head-cell table__head-cell--numeric">Score</th>
+                            <th class="table__head-cell table__head-cell--text">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body" id="dynamicTableBody">
+                        <tr class="table__body-row">
+                            <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                                <div class="table__cell-content--desktop">001</div>
+                                <dl class="table__description-list">
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">ID</dt>
+                                        <dd class="table__description-details">001</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Name</dt>
+                                        <dd class="table__description-details">Sample Item</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Score</dt>
+                                        <dd class="table__description-details">85</dd>
+                                    </div>
+                                    <div class="table__description-item">
+                                        <dt class="table__description-term">Actions</dt>
+                                        <dd class="table__description-details">
+                                            <button class="button" onclick="alert('Edit clicked')">Edit</button>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">Sample Item</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">85</td>
+                            <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                                <button class="button" onclick="alert('Edit clicked')">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Empty State</h2>
+            <p class="mb-24">Table with no data showing empty state message.</p>
+            
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__head-row">
+                            <th class="table__head-cell table__head-cell--text">Name</th>
+                            <th class="table__head-cell table__head-cell--text">Date</th>
+                            <th class="table__head-cell table__head-cell--text">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__body-row">
+                            <td colspan="3" class="table__empty-state">
+                                <div class="table__empty-state-icon">
+                                    <div class="heroicon heroicon-24 heroicon-document-magnifying-glass" style="width: 48px; height: 48px; margin: 0 auto;"></div>
+                                </div>
+                                <div>No data available</div>
+                                <div style="font-size: 14px; margin-top: 8px;">Add some items to get started</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dynamicTable = document.getElementById('dynamicTable');
+            const dynamicTableBody = document.getElementById('dynamicTableBody');
+            const toggleStripedBtn = document.getElementById('toggleStriped');
+            const addRowBtn = document.getElementById('addRow');
+            const toggleLoadingBtn = document.getElementById('toggleLoading');
+            
+            let rowCounter = 2;
+            let isStriped = false;
+            let isLoading = false;
+
+            // Toggle striped rows
+            toggleStripedBtn.addEventListener('click', () => {
+                isStriped = !isStriped;
+                const rows = dynamicTableBody.querySelectorAll('.table__body-row');
+                rows.forEach(row => {
+                    row.classList.toggle('table__body-row--striped', isStriped);
+                });
+                toggleStripedBtn.textContent = isStriped ? 'Remove Striped Rows' : 'Toggle Striped Rows';
+            });
+
+            // Add new row
+            addRowBtn.addEventListener('click', () => {
+                const newId = String(rowCounter).padStart(3, '0');
+                const randomScore = Math.floor(Math.random() * 100);
+                const names = ['New Item', 'Sample Data', 'Test Entry', 'Demo Row', 'Example Item'];
+                const randomName = names[Math.floor(Math.random() * names.length)];
+
+                const newRow = document.createElement('tr');
+                newRow.className = `table__body-row ${isStriped ? 'table__body-row--striped' : ''}`;
+                newRow.innerHTML = `
+                    <td class="table__data-cell table__data-cell--primary table__data-cell--text">
+                        <div class="table__cell-content--desktop">${newId}</div>
+                        <dl class="table__description-list">
+                            <div class="table__description-item">
+                                <dt class="table__description-term">ID</dt>
+                                <dd class="table__description-details">${newId}</dd>
+                            </div>
+                            <div class="table__description-item">
+                                <dt class="table__description-term">Name</dt>
+                                <dd class="table__description-details">${randomName}</dd>
+                            </div>
+                            <div class="table__description-item">
+                                <dt class="table__description-term">Score</dt>
+                                <dd class="table__description-details">${randomScore}</dd>
+                            </div>
+                            <div class="table__description-item">
+                                <dt class="table__description-term">Actions</dt>
+                                <dd class="table__description-details">
+                                    <button class="button" onclick="this.closest('tr').remove()">Delete</button>
+                                </dd>
+                            </div>
+                        </dl>
+                    </td>
+                    <td class="table__data-cell table__data-cell--secondary table__data-cell--text">${randomName}</td>
+                    <td class="table__data-cell table__data-cell--secondary table__data-cell--numeric">${randomScore}</td>
+                    <td class="table__data-cell table__data-cell--secondary table__data-cell--text">
+                        <button class="button" onclick="this.closest('tr').remove()">Delete</button>
+                    </td>
+                `;
+                
+                dynamicTableBody.appendChild(newRow);
+                rowCounter++;
+            });
+
+            // Toggle loading state
+            toggleLoadingBtn.addEventListener('click', () => {
+                isLoading = !isLoading;
+                dynamicTable.classList.toggle('table--loading', isLoading);
+                toggleLoadingBtn.textContent = isLoading ? 'Stop Loading' : 'Toggle Loading';
+                toggleLoadingBtn.disabled = isLoading;
+                
+                if (isLoading) {
+                    setTimeout(() => {
+                        isLoading = false;
+                        dynamicTable.classList.remove('table--loading');
+                        toggleLoadingBtn.textContent = 'Toggle Loading';
+                        toggleLoadingBtn.disabled = false;
+                    }, 3000);
+                }
+            });
+
+            // Handle clickable row navigation
+            const clickableControls = document.querySelectorAll('.table__clickable-control');
+            clickableControls.forEach(control => {
+                control.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = control.getAttribute('href');
+                    console.log('Navigating to:', href);
+                    // In a real application, this would handle navigation
+                    alert(`Would navigate to: ${href}`);
+                });
+            });
+
+            // Handle cell control links
+            const cellControls = document.querySelectorAll('.table__cell-control--link');
+            cellControls.forEach(control => {
+                control.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    console.log('Cell control clicked:', control.textContent);
+                    alert(`Cell control clicked: ${control.textContent}`);
+                });
+            });
+
+            // Keyboard navigation for tables
+            document.addEventListener('keydown', (e) => {
+                if (e.target.closest('.table')) {
+                    const table = e.target.closest('.table');
+                    const focusableElements = table.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+                    const currentIndex = Array.from(focusableElements).indexOf(e.target);
+                    
+                    if (e.key === 'ArrowDown' && currentIndex < focusableElements.length - 1) {
+                        e.preventDefault();
+                        focusableElements[currentIndex + 1].focus();
+                    } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                        e.preventDefault();
+                        focusableElements[currentIndex - 1].focus();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

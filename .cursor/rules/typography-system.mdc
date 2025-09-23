@@ -1,0 +1,146 @@
+---
+globs: *.css,*.html,*.js,*.ts,*.jsx,*.tsx
+description: Typography system with fonts, sizes, and text utilities
+---
+
+# Typography System Reference
+
+The typography system is defined in [src/css/foundation/typography.css](mdc:src/css/foundation/typography.css) and uses the Figtree font family with a comprehensive type scale.
+
+## Font Variables
+
+### Font Family
+```css
+--font-family-sans: 'Figtree', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif
+```
+
+### Font Weights
+```css
+--font-weight-normal: 400
+--font-weight-semibold: 600  
+--font-weight-bold: 700
+```
+
+### Font Sizes and Line Heights
+```css
+--font-size-xs: 12px      --line-height-xs: 16px
+--font-size-sm: 14px      --line-height-sm: 20px
+--font-size-md: 16px      --line-height-md: 24px
+--font-size-lg: 18px      --line-height-lg: 28px
+--font-size-xl: 20px      --line-height-xl: 28px
+--font-size-2xl: 24px     --line-height-2xl: 32px
+--font-size-3xl: 30px     --line-height-3xl: 36px
+--font-size-4xl: 36px     --line-height-4xl: 40px
+```
+
+## Typography Utility Classes
+
+### Font Family
+```css
+.font-sans
+```
+
+### Font Sizes
+```css
+.text-xs, .text-sm, .text-md, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl
+```
+
+### Font Weights
+```css
+.font-normal, .font-semibold, .font-bold
+```
+
+### Text Alignment
+```css
+.text-left, .text-center, .text-right, .text-justify
+```
+
+### Text Transform
+```css
+.uppercase, .lowercase, .capitalize, .normal-case
+```
+
+### Text Decoration
+```css
+.underline, .line-through, .no-underline
+```
+
+### Font Style
+```css
+.italic, .not-italic
+```
+
+### Letter Spacing
+```css
+.tracking-tighter, .tracking-tight, .tracking-normal, .tracking-wide, .tracking-wider, .tracking-widest
+```
+
+### White Space
+```css
+.whitespace-normal, .whitespace-nowrap, .whitespace-pre, .whitespace-pre-line, .whitespace-pre-wrap
+```
+
+### Word Break
+```css
+.break-normal, .text-wrap-pretty
+```
+
+### Line Clamp
+```css
+.line-clamp-1, .line-clamp-2, .line-clamp-3, .line-clamp-none
+```
+
+## Semantic Typography Classes
+
+### Headings
+```css
+.heading-xs    /* 12px, semibold, 16px line-height */
+.heading-sm    /* 14px, semibold, 20px line-height */
+.heading-md    /* 16px, semibold, 24px line-height */
+.heading-lg    /* 18px, semibold, 28px line-height */
+.heading-xl    /* 20px, semibold, 28px line-height */
+.heading-2xl   /* 24px, semibold, 32px line-height */
+.heading-3xl   /* 30px, semibold, 36px line-height */
+.heading-4xl   /* 36px, semibold, 40px line-height */
+```
+
+### Body Text
+```css
+.body-xs       /* 12px, normal, 16px line-height */
+.body-sm       /* 14px, normal, 20px line-height */
+.body-md       /* 16px, normal, 24px line-height */
+.body-lg       /* 18px, normal, 28px line-height */
+```
+
+### Display Text
+```css
+.display-sm    /* 30px, bold, 36px line-height */
+.display-md    /* 36px, bold, 40px line-height */
+.display-lg    /* 48px, bold, 48px line-height */
+.display-xl    /* 60px, bold, 60px line-height */
+```
+
+## Responsive Typography
+Responsive classes are available with `sm:`, `md:`, `lg:`, and `xl:` prefixes for all text utilities.
+
+## Usage Examples
+```html
+<!-- Using semantic classes -->
+<h1 class="heading-2xl">Page Title</h1>
+<p class="body-md">Body text content</p>
+
+<!-- Using utility classes -->
+<h2 class="text-xl font-semibold">Section Heading</h2>
+<p class="text-sm text-gray-600">Small helper text</p>
+
+<!-- Responsive typography -->
+<h1 class="text-2xl md:text-3xl lg:text-4xl">Responsive heading</h1>
+```
+
+## Best Practices
+1. **Use semantic classes** like `.heading-lg` for consistent component styling
+2. **Use utility classes** for one-off text styling
+3. **Follow the type scale** - use provided font sizes for visual hierarchy
+4. **Pair font sizes with appropriate line heights** using the system
+5. **Use responsive typography** for better mobile experience
+6. **Prefer semibold** over bold for better readability at smaller sizes
