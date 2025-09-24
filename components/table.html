@@ -1,0 +1,640 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Table
+heading: Table Component
+secondary: Table imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        Table component for displaying structured data in rows and columns. 
+        Features responsive design, sorting capabilities, and various styling options.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Table</h2>
+    <p class="mb-24">Standard table with headers and data rows.</p>
+    
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Name</th>
+                        <th class="table__header-cell">Email</th>
+                        <th class="table__header-cell">Role</th>
+                        <th class="table__header-cell">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell">John Doe</td>
+                        <td class="table__cell">john.doe@example.com</td>
+                        <td class="table__cell">Administrator</td>
+                        <td class="table__cell">
+                            <span class="badge badge--success">Active</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Jane Smith</td>
+                        <td class="table__cell">jane.smith@example.com</td>
+                        <td class="table__cell">User</td>
+                        <td class="table__cell">
+                            <span class="badge badge--success">Active</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Bob Johnson</td>
+                        <td class="table__cell">bob.johnson@example.com</td>
+                        <td class="table__cell">Viewer</td>
+                        <td class="table__cell">
+                            <span class="badge badge--warning">Pending</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Table with Borders</h2>
+    <p class="mb-24">Table with visible borders for better visual separation.</p>
+    
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--bordered">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Product</th>
+                        <th class="table__header-cell">Category</th>
+                        <th class="table__header-cell">Price</th>
+                        <th class="table__header-cell">Stock</th>
+                        <th class="table__header-cell">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell">MacBook Pro</td>
+                        <td class="table__cell">Electronics</td>
+                        <td class="table__cell">$2,499.00</td>
+                        <td class="table__cell">15</td>
+                        <td class="table__cell">
+                            <button class="button button--small button--outline">Edit</button>
+                            <button class="button button--small button--critical">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">iPhone 14</td>
+                        <td class="table__cell">Electronics</td>
+                        <td class="table__cell">$999.00</td>
+                        <td class="table__cell">32</td>
+                        <td class="table__cell">
+                            <button class="button button--small button--outline">Edit</button>
+                            <button class="button button--small button--critical">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Wireless Headphones</td>
+                        <td class="table__cell">Audio</td>
+                        <td class="table__cell">$299.00</td>
+                        <td class="table__cell">8</td>
+                        <td class="table__cell">
+                            <button class="button button--small button--outline">Edit</button>
+                            <button class="button button--small button--critical">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Striped Table</h2>
+    <p class="mb-24">Table with alternating row colors for improved readability.</p>
+    
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--striped">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Date</th>
+                        <th class="table__header-cell">Transaction</th>
+                        <th class="table__header-cell">Amount</th>
+                        <th class="table__header-cell">Balance</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-15</td>
+                        <td class="table__cell">Online Purchase - Amazon</td>
+                        <td class="table__cell text-critical">-$89.99</td>
+                        <td class="table__cell">$2,410.01</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-14</td>
+                        <td class="table__cell">Salary Deposit</td>
+                        <td class="table__cell text-success">+$2,500.00</td>
+                        <td class="table__cell">$2,500.00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-12</td>
+                        <td class="table__cell">Coffee Shop</td>
+                        <td class="table__cell text-critical">-$4.50</td>
+                        <td class="table__cell">$0.00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-10</td>
+                        <td class="table__cell">ATM Withdrawal</td>
+                        <td class="table__cell text-critical">-$100.00</td>
+                        <td class="table__cell">$4.50</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-08</td>
+                        <td class="table__cell">Transfer from Savings</td>
+                        <td class="table__cell text-success">+$104.50</td>
+                        <td class="table__cell">$104.50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Sortable Table</h2>
+    <p class="mb-24">Table with clickable column headers for sorting data.</p>
+    
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--sortable" id="sortableTable">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell table__header-cell--sortable" data-column="name">
+                            Name
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                        <th class="table__header-cell table__header-cell--sortable" data-column="age">
+                            Age
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                        <th class="table__header-cell table__header-cell--sortable" data-column="department">
+                            Department
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                        <th class="table__header-cell table__header-cell--sortable" data-column="salary">
+                            Salary
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">Alice Williams</td>
+                        <td class="table__cell" data-label="Age">28</td>
+                        <td class="table__cell" data-label="Department">Engineering</td>
+                        <td class="table__cell" data-label="Salary">$85,000</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">Charlie Brown</td>
+                        <td class="table__cell" data-label="Age">35</td>
+                        <td class="table__cell" data-label="Department">Marketing</td>
+                        <td class="table__cell" data-label="Salary">$70,000</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">David Lee</td>
+                        <td class="table__cell" data-label="Age">42</td>
+                        <td class="table__cell" data-label="Department">Sales</td>
+                        <td class="table__cell" data-label="Salary">$65,000</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">Emily Chen</td>
+                        <td class="table__cell" data-label="Age">31</td>
+                        <td class="table__cell" data-label="Department">Design</td>
+                        <td class="table__cell" data-label="Salary">$78,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Responsive Table</h2>
+    <p class="mb-24">Table that adapts to smaller screens by stacking cells vertically.</p>
+    
+    <div class="demo-item">
+        <div class="demo-label">Resize your browser window to see responsive behavior</div>
+        <div class="table-container">
+            <table class="table table--responsive">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Order #</th>
+                        <th class="table__header-cell">Customer</th>
+                        <th class="table__header-cell">Product</th>
+                        <th class="table__header-cell">Quantity</th>
+                        <th class="table__header-cell">Total</th>
+                        <th class="table__header-cell">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Order #">#12345</td>
+                        <td class="table__cell" data-label="Customer">John Smith</td>
+                        <td class="table__cell" data-label="Product">Laptop Computer</td>
+                        <td class="table__cell" data-label="Quantity">1</td>
+                        <td class="table__cell" data-label="Total">$1,299.99</td>
+                        <td class="table__cell" data-label="Status">
+                            <span class="badge badge--success">Shipped</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Order #">#12346</td>
+                        <td class="table__cell" data-label="Customer">Sarah Johnson</td>
+                        <td class="table__cell" data-label="Product">Wireless Mouse</td>
+                        <td class="table__cell" data-label="Quantity">2</td>
+                        <td class="table__cell" data-label="Total">$59.98</td>
+                        <td class="table__cell" data-label="Status">
+                            <span class="badge badge--warning">Processing</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Order #">#12347</td>
+                        <td class="table__cell" data-label="Customer">Mike Davis</td>
+                        <td class="table__cell" data-label="Product">USB Cable</td>
+                        <td class="table__cell" data-label="Quantity">3</td>
+                        <td class="table__cell" data-label="Total">$29.97</td>
+                        <td class="table__cell" data-label="Status">
+                            <span class="badge badge--success">Delivered</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Table with Selection</h2>
+    <p class="mb-24">Table with checkboxes for selecting individual rows or all rows.</p>
+    
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--selectable" id="selectableTable">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell table__header-cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="selectAll" class="checkbox__input">
+                                <label for="selectAll" class="checkbox__label" aria-label="Select all rows"></label>
+                            </div>
+                        </th>
+                        <th class="table__header-cell">File Name</th>
+                        <th class="table__header-cell">Size</th>
+                        <th class="table__header-cell">Modified</th>
+                        <th class="table__header-cell">Type</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="file1" class="checkbox__input row-checkbox">
+                                <label for="file1" class="checkbox__label" aria-label="Select this row"></label>
+                            </div>
+                        </td>
+                        <td class="table__cell">document.pdf</td>
+                        <td class="table__cell">2.3 MB</td>
+                        <td class="table__cell">2024-01-15</td>
+                        <td class="table__cell">PDF Document</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="file2" class="checkbox__input row-checkbox">
+                                <label for="file2" class="checkbox__label" aria-label="Select this row"></label>
+                            </div>
+                        </td>
+                        <td class="table__cell">presentation.pptx</td>
+                        <td class="table__cell">5.7 MB</td>
+                        <td class="table__cell">2024-01-14</td>
+                        <td class="table__cell">PowerPoint</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="file3" class="checkbox__input row-checkbox">
+                                <label for="file3" class="checkbox__label" aria-label="Select this row"></label>
+                            </div>
+                        </td>
+                        <td class="table__cell">spreadsheet.xlsx</td>
+                        <td class="table__cell">1.2 MB</td>
+                        <td class="table__cell">2024-01-13</td>
+                        <td class="table__cell">Excel Workbook</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-actions" style="margin-top: 16px;">
+            <span id="selectionCount">0 items selected</span>
+            <button class="button button--outline" id="deleteSelected" disabled>Delete Selected</button>
+            <button class="button button--primary" id="downloadSelected" disabled>Download Selected</button>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Empty State Table</h2>
+    <p class="mb-24">Table displaying an empty state when no data is available.</p>
+    
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Name</th>
+                        <th class="table__header-cell">Email</th>
+                        <th class="table__header-cell">Role</th>
+                        <th class="table__header-cell">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row table__row--empty">
+                        <td class="table__cell table__cell--empty" colspan="4">
+                            <div class="table__empty-state">
+                                <div class="table__empty-icon">
+                                    <span class="heroicon heroicon-document-text"></span>
+                                </div>
+                                <div class="table__empty-content">
+                                    <h3 class="table__empty-title">No data found</h3>
+                                    <p class="table__empty-description">There are no items to display at this time.</p>
+                                    <button class="button button--primary">Add New Item</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script>
+// Table sorting functionality
+class TableSorter {
+    constructor(tableId) {
+        this.table = document.getElementById(tableId);
+        this.headers = this.table.querySelectorAll('.table__header-cell--sortable');
+        this.tbody = this.table.querySelector('.table__body');
+        this.currentSort = { column: null, direction: null };
+        
+        this.init();
+    }
+    
+    init() {
+        this.headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const column = header.dataset.column;
+                this.sort(column, header);
+            });
+        });
+    }
+    
+    sort(column, header) {
+        const rows = Array.from(this.tbody.querySelectorAll('.table__row'));
+        const isCurrentColumn = this.currentSort.column === column;
+        const direction = isCurrentColumn && this.currentSort.direction === 'asc' ? 'desc' : 'asc';
+        
+        // Update sort state
+        this.currentSort = { column, direction };
+        
+        // Clear all sort indicators
+        this.headers.forEach(h => {
+            h.classList.remove('table__header-cell--sorted-asc', 'table__header-cell--sorted-desc');
+            const icon = h.querySelector('.heroicon');
+            icon.className = 'heroicon heroicon-16 heroicon-chevron-up-down';
+        });
+        
+        // Set current sort indicator
+        header.classList.add(`table__header-cell--sorted-${direction}`);
+        const icon = header.querySelector('.heroicon');
+        icon.className = `heroicon heroicon-16 heroicon-chevron-${direction === 'asc' ? 'up' : 'down'}`;
+        
+        // Sort rows
+        rows.sort((a, b) => {
+            const aValue = this.getCellValue(a, column);
+            const bValue = this.getCellValue(b, column);
+            
+            return this.compareValues(aValue, bValue, direction);
+        });
+        
+        // Reorder rows in DOM
+        rows.forEach(row => this.tbody.appendChild(row));
+        
+        console.log(`Table sorted by ${column} in ${direction} order`);
+    }
+    
+    getCellValue(row, column) {
+        const cell = row.querySelector(`[data-label="${this.capitalizeFirst(column)}"]`);
+        return cell ? cell.textContent.trim() : '';
+    }
+    
+    compareValues(a, b, direction) {
+        // Try to parse as numbers
+        const aNum = parseFloat(a.replace(/[$,]/g, ''));
+        const bNum = parseFloat(b.replace(/[$,]/g, ''));
+        
+        if (!isNaN(aNum) && !isNaN(bNum)) {
+            return direction === 'asc' ? aNum - bNum : bNum - aNum;
+        }
+        
+        // String comparison
+        return direction === 'asc' ? a.localeCompare(b) : b.localeCompare(a);
+    }
+    
+    capitalizeFirst(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+}
+
+// Table selection functionality
+class TableSelector {
+    constructor(tableId) {
+        this.table = document.getElementById(tableId);
+        this.selectAllCheckbox = document.getElementById('selectAll');
+        this.rowCheckboxes = this.table.querySelectorAll('.row-checkbox');
+        this.selectionCount = document.getElementById('selectionCount');
+        this.deleteButton = document.getElementById('deleteSelected');
+        this.downloadButton = document.getElementById('downloadSelected');
+        
+        this.init();
+    }
+    
+    init() {
+        // Select all functionality
+        this.selectAllCheckbox.addEventListener('change', () => {
+            const isChecked = this.selectAllCheckbox.checked;
+            this.rowCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+                this.updateRowSelection(checkbox);
+            });
+            this.updateSelectionUI();
+        });
+        
+        // Individual row selection
+        this.rowCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                this.updateRowSelection(checkbox);
+                this.updateSelectAllState();
+                this.updateSelectionUI();
+            });
+        });
+        
+        // Action buttons
+        this.deleteButton.addEventListener('click', () => this.deleteSelected());
+        this.downloadButton.addEventListener('click', () => this.downloadSelected());
+    }
+    
+    updateRowSelection(checkbox) {
+        const row = checkbox.closest('.table__row');
+        if (checkbox.checked) {
+            row.classList.add('table__row--selected');
+        } else {
+            row.classList.remove('table__row--selected');
+        }
+    }
+    
+    updateSelectAllState() {
+        const checkedCount = Array.from(this.rowCheckboxes).filter(cb => cb.checked).length;
+        const totalCount = this.rowCheckboxes.length;
+        
+        if (checkedCount === 0) {
+            this.selectAllCheckbox.checked = false;
+            this.selectAllCheckbox.indeterminate = false;
+        } else if (checkedCount === totalCount) {
+            this.selectAllCheckbox.checked = true;
+            this.selectAllCheckbox.indeterminate = false;
+        } else {
+            this.selectAllCheckbox.checked = false;
+            this.selectAllCheckbox.indeterminate = true;
+        }
+    }
+    
+    updateSelectionUI() {
+        const selectedCount = Array.from(this.rowCheckboxes).filter(cb => cb.checked).length;
+        
+        this.selectionCount.textContent = `${selectedCount} item${selectedCount !== 1 ? 's' : ''} selected`;
+        
+        const hasSelection = selectedCount > 0;
+        this.deleteButton.disabled = !hasSelection;
+        this.downloadButton.disabled = !hasSelection;
+    }
+    
+    deleteSelected() {
+        const selectedRows = Array.from(this.rowCheckboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.closest('.table__row'));
+        
+        if (selectedRows.length > 0) {
+            const confirm = window.confirm(`Delete ${selectedRows.length} selected item(s)?`);
+            if (confirm) {
+                selectedRows.forEach(row => row.remove());
+                this.updateSelectionUI();
+                console.log(`Deleted ${selectedRows.length} items`);
+            }
+        }
+    }
+    
+    downloadSelected() {
+        const selectedFiles = Array.from(this.rowCheckboxes)
+            .filter(cb => cb.checked)
+            .map(cb => {
+                const row = cb.closest('.table__row');
+                const fileName = row.querySelector('[data-label="File Name"]').textContent;
+                return fileName;
+            });
+        
+        alert(`Downloaded: ${selectedFiles.join(', ')}`);
+        console.log('Downloaded files:', selectedFiles);
+    }
+}
+
+// Initialize table functionality
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Table demo page loaded');
+    
+    // Initialize sortable table
+    if (document.getElementById('sortableTable')) {
+        new TableSorter('sortableTable');
+    }
+    
+    // Initialize selectable table
+    if (document.getElementById('selectableTable')) {
+        new TableSelector('selectableTable');
+    }
+    
+    // Add responsive behavior demonstration
+    addResponsiveDemo();
+});
+
+function addResponsiveDemo() {
+    const responsiveTable = document.querySelector('.table--responsive');
+    if (responsiveTable) {
+        // Add a button to toggle responsive mode for demonstration
+        const container = responsiveTable.closest('.demo-item');
+        const button = document.createElement('button');
+        button.className = 'button button--outline';
+        button.textContent = 'Toggle Mobile View';
+        button.style.marginBottom = '16px';
+        
+        button.addEventListener('click', () => {
+            responsiveTable.classList.toggle('table--force-responsive');
+        });
+        
+        container.insertBefore(button, container.firstChild);
+    }
+}
+
+// Utility function for table actions
+function editTableRow(button) {
+    const row = button.closest('.table__row');
+    const cells = row.querySelectorAll('.table__cell:not(:last-child)');
+    
+    // Simple inline editing simulation
+    cells.forEach(cell => {
+        const currentText = cell.textContent;
+        cell.innerHTML = `<input type="text" value="${currentText}" style="border: 1px solid #ccc; padding: 4px; width: 100%;">`;
+    });
+    
+    button.textContent = 'Save';
+    button.onclick = () => saveTableRow(button);
+}
+
+function saveTableRow(button) {
+    const row = button.closest('.table__row');
+    const inputs = row.querySelectorAll('input[type="text"]');
+    
+    inputs.forEach(input => {
+        const cell = input.parentElement;
+        cell.textContent = input.value;
+    });
+    
+    button.textContent = 'Edit';
+    button.onclick = () => editTableRow(button);
+    
+    console.log('Row saved');
+}
+</script>

@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Display</title>
+    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Select</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Display &amp; Layout Utilities</h1> 
+                <h1>Select Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Display imported from CUI</p>
+                  <p>Select imported from CUI</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 
-           </a> <span>Wed Sep 24 2025 03:01:44 GMT-0400 (Eastern Daylight Time)</span> 
+           </a> <span></span> 
         </div>
 
 </div>
@@ -94,571 +94,562 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        The Swage.CSS display system provides comprehensive layout utilities including flexbox, grid, display types, positioning, borders, and more for creating modern, responsive layouts.
+        Select dropdown component for choosing from a list of options. 
+        Features multiple states, sizes, and interactive functionality.
     </p>
 </section>
 
-<!-- Flexbox System -->
 <section class="component-section">
-    <h2>Flexbox System</h2>
-    <p class="mb-24">Powerful flexbox utilities for creating flexible layouts with precise control over alignment and distribution.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Flex Container Classes</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Basic Flex</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
-                </div>
-                <code>.flex</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Column</h4>
-                <div class="flex flex-col" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 120px;">
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
-                </div>
-                <code>.flex .flex-col</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Wrap</h4>
-                <div class="flex flex-wrap" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); width: 200px;">
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 1</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 2</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 3</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 4</div>
-                </div>
-                <code>.flex .flex-wrap</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex No Wrap</h4>
-                <div class="flex flex-nowrap" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); width: 200px; overflow: hidden;">
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 60px;">Item 1</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 60px;">Item 2</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 60px;">Item 3</div>
-                </div>
-                <code>.flex .flex-nowrap</code>
-            </div>
-        </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Justify Content</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Start</h4>
-                <div class="flex justify-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-start</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Center</h4>
-                <div class="flex justify-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-center</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>End</h4>
-                <div class="flex justify-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-end</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Between</h4>
-                <div class="flex justify-between" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-between</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Around</h4>
-                <div class="flex justify-around" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-around</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Evenly</h4>
-                <div class="flex justify-evenly" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-evenly</code>
-            </div>
-        </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Align Items</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Start</h4>
-                <div class="flex items-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
-                </div>
-                <code>.items-start</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Center</h4>
-                <div class="flex items-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
-                </div>
-                <code>.items-center</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>End</h4>
-                <div class="flex items-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
-                </div>
-                <code>.items-end</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Stretch</h4>
-                <div class="flex items-stretch" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.items-stretch</code>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Flex Item Properties</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Flex 1</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-1" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flex 1</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Fixed</div>
-                </div>
-                <code>.flex-1</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Auto</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-auto" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flex Auto</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Fixed</div>
-                </div>
-                <code>.flex-auto</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex None</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-none" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">No Flex</div>
-                    <div class="flex-1" style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flexible</div>
-                </div>
-                <code>.flex-none</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Shrink 0</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); width: 200px;">
-                    <div class="flex-shrink-0" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 100px;">No Shrink</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 100px;">Shrinks</div>
-                </div>
-                <code>.flex-shrink-0</code>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Grid System -->
-<section class="component-section">
-    <h2>Grid System</h2>
-    <p class="mb-24">CSS Grid utilities for creating complex two-dimensional layouts with precise control.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Grid Columns</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>2 Columns</h4>
-                <div class="grid grid-cols-2 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                </div>
-                <code>.grid .grid-cols-2</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>3 Columns</h4>
-                <div class="grid grid-cols-3 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">5</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">6</div>
-                </div>
-                <code>.grid .grid-cols-3</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>4 Columns</h4>
-                <div class="grid grid-cols-4 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                </div>
-                <code>.grid .grid-cols-4</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>12 Columns</h4>
-                <div class="grid grid-cols-12 gap-4" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">1</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">2</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">3</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">4</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">5</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">6</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">7</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">8</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">9</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">10</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">11</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">12</div>
-                </div>
-                <code>.grid .grid-cols-12</code>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Display Types -->
-<section class="component-section">
-    <h2>Display Types</h2>
-    <p class="mb-24">Control how elements are displayed and how they interact with other elements.</p>
+    <h2>Basic Select</h2>
+    <p class="mb-24">Standard select dropdown with various states.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <h4>Block</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                <span class="block" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-bottom: var(--spacing-4);">Block Element</span>
-                <span class="block" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Another Block</span>
+            <div class="demo-label">Default State</div>
+            <div class="select">
+                <select class="select__control" id="basicSelect">
+                    <option value="">Choose an option...</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
             </div>
-            <code>.block</code>
         </div>
-        
+
         <div class="demo-item">
-            <h4>Inline Block</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                <span class="inline-block" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-right: var(--spacing-4);">Inline Block</span>
-                <span class="inline-block" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Another</span>
+            <div class="demo-label">With Selected Value</div>
+            <div class="select">
+                <select class="select__control" id="selectedSelect">
+                    <option value="">Choose an option...</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2" selected>Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
             </div>
-            <code>.inline-block</code>
         </div>
-        
+
         <div class="demo-item">
-            <h4>Inline</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                This is text with an <span class="inline" style="background: var(--color-orange-200); padding: var(--spacing-4);">inline element</span> inside it.
+            <div class="demo-label">Disabled State</div>
+            <div class="select select--disabled">
+                <select class="select__control" disabled>
+                    <option value="">Choose an option...</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
             </div>
-            <code>.inline</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Hidden</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-bottom: var(--spacing-4);">Visible Element</div>
-                <div class="hidden" style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-bottom: var(--spacing-4);">Hidden Element</div>
-                <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Another Visible</div>
-            </div>
-            <code>.hidden</code>
         </div>
     </div>
 </section>
 
-<!-- Positioning -->
 <section class="component-section">
-    <h2>Positioning</h2>
-    <p class="mb-24">Classes for controlling element positioning and stacking context.</p>
+    <h2>Select with Label</h2>
+    <p class="mb-24">Select components with associated labels for better accessibility.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <h4>Relative</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px; position: relative;">
-                <div class="relative" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: var(--spacing-8); left: var(--spacing-8);">Relative</div>
-            </div>
-            <code>.relative</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Absolute</h4>
-            <div class="relative" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px;">
-                <div class="absolute" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: var(--spacing-8); right: var(--spacing-8);">Absolute</div>
-            </div>
-            <code>.absolute</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Fixed</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px;">
-                <p style="font-size: var(--font-size-sm);">Fixed elements are positioned relative to the viewport</p>
-            </div>
-            <code>.fixed</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Sticky</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px; overflow-y: auto;">
-                <div class="sticky" style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: 0;">Sticky Header</div>
-                <div style="height: 200px; background: var(--color-gray-50); margin-top: var(--spacing-8); padding: var(--spacing-8);">
-                    Scroll content...
+            <label for="countrySelect" class="select__label">Country</label>
+            <div class="select">
+                <select class="select__control" id="countrySelect">
+                    <option value="">Select a country...</option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="au">Australia</option>
+                    <option value="de">Germany</option>
+                    <option value="fr">France</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
                 </div>
             </div>
-            <code>.sticky</code>
         </div>
-    </div>
-</section>
 
-<!-- Border Utilities -->
-<section class="component-section">
-    <h2>Border Utilities</h2>
-    <p class="mb-24">Classes for adding borders and controlling border properties.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Border Styles</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="border" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Basic Border
+        <div class="demo-item">
+            <label for="categorySelect" class="select__label">Category</label>
+            <div class="select">
+                <select class="select__control" id="categorySelect">
+                    <option value="">All categories...</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing & Accessories</option>
+                    <option value="books">Books & Media</option>
+                    <option value="home">Home & Garden</option>
+                    <option value="sports">Sports & Outdoors</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
                 </div>
-                <code>.border</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-2x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    2px Border
-                </div>
-                <code>.border-2x</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-4x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    4px Border
-                </div>
-                <code>.border-4x</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-0" style="padding: var(--spacing-16); background: var(--color-gray-100); border-radius: var(--spacing-4); text-align: center;">
-                    No Border
-                </div>
-                <code>.border-0</code>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Directional Borders</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="border-t" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Top Border
-                </div>
-                <code>.border-t</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-r" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Right Border
-                </div>
-                <code>.border-r</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-b" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Bottom Border
-                </div>
-                <code>.border-b</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-l" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Left Border
-                </div>
-                <code>.border-l</code>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Miscellaneous Utilities -->
 <section class="component-section">
-    <h2>Miscellaneous Utilities</h2>
-    <p class="mb-24">Additional layout utilities for overflow, alignment, and sizing.</p>
+    <h2>Select Sizes</h2>
+    <p class="mb-24">Different select sizes for various UI contexts.</p>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Text Alignment</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="align-left" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Left aligned text content
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Small Size</div>
+            <div class="select select--small">
+                <select class="select__control">
+                    <option value="">Small select...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
                 </div>
-                <code>.align-left</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="align-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Center aligned text content
-                </div>
-                <code>.align-center</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="align-right" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Right aligned text content
-                </div>
-                <code>.align-right</code>
             </div>
         </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Overflow Control</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Hidden</h4>
-                <div class="overflow-hidden" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This is a long text that would normally overflow the container but is hidden instead.
+
+        <div class="demo-item">
+            <div class="demo-label">Large Size</div>
+            <div class="select select--large">
+                <select class="select__control">
+                    <option value="">Large select...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
                 </div>
-                <code>.overflow-hidden</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Scroll</h4>
-                <div class="overflow-scroll" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This is a long text that overflows the container and shows scrollbars when needed.
-                </div>
-                <code>.overflow-scroll</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Auto</h4>
-                <div class="overflow-auto" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This content shows scrollbars only when necessary for overflow.
-                </div>
-                <code>.overflow-auto</code>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Sizing Utilities</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="h-100 w-100" style="background: var(--color-blue-100); border: 1px dashed var(--color-blue-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    100% Width & Height
-                </div>
-                <code>.h-100 .w-100</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="min-h-screen" style="background: var(--color-green-100); border: 1px dashed var(--color-green-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    Min Height Screen
-                </div>
-                <code>.min-h-screen</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="min-h-full" style="background: var(--color-orange-100); border: 1px dashed var(--color-orange-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    Min Height Full
-                </div>
-                <code>.min-h-full</code>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Layout Examples -->
 <section class="component-section">
-    <h2>Layout Examples</h2>
-    <p class="mb-24">Common layout patterns using the display utilities.</p>
+    <h2>Select States</h2>
+    <p class="mb-24">Different states for form validation feedback.</p>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Card Layout</h3>
-        <div class="border rounded p-24 bg-white">
-            <div class="flex items-center justify-between mb-16">
-                <h4 class="heading-lg">Card Title</h4>
-                <button class="button button--outline">Action</button>
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Error State</div>
+            <div class="select select--error">
+                <select class="select__control">
+                    <option value="">Please select...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
             </div>
-            <p class="body-md text-gray-600 mb-16">Card content with flexible layout using flexbox utilities.</p>
-            <div class="flex gap-8">
-                <span class="badge badge--default badge--small">Tag 1</span>
-                <span class="badge badge--default badge--small">Tag 2</span>
+            <div class="select__error-message">This field is required</div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Success State</div>
+            <div class="select select--success">
+                <select class="select__control">
+                    <option value="">Please select...</option>
+                    <option value="1">Option 1</option>
+                    <option value="2" selected>Option 2</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
+            </div>
+            <div class="select__success-message">Valid selection</div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Multiple Select</h2>
+    <p class="mb-24">Select components that allow multiple selections.</p>
+    
+    <div class="demo-item">
+        <label for="skillsSelect" class="select__label">Skills (Hold Ctrl/Cmd to select multiple)</label>
+        <div class="select select--multiple">
+            <select class="select__control" id="skillsSelect" multiple>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="react">React</option>
+                <option value="vue">Vue.js</option>
+                <option value="angular">Angular</option>
+                <option value="nodejs">Node.js</option>
+                <option value="css">CSS</option>
+                <option value="html">HTML</option>
+            </select>
+        </div>
+        <div class="select__help-text">Hold Ctrl (or Cmd on Mac) while clicking to select multiple options</div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Grouped Options</h2>
+    <p class="mb-24">Select with optgroups for organized option lists.</p>
+    
+    <div class="demo-item">
+        <label for="vehicleSelect" class="select__label">Vehicle Type</label>
+        <div class="select">
+            <select class="select__control" id="vehicleSelect">
+                <option value="">Choose a vehicle...</option>
+                <optgroup label="Cars">
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="hatchback">Hatchback</option>
+                    <option value="convertible">Convertible</option>
+                </optgroup>
+                <optgroup label="Motorcycles">
+                    <option value="sport">Sport Bike</option>
+                    <option value="cruiser">Cruiser</option>
+                    <option value="touring">Touring</option>
+                </optgroup>
+                <optgroup label="Trucks">
+                    <option value="pickup">Pickup Truck</option>
+                    <option value="delivery">Delivery Van</option>
+                    <option value="semi">Semi Truck</option>
+                </optgroup>
+            </select>
+            <div class="select__icon">
+                <span class="heroicon heroicon-chevron-down"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Examples</h2>
+    <p class="mb-24">Demonstrates dynamic interactions between select components.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <label for="regionSelect" class="select__label">Region</label>
+            <div class="select">
+                <select class="select__control" id="regionSelect">
+                    <option value="">Select region...</option>
+                    <option value="north-america">North America</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                    <option value="south-america">South America</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <label for="countryDependentSelect" class="select__label">Country</label>
+            <div class="select">
+                <select class="select__control" id="countryDependentSelect" disabled>
+                    <option value="">First select a region...</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
             </div>
         </div>
     </div>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Navigation Layout</h3>
-        <nav class="flex items-center justify-between p-16 border-b bg-white">
-            <div class="flex items-center gap-16">
-                <div style="width: var(--spacing-32); height: var(--spacing-32); background: var(--color-foundation-primary); border-radius: var(--spacing-4);"></div>
-                <span class="heading-md">Brand</span>
-            </div>
-            <div class="flex items-center gap-24">
-                <a href="#" class="body-sm">Home</a>
-                <a href="#" class="body-sm">About</a>
-                <a href="#" class="body-sm">Contact</a>
-                <button class="button button--primary">Sign Up</button>
-            </div>
-        </nav>
+    <div class="demo-output" id="selectionOutput">
+        Region: None selected<br>
+        Country: None selected
     </div>
+</section>
+
+<section class="component-section">
+    <h2>Form Integration</h2>
+    <p class="mb-24">Select components within a complete form context with validation.</p>
     
-    <div>
-        <h3>Grid Gallery</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 1</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
+    <div class="demo-item">
+        <form id="profileForm" class="profile-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="titleSelect" class="select__label">Title</label>
+                    <div class="select select--small">
+                        <select class="select__control" id="titleSelect" name="title">
+                            <option value="">Select...</option>
+                            <option value="mr">Mr.</option>
+                            <option value="mrs">Mrs.</option>
+                            <option value="ms">Ms.</option>
+                            <option value="dr">Dr.</option>
+                            <option value="prof">Prof.</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="industrySelect" class="select__label">Industry *</label>
+                    <div class="select" id="industrySelectWrapper">
+                        <select class="select__control" id="industrySelect" name="industry" required>
+                            <option value="">Select industry...</option>
+                            <option value="technology">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="finance">Finance</option>
+                            <option value="education">Education</option>
+                            <option value="retail">Retail</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
+                    <div class="select__error-message" id="industryError" style="display: none;">
+                        Please select an industry
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="experienceSelect" class="select__label">Years of Experience</label>
+                    <div class="select">
+                        <select class="select__control" id="experienceSelect" name="experience">
+                            <option value="">Select...</option>
+                            <option value="0-1">0-1 years</option>
+                            <option value="2-5">2-5 years</option>
+                            <option value="6-10">6-10 years</option>
+                            <option value="11-15">11-15 years</option>
+                            <option value="16+">16+ years</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferenceSelect" class="select__label">Contact Preference</label>
+                    <div class="select">
+                        <select class="select__control" id="preferenceSelect" name="preference">
+                            <option value="">Select...</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                            <option value="both">Both Email and Phone</option>
+                            <option value="none">No contact</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 2</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
+            
+            <div class="form-actions">
+                <button type="button" class="button button--outline" onclick="resetProfileForm()">Reset</button>
+                <button type="submit" class="button button--primary">Save Profile</button>
             </div>
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 3</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
-            </div>
+        </form>
+        
+        <div id="profileResults" class="form-results" style="display: none;">
+            <h3>Profile Data:</h3>
+            <div id="profileResultsContent"></div>
         </div>
     </div>
-</section></article>
+</section>
+
+<script>
+// Country data for dependent select example
+const countryData = {
+    'north-america': [
+        { value: 'us', text: 'United States' },
+        { value: 'ca', text: 'Canada' },
+        { value: 'mx', text: 'Mexico' }
+    ],
+    'europe': [
+        { value: 'uk', text: 'United Kingdom' },
+        { value: 'de', text: 'Germany' },
+        { value: 'fr', text: 'France' },
+        { value: 'it', text: 'Italy' },
+        { value: 'es', text: 'Spain' }
+    ],
+    'asia': [
+        { value: 'jp', text: 'Japan' },
+        { value: 'cn', text: 'China' },
+        { value: 'in', text: 'India' },
+        { value: 'kr', text: 'South Korea' }
+    ],
+    'south-america': [
+        { value: 'br', text: 'Brazil' },
+        { value: 'ar', text: 'Argentina' },
+        { value: 'cl', text: 'Chile' },
+        { value: 'co', text: 'Colombia' }
+    ]
+};
+
+// Initialize functionality when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Select demo page loaded');
+    
+    // Set up dependent select functionality
+    setupDependentSelects();
+    
+    // Set up form validation
+    setupFormValidation();
+    
+    // Add change listeners for demonstration
+    setupChangeListeners();
+});
+
+function setupDependentSelects() {
+    const regionSelect = document.getElementById('regionSelect');
+    const countrySelect = document.getElementById('countryDependentSelect');
+    const selectionOutput = document.getElementById('selectionOutput');
+    
+    regionSelect.addEventListener('change', () => {
+        const selectedRegion = regionSelect.value;
+        
+        // Clear country select
+        countrySelect.innerHTML = '';
+        
+        if (selectedRegion) {
+            // Enable country select and populate with countries
+            countrySelect.disabled = false;
+            countrySelect.innerHTML = '<option value="">Select country...</option>';
+            
+            const countries = countryData[selectedRegion] || [];
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.value;
+                option.textContent = country.text;
+                countrySelect.appendChild(option);
+            });
+        } else {
+            // Disable country select
+            countrySelect.disabled = true;
+            countrySelect.innerHTML = '<option value="">First select a region...</option>';
+        }
+        
+        updateSelectionOutput();
+    });
+    
+    countrySelect.addEventListener('change', updateSelectionOutput);
+    
+    function updateSelectionOutput() {
+        const regionText = regionSelect.options[regionSelect.selectedIndex]?.text || 'None selected';
+        const countryText = countrySelect.options[countrySelect.selectedIndex]?.text || 'None selected';
+        
+        selectionOutput.innerHTML = `
+            Region: ${regionText === 'Select region...' ? 'None selected' : regionText}<br>
+            Country: ${countryText.includes('select') ? 'None selected' : countryText}
+        `;
+    }
+}
+
+function setupFormValidation() {
+    const profileForm = document.getElementById('profileForm');
+    const industrySelect = document.getElementById('industrySelect');
+    const industryWrapper = document.getElementById('industrySelectWrapper');
+    const industryError = document.getElementById('industryError');
+    
+    // Real-time validation for industry select
+    industrySelect.addEventListener('change', () => {
+        if (industrySelect.value) {
+            industryWrapper.classList.remove('select--error');
+            industryWrapper.classList.add('select--success');
+            industryError.style.display = 'none';
+        } else {
+            industryWrapper.classList.remove('select--success');
+        }
+    });
+    
+    // Form submission
+    profileForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let isValid = true;
+        
+        // Validate required industry field
+        if (!industrySelect.value) {
+            industryWrapper.classList.add('select--error');
+            industryError.style.display = 'block';
+            isValid = false;
+        }
+        
+        if (isValid) {
+            // Show results
+            const formData = new FormData(profileForm);
+            const results = document.getElementById('profileResults');
+            const resultsContent = document.getElementById('profileResultsContent');
+            
+            let resultHTML = '';
+            for (let [key, value] of formData.entries()) {
+                if (value) {
+                    const label = document.querySelector(`label[for="${key}Select"]`)?.textContent || key;
+                    const selectedOption = document.querySelector(`#${key}Select option[value="${value}"]`)?.textContent || value;
+                    resultHTML += `<p><strong>${label}:</strong> ${selectedOption}</p>`;
+                }
+            }
+            
+            resultsContent.innerHTML = resultHTML || '<p>No data selected</p>';
+            results.style.display = 'block';
+            
+            console.log('Profile form submitted successfully');
+        }
+    });
+}
+
+function setupChangeListeners() {
+    // Add change listeners to demonstrate functionality
+    const selects = document.querySelectorAll('select');
+    selects.forEach(select => {
+        select.addEventListener('change', (e) => {
+            console.log(`Select changed: ${e.target.id || 'unnamed'} = ${e.target.value}`);
+        });
+    });
+}
+
+function resetProfileForm() {
+    const profileForm = document.getElementById('profileForm');
+    const results = document.getElementById('profileResults');
+    const industryWrapper = document.getElementById('industrySelectWrapper');
+    const industryError = document.getElementById('industryError');
+    
+    profileForm.reset();
+    results.style.display = 'none';
+    
+    // Reset validation states
+    industryWrapper.classList.remove('select--error', 'select--success');
+    industryError.style.display = 'none';
+    
+    console.log('Profile form reset');
+}
+
+// Add keyboard support for better accessibility
+document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'SELECT' && (e.key === 'Enter' || e.key === ' ')) {
+        // Enhanced keyboard interaction could be added here
+        // For now, rely on native select behavior
+    }
+});
+
+// Custom select enhancement (optional future enhancement)
+function enhanceSelectAccessibility() {
+    const selects = document.querySelectorAll('.select__control');
+    selects.forEach(select => {
+        // Add ARIA attributes for better screen reader support
+        if (!select.hasAttribute('aria-label') && !select.hasAttribute('aria-labelledby')) {
+            const label = document.querySelector(`label[for="${select.id}"]`);
+            if (label) {
+                select.setAttribute('aria-labelledby', label.id || 'label-' + select.id);
+                if (!label.id) {
+                    label.id = 'label-' + select.id;
+                }
+            }
+        }
+    });
+}
+
+// Call accessibility enhancement
+enhanceSelectAccessibility();
+</script>
+</article>
         
       </main>
   

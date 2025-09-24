@@ -1,0 +1,373 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; MinMaxProgressBar
+heading: MinMaxProgressBar Component
+secondary: MinMaxProgressBar imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        Progress bar component that indicates how much progress has been made given a min and max limit, 
+        replicated from the Curative UI design system. Features blue and gray color variants, 
+        customizable text, and accessibility support.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Progress Bars - Blue Fill Color</h2>
+    <p class="mb-24">Progress bars with blue fill color showing different completion percentages.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">0% Complete</div>
+            <div class="min-max-progress-bar min-max-progress-bar--blue">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__start-text">$0 spent</span>
+                    <span class="min-max-progress-bar__end-text">$4,000 remaining</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Deductible Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="0"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">50% Complete</div>
+            <div class="min-max-progress-bar min-max-progress-bar--blue min-max-progress-bar--active">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__start-text">$2,000 spent</span>
+                    <span class="min-max-progress-bar__end-text">$2,000 remaining</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Deductible Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="50"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 50%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">100% Complete (Max Met)</div>
+            <div class="min-max-progress-bar min-max-progress-bar--blue min-max-progress-bar--active">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__max-met-text">Your Deductible has been met!</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Deductible Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="100"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Gray Fill Color Variant</h2>
+    <p class="mb-24">Progress bars with gray fill color for less prominent progress indicators.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">0% Complete</div>
+            <div class="min-max-progress-bar min-max-progress-bar--gray">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__start-text">$0 spent</span>
+                    <span class="min-max-progress-bar__end-text">$4,000 remaining</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Budget Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="0"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">50% Complete</div>
+            <div class="min-max-progress-bar min-max-progress-bar--gray min-max-progress-bar--active">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__start-text">$2,000 spent</span>
+                    <span class="min-max-progress-bar__end-text">$2,000 remaining</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Budget Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="50"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 50%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">100% Complete (Max Met)</div>
+            <div class="min-max-progress-bar min-max-progress-bar--gray min-max-progress-bar--active">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__max-met-text">Your Budget has been reached!</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Budget Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="100"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Start Text Only</h2>
+    <p class="mb-24">Progress bar with only start text provided, no end text.</p>
+    
+    <div class="demo-item">
+        <div class="demo-label">Only startText provided, endText omitted</div>
+        <div class="min-max-progress-bar min-max-progress-bar--blue min-max-progress-bar--active">
+            <div class="min-max-progress-bar__text-container">
+                <span class="min-max-progress-bar__start-text">$2,000 spent</span>
+            </div>
+            <div 
+                class="min-max-progress-bar__track-container" 
+                role="meter" 
+                aria-label="Amount spent" 
+                aria-valuemin="0" 
+                aria-valuemax="100" 
+                aria-valuenow="50"
+            >
+                <div class="min-max-progress-bar__track"></div>
+                <div class="min-max-progress-bar__fill" style="width: 50%;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>No Max Met Text</h2>
+    <p class="mb-24">When maxMetText is not provided, startText is used as fallback when at 100%.</p>
+    
+    <div class="demo-item">
+        <div class="demo-label">startText and endText provided, but maxMetText not provided. Will display startText as fallback</div>
+        <div class="min-max-progress-bar min-max-progress-bar--blue min-max-progress-bar--active">
+            <div class="min-max-progress-bar__text-container">
+                <span class="min-max-progress-bar__max-met-text">$4,000 spent</span>
+            </div>
+            <div 
+                class="min-max-progress-bar__track-container" 
+                role="meter" 
+                aria-label="Amount spent" 
+                aria-valuemin="0" 
+                aria-valuemax="100" 
+                aria-valuenow="100"
+            >
+                <div class="min-max-progress-bar__track"></div>
+                <div class="min-max-progress-bar__fill" style="width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Progress Bars</h2>
+    <p class="mb-24">Click the buttons to see animated progress updates.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Interactive Blue Progress Bar</div>
+            <div class="min-max-progress-bar min-max-progress-bar--blue min-max-progress-bar--animated" id="interactiveBlue">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__start-text">$0 spent</span>
+                    <span class="min-max-progress-bar__end-text">$4,000 remaining</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Interactive Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="0"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div style="margin-top: 16px; display: flex; gap: 8px;">
+                <button class="button button--primary" onclick="updateProgress('interactiveBlue', 25)">25%</button>
+                <button class="button button--primary" onclick="updateProgress('interactiveBlue', 50)">50%</button>
+                <button class="button button--primary" onclick="updateProgress('interactiveBlue', 75)">75%</button>
+                <button class="button button--primary" onclick="updateProgress('interactiveBlue', 100)">100%</button>
+                <button class="button button--outline" onclick="updateProgress('interactiveBlue', 0)">Reset</button>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Interactive Gray Progress Bar</div>
+            <div class="min-max-progress-bar min-max-progress-bar--gray min-max-progress-bar--animated" id="interactiveGray">
+                <div class="min-max-progress-bar__text-container">
+                    <span class="min-max-progress-bar__start-text">0 hours worked</span>
+                    <span class="min-max-progress-bar__end-text">40 hours remaining</span>
+                </div>
+                <div 
+                    class="min-max-progress-bar__track-container" 
+                    role="meter" 
+                    aria-label="Work Progress" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100" 
+                    aria-valuenow="0"
+                >
+                    <div class="min-max-progress-bar__track"></div>
+                    <div class="min-max-progress-bar__fill" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div style="margin-top: 16px; display: flex; gap: 8px;">
+                <button class="button button--secondary" onclick="updateWorkProgress('interactiveGray', 25)">10h</button>
+                <button class="button button--secondary" onclick="updateWorkProgress('interactiveGray', 50)">20h</button>
+                <button class="button button--secondary" onclick="updateWorkProgress('interactiveGray', 75)">30h</button>
+                <button class="button button--secondary" onclick="updateWorkProgress('interactiveGray', 100)">40h</button>
+                <button class="button button--outline" onclick="updateWorkProgress('interactiveGray', 0)">Reset</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Function to update progress with animation
+function updateProgress(elementId, percentage) {
+    const progressBar = document.getElementById(elementId);
+    const fillElement = progressBar.querySelector('.min-max-progress-bar__fill');
+    const trackContainer = progressBar.querySelector('.min-max-progress-bar__track-container');
+    const startText = progressBar.querySelector('.min-max-progress-bar__start-text');
+    const endText = progressBar.querySelector('.min-max-progress-bar__end-text');
+    const textContainer = progressBar.querySelector('.min-max-progress-bar__text-container');
+    
+    // Calculate amounts based on $4,000 total
+    const maxAmount = 4000;
+    const spentAmount = (percentage * maxAmount) / 100;
+    const remainingAmount = maxAmount - spentAmount;
+    
+    // Update progress bar width
+    fillElement.style.width = percentage + '%';
+    
+    // Update ARIA values
+    trackContainer.setAttribute('aria-valuenow', percentage);
+    
+    // Update classes based on state
+    if (percentage > 0) {
+        progressBar.classList.add('min-max-progress-bar--active');
+    } else {
+        progressBar.classList.remove('min-max-progress-bar--active');
+    }
+    
+    // Update text content
+    if (percentage >= 100) {
+        // Show max met text
+        textContainer.innerHTML = '<span class="min-max-progress-bar__max-met-text">Your Deductible has been met!</span>';
+    } else {
+        // Show start and end text
+        textContainer.innerHTML = `
+            <span class="min-max-progress-bar__start-text">$${spentAmount.toLocaleString()} spent</span>
+            <span class="min-max-progress-bar__end-text">$${remainingAmount.toLocaleString()} remaining</span>
+        `;
+    }
+    
+    console.log(`Progress updated to ${percentage}% for ${elementId}`);
+}
+
+// Function to update work progress
+function updateWorkProgress(elementId, percentage) {
+    const progressBar = document.getElementById(elementId);
+    const fillElement = progressBar.querySelector('.min-max-progress-bar__fill');
+    const trackContainer = progressBar.querySelector('.min-max-progress-bar__track-container');
+    const startText = progressBar.querySelector('.min-max-progress-bar__start-text');
+    const endText = progressBar.querySelector('.min-max-progress-bar__end-text');
+    const textContainer = progressBar.querySelector('.min-max-progress-bar__text-container');
+    
+    // Calculate hours based on 40 hour total
+    const maxHours = 40;
+    const workedHours = (percentage * maxHours) / 100;
+    const remainingHours = maxHours - workedHours;
+    
+    // Update progress bar width
+    fillElement.style.width = percentage + '%';
+    
+    // Update ARIA values
+    trackContainer.setAttribute('aria-valuenow', percentage);
+    
+    // Update classes based on state
+    if (percentage > 0) {
+        progressBar.classList.add('min-max-progress-bar--active');
+    } else {
+        progressBar.classList.remove('min-max-progress-bar--active');
+    }
+    
+    // Update text content
+    if (percentage >= 100) {
+        // Show max met text
+        textContainer.innerHTML = '<span class="min-max-progress-bar__max-met-text">Full work week completed!</span>';
+    } else {
+        // Show start and end text
+        textContainer.innerHTML = `
+            <span class="min-max-progress-bar__start-text">${workedHours} hours worked</span>
+            <span class="min-max-progress-bar__end-text">${remainingHours} hours remaining</span>
+        `;
+    }
+    
+    console.log(`Work progress updated to ${percentage}% for ${elementId}`);
+}
+
+// Initialize progress bars on page load
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('MinMaxProgressBar demo page loaded');
+    
+    // Log all progress bars for debugging
+    const progressBars = document.querySelectorAll('.min-max-progress-bar');
+    console.log(`Found ${progressBars.length} progress bars on the page`);
+    
+    // Accessibility enhancement: Add keyboard support for interactive progress bars
+    const interactiveButtons = document.querySelectorAll('button[onclick]');
+    interactiveButtons.forEach(button => {
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                button.click();
+            }
+        });
+    });
+});
+</script>

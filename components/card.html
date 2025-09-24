@@ -1,0 +1,304 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Card
+heading: Card Component
+secondary: Card imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        A flexible container component with optional heading, border, and various styling options for organizing content,
+        replicated from the Curative UI design system.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Cards</h2>
+    <div class="demo-grid">
+        <div class="card card--with-border">
+            <h2 class="card__heading">Children prop is a simple JSX Element</h2>
+            <div class="card__content">
+                <p>Card one is a <span style="font-weight: var(--font-weight-semibold);">JSX element</span></p>
+            </div>
+        </div>
+
+        <div class="card card--with-border">
+            <h2 class="card__heading">Children prop is a string</h2>
+            <div class="card__content">
+                <p>Card two is a string element</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border">
+            <h2 class="card__heading">Children prop is a very long string</h2>
+            <div class="card__content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border">
+            <h2 class="card__heading">Children prop is a JSX Element with an image</h2>
+            <div class="card__content">
+                <div class="image-placeholder">
+                    Image Placeholder
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Card without Border</h2>
+    <div class="demo-grid--single">
+        <div class="dark-background">
+            <div class="card card--no-border card--white">
+                <h2 class="card__heading">Card with no border</h2>
+                <div class="card__content">
+                    <p>This card has no border and a white background. It is recommended to change the theme when viewing this component to see the contrast.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Card Variants</h2>
+    <div class="demo-grid">
+        <div class="card card--with-border card--surface-highlight">
+            <h2 class="card__heading">Surface Highlight</h2>
+            <div class="card__content">
+                <p>Card with highlight surface background color.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--surface-neutral">
+            <h2 class="card__heading">Surface Neutral</h2>
+            <div class="card__content">
+                <p>Card with neutral surface background color.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--surface-accent">
+            <h2 class="card__heading">Surface Accent</h2>
+            <div class="card__content">
+                <p>Card with accent surface background color.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--background-subdued">
+            <h2 class="card__heading">Background Subdued</h2>
+            <div class="card__content">
+                <p>Card with subdued background and light text.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Card with Shadow</h2>
+    <div class="demo-grid">
+        <div class="card card--with-border card--shadow">
+            <h2 class="card__heading">Card with Shadow</h2>
+            <div class="card__content">
+                <p>This card has a subtle shadow effect.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--shadow-md">
+            <h2 class="card__heading">Card with Medium Shadow</h2>
+            <div class="card__content">
+                <p>This card has a medium shadow effect.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--shadow-lg">
+            <h2 class="card__heading">Card with Large Shadow</h2>
+            <div class="card__content">
+                <p>This card has a large shadow effect.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Cards</h2>
+    <div class="demo-grid">
+        <div class="card card--with-border card--interactive" tabindex="0">
+            <h2 class="card__heading">Interactive Card</h2>
+            <div class="card__content">
+                <p>This card has hover and focus effects. Try hovering or clicking on it.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--interactive card--shadow" tabindex="0">
+            <h2 class="card__heading">Interactive Card with Shadow</h2>
+            <div class="card__content">
+                <p>This card combines interactive effects with shadow.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Cards with Status Indicators</h2>
+    <div class="demo-grid">
+        <div class="card card--with-border card--status-success">
+            <h2 class="card__heading">Success Status</h2>
+            <div class="card__content">
+                <p>This card indicates a successful state or positive outcome.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--status-warning">
+            <h2 class="card__heading">Warning Status</h2>
+            <div class="card__content">
+                <p>This card indicates a warning or attention required.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--status-critical">
+            <h2 class="card__heading">Critical Status</h2>
+            <div class="card__content">
+                <p>This card indicates an error or critical state.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--status-info">
+            <h2 class="card__heading">Info Status</h2>
+            <div class="card__content">
+                <p>This card provides informational content.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Card with Header and Footer</h2>
+    <div class="demo-grid--single">
+        <div class="card card--with-border">
+            <div class="card__header">
+                <h2 class="card__heading" style="margin-bottom: 0;">Card with Actions</h2>
+                <div class="card__header-actions">
+                    <button class="button">
+                        <div class="heroicon heroicon-16 heroicon-pencil"></div>
+                        Edit
+                    </button>
+                    <button class="button">
+                        <div class="heroicon heroicon-16 heroicon-trash"></div>
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <div class="card__content">
+                <p>This card demonstrates a more complex layout with header actions and footer content.</p>
+                <p>It includes multiple content sections and interactive elements.</p>
+            </div>
+            <div class="card__footer">
+                <button class="button button--primary">Primary Action</button>
+                <button class="button">Secondary Action</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Card Padding Variants</h2>
+    <div class="demo-grid">
+        <div class="card card--with-border card--padding-small">
+            <h2 class="card__heading">Small Padding</h2>
+            <div class="card__content">
+                <p>This card has reduced padding for a more compact appearance.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border">
+            <h2 class="card__heading">Default Padding</h2>
+            <div class="card__content">
+                <p>This card uses the default padding amount.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--padding-large">
+            <h2 class="card__heading">Large Padding</h2>
+            <div class="card__content">
+                <p>This card has increased padding for a more spacious appearance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Special States</h2>
+    <div class="demo-grid">
+        <div class="card card--with-border card--loading">
+            <h2 class="card__heading">Loading Card</h2>
+            <div class="card__content">
+                <p>This card shows a loading animation effect.</p>
+            </div>
+        </div>
+
+        <div class="card card--with-border card--disabled">
+            <h2 class="card__heading">Disabled Card</h2>
+            <div class="card__content">
+                <p>This card is in a disabled state and cannot be interacted with.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Card with Rich Content</h2>
+    <div class="demo-grid--single">
+        <div class="card card--with-border card--shadow">
+            <h2 class="card__heading">Feature Overview</h2>
+            <div class="card__content">
+                <div class="image-placeholder" style="height: 150px; margin-bottom: var(--spacing-16);">
+                    Feature Image
+                </div>
+                <p>This card demonstrates how various content types can be organized within a card component.</p>
+                <p>Cards are perfect for grouping related information and providing clear visual boundaries between different sections of content.</p>
+                <ul style="margin-top: var(--spacing-16); padding-left: var(--spacing-20);">
+                    <li>Flexible content organization</li>
+                    <li>Consistent visual hierarchy</li>
+                    <li>Responsive design</li>
+                    <li>Accessibility support</li>
+                </ul>
+            </div>
+            <div class="card__footer">
+                <button class="button button--primary">Learn More</button>
+                <button class="button">View Details</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Add click handlers for interactive demonstrations
+document.addEventListener('DOMContentLoaded', () => {
+    const interactiveCards = document.querySelectorAll('.card--interactive');
+    
+    interactiveCards.forEach(card => {
+        card.addEventListener('click', () => {
+            console.log('Card clicked:', card.querySelector('.card__heading').textContent);
+        });
+        
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                console.log('Card activated:', card.querySelector('.card__heading').textContent);
+            }
+        });
+    });
+
+    // Demo button handlers
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('Button clicked:', button.textContent.trim());
+        });
+    });
+});
+</script>

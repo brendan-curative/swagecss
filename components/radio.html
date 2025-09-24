@@ -1,0 +1,393 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Radio
+heading: Radio Component
+secondary: Radio imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        Radio button component for single-choice selections within a group. 
+        Features different sizes, states, and accessibility support.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Radio Buttons</h2>
+    <p class="mb-24">Standard radio buttons with labels in different states.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Default State</div>
+            <div class="radio-group">
+                <div class="radio">
+                    <input type="radio" id="option1" name="basicGroup" class="radio__input">
+                    <label for="option1" class="radio__label">Option 1</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="option2" name="basicGroup" class="radio__input" checked>
+                    <label for="option2" class="radio__label">Option 2 (Selected)</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="option3" name="basicGroup" class="radio__input">
+                    <label for="option3" class="radio__label">Option 3</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Disabled State</div>
+            <div class="radio-group">
+                <div class="radio">
+                    <input type="radio" id="disabled1" name="disabledGroup" class="radio__input" disabled>
+                    <label for="disabled1" class="radio__label">Disabled Option</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="disabled2" name="disabledGroup" class="radio__input" disabled checked>
+                    <label for="disabled2" class="radio__label">Disabled Selected</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Radio Button Sizes</h2>
+    <p class="mb-24">Radio buttons in different sizes for various UI contexts.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Small Size</div>
+            <div class="radio-group">
+                <div class="radio radio--small">
+                    <input type="radio" id="small1" name="smallGroup" class="radio__input">
+                    <label for="small1" class="radio__label">Small Option 1</label>
+                </div>
+                <div class="radio radio--small">
+                    <input type="radio" id="small2" name="smallGroup" class="radio__input" checked>
+                    <label for="small2" class="radio__label">Small Option 2</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Large Size</div>
+            <div class="radio-group">
+                <div class="radio radio--large">
+                    <input type="radio" id="large1" name="largeGroup" class="radio__input">
+                    <label for="large1" class="radio__label">Large Option 1</label>
+                </div>
+                <div class="radio radio--large">
+                    <input type="radio" id="large2" name="largeGroup" class="radio__input" checked>
+                    <label for="large2" class="radio__label">Large Option 2</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Radio Button with Descriptions</h2>
+    <p class="mb-24">Radio buttons with additional descriptive text for clarity.</p>
+    
+    <div class="demo-item">
+        <div class="demo-label">Billing Frequency</div>
+        <div class="radio-group">
+            <div class="radio radio--with-description">
+                <input type="radio" id="monthly" name="billingGroup" class="radio__input">
+                <label for="monthly" class="radio__label">
+                    <span class="radio__label-text">Monthly</span>
+                    <span class="radio__description">Billed every month</span>
+                </label>
+            </div>
+            <div class="radio radio--with-description">
+                <input type="radio" id="quarterly" name="billingGroup" class="radio__input" checked>
+                <label for="quarterly" class="radio__label">
+                    <span class="radio__label-text">Quarterly</span>
+                    <span class="radio__description">Billed every 3 months with 10% discount</span>
+                </label>
+            </div>
+            <div class="radio radio--with-description">
+                <input type="radio" id="yearly" name="billingGroup" class="radio__input">
+                <label for="yearly" class="radio__label">
+                    <span class="radio__label-text">Yearly</span>
+                    <span class="radio__description">Billed annually with 20% discount</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Horizontal Radio Group</h2>
+    <p class="mb-24">Radio buttons arranged horizontally for compact layouts.</p>
+    
+    <div class="demo-item">
+        <div class="demo-label">Preferred Contact Method</div>
+        <div class="radio-group radio-group--horizontal">
+            <div class="radio">
+                <input type="radio" id="email" name="contactGroup" class="radio__input" checked>
+                <label for="email" class="radio__label">Email</label>
+            </div>
+            <div class="radio">
+                <input type="radio" id="phone" name="contactGroup" class="radio__input">
+                <label for="phone" class="radio__label">Phone</label>
+            </div>
+            <div class="radio">
+                <input type="radio" id="sms" name="contactGroup" class="radio__input">
+                <label for="sms" class="radio__label">SMS</label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Radio Button with Error State</h2>
+    <p class="mb-24">Radio buttons with error validation styling.</p>
+    
+    <div class="demo-item">
+        <div class="demo-label">Select a Plan (Required)</div>
+        <div class="radio-group radio-group--error">
+            <div class="radio">
+                <input type="radio" id="basic" name="planGroup" class="radio__input">
+                <label for="basic" class="radio__label">Basic Plan</label>
+            </div>
+            <div class="radio">
+                <input type="radio" id="premium" name="planGroup" class="radio__input">
+                <label for="premium" class="radio__label">Premium Plan</label>
+            </div>
+            <div class="radio">
+                <input type="radio" id="enterprise" name="planGroup" class="radio__input">
+                <label for="enterprise" class="radio__label">Enterprise Plan</label>
+            </div>
+        </div>
+        <div class="radio-group__error-message">Please select a plan to continue</div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Radio Groups</h2>
+    <p class="mb-24">Demonstrate dynamic interactions with radio button groups.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Theme Selection</div>
+            <div class="radio-group" id="themeGroup">
+                <div class="radio">
+                    <input type="radio" id="lightTheme" name="themeGroup" class="radio__input" value="light" checked>
+                    <label for="lightTheme" class="radio__label">Light Theme</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="darkTheme" name="themeGroup" class="radio__input" value="dark">
+                    <label for="darkTheme" class="radio__label">Dark Theme</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="autoTheme" name="themeGroup" class="radio__input" value="auto">
+                    <label for="autoTheme" class="radio__label">Auto (System)</label>
+                </div>
+            </div>
+            <div class="demo-output" id="themeOutput">Selected: Light Theme</div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Notification Preferences</div>
+            <div class="radio-group" id="notificationGroup">
+                <div class="radio radio--with-description">
+                    <input type="radio" id="allNotifications" name="notificationGroup" class="radio__input" value="all">
+                    <label for="allNotifications" class="radio__label">
+                        <span class="radio__label-text">All Notifications</span>
+                        <span class="radio__description">Receive all updates and alerts</span>
+                    </label>
+                </div>
+                <div class="radio radio--with-description">
+                    <input type="radio" id="importantOnly" name="notificationGroup" class="radio__input" value="important" checked>
+                    <label for="importantOnly" class="radio__label">
+                        <span class="radio__label-text">Important Only</span>
+                        <span class="radio__description">Only critical updates and security alerts</span>
+                    </label>
+                </div>
+                <div class="radio radio--with-description">
+                    <input type="radio" id="noNotifications" name="notificationGroup" class="radio__input" value="none">
+                    <label for="noNotifications" class="radio__label">
+                        <span class="radio__label-text">No Notifications</span>
+                        <span class="radio__description">Disable all email notifications</span>
+                    </label>
+                </div>
+            </div>
+            <div class="demo-output" id="notificationOutput">Selected: Important Only</div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Form Integration</h2>
+    <p class="mb-24">Radio buttons within a complete form context.</p>
+    
+    <div class="demo-item">
+        <form id="surveyForm" class="survey-form">
+            <fieldset class="form-fieldset">
+                <legend class="form-legend">Customer Satisfaction Survey</legend>
+                
+                <div class="form-group">
+                    <div class="demo-label">How would you rate our service?</div>
+                    <div class="radio-group">
+                        <div class="radio">
+                            <input type="radio" id="excellent" name="rating" class="radio__input" value="excellent">
+                            <label for="excellent" class="radio__label">Excellent</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="good" name="rating" class="radio__input" value="good">
+                            <label for="good" class="radio__label">Good</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="fair" name="rating" class="radio__input" value="fair">
+                            <label for="fair" class="radio__label">Fair</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="poor" name="rating" class="radio__input" value="poor">
+                            <label for="poor" class="radio__label">Poor</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="demo-label">Would you recommend us to others?</div>
+                    <div class="radio-group radio-group--horizontal">
+                        <div class="radio">
+                            <input type="radio" id="definitely" name="recommend" class="radio__input" value="definitely">
+                            <label for="definitely" class="radio__label">Definitely</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="probably" name="recommend" class="radio__input" value="probably">
+                            <label for="probably" class="radio__label">Probably</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="maybe" name="recommend" class="radio__input" value="maybe">
+                            <label for="maybe" class="radio__label">Maybe</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="unlikely" name="recommend" class="radio__input" value="unlikely">
+                            <label for="unlikely" class="radio__label">Unlikely</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="button button--outline" onclick="resetForm()">Reset</button>
+                    <button type="submit" class="button button--primary">Submit Survey</button>
+                </div>
+            </fieldset>
+        </form>
+        
+        <div id="formResults" class="form-results" style="display: none;">
+            <h3>Survey Results:</h3>
+            <div id="resultsContent"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Theme selection handler
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Radio demo page loaded');
+    
+    // Theme group interaction
+    const themeInputs = document.querySelectorAll('input[name="themeGroup"]');
+    const themeOutput = document.getElementById('themeOutput');
+    
+    themeInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            if (input.checked) {
+                const themeNames = {
+                    'light': 'Light Theme',
+                    'dark': 'Dark Theme',
+                    'auto': 'Auto (System)'
+                };
+                themeOutput.textContent = `Selected: ${themeNames[input.value]}`;
+                console.log(`Theme changed to: ${input.value}`);
+            }
+        });
+    });
+    
+    // Notification group interaction
+    const notificationInputs = document.querySelectorAll('input[name="notificationGroup"]');
+    const notificationOutput = document.getElementById('notificationOutput');
+    
+    notificationInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            if (input.checked) {
+                const notificationNames = {
+                    'all': 'All Notifications',
+                    'important': 'Important Only',
+                    'none': 'No Notifications'
+                };
+                notificationOutput.textContent = `Selected: ${notificationNames[input.value]}`;
+                console.log(`Notification preference changed to: ${input.value}`);
+            }
+        });
+    });
+    
+    // Survey form submission
+    const surveyForm = document.getElementById('surveyForm');
+    const formResults = document.getElementById('formResults');
+    const resultsContent = document.getElementById('resultsContent');
+    
+    surveyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(surveyForm);
+        const rating = formData.get('rating');
+        const recommend = formData.get('recommend');
+        
+        if (!rating || !recommend) {
+            alert('Please answer all questions before submitting.');
+            return;
+        }
+        
+        resultsContent.innerHTML = `
+            <p><strong>Service Rating:</strong> ${rating}</p>
+            <p><strong>Would Recommend:</strong> ${recommend}</p>
+        `;
+        
+        formResults.style.display = 'block';
+        console.log('Survey submitted:', { rating, recommend });
+    });
+});
+
+// Reset form function
+function resetForm() {
+    const surveyForm = document.getElementById('surveyForm');
+    const formResults = document.getElementById('formResults');
+    
+    surveyForm.reset();
+    formResults.style.display = 'none';
+    
+    console.log('Form reset');
+}
+
+// Add keyboard navigation support
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        const activeElement = document.activeElement;
+        if (activeElement && activeElement.type === 'radio') {
+            const radioGroup = document.querySelectorAll(`input[name="${activeElement.name}"]`);
+            const currentIndex = Array.from(radioGroup).indexOf(activeElement);
+            
+            let nextIndex;
+            if (e.key === 'ArrowDown') {
+                nextIndex = (currentIndex + 1) % radioGroup.length;
+            } else {
+                nextIndex = (currentIndex - 1 + radioGroup.length) % radioGroup.length;
+            }
+            
+            radioGroup[nextIndex].focus();
+            radioGroup[nextIndex].checked = true;
+            radioGroup[nextIndex].dispatchEvent(new Event('change'));
+            
+            e.preventDefault();
+        }
+    }
+});
+</script>

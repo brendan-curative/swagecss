@@ -1,0 +1,368 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Modal
+heading: Modal Component
+secondary: Modal imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        Modal component for displaying overlay content that requires user interaction. 
+        Features backdrop overlay, close functionality, and flexible content sizing.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Modal</h2>
+    <p class="mb-24">Standard modal with header, content, and action buttons.</p>
+    
+    <div class="demo-item">
+        <button class="button button--primary" onclick="openModal('basicModal')">Open Basic Modal</button>
+        
+        <div id="basicModal" class="modal">
+            <div class="modal__backdrop" onclick="closeModal('basicModal')"></div>
+            <div class="modal__container">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h2 class="modal__title">Confirm Action</h2>
+                        <button class="modal__close-button" onclick="closeModal('basicModal')" aria-label="Close modal">
+                            <span class="heroicon heroicon-x-mark"></span>
+                        </button>
+                    </div>
+                    <div class="modal__body">
+                        <p>Are you sure you want to continue with this action? This cannot be undone.</p>
+                    </div>
+                    <div class="modal__footer">
+                        <button class="button button--outline" onclick="closeModal('basicModal')">Cancel</button>
+                        <button class="button button--primary" onclick="confirmAction('basicModal')">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Modal Sizes</h2>
+    <p class="mb-24">Different modal sizes for various content types.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <button class="button button--secondary" onclick="openModal('smallModal')">Small Modal</button>
+            
+            <div id="smallModal" class="modal">
+                <div class="modal__backdrop" onclick="closeModal('smallModal')"></div>
+                <div class="modal__container modal__container--small">
+                    <div class="modal__content">
+                        <div class="modal__header">
+                            <h2 class="modal__title">Small Modal</h2>
+                            <button class="modal__close-button" onclick="closeModal('smallModal')" aria-label="Close modal">
+                                <span class="heroicon heroicon-x-mark"></span>
+                            </button>
+                        </div>
+                        <div class="modal__body">
+                            <p>This is a small modal for brief messages or simple confirmations.</p>
+                        </div>
+                        <div class="modal__footer">
+                            <button class="button button--outline" onclick="closeModal('smallModal')">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <button class="button button--secondary" onclick="openModal('largeModal')">Large Modal</button>
+            
+            <div id="largeModal" class="modal">
+                <div class="modal__backdrop" onclick="closeModal('largeModal')"></div>
+                <div class="modal__container modal__container--large">
+                    <div class="modal__content">
+                        <div class="modal__header">
+                            <h2 class="modal__title">Large Modal</h2>
+                            <button class="modal__close-button" onclick="closeModal('largeModal')" aria-label="Close modal">
+                                <span class="heroicon heroicon-x-mark"></span>
+                            </button>
+                        </div>
+                        <div class="modal__body">
+                            <p>This is a large modal that can accommodate more content such as forms, detailed information, or complex layouts.</p>
+                            <div style="margin-top: 16px;">
+                                <h3 style="margin-bottom: 8px;">Additional Content</h3>
+                                <ul style="margin-left: 16px;">
+                                    <li>Form fields</li>
+                                    <li>Data tables</li>
+                                    <li>Multiple sections</li>
+                                    <li>Rich media content</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal__footer">
+                            <button class="button button--outline" onclick="closeModal('largeModal')">Cancel</button>
+                            <button class="button button--primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Modal with Form</h2>
+    <p class="mb-24">Modal containing a form with various input types.</p>
+    
+    <div class="demo-item">
+        <button class="button button--primary" onclick="openModal('formModal')">Open Form Modal</button>
+        
+        <div id="formModal" class="modal">
+            <div class="modal__backdrop" onclick="closeModal('formModal')"></div>
+            <div class="modal__container">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h2 class="modal__title">User Information</h2>
+                        <button class="modal__close-button" onclick="closeModal('formModal')" aria-label="Close modal">
+                            <span class="heroicon heroicon-x-mark"></span>
+                        </button>
+                    </div>
+                    <div class="modal__body">
+                        <form id="userForm">
+                            <div class="textfield textfield--outline" style="margin-bottom: 16px;">
+                                <label for="userName" class="textfield__label">Full Name</label>
+                                <input type="text" id="userName" class="textfield__input" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="textfield textfield--outline" style="margin-bottom: 16px;">
+                                <label for="userEmail" class="textfield__label">Email Address</label>
+                                <input type="email" id="userEmail" class="textfield__input" placeholder="Enter your email">
+                            </div>
+                            
+                            <div class="textfield textfield--outline" style="margin-bottom: 16px;">
+                                <label for="userRole" class="textfield__label">Role</label>
+                                <select id="userRole" class="textfield__input">
+                                    <option value="">Select a role</option>
+                                    <option value="admin">Administrator</option>
+                                    <option value="user">User</option>
+                                    <option value="viewer">Viewer</option>
+                                </select>
+                            </div>
+                            
+                            <div class="checkbox" style="margin-bottom: 16px;">
+                                <input type="checkbox" id="sendNotifications" class="checkbox__input">
+                                <label for="sendNotifications" class="checkbox__label">Send email notifications</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal__footer">
+                        <button class="button button--outline" onclick="closeModal('formModal')">Cancel</button>
+                        <button class="button button--primary" onclick="submitForm('formModal')">Save User</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Alert Modal</h2>
+    <p class="mb-24">Modal styled for important alerts and warnings.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <button class="button button--critical" onclick="openModal('alertModal')">Open Alert Modal</button>
+            
+            <div id="alertModal" class="modal">
+                <div class="modal__backdrop" onclick="closeModal('alertModal')"></div>
+                <div class="modal__container modal__container--small">
+                    <div class="modal__content modal__content--alert">
+                        <div class="modal__header">
+                            <div class="modal__alert-icon">
+                                <span class="heroicon heroicon-exclamation-triangle"></span>
+                            </div>
+                            <h2 class="modal__title">Delete Item</h2>
+                            <button class="modal__close-button" onclick="closeModal('alertModal')" aria-label="Close modal">
+                                <span class="heroicon heroicon-x-mark"></span>
+                            </button>
+                        </div>
+                        <div class="modal__body">
+                            <p>This action cannot be undone. Are you sure you want to permanently delete this item?</p>
+                        </div>
+                        <div class="modal__footer">
+                            <button class="button button--outline" onclick="closeModal('alertModal')">Cancel</button>
+                            <button class="button button--critical" onclick="deleteItem('alertModal')">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <button class="button button--success" onclick="openModal('successModal')">Open Success Modal</button>
+            
+            <div id="successModal" class="modal">
+                <div class="modal__backdrop" onclick="closeModal('successModal')"></div>
+                <div class="modal__container modal__container--small">
+                    <div class="modal__content modal__content--success">
+                        <div class="modal__header">
+                            <div class="modal__success-icon">
+                                <span class="heroicon heroicon-check-circle"></span>
+                            </div>
+                            <h2 class="modal__title">Success!</h2>
+                            <button class="modal__close-button" onclick="closeModal('successModal')" aria-label="Close modal">
+                                <span class="heroicon heroicon-x-mark"></span>
+                            </button>
+                        </div>
+                        <div class="modal__body">
+                            <p>Your changes have been saved successfully.</p>
+                        </div>
+                        <div class="modal__footer">
+                            <button class="button button--primary" onclick="closeModal('successModal')">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Modal without Close Button</h2>
+    <p class="mb-24">Modal that requires explicit action to close (no X button or backdrop click).</p>
+    
+    <div class="demo-item">
+        <button class="button button--warning" onclick="openModal('noCloseModal')">Open No-Close Modal</button>
+        
+        <div id="noCloseModal" class="modal modal--no-close">
+            <div class="modal__backdrop"></div>
+            <div class="modal__container">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h2 class="modal__title">Required Action</h2>
+                    </div>
+                    <div class="modal__body">
+                        <p>This modal requires you to make a choice before proceeding. You cannot close it without selecting an option.</p>
+                    </div>
+                    <div class="modal__footer">
+                        <button class="button button--outline" onclick="closeModal('noCloseModal')">Option A</button>
+                        <button class="button button--primary" onclick="closeModal('noCloseModal')">Option B</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Modal functionality
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('modal--open');
+        document.body.classList.add('modal-open');
+        
+        // Focus management for accessibility
+        const firstFocusableElement = modal.querySelector('button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (firstFocusableElement) {
+            firstFocusableElement.focus();
+        }
+        
+        // Add escape key listener
+        document.addEventListener('keydown', handleEscapeKey);
+        
+        console.log(`Opened modal: ${modalId}`);
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('modal--open');
+        document.body.classList.remove('modal-open');
+        
+        // Remove escape key listener
+        document.removeEventListener('keydown', handleEscapeKey);
+        
+        console.log(`Closed modal: ${modalId}`);
+    }
+}
+
+function handleEscapeKey(event) {
+    if (event.key === 'Escape') {
+        const openModal = document.querySelector('.modal--open');
+        if (openModal && !openModal.classList.contains('modal--no-close')) {
+            closeModal(openModal.id);
+        }
+    }
+}
+
+// Specific action handlers
+function confirmAction(modalId) {
+    alert('Action confirmed!');
+    closeModal(modalId);
+}
+
+function submitForm(modalId) {
+    const form = document.getElementById('userForm');
+    const formData = new FormData(form);
+    
+    // Simple form validation
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    
+    if (!name || !email) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    alert('User information saved successfully!');
+    closeModal(modalId);
+    
+    // Reset form
+    form.reset();
+}
+
+function deleteItem(modalId) {
+    alert('Item deleted successfully!');
+    closeModal(modalId);
+}
+
+// Prevent body scroll when modal is open
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Modal demo page loaded');
+    
+    // Add click outside to close functionality for modals that allow it
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('modal__backdrop')) {
+            const modal = event.target.closest('.modal');
+            if (modal && !modal.classList.contains('modal--no-close')) {
+                closeModal(modal.id);
+            }
+        }
+    });
+    
+    // Trap focus within modal when open
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab') {
+            const openModal = document.querySelector('.modal--open');
+            if (openModal) {
+                const focusableElements = openModal.querySelectorAll('button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (event.shiftKey) {
+                    if (document.activeElement === firstElement) {
+                        event.preventDefault();
+                        lastElement.focus();
+                    }
+                } else {
+                    if (document.activeElement === lastElement) {
+                        event.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            }
+        }
+    });
+});
+</script>

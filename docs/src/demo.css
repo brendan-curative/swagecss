@@ -85,9 +85,29 @@ header {
     .logo svg {
         height: var(--spacing-64);
         width: auto;
+        transition: all 0.5s ease;
     }
 
-        .logo svg path {fill: var(--swage-black);}
+        .logo svg path {
+            fill: var(--swage-black);
+            
+        }
+
+        .logo:hover svg, .logo:focus svg {
+            transform:rotate(2deg) scale(1.05);
+        }
+
+        .logo:hover svg path, .logo:focus svg path {
+            fill: var(--swage-tertiary);
+        }
+
+        .logo:active svg {
+            transform: rotate(0deg) scale(.9);
+        }
+
+        .logo:active svg path {
+            fill: var(--swage-highlight);
+        }
 
     header .info {
         display: flex;
@@ -243,6 +263,7 @@ aside::before {
 }
 
 aside nav {
+    
     display: flex;
     flex-direction: column;
     width: 199px;
@@ -256,7 +277,7 @@ aside nav {
         font-size: var(--font-size-lg);
         color: var(--swage-primary);
         text-decoration: none;
-        padding: 0 var(--spacing-8) var(--spacing-8) var(--spacing-8); 
+        padding: var(--spacing-4) var(--spacing-8) var(--spacing-8) var(--spacing-8); 
         border-bottom: 1px solid var(--swage-primary);
     }
 
@@ -279,7 +300,15 @@ aside nav {
     aside nav a:hover, aside nav a:focus {
         color: var(--swage-tertiary);
         text-decoration: none;
+        border-bottom: 1px solid var(--swage-tertiary);
         border-left: var(--spacing-8) solid var(--swage-tertiary);
+    }
+
+    aside nav a:active {
+        color: var(--swage-highlight);
+        text-decoration: none;
+        border-left: var(--spacing-12) solid var(--swage-highlight);
+        border-bottom: 1px solid var(--swage-highlight);
     }
 /* #endregion */
 

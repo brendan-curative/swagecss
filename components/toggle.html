@@ -1,0 +1,565 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Toggle
+heading: Toggle Component
+secondary: Toggle imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        Toggle switch component for binary on/off states. Features smooth animations, 
+        different sizes, and accessible keyboard interactions.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Toggle</h2>
+    <p class="mb-24">Standard toggle switches in different states.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Default (Off)</div>
+            <div class="toggle">
+                <input type="checkbox" id="toggle1" class="toggle__input">
+                <label for="toggle1" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Enable notifications</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Checked (On)</div>
+            <div class="toggle">
+                <input type="checkbox" id="toggle2" class="toggle__input" checked>
+                <label for="toggle2" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Dark mode enabled</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Disabled (Off)</div>
+            <div class="toggle">
+                <input type="checkbox" id="toggle3" class="toggle__input" disabled>
+                <label for="toggle3" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Feature unavailable</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Disabled (On)</div>
+            <div class="toggle">
+                <input type="checkbox" id="toggle4" class="toggle__input" disabled checked>
+                <label for="toggle4" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Always enabled</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Toggle Sizes</h2>
+    <p class="mb-24">Toggle switches in different sizes for various UI contexts.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Small Size</div>
+            <div class="toggle toggle--small">
+                <input type="checkbox" id="toggleSmall" class="toggle__input" checked>
+                <label for="toggleSmall" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Compact toggle</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Default Size</div>
+            <div class="toggle">
+                <input type="checkbox" id="toggleDefault" class="toggle__input" checked>
+                <label for="toggleDefault" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Standard toggle</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Large Size</div>
+            <div class="toggle toggle--large">
+                <input type="checkbox" id="toggleLarge" class="toggle__input" checked>
+                <label for="toggleLarge" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Large toggle</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Toggle Without Text</h2>
+    <p class="mb-24">Toggle switches without accompanying text labels.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Icon Only</div>
+            <div class="toggle">
+                <input type="checkbox" id="toggleIcon" class="toggle__input">
+                <label for="toggleIcon" class="toggle__label" aria-label="Toggle feature">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Small Icon Only</div>
+            <div class="toggle toggle--small">
+                <input type="checkbox" id="toggleIconSmall" class="toggle__input" checked>
+                <label for="toggleIconSmall" class="toggle__label" aria-label="Toggle small feature">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Toggle with Descriptions</h2>
+    <p class="mb-24">Toggle switches with additional descriptive text.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="toggle toggle--with-description">
+                <input type="checkbox" id="toggleEmail" class="toggle__input">
+                <label for="toggleEmail" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__content">
+                        <span class="toggle__text">Email notifications</span>
+                        <span class="toggle__description">Receive updates via email</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="toggle toggle--with-description">
+                <input type="checkbox" id="toggleSecurity" class="toggle__input" checked>
+                <label for="toggleSecurity" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__content">
+                        <span class="toggle__text">Two-factor authentication</span>
+                        <span class="toggle__description">Add an extra layer of security to your account</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Toggle Examples</h2>
+    <p class="mb-24">Demonstrate real-time state changes and interactions.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Theme Toggle</div>
+            <div class="toggle">
+                <input type="checkbox" id="themeToggle" class="toggle__input">
+                <label for="themeToggle" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text" id="themeToggleText">Light theme</span>
+                </label>
+            </div>
+            <div class="demo-output" id="themeOutput">Current theme: Light</div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Auto-save Toggle</div>
+            <div class="toggle">
+                <input type="checkbox" id="autosaveToggle" class="toggle__input" checked>
+                <label for="autosaveToggle" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__text">Auto-save documents</span>
+                </label>
+            </div>
+            <div class="demo-output" id="autosaveOutput">Auto-save: Enabled</div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Toggle Groups</h2>
+    <p class="mb-24">Multiple related toggle switches grouped together.</p>
+    
+    <div class="demo-item">
+        <div class="demo-label">Privacy Settings</div>
+        <div class="toggle-group">
+            <div class="toggle toggle--with-description">
+                <input type="checkbox" id="privacyProfile" class="toggle__input" checked>
+                <label for="privacyProfile" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__content">
+                        <span class="toggle__text">Public profile</span>
+                        <span class="toggle__description">Allow others to find your profile</span>
+                    </span>
+                </label>
+            </div>
+
+            <div class="toggle toggle--with-description">
+                <input type="checkbox" id="privacyActivity" class="toggle__input">
+                <label for="privacyActivity" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__content">
+                        <span class="toggle__text">Activity status</span>
+                        <span class="toggle__description">Show when you're online</span>
+                    </span>
+                </label>
+            </div>
+
+            <div class="toggle toggle--with-description">
+                <input type="checkbox" id="privacyData" class="toggle__input" checked>
+                <label for="privacyData" class="toggle__label">
+                    <span class="toggle__switch">
+                        <span class="toggle__slider"></span>
+                    </span>
+                    <span class="toggle__content">
+                        <span class="toggle__text">Data analytics</span>
+                        <span class="toggle__description">Help improve our service with usage data</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Form Integration</h2>
+    <p class="mb-24">Toggle switches within a complete form context.</p>
+    
+    <div class="demo-item">
+        <form id="settingsForm" class="settings-form">
+            <fieldset class="form-fieldset">
+                <legend class="form-legend">User Preferences</legend>
+                
+                <div class="form-section">
+                    <h3 class="form-section-title">Notifications</h3>
+                    
+                    <div class="toggle toggle--with-description">
+                        <input type="checkbox" id="emailNotifs" name="emailNotifications" class="toggle__input" checked>
+                        <label for="emailNotifs" class="toggle__label">
+                            <span class="toggle__switch">
+                                <span class="toggle__slider"></span>
+                            </span>
+                            <span class="toggle__content">
+                                <span class="toggle__text">Email notifications</span>
+                                <span class="toggle__description">Receive important updates via email</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="toggle toggle--with-description">
+                        <input type="checkbox" id="pushNotifs" name="pushNotifications" class="toggle__input">
+                        <label for="pushNotifs" class="toggle__label">
+                            <span class="toggle__switch">
+                                <span class="toggle__slider"></span>
+                            </span>
+                            <span class="toggle__content">
+                                <span class="toggle__text">Push notifications</span>
+                                <span class="toggle__description">Get instant notifications on your device</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="form-section-title">Accessibility</h3>
+                    
+                    <div class="toggle toggle--with-description">
+                        <input type="checkbox" id="highContrast" name="highContrast" class="toggle__input">
+                        <label for="highContrast" class="toggle__label">
+                            <span class="toggle__switch">
+                                <span class="toggle__slider"></span>
+                            </span>
+                            <span class="toggle__content">
+                                <span class="toggle__text">High contrast mode</span>
+                                <span class="toggle__description">Improve visibility with higher contrast colors</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="toggle toggle--with-description">
+                        <input type="checkbox" id="largeText" name="largeText" class="toggle__input">
+                        <label for="largeText" class="toggle__label">
+                            <span class="toggle__switch">
+                                <span class="toggle__slider"></span>
+                            </span>
+                            <span class="toggle__content">
+                                <span class="toggle__text">Large text</span>
+                                <span class="toggle__description">Increase text size for better readability</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="button button--outline" onclick="resetSettingsForm()">Reset to Defaults</button>
+                    <button type="submit" class="button button--primary">Save Settings</button>
+                </div>
+            </fieldset>
+        </form>
+        
+        <div id="settingsResults" class="form-results" style="display: none;">
+            <h3>Settings Saved:</h3>
+            <div id="settingsResultsContent"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Toggle functionality and interactions
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Toggle demo page loaded');
+    
+    // Theme toggle functionality
+    setupThemeToggle();
+    
+    // Auto-save toggle functionality
+    setupAutosaveToggle();
+    
+    // Form handling
+    setupFormHandling();
+    
+    // Add keyboard accessibility enhancements
+    enhanceToggleAccessibility();
+});
+
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleText = document.getElementById('themeToggleText');
+    const themeOutput = document.getElementById('themeOutput');
+    
+    if (themeToggle && themeToggleText && themeOutput) {
+        themeToggle.addEventListener('change', () => {
+            const isDark = themeToggle.checked;
+            themeToggleText.textContent = isDark ? 'Dark theme' : 'Light theme';
+            themeOutput.textContent = `Current theme: ${isDark ? 'Dark' : 'Light'}`;
+            
+            // Optional: Apply theme changes to demo
+            if (isDark) {
+                document.documentElement.style.setProperty('--demo-bg', '#1a1a1a');
+                document.documentElement.style.setProperty('--demo-text', '#ffffff');
+            } else {
+                document.documentElement.style.removeProperty('--demo-bg');
+                document.documentElement.style.removeProperty('--demo-text');
+            }
+            
+            console.log(`Theme changed to: ${isDark ? 'dark' : 'light'}`);
+        });
+    }
+}
+
+function setupAutosaveToggle() {
+    const autosaveToggle = document.getElementById('autosaveToggle');
+    const autosaveOutput = document.getElementById('autosaveOutput');
+    
+    if (autosaveToggle && autosaveOutput) {
+        autosaveToggle.addEventListener('change', () => {
+            const isEnabled = autosaveToggle.checked;
+            autosaveOutput.textContent = `Auto-save: ${isEnabled ? 'Enabled' : 'Disabled'}`;
+            
+            console.log(`Auto-save ${isEnabled ? 'enabled' : 'disabled'}`);
+        });
+    }
+}
+
+function setupFormHandling() {
+    const settingsForm = document.getElementById('settingsForm');
+    const settingsResults = document.getElementById('settingsResults');
+    const settingsResultsContent = document.getElementById('settingsResultsContent');
+    
+    if (settingsForm) {
+        settingsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(settingsForm);
+            const settings = {};
+            
+            // Get all toggle states
+            const toggles = settingsForm.querySelectorAll('.toggle__input');
+            toggles.forEach(toggle => {
+                const name = toggle.name || toggle.id;
+                const label = settingsForm.querySelector(`label[for="${toggle.id}"] .toggle__text`);
+                const labelText = label ? label.textContent : name;
+                
+                settings[labelText] = toggle.checked ? 'Enabled' : 'Disabled';
+            });
+            
+            // Display results
+            let resultHTML = '';
+            Object.entries(settings).forEach(([key, value]) => {
+                resultHTML += `<p><strong>${key}:</strong> ${value}</p>`;
+            });
+            
+            settingsResultsContent.innerHTML = resultHTML;
+            settingsResults.style.display = 'block';
+            
+            console.log('Settings saved:', settings);
+        });
+    }
+}
+
+function resetSettingsForm() {
+    const settingsForm = document.getElementById('settingsForm');
+    const settingsResults = document.getElementById('settingsResults');
+    
+    if (settingsForm) {
+        // Reset to default values
+        const defaults = {
+            'emailNotifications': true,
+            'pushNotifications': false,
+            'highContrast': false,
+            'largeText': false
+        };
+        
+        Object.entries(defaults).forEach(([name, checked]) => {
+            const toggle = settingsForm.querySelector(`[name="${name}"]`);
+            if (toggle) {
+                toggle.checked = checked;
+            }
+        });
+        
+        settingsResults.style.display = 'none';
+        console.log('Settings reset to defaults');
+    }
+}
+
+function enhanceToggleAccessibility() {
+    const toggles = document.querySelectorAll('.toggle__input');
+    
+    toggles.forEach(toggle => {
+        // Add keyboard support for space bar
+        toggle.addEventListener('keydown', (e) => {
+            if (e.key === ' ') {
+                e.preventDefault();
+                toggle.checked = !toggle.checked;
+                toggle.dispatchEvent(new Event('change'));
+            }
+        });
+        
+        // Add focus indicators
+        toggle.addEventListener('focus', () => {
+            const toggleWrapper = toggle.closest('.toggle');
+            toggleWrapper.classList.add('toggle--focused');
+        });
+        
+        toggle.addEventListener('blur', () => {
+            const toggleWrapper = toggle.closest('.toggle');
+            toggleWrapper.classList.remove('toggle--focused');
+        });
+        
+        // Add change event logging
+        toggle.addEventListener('change', () => {
+            const label = document.querySelector(`label[for="${toggle.id}"] .toggle__text`);
+            const labelText = label ? label.textContent : toggle.id;
+            console.log(`Toggle changed: ${labelText} = ${toggle.checked ? 'on' : 'off'}`);
+        });
+    });
+}
+
+// Utility function to programmatically control toggles
+function setToggleState(toggleId, state) {
+    const toggle = document.getElementById(toggleId);
+    if (toggle) {
+        toggle.checked = state;
+        toggle.dispatchEvent(new Event('change'));
+    }
+}
+
+// Utility function to get all toggle states
+function getAllToggleStates() {
+    const toggles = document.querySelectorAll('.toggle__input');
+    const states = {};
+    
+    toggles.forEach(toggle => {
+        const label = document.querySelector(`label[for="${toggle.id}"] .toggle__text`);
+        const labelText = label ? label.textContent : toggle.id;
+        states[labelText] = toggle.checked;
+    });
+    
+    return states;
+}
+
+// Add animation support for toggles
+function addToggleAnimations() {
+    const toggleSliders = document.querySelectorAll('.toggle__slider');
+    
+    toggleSliders.forEach(slider => {
+        const toggle = slider.closest('.toggle').querySelector('.toggle__input');
+        
+        toggle.addEventListener('change', () => {
+            // Add a subtle animation class
+            slider.classList.add('toggle__slider--animating');
+            
+            setTimeout(() => {
+                slider.classList.remove('toggle__slider--animating');
+            }, 300);
+        });
+    });
+}
+
+// Initialize animations
+addToggleAnimations();
+
+// Demonstrate toggle group interactions
+function setupToggleGroups() {
+    const privacyToggles = document.querySelectorAll('[id^="privacy"]');
+    
+    privacyToggles.forEach(toggle => {
+        toggle.addEventListener('change', () => {
+            const enabledCount = Array.from(privacyToggles).filter(t => t.checked).length;
+            console.log(`Privacy settings enabled: ${enabledCount}/${privacyToggles.length}`);
+        });
+    });
+}
+
+setupToggleGroups();
+</script>

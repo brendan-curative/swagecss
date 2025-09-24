@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Display</title>
+    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Table</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Display &amp; Layout Utilities</h1> 
+                <h1>Table Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Display imported from CUI</p>
+                  <p>Table imported from CUI</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 
-           </a> <span>Wed Sep 24 2025 03:01:44 GMT-0400 (Eastern Daylight Time)</span> 
+           </a> <span></span> 
         </div>
 
 </div>
@@ -94,571 +94,636 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        The Swage.CSS display system provides comprehensive layout utilities including flexbox, grid, display types, positioning, borders, and more for creating modern, responsive layouts.
+        Table component for displaying structured data in rows and columns. 
+        Features responsive design, sorting capabilities, and various styling options.
     </p>
 </section>
 
-<!-- Flexbox System -->
 <section class="component-section">
-    <h2>Flexbox System</h2>
-    <p class="mb-24">Powerful flexbox utilities for creating flexible layouts with precise control over alignment and distribution.</p>
+    <h2>Basic Table</h2>
+    <p class="mb-24">Standard table with headers and data rows.</p>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Flex Container Classes</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Basic Flex</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
-                </div>
-                <code>.flex</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Column</h4>
-                <div class="flex flex-col" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 120px;">
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
-                </div>
-                <code>.flex .flex-col</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Wrap</h4>
-                <div class="flex flex-wrap" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); width: 200px;">
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 1</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 2</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 3</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 4</div>
-                </div>
-                <code>.flex .flex-wrap</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex No Wrap</h4>
-                <div class="flex flex-nowrap" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); width: 200px; overflow: hidden;">
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 60px;">Item 1</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 60px;">Item 2</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 60px;">Item 3</div>
-                </div>
-                <code>.flex .flex-nowrap</code>
-            </div>
-        </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Justify Content</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Start</h4>
-                <div class="flex justify-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-start</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Center</h4>
-                <div class="flex justify-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-center</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>End</h4>
-                <div class="flex justify-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-end</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Between</h4>
-                <div class="flex justify-between" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-between</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Around</h4>
-                <div class="flex justify-around" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-around</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Evenly</h4>
-                <div class="flex justify-evenly" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-evenly</code>
-            </div>
-        </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Align Items</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Start</h4>
-                <div class="flex items-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
-                </div>
-                <code>.items-start</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Center</h4>
-                <div class="flex items-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
-                </div>
-                <code>.items-center</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>End</h4>
-                <div class="flex items-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
-                </div>
-                <code>.items-end</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Stretch</h4>
-                <div class="flex items-stretch" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.items-stretch</code>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Flex Item Properties</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Flex 1</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-1" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flex 1</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Fixed</div>
-                </div>
-                <code>.flex-1</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Auto</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-auto" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flex Auto</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Fixed</div>
-                </div>
-                <code>.flex-auto</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex None</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-none" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">No Flex</div>
-                    <div class="flex-1" style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flexible</div>
-                </div>
-                <code>.flex-none</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Shrink 0</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); width: 200px;">
-                    <div class="flex-shrink-0" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 100px;">No Shrink</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 100px;">Shrinks</div>
-                </div>
-                <code>.flex-shrink-0</code>
-            </div>
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Name</th>
+                        <th class="table__header-cell">Email</th>
+                        <th class="table__header-cell">Role</th>
+                        <th class="table__header-cell">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell">John Doe</td>
+                        <td class="table__cell">john.doe@example.com</td>
+                        <td class="table__cell">Administrator</td>
+                        <td class="table__cell">
+                            <span class="badge badge--success">Active</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Jane Smith</td>
+                        <td class="table__cell">jane.smith@example.com</td>
+                        <td class="table__cell">User</td>
+                        <td class="table__cell">
+                            <span class="badge badge--success">Active</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Bob Johnson</td>
+                        <td class="table__cell">bob.johnson@example.com</td>
+                        <td class="table__cell">Viewer</td>
+                        <td class="table__cell">
+                            <span class="badge badge--warning">Pending</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
-<!-- Grid System -->
 <section class="component-section">
-    <h2>Grid System</h2>
-    <p class="mb-24">CSS Grid utilities for creating complex two-dimensional layouts with precise control.</p>
+    <h2>Table with Borders</h2>
+    <p class="mb-24">Table with visible borders for better visual separation.</p>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Grid Columns</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>2 Columns</h4>
-                <div class="grid grid-cols-2 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                </div>
-                <code>.grid .grid-cols-2</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>3 Columns</h4>
-                <div class="grid grid-cols-3 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">5</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">6</div>
-                </div>
-                <code>.grid .grid-cols-3</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>4 Columns</h4>
-                <div class="grid grid-cols-4 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                </div>
-                <code>.grid .grid-cols-4</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>12 Columns</h4>
-                <div class="grid grid-cols-12 gap-4" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">1</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">2</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">3</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">4</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">5</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">6</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">7</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">8</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">9</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">10</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">11</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">12</div>
-                </div>
-                <code>.grid .grid-cols-12</code>
-            </div>
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--bordered">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Product</th>
+                        <th class="table__header-cell">Category</th>
+                        <th class="table__header-cell">Price</th>
+                        <th class="table__header-cell">Stock</th>
+                        <th class="table__header-cell">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell">MacBook Pro</td>
+                        <td class="table__cell">Electronics</td>
+                        <td class="table__cell">$2,499.00</td>
+                        <td class="table__cell">15</td>
+                        <td class="table__cell">
+                            <button class="button button--small button--outline">Edit</button>
+                            <button class="button button--small button--critical">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">iPhone 14</td>
+                        <td class="table__cell">Electronics</td>
+                        <td class="table__cell">$999.00</td>
+                        <td class="table__cell">32</td>
+                        <td class="table__cell">
+                            <button class="button button--small button--outline">Edit</button>
+                            <button class="button button--small button--critical">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">Wireless Headphones</td>
+                        <td class="table__cell">Audio</td>
+                        <td class="table__cell">$299.00</td>
+                        <td class="table__cell">8</td>
+                        <td class="table__cell">
+                            <button class="button button--small button--outline">Edit</button>
+                            <button class="button button--small button--critical">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
-<!-- Display Types -->
 <section class="component-section">
-    <h2>Display Types</h2>
-    <p class="mb-24">Control how elements are displayed and how they interact with other elements.</p>
+    <h2>Striped Table</h2>
+    <p class="mb-24">Table with alternating row colors for improved readability.</p>
     
-    <div class="demo-grid">
-        <div class="demo-item">
-            <h4>Block</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                <span class="block" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-bottom: var(--spacing-4);">Block Element</span>
-                <span class="block" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Another Block</span>
-            </div>
-            <code>.block</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Inline Block</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                <span class="inline-block" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-right: var(--spacing-4);">Inline Block</span>
-                <span class="inline-block" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Another</span>
-            </div>
-            <code>.inline-block</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Inline</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                This is text with an <span class="inline" style="background: var(--color-orange-200); padding: var(--spacing-4);">inline element</span> inside it.
-            </div>
-            <code>.inline</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Hidden</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-bottom: var(--spacing-4);">Visible Element</div>
-                <div class="hidden" style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-bottom: var(--spacing-4);">Hidden Element</div>
-                <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Another Visible</div>
-            </div>
-            <code>.hidden</code>
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--striped">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Date</th>
+                        <th class="table__header-cell">Transaction</th>
+                        <th class="table__header-cell">Amount</th>
+                        <th class="table__header-cell">Balance</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-15</td>
+                        <td class="table__cell">Online Purchase - Amazon</td>
+                        <td class="table__cell text-critical">-$89.99</td>
+                        <td class="table__cell">$2,410.01</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-14</td>
+                        <td class="table__cell">Salary Deposit</td>
+                        <td class="table__cell text-success">+$2,500.00</td>
+                        <td class="table__cell">$2,500.00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-12</td>
+                        <td class="table__cell">Coffee Shop</td>
+                        <td class="table__cell text-critical">-$4.50</td>
+                        <td class="table__cell">$0.00</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-10</td>
+                        <td class="table__cell">ATM Withdrawal</td>
+                        <td class="table__cell text-critical">-$100.00</td>
+                        <td class="table__cell">$4.50</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">2024-01-08</td>
+                        <td class="table__cell">Transfer from Savings</td>
+                        <td class="table__cell text-success">+$104.50</td>
+                        <td class="table__cell">$104.50</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
-<!-- Positioning -->
 <section class="component-section">
-    <h2>Positioning</h2>
-    <p class="mb-24">Classes for controlling element positioning and stacking context.</p>
+    <h2>Sortable Table</h2>
+    <p class="mb-24">Table with clickable column headers for sorting data.</p>
     
-    <div class="demo-grid">
-        <div class="demo-item">
-            <h4>Relative</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px; position: relative;">
-                <div class="relative" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: var(--spacing-8); left: var(--spacing-8);">Relative</div>
-            </div>
-            <code>.relative</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Absolute</h4>
-            <div class="relative" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px;">
-                <div class="absolute" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: var(--spacing-8); right: var(--spacing-8);">Absolute</div>
-            </div>
-            <code>.absolute</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Fixed</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px;">
-                <p style="font-size: var(--font-size-sm);">Fixed elements are positioned relative to the viewport</p>
-            </div>
-            <code>.fixed</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Sticky</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px; overflow-y: auto;">
-                <div class="sticky" style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: 0;">Sticky Header</div>
-                <div style="height: 200px; background: var(--color-gray-50); margin-top: var(--spacing-8); padding: var(--spacing-8);">
-                    Scroll content...
-                </div>
-            </div>
-            <code>.sticky</code>
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--sortable" id="sortableTable">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell table__header-cell--sortable" data-column="name">
+                            Name
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                        <th class="table__header-cell table__header-cell--sortable" data-column="age">
+                            Age
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                        <th class="table__header-cell table__header-cell--sortable" data-column="department">
+                            Department
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                        <th class="table__header-cell table__header-cell--sortable" data-column="salary">
+                            Salary
+                            <span class="table__sort-icon">
+                                <span class="heroicon heroicon-16 heroicon-chevron-up-down"></span>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">Alice Williams</td>
+                        <td class="table__cell" data-label="Age">28</td>
+                        <td class="table__cell" data-label="Department">Engineering</td>
+                        <td class="table__cell" data-label="Salary">$85,000</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">Charlie Brown</td>
+                        <td class="table__cell" data-label="Age">35</td>
+                        <td class="table__cell" data-label="Department">Marketing</td>
+                        <td class="table__cell" data-label="Salary">$70,000</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">David Lee</td>
+                        <td class="table__cell" data-label="Age">42</td>
+                        <td class="table__cell" data-label="Department">Sales</td>
+                        <td class="table__cell" data-label="Salary">$65,000</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Name">Emily Chen</td>
+                        <td class="table__cell" data-label="Age">31</td>
+                        <td class="table__cell" data-label="Department">Design</td>
+                        <td class="table__cell" data-label="Salary">$78,000</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
-<!-- Border Utilities -->
 <section class="component-section">
-    <h2>Border Utilities</h2>
-    <p class="mb-24">Classes for adding borders and controlling border properties.</p>
+    <h2>Responsive Table</h2>
+    <p class="mb-24">Table that adapts to smaller screens by stacking cells vertically.</p>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Border Styles</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="border" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Basic Border
-                </div>
-                <code>.border</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-2x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    2px Border
-                </div>
-                <code>.border-2x</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-4x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    4px Border
-                </div>
-                <code>.border-4x</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-0" style="padding: var(--spacing-16); background: var(--color-gray-100); border-radius: var(--spacing-4); text-align: center;">
-                    No Border
-                </div>
-                <code>.border-0</code>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Directional Borders</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="border-t" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Top Border
-                </div>
-                <code>.border-t</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-r" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Right Border
-                </div>
-                <code>.border-r</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-b" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Bottom Border
-                </div>
-                <code>.border-b</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-l" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Left Border
-                </div>
-                <code>.border-l</code>
-            </div>
+    <div class="demo-item">
+        <div class="demo-label">Resize your browser window to see responsive behavior</div>
+        <div class="table-container">
+            <table class="table table--responsive">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Order #</th>
+                        <th class="table__header-cell">Customer</th>
+                        <th class="table__header-cell">Product</th>
+                        <th class="table__header-cell">Quantity</th>
+                        <th class="table__header-cell">Total</th>
+                        <th class="table__header-cell">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Order #">#12345</td>
+                        <td class="table__cell" data-label="Customer">John Smith</td>
+                        <td class="table__cell" data-label="Product">Laptop Computer</td>
+                        <td class="table__cell" data-label="Quantity">1</td>
+                        <td class="table__cell" data-label="Total">$1,299.99</td>
+                        <td class="table__cell" data-label="Status">
+                            <span class="badge badge--success">Shipped</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Order #">#12346</td>
+                        <td class="table__cell" data-label="Customer">Sarah Johnson</td>
+                        <td class="table__cell" data-label="Product">Wireless Mouse</td>
+                        <td class="table__cell" data-label="Quantity">2</td>
+                        <td class="table__cell" data-label="Total">$59.98</td>
+                        <td class="table__cell" data-label="Status">
+                            <span class="badge badge--warning">Processing</span>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell" data-label="Order #">#12347</td>
+                        <td class="table__cell" data-label="Customer">Mike Davis</td>
+                        <td class="table__cell" data-label="Product">USB Cable</td>
+                        <td class="table__cell" data-label="Quantity">3</td>
+                        <td class="table__cell" data-label="Total">$29.97</td>
+                        <td class="table__cell" data-label="Status">
+                            <span class="badge badge--success">Delivered</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
-<!-- Miscellaneous Utilities -->
 <section class="component-section">
-    <h2>Miscellaneous Utilities</h2>
-    <p class="mb-24">Additional layout utilities for overflow, alignment, and sizing.</p>
+    <h2>Table with Selection</h2>
+    <p class="mb-24">Table with checkboxes for selecting individual rows or all rows.</p>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Text Alignment</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="align-left" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Left aligned text content
-                </div>
-                <code>.align-left</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="align-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Center aligned text content
-                </div>
-                <code>.align-center</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="align-right" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Right aligned text content
-                </div>
-                <code>.align-right</code>
-            </div>
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table table--selectable" id="selectableTable">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell table__header-cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="selectAll" class="checkbox__input">
+                                <label for="selectAll" class="checkbox__label" aria-label="Select all rows"></label>
+                            </div>
+                        </th>
+                        <th class="table__header-cell">File Name</th>
+                        <th class="table__header-cell">Size</th>
+                        <th class="table__header-cell">Modified</th>
+                        <th class="table__header-cell">Type</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="file1" class="checkbox__input row-checkbox">
+                                <label for="file1" class="checkbox__label" aria-label="Select this row"></label>
+                            </div>
+                        </td>
+                        <td class="table__cell">document.pdf</td>
+                        <td class="table__cell">2.3 MB</td>
+                        <td class="table__cell">2024-01-15</td>
+                        <td class="table__cell">PDF Document</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="file2" class="checkbox__input row-checkbox">
+                                <label for="file2" class="checkbox__label" aria-label="Select this row"></label>
+                            </div>
+                        </td>
+                        <td class="table__cell">presentation.pptx</td>
+                        <td class="table__cell">5.7 MB</td>
+                        <td class="table__cell">2024-01-14</td>
+                        <td class="table__cell">PowerPoint</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell table__cell--checkbox">
+                            <div class="checkbox">
+                                <input type="checkbox" id="file3" class="checkbox__input row-checkbox">
+                                <label for="file3" class="checkbox__label" aria-label="Select this row"></label>
+                            </div>
+                        </td>
+                        <td class="table__cell">spreadsheet.xlsx</td>
+                        <td class="table__cell">1.2 MB</td>
+                        <td class="table__cell">2024-01-13</td>
+                        <td class="table__cell">Excel Workbook</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Overflow Control</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>Hidden</h4>
-                <div class="overflow-hidden" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This is a long text that would normally overflow the container but is hidden instead.
-                </div>
-                <code>.overflow-hidden</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Scroll</h4>
-                <div class="overflow-scroll" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This is a long text that overflows the container and shows scrollbars when needed.
-                </div>
-                <code>.overflow-scroll</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Auto</h4>
-                <div class="overflow-auto" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This content shows scrollbars only when necessary for overflow.
-                </div>
-                <code>.overflow-auto</code>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Sizing Utilities</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="h-100 w-100" style="background: var(--color-blue-100); border: 1px dashed var(--color-blue-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    100% Width & Height
-                </div>
-                <code>.h-100 .w-100</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="min-h-screen" style="background: var(--color-green-100); border: 1px dashed var(--color-green-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    Min Height Screen
-                </div>
-                <code>.min-h-screen</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="min-h-full" style="background: var(--color-orange-100); border: 1px dashed var(--color-orange-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    Min Height Full
-                </div>
-                <code>.min-h-full</code>
-            </div>
+        
+        <div class="table-actions" style="margin-top: 16px;">
+            <span id="selectionCount">0 items selected</span>
+            <button class="button button--outline" id="deleteSelected" disabled>Delete Selected</button>
+            <button class="button button--primary" id="downloadSelected" disabled>Download Selected</button>
         </div>
     </div>
 </section>
 
-<!-- Layout Examples -->
 <section class="component-section">
-    <h2>Layout Examples</h2>
-    <p class="mb-24">Common layout patterns using the display utilities.</p>
+    <h2>Empty State Table</h2>
+    <p class="mb-24">Table displaying an empty state when no data is available.</p>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Card Layout</h3>
-        <div class="border rounded p-24 bg-white">
-            <div class="flex items-center justify-between mb-16">
-                <h4 class="heading-lg">Card Title</h4>
-                <button class="button button--outline">Action</button>
-            </div>
-            <p class="body-md text-gray-600 mb-16">Card content with flexible layout using flexbox utilities.</p>
-            <div class="flex gap-8">
-                <span class="badge badge--default badge--small">Tag 1</span>
-                <span class="badge badge--default badge--small">Tag 2</span>
-            </div>
+    <div class="demo-item">
+        <div class="table-container">
+            <table class="table">
+                <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">Name</th>
+                        <th class="table__header-cell">Email</th>
+                        <th class="table__header-cell">Role</th>
+                        <th class="table__header-cell">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                    <tr class="table__row table__row--empty">
+                        <td class="table__cell table__cell--empty" colspan="4">
+                            <div class="table__empty-state">
+                                <div class="table__empty-icon">
+                                    <span class="heroicon heroicon-document-text"></span>
+                                </div>
+                                <div class="table__empty-content">
+                                    <h3 class="table__empty-title">No data found</h3>
+                                    <p class="table__empty-description">There are no items to display at this time.</p>
+                                    <button class="button button--primary">Add New Item</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+</section>
+
+<script>
+// Table sorting functionality
+class TableSorter {
+    constructor(tableId) {
+        this.table = document.getElementById(tableId);
+        this.headers = this.table.querySelectorAll('.table__header-cell--sortable');
+        this.tbody = this.table.querySelector('.table__body');
+        this.currentSort = { column: null, direction: null };
+        
+        this.init();
+    }
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Navigation Layout</h3>
-        <nav class="flex items-center justify-between p-16 border-b bg-white">
-            <div class="flex items-center gap-16">
-                <div style="width: var(--spacing-32); height: var(--spacing-32); background: var(--color-foundation-primary); border-radius: var(--spacing-4);"></div>
-                <span class="heading-md">Brand</span>
-            </div>
-            <div class="flex items-center gap-24">
-                <a href="#" class="body-sm">Home</a>
-                <a href="#" class="body-sm">About</a>
-                <a href="#" class="body-sm">Contact</a>
-                <button class="button button--primary">Sign Up</button>
-            </div>
-        </nav>
-    </div>
+    init() {
+        this.headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const column = header.dataset.column;
+                this.sort(column, header);
+            });
+        });
+    }
     
-    <div>
-        <h3>Grid Gallery</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 1</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
-            </div>
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 2</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
-            </div>
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 3</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
-            </div>
-        </div>
-    </div>
-</section></article>
+    sort(column, header) {
+        const rows = Array.from(this.tbody.querySelectorAll('.table__row'));
+        const isCurrentColumn = this.currentSort.column === column;
+        const direction = isCurrentColumn && this.currentSort.direction === 'asc' ? 'desc' : 'asc';
+        
+        // Update sort state
+        this.currentSort = { column, direction };
+        
+        // Clear all sort indicators
+        this.headers.forEach(h => {
+            h.classList.remove('table__header-cell--sorted-asc', 'table__header-cell--sorted-desc');
+            const icon = h.querySelector('.heroicon');
+            icon.className = 'heroicon heroicon-16 heroicon-chevron-up-down';
+        });
+        
+        // Set current sort indicator
+        header.classList.add(`table__header-cell--sorted-${direction}`);
+        const icon = header.querySelector('.heroicon');
+        icon.className = `heroicon heroicon-16 heroicon-chevron-${direction === 'asc' ? 'up' : 'down'}`;
+        
+        // Sort rows
+        rows.sort((a, b) => {
+            const aValue = this.getCellValue(a, column);
+            const bValue = this.getCellValue(b, column);
+            
+            return this.compareValues(aValue, bValue, direction);
+        });
+        
+        // Reorder rows in DOM
+        rows.forEach(row => this.tbody.appendChild(row));
+        
+        console.log(`Table sorted by ${column} in ${direction} order`);
+    }
+    
+    getCellValue(row, column) {
+        const cell = row.querySelector(`[data-label="${this.capitalizeFirst(column)}"]`);
+        return cell ? cell.textContent.trim() : '';
+    }
+    
+    compareValues(a, b, direction) {
+        // Try to parse as numbers
+        const aNum = parseFloat(a.replace(/[$,]/g, ''));
+        const bNum = parseFloat(b.replace(/[$,]/g, ''));
+        
+        if (!isNaN(aNum) && !isNaN(bNum)) {
+            return direction === 'asc' ? aNum - bNum : bNum - aNum;
+        }
+        
+        // String comparison
+        return direction === 'asc' ? a.localeCompare(b) : b.localeCompare(a);
+    }
+    
+    capitalizeFirst(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+}
+
+// Table selection functionality
+class TableSelector {
+    constructor(tableId) {
+        this.table = document.getElementById(tableId);
+        this.selectAllCheckbox = document.getElementById('selectAll');
+        this.rowCheckboxes = this.table.querySelectorAll('.row-checkbox');
+        this.selectionCount = document.getElementById('selectionCount');
+        this.deleteButton = document.getElementById('deleteSelected');
+        this.downloadButton = document.getElementById('downloadSelected');
+        
+        this.init();
+    }
+    
+    init() {
+        // Select all functionality
+        this.selectAllCheckbox.addEventListener('change', () => {
+            const isChecked = this.selectAllCheckbox.checked;
+            this.rowCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+                this.updateRowSelection(checkbox);
+            });
+            this.updateSelectionUI();
+        });
+        
+        // Individual row selection
+        this.rowCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                this.updateRowSelection(checkbox);
+                this.updateSelectAllState();
+                this.updateSelectionUI();
+            });
+        });
+        
+        // Action buttons
+        this.deleteButton.addEventListener('click', () => this.deleteSelected());
+        this.downloadButton.addEventListener('click', () => this.downloadSelected());
+    }
+    
+    updateRowSelection(checkbox) {
+        const row = checkbox.closest('.table__row');
+        if (checkbox.checked) {
+            row.classList.add('table__row--selected');
+        } else {
+            row.classList.remove('table__row--selected');
+        }
+    }
+    
+    updateSelectAllState() {
+        const checkedCount = Array.from(this.rowCheckboxes).filter(cb => cb.checked).length;
+        const totalCount = this.rowCheckboxes.length;
+        
+        if (checkedCount === 0) {
+            this.selectAllCheckbox.checked = false;
+            this.selectAllCheckbox.indeterminate = false;
+        } else if (checkedCount === totalCount) {
+            this.selectAllCheckbox.checked = true;
+            this.selectAllCheckbox.indeterminate = false;
+        } else {
+            this.selectAllCheckbox.checked = false;
+            this.selectAllCheckbox.indeterminate = true;
+        }
+    }
+    
+    updateSelectionUI() {
+        const selectedCount = Array.from(this.rowCheckboxes).filter(cb => cb.checked).length;
+        
+        this.selectionCount.textContent = `${selectedCount} item${selectedCount !== 1 ? 's' : ''} selected`;
+        
+        const hasSelection = selectedCount > 0;
+        this.deleteButton.disabled = !hasSelection;
+        this.downloadButton.disabled = !hasSelection;
+    }
+    
+    deleteSelected() {
+        const selectedRows = Array.from(this.rowCheckboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.closest('.table__row'));
+        
+        if (selectedRows.length > 0) {
+            const confirm = window.confirm(`Delete ${selectedRows.length} selected item(s)?`);
+            if (confirm) {
+                selectedRows.forEach(row => row.remove());
+                this.updateSelectionUI();
+                console.log(`Deleted ${selectedRows.length} items`);
+            }
+        }
+    }
+    
+    downloadSelected() {
+        const selectedFiles = Array.from(this.rowCheckboxes)
+            .filter(cb => cb.checked)
+            .map(cb => {
+                const row = cb.closest('.table__row');
+                const fileName = row.querySelector('[data-label="File Name"]').textContent;
+                return fileName;
+            });
+        
+        alert(`Downloaded: ${selectedFiles.join(', ')}`);
+        console.log('Downloaded files:', selectedFiles);
+    }
+}
+
+// Initialize table functionality
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Table demo page loaded');
+    
+    // Initialize sortable table
+    if (document.getElementById('sortableTable')) {
+        new TableSorter('sortableTable');
+    }
+    
+    // Initialize selectable table
+    if (document.getElementById('selectableTable')) {
+        new TableSelector('selectableTable');
+    }
+    
+    // Add responsive behavior demonstration
+    addResponsiveDemo();
+});
+
+function addResponsiveDemo() {
+    const responsiveTable = document.querySelector('.table--responsive');
+    if (responsiveTable) {
+        // Add a button to toggle responsive mode for demonstration
+        const container = responsiveTable.closest('.demo-item');
+        const button = document.createElement('button');
+        button.className = 'button button--outline';
+        button.textContent = 'Toggle Mobile View';
+        button.style.marginBottom = '16px';
+        
+        button.addEventListener('click', () => {
+            responsiveTable.classList.toggle('table--force-responsive');
+        });
+        
+        container.insertBefore(button, container.firstChild);
+    }
+}
+
+// Utility function for table actions
+function editTableRow(button) {
+    const row = button.closest('.table__row');
+    const cells = row.querySelectorAll('.table__cell:not(:last-child)');
+    
+    // Simple inline editing simulation
+    cells.forEach(cell => {
+        const currentText = cell.textContent;
+        cell.innerHTML = `<input type="text" value="${currentText}" style="border: 1px solid #ccc; padding: 4px; width: 100%;">`;
+    });
+    
+    button.textContent = 'Save';
+    button.onclick = () => saveTableRow(button);
+}
+
+function saveTableRow(button) {
+    const row = button.closest('.table__row');
+    const inputs = row.querySelectorAll('input[type="text"]');
+    
+    inputs.forEach(input => {
+        const cell = input.parentElement;
+        cell.textContent = input.value;
+    });
+    
+    button.textContent = 'Edit';
+    button.onclick = () => editTableRow(button);
+    
+    console.log('Row saved');
+}
+</script>
+</article>
         
       </main>
   

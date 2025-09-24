@@ -1,0 +1,217 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Accordion
+heading: Accordion Component
+secondary: Accordion imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Accordion component provides collapsible content sections with toggle functionality, 
+        exactly as implemented in the Curative UI design system using Headless UI Disclosure.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Default Accordion</h2>
+    <p class="mb-24">Basic accordion with multiple collapsible items, matching the Default story from Curative UI.</p>
+    
+    <!-- Default Accordion - Matches Curative UI Default Story -->
+    <div class="accordion demo-accordion" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Accordion item 1</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content">
+                    This is accordion item 1 content.
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion__item" data-testid="accordion-item-2">
+            <button class="accordion__toggle" data-testid="accordion-item-2_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Accordion item 2</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-2_panel-content">
+                <div class="accordion__panel-content">
+                    This is accordion item 2 content.
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="accordion__item" data-testid="accordion-item-3">
+            <button class="accordion__toggle" data-testid="accordion-item-3_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Accordion item 3</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-3_panel-content">
+                <div class="accordion__panel-content">
+                    This is accordion item 3 content.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Accordion with Default Open Item</h2>
+    <p class="mb-24">Accordion demonstrating the defaultOpen prop functionality.</p>
+    
+    <!-- Accordion with Default Open -->
+    <div class="accordion demo-accordion" data-testid="default-open-accordion">
+        <!-- Accordion Item 1 - Default Open -->
+        <div class="accordion__item accordion__item--open" data-testid="default-open-item-1">
+            <button class="accordion__toggle" data-testid="default-open-item-1_toggle-accordion" aria-expanded="true">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Default Open Item</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--visible" data-testid="default-open-item-1_panel-content">
+                <div class="accordion__panel-content">
+                    This accordion item is open by default, demonstrating the defaultOpen prop behavior from the Curative UI Accordion component.
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion__item" data-testid="default-open-item-2">
+            <button class="accordion__toggle" data-testid="default-open-item-2_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Regular Item</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="default-open-item-2_panel-content">
+                <div class="accordion__panel-content">
+                    This is a regular accordion item that starts closed.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Rich Content Accordion</h2>
+    <p class="mb-24">Accordion items with more complex content including lists, links, and formatted text.</p>
+    
+    <!-- Rich Content Accordion -->
+    <div class="accordion demo-accordion" data-testid="rich-content-accordion">
+        <!-- Features Item -->
+        <div class="accordion__item" data-testid="features-item">
+            <button class="accordion__toggle" data-testid="features-item_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Features & Benefits</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="features-item_panel-content">
+                <div class="accordion__panel-content">
+                    <ul class="list-style">
+                        <li>Easy-to-use collapsible content sections</li>
+                        <li>Smooth animations and transitions</li>
+                        <li>Accessible keyboard navigation</li>
+                        <li>Screen reader compatibility</li>
+                        <li>Consistent with Curative UI design system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Details Item -->
+        <div class="accordion__item" data-testid="technical-item">
+            <button class="accordion__toggle" data-testid="technical-item_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Technical Implementation</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="technical-item_panel-content">
+                <div class="accordion__panel-content">
+                    <p class="bottom-margin">This component is built using:</p>
+                    <ul class="list-style-nested">
+                        <li><strong>Vanilla JavaScript</strong> for interaction handling</li>
+                        <li><strong>CSS transitions</strong> for smooth animations</li>
+                        <li><strong>Heroicons</strong> for chevron indicators</li>
+                        <li><strong>Foundation CSS variables</strong> for consistent styling</li>
+                    </ul>
+                    <p class="top-margin">
+                        Based on the <a href="#" class="primary-link">Curative UI Accordion component</a> 
+                        which uses Headless UI Disclosure primitives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle dismissible accordions  
+    const toggleButtons = document.querySelectorAll('.accordion__toggle');
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.accordion__item');
+            const panel = item.querySelector('.accordion__panel');
+            const icon = item.querySelector('.accordion__toggle-icon .heroicon');
+            const isOpen = button.getAttribute('aria-expanded') === 'true';
+            
+            if (isOpen) {
+                // Close
+                button.setAttribute('aria-expanded', 'false');
+                panel.classList.remove('accordion__panel--visible');
+                panel.classList.add('accordion__panel--hidden');
+                icon.classList.remove('heroicon-chevron-down');
+                icon.classList.add('heroicon-chevron-right');
+                item.classList.remove('accordion__item--open');
+            } else {
+                // Open
+                button.setAttribute('aria-expanded', 'true');
+                panel.classList.remove('accordion__panel--hidden');
+                panel.classList.add('accordion__panel--visible');
+                icon.classList.remove('heroicon-chevron-right');
+                icon.classList.add('heroicon-chevron-down');
+                item.classList.add('accordion__item--open');
+            }
+        });
+    });
+
+    // Keyboard navigation for accordions
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            if (e.target.classList.contains('accordion__toggle')) {
+                e.preventDefault();
+                e.target.click();
+            }
+        }
+    });
+});
+</script>

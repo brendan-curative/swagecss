@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Typography</title>
+    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Button</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -24,7 +24,7 @@
               <div class="flex-column pagetitle">
                 <h1>Button Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Buttons imported from CUI</p>
+                  <p>Button imported from CUI</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 
-           </a> <span></span> 
+           </a> <span>Wed Sep 24 2025 03:01:44 GMT-0400 (Eastern Daylight Time)</span> 
         </div>
 
 </div>
@@ -71,520 +71,425 @@
     
 
     <h2>Components</h2>
+    <a href="/swagecss/components/accordion/">Accordion</a>
     <a href="/swagecss/components/alert/">Alert</a>
-    <a href="/swagecss/components/textfield/">Textfield</a>
+    <a href="/swagecss/components/badge/">Badge</a>
+    <a href="/swagecss/components/banner/">Banner</a>
     <a href="/swagecss/components/button/">Button</a>
+    <a href="/swagecss/components/card/">Card</a>
+    <a href="/swagecss/components/checkbox/">Checkbox</a>
+    <a href="/swagecss/components/logo/">Logo</a>
+    <a href="/swagecss/components/min-max-progress-bar/">Min Max Progress Bar</a>
+    <a href="/swagecss/components/modal/">Modal</a>
+    <a href="/swagecss/components/radio/">Radio</a>
+    <a href="/swagecss/components/select/">Select</a>
+    <a href="/swagecss/components/table/">Table</a>
+    <a href="/swagecss/components/textfield/">Textfield</a>
+    <a href="/swagecss/components/toggle/">Toggle</a>
 
 
     </nav>
 </aside>
   
               <article>
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        Clickable buttons used to submit forms or anywhere in a document for accessible, standard button functionality. Not meant for links.
+    </p>
+</section>
 
-        <!-- Primary Variants -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Primary Variants</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-24">
-                    <!-- Small Primary -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Small Primary</h3>
-                        <div class="space-y-12">
-                            <button class="button button--small-primary">Small Primary</button>
-                            <button class="button button--small-primary" disabled>Disabled</button>
-                            <button class="button button--small-primary button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Regular Primary -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Primary</h3>
-                        <div class="space-y-12">
-                            <button class="button button--primary">Primary Button</button>
-                            <button class="button button--primary" disabled>Disabled</button>
-                            <button class="button button--primary button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Big Primary -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Big Primary</h3>
-                        <div class="space-y-12">
-                            <button class="button button--big-primary">Big Primary</button>
-                            <button class="button button--big-primary" disabled>Disabled</button>
-                            <button class="button button--big-primary button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
+<!-- Primary Variants -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Primary Variants</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-24">
+            <!-- Small Primary -->
+            <div>
+                <h3 class="heading-sm mb-12">Small Primary</h3>
+                <div class="space-y-12">
+                    <button class="button button--small-primary">Small Primary</button>
+                    <button class="button button--small-primary" disabled>Disabled</button>
+                    <button class="button button--small-primary button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Outline Variants -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Outline Variants</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-24">
-                    <!-- Small Outline -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Small Outline</h3>
-                        <div class="space-y-12">
-                            <button class="button button--small-outline">Small Outline</button>
-                            <button class="button button--small-outline" disabled>Disabled</button>
-                            <button class="button button--small-outline button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Regular Outline -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Outline</h3>
-                        <div class="space-y-12">
-                            <button class="button button--outline">Outline Button</button>
-                            <button class="button button--outline" disabled>Disabled</button>
-                            <button class="button button--outline button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Big Outline -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Big Outline</h3>
-                        <div class="space-y-12">
-                            <button class="button button--big-outline">Big Outline</button>
-                            <button class="button button--big-outline" disabled>Disabled</button>
-                            <button class="button button--big-outline button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
+            <!-- Regular Primary -->
+            <div>
+                <h3 class="heading-sm mb-12">Primary</h3>
+                <div class="space-y-12">
+                    <button class="button button--primary">Primary Button</button>
+                    <button class="button button--primary" disabled>Disabled</button>
+                    <button class="button button--primary button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Special Variants -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Special Variants</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-                    <!-- Big Outline Pill -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Big Outline Pill</h3>
-                        <div class="space-y-12">
-                            <button class="button button--big-outline-pill">Pill Button</button>
-                            <button class="button button--big-outline-pill" disabled>Disabled Pill</button>
-                            <button class="button button--big-outline-pill button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading Pill
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Full Width -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Full Width</h3>
-                        <div class="space-y-12">
-                            <button class="button button--big-primary button--full-width-primary">Full Width Primary</button>
-                            <button class="button button--big-outline button--full-width-outline">Full Width Outline</button>
-                            <button class="button button--big-primary button--full-width-primary" disabled>Disabled Full Width</button>
-                        </div>
-                    </div>
+            <!-- Big Primary -->
+            <div>
+                <h3 class="heading-sm mb-12">Big Primary</h3>
+                <div class="space-y-12">
+                    <button class="button button--big-primary">Big Primary</button>
+                    <button class="button button--big-primary" disabled>Disabled</button>
+                    <button class="button button--big-primary button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- Flat Variants -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Flat Variants</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-                    <!-- Flat -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Flat</h3>
-                        <div class="space-y-12">
-                            <button class="button button--flat">Flat Button</button>
-                            <button class="button button--flat" disabled>Disabled</button>
-                            <button class="button button--flat button--loading">
-                                <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Flat Primary -->
-                    <div class="bg-foundation-primary p-16 rounded dark-bg-demo">
-                        <h3 class="heading-sm mb-12 white-heading">Flat Primary (on dark bg)</h3>
-                        <div class="space-y-12">
-                            <button class="button button--flat-primary">Flat Primary</button>
-                            <button class="button button--flat-primary" disabled>Disabled</button>
-                            <button class="button button--flat-primary button--loading">
-                                <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Loading
-                            </button>
-                        </div>
-                    </div>
+<!-- Outline Variants -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Outline Variants</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-24">
+            <!-- Small Outline -->
+            <div>
+                <h3 class="heading-sm mb-12">Small Outline</h3>
+                <div class="space-y-12">
+                    <button class="button button--small-outline">Small Outline</button>
+                    <button class="button button--small-outline" disabled>Disabled</button>
+                    <button class="button button--small-outline button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Destructive Variants -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Destructive Variants</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-24">
-                    <!-- Small Destructive -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Small Destructive</h3>
-                        <div class="space-y-12">
-                            <button class="button button--small-destructive">Delete</button>
-                            <button class="button button--small-destructive" disabled>Disabled</button>
-                            <button class="button button--small-destructive button--loading">
-                                <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Deleting
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Regular Destructive -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Destructive</h3>
-                        <div class="space-y-12">
-                            <button class="button button--destructive">Remove Item</button>
-                            <button class="button button--destructive" disabled>Disabled</button>
-                            <button class="button button--destructive button--loading">
-                                <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Removing
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Big Destructive -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Big Destructive</h3>
-                        <div class="space-y-12">
-                            <button class="button button--big-destructive">Delete Account</button>
-                            <button class="button button--big-destructive" disabled>Disabled</button>
-                            <button class="button button--big-destructive button--loading">
-                                <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
-                                Deleting
-                            </button>
-                        </div>
-                    </div>
+            <!-- Regular Outline -->
+            <div>
+                <h3 class="heading-sm mb-12">Outline</h3>
+                <div class="space-y-12">
+                    <button class="button button--outline">Outline Button</button>
+                    <button class="button button--outline" disabled>Disabled</button>
+                    <button class="button button--outline button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Buttons with Icons -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Buttons with Icons</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-                    <!-- Icons with Text -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Icons with Text</h3>
-                        <div class="space-y-12">
-                            <button class="button button--primary button--with-icon">
-                                <span class="heroicon heroicon-16 heroicon-plus"></span>
-                                Add Item
-                            </button>
-                            <button class="button button--outline button--with-icon">
-                                <span class="heroicon heroicon-16 heroicon-pencil"></span>
-                                Edit
-                            </button>
-                            <button class="button button--small-destructive button--with-icon">
-                                <span class="heroicon heroicon-16 heroicon-trash"></span>
-                                Delete
-                            </button>
-                            <button class="button button--flat button--with-icon">
-                                <span class="heroicon heroicon-16 heroicon-arrow-right"></span>
-                                Continue
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Icon Only -->
-                    <div>
-                        <h3 class="heading-sm mb-12">Icon Only</h3>
-                        <div class="space-y-12">
-                            <button class="button button--primary button--icon-only" aria-label="Add new item">
-                                <span class="heroicon heroicon-16 heroicon-plus"></span>
-                            </button>
-                            <button class="button button--outline button--icon-only" aria-label="Edit item">
-                                <span class="heroicon heroicon-16 heroicon-pencil"></span>
-                            </button>
-                            <button class="button button--small-destructive button--icon-only" aria-label="Delete item">
-                                <span class="heroicon heroicon-16 heroicon-trash"></span>
-                            </button>
-                            <button class="button button--big-primary button--icon-only" aria-label="Settings">
-                                <span class="heroicon heroicon-16 heroicon-cog-6-tooth"></span>
-                            </button>
-                        </div>
-                    </div>
+            <!-- Big Outline -->
+            <div>
+                <h3 class="heading-sm mb-12">Big Outline</h3>
+                <div class="space-y-12">
+                    <button class="button button--big-outline">Big Outline</button>
+                    <button class="button button--big-outline" disabled>Disabled</button>
+                    <button class="button button--big-outline button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- Interactive Examples -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Interactive Examples</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="space-y-24">
-                    <!-- Click Handler Demo -->
-                    <div>
-                        <h3 class="heading-lg mb-16">Click Handling</h3>
-                        <p class="body-md mb-16 text-gray-600">You can set custom click handlers for dynamic state logic. These buttons will update state when clicked:</p>
+<!-- Special Variants -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Special Variants</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            <!-- Big Outline Pill -->
+            <div>
+                <h3 class="heading-sm mb-12">Big Outline Pill</h3>
+                <div class="space-y-12">
+                    <button class="button button--big-outline-pill">Pill Button</button>
+                    <button class="button button--big-outline-pill" disabled>Disabled Pill</button>
+                    <button class="button button--big-outline-pill button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading Pill
+                    </button>
+                </div>
+            </div>
+
+            <!-- Full Width -->
+            <div>
+                <h3 class="heading-sm mb-12">Full Width</h3>
+                <div class="space-y-12">
+                    <button class="button button--big-primary button--full-width-primary">Full Width Primary</button>
+                    <button class="button button--big-outline button--full-width-outline">Full Width Outline</button>
+                    <button class="button button--big-primary button--full-width-primary" disabled>Disabled Full Width</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Flat Variants -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Flat Variants</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            <!-- Flat -->
+            <div>
+                <h3 class="heading-sm mb-12">Flat</h3>
+                <div class="space-y-12">
+                    <button class="button button--flat">Flat Button</button>
+                    <button class="button button--flat" disabled>Disabled</button>
+                    <button class="button button--flat button--loading">
+                        <span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
+                </div>
+            </div>
+
+            <!-- Flat Primary -->
+            <div class="bg-foundation-primary p-16 rounded dark-bg-demo">
+                <h3 class="heading-sm mb-12 white-heading">Flat Primary (on dark bg)</h3>
+                <div class="space-y-12">
+                    <button class="button button--flat-primary">Flat Primary</button>
+                    <button class="button button--flat-primary" disabled>Disabled</button>
+                    <button class="button button--flat-primary button--loading">
+                        <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Loading
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Destructive Variants -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Destructive Variants</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-24">
+            <!-- Small Destructive -->
+            <div>
+                <h3 class="heading-sm mb-12">Small Destructive</h3>
+                <div class="space-y-12">
+                    <button class="button button--small-destructive">Delete</button>
+                    <button class="button button--small-destructive" disabled>Disabled</button>
+                    <button class="button button--small-destructive button--loading">
+                        <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Deleting
+                    </button>
+                </div>
+            </div>
+
+            <!-- Regular Destructive -->
+            <div>
+                <h3 class="heading-sm mb-12">Destructive</h3>
+                <div class="space-y-12">
+                    <button class="button button--destructive">Remove Item</button>
+                    <button class="button button--destructive" disabled>Disabled</button>
+                    <button class="button button--destructive button--loading">
+                        <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Removing
+                    </button>
+                </div>
+            </div>
+
+            <!-- Big Destructive -->
+            <div>
+                <h3 class="heading-sm mb-12">Big Destructive</h3>
+                <div class="space-y-12">
+                    <button class="button button--big-destructive">Delete Account</button>
+                    <button class="button button--big-destructive" disabled>Disabled</button>
+                    <button class="button button--big-destructive button--loading">
+                        <span class="button__spinner button__spinner--white heroicon heroicon-16 heroicon-arrow-path"></span>
+                        Deleting
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Buttons with Icons -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Buttons with Icons</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            <!-- Icons with Text -->
+            <div>
+                <h3 class="heading-sm mb-12">Icons with Text</h3>
+                <div class="space-y-12">
+                    <button class="button button--primary button--with-icon">
+                        <span class="heroicon heroicon-16 heroicon-plus"></span>
+                        Add Item
+                    </button>
+                    <button class="button button--outline button--with-icon">
+                        <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                        Edit
+                    </button>
+                    <button class="button button--small-destructive button--with-icon">
+                        <span class="heroicon heroicon-16 heroicon-trash"></span>
+                        Delete
+                    </button>
+                    <button class="button button--flat button--with-icon">
+                        <span class="heroicon heroicon-16 heroicon-arrow-right"></span>
+                        Continue
+                    </button>
+                </div>
+            </div>
+
+            <!-- Icon Only -->
+            <div>
+                <h3 class="heading-sm mb-12">Icon Only</h3>
+                <div class="space-y-12">
+                    <button class="button button--primary button--icon-only" aria-label="Add new item">
+                        <span class="heroicon heroicon-16 heroicon-plus"></span>
+                    </button>
+                    <button class="button button--outline button--icon-only" aria-label="Edit item">
+                        <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                    </button>
+                    <button class="button button--small-destructive button--icon-only" aria-label="Delete item">
+                        <span class="heroicon heroicon-16 heroicon-trash"></span>
+                    </button>
+                    <button class="button button--big-primary button--icon-only" aria-label="Settings">
+                        <span class="heroicon heroicon-16 heroicon-cog-6-tooth"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Examples -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Interactive Examples</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="space-y-24">
+            <!-- Click Handler Demo -->
+            <div>
+                <h3 class="heading-lg mb-16">Click Handling</h3>
+                <p class="body-md mb-16 text-gray-600">You can set custom click handlers for dynamic state logic. These buttons will update state when clicked:</p>
+                
+                <div class="flex items-center gap-16 mb-16">
+                    <button class="button button--small-primary" onclick="updateClickTime()">
+                        Click Me
+                    </button>
+                    <button class="button button--small-outline" onclick="resetClickTime()">
+                        Reset
+                    </button>
+                </div>
+                
+                <div class="body-md">
+                    <strong>Last clicked:</strong> <span id="click-time">null</span>
+                </div>
+            </div>
+
+            <!-- Form Submission -->
+            <div>
+                <h3 class="heading-lg mb-16">Form Integration</h3>
+                <form class="space-y-16" onsubmit="handleFormSubmit(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <div class="textfield">
+                            <label class="textfield__label" for="demo-name">Name</label>
+                            <div class="textfield__input-wrapper">
+                                <input class="textfield__input" type="text" id="demo-name" name="name" required>
+                            </div>
+                        </div>
                         
-                        <div class="flex items-center gap-16 mb-16">
-                            <button class="button button--small-primary" onclick="updateClickTime()">
-                                Click Me
-                            </button>
-                            <button class="button button--small-outline" onclick="resetClickTime()">
-                                Reset
-                            </button>
-                        </div>
-                        
-                        <div class="body-md">
-                            <strong>Last clicked:</strong> <span id="click-time">null</span>
-                        </div>
-                    </div>
-
-                    <!-- Form Submission -->
-                    <div>
-                        <h3 class="heading-lg mb-16">Form Integration</h3>
-                        <form class="space-y-16" onsubmit="handleFormSubmit(event)">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                                <div class="textfield">
-                                    <label class="textfield__label" for="demo-name">Name</label>
-                                    <div class="textfield__input-wrapper">
-                                        <input class="textfield__input" type="text" id="demo-name" name="name" required>
-                                    </div>
-                                </div>
-                                
-                                <div class="textfield">
-                                    <label class="textfield__label" for="demo-email">Email</label>
-                                    <div class="textfield__input-wrapper">
-                                        <input class="textfield__input" type="email" id="demo-email" name="email" required>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center gap-16">
-                                <button type="submit" class="button button--primary">
-                                    Submit Form
-                                </button>
-                                <button type="reset" class="button button--outline">
-                                    Reset Form
-                                </button>
-                                <button type="button" class="button button--flat" onclick="clearForm()">
-                                    Clear All
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Button Groups -->
-                    <div>
-                        <h3 class="heading-lg mb-16">Button Groups</h3>
-                        <div class="space-y-16">
-                            <div>
-                                <h4 class="heading-sm mb-8">Action Group</h4>
-                                <div class="flex items-center gap-8">
-                                    <button class="button button--primary">Save</button>
-                                    <button class="button button--outline">Save Draft</button>
-                                    <button class="button button--flat">Cancel</button>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <h4 class="heading-sm mb-8">Destructive Actions</h4>
-                                <div class="flex items-center gap-8">
-                                    <button class="button button--outline">Keep</button>
-                                    <button class="button button--destructive">Delete</button>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <h4 class="heading-sm mb-8">Navigation</h4>
-                                <div class="flex items-center gap-8">
-                                    <button class="button button--outline" disabled>
-                                        <span class="heroicon heroicon-16 heroicon-chevron-left"></span>
-                                        Previous
-                                    </button>
-                                    <span class="body-sm text-gray-600">Step 1 of 3</span>
-                                    <button class="button button--primary">
-                                        Next
-                                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
-                                    </button>
-                                </div>
+                        <div class="textfield">
+                            <label class="textfield__label" for="demo-email">Email</label>
+                            <div class="textfield__input-wrapper">
+                                <input class="textfield__input" type="email" id="demo-email" name="email" required>
                             </div>
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="flex items-center gap-16">
+                        <button type="submit" class="button button--primary">
+                            Submit Form
+                        </button>
+                        <button type="reset" class="button button--outline">
+                            Reset Form
+                        </button>
+                        <button type="button" class="button button--flat" onclick="clearForm()">
+                            Clear All
+                        </button>
+                    </div>
+                </form>
             </div>
-        </section>
 
-        <!-- HTML Code Examples -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">HTML Code Examples</h2>
-            <div class="bg-white border rounded p-24">
+            <!-- Button Groups -->
+            <div>
+                <h3 class="heading-lg mb-16">Button Groups</h3>
                 <div class="space-y-16">
                     <div>
-                        <h3 class="heading-sm mb-8">Primary Button</h3>
-                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;button class="button button--primary"&gt;Primary Button&lt;/button&gt;</code></pre>
+                        <h4 class="heading-sm mb-8">Action Group</h4>
+                        <div class="flex items-center gap-8">
+                            <button class="button button--primary">Save</button>
+                            <button class="button button--outline">Save Draft</button>
+                            <button class="button button--flat">Cancel</button>
+                        </div>
                     </div>
-
+                    
                     <div>
-                        <h3 class="heading-sm mb-8">Outline Button</h3>
-                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;button class="button button--outline"&gt;Outline Button&lt;/button&gt;</code></pre>
+                        <h4 class="heading-sm mb-8">Destructive Actions</h4>
+                        <div class="flex items-center gap-8">
+                            <button class="button button--outline">Keep</button>
+                            <button class="button button--destructive">Delete</button>
+                        </div>
                     </div>
-
+                    
                     <div>
-                        <h3 class="heading-sm mb-8">Button with Icon</h3>
-                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;button class="button button--primary button--with-icon"&gt;
-  &lt;span class="heroicon heroicon-16 heroicon-plus"&gt;&lt;/span&gt;
-  Add Item
-&lt;/button&gt;</code></pre>
-                    </div>
-
-                    <div>
-                        <h3 class="heading-sm mb-8">Icon Only Button</h3>
-                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;button class="button button--primary button--icon-only" aria-label="Add item"&gt;
-  &lt;span class="heroicon heroicon-16 heroicon-plus"&gt;&lt;/span&gt;
-&lt;/button&gt;</code></pre>
-                    </div>
-
-                    <div>
-                        <h3 class="heading-sm mb-8">Loading Button</h3>
-                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;button class="button button--primary button--loading"&gt;
-  &lt;span class="button__spinner heroicon heroicon-16 heroicon-arrow-path"&gt;&lt;/span&gt;
-  Loading
-&lt;/button&gt;</code></pre>
-                    </div>
-
-                    <div>
-                        <h3 class="heading-sm mb-8">Disabled Button</h3>
-                        <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;button class="button button--primary" disabled&gt;Disabled Button&lt;/button&gt;</code></pre>
+                        <h4 class="heading-sm mb-8">Navigation</h4>
+                        <div class="flex items-center gap-8">
+                            <button class="button button--outline" disabled>
+                                <span class="heroicon heroicon-16 heroicon-chevron-left"></span>
+                                Previous
+                            </button>
+                            <span class="body-sm text-gray-600">Step 1 of 3</span>
+                            <button class="button button--primary">
+                                Next
+                                <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- Available Classes -->
-        <section class="mb-32">
-            <h2 class="heading-xl mb-16">Available Classes</h2>
-            <div class="bg-white border rounded p-24">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
-                    <div>
-                        <h3 class="heading-sm mb-12">Base Classes</h3>
-                        <ul class="space-y-4 text-sm font-mono">
-                            <li class="p-8 bg-gray-100 rounded">.button</li>
-                            <li class="p-8 bg-gray-100 rounded">.button__spinner</li>
-                            <li class="p-8 bg-gray-100 rounded">.button__content</li>
-                        </ul>
-                    </div>
+<script>
+// Click handler demo
+function updateClickTime() {
+    const now = new Date();
+    document.getElementById('click-time').textContent = now.toLocaleString();
+}
 
-                    <div>
-                        <h3 class="heading-sm mb-12">Primary Variants</h3>
-                        <ul class="space-y-4 text-sm font-mono">
-                            <li class="p-8 bg-gray-100 rounded">.button--primary</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--small-primary</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--big-primary</li>
-                        </ul>
-                    </div>
+function resetClickTime() {
+    document.getElementById('click-time').textContent = 'null';
+}
 
-                    <div>
-                        <h3 class="heading-sm mb-12">Outline Variants</h3>
-                        <ul class="space-y-4 text-sm font-mono">
-                            <li class="p-8 bg-gray-100 rounded">.button--outline</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--small-outline</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--big-outline</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--big-outline-pill</li>
-                        </ul>
-                    </div>
+// Form handling
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    alert(`Form submitted with data: ${JSON.stringify(data, null, 2)}`);
+}
 
-                    <div>
-                        <h3 class="heading-sm mb-12">Flat Variants</h3>
-                        <ul class="space-y-4 text-sm font-mono">
-                            <li class="p-8 bg-gray-100 rounded">.button--flat</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--flat-primary</li>
-                        </ul>
-                    </div>
+function clearForm() {
+    document.getElementById('demo-name').value = '';
+    document.getElementById('demo-email').value = '';
+}
 
-                    <div>
-                        <h3 class="heading-sm mb-12">Destructive Variants</h3>
-                        <ul class="space-y-4 text-sm font-mono">
-                            <li class="p-8 bg-gray-100 rounded">.button--destructive</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--small-destructive</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--big-destructive</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="heading-sm mb-12">Modifiers</h3>
-                        <ul class="space-y-4 text-sm font-mono">
-                            <li class="p-8 bg-gray-100 rounded">.button--full-width-primary</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--full-width-outline</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--with-icon</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--icon-only</li>
-                            <li class="p-8 bg-gray-100 rounded">.button--loading</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-   
-
-    <script>
-        // Click handler demo
-        function updateClickTime() {
-            const now = new Date();
-            document.getElementById('click-time').textContent = now.toLocaleString();
-        }
-
-        function resetClickTime() {
-            document.getElementById('click-time').textContent = 'null';
-        }
-
-        // Form handling
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            alert(`Form submitted with data: ${JSON.stringify(data, null, 2)}`);
-        }
-
-        function clearForm() {
-            document.getElementById('demo-name').value = '';
-            document.getElementById('demo-email').value = '';
-        }
-
-        // Loading state demo (for demonstration)
-        document.addEventListener('DOMContentLoaded', function() {
-            const loadingButtons = document.querySelectorAll('.button--loading .button__spinner');
-            loadingButtons.forEach(spinner => {
-                // Add rotation animation using CSS transforms
-                let rotation = 0;
-                setInterval(() => {
-                    rotation += 30;
-                    spinner.style.transform = `rotate(${rotation}deg)`;
-                }, 100);
-            });
-        });
-    </script>
-</article>
+// Loading state demo (for demonstration)
+document.addEventListener('DOMContentLoaded', function() {
+    const loadingButtons = document.querySelectorAll('.button--loading .button__spinner');
+    loadingButtons.forEach(spinner => {
+        // Add rotation animation using CSS transforms
+        let rotation = 0;
+        setInterval(() => {
+            rotation += 30;
+            spinner.style.transform = `rotate(${rotation}deg)`;
+        }, 100);
+    });
+});
+</script></article>
         
       </main>
   
