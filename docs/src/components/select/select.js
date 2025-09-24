@@ -14,8 +14,8 @@
         selects.forEach(selectElement => {
             const button = selectElement.querySelector('.select__button');
             const options = selectElement.querySelector('.select__options');
-            const icon = selectElement.querySelector('.select__dropdown-icon .heroicon');
-            const searchInput = selectElement.querySelector('.select__search-input');
+            const icon = selectElement.querySelector('.select__icon-container .heroicon');
+            const searchInput = selectElement.querySelector('.select__search');
             const optionItems = selectElement.querySelectorAll('.select__option');
             let isOpen = false;
 

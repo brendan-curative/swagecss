@@ -223,7 +223,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding: var(--spacing-12) var(--spacing-36) var(--spacing-12) var(--spacing-16); /* py-3 pl-4 pr-9 */
+    padding: var(--spacing-12) var(--spacing-32) var(--spacing-12) var(--spacing-16); /* py-3 pl-4 pr-8 */
     cursor: pointer;
     user-select: none;
     transition: background-color 0.2s ease;
