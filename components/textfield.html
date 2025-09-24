@@ -1,0 +1,413 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Foundation &bull; Textfield
+heading: Textfield Component
+secondary: Textfield imported from CUI
+section: Components
+status: draft
+---
+
+<section>
+   
+    <p class="body-lg text-gray-600">A text input field with optional description, error message, icons, and various interaction states following Curative UI patterns.</p>
+</section>
+
+<!-- Basic Examples -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Basic Examples</h2>
+    <div class="bg-white border rounded p-24 space-y-24">
+        <!-- With Description -->
+        <div class="textfield">
+            <label class="textfield__label" for="input-description">Some field</label>
+            <span class="textfield__description">Description of the form</span>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="input-description" name="input-description" placeholder="Placeholder...">
+            </div>
+        </div>
+
+        <!-- No Description -->
+        <div class="textfield">
+            <label class="textfield__label" for="input-no-description">Some field</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="input-no-description" name="input-no-description" placeholder="Placeholder...">
+            </div>
+        </div>
+
+        <!-- Screen Reader Only Label -->
+        <div class="textfield">
+            <label class="textfield__label textfield__label--sr-only" for="input-sr-only">This label is hidden</label>
+            <div class="textfield__input-wrapper textfield__input-wrapper--no-margin">
+                <input class="textfield__input" type="text" id="input-sr-only" name="input-sr-only" placeholder="Placeholder...">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- States -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Input States</h2>
+    <div class="bg-white border rounded p-24 space-y-24">
+        <!-- Default State -->
+        <div class="textfield">
+            <label class="textfield__label" for="input-default">Default State</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="input-default" name="input-default" placeholder="Enter some text...">
+            </div>
+            <span class="textfield__helper">This is helper text for the input field.</span>
+        </div>
+
+        <!-- Disabled State -->
+        <div class="textfield">
+            <label class="textfield__label" for="input-disabled">Disabled State</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="input-disabled" name="input-disabled" placeholder="Placeholder..." disabled>
+            </div>
+            <span class="textfield__helper">This field cannot be edited.</span>
+        </div>
+
+        <!-- Error State -->
+        <div class="textfield textfield--error">
+            <label class="textfield__label" for="input-error">Error State</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="input-error" name="input-error" placeholder="Enter some text..." aria-invalid="true" aria-describedby="input-error_error">
+            </div>
+            <div class="textfield__error" id="input-error_error" aria-live="polite">
+                <div class="textfield__error-icon heroicon heroicon-16 heroicon-exclamation-circle"></div>
+                <div>
+                    <p>Oh no! An error has occurred</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Long Error State -->
+        <div class="textfield textfield--error">
+            <label class="textfield__label" for="input-error-long">Error State (Long Message)</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="input-error-long" name="input-error-long" placeholder="Enter some text..." aria-invalid="true" aria-describedby="input-error-long_error">
+            </div>
+            <div class="textfield__error" id="input-error-long_error" aria-live="polite">
+                <div class="textfield__error-icon heroicon heroicon-16 heroicon-exclamation-circle"></div>
+                <div>
+                    <p>This is a much longer error message that demonstrates how the error component handles multiple lines of text. The error message wraps properly and maintains proper spacing and alignment with the icon indicator.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- With Icons and Buttons -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Icons and Buttons</h2>
+    <div class="bg-white border rounded p-24 space-y-24">
+        <!-- With Icon -->
+        <div class="textfield textfield--with-icon">
+            <label class="textfield__label" for="input-icon">Search Field</label>
+            <span class="textfield__description">Description for some field</span>
+            <div class="textfield__input-wrapper">
+                <div class="textfield__icon heroicon heroicon-magnifying-glass"></div>
+                <input class="textfield__input" type="search" id="input-icon" name="input-icon" placeholder="Search...">
+            </div>
+        </div>
+
+        <!-- With Icon and Button -->
+        <div class="textfield textfield--with-icon textfield--with-button">
+            <label class="textfield__label" for="input-icon-button">Search with Clear</label>
+            <span class="textfield__description">Description for some field</span>
+            <div class="textfield__input-wrapper">
+                <div class="textfield__icon heroicon heroicon-magnifying-glass"></div>
+                <input class="textfield__input" type="search" id="input-icon-button" name="input-icon-button" placeholder="Search...">
+                <button class="textfield__button" type="button" aria-label="Clear input">
+                    <div class="heroicon heroicon-16 heroicon-x-mark"></div>
+                    <span class="textfield__sr-only">Clear input</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- With Primary Button -->
+        <div class="textfield textfield--with-button">
+            <label class="textfield__label" for="input-primary-button">Email with Submit</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="email" id="input-primary-button" name="input-primary-button" placeholder="Enter your email...">
+                <button class="textfield__button textfield__button--primary" type="submit" aria-label="Submit email">
+                    <div class="heroicon heroicon-16 heroicon-paper-airplane"></div>
+                    <span class="textfield__sr-only">Submit email</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- With Trailing Text -->
+        <div class="textfield">
+            <label class="textfield__label" for="input-trailing">Price Field</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input trailing-text-input" type="number" id="input-trailing" name="input-trailing" placeholder="0.00">
+                <div class="textfield__trailing-text">USD</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Character Count -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Character Count</h2>
+    <div class="bg-white border rounded p-24 space-y-24">
+        <div class="textfield">
+            <div class="textfield__label-wrapper">
+                <label class="textfield__label" for="input-char-count">Message (with character count)</label>
+                <div class="textfield__char-count">0/50</div>
+            </div>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="input-char-count" name="input-char-count" maxlength="50" placeholder="Enter your message...">
+            </div>
+            <span class="textfield__helper">Maximum 50 characters allowed.</span>
+        </div>
+    </div>
+</section>
+
+<!-- Textarea -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Textarea</h2>
+    <div class="bg-white border rounded p-24 space-y-24">
+        <!-- Basic Textarea -->
+        <div class="textfield">
+            <label class="textfield__label" for="textarea-basic">Comments</label>
+            <span class="textfield__description">Please provide detailed feedback</span>
+            <div class="textfield__input-wrapper">
+                <textarea class="textfield__textarea" id="textarea-basic" name="textarea-basic" placeholder="Enter your comments..." rows="4"></textarea>
+            </div>
+            <span class="textfield__helper">Your feedback helps us improve our service.</span>
+        </div>
+
+        <!-- Textarea with Error -->
+        <div class="textfield textfield--error">
+            <label class="textfield__label" for="textarea-error">Description (Required)</label>
+            <div class="textfield__input-wrapper">
+                <textarea class="textfield__textarea" id="textarea-error" name="textarea-error" placeholder="Enter description..." rows="4" aria-invalid="true" aria-describedby="textarea-error_error"></textarea>
+            </div>
+            <div class="textfield__error" id="textarea-error_error" aria-live="polite">
+                <div class="textfield__error-icon heroicon heroicon-16 heroicon-exclamation-circle"></div>
+                <div>
+                    <p>Description is required and must be at least 10 characters long.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disabled Textarea -->
+        <div class="textfield">
+            <label class="textfield__label" for="textarea-disabled">Read-only Content</label>
+            <div class="textfield__input-wrapper">
+                <textarea class="textfield__textarea" id="textarea-disabled" name="textarea-disabled" disabled rows="3">This content cannot be edited because the field is disabled.</textarea>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Examples -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Interactive Examples</h2>
+    <div class="bg-white border rounded p-24 space-y-24">
+        <!-- Login Form -->
+        <form class="space-y-16">
+            <h3 class="heading-lg">Login Form</h3>
+            
+            <div class="textfield textfield--with-icon">
+                <label class="textfield__label" for="login-email">Email Address</label>
+                <div class="textfield__input-wrapper">
+                    <div class="textfield__icon heroicon heroicon-envelope"></div>
+                    <input class="textfield__input" type="email" id="login-email" name="email" placeholder="Enter your email..." required>
+                </div>
+            </div>
+
+            <div class="textfield textfield--with-icon">
+                <label class="textfield__label" for="login-password">Password</label>
+                <div class="textfield__input-wrapper">
+                    <div class="textfield__icon heroicon heroicon-lock-closed"></div>
+                    <input class="textfield__input" type="password" id="login-password" name="password" placeholder="Enter your password..." required>
+                </div>
+            </div>
+
+            <button type="submit" class="button button--primary">Sign In</button>
+        </form>
+
+        <!-- Contact Form -->
+        <form class="space-y-16">
+            <h3 class="heading-lg">Contact Form</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="textfield">
+                    <label class="textfield__label" for="contact-first-name">First Name</label>
+                    <div class="textfield__input-wrapper">
+                        <input class="textfield__input" type="text" id="contact-first-name" name="first-name" placeholder="John" required>
+                    </div>
+                </div>
+
+                <div class="textfield">
+                    <label class="textfield__label" for="contact-last-name">Last Name</label>
+                    <div class="textfield__input-wrapper">
+                        <input class="textfield__input" type="text" id="contact-last-name" name="last-name" placeholder="Doe" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="textfield textfield--with-icon">
+                <label class="textfield__label" for="contact-email">Email Address</label>
+                <div class="textfield__input-wrapper">
+                    <div class="textfield__icon heroicon heroicon-envelope"></div>
+                    <input class="textfield__input" type="email" id="contact-email" name="email" placeholder="john.doe@example.com" required>
+                </div>
+            </div>
+
+            <div class="textfield">
+                <label class="textfield__label" for="contact-message">Message</label>
+                <span class="textfield__description">Tell us how we can help you</span>
+                <div class="textfield__input-wrapper">
+                    <textarea class="textfield__textarea" id="contact-message" name="message" placeholder="Your message..." rows="4" required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="button button--primary">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- HTML Code Examples -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">HTML Code Examples</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="space-y-16">
+            <div>
+                <h3 class="heading-sm mb-8">Basic TextField</h3>
+                <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;div class="textfield"&gt;
+&lt;label class="textfield__label" for="example"&gt;Field Label&lt;/label&gt;
+&lt;div class="textfield__input-wrapper"&gt;
+&lt;input class="textfield__input" type="text" id="example" placeholder="Placeholder..."&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div>
+                <h3 class="heading-sm mb-8">TextField with Icon</h3>
+                <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;div class="textfield textfield--with-icon"&gt;
+&lt;label class="textfield__label" for="search"&gt;Search&lt;/label&gt;
+&lt;div class="textfield__input-wrapper"&gt;
+&lt;div class="textfield__icon heroicon heroicon-magnifying-glass"&gt;&lt;/div&gt;
+&lt;input class="textfield__input" type="search" id="search" placeholder="Search..."&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div>
+                <h3 class="heading-sm mb-8">TextField with Error</h3>
+                <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;div class="textfield textfield--error"&gt;
+&lt;label class="textfield__label" for="error-field"&gt;Field with Error&lt;/label&gt;
+&lt;div class="textfield__input-wrapper"&gt;
+&lt;input class="textfield__input" type="text" id="error-field" aria-invalid="true"&gt;
+&lt;/div&gt;
+&lt;div class="textfield__error" aria-live="polite"&gt;
+&lt;div class="textfield__error-icon heroicon heroicon-16 heroicon-exclamation-circle"&gt;&lt;/div&gt;
+&lt;div&gt;&lt;p&gt;Error message here&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div>
+                <h3 class="heading-sm mb-8">Textarea</h3>
+                <pre class="bg-gray-100 p-16 rounded text-sm overflow-x-auto"><code>&lt;div class="textfield"&gt;
+&lt;label class="textfield__label" for="textarea"&gt;Comments&lt;/label&gt;
+&lt;div class="textfield__input-wrapper"&gt;
+&lt;textarea class="textfield__textarea" id="textarea" rows="4"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Available Classes -->
+<section class="mb-32">
+    <h2 class="heading-xl mb-16">Available Classes</h2>
+    <div class="bg-white border rounded p-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+            <div>
+                <h3 class="heading-sm mb-12">Base Classes</h3>
+                <ul class="space-y-4 text-sm font-mono">
+                    <li class="p-8 bg-gray-100 rounded">.textfield</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__label</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__label-wrapper</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__input-wrapper</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__input</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__textarea</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__description</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__helper</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__char-count</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="heading-sm mb-12">State Modifiers</h3>
+                <ul class="space-y-4 text-sm font-mono">
+                    <li class="p-8 bg-gray-100 rounded">.textfield--error</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield--success</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield--with-icon</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield--with-button</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__label--sr-only</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__input-wrapper--no-margin</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="heading-sm mb-12">Icon and Button Elements</h3>
+                <ul class="space-y-4 text-sm font-mono">
+                    <li class="p-8 bg-gray-100 rounded">.textfield__icon</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__button</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__button--primary</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__trailing-text</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="heading-sm mb-12">Error Elements</h3>
+                <ul class="space-y-4 text-sm font-mono">
+                    <li class="p-8 bg-gray-100 rounded">.textfield__error</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__error-icon</li>
+                    <li class="p-8 bg-gray-100 rounded">.textfield__sr-only</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+// Character count functionality
+const charCountInput = document.getElementById('input-char-count');
+const charCountDisplay = charCountInput?.parentElement.parentElement.querySelector('.textfield__char-count');
+
+if (charCountInput && charCountDisplay) {
+    const maxLength = charCountInput.getAttribute('maxlength');
+    charCountInput.addEventListener('input', function() {
+        const currentLength = this.value.length;
+        charCountDisplay.textContent = `${currentLength}/${maxLength}`;
+    });
+}
+
+// Clear button functionality
+const clearButtons = document.querySelectorAll('.textfield__button[aria-label="Clear input"]');
+clearButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const input = this.parentElement.querySelector('.textfield__input');
+        if (input) {
+            input.value = '';
+            input.focus();
+        }
+    });
+});
+
+// Demo form submission prevention
+const forms = document.querySelectorAll('form');
+forms.forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('This is a demo - form submission prevented');
+    });
+});
+</script>

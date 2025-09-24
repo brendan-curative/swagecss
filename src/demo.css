@@ -48,18 +48,19 @@ body {
 
 /* #region Header */
 header {
-    border-bottom: 1px solid var(--swage-black);
+    border-bottom: 1px solid var(--swage-primary);
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    border: 1px solid var(--swage-black);
+    border: 1px solid var(--swage-primary);
     border-collapse: collapse;
+    text-transform: uppercase;
   }
 
   header .info div:first-child {
     width: 200px;
-    border-right: 1px solid var(--swage-black);
+    border-right: 1px solid var(--swage-primary);
   }
 
   .logo {
@@ -67,7 +68,7 @@ header {
     align-content: center;
     justify-content: center;
     width: 200px;
-    border-right: 1px solid var(--swage-black);
+    border-right: 1px solid var(--swage-primary);
     position: relative;
   }
 
@@ -95,6 +96,8 @@ header {
     }
 
     header .pagetitle {
+        display: flex;
+        align-items: stretch;
         position: relative;
         flex-grow: 1;
     }
@@ -111,16 +114,18 @@ header {
 
     header h1 {
         display: flex;
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-2xl);
         text-transform: uppercase;
-        padding: var(--spacing-16) var(--spacing-8) var(--spacing-4) var(--spacing-16); 
-        border-bottom: 1px solid var(--swage-black);
+        padding: var(--spacing-32) var(--spacing-8) 27px var(--spacing-16); 
+        border-bottom: 1px solid var(--swage-primary);
     }
 
     header .info p {
-      position: relative;
-      padding: var(--spacing-16) var(--spacing-8) var(--spacing-4) var(--spacing-16); 
-      
+        flex: 1;
+        align-self: stretch;
+        position: relative;
+        text-transform: none;
+        padding: var(--spacing-16) var(--spacing-8) var(--spacing-4) var(--spacing-16); 
     }
 
         header .info p::before {
@@ -131,7 +136,10 @@ header {
             color: var(--swage-primary);
             text-transform: uppercase;
             font-size: var(--font-size-2xs);
+            
         }
+
+
 
     header .repo {
         text-transform: uppercase;
@@ -165,7 +173,7 @@ header {
         width: 400px;
         display: flex;
         text-transform: uppercase;
-        border-left: 1px solid var(--swage-black);
+        border-left: 1px solid var(--swage-primary);
         border-collapse: collapse;
     }
 
@@ -176,10 +184,10 @@ header {
         }
 
         .titleblock .project, .titleblock .team {
-            border-bottom: 1px solid var(--swage-black);
+            border-bottom: 1px solid var(--swage-primary);
         }
 
-        .titleblock .team div:first-child {border-right: 1px solid var(--swage-black);}
+        .titleblock .team div:first-child {border-right: 1px solid var(--swage-primary);}
 
         .titleblock .project::before {
             content: "Project";
@@ -235,11 +243,44 @@ aside::before {
 }
 
 aside nav {
-    width: 200px;
-    padding: 0 var(--spacing-8) var(--spacing-24) var(--spacing-8); 
+    display: flex;
+    flex-direction: column;
+    width: 199px;
+    padding: 0; 
     position: relative;
     text-transform: uppercase;
 }
+
+    aside nav h2 {
+        text-transform: uppercase;
+        font-size: var(--font-size-lg);
+        color: var(--swage-primary);
+        text-decoration: none;
+        padding: 0 var(--spacing-8) var(--spacing-8) var(--spacing-8); 
+        border-bottom: 1px solid var(--swage-primary);
+    }
+
+    aside nav a + h2 {
+        padding-top: var(--spacing-24);
+    }
+
+    aside nav a, aside nav a:visited {
+        text-transform: uppercase;
+        font-size: var(--font-size-sm);
+        color: var(--swage-primary);
+        text-decoration: none;
+        padding: var(--spacing-8);
+        border-bottom: 1px solid var(--swage-primary);
+        border-left: 0 solid var(--swage-primary);
+        display: block;
+        transition: all 0.5s ease;
+    }
+
+    aside nav a:hover, aside nav a:focus {
+        color: var(--swage-tertiary);
+        text-decoration: none;
+        border-left: var(--spacing-8) solid var(--swage-tertiary);
+    }
 /* #endregion */
 
 /* #region Content */
@@ -260,7 +301,7 @@ section {
 
 /* #region Footer */
 footer {
-    border: 1px solid var(--swage-black);
+    border: 1px solid var(--swage-primary);
     padding: var(--spacing-8);
 }
 /* #endregion */
@@ -279,14 +320,14 @@ main {
     display: flex;
     flex: 1 0 auto;
     align-items: stretch;
-    border-right: 1px solid var(--swage-black);
+    border-right: 1px solid var(--swage-primary);
 }
 
 aside {
 
     padding-top: var(--spacing-24);
-    border-right: 1px solid var(--swage-black);
-    border-left: 1px solid var(--swage-black);
+    border-right: 1px solid var(--swage-primary);
+    border-left: 1px solid var(--swage-primary);
     position: relative;
 }
 

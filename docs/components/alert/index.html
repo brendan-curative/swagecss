@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Icons</title>
+    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Alert</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Heroicons</h1> 
+                <h1>Alert Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Icons imported from Heroicons</p>
+                  <p>Alert imported from CUI</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 
-           </a> <span>Tue Sep 23 2025 18:38:49 GMT-0400 (Eastern Daylight Time)</span> 
+           </a> <span></span> 
         </div>
 
 </div>
@@ -82,540 +82,418 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        The Swage.CSS icon system includes the complete <a href="https://heroicons.dev/">Heroicons library</a> with utility classes for solid and outline variants across 16px, 20px, and 24px sizes. All icons are implemented as CSS background images for optimal performance and styling flexibility. 
+        Alert components for displaying important information, warnings, errors, and success messages with optional dismiss functionality,
+        replicated from the Curative UI design system.
     </p>
 </section>
 
-<!-- Icon Sizes -->
 <section class="component-section">
-    <h2>Icon Sizes</h2>
-    <p class="mb-24">Three standard icon sizes to accommodate different UI needs and contexts.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-16 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+    <h2>Basic Alert Types</h2>
+    <div class="alert-container">
+        <div class="alert alert--success" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-check-circle"></div>
             </div>
-            <h4>16px Icons</h4>
-            <code>.heroicon-16.heroicon-[name]</code>
-            <p class="demo-item__label">Small UI elements, buttons</p>
-        </div>
-        
-        <div class="demo-item">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-20 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+            <div class="alert__content">
+                <div class="alert__title">This is a success alert</div>
+                <div class="alert__message">Extra text related to the success alert message</div>
             </div>
-            <h4>20px Icons</h4>
-            <code>.heroicon-20.heroicon-[name]</code>
-            <p class="demo-item__label">Form elements, compact UI</p>
         </div>
-        
-        <div class="demo-item">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
-            </div>
-            <h4>24px Icons (Default)</h4>
-            <code>.heroicon.heroicon-[name]</code>
-            <p class="demo-item__label">Standard UI, navigation</p>
-        </div>
-    </div>
-</section>
 
-<!-- Icon Variants -->
-<section class="component-section">
-    <h2>Icon Variants</h2>
-    <p class="mb-24">Solid and outline variants for different visual weights and contexts.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div style="display: flex; align-items: center; gap: var(--spacing-16); justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-24 heroicon-heart" style="background-color: var(--color-foundation-critical);"></div>
-                <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
-                <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-foundation-success);"></div>
+        <div class="alert alert--warning" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
             </div>
-            <h4>Solid Icons</h4>
-            <code>.heroicon-[name]</code>
-            <p class="demo-item__label">Filled icons for emphasis</p>
-        </div>
-        
-        <div class="demo-item">
-            <div style="display: flex; align-items: center; gap: var(--spacing-16); justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-24 heroicon-outline-heart" style="background-color: var(--color-foundation-critical);"></div>
-                <div class="heroicon heroicon-24 heroicon-outline-star" style="background-color: var(--color-foundation-warning);"></div>
-                <div class="heroicon heroicon-24 heroicon-outline-check-circle" style="background-color: var(--color-foundation-success);"></div>
+            <div class="alert__content">
+                <div class="alert__title">This is a warning alert</div>
+                <div class="alert__message">Extra text related to the warning alert message</div>
             </div>
-            <h4>Outline Icons</h4>
-            <code>.heroicon-outline-[name]</code>
-            <p class="demo-item__label">Outlined icons for subtlety</p>
         </div>
-    </div>
-</section>
 
-<!-- Common Icons -->
-<section class="component-section">
-    <h2>Common Icons</h2>
-    <p class="mb-24">Frequently used icons in UI design and their corresponding class names.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Navigation & Actions</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-home</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Home</p>
-                </div>
+        <div class="alert alert--error" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-x-circle"></div>
             </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-bars-3" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-bars-3</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Menu</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-x-mark" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-x-mark</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Close</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-plus" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-plus</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Add</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-minus" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-minus</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Remove</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-chevron-down" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-chevron-down</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Expand</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-chevron-right" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-chevron-right</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Next</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-chevron-left" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-chevron-left</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Back</p>
-                </div>
+            <div class="alert__content">
+                <div class="alert__title">This is an error alert</div>
+                <div class="alert__message">Extra text related to the error alert message</div>
             </div>
         </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Communication & Social</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-envelope" style="background-color: var(--color-blue-600);"></div>
-                <div>
-                    <code>.heroicon-envelope</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Email</p>
-                </div>
+
+        <div class="alert alert--info" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
             </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-phone" style="background-color: var(--color-blue-600);"></div>
-                <div>
-                    <code>.heroicon-phone</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Phone</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-chat-bubble-left" style="background-color: var(--color-blue-600);"></div>
-                <div>
-                    <code>.heroicon-chat-bubble-left</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Message</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-share" style="background-color: var(--color-blue-600);"></div>
-                <div>
-                    <code>.heroicon-share</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Share</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-bell" style="background-color: var(--color-blue-600);"></div>
-                <div>
-                    <code>.heroicon-bell</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Notifications</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-video-camera" style="background-color: var(--color-blue-600);"></div>
-                <div>
-                    <code>.heroicon-video-camera</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Video</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Status & Feedback</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-green-600);"></div>
-                <div>
-                    <code>.heroicon-check-circle</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Success</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-x-circle" style="background-color: var(--color-red-600);"></div>
-                <div>
-                    <code>.heroicon-x-circle</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Error</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-exclamation-triangle" style="background-color: var(--color-orange-600);"></div>
-                <div>
-                    <code>.heroicon-exclamation-triangle</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Warning</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-information-circle" style="background-color: var(--color-blue-600);"></div>
-                <div>
-                    <code>.heroicon-information-circle</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Info</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-question-mark-circle" style="background-color: var(--color-purple-600);"></div>
-                <div>
-                    <code>.heroicon-question-mark-circle</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Help</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-clock" style="background-color: var(--color-gray-600);"></div>
-                <div>
-                    <code>.heroicon-clock</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Time/Pending</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Media & Documents</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-16); background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-photo" style="background-color: var(--color-purple-600);"></div>
-                <div>
-                    <code>.heroicon-photo</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Image</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-document" style="background-color: var(--color-purple-600);"></div>
-                <div>
-                    <code>.heroicon-document</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Document</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-folder" style="background-color: var(--color-purple-600);"></div>
-                <div>
-                    <code>.heroicon-folder</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Folder</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-arrow-down-tray" style="background-color: var(--color-purple-600);"></div>
-                <div>
-                    <code>.heroicon-arrow-down-tray</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Download</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-arrow-up-tray" style="background-color: var(--color-purple-600);"></div>
-                <div>
-                    <code>.heroicon-arrow-up-tray</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Upload</p>
-                </div>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div class="heroicon heroicon-24 heroicon-play" style="background-color: var(--color-purple-600);"></div>
-                <div>
-                    <code>.heroicon-play</code>
-                    <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin: 0;">Play</p>
-                </div>
+            <div class="alert__content">
+                <div class="alert__title">This is an info alert</div>
+                <div class="alert__message">Extra text related to the info alert message</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Icon with Text -->
 <section class="component-section">
-    <h2>Icons with Text</h2>
-    <p class="mb-24">Examples of how to use icons alongside text elements for enhanced user interfaces.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Button Icons</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <button class="button button--primary">
-                    <div class="heroicon heroicon-16 heroicon-plus" style="background-color: currentColor; margin-right: var(--spacing-8);"></div>
-                    Add Item
-                </button>
-                <p class="demo-item__label">Leading icon</p>
+    <h2>Alert Without Message</h2>
+    <div class="alert-container">
+        <div class="alert alert--success" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-check-circle"></div>
             </div>
-            
-            <div class="demo-item">
-                <button class="button button--outline">
-                    Save Changes
-                    <div class="heroicon heroicon-16 heroicon-check" style="background-color: currentColor; margin-left: var(--spacing-8);"></div>
-                </button>
-                <p class="demo-item__label">Trailing icon</p>
+            <div class="alert__content">
+                <div class="alert__title">No message</div>
             </div>
-            
-            <div class="demo-item">
-                <button class="button button--accent-a">
-                    <div class="heroicon heroicon-16 heroicon-arrow-down-tray" style="background-color: currentColor;"></div>
-                </button>
-                <p class="demo-item__label">Icon only</p>
+        </div>
+
+        <div class="alert alert--info" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Important notification without additional details</div>
             </div>
         </div>
     </div>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Navigation Items</h3>
-        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
-            <nav>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: var(--spacing-8);">
-                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
-                            <div class="heroicon heroicon-20 heroicon-home" style="background-color: var(--color-gray-600);"></div>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li style="margin-bottom: var(--spacing-8);">
-                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
-                            <div class="heroicon heroicon-20 heroicon-users" style="background-color: var(--color-gray-600);"></div>
-                            <span>Team</span>
-                        </a>
-                    </li>
-                    <li style="margin-bottom: var(--spacing-8);">
-                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
-                            <div class="heroicon heroicon-20 heroicon-folder" style="background-color: var(--color-gray-600);"></div>
-                            <span>Projects</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" style="display: flex; align-items: center; gap: var(--spacing-12); padding: var(--spacing-8); border-radius: var(--spacing-4); text-decoration: none; color: var(--color-text-default);">
-                            <div class="heroicon heroicon-20 heroicon-cog-6-tooth" style="background-color: var(--color-gray-600);"></div>
-                            <span>Settings</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+</section>
+
+<section class="component-section">
+    <h2>Dismissible Alerts</h2>
+    <div class="alert-container">
+        <div class="alert alert--error" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-x-circle"></div>
+            </div>
+            <div class="alert__content alert__content--with-close">
+                <div class="alert__title">This alert is dismissible</div>
+                <div class="alert__message">Click the X button in the top right corner to dismiss this alert.</div>
+            </div>
+            <button class="alert__close-button" type="button" aria-label="Close Alert">
+                <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                <span class="alert__sr-only">Close Alert</span>
+            </button>
+        </div>
+
+        <div class="alert alert--warning" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+            </div>
+            <div class="alert__content alert__content--with-close">
+                <div class="alert__title">Temporary warning</div>
+                <div class="alert__message">This warning can be dismissed when you've read it.</div>
+            </div>
+            <button class="alert__close-button" type="button" aria-label="Dismiss warning">
+                <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                <span class="alert__sr-only">Dismiss warning</span>
+            </button>
+        </div>
+
+        <div class="alert alert--success" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-check-circle"></div>
+            </div>
+            <div class="alert__content alert__content--with-close">
+                <div class="alert__title">Success notification</div>
+                <div class="alert__message">Your action was completed successfully. You can dismiss this notification.</div>
+            </div>
+            <button class="alert__close-button" type="button" aria-label="Dismiss notification">
+                <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                <span class="alert__sr-only">Dismiss notification</span>
+            </button>
         </div>
     </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Alert Demo</h2>
+    <h3>Toggle Alert Visibility</h3>
+    <button class="button button--primary" id="toggleAlert">Toggle Alert</button>
+    <div id="dynamicAlertContainer" style="margin-top: 16px;"></div>
+</section>
+
+<section class="component-section">
+    <h2>Alert with Rich Content</h2>
+    <div class="alert-container">
+        <div class="alert alert--info" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Important Update Available</div>
+                <div class="alert__message">
+                    A new version of the application is available. 
+                    <span class="alert__message-bold">Version 2.1.0</span> includes important security updates and new features. 
+                    <a href="#" class="alert__message-link">View changelog</a> or 
+                    <a href="#" class="alert__message-link">update now</a>.
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert--warning" tabindex="-1">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+            </div>
+            <div class="alert__content alert__content--with-close">
+                <div class="alert__title">Account Verification Required</div>
+                <div class="alert__message">
+                    Your account requires verification to continue using all features. 
+                    <span class="alert__message-bold">Action required:</span> 
+                    Please check your email and follow the verification link. 
+                    <a href="#" class="alert__message-link">Resend verification email</a>.
+                </div>
+            </div>
+            <button class="alert__close-button" type="button" aria-label="Dismiss verification notice">
+                <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                <span class="alert__sr-only">Dismiss verification notice</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Alert Styling Variants</h2>
+    <div class="alert-container">
+        <div class="alert alert--success alert--rounded">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-check-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Rounded Alert</div>
+                <div class="alert__message">This alert has rounded corners for a softer appearance.</div>
+            </div>
+        </div>
+
+        <div class="alert alert--info alert--shadow">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Alert with Shadow</div>
+                <div class="alert__message">This alert has a subtle shadow effect for depth.</div>
+            </div>
+        </div>
+
+        <div class="alert alert--error alert--bordered">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-x-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Bordered Alert</div>
+                <div class="alert__message">This alert has borders on all sides in addition to the top border.</div>
+            </div>
+        </div>
+
+        <div class="alert alert--warning alert--compact">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Compact Alert</div>
+                <div class="alert__message">This alert uses reduced padding for a more compact appearance.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Alert States</h2>
+    <div class="alert-container">
+        <div class="alert alert--success alert--animated">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-check-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Animated Entry</div>
+                <div class="alert__message">This alert slides in with animation when it appears.</div>
+            </div>
+        </div>
+
+        <div class="alert alert--info alert--loading">
+            <div class="alert__icon">
+                <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+            </div>
+            <div class="alert__content">
+                <div class="alert__title">Processing</div>
+                <div class="alert__message">This alert shows a loading animation effect.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Focus Management Demo</h2>
+    <p class="mb-24">Click the buttons below to demonstrate alert focus behavior:</p>
     
-    <div>
-        <h3>Status Messages</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="alert alert--success">
-                    <div class="alert__content">
-                        <div class="alert__icon">
-                            <div class="heroicon heroicon-24 heroicon-check-circle"></div>
-                        </div>
-                        <div class="alert__text">
-                            <div class="alert__title">Success</div>
-                            <div class="alert__message">Your changes have been saved successfully.</div>
-                        </div>
+    <button class="button" id="showFocusableAlert">Show Focusable Alert</button>
+    <button class="button" id="showFocusableDismissible">Show Focusable Dismissible Alert</button>
+    
+    <div id="focusAlertContainer" style="margin-top: 16px;"></div>
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle dismissible alerts
+    const dismissButtons = document.querySelectorAll('.alert__close-button');
+    dismissButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const alert = button.closest('.alert');
+            alert.style.opacity = '0';
+            alert.style.transform = 'translateY(-8px)';
+            setTimeout(() => {
+                alert.remove();
+            }, 200);
+        });
+    });
+
+    // Toggle alert demo
+    const toggleButton = document.getElementById('toggleAlert');
+    const dynamicContainer = document.getElementById('dynamicAlertContainer');
+    let isAlertVisible = false;
+
+    toggleButton.addEventListener('click', () => {
+        if (isAlertVisible) {
+            // Remove alert
+            const alert = dynamicContainer.querySelector('.alert');
+            if (alert) {
+                alert.style.opacity = '0';
+                alert.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    dynamicContainer.innerHTML = '';
+                    isAlertVisible = false;
+                    toggleButton.textContent = 'Show Alert';
+                }, 200);
+            }
+        } else {
+            // Add alert
+            dynamicContainer.innerHTML = `
+                <div class="alert alert--success alert--animated" tabindex="-1">
+                    <div class="alert__icon">
+                        <div class="heroicon heroicon-24 heroicon-check-circle"></div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="demo-item">
-                <div class="alert alert--critical">
-                    <div class="alert__content">
-                        <div class="alert__icon">
-                            <div class="heroicon heroicon-24 heroicon-x-circle"></div>
-                        </div>
-                        <div class="alert__text">
-                            <div class="alert__title">Error</div>
-                            <div class="alert__message">There was an error processing your request.</div>
-                        </div>
+                    <div class="alert__content alert__content--with-close">
+                        <div class="alert__title">Dynamic Alert</div>
+                        <div class="alert__message">This alert was created dynamically and can be dismissed.</div>
                     </div>
+                    <button class="alert__close-button" type="button" aria-label="Close dynamic alert">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="alert__sr-only">Close dynamic alert</span>
+                    </button>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            `;
+            
+            // Add dismiss handler to new alert
+            const newAlert = dynamicContainer.querySelector('.alert');
+            const newDismissButton = newAlert.querySelector('.alert__close-button');
+            newDismissButton.addEventListener('click', () => {
+                newAlert.style.opacity = '0';
+                newAlert.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    dynamicContainer.innerHTML = '';
+                    isAlertVisible = false;
+                    toggleButton.textContent = 'Show Alert';
+                }, 200);
+            });
+            
+            isAlertVisible = true;
+            toggleButton.textContent = 'Hide Alert';
+        }
+    });
 
-<!-- Icon Styling -->
-<section class="component-section">
-    <h2>Icon Styling</h2>
-    <p class="mb-24">How to style icons with colors, sizes, and other properties using CSS.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Color Styling</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12);">
-                    <div class="heroicon heroicon-24 heroicon-heart" style="background-color: var(--color-foundation-critical);"></div>
-                    <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
-                    <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-foundation-success);"></div>
-                </div>
-                <h4>Semantic Colors</h4>
-                <code>background-color: var(--color-foundation-*)</code>
-            </div>
-            
-            <div class="demo-item">
-                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12);">
-                    <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-blue-500);"></div>
-                    <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-green-500);"></div>
-                    <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-purple-500);"></div>
-                </div>
-                <h4>Brand Colors</h4>
-                <code>background-color: var(--color-*-500)</code>
-            </div>
-            
-            <div class="demo-item">
-                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12);">
-                    <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-400);"></div>
-                    <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-600);"></div>
-                    <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-800);"></div>
-                </div>
-                <h4>Neutral Colors</h4>
-                <code>background-color: var(--color-gray-*)</code>
-            </div>
-            
-            <div class="demo-item">
-                <div style="display: flex; align-items: center; gap: var(--spacing-12); justify-content: center; margin-bottom: var(--spacing-12); color: var(--color-foundation-primary);">
-                    <div class="heroicon heroicon-24 heroicon-envelope" style="background-color: currentColor;"></div>
-                    <div class="heroicon heroicon-24 heroicon-phone" style="background-color: currentColor;"></div>
-                    <div class="heroicon heroicon-24 heroicon-chat-bubble-left" style="background-color: currentColor;"></div>
-                </div>
-                <h4>Current Color</h4>
-                <code>background-color: currentColor</code>
-            </div>
-        </div>
-    </div>
-    
-    <div>
-        <h3>Size Combinations</h3>
-        <div style="background: var(--color-white); padding: var(--spacing-24); border-radius: var(--spacing-8); border: 1px solid var(--color-gray-200);">
-            <div style="display: flex; align-items: center; gap: var(--spacing-16); margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-16 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
-                <span class="body-sm">Small star for compact elements</span>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-16); margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-20 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
-                <span class="body-md">Medium star for standard UI</span>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: var(--spacing-16);">
-                <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-foundation-warning);"></div>
-                <span class="body-lg">Large star for prominent elements</span>
-            </div>
-        </div>
-    </div>
-</section>
+    // Focus management demos
+    const showFocusableButton = document.getElementById('showFocusableAlert');
+    const showFocusableDismissibleButton = document.getElementById('showFocusableDismissible');
+    const focusContainer = document.getElementById('focusAlertContainer');
 
-<!-- Icon Browser -->
-<section class="component-section">
-    <h2>Icon Browser</h2>
-    <p class="mb-24">Browse available icons by category. All icons are available in solid, outline, and all three sizes.</p>
-    
-    <div style="background: var(--color-gray-50); padding: var(--spacing-24); border-radius: var(--spacing-8);">
-        <div style="margin-bottom: var(--spacing-16);">
-            <h4>Popular Icons</h4>
-            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin-bottom: var(--spacing-12);">Most commonly used icons in UI design</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: var(--spacing-8); max-width: 400px;">
-                <div class="heroicon heroicon-24 heroicon-home" style="background-color: var(--color-gray-600);" title="home"></div>
-                <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-gray-600);" title="user"></div>
-                <div class="heroicon heroicon-24 heroicon-envelope" style="background-color: var(--color-gray-600);" title="envelope"></div>
-                <div class="heroicon heroicon-24 heroicon-phone" style="background-color: var(--color-gray-600);" title="phone"></div>
-                <div class="heroicon heroicon-24 heroicon-cog-6-tooth" style="background-color: var(--color-gray-600);" title="cog-6-tooth"></div>
-                <div class="heroicon heroicon-24 heroicon-magnifying-glass" style="background-color: var(--color-gray-600);" title="magnifying-glass"></div>
-                <div class="heroicon heroicon-24 heroicon-heart" style="background-color: var(--color-gray-600);" title="heart"></div>
-                <div class="heroicon heroicon-24 heroicon-star" style="background-color: var(--color-gray-600);" title="star"></div>
-                <div class="heroicon heroicon-24 heroicon-shopping-cart" style="background-color: var(--color-gray-600);" title="shopping-cart"></div>
-                <div class="heroicon heroicon-24 heroicon-bell" style="background-color: var(--color-gray-600);" title="bell"></div>
-                <div class="heroicon heroicon-24 heroicon-check" style="background-color: var(--color-gray-600);" title="check"></div>
-                <div class="heroicon heroicon-24 heroicon-x-mark" style="background-color: var(--color-gray-600);" title="x-mark"></div>
+    showFocusableButton.addEventListener('click', () => {
+        focusContainer.innerHTML = `
+            <div class="alert alert--success alert--animated" tabindex="-1" role="alert" aria-live="polite">
+                <div class="alert__icon">
+                    <div class="heroicon heroicon-24 heroicon-check-circle"></div>
+                </div>
+                <div class="alert__content">
+                    <div class="alert__title">This alert received focus</div>
+                    <div class="alert__message">When this alert appeared, it received keyboard focus automatically.</div>
+                </div>
             </div>
-        </div>
+        `;
         
-        <div style="margin-bottom: var(--spacing-16);">
-            <h4>Arrows & Navigation</h4>
-            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin-bottom: var(--spacing-12);">Directional and navigation icons</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: var(--spacing-8); max-width: 400px;">
-                <div class="heroicon heroicon-24 heroicon-arrow-up" style="background-color: var(--color-gray-600);" title="arrow-up"></div>
-                <div class="heroicon heroicon-24 heroicon-arrow-down" style="background-color: var(--color-gray-600);" title="arrow-down"></div>
-                <div class="heroicon heroicon-24 heroicon-arrow-left" style="background-color: var(--color-gray-600);" title="arrow-left"></div>
-                <div class="heroicon heroicon-24 heroicon-arrow-right" style="background-color: var(--color-gray-600);" title="arrow-right"></div>
-                <div class="heroicon heroicon-24 heroicon-chevron-up" style="background-color: var(--color-gray-600);" title="chevron-up"></div>
-                <div class="heroicon heroicon-24 heroicon-chevron-down" style="background-color: var(--color-gray-600);" title="chevron-down"></div>
-                <div class="heroicon heroicon-24 heroicon-chevron-left" style="background-color: var(--color-gray-600);" title="chevron-left"></div>
-                <div class="heroicon heroicon-24 heroicon-chevron-right" style="background-color: var(--color-gray-600);" title="chevron-right"></div>
-                <div class="heroicon heroicon-24 heroicon-bars-3" style="background-color: var(--color-gray-600);" title="bars-3"></div>
-                <div class="heroicon heroicon-24 heroicon-ellipsis-horizontal" style="background-color: var(--color-gray-600);" title="ellipsis-horizontal"></div>
-                <div class="heroicon heroicon-24 heroicon-ellipsis-vertical" style="background-color: var(--color-gray-600);" title="ellipsis-vertical"></div>
+        // Focus the alert
+        const alert = focusContainer.querySelector('.alert');
+        setTimeout(() => {
+            alert.focus();
+        }, 100);
+
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+            if (alert.parentNode) {
+                alert.style.opacity = '0';
+                alert.style.transform = 'translateY(-8px)';
+                setTimeout(() => {
+                    focusContainer.innerHTML = '';
+                }, 200);
+            }
+        }, 5000);
+    });
+
+    showFocusableDismissibleButton.addEventListener('click', () => {
+        focusContainer.innerHTML = `
+            <div class="alert alert--info alert--animated" tabindex="-1" role="alert" aria-live="polite">
+                <div class="alert__icon">
+                    <div class="heroicon heroicon-24 heroicon-exclamation-circle"></div>
+                </div>
+                <div class="alert__content alert__content--with-close">
+                    <div class="alert__title">This alert received focus</div>
+                    <div class="alert__message">When this alert appeared, the close button received keyboard focus automatically.</div>
+                </div>
+                <button class="alert__close-button" type="button" aria-label="Close focusable alert">
+                    <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                    <span class="alert__sr-only">Close focusable alert</span>
+                </button>
             </div>
-        </div>
+        `;
         
-        <div>
-            <h4>Status & Feedback</h4>
-            <p style="font-size: var(--font-size-sm); color: var(--color-gray-600); margin-bottom: var(--spacing-12);">Icons for states and user feedback</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: var(--spacing-8); max-width: 400px;">
-                <div class="heroicon heroicon-24 heroicon-check-circle" style="background-color: var(--color-green-600);" title="check-circle"></div>
-                <div class="heroicon heroicon-24 heroicon-x-circle" style="background-color: var(--color-red-600);" title="x-circle"></div>
-                <div class="heroicon heroicon-24 heroicon-exclamation-triangle" style="background-color: var(--color-orange-600);" title="exclamation-triangle"></div>
-                <div class="heroicon heroicon-24 heroicon-information-circle" style="background-color: var(--color-blue-600);" title="information-circle"></div>
-                <div class="heroicon heroicon-24 heroicon-question-mark-circle" style="background-color: var(--color-purple-600);" title="question-mark-circle"></div>
-                <div class="heroicon heroicon-24 heroicon-clock" style="background-color: var(--color-gray-600);" title="clock"></div>
-                <div class="heroicon heroicon-24 heroicon-bolt" style="background-color: var(--color-yellow-600);" title="bolt"></div>
-                <div class="heroicon heroicon-24 heroicon-shield-check" style="background-color: var(--color-green-600);" title="shield-check"></div>
-            </div>
-        </div>
-    </div>
-</section></article>
+        // Focus the close button
+        const alert = focusContainer.querySelector('.alert');
+        const closeButton = alert.querySelector('.alert__close-button');
+        
+        setTimeout(() => {
+            closeButton.focus();
+        }, 100);
+
+        // Add close handler
+        closeButton.addEventListener('click', () => {
+            alert.style.opacity = '0';
+            alert.style.transform = 'translateY(-8px)';
+            setTimeout(() => {
+                focusContainer.innerHTML = '';
+            }, 200);
+        });
+    });
+
+    // Handle link clicks in alerts
+    const alertLinks = document.querySelectorAll('.alert__message-link');
+    alertLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Alert link clicked:', link.textContent);
+            // In a real application, this would navigate or perform an action
+        });
+    });
+
+    // Keyboard navigation for alerts
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            // Close any visible dismissible alerts when pressing Escape
+            const visibleAlerts = document.querySelectorAll('.alert .alert__close-button');
+            visibleAlerts.forEach(button => {
+                const alert = button.closest('.alert');
+                if (alert === document.activeElement || alert.contains(document.activeElement)) {
+                    button.click();
+                }
+            });
+        }
+    });
+});
+</script></article>
         
       </main>
   
