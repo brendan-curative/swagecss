@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Banner</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Banner</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -276,56 +276,6 @@
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Handle banner toggles
-    const bannerToggles = document.querySelectorAll('.banner__toggle');
-    bannerToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const banner = toggle.closest('.banner');
-            const panel = banner.querySelector('.banner__panel');
-            const chevron = toggle.querySelector('.banner__toggle-chevron .heroicon');
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-            
-            if (isExpanded) {
-                // Collapse
-                toggle.setAttribute('aria-expanded', 'false');
-                panel.classList.remove('banner__panel--visible');
-                panel.classList.add('banner__panel--hidden');
-                chevron.classList.remove('heroicon-chevron-up');
-                chevron.classList.add('heroicon-chevron-down');
-            } else {
-                // Expand
-                toggle.setAttribute('aria-expanded', 'true');
-                panel.classList.remove('banner__panel--hidden');
-                panel.classList.add('banner__panel--visible');
-                chevron.classList.remove('heroicon-chevron-down');
-                chevron.classList.add('heroicon-chevron-up');
-            }
-        });
-    });
-
-    // Handle link clicks in banners
-    const bannerLinks = document.querySelectorAll('.banner .primary-link');
-    bannerLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            console.log('Banner link clicked:', link.textContent);
-            // In a real application, this would navigate or perform an action
-        });
-    });
-
-    // Keyboard navigation for banners
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            if (e.target.classList.contains('banner__toggle')) {
-                e.preventDefault();
-                e.target.click();
-            }
-        }
-    });
-});
-</script>
 </article>
         
       </main>

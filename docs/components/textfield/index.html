@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Textfield</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Textfield</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -461,41 +461,7 @@
     </div>
 </section>
 
-
-<script>
-// Character count functionality
-const charCountInput = document.getElementById('input-char-count');
-const charCountDisplay = charCountInput?.parentElement.parentElement.querySelector('.textfield__char-count');
-
-if (charCountInput && charCountDisplay) {
-    const maxLength = charCountInput.getAttribute('maxlength');
-    charCountInput.addEventListener('input', function() {
-        const currentLength = this.value.length;
-        charCountDisplay.textContent = `${currentLength}/${maxLength}`;
-    });
-}
-
-// Clear button functionality
-const clearButtons = document.querySelectorAll('.textfield__button[aria-label="Clear input"]');
-clearButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const input = this.parentElement.querySelector('.textfield__input');
-        if (input) {
-            input.value = '';
-            input.focus();
-        }
-    });
-});
-
-// Demo form submission prevention
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('This is a demo - form submission prevented');
-    });
-});
-</script></article>
+</article>
         
       </main>
   

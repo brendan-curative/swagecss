@@ -376,38 +376,3 @@ status: draft
     </div>
 </section>
 
-
-<script>
-// Character count functionality
-const charCountInput = document.getElementById('input-char-count');
-const charCountDisplay = charCountInput?.parentElement.parentElement.querySelector('.textfield__char-count');
-
-if (charCountInput && charCountDisplay) {
-    const maxLength = charCountInput.getAttribute('maxlength');
-    charCountInput.addEventListener('input', function() {
-        const currentLength = this.value.length;
-        charCountDisplay.textContent = `${currentLength}/${maxLength}`;
-    });
-}
-
-// Clear button functionality
-const clearButtons = document.querySelectorAll('.textfield__button[aria-label="Clear input"]');
-clearButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const input = this.parentElement.querySelector('.textfield__input');
-        if (input) {
-            input.value = '';
-            input.focus();
-        }
-    });
-});
-
-// Demo form submission prevention
-const forms = document.querySelectorAll('form');
-forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('This is a demo - form submission prevented');
-    });
-});
-</script>

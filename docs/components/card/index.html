@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Card</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Card</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -359,34 +359,6 @@
     </div>
 </section>
 
-<script>
-// Add click handlers for interactive demonstrations
-document.addEventListener('DOMContentLoaded', () => {
-    const interactiveCards = document.querySelectorAll('.card--interactive');
-    
-    interactiveCards.forEach(card => {
-        card.addEventListener('click', () => {
-            console.log('Card clicked:', card.querySelector('.card__heading').textContent);
-        });
-        
-        card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                console.log('Card activated:', card.querySelector('.card__heading').textContent);
-            }
-        });
-    });
-
-    // Demo button handlers
-    const buttons = document.querySelectorAll('.button');
-    buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            console.log('Button clicked:', button.textContent.trim());
-        });
-    });
-});
-</script>
 </article>
         
       </main>

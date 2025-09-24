@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Checkbox</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Checkbox</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -420,63 +420,6 @@
     </div>
 </section>
 
-<script>
-// Track selected services
-function updateSelectedServices() {
-    const checkboxes = document.querySelectorAll('input[name="services"]:checked');
-    const selectedDiv = document.getElementById('selected-services');
-    
-    if (checkboxes.length === 0) {
-        selectedDiv.textContent = 'None selected';
-        selectedDiv.className = 'body-sm text-gray-600';
-    } else {
-        const services = Array.from(checkboxes).map(cb => {
-            const label = cb.closest('.checkbox').querySelector('.checkbox__label-title');
-            return label ? label.textContent : cb.value;
-        });
-        selectedDiv.textContent = services.join(', ');
-        selectedDiv.className = 'body-sm text-foundation-primary';
-    }
-}
-
-// Add event listeners to service checkboxes
-document.addEventListener('DOMContentLoaded', function() {
-    const serviceCheckboxes = document.querySelectorAll('input[name="services"]');
-    serviceCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', updateSelectedServices);
-    });
-
-    // Handle control-short variant checked class
-    const controlShortCheckboxes = document.querySelectorAll('.checkbox--control-short input[type="checkbox"]');
-    controlShortCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const label = this.closest('.checkbox');
-            if (this.checked) {
-                label.classList.add('checkbox--checked');
-            } else {
-                label.classList.remove('checkbox--checked');
-            }
-        });
-    });
-
-    // Initialize selected services display
-    updateSelectedServices();
-});
-
-// Handle form submission
-function handleFormSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const services = formData.getAll('services');
-    
-    if (services.length === 0) {
-        alert('Please select at least one service.');
-        return;
-    }
-    
-    alert(`Services selected: ${services.join(', ')}`);
-}
-</script>
 </article>
         
       </main>

@@ -9,7 +9,8 @@
 
     --swage-highlight: #A63737;
     --swage-surface: #BFB9B4;
-    --swage-black: #262624;
+    --swage-black: #202024;
+    --swage-border: #5f6069;
   }
 
 /* #region Defaults */
@@ -48,19 +49,19 @@ body {
 
 /* #region Header */
 header {
-    border-bottom: 1px solid var(--swage-primary);
+    border-bottom: 1px solid var(--swage-border);
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    border: 1px solid var(--swage-primary);
+    border: 1px solid var(--swage-border);
     border-collapse: collapse;
     text-transform: uppercase;
   }
 
   header .info div:first-child {
     width: 200px;
-    border-right: 1px solid var(--swage-primary);
+    border-right: 1px solid var(--swage-border);
   }
 
   .logo {
@@ -68,7 +69,7 @@ header {
     align-content: center;
     justify-content: center;
     width: 200px;
-    border-right: 1px solid var(--swage-primary);
+    border-right: 1px solid var(--swage-border);
     position: relative;
   }
 
@@ -137,7 +138,7 @@ header {
         font-size: var(--font-size-2xl);
         text-transform: uppercase;
         padding: var(--spacing-32) var(--spacing-8) 27px var(--spacing-16); 
-        border-bottom: 1px solid var(--swage-primary);
+        border-bottom: 1px solid var(--swage-border);
     }
 
     header .info p {
@@ -193,7 +194,7 @@ header {
         width: 400px;
         display: flex;
         text-transform: uppercase;
-        border-left: 1px solid var(--swage-primary);
+        border-left: 1px solid var(--swage-border);
         border-collapse: collapse;
     }
 
@@ -204,10 +205,10 @@ header {
         }
 
         .titleblock .project, .titleblock .team {
-            border-bottom: 1px solid var(--swage-primary);
+            border-bottom: 1px solid var(--swage-border);
         }
 
-        .titleblock .team div:first-child {border-right: 1px solid var(--swage-primary);}
+        .titleblock .team div:first-child {border-right: 1px solid var(--swage-border);}
 
         .titleblock .project::before {
             content: "Project";
@@ -278,7 +279,7 @@ aside nav {
         color: var(--swage-primary);
         text-decoration: none;
         padding: var(--spacing-4) var(--spacing-8) var(--spacing-8) var(--spacing-8); 
-        border-bottom: 1px solid var(--swage-primary);
+        border-bottom: 1px solid var(--swage-border);
     }
 
     aside nav a + h2 {
@@ -291,8 +292,8 @@ aside nav {
         color: var(--swage-primary);
         text-decoration: none;
         padding: var(--spacing-8);
-        border-bottom: 1px solid var(--swage-primary);
-        border-left: 0 solid var(--swage-primary);
+        border-bottom: 1px solid var(--swage-border);
+        border-left: 0 solid var(--swage-border);
         display: block;
         transition: all 0.5s ease;
     }
@@ -330,7 +331,7 @@ section {
 
 /* #region Footer */
 footer {
-    border: 1px solid var(--swage-primary);
+    border: 1px solid var(--swage-border);
     padding: var(--spacing-8);
 }
 /* #endregion */
@@ -349,14 +350,14 @@ main {
     display: flex;
     flex: 1 0 auto;
     align-items: stretch;
-    border-right: 1px solid var(--swage-primary);
+    border-right: 1px solid var(--swage-border);
 }
 
 aside {
 
     padding-top: var(--spacing-24);
-    border-right: 1px solid var(--swage-primary);
-    border-left: 1px solid var(--swage-primary);
+    border-right: 1px solid var(--swage-border);
+    border-left: 1px solid var(--swage-border);
     position: relative;
 }
 

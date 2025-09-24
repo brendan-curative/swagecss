@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>Swageblocks v0.1 &bull; Swageblocks &bull; Foundation &bull; Accordion</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Accordion</title>
     <link rel="icon" href="/swagecss/src/img/favicon.svg" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -258,48 +258,6 @@
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Handle dismissible accordions  
-    const toggleButtons = document.querySelectorAll('.accordion__toggle');
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const item = button.closest('.accordion__item');
-            const panel = item.querySelector('.accordion__panel');
-            const icon = item.querySelector('.accordion__toggle-icon .heroicon');
-            const isOpen = button.getAttribute('aria-expanded') === 'true';
-            
-            if (isOpen) {
-                // Close
-                button.setAttribute('aria-expanded', 'false');
-                panel.classList.remove('accordion__panel--visible');
-                panel.classList.add('accordion__panel--hidden');
-                icon.classList.remove('heroicon-chevron-down');
-                icon.classList.add('heroicon-chevron-right');
-                item.classList.remove('accordion__item--open');
-            } else {
-                // Open
-                button.setAttribute('aria-expanded', 'true');
-                panel.classList.remove('accordion__panel--hidden');
-                panel.classList.add('accordion__panel--visible');
-                icon.classList.remove('heroicon-chevron-right');
-                icon.classList.add('heroicon-chevron-down');
-                item.classList.add('accordion__item--open');
-            }
-        });
-    });
-
-    // Keyboard navigation for accordions
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            if (e.target.classList.contains('accordion__toggle')) {
-                e.preventDefault();
-                e.target.click();
-            }
-        }
-    });
-});
-</script>
 </article>
         
       </main>
