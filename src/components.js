@@ -626,14 +626,34 @@ function deleteItem(modalId) {
 }
 
 function initializeModal() {
-    console.log('Modal demo page loaded');
+    console.log('Modal component initialized');
     
-    // Add click outside to close functionality for modals that allow it
+    // Enhanced click outside to close functionality
     document.addEventListener('click', (event) => {
+        // Check if clicked on backdrop element
         if (event.target.classList.contains('modal__backdrop')) {
             const modal = event.target.closest('.modal');
             if (modal && !modal.classList.contains('modal--no-close')) {
                 closeModal(modal.id);
+                return;
+            }
+        }
+        
+        // Check if clicked on modal overlay (outside modal content)
+        if (event.target.classList.contains('modal') && event.target.classList.contains('modal--open')) {
+            const modal = event.target;
+            if (modal && !modal.classList.contains('modal--no-close')) {
+                closeModal(modal.id);
+                return;
+            }
+        }
+        
+        // Check if clicked on modal container (between content and edges)
+        if (event.target.classList.contains('modal__container')) {
+            const modal = event.target.closest('.modal');
+            if (modal && !modal.classList.contains('modal--no-close')) {
+                closeModal(modal.id);
+                return;
             }
         }
     });

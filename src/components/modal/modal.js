@@ -279,5 +279,84 @@
         subtree: true
     });
 
+    // Demo-specific functionality for modal component examples
+    function initializeDemoFeatures() {
+        console.log('Modal component demo loaded');
+        
+        // Loading modal demo
+        const loadingModal = document.getElementById('loading-modal');
+        if (loadingModal) {
+            loadingModal.addEventListener('modalPrimaryClick', (e) => {
+                if (e.detail.action === 'process') {
+                    e.preventDefault();
+                    
+                    // Simulate loading
+                    window.ModalComponent.setLoading('loading-modal', true);
+                    window.ModalComponent.updateMessage('loading-modal', 'Processing... Please wait.');
+                    
+                    setTimeout(() => {
+                        window.ModalComponent.setLoading('loading-modal', false);
+                        window.ModalComponent.updateMessage('loading-modal', 'Processing complete!');
+                        window.ModalComponent.updateTitle('loading-modal', 'Success');
+                        
+                        // Change button text
+                        const button = e.detail.button;
+                        button.textContent = 'Done';
+                        button.dataset.modalAction = 'close';
+                    }, 3000);
+                }
+            });
+        }
+        
+        // Confirmation modal demo
+        const confirmModal = document.getElementById('confirm-modal');
+        if (confirmModal) {
+            confirmModal.addEventListener('modalPrimaryClick', (e) => {
+                if (e.detail.action === 'delete') {
+                    e.preventDefault();
+                    
+                    window.ModalComponent.updateMessage('confirm-modal', 'Item has been deleted successfully.');
+                    window.ModalComponent.updateTitle('confirm-modal', 'Deleted');
+                    
+                    const button = e.detail.button;
+                    button.textContent = 'Close';
+                    button.dataset.modalAction = 'close';
+                    button.style.backgroundColor = 'var(--color-foundation-success)';
+                }
+            });
+        }
+        
+        // Two button modal demo
+        const twoButtonModal = document.getElementById('two-button-modal');
+        if (twoButtonModal) {
+            twoButtonModal.addEventListener('modalPrimaryClick', (e) => {
+                if (e.detail.action === 'save') {
+                    e.preventDefault();
+                    
+                    window.ModalComponent.setLoading('two-button-modal', true);
+                    
+                    setTimeout(() => {
+                        window.ModalComponent.setLoading('two-button-modal', false);
+                        window.ModalComponent.updateMessage('two-button-modal', 'Changes saved successfully!');
+                        window.ModalComponent.updateTitle('two-button-modal', 'Saved');
+                        
+                        const button = e.detail.button;
+                        button.textContent = 'Close';
+                        button.dataset.modalAction = 'close';
+                    }, 2000);
+                }
+            });
+        }
+        
+        console.log('Modal demo features initialized');
+    }
+
+    // Initialize demo features when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeDemoFeatures);
+    } else {
+        initializeDemoFeatures();
+    }
+
     console.log('Modal component JavaScript loaded');
 })();
