@@ -13,8 +13,9 @@
         </div>
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
-                
-           </a> <span>{{ page.inputPath | getGitCommitDateFromPath }}</span> 
+                <img src="{{ '/' | url }}src/img/github.png" alt="SwageCSS github repo">
+             </a>  <span>{{ page.inputPath | getGitCommitDateFromPath | formatCommitReadable }}</span> 
+             
         </div>
 
 </div>

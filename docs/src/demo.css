@@ -38,6 +38,17 @@ body {
     line-height: var(--line-height-md);
 }
 
+a, a:visited {
+    color: var(--swage-tertiary);
+    text-decoration: underline;
+}
+
+a:hover, a:focus {
+    color: var(--swage-highlight);
+    text-decoration: none;
+}
+
+
 .block {
     display: block !important;
 }
@@ -100,6 +111,7 @@ header {
 
         .logo:hover svg path, .logo:focus svg path {
             fill: var(--swage-tertiary);
+            stroke-width: 2px;
         }
 
         .logo:active svg {
@@ -176,7 +188,7 @@ header {
     }
 
     a.colophon:hover, a.colophon:focus {
-      color: var(--color-blue-600);
+      
     }
 
     .colophon img {
@@ -264,7 +276,7 @@ aside::before {
 }
 
 aside nav {
-    
+    padding-top: var(--spacing-24);
     display: flex;
     flex-direction: column;
     width: 199px;
@@ -289,7 +301,7 @@ aside nav {
     aside nav a, aside nav a:visited {
         text-transform: uppercase;
         font-size: var(--font-size-sm);
-        color: var(--swage-primary);
+        color: var(--swage-tertiary);
         text-decoration: none;
         padding: var(--spacing-8);
         border-bottom: 1px solid var(--swage-border);
@@ -344,9 +356,11 @@ footer {
     padding: var(--spacing-24);
 }
 
-
-
 main {
+    /*background-image: url('data:image/svg+xml,<svg width="501" height="500" viewBox="0 0 501 500" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M208 500H292.139L292 350.5L151 209H0V291H150.5L43.5 397L102.5 456L208 349.263V500Z" fill="%23BFB9B4"/><path d="M208.5 151V0H292.5V150L398 43L457 102L349 208H500.5V292H350L457 398L398 457L292.139 350.5V209H151L44 103L103 44L208.5 151Z" fill="%23BFB9B4"/></svg>');*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
     display: flex;
     flex: 1 0 auto;
     align-items: stretch;
@@ -380,7 +394,7 @@ article {
 }
 
 .demo-item {
-    background-color: var(--color-surface-highlight);
+    background-color: var(--color-white);
     border: 1px solid var(--color-border-default);
     border-radius: var(--spacing-8);
     padding: var(--spacing-24);
