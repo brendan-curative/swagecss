@@ -38,12 +38,17 @@ body {
     line-height: var(--line-height-md);
 }
 
-a, a:visited {
+a:not(.button), a:not(.button)::visited {
     color: var(--swage-tertiary);
     text-decoration: underline;
 }
 
-a:hover, a:focus {
+a:not(.button):hover, a:not(.button):focus {
+    color: var(--swage-highlight);
+    text-decoration: none;
+}
+
+a:not(.button):active {
     color: var(--swage-highlight);
     text-decoration: none;
 }
