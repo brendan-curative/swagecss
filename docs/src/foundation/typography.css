@@ -69,6 +69,13 @@
 /* #region Typography Utility Classes */
 
 /* Font Family */
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  font-weight: var(--font-weight-normal);
+}
+
 .font-sans {
   font-family: var(--font-family-sans);
 }

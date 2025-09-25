@@ -1,0 +1,82 @@
+:root {
+    --blv-width: 900px;
+    --blv-border: #F0F1F2;
+    --blv-bg: rgba(255, 255, 255, 0.1);
+    --blv-shadow: 0 2px 16px 0 rgba(102, 114, 125, 0.25), 0 4px 200px 0 rgba(255, 255, 255, 0.01) inset;
+}
+
+
+/* #region Defaults */
+html[data-theme="blv"] body {
+    background-image: url(img/waves.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: 0 1px 0 var(--color-white);
+}
+/* #endregion */
+
+/* #region Sidebar */
+html[data-theme="blv"] nav {
+    background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 16px 0 rgba(102, 114, 125, 0.25), 0 4px 200px 0 rgba(255, 255, 255, 0.01) inset;
+        backdrop-filter: blur(5px);
+}
+
+aside nav div {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+    html[data-theme="blv"] nav a:not(.logo),
+    html[data-theme="blv"] nav a:not(.logo):visited {
+        background: transparent;
+    }
+
+    html[data-theme="blv"] nav a:not(.logo):hover,
+    html[data-theme="blv"] nav a:not(.logo):focus {
+        background: rgba(255, 255, 255, 0.25);
+        color: var(--color-blue-900);
+    }
+
+/* #endregion */
+
+/* #region Layout */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+.wrap { 
+display: flex;
+flex-direction: column;
+justify-content: center;
+min-height: 100vh; 
+}
+
+.container, article {
+    width: var(--blv-width);
+}
+
+header {
+    background: var(--color-white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--blv-border);
+  }
+
+  main { 
+    display: flex;
+    justify-content: center;
+    flex: 1; 
+    overflow-y: auto; 
+    padding-top: 100px;
+    padding-bottom: 96px;
+  }
+
+
+/* #endregion */
