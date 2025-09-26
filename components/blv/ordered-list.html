@@ -1,0 +1,256 @@
+---
+layout: layout.html
+title: Swageblocks &bull; BLV &bull; Ordered List
+heading: Ordered List Component
+secondary: Replicated from OrderedList
+section: BLV Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Ordered List component replicates the OrderedList from the baseline visit workflow,
+        providing numbered items with cards that have backdrop blur and shadow effects.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Ordered List</h2>
+    <p class="mb-24">Default ordered list with blue numbered items.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Blue Theme (Default)</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Your Benefits</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Finding Care</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Getting Medications</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="4" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>4</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Summary</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Orange Theme</h2>
+    <p class="mb-24">Ordered list with orange numbered items.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Orange Theme</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Registration Process</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Health Assessment</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Provider Assignment</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Mixed Colors</h2>
+    <p class="mb-24">Ordered list with mixed blue and orange items.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Mixed Theme</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Complete Baseline Visit</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Schedule Follow-up</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Access Your Portal</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Dynamic Example</h2>
+    <p class="mb-24">Interactive example with JavaScript functionality.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Dynamic List</div>
+            <ol class="ordered-list" id="dynamic-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Initial Step</p>
+                    </div>
+                </li>
+            </ol>
+            <div class="mt-16 flex gap-8">
+                <button class="button button--primary" onclick="addOrderedListItem()">Add Item</button>
+                <button class="button button--secondary" onclick="toggleTheme()">Toggle Theme</button>
+                <button class="button button--secondary" onclick="clearOrderedList()">Clear List</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Different Content Lengths</h2>
+    <p class="mb-24">Ordered list items with varying text lengths.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Variable Content</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Short</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Medium length content item</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">This is a much longer content item that demonstrates how the component handles extended text that might wrap to multiple lines in certain layouts</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Original Component Reference</h2>
+    <p class="mb-24">Styling patterns from the original OrderedList component:</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Container Styling</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• List container: <code>space-y-2</code> → 8px vertical spacing</li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Item Layout & Structure</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Layout: <code>relative flex w-full items-center gap-8 rounded-[4px] px-4 py-3</code></li>
+            <li>• Background: <code>bg-white/75 backdrop-blur-[5px]</code></li>
+            <li>• Shadow: <code>shadow-[0px_2px_16px_0px_rgba(102,114,125,0.25),_0px_4px_200px_0px_rgba(255,255,255,0.01)_inset]</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Number Circle Styling</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Container: <code>flex size-6 items-center justify-center rounded-full border bg-white</code></li>
+            <li>• Text shadow: <code>[text-shadow:_0px_1px_0px_#FFF]</code></li>
+            <li>• Font: <code>font-semibold</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Color Variants</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Blue:</strong> <code>border-skyBlue</code>, <code>text-skyBlue</code> → <code>var(--color-primary-sky-blue)</code></li>
+            <li>• <strong>Orange:</strong> <code>border-signalOrange</code>, <code>text-signalOrange</code> → <code>var(--color-primary-signal-orange)</code></li>
+            <li>• <strong>Content text:</strong> <code>text-lg font-bold text-textColor-default</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure replicating the original component.</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <code class="body-sm">
+            &lt;ol class="ordered-list"&gt;<br>
+            &nbsp;&nbsp;&lt;li class="ordered-list__item" data-order="1" data-color="blue"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ordered-list__number"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;1&lt;/span&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ordered-list__content"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="ordered-list__text"&gt;Item Text&lt;/p&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;/li&gt;<br>
+            &lt;/ol&gt;
+        </code>
+    </div>
+</section>

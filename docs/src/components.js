@@ -1572,4 +1572,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof initializeCheckmarkLabel === 'function') {
             initializeCheckmarkLabel();
         }
+        if (typeof initializeOrderedList === 'function') {
+            initializeOrderedList();
+        }
+        if (typeof initializeRadioSelectionList === 'function') {
+            initializeRadioSelectionList();
+        }
 });

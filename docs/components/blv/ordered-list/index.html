@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Select</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; BLV &bull; Ordered List</title>
     <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Select Component</h1> 
+                <h1>Ordered List Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Select imported from CUI</p>
+                  <p>Replicated from OrderedList</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Sep 24, 2025, 5:00 PM</span> 
+             </a>  <span></span> 
              
         </div>
 
@@ -103,366 +103,251 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        Select dropdown component for choosing from a list of options. 
-        Features multiple states, sizes, and interactive functionality.
+        The Ordered List component replicates the OrderedList from the baseline visit workflow,
+        providing numbered items with cards that have backdrop blur and shadow effects.
     </p>
 </section>
 
 <section class="component-section">
-    <h2>Basic Select</h2>
-    <p class="mb-24">Standard select dropdown with various states.</p>
+    <h2>Basic Ordered List</h2>
+    <p class="mb-24">Default ordered list with blue numbered items.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Default State</div>
-            <div class="select">
-                <select class="select__control" id="basicSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">With Selected Value</div>
-            <div class="select">
-                <select class="select__control" id="selectedSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2" selected>Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Disabled State</div>
-            <div class="select select--disabled">
-                <select class="select__control" disabled>
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Blue Theme (Default)</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Your Benefits</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Finding Care</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Getting Medications</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="4" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>4</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Summary</p>
+                    </div>
+                </li>
+            </ol>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Select with Label</h2>
-    <p class="mb-24">Select components with associated labels for better accessibility.</p>
+    <h2>Orange Theme</h2>
+    <p class="mb-24">Ordered list with orange numbered items.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <label for="countrySelect" class="select__label">Country</label>
-            <div class="select">
-                <select class="select__control" id="countrySelect">
-                    <option value="">Select a country...</option>
-                    <option value="us">United States</option>
-                    <option value="ca">Canada</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="au">Australia</option>
-                    <option value="de">Germany</option>
-                    <option value="fr">France</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <label for="categorySelect" class="select__label">Category</label>
-            <div class="select">
-                <select class="select__control" id="categorySelect">
-                    <option value="">All categories...</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing & Accessories</option>
-                    <option value="books">Books & Media</option>
-                    <option value="home">Home & Garden</option>
-                    <option value="sports">Sports & Outdoors</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Orange Theme</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Registration Process</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Health Assessment</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Provider Assignment</p>
+                    </div>
+                </li>
+            </ol>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Select Sizes</h2>
-    <p class="mb-24">Different select sizes for various UI contexts.</p>
+    <h2>Mixed Colors</h2>
+    <p class="mb-24">Ordered list with mixed blue and orange items.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Small Size</div>
-            <div class="select select--small">
-                <select class="select__control">
-                    <option value="">Small select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Large Size</div>
-            <div class="select select--large">
-                <select class="select__control">
-                    <option value="">Large select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Mixed Theme</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Complete Baseline Visit</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="orange">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Schedule Follow-up</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Access Your Portal</p>
+                    </div>
+                </li>
+            </ol>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Select States</h2>
-    <p class="mb-24">Different states for form validation feedback.</p>
+    <h2>Dynamic Example</h2>
+    <p class="mb-24">Interactive example with JavaScript functionality.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Error State</div>
-            <div class="select select--error">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-            <div class="select__error-message">This field is required</div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Success State</div>
-            <div class="select select--success">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2" selected>Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-            <div class="select__success-message">Valid selection</div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Multiple Select</h2>
-    <p class="mb-24">Select components that allow multiple selections.</p>
-    
-    <div class="demo-item">
-        <label for="skillsSelect" class="select__label">Skills (Hold Ctrl/Cmd to select multiple)</label>
-        <div class="select select--multiple">
-            <select class="select__control" id="skillsSelect" multiple>
-                <option value="javascript">JavaScript</option>
-                <option value="python">Python</option>
-                <option value="react">React</option>
-                <option value="vue">Vue.js</option>
-                <option value="angular">Angular</option>
-                <option value="nodejs">Node.js</option>
-                <option value="css">CSS</option>
-                <option value="html">HTML</option>
-            </select>
-        </div>
-        <div class="select__help-text">Hold Ctrl (or Cmd on Mac) while clicking to select multiple options</div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Grouped Options</h2>
-    <p class="mb-24">Select with optgroups for organized option lists.</p>
-    
-    <div class="demo-item">
-        <label for="vehicleSelect" class="select__label">Vehicle Type</label>
-        <div class="select">
-            <select class="select__control" id="vehicleSelect">
-                <option value="">Choose a vehicle...</option>
-                <optgroup label="Cars">
-                    <option value="sedan">Sedan</option>
-                    <option value="suv">SUV</option>
-                    <option value="hatchback">Hatchback</option>
-                    <option value="convertible">Convertible</option>
-                </optgroup>
-                <optgroup label="Motorcycles">
-                    <option value="sport">Sport Bike</option>
-                    <option value="cruiser">Cruiser</option>
-                    <option value="touring">Touring</option>
-                </optgroup>
-                <optgroup label="Trucks">
-                    <option value="pickup">Pickup Truck</option>
-                    <option value="delivery">Delivery Van</option>
-                    <option value="semi">Semi Truck</option>
-                </optgroup>
-            </select>
-            <div class="select__icon">
-                <span class="heroicon heroicon-chevron-down"></span>
+            <div class="demo-label">Dynamic List</div>
+            <ol class="ordered-list" id="dynamic-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Initial Step</p>
+                    </div>
+                </li>
+            </ol>
+            <div class="mt-16 flex gap-8">
+                <button class="button button--primary" onclick="addOrderedListItem()">Add Item</button>
+                <button class="button button--secondary" onclick="toggleTheme()">Toggle Theme</button>
+                <button class="button button--secondary" onclick="clearOrderedList()">Clear List</button>
             </div>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Interactive Examples</h2>
-    <p class="mb-24">Demonstrates dynamic interactions between select components.</p>
+    <h2>Different Content Lengths</h2>
+    <p class="mb-24">Ordered list items with varying text lengths.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <label for="regionSelect" class="select__label">Region</label>
-            <div class="select">
-                <select class="select__control" id="regionSelect">
-                    <option value="">Select region...</option>
-                    <option value="north-america">North America</option>
-                    <option value="europe">Europe</option>
-                    <option value="asia">Asia</option>
-                    <option value="south-america">South America</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Variable Content</div>
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>1</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Short</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="2" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">Medium length content item</p>
+                    </div>
+                </li>
+                <li class="ordered-list__item" data-order="3" data-color="blue">
+                    <div class="ordered-list__number">
+                        <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                        <p class="ordered-list__text">This is a much longer content item that demonstrates how the component handles extended text that might wrap to multiple lines in certain layouts</p>
+                    </div>
+                </li>
+            </ol>
         </div>
-
-        <div class="demo-item">
-            <label for="countryDependentSelect" class="select__label">Country</label>
-            <div class="select">
-                <select class="select__control" id="countryDependentSelect" disabled>
-                    <option value="">First select a region...</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="demo-output" id="selectionOutput">
-        Region: None selected<br>
-        Country: None selected
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Form Integration</h2>
-    <p class="mb-24">Select components within a complete form context with validation.</p>
+    <h2>Original Component Reference</h2>
+    <p class="mb-24">Styling patterns from the original OrderedList component:</p>
     
-    <div class="demo-item">
-        <form id="profileForm" class="profile-form">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="titleSelect" class="select__label">Title</label>
-                    <div class="select select--small">
-                        <select class="select__control" id="titleSelect" name="title">
-                            <option value="">Select...</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="ms">Ms.</option>
-                            <option value="dr">Dr.</option>
-                            <option value="prof">Prof.</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="industrySelect" class="select__label">Industry *</label>
-                    <div class="select" id="industrySelectWrapper">
-                        <select class="select__control" id="industrySelect" name="industry" required>
-                            <option value="">Select industry...</option>
-                            <option value="technology">Technology</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="finance">Finance</option>
-                            <option value="education">Education</option>
-                            <option value="retail">Retail</option>
-                            <option value="manufacturing">Manufacturing</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                    <div class="select__error-message" id="industryError" style="display: none;">
-                        Please select an industry
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="experienceSelect" class="select__label">Years of Experience</label>
-                    <div class="select">
-                        <select class="select__control" id="experienceSelect" name="experience">
-                            <option value="">Select...</option>
-                            <option value="0-1">0-1 years</option>
-                            <option value="2-5">2-5 years</option>
-                            <option value="6-10">6-10 years</option>
-                            <option value="11-15">11-15 years</option>
-                            <option value="16+">16+ years</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferenceSelect" class="select__label">Contact Preference</label>
-                    <div class="select">
-                        <select class="select__control" id="preferenceSelect" name="preference">
-                            <option value="">Select...</option>
-                            <option value="email">Email</option>
-                            <option value="phone">Phone</option>
-                            <option value="both">Both Email and Phone</option>
-                            <option value="none">No contact</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-actions">
-                <button type="button" class="button button--outline" onclick="resetProfileForm()">Reset</button>
-                <button type="submit" class="button button--primary">Save Profile</button>
-            </div>
-        </form>
-        
-        <div id="profileResults" class="form-results" style="display: none;">
-            <h3>Profile Data:</h3>
-            <div id="profileResultsContent"></div>
-        </div>
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Container Styling</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• List container: <code>space-y-2</code> → 8px vertical spacing</li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Item Layout & Structure</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Layout: <code>relative flex w-full items-center gap-8 rounded-[4px] px-4 py-3</code></li>
+            <li>• Background: <code>bg-white/75 backdrop-blur-[5px]</code></li>
+            <li>• Shadow: <code>shadow-[0px_2px_16px_0px_rgba(102,114,125,0.25),_0px_4px_200px_0px_rgba(255,255,255,0.01)_inset]</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Number Circle Styling</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Container: <code>flex size-6 items-center justify-center rounded-full border bg-white</code></li>
+            <li>• Text shadow: <code>[text-shadow:_0px_1px_0px_#FFF]</code></li>
+            <li>• Font: <code>font-semibold</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Color Variants</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Blue:</strong> <code>border-skyBlue</code>, <code>text-skyBlue</code> → <code>var(--color-primary-sky-blue)</code></li>
+            <li>• <strong>Orange:</strong> <code>border-signalOrange</code>, <code>text-signalOrange</code> → <code>var(--color-primary-signal-orange)</code></li>
+            <li>• <strong>Content text:</strong> <code>text-lg font-bold text-textColor-default</code></li>
+        </ul>
     </div>
 </section>
 
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure replicating the original component.</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <code class="body-sm">
+            &lt;ol class="ordered-list"&gt;<br>
+            &nbsp;&nbsp;&lt;li class="ordered-list__item" data-order="1" data-color="blue"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ordered-list__number"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;1&lt;/span&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="ordered-list__content"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="ordered-list__text"&gt;Item Text&lt;/p&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;/li&gt;<br>
+            &lt;/ol&gt;
+        </code>
+    </div>
+</section>
 </article>
         
       </main>

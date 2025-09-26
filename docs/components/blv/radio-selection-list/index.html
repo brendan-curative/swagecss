@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Select</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; BLV &bull; Radio Selection List</title>
     <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Select Component</h1> 
+                <h1>Radio Selection List Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Select imported from CUI</p>
+                  <p>Replicated from RadioSelectionList</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Sep 24, 2025, 5:00 PM</span> 
+             </a>  <span></span> 
              
         </div>
 
@@ -103,56 +103,95 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        Select dropdown component for choosing from a list of options. 
-        Features multiple states, sizes, and interactive functionality.
+        The Radio Selection List component replicates the RadioSelectionList from the baseline visit workflow,
+        providing a scrollable list of radio options with backdrop effects and custom styling.
     </p>
 </section>
 
 <section class="component-section">
-    <h2>Basic Select</h2>
-    <p class="mb-24">Standard select dropdown with various states.</p>
+    <h2>Basic Radio Selection List</h2>
+    <p class="mb-24">Default radio selection list with options.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
             <div class="demo-label">Default State</div>
-            <div class="select">
-                <select class="select__control" id="basicSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+            <div class="radio-selection-list" data-name="basic-list">
+                <!-- Results header -->
+                <div class="radio-selection-list__header">
+                    <p class="radio-selection-list__results">3 results found</p>
+                    <button class="radio-selection-list__map-button" onclick="showMap()">
+                        <svg class="radio-selection-list__map-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.59 8.56L14.5 14.65L9.35 9.5L3.41 15.44L2 14.03L9.35 6.68L14.5 11.83L19.18 7.15L20.59 8.56Z" fill="currentColor"/>
+                        </svg>
+                        Show Map
+                    </button>
                 </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">With Selected Value</div>
-            <div class="select">
-                <select class="select__control" id="selectedSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2" selected>Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Disabled State</div>
-            <div class="select select--disabled">
-                <select class="select__control" disabled>
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+                
+                <!-- Main container -->
+                <div class="radio-selection-list__container">
+                    <!-- Backdrop -->
+                    <div class="radio-selection-list__backdrop"></div>
+                    
+                    <!-- Missing value option -->
+                    <div class="radio-selection-list__missing-option">
+                        <label class="radio-selection-list__option">
+                            <input 
+                                type="radio" 
+                                name="basic-list" 
+                                value="none" 
+                                class="radio-selection-list__radio"
+                                onchange="handleRadioChange(this)"
+                            />
+                            <span class="radio-selection-list__label">None of these work for me</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Options list -->
+                    <div class="radio-selection-list__options">
+                        <fieldset class="radio-selection-list__fieldset">
+                            <label class="radio-selection-list__option">
+                                <input 
+                                    type="radio" 
+                                    name="basic-list" 
+                                    value="option1" 
+                                    class="radio-selection-list__radio"
+                                    onchange="handleRadioChange(this)"
+                                />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Primary Care Provider</h3>
+                                    <p class="radio-selection-list__description">Dr. Sarah Johnson, MD</p>
+                                </div>
+                            </label>
+                            
+                            <label class="radio-selection-list__option">
+                                <input 
+                                    type="radio" 
+                                    name="basic-list" 
+                                    value="option2" 
+                                    class="radio-selection-list__radio"
+                                    onchange="handleRadioChange(this)"
+                                />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Specialist Clinic</h3>
+                                    <p class="radio-selection-list__description">Metro Health Cardiology</p>
+                                </div>
+                            </label>
+                            
+                            <label class="radio-selection-list__option">
+                                <input 
+                                    type="radio" 
+                                    name="basic-list" 
+                                    value="option3" 
+                                    class="radio-selection-list__radio"
+                                    onchange="handleRadioChange(this)"
+                                />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Urgent Care Center</h3>
+                                    <p class="radio-selection-list__description">24/7 Express Care</p>
+                                </div>
+                            </label>
+                        </fieldset>
+                    </div>
                 </div>
             </div>
         </div>
@@ -160,41 +199,18 @@
 </section>
 
 <section class="component-section">
-    <h2>Select with Label</h2>
-    <p class="mb-24">Select components with associated labels for better accessibility.</p>
+    <h2>Loading State</h2>
+    <p class="mb-24">Radio selection list in loading state.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <label for="countrySelect" class="select__label">Country</label>
-            <div class="select">
-                <select class="select__control" id="countrySelect">
-                    <option value="">Select a country...</option>
-                    <option value="us">United States</option>
-                    <option value="ca">Canada</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="au">Australia</option>
-                    <option value="de">Germany</option>
-                    <option value="fr">France</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <label for="categorySelect" class="select__label">Category</label>
-            <div class="select">
-                <select class="select__control" id="categorySelect">
-                    <option value="">All categories...</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing & Accessories</option>
-                    <option value="books">Books & Media</option>
-                    <option value="home">Home & Garden</option>
-                    <option value="sports">Sports & Outdoors</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+            <div class="demo-label">Loading</div>
+            <div class="radio-selection-list radio-selection-list--loading">
+                <div class="radio-selection-list__container">
+                    <div class="radio-selection-list__backdrop"></div>
+                    <div class="radio-selection-list__loading">
+                        <div class="radio-selection-list__spinner"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,36 +218,18 @@
 </section>
 
 <section class="component-section">
-    <h2>Select Sizes</h2>
-    <p class="mb-24">Different select sizes for various UI contexts.</p>
+    <h2>Error State</h2>
+    <p class="mb-24">Radio selection list with error state.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Small Size</div>
-            <div class="select select--small">
-                <select class="select__control">
-                    <option value="">Small select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Large Size</div>
-            <div class="select select--large">
-                <select class="select__control">
-                    <option value="">Large select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+            <div class="demo-label">Error</div>
+            <div class="radio-selection-list radio-selection-list--error">
+                <div class="radio-selection-list__container">
+                    <div class="radio-selection-list__backdrop"></div>
+                    <div class="radio-selection-list__error">
+                        <p>Something went wrong. Please try again later.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -239,230 +237,189 @@
 </section>
 
 <section class="component-section">
-    <h2>Select States</h2>
-    <p class="mb-24">Different states for form validation feedback.</p>
+    <h2>Empty State</h2>
+    <p class="mb-24">Radio selection list with no results.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Error State</div>
-            <div class="select select--error">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+            <div class="demo-label">No Results</div>
+            <div class="radio-selection-list" data-name="empty-list">
+                <div class="radio-selection-list__header">
+                    <p class="radio-selection-list__results">0 results found</p>
+                </div>
+                
+                <div class="radio-selection-list__container">
+                    <div class="radio-selection-list__backdrop"></div>
+                    <div class="radio-selection-list__empty">
+                        <p>No options available. Please adjust your search criteria.</p>
+                    </div>
                 </div>
             </div>
-            <div class="select__error-message">This field is required</div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Success State</div>
-            <div class="select select--success">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2" selected>Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-            <div class="select__success-message">Valid selection</div>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Multiple Select</h2>
-    <p class="mb-24">Select components that allow multiple selections.</p>
-    
-    <div class="demo-item">
-        <label for="skillsSelect" class="select__label">Skills (Hold Ctrl/Cmd to select multiple)</label>
-        <div class="select select--multiple">
-            <select class="select__control" id="skillsSelect" multiple>
-                <option value="javascript">JavaScript</option>
-                <option value="python">Python</option>
-                <option value="react">React</option>
-                <option value="vue">Vue.js</option>
-                <option value="angular">Angular</option>
-                <option value="nodejs">Node.js</option>
-                <option value="css">CSS</option>
-                <option value="html">HTML</option>
-            </select>
-        </div>
-        <div class="select__help-text">Hold Ctrl (or Cmd on Mac) while clicking to select multiple options</div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Grouped Options</h2>
-    <p class="mb-24">Select with optgroups for organized option lists.</p>
-    
-    <div class="demo-item">
-        <label for="vehicleSelect" class="select__label">Vehicle Type</label>
-        <div class="select">
-            <select class="select__control" id="vehicleSelect">
-                <option value="">Choose a vehicle...</option>
-                <optgroup label="Cars">
-                    <option value="sedan">Sedan</option>
-                    <option value="suv">SUV</option>
-                    <option value="hatchback">Hatchback</option>
-                    <option value="convertible">Convertible</option>
-                </optgroup>
-                <optgroup label="Motorcycles">
-                    <option value="sport">Sport Bike</option>
-                    <option value="cruiser">Cruiser</option>
-                    <option value="touring">Touring</option>
-                </optgroup>
-                <optgroup label="Trucks">
-                    <option value="pickup">Pickup Truck</option>
-                    <option value="delivery">Delivery Van</option>
-                    <option value="semi">Semi Truck</option>
-                </optgroup>
-            </select>
-            <div class="select__icon">
-                <span class="heroicon heroicon-chevron-down"></span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Interactive Examples</h2>
-    <p class="mb-24">Demonstrates dynamic interactions between select components.</p>
+    <h2>Scrollable List</h2>
+    <p class="mb-24">Radio selection list with many options to demonstrate scrolling.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <label for="regionSelect" class="select__label">Region</label>
-            <div class="select">
-                <select class="select__control" id="regionSelect">
-                    <option value="">Select region...</option>
-                    <option value="north-america">North America</option>
-                    <option value="europe">Europe</option>
-                    <option value="asia">Asia</option>
-                    <option value="south-america">South America</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+            <div class="demo-label">Many Options</div>
+            <div class="radio-selection-list" data-name="scroll-list">
+                <div class="radio-selection-list__header">
+                    <p class="radio-selection-list__results">8 results found</p>
+                </div>
+                
+                <div class="radio-selection-list__container">
+                    <div class="radio-selection-list__backdrop"></div>
+                    
+                    <div class="radio-selection-list__missing-option">
+                        <label class="radio-selection-list__option">
+                            <input 
+                                type="radio" 
+                                name="scroll-list" 
+                                value="none" 
+                                class="radio-selection-list__radio"
+                                onchange="handleRadioChange(this)"
+                            />
+                            <span class="radio-selection-list__label">None of these work for me</span>
+                        </label>
+                    </div>
+                    
+                    <div class="radio-selection-list__options">
+                        <fieldset class="radio-selection-list__fieldset">
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider1" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. Emily Chen, MD</h3>
+                                    <p class="radio-selection-list__description">Internal Medicine • 2.3 miles away</p>
+                                </div>
+                            </label>
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider2" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. Michael Roberts, DO</h3>
+                                    <p class="radio-selection-list__description">Family Practice • 3.1 miles away</p>
+                                </div>
+                            </label>
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider3" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. Lisa Park, MD</h3>
+                                    <p class="radio-selection-list__description">Pediatrics • 4.2 miles away</p>
+                                </div>
+                            </label>
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider4" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. James Wilson, MD</h3>
+                                    <p class="radio-selection-list__description">Cardiology • 5.7 miles away</p>
+                                </div>
+                            </label>
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider5" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. Angela Martinez, MD</h3>
+                                    <p class="radio-selection-list__description">Dermatology • 6.1 miles away</p>
+                                </div>
+                            </label>
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider6" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. David Thompson, DO</h3>
+                                    <p class="radio-selection-list__description">Orthopedics • 7.3 miles away</p>
+                                </div>
+                            </label>
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider7" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. Sarah Kim, MD</h3>
+                                    <p class="radio-selection-list__description">Neurology • 8.9 miles away</p>
+                                </div>
+                            </label>
+                            <label class="radio-selection-list__option">
+                                <input type="radio" name="scroll-list" value="provider8" class="radio-selection-list__radio" onchange="handleRadioChange(this)" />
+                                <div class="radio-selection-list__content">
+                                    <h3 class="radio-selection-list__title">Dr. Robert Garcia, MD</h3>
+                                    <p class="radio-selection-list__description">Psychiatry • 9.4 miles away</p>
+                                </div>
+                            </label>
+                        </fieldset>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="demo-item">
-            <label for="countryDependentSelect" class="select__label">Country</label>
-            <div class="select">
-                <select class="select__control" id="countryDependentSelect" disabled>
-                    <option value="">First select a region...</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="demo-output" id="selectionOutput">
-        Region: None selected<br>
-        Country: None selected
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Form Integration</h2>
-    <p class="mb-24">Select components within a complete form context with validation.</p>
+    <h2>Original Component Reference</h2>
+    <p class="mb-24">Styling patterns from the original RadioSelectionList component:</p>
     
-    <div class="demo-item">
-        <form id="profileForm" class="profile-form">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="titleSelect" class="select__label">Title</label>
-                    <div class="select select--small">
-                        <select class="select__control" id="titleSelect" name="title">
-                            <option value="">Select...</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="ms">Ms.</option>
-                            <option value="dr">Dr.</option>
-                            <option value="prof">Prof.</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="industrySelect" class="select__label">Industry *</label>
-                    <div class="select" id="industrySelectWrapper">
-                        <select class="select__control" id="industrySelect" name="industry" required>
-                            <option value="">Select industry...</option>
-                            <option value="technology">Technology</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="finance">Finance</option>
-                            <option value="education">Education</option>
-                            <option value="retail">Retail</option>
-                            <option value="manufacturing">Manufacturing</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                    <div class="select__error-message" id="industryError" style="display: none;">
-                        Please select an industry
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="experienceSelect" class="select__label">Years of Experience</label>
-                    <div class="select">
-                        <select class="select__control" id="experienceSelect" name="experience">
-                            <option value="">Select...</option>
-                            <option value="0-1">0-1 years</option>
-                            <option value="2-5">2-5 years</option>
-                            <option value="6-10">6-10 years</option>
-                            <option value="11-15">11-15 years</option>
-                            <option value="16+">16+ years</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferenceSelect" class="select__label">Contact Preference</label>
-                    <div class="select">
-                        <select class="select__control" id="preferenceSelect" name="preference">
-                            <option value="">Select...</option>
-                            <option value="email">Email</option>
-                            <option value="phone">Phone</option>
-                            <option value="both">Both Email and Phone</option>
-                            <option value="none">No contact</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-actions">
-                <button type="button" class="button button--outline" onclick="resetProfileForm()">Reset</button>
-                <button type="submit" class="button button--primary">Save Profile</button>
-            </div>
-        </form>
-        
-        <div id="profileResults" class="form-results" style="display: none;">
-            <h3>Profile Data:</h3>
-            <div id="profileResultsContent"></div>
-        </div>
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Container Structure</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Header: Results count + optional map button</li>
+            <li>• Container: <code>relative min-h-[300px] overflow-hidden rounded shadow-md</code></li>
+            <li>• Backdrop: BaselineVisitPanelBackdrop</li>
+            <li>• Missing option: <code>border-b border-gray-100 bg-white px-4 py-3</code></li>
+            <li>• Options: <code>max-h-[400px] w-full flex-col overflow-y-auto divide-y divide-gray-100</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Radio Input Styling</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Size: <code>size-5</code> → 20px × 20px</li>
+            <li>• Border: <code>border-2 border-gray-600</code></li>
+            <li>• Background: <code>bg-transparent</code></li>
+            <li>• Checked: <code>checked:border-white</code></li>
+            <li>• Hover: <code>hover:ring-2 hover:ring-gray-100</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Option Styling</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Layout: <code>flex cursor-pointer flex-col hover:bg-white/75</code></li>
+            <li>• Content: <code>flex w-full flex-row items-center gap-8</code></li>
+            <li>• Padding: <code>px-4 py-3</code></li>
+            <li>• Text: <code>text-md font-bold</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Custom Scrollbar</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Width: <code>6px</code></li>
+            <li>• Thumb: <code>background: rgba(184, 203, 253, 0.6); border-radius: 25px;</code></li>
+        </ul>
     </div>
 </section>
 
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure replicating the original component.</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <code class="body-sm">
+            &lt;div class="radio-selection-list"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="radio-selection-list__header"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="radio-selection-list__results"&gt;X results found&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="radio-selection-list__container"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="radio-selection-list__options"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label class="radio-selection-list__option"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" class="radio-selection-list__radio"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Option Text&lt;/span&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+</section>
 </article>
         
       </main>
