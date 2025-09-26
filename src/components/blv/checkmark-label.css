@@ -1,0 +1,99 @@
+/* #region Checkmark Label Component */
+
+/* Base checkmark label container - replicating flex items-center space-x-1 */
+.checkmark-label {
+    display: flex !important;
+    align-items: center;
+    gap: var(--spacing-4); /* space-x-1 */
+    font-family: var(--font-family-sans);
+}
+
+/* Icon container - replicating flex size-4 items-center justify-center rounded-full border border-skyBlue bg-white */
+.checkmark-label__icon {
+    display: flex !important;
+    width: var(--spacing-16); /* size-4 = 16px */
+    height: var(--spacing-16); /* size-4 = 16px */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* rounded-full */
+    border: 1px solid var(--color-primary-sky-blue); /* border-skyBlue */
+    background-color: var(--color-white); /* bg-white */
+    flex-shrink: 0;
+}
+
+/* Check icon - replicating size-3 text-skyBlue */
+.checkmark-label__icon svg {
+    width: var(--spacing-12); /* size-3 = 12px */
+    height: var(--spacing-12); /* size-3 = 12px */
+    color: var(--color-primary-sky-blue); /* text-skyBlue */
+    flex-shrink: 0;
+}
+
+/* Text container */
+.checkmark-label__text {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    color: var(--color-text-default);
+    margin: 0;
+}
+
+/* Status text - replicating font-semibold text-textColor-success */
+.checkmark-label__status {
+    font-weight: var(--font-weight-semibold); /* font-semibold */
+    color: var(--color-text-success); /* text-textColor-success */
+}
+
+/* Label text for dynamic examples */
+.checkmark-label__label {
+    color: inherit;
+}
+
+/* Hover state for interactive examples */
+.checkmark-label:hover .checkmark-label__icon {
+    border-color: var(--color-blue-600);
+    background-color: var(--color-blue-50);
+}
+
+.checkmark-label:hover .checkmark-label__icon svg {
+    color: var(--color-blue-600);
+}
+
+/* Focus state for accessibility */
+.checkmark-label:focus-visible {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+    border-radius: var(--spacing-4);
+}
+
+/* Alternative size variants if needed */
+.checkmark-label--small .checkmark-label__icon {
+    width: var(--spacing-12); /* 12px */
+    height: var(--spacing-12); /* 12px */
+}
+
+.checkmark-label--small .checkmark-label__icon svg {
+    width: var(--spacing-8); /* 8px */
+    height: var(--spacing-8); /* 8px */
+}
+
+.checkmark-label--small .checkmark-label__text {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+}
+
+.checkmark-label--large .checkmark-label__icon {
+    width: var(--spacing-20); /* 20px */
+    height: var(--spacing-20); /* 20px */
+}
+
+.checkmark-label--large .checkmark-label__icon svg {
+    width: var(--spacing-16); /* 16px */
+    height: var(--spacing-16); /* 16px */
+}
+
+.checkmark-label--large .checkmark-label__text {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+}
+
+/* #endregion */

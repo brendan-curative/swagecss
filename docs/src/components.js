@@ -1569,4 +1569,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof initializeRatingPicker === 'function') {
             initializeRatingPicker();
         }
+        if (typeof initializeCheckmarkLabel === 'function') {
+            initializeCheckmarkLabel();
+        }
 });

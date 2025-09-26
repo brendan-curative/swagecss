@@ -1,0 +1,161 @@
+---
+layout: layout.html
+title: Swageblocks &bull; BLV &bull; Checkmark Label
+heading: Checkmark Label Component
+secondary: Replicated from BaselineVisitCheckMarkLabel
+section: BLV Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Checkmark Label component replicates the BaselineVisitCheckMarkLabel from the baseline visit workflow,
+        showing completion status with a checkmark icon and "Complete" text.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Checkmark Label</h2>
+    <p class="mb-24">Label with checkmark icon indicating completion status.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Default State</div>
+            <div class="checkmark-label">
+                <div class="checkmark-label__icon">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="checkmark-label__text">
+                    Part 1 of your Baseline Visit: <span class="checkmark-label__status">Complete</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Different Label Examples</h2>
+    <p class="mb-24">Checkmark labels with various text content.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Short Label</div>
+            <div class="checkmark-label">
+                <div class="checkmark-label__icon">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="checkmark-label__text">
+                    Registration: <span class="checkmark-label__status">Complete</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Medium Label</div>
+            <div class="checkmark-label">
+                <div class="checkmark-label__icon">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="checkmark-label__text">
+                    Health Information Form: <span class="checkmark-label__status">Complete</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Long Label</div>
+            <div class="checkmark-label">
+                <div class="checkmark-label__icon">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="checkmark-label__text">
+                    Part 2: Provider Selection and Appointment Scheduling: <span class="checkmark-label__status">Complete</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Dynamic Examples</h2>
+    <p class="mb-24">Examples with different content using JavaScript.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Dynamic Label</div>
+            <div class="checkmark-label" id="dynamic-label">
+                <div class="checkmark-label__icon">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <p class="checkmark-label__text">
+                    <span class="checkmark-label__label">Task</span>: <span class="checkmark-label__status">Complete</span>
+                </p>
+            </div>
+            <div class="mt-16">
+                <button class="button button--primary" onclick="updateCheckmarkLabel()">Update Label</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Original Component Reference</h2>
+    <p class="mb-24">Styling patterns from the original BaselineVisitCheckMarkLabel:</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Layout & Structure</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Container: <code>flex items-center space-x-1</code></li>
+            <li>• Icon container: <code>flex size-4 items-center justify-center rounded-full border border-skyBlue bg-white</code></li>
+            <li>• Icon: <code>size-3 text-skyBlue</code> (CHECK variant)</li>
+            <li>• Text: Label + ": " + <code>font-semibold text-textColor-success</code> "Complete"</li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Colors from Original</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Icon border & color:</strong> <code>border-skyBlue</code>, <code>text-skyBlue</code> → <code>var(--color-primary-sky-blue)</code></li>
+            <li>• <strong>Icon background:</strong> <code>bg-white</code> → <code>var(--color-white)</code></li>
+            <li>• <strong>Complete text:</strong> <code>text-textColor-success</code> → <code>var(--color-text-success)</code></li>
+            <li>• <strong>Complete font:</strong> <code>font-semibold</code> → <code>var(--font-weight-semibold)</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Sizing</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Icon container:</strong> <code>size-4</code> → 16px × 16px</li>
+            <li>• <strong>Check icon:</strong> <code>size-3</code> → 12px × 12px</li>
+            <li>• <strong>Spacing:</strong> <code>space-x-1</code> → 4px gap</li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure replicating the original component.</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <code class="body-sm">
+            &lt;div class="checkmark-label"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="checkmark-label__icon"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg&gt;...checkmark path...&lt;/svg&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;p class="checkmark-label__text"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Your Label: &lt;span class="checkmark-label__status"&gt;Complete&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;/p&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+</section>
