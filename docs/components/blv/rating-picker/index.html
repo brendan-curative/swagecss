@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Radio</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; BLV &bull; Rating Picker</title>
     <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Radio Component</h1> 
+                <h1>Rating Picker Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Radio imported from CUI</p>
+                  <p>Replicated from BaselineVisitRatingPicker</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Sep 24, 2025, 5:00 PM</span> 
+             </a>  <span></span> 
              
         </div>
 
@@ -100,44 +100,47 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        Radio button component for single-choice selections within a group. 
-        Features different sizes, states, and accessibility support.
+        The Rating Picker component replicates the BaselineVisitRatingPicker from the baseline visit workflow,
+        allowing users to select their understanding level with visual icons.
     </p>
 </section>
 
 <section class="component-section">
-    <h2>Basic Radio Buttons</h2>
-    <p class="mb-24">Standard radio buttons with labels in different states.</p>
+    <h2>Basic Rating Picker</h2>
+    <p class="mb-24">Three-option rating picker with visual icons and labels.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
             <div class="demo-label">Default State</div>
-            <div class="radio-group">
-                <div class="radio">
-                    <input type="radio" id="option1" name="basicGroup" class="radio__input">
-                    <label for="option1" class="radio__label">Option 1</label>
+            <div class="rating-picker" data-name="demo1">
+                <div class="rating-picker__option" data-value="negative">
+                    <svg class="rating-picker__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.3008 58.9C25.4232 58.9 18.292 56.7419 12.8896 52.2409C7.5 47.7506 3.80078 40.9051 3.80078 31.45C3.80078 21.9949 7.5 15.1494 12.8896 10.6591C18.292 6.15813 25.4232 4 32.3008 4C39.9417 4 46.9704 6.51359 52.1698 11.0748C57.8008 16.0696 60.8008 23.1272 60.8008 31.45C60.8008 39.7718 57.8015 46.7798 52.1698 51.7752C46.969 56.3376 39.8898 58.9 32.3008 58.9Z" stroke="currentColor"/>
+                        <path d="M32.5941 40.1901C32.2591 35.6101 23.2391 38.4401 18.6341 41.4551C12.9091 45.2051 12.0691 44.5401 11.5091 44.1901C10.8341 43.7701 10.4091 43.4201 10.0791 42.1201C9.33406 39.1801 9.12906 38.1001 7.78906 36.9301C6.66906 35.8951 3.29406 35.9201 3.06906 37.5601C2.82406 39.3251 3.82406 39.6551 4.49906 43.0501C5.33406 46.4901 4.99906 50.2901 4.99906 50.2901C4.99906 50.2901 6.55906 46.6651 5.05906 41.0151C4.75406 39.4901 3.30406 37.1551 5.75406 37.4201C8.12406 37.6751 8.27907 39.7401 9.01906 42.5951C9.42906 44.2101 9.84906 45.1601 11.4791 45.6101C13.0991 46.0551 16.8441 43.9751 19.5341 42.2651C22.8291 40.1701 27.7141 38.3401 30.2791 39.0901C31.3891 39.3301 32.1291 40.7651 30.9641 41.7801C29.1141 43.5251 21.9991 44.3101 17.7141 48.9451C17.7141 48.9451 18.2341 49.1351 19.0141 48.7501C19.7991 48.3651 22.7291 46.9151 22.7291 46.9151C23.6041 47.2851 24.0241 48.7401 23.5491 49.5151C22.7791 50.7701 19.7841 52.5051 18.2891 52.4301C18.2891 52.4301 18.2641 53.1951 19.7641 52.9901C20.2391 52.9251 22.2041 52.4951 23.5791 51.4301C24.6041 52.1701 24.3141 53.4301 23.5441 54.3401C22.7791 55.2451 20.9091 56.4151 18.9841 56.6201C18.9841 56.6201 18.7941 57.3501 20.0891 57.3351C21.3841 57.3201 22.7891 56.6601 23.8241 55.8551C23.9791 56.1001 24.1241 56.6351 23.9491 57.3701C23.6791 58.5051 22.1541 59.6551 19.2091 60.2951C16.4941 60.8851 13.4341 61.3001 7.52906 58.2351C7.52906 58.2351 9.73406 61.1001 15.4891 61.6101C21.0091 62.1001 27.4541 59.6551 24.8691 54.7501C24.8691 54.7501 25.4291 53.9201 25.4991 52.7801C25.5491 52.0001 25.3041 50.9351 24.7291 50.4501C25.2691 48.8601 25.0991 47.7601 24.7541 47.1101C24.5241 46.6801 23.9441 46.2601 23.9441 46.2601C23.9441 46.2601 25.0891 45.2251 28.4641 44.3551C30.6291 43.7901 32.7991 42.9901 32.5941 40.1901Z" fill="currentColor"/>
+                        <path d="M40.8848 15.5549C42.9798 15.5549 44.8848 17.3249 44.8848 20.2649C44.8848 23.2049 42.9798 24.9699 40.8848 24.9699C38.7898 24.9699 36.8848 23.1999 36.8848 20.2649C36.8848 17.3299 38.7898 15.5549 40.8848 15.5549Z" fill="currentColor"/>
+                        <path d="M23.5703 11C21.4753 11 19.5703 12.77 19.5703 15.705C19.5703 18.64 21.4753 20.415 23.5703 20.415C25.6703 20.415 27.5703 18.645 27.5703 15.705C27.5703 12.765 25.6703 11 23.5703 11Z" fill="currentColor"/>
+                    </svg>
+                    <p class="rating-picker__label">I am confused</p>
                 </div>
-                <div class="radio">
-                    <input type="radio" id="option2" name="basicGroup" class="radio__input" checked>
-                    <label for="option2" class="radio__label">Option 2 (Selected)</label>
+                
+                <div class="rating-picker__option" data-value="neutral">
+                    <svg class="rating-picker__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.3008 58.9C25.4232 58.9 18.292 56.7419 12.8896 52.2409C7.5 47.7506 3.80078 40.9051 3.80078 31.45C3.80078 21.9949 7.5 15.1494 12.8896 10.6591C18.292 6.15813 25.4232 4 32.3008 4C39.9417 4 46.9704 6.51359 52.1698 11.0748C57.8008 16.0696 60.8008 23.1272 60.8008 31.45C60.8008 39.7718 57.8015 46.7798 52.1698 51.7752C46.969 56.3376 39.8898 58.9 32.3008 58.9Z" stroke="currentColor"/>
+                        <path d="M45 44H20C18.895 44 18 43.105 18 42C18 40.895 18.895 40 20 40H45C46.105 40 47 40.895 47 42C47 43.105 46.105 44 45 44Z" fill="currentColor"/>
+                        <path d="M22.8359 22.97C20.7409 22.97 18.8359 24.74 18.8359 27.68C18.8359 30.62 20.7409 32.385 22.8359 32.385C24.9309 32.385 26.8359 30.615 26.8359 27.68C26.8359 24.745 24.9309 22.97 22.8359 22.97Z" fill="currentColor"/>
+                        <path d="M42 22.97C39.905 22.97 38 24.74 38 27.68C38 30.62 39.905 32.385 42 32.385C44.095 32.385 46 30.615 46 27.68C46 24.745 44.105 22.97 42 22.97Z" fill="currentColor"/>
+                    </svg>
+                    <p class="rating-picker__label">I somewhat understand</p>
                 </div>
-                <div class="radio">
-                    <input type="radio" id="option3" name="basicGroup" class="radio__input">
-                    <label for="option3" class="radio__label">Option 3</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Disabled State</div>
-            <div class="radio-group">
-                <div class="radio">
-                    <input type="radio" id="disabled1" name="disabledGroup" class="radio__input" disabled>
-                    <label for="disabled1" class="radio__label">Disabled Option</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="disabled2" name="disabledGroup" class="radio__input" disabled checked>
-                    <label for="disabled2" class="radio__label">Disabled Selected</label>
+                
+                <div class="rating-picker__option" data-value="positive">
+                    <svg class="rating-picker__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.1094 58.9C25.2318 58.9 18.1006 56.7419 12.6982 52.2409C7.30859 47.7506 3.60938 40.9051 3.60938 31.45C3.60938 21.9949 7.30859 15.1494 12.6982 10.6591C18.1006 6.15813 25.2318 4 32.1094 4C39.7503 4 46.779 6.51359 51.9784 11.0748C57.6094 16.0696 60.6094 23.1272 60.6094 31.45C60.6094 39.7716 57.6102 46.7795 51.9788 51.7749C46.7676 56.3378 39.6981 58.9 32.1094 58.9Z" stroke="currentColor"/>
+                        <path d="M22.5 20.47C20.405 20.47 18.5 22.24 18.5 25.18C18.5 28.12 20.405 29.885 22.5 29.885C24.6 29.885 26.5 28.115 26.5 25.18C26.5 22.245 24.62 20.47 22.5 20.47Z" fill="currentColor"/>
+                        <path d="M41.6992 20.47C39.6042 20.47 37.6992 22.24 37.6992 25.18C37.6992 28.12 39.6042 29.885 41.6992 29.885C43.7942 29.885 45.6992 28.115 45.6992 25.18C45.6992 22.245 43.7942 20.47 41.6992 20.47Z" fill="currentColor"/>
+                        <path d="M48.104 34.98L48.1226 34.9746L48.1408 34.9677C49.2584 34.5455 50.5155 35.0045 51.0954 36.05C51.6437 37.0641 51.2713 38.2764 50.6937 39.5586C47.5703 46.4066 40.6896 50.56 32.2091 50.56L32.1305 50.56C32.1303 50.56 32.1301 50.56 32.1299 50.56C23.6468 50.5353 16.7668 46.405 13.6491 39.5578L13.6487 39.5567C13.0683 38.29 12.6991 37.0554 13.2475 36.0405C13.8267 35.0005 15.0834 34.5453 16.1968 34.9675L16.2153 34.9745L16.2342 34.98C21.4098 36.4883 26.7769 37.24 32.1691 37.215C37.5613 37.24 42.9284 36.4883 48.104 34.98Z" fill="currentColor" stroke="currentColor"/>
+                    </svg>
+                    <p class="rating-picker__label">I completely understand</p>
                 </div>
             </div>
         </div>
@@ -145,240 +148,98 @@
 </section>
 
 <section class="component-section">
-    <h2>Radio Button Sizes</h2>
-    <p class="mb-24">Radio buttons in different sizes for various UI contexts.</p>
+    <h2>Interactive Demo</h2>
+    <p class="mb-24">Click on options to see selection behavior.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Small Size</div>
-            <div class="radio-group">
-                <div class="radio radio--small">
-                    <input type="radio" id="small1" name="smallGroup" class="radio__input">
-                    <label for="small1" class="radio__label">Small Option 1</label>
-                </div>
-                <div class="radio radio--small">
-                    <input type="radio" id="small2" name="smallGroup" class="radio__input" checked>
-                    <label for="small2" class="radio__label">Small Option 2</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Large Size</div>
-            <div class="radio-group">
-                <div class="radio radio--large">
-                    <input type="radio" id="large1" name="largeGroup" class="radio__input">
-                    <label for="large1" class="radio__label">Large Option 1</label>
-                </div>
-                <div class="radio radio--large">
-                    <input type="radio" id="large2" name="largeGroup" class="radio__input" checked>
-                    <label for="large2" class="radio__label">Large Option 2</label>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Radio Button with Descriptions</h2>
-    <p class="mb-24">Radio buttons with additional descriptive text for clarity.</p>
-    
-    <div class="demo-item">
-        <div class="demo-label">Billing Frequency</div>
-        <div class="radio-group">
-            <div class="radio radio--with-description">
-                <input type="radio" id="monthly" name="billingGroup" class="radio__input">
-                <label for="monthly" class="radio__label">
-                    <span class="radio__label-text">Monthly</span>
-                    <span class="radio__description">Billed every month</span>
-                </label>
-            </div>
-            <div class="radio radio--with-description">
-                <input type="radio" id="quarterly" name="billingGroup" class="radio__input" checked>
-                <label for="quarterly" class="radio__label">
-                    <span class="radio__label-text">Quarterly</span>
-                    <span class="radio__description">Billed every 3 months with 10% discount</span>
-                </label>
-            </div>
-            <div class="radio radio--with-description">
-                <input type="radio" id="yearly" name="billingGroup" class="radio__input">
-                <label for="yearly" class="radio__label">
-                    <span class="radio__label-text">Yearly</span>
-                    <span class="radio__description">Billed annually with 20% discount</span>
-                </label>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Horizontal Radio Group</h2>
-    <p class="mb-24">Radio buttons arranged horizontally for compact layouts.</p>
-    
-    <div class="demo-item">
-        <div class="demo-label">Preferred Contact Method</div>
-        <div class="radio-group radio-group--horizontal">
-            <div class="radio">
-                <input type="radio" id="email" name="contactGroup" class="radio__input" checked>
-                <label for="email" class="radio__label">Email</label>
-            </div>
-            <div class="radio">
-                <input type="radio" id="phone" name="contactGroup" class="radio__input">
-                <label for="phone" class="radio__label">Phone</label>
-            </div>
-            <div class="radio">
-                <input type="radio" id="sms" name="contactGroup" class="radio__input">
-                <label for="sms" class="radio__label">SMS</label>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Radio Button with Error State</h2>
-    <p class="mb-24">Radio buttons with error validation styling.</p>
-    
-    <div class="demo-item">
-        <div class="demo-label">Select a Plan (Required)</div>
-        <div class="radio-group radio-group--error">
-            <div class="radio">
-                <input type="radio" id="basic" name="planGroup" class="radio__input">
-                <label for="basic" class="radio__label">Basic Plan</label>
-            </div>
-            <div class="radio">
-                <input type="radio" id="premium" name="planGroup" class="radio__input">
-                <label for="premium" class="radio__label">Premium Plan</label>
-            </div>
-            <div class="radio">
-                <input type="radio" id="enterprise" name="planGroup" class="radio__input">
-                <label for="enterprise" class="radio__label">Enterprise Plan</label>
-            </div>
-        </div>
-        <div class="radio-group__error-message">Please select a plan to continue</div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Interactive Radio Groups</h2>
-    <p class="mb-24">Demonstrate dynamic interactions with radio button groups.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">Theme Selection</div>
-            <div class="radio-group" id="themeGroup">
-                <div class="radio">
-                    <input type="radio" id="lightTheme" name="themeGroup" class="radio__input" value="light" checked>
-                    <label for="lightTheme" class="radio__label">Light Theme</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="darkTheme" name="themeGroup" class="radio__input" value="dark">
-                    <label for="darkTheme" class="radio__label">Dark Theme</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" id="autoTheme" name="themeGroup" class="radio__input" value="auto">
-                    <label for="autoTheme" class="radio__label">Auto (System)</label>
-                </div>
-            </div>
-            <div class="demo-output" id="themeOutput">Selected: Light Theme</div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Notification Preferences</div>
-            <div class="radio-group" id="notificationGroup">
-                <div class="radio radio--with-description">
-                    <input type="radio" id="allNotifications" name="notificationGroup" class="radio__input" value="all">
-                    <label for="allNotifications" class="radio__label">
-                        <span class="radio__label-text">All Notifications</span>
-                        <span class="radio__description">Receive all updates and alerts</span>
-                    </label>
-                </div>
-                <div class="radio radio--with-description">
-                    <input type="radio" id="importantOnly" name="notificationGroup" class="radio__input" value="important" checked>
-                    <label for="importantOnly" class="radio__label">
-                        <span class="radio__label-text">Important Only</span>
-                        <span class="radio__description">Only critical updates and security alerts</span>
-                    </label>
-                </div>
-                <div class="radio radio--with-description">
-                    <input type="radio" id="noNotifications" name="notificationGroup" class="radio__input" value="none">
-                    <label for="noNotifications" class="radio__label">
-                        <span class="radio__label-text">No Notifications</span>
-                        <span class="radio__description">Disable all email notifications</span>
-                    </label>
-                </div>
-            </div>
-            <div class="demo-output" id="notificationOutput">Selected: Important Only</div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Form Integration</h2>
-    <p class="mb-24">Radio buttons within a complete form context.</p>
-    
-    <div class="demo-item">
-        <form id="surveyForm" class="survey-form">
-            <fieldset class="form-fieldset">
-                <legend class="form-legend">Customer Satisfaction Survey</legend>
-                
-                <div class="form-group">
-                    <div class="demo-label">How would you rate our service?</div>
-                    <div class="radio-group">
-                        <div class="radio">
-                            <input type="radio" id="excellent" name="rating" class="radio__input" value="excellent">
-                            <label for="excellent" class="radio__label">Excellent</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" id="good" name="rating" class="radio__input" value="good">
-                            <label for="good" class="radio__label">Good</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" id="fair" name="rating" class="radio__input" value="fair">
-                            <label for="fair" class="radio__label">Fair</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" id="poor" name="rating" class="radio__input" value="poor">
-                            <label for="poor" class="radio__label">Poor</label>
-                        </div>
-                    </div>
+            <div class="demo-label">Interactive Rating Picker</div>
+            <div class="rating-picker" data-name="interactive">
+                <div class="rating-picker__option" data-value="negative" onclick="selectRating(this)">
+                    <svg class="rating-picker__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.3008 58.9C25.4232 58.9 18.292 56.7419 12.8896 52.2409C7.5 47.7506 3.80078 40.9051 3.80078 31.45C3.80078 21.9949 7.5 15.1494 12.8896 10.6591C18.292 6.15813 25.4232 4 32.3008 4C39.9417 4 46.9704 6.51359 52.1698 11.0748C57.8008 16.0696 60.8008 23.1272 60.8008 31.45C60.8008 39.7718 57.8015 46.7798 52.1698 51.7752C46.969 56.3376 39.8898 58.9 32.3008 58.9Z" stroke="currentColor"/>
+                        <path d="M32.5941 40.1901C32.2591 35.6101 23.2391 38.4401 18.6341 41.4551C12.9091 45.2051 12.0691 44.5401 11.5091 44.1901C10.8341 43.7701 10.4091 43.4201 10.0791 42.1201C9.33406 39.1801 9.12906 38.1001 7.78906 36.9301C6.66906 35.8951 3.29406 35.9201 3.06906 37.5601C2.82406 39.3251 3.82406 39.6551 4.49906 43.0501C5.33406 46.4901 4.99906 50.2901 4.99906 50.2901C4.99906 50.2901 6.55906 46.6651 5.05906 41.0151C4.75406 39.4901 3.30406 37.1551 5.75406 37.4201C8.12406 37.6751 8.27907 39.7401 9.01906 42.5951C9.42906 44.2101 9.84906 45.1601 11.4791 45.6101C13.0991 46.0551 16.8441 43.9751 19.5341 42.2651C22.8291 40.1701 27.7141 38.3401 30.2791 39.0901C31.3891 39.3301 32.1291 40.7651 30.9641 41.7801C29.1141 43.5251 21.9991 44.3101 17.7141 48.9451C17.7141 48.9451 18.2341 49.1351 19.0141 48.7501C19.7991 48.3651 22.7291 46.9151 22.7291 46.9151C23.6041 47.2851 24.0241 48.7401 23.5491 49.5151C22.7791 50.7701 19.7841 52.5051 18.2891 52.4301C18.2891 52.4301 18.2641 53.1951 19.7641 52.9901C20.2391 52.9251 22.2041 52.4951 23.5791 51.4301C24.6041 52.1701 24.3141 53.4301 23.5441 54.3401C22.7791 55.2451 20.9091 56.4151 18.9841 56.6201C18.9841 56.6201 18.7941 57.3501 20.0891 57.3351C21.3841 57.3201 22.7891 56.6601 23.8241 55.8551C23.9791 56.1001 24.1241 56.6351 23.9491 57.3701C23.6791 58.5051 22.1541 59.6551 19.2091 60.2951C16.4941 60.8851 13.4341 61.3001 7.52906 58.2351C7.52906 58.2351 9.73406 61.1001 15.4891 61.6101C21.0091 62.1001 27.4541 59.6551 24.8691 54.7501C24.8691 54.7501 25.4291 53.9201 25.4991 52.7801C25.5491 52.0001 25.3041 50.9351 24.7291 50.4501C25.2691 48.8601 25.0991 47.7601 24.7541 47.1101C24.5241 46.6801 23.9441 46.2601 23.9441 46.2601C23.9441 46.2601 25.0891 45.2251 28.4641 44.3551C30.6291 43.7901 32.7991 42.9901 32.5941 40.1901Z" fill="currentColor"/>
+                        <path d="M40.8848 15.5549C42.9798 15.5549 44.8848 17.3249 44.8848 20.2649C44.8848 23.2049 42.9798 24.9699 40.8848 24.9699C38.7898 24.9699 36.8848 23.1999 36.8848 20.2649C36.8848 17.3299 38.7898 15.5549 40.8848 15.5549Z" fill="currentColor"/>
+                        <path d="M23.5703 11C21.4753 11 19.5703 12.77 19.5703 15.705C19.5703 18.64 21.4753 20.415 23.5703 20.415C25.6703 20.415 27.5703 18.645 27.5703 15.705C27.5703 12.765 25.6703 11 23.5703 11Z" fill="currentColor"/>
+                    </svg>
+                    <p class="rating-picker__label">I am confused</p>
                 </div>
                 
-                <div class="form-group">
-                    <div class="demo-label">Would you recommend us to others?</div>
-                    <div class="radio-group radio-group--horizontal">
-                        <div class="radio">
-                            <input type="radio" id="definitely" name="recommend" class="radio__input" value="definitely">
-                            <label for="definitely" class="radio__label">Definitely</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" id="probably" name="recommend" class="radio__input" value="probably">
-                            <label for="probably" class="radio__label">Probably</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" id="maybe" name="recommend" class="radio__input" value="maybe">
-                            <label for="maybe" class="radio__label">Maybe</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" id="unlikely" name="recommend" class="radio__input" value="unlikely">
-                            <label for="unlikely" class="radio__label">Unlikely</label>
-                        </div>
-                    </div>
+                <div class="rating-picker__option" data-value="neutral" onclick="selectRating(this)">
+                    <svg class="rating-picker__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.3008 58.9C25.4232 58.9 18.292 56.7419 12.8896 52.2409C7.5 47.7506 3.80078 40.9051 3.80078 31.45C3.80078 21.9949 7.5 15.1494 12.8896 10.6591C18.292 6.15813 25.4232 4 32.3008 4C39.9417 4 46.9704 6.51359 52.1698 11.0748C57.8008 16.0696 60.8008 23.1272 60.8008 31.45C60.8008 39.7718 57.8015 46.7798 52.1698 51.7752C46.969 56.3376 39.8898 58.9 32.3008 58.9Z" stroke="currentColor"/>
+                        <path d="M45 44H20C18.895 44 18 43.105 18 42C18 40.895 18.895 40 20 40H45C46.105 40 47 40.895 47 42C47 43.105 46.105 44 45 44Z" fill="currentColor"/>
+                        <path d="M22.8359 22.97C20.7409 22.97 18.8359 24.74 18.8359 27.68C18.8359 30.62 20.7409 32.385 22.8359 32.385C24.9309 32.385 26.8359 30.615 26.8359 27.68C26.8359 24.745 24.9309 22.97 22.8359 22.97Z" fill="currentColor"/>
+                        <path d="M42 22.97C39.905 22.97 38 24.74 38 27.68C38 30.62 39.905 32.385 42 32.385C44.095 32.385 46 30.615 46 27.68C46 24.745 44.105 22.97 42 22.97Z" fill="currentColor"/>
+                    </svg>
+                    <p class="rating-picker__label">I somewhat understand</p>
                 </div>
                 
-                <div class="form-actions">
-                    <button type="button" class="button button--outline" onclick="resetForm()">Reset</button>
-                    <button type="submit" class="button button--primary">Submit Survey</button>
+                <div class="rating-picker__option" data-value="positive" onclick="selectRating(this)">
+                    <svg class="rating-picker__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32.1094 58.9C25.2318 58.9 18.1006 56.7419 12.6982 52.2409C7.30859 47.7506 3.60938 40.9051 3.60938 31.45C3.60938 21.9949 7.30859 15.1494 12.6982 10.6591C18.1006 6.15813 25.2318 4 32.1094 4C39.7503 4 46.779 6.51359 51.9784 11.0748C57.6094 16.0696 60.6094 23.1272 60.6094 31.45C60.6094 39.7716 57.6102 46.7795 51.9788 51.7749C46.7676 56.3378 39.6981 58.9 32.1094 58.9Z" stroke="currentColor"/>
+                        <path d="M22.5 20.47C20.405 20.47 18.5 22.24 18.5 25.18C18.5 28.12 20.405 29.885 22.5 29.885C24.6 29.885 26.5 28.115 26.5 25.18C26.5 22.245 24.62 20.47 22.5 20.47Z" fill="currentColor"/>
+                        <path d="M41.6992 20.47C39.6042 20.47 37.6992 22.24 37.6992 25.18C37.6992 28.12 39.6042 29.885 41.6992 29.885C43.7942 29.885 45.6992 28.115 45.6992 25.18C45.6992 22.245 43.7942 20.47 41.6992 20.47Z" fill="currentColor"/>
+                        <path d="M48.104 34.98L48.1226 34.9746L48.1408 34.9677C49.2584 34.5455 50.5155 35.0045 51.0954 36.05C51.6437 37.0641 51.2713 38.2764 50.6937 39.5586C47.5703 46.4066 40.6896 50.56 32.2091 50.56L32.1305 50.56C32.1303 50.56 32.1301 50.56 32.1299 50.56C23.6468 50.5353 16.7668 46.405 13.6491 39.5578L13.6487 39.5567C13.0683 38.29 12.6991 37.0554 13.2475 36.0405C13.8267 35.0005 15.0834 34.5453 16.1968 34.9675L16.2153 34.9745L16.2342 34.98C21.4098 36.4883 26.7769 37.24 32.1691 37.215C37.5613 37.24 42.9284 36.4883 48.104 34.98Z" fill="currentColor" stroke="currentColor"/>
+                    </svg>
+                    <p class="rating-picker__label">I completely understand</p>
                 </div>
-            </fieldset>
-        </form>
-        
-        <div id="formResults" class="form-results" style="display: none;">
-            <h3>Survey Results:</h3>
-            <div id="resultsContent"></div>
+            </div>
+            <div class="mt-16">
+                <p class="body-sm text-gray-600">Selected: <span id="selected-rating">None</span></p>
+            </div>
         </div>
     </div>
 </section>
 
+<section class="component-section">
+    <h2>Original Component Reference</h2>
+    <p class="mb-24">Styling patterns from the original BaselineVisitRatingPicker:</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Layout & Structure</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Grid: <code>grid grid-cols-3 gap-[10px]</code></li>
+            <li>• Cards: <code>flex cursor-pointer flex-col items-center justify-between space-y-1</code></li>
+            <li>• Border: <code>rounded border border-gray-100 bg-white p-2</code></li>
+            <li>• Transition: <code>transition-all</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Colors by Rating</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Positive:</strong> <code>text-textColor-success</code> → <code>var(--color-text-success)</code></li>
+            <li>• <strong>Neutral:</strong> <code>text-textColor-highlight-default</code> → <code>var(--color-text-highlight-default)</code></li>
+            <li>• <strong>Negative:</strong> <code>text-[theme(colors.signalOrange)]</code> → <code>var(--color-primary-signal-orange)</code></li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Selection States</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Selected:</strong> <code>font-black [box-shadow:_0px_2px_16px_0px_rgba(102,114,125,0.25)]</code></li>
+            <li>• <strong>Unselected (when any selected):</strong> <code>opacity-50</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure replicating the original component.</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <code class="body-sm">
+            &lt;div class="rating-picker"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="rating-picker__option" data-value="negative"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="rating-picker__icon"&gt;...&lt;/svg&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="rating-picker__label"&gt;I am confused&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;...&lt;!-- other options --&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+</section>
 </article>
         
       </main>

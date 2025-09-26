@@ -1559,11 +1559,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeToggle();
     initializeTextfield();
     
-    // BLV Components
-    if (typeof initializeHorizontalStepper === 'function') {
-        initializeHorizontalStepper();
-    }
-    if (typeof initializeCheckmarkButton === 'function') {
-        initializeCheckmarkButton();
-    }
+        // BLV Components
+        if (typeof initializeHorizontalStepper === 'function') {
+            initializeHorizontalStepper();
+        }
+        if (typeof initializeCheckmarkButton === 'function') {
+            initializeCheckmarkButton();
+        }
+        if (typeof initializeRatingPicker === 'function') {
+            initializeRatingPicker();
+        }
 });
