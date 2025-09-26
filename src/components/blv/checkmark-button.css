@@ -1,23 +1,22 @@
 /* #region Checkmark Button Component */
 
-/* Base checkmark button */
+/* Base checkmark button - replicating Button with FullWidthOutline variant */
 .checkmark-button {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-8);
+    gap: var(--spacing-8); /* gap-2 from original */
     width: 100%;
     padding: var(--spacing-12) var(--spacing-16);
     font-family: var(--font-family-sans);
     font-size: var(--font-size-md);
     line-height: var(--line-height-md);
     font-weight: var(--font-weight-normal);
-    border: 2px solid var(--color-gray-700); /* Unchecked border color - using foundation gray 700 */
+    border: 2px solid var(--color-gray-700); /* border-[#4D576F] from original */
     border-radius: var(--spacing-6);
     background-color: transparent;
-    color: var(--color-gray-700); /* Unchecked text color - using foundation gray 700 */
+    color: var(--color-gray-700); /* text-[#4D576F] from original */
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
     text-align: left;
     min-height: var(--spacing-48);
 }
@@ -42,71 +41,35 @@
     color: inherit;
 }
 
-/* Checked state */
+/* Checked state - border-foundation-primary text-foundation-primary from original */
 .checkmark-button--checked,
 .checkmark-button[data-checked="true"] {
-    border-color: var(--color-primary-sky-blue) !important; /* Primary sky blue from foundation */
-    color: var(--color-primary-sky-blue) !important;
+    border-color: var(--color-foundation-primary) !important;
+    color: var(--color-foundation-primary) !important;
     background-color: transparent;
 }
 
-/* Hover state for unchecked buttons */
-.checkmark-button:hover:not(.checkmark-button--checked):not([data-checked="true"]):not(:disabled),
-.checkmark-button--hover {
-    border-color: var(--color-gray-700);
-    background-color: rgba(77, 87, 111, 0.05); /* Using foundation gray 700 with opacity */
-    color: var(--color-gray-700);
-}
-
-/* Hover state for checked buttons */
-.checkmark-button--checked:hover,
-.checkmark-button[data-checked="true"]:hover {
-    border-color: var(--color-blue-600); /* Darker blue for hover - using foundation blue 600 */
-    color: var(--color-blue-600);
-    background-color: rgba(28, 99, 235, 0.05); /* Using foundation blue 600 with opacity */
-}
-
-/* Focus state */
-.checkmark-button:focus-visible,
-.checkmark-button--focus {
+/* Focus state for unchecked buttons - focus:border-[#4D576F] focus:text-[#4D576F] from original */
+.checkmark-button:focus-visible:not(.checkmark-button--checked):not([data-checked="true"]) {
     border-color: var(--color-gray-700);
     color: var(--color-gray-700);
-    box-shadow: 0 0 0 3px rgba(77, 87, 111, 0.1); /* Using foundation gray 700 with opacity */
 }
 
-.checkmark-button--checked:focus-visible,
-.checkmark-button[data-checked="true"]:focus-visible {
-    border-color: var(--color-primary-sky-blue);
-    color: var(--color-primary-sky-blue);
-    box-shadow: 0 0 0 3px rgba(0, 178, 255, 0.1); /* Using foundation primary sky blue with opacity */
-}
-
-/* Active state for unchecked buttons */
-.checkmark-button:active:not(.checkmark-button--checked):not([data-checked="true"]):not(:disabled) {
-    background-color: var(--color-gray-700); /* Active background - using foundation gray 700 */
+/* Active state for unchecked buttons - active:bg-[#4D576F] active:text-white from original */
+.checkmark-button:active:not(.checkmark-button--checked):not([data-checked="true"]) {
+    background-color: var(--color-gray-700);
     color: white;
     border-color: var(--color-gray-700);
 }
 
-/* Active state for checked buttons */
-.checkmark-button--checked:active,
-.checkmark-button[data-checked="true"]:active {
-    background-color: var(--color-primary-sky-blue);
-    color: white;
-    border-color: var(--color-primary-sky-blue);
+/* Icon states for unchecked buttons */
+.checkmark-button__icon circle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
 }
 
-/* Disabled state */
-.checkmark-button:disabled,
-.checkmark-button--disabled {
-    border-color: var(--color-gray-300) !important;
-    color: var(--color-gray-400) !important;
-    background-color: var(--color-gray-100) !important;
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-/* Icon states for checked buttons */
+/* Icon states for checked buttons - fill-white from original */
 .checkmark-button--checked .checkmark-button__icon circle,
 .checkmark-button[data-checked="true"] .checkmark-button__icon circle {
     fill: currentColor;
@@ -123,100 +86,10 @@
     color: white;
 }
 
-/* Icon states for active checked buttons */
+/* Icon states for active checked buttons - active:fill-foundation-primary from original */
 .checkmark-button--checked:active .checkmark-button__icon,
 .checkmark-button[data-checked="true"]:active .checkmark-button__icon {
-    color: white;
-}
-
-.checkmark-button--checked:active .checkmark-button__icon path,
-.checkmark-button[data-checked="true"]:active .checkmark-button__icon path {
-    fill: var(--color-primary-sky-blue);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .checkmark-button {
-        padding: var(--spacing-16) var(--spacing-12);
-        gap: var(--spacing-6);
-        font-size: var(--font-size-sm);
-        min-height: var(--spacing-40);
-    }
-    
-    .checkmark-button__icon {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-/* Accessibility enhancements */
-@media (prefers-reduced-motion: reduce) {
-    .checkmark-button {
-        transition: none;
-    }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    .checkmark-button {
-        border-width: 3px;
-    }
-    
-    .checkmark-button--checked,
-    .checkmark-button[data-checked="true"] {
-        background-color: var(--color-primary-sky-blue);
-        color: white;
-    }
-    
-    .checkmark-button--checked .checkmark-button__icon path,
-    .checkmark-button[data-checked="true"] .checkmark-button__icon path {
-        fill: white;
-    }
-}
-
-/* Print styles */
-@media print {
-    .checkmark-button {
-        border: 2px solid var(--color-neutral-black);
-        background-color: var(--color-white);
-        color: var(--color-neutral-black);
-    }
-    
-    .checkmark-button--checked,
-    .checkmark-button[data-checked="true"] {
-        background-color: var(--color-neutral-black);
-        color: var(--color-white);
-    }
-}
-
-/* Group spacing when multiple buttons are stacked */
-.checkmark-button + .checkmark-button {
-    margin-top: var(--spacing-8);
-}
-
-/* Fieldset integration */
-fieldset .checkmark-button {
-    margin-bottom: var(--spacing-8);
-}
-
-fieldset .checkmark-button:last-child {
-    margin-bottom: 0;
-}
-
-/* Form validation states */
-.checkmark-button--error {
-    border-color: var(--color-foundation-critical) !important;
-    color: var(--color-foundation-critical) !important;
-}
-
-.checkmark-button--success {
-    border-color: var(--color-foundation-success) !important;
-    color: var(--color-foundation-success) !important;
-}
-
-.checkmark-button--warning {
-    border-color: var(--color-foundation-warning) !important;
-    color: var(--color-foundation-warning) !important;
+    fill: var(--color-foundation-primary);
 }
 
 /* #endregion */

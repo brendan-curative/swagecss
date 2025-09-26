@@ -1,4 +1,4 @@
-// Checkmark Button Component JavaScript
+// Checkmark Button Component JavaScript - Replicating BaselineVisitCheckMarkButton behavior
 
 /**
  * Initialize checkmark button functionality
@@ -6,43 +6,22 @@
 function initializeCheckmarkButton() {
     console.log('Checkmark Button component initialized');
     
-    // Set up ARIA attributes for all checkmark buttons
+    // Basic initialization for demo purposes
     const checkmarkButtons = document.querySelectorAll('.checkmark-button');
     checkmarkButtons.forEach(button => {
-        // Add ARIA attributes for accessibility
         updateAriaAttributes(button);
-        
-        // Add keyboard event handling
-        button.addEventListener('keydown', handleCheckmarkButtonKeydown);
-        
-        // Add click event handling for buttons without onclick
-        if (!button.hasAttribute('onclick')) {
-            button.addEventListener('click', () => toggleCheckmarkButton(button));
-        }
     });
 }
 
 /**
- * Toggle the checked state of a checkmark button
+ * Toggle the checked state of a checkmark button - Basic demo functionality
  * @param {HTMLElement} button - The button element to toggle
  */
 function toggleCheckmarkButton(button) {
-    if (button.disabled) return;
-    
     const isCurrentlyChecked = button.dataset.checked === 'true';
     const newCheckedState = !isCurrentlyChecked;
     
     setCheckmarkButtonState(button, newCheckedState);
-    
-    // Dispatch custom event
-    const event = new CustomEvent('checkmarkButtonToggle', {
-        detail: {
-            button: button,
-            checked: newCheckedState,
-            value: button.dataset.value || button.querySelector('.checkmark-button__text')?.textContent
-        }
-    });
-    button.dispatchEvent(event);
 }
 
 /**
@@ -118,197 +97,9 @@ function updateCheckmarkIcon(button, checked) {
  */
 function updateAriaAttributes(button) {
     const isChecked = button.dataset.checked === 'true';
-    
     button.setAttribute('aria-pressed', isChecked.toString());
-    button.setAttribute('role', 'button');
-    
-    // Add aria-label if not present
-    if (!button.hasAttribute('aria-label')) {
-        const text = button.querySelector('.checkmark-button__text')?.textContent;
-        if (text) {
-            button.setAttribute('aria-label', text);
-        }
-    }
 }
 
-/**
- * Handle keyboard events for checkmark buttons
- * @param {KeyboardEvent} event - The keyboard event
- */
-function handleCheckmarkButtonKeydown(event) {
-    // Handle Enter and Space keys
-    if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        toggleCheckmarkButton(event.target);
-    }
-}
-
-/**
- * Toggle single select mode (radio button behavior)
- * @param {HTMLElement} button - The clicked button
- */
-function toggleSingleSelect(button) {
-    if (button.disabled) return;
-    
-    const group = button.dataset.group;
-    if (!group) {
-        toggleCheckmarkButton(button);
-        return;
-    }
-    
-    // Uncheck all buttons in the same group
-    const groupButtons = document.querySelectorAll(`[data-group="${group}"]`);
-    groupButtons.forEach(groupButton => {
-        setCheckmarkButtonState(groupButton, false);
-    });
-    
-    // Check the clicked button
-    setCheckmarkButtonState(button, true);
-    
-    // Dispatch custom event for single select
-    const event = new CustomEvent('checkmarkButtonSingleSelect', {
-        detail: {
-            button: button,
-            group: group,
-            value: button.dataset.value || button.querySelector('.checkmark-button__text')?.textContent
-        }
-    });
-    button.dispatchEvent(event);
-}
-
-/**
- * Toggle form option (used in form contexts)
- * @param {HTMLElement} button - The clicked button
- */
-function toggleFormOption(button) {
-    if (button.disabled) return;
-    
-    const name = button.dataset.name;
-    if (!name) {
-        toggleCheckmarkButton(button);
-        return;
-    }
-    
-    // For single-select form options, uncheck others with same name
-    const sameNameButtons = document.querySelectorAll(`[data-name="${name}"]`);
-    sameNameButtons.forEach(sameNameButton => {
-        if (sameNameButton !== button) {
-            setCheckmarkButtonState(sameNameButton, false);
-        }
-    });
-    
-    // Check the clicked button
-    setCheckmarkButtonState(button, true);
-    
-    // Update hidden form input if it exists
-    updateFormInput(name, button.dataset.value);
-    
-    // Dispatch form option event
-    const event = new CustomEvent('checkmarkButtonFormOption', {
-        detail: {
-            button: button,
-            name: name,
-            value: button.dataset.value || button.querySelector('.checkmark-button__text')?.textContent
-        }
-    });
-    button.dispatchEvent(event);
-}
-
-/**
- * Update hidden form input with selected value
- * @param {string} name - The input name
- * @param {string} value - The selected value
- */
-function updateFormInput(name, value) {
-    let input = document.querySelector(`input[name="${name}"]`);
-    
-    if (!input) {
-        // Create hidden input if it doesn't exist
-        input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = name;
-        
-        // Find the form and append the input
-        const form = document.querySelector('form');
-        if (form) {
-            form.appendChild(input);
-        }
-    }
-    
-    input.value = value || '';
-}
-
-/**
- * Handle form submission
- * @param {Event} event - The form submit event
- */
-function handleFormSubmit(event) {
-    event.preventDefault();
-    
-    const form = event.target;
-    const formData = new FormData(form);
-    const statusDiv = document.getElementById('form-status');
-    
-    if (statusDiv) {
-        statusDiv.style.display = 'block';
-        statusDiv.textContent = 'Form submitted with: ' + Array.from(formData.entries()).map(([key, value]) => `${key}: ${value}`).join(', ');
-        statusDiv.className = 'mt-16 text-sm text-green-600';
-    }
-    
-    console.log('Form data:', Object.fromEntries(formData));
-}
-
-/**
- * Reset form and all checkmark buttons
- */
-function resetForm() {
-    const form = document.querySelector('form');
-    if (form) {
-        form.reset();
-        
-        // Reset all checkmark buttons in the form
-        const checkmarkButtons = form.querySelectorAll('.checkmark-button');
-        checkmarkButtons.forEach(button => {
-            setCheckmarkButtonState(button, false);
-        });
-        
-        // Hide status message
-        const statusDiv = document.getElementById('form-status');
-        if (statusDiv) {
-            statusDiv.style.display = 'none';
-        }
-    }
-}
-
-/**
- * Get all checked values from checkmark buttons with a specific name
- * @param {string} name - The name attribute to filter by
- * @returns {Array<string>} Array of checked values
- */
-function getCheckedValues(name) {
-    const buttons = document.querySelectorAll(`[data-name="${name}"]`);
-    return Array.from(buttons)
-        .filter(button => button.dataset.checked === 'true')
-        .map(button => button.dataset.value || button.querySelector('.checkmark-button__text')?.textContent);
-}
-
-/**
- * Set validation state for checkmark buttons
- * @param {HTMLElement|string} target - Button element or selector
- * @param {string} state - Validation state: 'error', 'success', 'warning', or 'default'
- */
-function setCheckmarkButtonValidation(target, state) {
-    const button = typeof target === 'string' ? document.querySelector(target) : target;
-    if (!button) return;
-    
-    // Remove existing validation classes
-    button.classList.remove('checkmark-button--error', 'checkmark-button--success', 'checkmark-button--warning');
-    
-    // Add new validation class
-    if (state !== 'default') {
-        button.classList.add(`checkmark-button--${state}`);
-    }
-}
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
@@ -317,16 +108,3 @@ if (document.readyState === 'loading') {
     initializeCheckmarkButton();
 }
 
-// Export functions for use in other scripts
-if (typeof window !== 'undefined') {
-    window.CheckmarkButton = {
-        toggle: toggleCheckmarkButton,
-        setState: setCheckmarkButtonState,
-        getCheckedValues: getCheckedValues,
-        setValidation: setCheckmarkButtonValidation,
-        toggleSingleSelect,
-        toggleFormOption,
-        handleFormSubmit,
-        resetForm
-    };
-}

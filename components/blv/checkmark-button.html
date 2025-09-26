@@ -2,21 +2,20 @@
 layout: layout.html
 title: Swageblocks &bull; BLV &bull; Checkmark Button
 heading: Checkmark Button Component
-secondary: Interactive button with checkmark for selection states
+secondary: Replicated from BaselineVisitCheckMarkButton
 section: BLV Components
 status: draft
 ---
 
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        The Checkmark Button component provides an interactive button with an integrated checkmark icon 
-        for selection states, commonly used in baseline visit workflows and multi-choice interfaces.
+        The Checkmark Button component replicates the BaselineVisitCheckMarkButton from the baseline visit workflow.
     </p>
 </section>
 
 <section class="component-section">
-    <h2>Basic Checkmark Button</h2>
-    <p class="mb-24">Interactive buttons with checkmark icons showing checked and unchecked states.</p>
+    <h2>Basic States</h2>
+    <p class="mb-24">Shows the exact states from the original component.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
@@ -39,220 +38,63 @@ status: draft
                 <span class="checkmark-button__text">Self-Guided Onboarding</span>
             </button>
         </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Hover State</div>
-            <button class="checkmark-button checkmark-button--hover" data-checked="false">
-                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-                <span class="checkmark-button__text">Self-Guided Onboarding</span>
-            </button>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Focus State</div>
-            <button class="checkmark-button checkmark-button--focus" data-checked="false">
-                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-                <span class="checkmark-button__text">Self-Guided Onboarding</span>
-            </button>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Disabled State</div>
-            <button class="checkmark-button checkmark-button--disabled" data-checked="false" disabled>
-                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-                <span class="checkmark-button__text">Self-Guided Onboarding</span>
-            </button>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Different Text Examples</h2>
-    <p class="mb-24">Checkmark buttons with various text content lengths and styles.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">Short Text</div>
-            <button class="checkmark-button" data-checked="false">
-                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-                <span class="checkmark-button__text">Yes</span>
-            </button>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Medium Text</div>
-            <button class="checkmark-button checkmark-button--checked" data-checked="true">
-                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10.5" cy="10.8672" r="8" fill="currentColor"/>
-                    <path d="M13.9226 8.61029C14.248 8.93573 14.248 9.46336 13.9226 9.7888L10.5893 13.1221C10.2638 13.4476 9.73618 13.4476 9.41074 13.1221L7.74408 11.4555C7.41864 11.13 7.41864 10.6024 7.74408 10.277C8.06951 9.95152 8.59715 9.95152 8.92259 10.277L10 11.3544L12.7441 8.61029C13.0695 8.28485 13.5972 8.28485 13.9226 8.61029Z" fill="white"/>
-                </svg>
-                <span class="checkmark-button__text">Schedule Appointment</span>
-            </button>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Long Text</div>
-            <button class="checkmark-button" data-checked="false">
-                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-                <span class="checkmark-button__text">Complete Baseline Visit Questionnaire</span>
-            </button>
-        </div>
     </div>
 </section>
 
 <section class="component-section">
     <h2>Interactive Demo</h2>
-    <p class="mb-24">Click the buttons below to see the interactive checkmark functionality.</p>
+    <p class="mb-24">Click to test the component behavior.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Interactive Selection</div>
-            <div class="flex flex-col gap-12 w-full">
-                <button class="checkmark-button" data-checked="false" onclick="toggleCheckmarkButton(this)">
-                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                    <span class="checkmark-button__text">Option 1: Self-Guided</span>
-                </button>
-                
-                <button class="checkmark-button" data-checked="false" onclick="toggleCheckmarkButton(this)">
-                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                    <span class="checkmark-button__text">Option 2: Guided Tour</span>
-                </button>
-                
-                <button class="checkmark-button" data-checked="false" onclick="toggleCheckmarkButton(this)">
-                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                    <span class="checkmark-button__text">Option 3: Schedule Later</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Single Selection Mode</div>
-            <div class="flex flex-col gap-12 w-full">
-                <button class="checkmark-button" data-checked="false" data-group="single-select" onclick="toggleSingleSelect(this)">
-                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                    <span class="checkmark-button__text">Morning Appointment</span>
-                </button>
-                
-                <button class="checkmark-button" data-checked="false" data-group="single-select" onclick="toggleSingleSelect(this)">
-                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                    <span class="checkmark-button__text">Afternoon Appointment</span>
-                </button>
-                
-                <button class="checkmark-button" data-checked="false" data-group="single-select" onclick="toggleSingleSelect(this)">
-                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                    </svg>
-                    <span class="checkmark-button__text">Evening Appointment</span>
-                </button>
-            </div>
+            <div class="demo-label">Toggle Example</div>
+            <button class="checkmark-button" data-checked="false" onclick="toggleCheckmarkButton(this)">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">Click to toggle</span>
+            </button>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Form Integration</h2>
-    <p class="mb-24">Checkmark buttons integrated within form contexts with validation states.</p>
+    <h2>Original Component Reference</h2>
+    <p class="mb-24">Color mapping from the original BaselineVisitCheckMarkButton:</p>
     
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">Form Example</div>
-            <form class="w-full" onsubmit="handleFormSubmit(event)">
-                <fieldset class="border border-gray-300 rounded p-16 mb-16">
-                    <legend class="body-sm font-semibold px-8">Select your preferred baseline visit type:</legend>
-                    <div class="flex flex-col gap-12 mt-12">
-                        <button type="button" class="checkmark-button" data-checked="false" data-name="visit-type" data-value="self-guided" onclick="toggleFormOption(this)">
-                            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                            </svg>
-                            <span class="checkmark-button__text">Self-Guided Onboarding</span>
-                        </button>
-                        
-                        <button type="button" class="checkmark-button" data-checked="false" data-name="visit-type" data-value="assisted" onclick="toggleFormOption(this)">
-                            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-                            </svg>
-                            <span class="checkmark-button__text">Assisted Onboarding</span>
-                        </button>
-                    </div>
-                </fieldset>
-                
-                <div class="flex gap-12">
-                    <button type="submit" class="button button--primary">Continue</button>
-                    <button type="button" class="button button--secondary" onclick="resetForm()">Reset</button>
-                </div>
-                
-                <div id="form-status" class="mt-16 text-sm" style="display: none;"></div>
-            </form>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Usage Guidelines</h2>
-    <p class="mb-24">Best practices for implementing checkmark buttons in your applications.</p>
-    
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-        <div>
-            <h3 class="heading-lg mb-16">HTML Structure</h3>
-            <p class="body-sm text-gray-600 mb-16">
-                Use semantic button elements with proper ARIA attributes for accessibility:
-            </p>
-            <div class="bg-gray-50 border rounded p-16 mb-16">
-                <code class="body-sm">
-                    &lt;button class="checkmark-button" data-checked="false"&gt;<br>
-                    &nbsp;&nbsp;&lt;svg class="checkmark-button__icon"&gt;...&lt;/svg&gt;<br>
-                    &nbsp;&nbsp;&lt;span class="checkmark-button__text"&gt;Label&lt;/span&gt;<br>
-                    &lt;/button&gt;
-                </code>
-            </div>
-        </div>
-        
-        <div>
-            <h3 class="heading-lg mb-16">JavaScript Integration</h3>
-            <p class="body-sm text-gray-600 mb-16">
-                Update button state and icon dynamically:
-            </p>
-            <div class="bg-gray-50 border rounded p-16 mb-16">
-                <code class="body-sm">
-                    // Toggle checked state<br>
-                    toggleCheckmarkButton(buttonElement);<br>
-                    <br>
-                    // Set specific state<br>
-                    setCheckmarkButtonState(buttonElement, true);
-                </code>
-            </div>
-        </div>
-    </div>
-    
-    <div class="mt-24">
-        <h3 class="heading-lg mb-16">Accessibility</h3>
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Unchecked State</h3>
         <ul class="body-sm text-gray-600">
-            <li class="mb-8">• Use semantic <code>&lt;button&gt;</code> elements for proper keyboard navigation</li>
-            <li class="mb-8">• Include <code>aria-pressed</code> attribute to indicate selection state</li>
-            <li class="mb-8">• Provide clear visual feedback for hover, focus, and active states</li>
-            <li class="mb-8">• Ensure sufficient color contrast for all states</li>
-            <li class="mb-8">• Use descriptive text labels that clearly indicate the action or choice</li>
-            <li class="mb-8">• Group related options with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></li>
+            <li>• Border: <code>border-[#4D576F]</code> → <code>var(--color-gray-700)</code></li>
+            <li>• Text: <code>text-[#4D576F]</code> → <code>var(--color-gray-700)</code></li>
+            <li>• Focus Border: <code>focus:border-[#4D576F]</code></li>
+            <li>• Focus Text: <code>focus:text-[#4D576F]</code></li>
+            <li>• Active Background: <code>active:bg-[#4D576F]</code></li>
+            <li>• Active Text: <code>active:text-white</code></li>
         </ul>
+    </div>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Checked State</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Border: <code>border-foundation-primary</code> → <code>var(--color-foundation-primary)</code></li>
+            <li>• Text: <code>text-foundation-primary</code> → <code>var(--color-foundation-primary)</code></li>
+            <li>• Icon Fill: <code>fill-white</code></li>
+            <li>• Active Fill: <code>active:fill-foundation-primary</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure replicating the original component.</p>
+    
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <code class="body-sm">
+            &lt;button class="checkmark-button" data-checked="false"&gt;<br>
+            &nbsp;&nbsp;&lt;svg class="checkmark-button__icon"&gt;...&lt;/svg&gt;<br>
+            &nbsp;&nbsp;&lt;span class="checkmark-button__text"&gt;Button Text&lt;/span&gt;<br>
+            &lt;/button&gt;
+        </code>
     </div>
 </section>
