@@ -8,6 +8,8 @@
     --swage-tertiary: #733838;
 
     --swage-highlight: #A63737;
+    --swage-accent: #BFD0D1;
+    --swage-bg: #d2dedf;
     --swage-surface: #BFB9B4;
     --swage-black: #202024;
     --swage-border: #5f6069;
@@ -23,7 +25,7 @@ html, body {
   }
 
 body {
-	background: var(--swage-secondary);
+	background: var(--swage-bg);
     color: var(--swage-black);
     background-repeat: no-repeat;
     background-attachment: fixed;

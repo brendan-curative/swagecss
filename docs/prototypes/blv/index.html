@@ -25,22 +25,26 @@
                     <span>Help</span>
                 </div>
             </div>
-    
-            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
-    <li class="horizontal-stepper__step horizontal-stepper__step--first">
-        <div class="horizontal-stepper__progress" style="width: 100%;"></div>
-    </li>
-    <li class="horizontal-stepper__step">
-        <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
-    </li>
-    <li class="horizontal-stepper__step">
-        <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-    </li>
-    <li class="horizontal-stepper__step horizontal-stepper__step--last">
-        <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-    </li>
-</ol>
         </div>
+            <nav>
+    <div class="container">
+        <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+            <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+            </li>
+            <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+            </li>
+        </ol>
+    </div>
+</nav>
+        
       </header>
   
       <main>
@@ -55,8 +59,13 @@
       
   
       <footer>
-        <div class="container">
-            footer
+        <div class="container flex-row flex-justify-center">
+            <button class="button button--big-primary button--with-icon">
+                Continue
+                <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                  </svg>
+            </button>
         </div>
       </footer>
   
