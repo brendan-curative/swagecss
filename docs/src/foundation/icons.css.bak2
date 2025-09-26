@@ -81,50 +81,6 @@
       contrast(var(--icon-contrast, 1));
   }
 
-  /* Icon Color Utilities - for easy icon coloring */
-  .icon-inherit { color: inherit; }
-  .icon-current { color: currentColor; }
-  .icon-primary { color: var(--color-foundation-primary); }
-  .icon-secondary { color: var(--color-foundation-secondary); }
-  .icon-success { color: var(--color-foundation-success); }
-  .icon-warning { color: var(--color-foundation-warning); }
-  .icon-critical { color: var(--color-foundation-critical); }
-  .icon-muted { color: var(--color-text-muted); }
-  .icon-white { color: var(--color-white); }
-  .icon-black { color: var(--color-neutral-black); }
-
-  /* Interactive icon states */
-  .icon-interactive {
-    transition: color 0.2s ease-in-out;
-    cursor: pointer;
-  }
-
-  .icon-interactive:hover {
-    color: var(--color-foundation-primary);
-  }
-
-  .icon-interactive:active {
-    transform: scale(0.95);
-  }
-
-  /* Icon with text alignment helpers */
-  .icon-inline {
-    vertical-align: middle;
-    margin-top: -2px; /* Optical alignment */
-  }
-
-  .icon-baseline {
-    vertical-align: baseline;
-  }
-
-  .icon-text-left {
-    margin-right: var(--spacing-8);
-  }
-
-  .icon-text-right {
-    margin-left: var(--spacing-8);
-  }
-
 /* #endregion */
 
 /* #region Heroicon Solid Utility Classes */
@@ -132,31 +88,31 @@
 .heroicon-academic-cap {
   -webkit-mask-image: url('../img/hero-icons/24/solid/academic-cap.svg');
   mask-image: url('../img/hero-icons/24/solid/academic-cap.svg');
-  
+  -webkit-mask-image: url('../img/hero-icons/24/solid/academic-cap.svg'); /* Fallback */
 }
 
 .heroicon-adjustments-horizontal {
   -webkit-mask-image: url('../img/hero-icons/24/solid/adjustments-horizontal.svg');
   mask-image: url('../img/hero-icons/24/solid/adjustments-horizontal.svg');
-  
+  -webkit-mask-image: url('../img/hero-icons/24/solid/adjustments-horizontal.svg'); /* Fallback */
 }
 
 .heroicon-adjustments-vertical {
   -webkit-mask-image: url('../img/hero-icons/24/solid/adjustments-vertical.svg');
   mask-image: url('../img/hero-icons/24/solid/adjustments-vertical.svg');
-  
+  -webkit-mask-image: url('../img/hero-icons/24/solid/adjustments-vertical.svg'); /* Fallback */
 }
 
 .heroicon-archive-box-arrow-down {
   -webkit-mask-image: url('../img/hero-icons/24/solid/archive-box-arrow-down.svg');
   mask-image: url('../img/hero-icons/24/solid/archive-box-arrow-down.svg');
-  
+  -webkit-mask-image: url('../img/hero-icons/24/solid/archive-box-arrow-down.svg'); /* Fallback */
 }
 
 .heroicon-archive-box-x-mark {
   -webkit-mask-image: url('../img/hero-icons/24/solid/archive-box-x-mark.svg');
   mask-image: url('../img/hero-icons/24/solid/archive-box-x-mark.svg');
-  
+  -webkit-mask-image: url('../img/hero-icons/24/solid/archive-box-x-mark.svg'); /* Fallback */
 }
 
 .heroicon-archive-box {

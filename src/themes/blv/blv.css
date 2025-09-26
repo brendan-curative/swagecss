@@ -108,5 +108,35 @@ article {
     background: var(--blv-base);
     border-right: 1px solid var(--color-white);
     border-left: 1px solid var(--color-white);
+    padding: var(--spacing-24) var(--spacing-32) 96px var(--spacing-32); 
+}
+
+h1 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-3xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-24);
+}
+
+h2 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-8);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-8);
+}
+
+h2 + .card {
+    margin-top: 0;
+}
+
+h3 + .card {
+    margin-top: 0;
 }
 /* #endregion */

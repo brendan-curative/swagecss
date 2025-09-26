@@ -17,6 +17,15 @@
     border: none;
 }
 
+html[data-theme="blv"] .card {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: var(--spacing-24);
+    box-shadow: 0 2px 16px 0 rgba(102, 114, 125, 0.25), 0 4px 200px 0 rgba(255, 255, 255, 0.01) inset;
+    backdrop-filter: blur(5px);
+    margin-bottom: var(--spacing-24);
+}
+
 /* Card heading styling */
 .card__heading {
     margin-bottom: var(--spacing-16); /* mb-4 */

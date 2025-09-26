@@ -9,8 +9,65 @@ status: draft
 
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        The Swage.CSS icon system includes the complete <a href="https://heroicons.dev/">Heroicons library</a> with utility classes for solid and outline variants across 16px, 20px, and 24px sizes. All icons are implemented as CSS background images for optimal performance and styling flexibility. 
+        The Swage.CSS icon system includes the complete <a href="https://heroicons.dev/">Heroicons library</a> with utility classes for solid and outline variants across 16px, 20px, and 24px sizes. All icons now inherit <code>currentColor</code> from their parent elements, making them easy to style and theme consistently.
     </p>
+    
+    <div class="alert alert--info mb-24">
+        <div class="alert__content">
+            <h4 class="heading-md mb-8">✨ New: currentColor Inheritance</h4>
+            <p class="body-md">
+                Icons now automatically inherit the color from their parent element using CSS masks. 
+                Simply set the text color on the parent element or use the provided icon color utilities.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Color Inheritance Examples</h2>
+    <p class="mb-24">Icons automatically inherit color from their parent elements.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Text Color Inheritance</div>
+            <div class="text-blue-600 mb-8">
+                <span class="heroicon heroicon-heart"></span>
+                Blue parent text
+            </div>
+            <div class="text-red-500 mb-8">
+                <span class="heroicon heroicon-star"></span>
+                Red parent text
+            </div>
+            <div class="text-green-600">
+                <span class="heroicon heroicon-check"></span>
+                Green parent text
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Button Integration</div>
+            <div class="flex gap-8 flex-wrap">
+                <button class="button button--primary">
+                    <span class="heroicon heroicon-plus icon-text-left"></span>
+                    Add Item
+                </button>
+                <button class="button button--secondary">
+                    <span class="heroicon heroicon-cog-6-tooth icon-text-left"></span>
+                    Settings
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Icon Color Utilities</div>
+            <div class="flex gap-16 items-center flex-wrap">
+                <span class="heroicon heroicon-heart icon-critical" title="Critical"></span>
+                <span class="heroicon heroicon-check icon-success" title="Success"></span>
+                <span class="heroicon heroicon-exclamation-triangle icon-warning" title="Warning"></span>
+                <span class="heroicon heroicon-information-circle icon-primary" title="Primary"></span>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Icon Sizes -->
@@ -21,7 +78,9 @@ status: draft
     <div class="demo-grid">
         <div class="demo-item">
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-16 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+                <div class="text-blue-600">
+                    <span class="heroicon heroicon-16 heroicon-user"></span>
+                </div>
             </div>
             <h4>16px Icons</h4>
             <code>.heroicon-16.heroicon-[name]</code>
@@ -30,7 +89,9 @@ status: draft
         
         <div class="demo-item">
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-20 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+                <div class="text-blue-600">
+                    <span class="heroicon heroicon-20 heroicon-user"></span>
+                </div>
             </div>
             <h4>20px Icons</h4>
             <code>.heroicon-20.heroicon-[name]</code>
@@ -39,11 +100,269 @@ status: draft
         
         <div class="demo-item">
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: var(--spacing-16);">
-                <div class="heroicon heroicon-24 heroicon-user" style="background-color: var(--color-foundation-primary);"></div>
+                <div class="text-blue-600">
+                    <span class="heroicon heroicon-user"></span>
+                </div>
             </div>
             <h4>24px Icons (Default)</h4>
             <code>.heroicon.heroicon-[name]</code>
             <p class="demo-item__label">Standard UI, navigation</p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Icon Color Utilities</h2>
+    <p class="mb-24">Predefined color utilities for common icon styling needs.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Semantic Colors</div>
+            <div class="flex gap-16 items-center flex-wrap mb-16">
+                <span class="heroicon heroicon-check icon-success" title="Success"></span>
+                <code>.icon-success</code>
+            </div>
+            <div class="flex gap-16 items-center flex-wrap mb-16">
+                <span class="heroicon heroicon-exclamation-triangle icon-warning" title="Warning"></span>
+                <code>.icon-warning</code>
+            </div>
+            <div class="flex gap-16 items-center flex-wrap mb-16">
+                <span class="heroicon heroicon-x-circle icon-critical" title="Critical"></span>
+                <code>.icon-critical</code>
+            </div>
+            <div class="flex gap-16 items-center flex-wrap">
+                <span class="heroicon heroicon-information-circle icon-primary" title="Primary"></span>
+                <code>.icon-primary</code>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Neutral Colors</div>
+            <div class="flex gap-16 items-center flex-wrap mb-16">
+                <span class="heroicon heroicon-user icon-muted" title="Muted"></span>
+                <code>.icon-muted</code>
+            </div>
+            <div class="flex gap-16 items-center flex-wrap mb-16">
+                <span class="heroicon heroicon-star icon-black" title="Black"></span>
+                <code>.icon-black</code>
+            </div>
+            <div class="flex gap-16 items-center flex-wrap bg-gray-800 p-8 rounded">
+                <span class="heroicon heroicon-heart icon-white" title="White"></span>
+                <code class="text-white">.icon-white</code>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Interactive Icons</div>
+            <div class="flex gap-16 items-center flex-wrap">
+                <span class="heroicon heroicon-heart icon-interactive" title="Hover me"></span>
+                <span class="heroicon heroicon-star icon-interactive" title="Hover me"></span>
+                <span class="heroicon heroicon-bookmark icon-interactive" title="Hover me"></span>
+            </div>
+            <code>.icon-interactive</code>
+            <p class="demo-item__label">Hover effects and click animations</p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Text Alignment Helpers</h2>
+    <p class="mb-24">Utilities for aligning icons with text content.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Icon with Text</div>
+            <div class="mb-16">
+                <span class="heroicon heroicon-user icon-text-left"></span>
+                Icon on left
+            </div>
+            <div class="mb-16">
+                Icon on right
+                <span class="heroicon heroicon-arrow-right icon-text-right"></span>
+            </div>
+            <div>
+                <span class="heroicon heroicon-check icon-inline"></span>
+                Inline aligned icon
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Usage Examples</div>
+            <div class="space-y-8">
+                <code>.icon-text-left</code> - 8px right margin<br>
+                <code>.icon-text-right</code> - 8px left margin<br>
+                <code>.icon-inline</code> - Vertical middle alignment<br>
+                <code>.icon-baseline</code> - Baseline alignment
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Advanced Usage Examples</h2>
+    <p class="mb-24">Real-world examples showing currentColor inheritance in different contexts.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Button Integration</div>
+            <div class="flex gap-8 flex-wrap mb-16">
+                <button class="button button--primary">
+                    <span class="heroicon heroicon-plus icon-text-left"></span>
+                    Add Item
+                </button>
+                <button class="button button--secondary">
+                    <span class="heroicon heroicon-cog-6-tooth icon-text-left"></span>
+                    Settings
+                </button>
+                <button class="button button--critical">
+                    <span class="heroicon heroicon-trash icon-text-left"></span>
+                    Delete
+                </button>
+            </div>
+            <p class="body-sm text-gray-600">Icons automatically inherit button text colors</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Link Integration</div>
+            <div class="space-y-8 mb-16">
+                <div>
+                    <a href="#" class="text-blue-600 hover:text-blue-800">
+                        <span class="heroicon heroicon-external-link icon-text-left"></span>
+                        External Link
+                    </a>
+                </div>
+                <div>
+                    <a href="#" class="text-gray-600 hover:text-gray-800">
+                        <span class="heroicon heroicon-download icon-text-left"></span>
+                        Download File
+                    </a>
+                </div>
+            </div>
+            <p class="body-sm text-gray-600">Icons inherit link colors and hover states</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Different Sizes with Color</div>
+            <div class="space-y-8 mb-16">
+                <div class="text-purple-600">
+                    <span class="heroicon heroicon-16 heroicon-heart"></span>
+                    16px heart
+                </div>
+                <div class="text-purple-600">
+                    <span class="heroicon heroicon-20 heroicon-heart"></span>
+                    20px heart
+                </div>
+                <div class="text-purple-600">
+                    <span class="heroicon heroicon-heart"></span>
+                    24px heart (default)
+                </div>
+            </div>
+            <p class="body-sm text-gray-600">All sizes inherit the same parent color</p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Color Inheritance Demonstrations</h2>
+    <p class="mb-24">Visual examples of how icons inherit colors from their parent elements.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Basic Text Color Inheritance</div>
+            <div class="space-y-8 mb-16">
+                <div class="text-blue-600">
+                    Blue parent: <span class="heroicon heroicon-heart"></span>
+                </div>
+                <div class="text-red-500">
+                    Red parent: <span class="heroicon heroicon-star"></span>
+                </div>
+                <div class="text-green-600">
+                    Green parent: <span class="heroicon heroicon-check"></span>
+                </div>
+            </div>
+            <p class="body-sm text-gray-600">Icons automatically match parent text color</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Status Indicators</div>
+            <div class="space-y-8 mb-16">
+                <div class="flex items-center gap-8">
+                    <span class="heroicon heroicon-heart icon-critical"></span>
+                    <span>Critical status</span>
+                </div>
+                <div class="flex items-center gap-8">
+                    <span class="heroicon heroicon-check icon-success"></span>
+                    <span>Success status</span>
+                </div>
+                <div class="flex items-center gap-8">
+                    <span class="heroicon heroicon-exclamation-triangle icon-warning"></span>
+                    <span>Warning status</span>
+                </div>
+                <div class="flex items-center gap-8">
+                    <span class="heroicon heroicon-information-circle icon-primary"></span>
+                    <span>Information status</span>
+                </div>
+            </div>
+            <p class="body-sm text-gray-600">Using semantic color utilities for consistent messaging</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Interactive State Examples</div>
+            <div class="flex gap-16 items-center flex-wrap mb-16">
+                <span class="heroicon heroicon-heart icon-interactive" title="Hover for effect"></span>
+                <span class="heroicon heroicon-star icon-interactive" title="Hover for effect"></span>
+                <span class="heroicon heroicon-bookmark icon-interactive" title="Hover for effect"></span>
+                <span class="heroicon heroicon-thumb-up icon-interactive" title="Hover for effect"></span>
+            </div>
+            <p class="body-sm text-gray-600">Hover over icons to see interactive effects</p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Implementation Guide</h2>
+    <p class="mb-24">Best practices and code examples for using currentColor icons.</p>
+    
+    <div class="bg-gray-50 border rounded p-24 mb-24">
+        <h3 class="heading-lg mb-16">Basic Usage</h3>
+        <div class="space-y-16">
+            <div>
+                <h4 class="heading-md mb-8">Parent Color Inheritance</h4>
+                <div class="bg-white p-16 rounded border mb-8">
+                    <code class="body-sm">
+&lt;div class="text-blue-600"&gt;<br>
+&nbsp;&nbsp;&lt;span class="heroicon heroicon-heart"&gt;&lt;/span&gt;<br>
+&nbsp;&nbsp;Blue heart icon<br>
+&lt;/div&gt;
+                    </code>
+                </div>
+                <p class="body-sm text-gray-600">Icon inherits the blue color from parent element</p>
+            </div>
+            
+            <div>
+                <h4 class="heading-md mb-8">Direct Color Control</h4>
+                <div class="bg-white p-16 rounded border mb-8">
+                    <code class="body-sm">
+&lt;span class="heroicon heroicon-check icon-success"&gt;&lt;/span&gt;<br>
+&lt;span class="heroicon heroicon-warning icon-critical"&gt;&lt;/span&gt;<br>
+&lt;span class="heroicon heroicon-user icon-muted"&gt;&lt;/span&gt;
+                    </code>
+                </div>
+                <p class="body-sm text-gray-600">Use icon color utilities for semantic meaning</p>
+            </div>
+            
+            <div>
+                <h4 class="heading-md mb-8">Interactive Icons</h4>
+                <div class="bg-white p-16 rounded border mb-8">
+                    <code class="body-sm">
+&lt;button class="text-gray-600 hover:text-blue-600"&gt;<br>
+&nbsp;&nbsp;&lt;span class="heroicon heroicon-heart icon-interactive"&gt;&lt;/span&gt;<br>
+&nbsp;&nbsp;Like<br>
+&lt;/button&gt;
+                    </code>
+                </div>
+                <p class="body-sm text-gray-600">Icons respond to parent hover states with smooth transitions</p>
+            </div>
         </div>
     </div>
 </section>

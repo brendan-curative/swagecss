@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon currentColor Test</title>
+    <link rel="stylesheet" href="src/swage.css">
+    <style>
+        body { padding: 2rem; }
+        .test-section { margin-bottom: 2rem; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; }
+        .icon-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <h1>Icon currentColor Inheritance Test</h1>
+    
+    <div class="test-section">
+        <h2>Basic Color Inheritance</h2>
+        <div class="icon-row">
+            <span class="text-blue-600">Blue parent: <span class="heroicon heroicon-heart"></span></span>
+        </div>
+        <div class="icon-row">
+            <span class="text-red-500">Red parent: <span class="heroicon heroicon-star"></span></span>
+        </div>
+        <div class="icon-row">
+            <span class="text-green-600">Green parent: <span class="heroicon heroicon-check"></span></span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Button Examples</h2>
+        <div class="icon-row">
+            <button class="button button--primary">
+                <span class="heroicon heroicon-plus icon-text-left"></span>
+                Add Item
+            </button>
+            <button class="button button--secondary">
+                <span class="heroicon heroicon-cog-6-tooth icon-text-left"></span>
+                Settings
+            </button>
+            <button class="button button--critical">
+                <span class="heroicon heroicon-trash icon-text-left"></span>
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Link Examples</h2>
+        <div class="icon-row">
+            <a href="#" class="text-blue-600 hover:text-blue-800">
+                <span class="heroicon heroicon-external-link icon-text-left"></span>
+                External Link
+            </a>
+        </div>
+        <div class="icon-row">
+            <a href="#" class="text-gray-600 hover:text-gray-800">
+                <span class="heroicon heroicon-download icon-text-left"></span>
+                Download
+            </a>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Icon Color Utilities</h2>
+        <div class="icon-row">
+            <span class="heroicon heroicon-heart icon-critical"></span>
+            <span>Critical color</span>
+        </div>
+        <div class="icon-row">
+            <span class="heroicon heroicon-check icon-success"></span>
+            <span>Success color</span>
+        </div>
+        <div class="icon-row">
+            <span class="heroicon heroicon-exclamation-triangle icon-warning"></span>
+            <span>Warning color</span>
+        </div>
+        <div class="icon-row">
+            <span class="heroicon heroicon-information-circle icon-primary"></span>
+            <span>Primary color</span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Interactive Icons</h2>
+        <div class="icon-row">
+            <span class="heroicon heroicon-heart icon-interactive" title="Click me"></span>
+            <span class="heroicon heroicon-star icon-interactive" title="Click me"></span>
+            <span class="heroicon heroicon-bookmark icon-interactive" title="Click me"></span>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Different Sizes</h2>
+        <div class="icon-row">
+            <span class="text-purple-600">
+                <span class="heroicon heroicon-16 heroicon-heart"></span>
+                16px heart
+            </span>
+        </div>
+        <div class="icon-row">
+            <span class="text-purple-600">
+                <span class="heroicon heroicon-20 heroicon-heart"></span>
+                20px heart
+            </span>
+        </div>
+        <div class="icon-row">
+            <span class="text-purple-600">
+                <span class="heroicon heroicon-heart"></span>
+                24px heart (default)
+            </span>
+        </div>
+    </div>
+</body>
+</html>

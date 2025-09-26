@@ -362,6 +362,80 @@
         </ul>
     </div>
 </section>
+
+<section class="component-section">
+    <h2>Validation Examples</h2>
+    <p class="mb-24">Simple test cases for validating stepper behavior and visual rendering.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Basic Test - No Progress</div>
+            <ol class="horizontal-stepper mb-16">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+            <p class="body-sm text-gray-600">All steps at 0% - initial state validation</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Partial Progress Test</div>
+            <ol class="horizontal-stepper mb-16">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+            <p class="body-sm text-gray-600">Mixed progress states - partial completion validation</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Complete Progress Test</div>
+            <ol class="horizontal-stepper mb-16">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+            </ol>
+            <p class="body-sm text-gray-600">All steps at 100% - completion state validation</p>
+        </div>
+    </div>
+    
+    <div class="alert alert--info mb-24">
+        <div class="alert__content">
+            <h4 class="heading-md mb-8">Testing Notes</h4>
+            <p class="body-md">
+                These examples are useful for validating the stepper component rendering across different states. 
+                Check that borders are properly rounded, progress fills correctly, and spacing is consistent.
+            </p>
+        </div>
+    </div>
+</section>
 </article>
         
       </main>
