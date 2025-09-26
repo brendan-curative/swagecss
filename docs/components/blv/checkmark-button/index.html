@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Select</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; BLV &bull; Checkmark Button</title>
     <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Select Component</h1> 
+                <h1>Checkmark Button Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Select imported from CUI</p>
+                  <p>Interactive button with checkmark for selection states</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Sep 24, 2025, 5:00 PM</span> 
+             </a>  <span></span> 
              
         </div>
 
@@ -99,366 +99,253 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        Select dropdown component for choosing from a list of options. 
-        Features multiple states, sizes, and interactive functionality.
+        The Checkmark Button component provides an interactive button with an integrated checkmark icon 
+        for selection states, commonly used in baseline visit workflows and multi-choice interfaces.
     </p>
 </section>
 
 <section class="component-section">
-    <h2>Basic Select</h2>
-    <p class="mb-24">Standard select dropdown with various states.</p>
+    <h2>Basic Checkmark Button</h2>
+    <p class="mb-24">Interactive buttons with checkmark icons showing checked and unchecked states.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Default State</div>
-            <div class="select">
-                <select class="select__control" id="basicSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Unchecked State</div>
+            <button class="checkmark-button" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">Self-Guided Onboarding</span>
+            </button>
         </div>
 
         <div class="demo-item">
-            <div class="demo-label">With Selected Value</div>
-            <div class="select">
-                <select class="select__control" id="selectedSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2" selected>Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Checked State</div>
+            <button class="checkmark-button checkmark-button--checked" data-checked="true">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" fill="currentColor"/>
+                    <path d="M13.9226 8.61029C14.248 8.93573 14.248 9.46336 13.9226 9.7888L10.5893 13.1221C10.2638 13.4476 9.73618 13.4476 9.41074 13.1221L7.74408 11.4555C7.41864 11.13 7.41864 10.6024 7.74408 10.277C8.06951 9.95152 8.59715 9.95152 8.92259 10.277L10 11.3544L12.7441 8.61029C13.0695 8.28485 13.5972 8.28485 13.9226 8.61029Z" fill="white"/>
+                </svg>
+                <span class="checkmark-button__text">Self-Guided Onboarding</span>
+            </button>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Hover State</div>
+            <button class="checkmark-button checkmark-button--hover" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">Self-Guided Onboarding</span>
+            </button>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Focus State</div>
+            <button class="checkmark-button checkmark-button--focus" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">Self-Guided Onboarding</span>
+            </button>
         </div>
 
         <div class="demo-item">
             <div class="demo-label">Disabled State</div>
-            <div class="select select--disabled">
-                <select class="select__control" disabled>
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <button class="checkmark-button checkmark-button--disabled" data-checked="false" disabled>
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">Self-Guided Onboarding</span>
+            </button>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Select with Label</h2>
-    <p class="mb-24">Select components with associated labels for better accessibility.</p>
+    <h2>Different Text Examples</h2>
+    <p class="mb-24">Checkmark buttons with various text content lengths and styles.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <label for="countrySelect" class="select__label">Country</label>
-            <div class="select">
-                <select class="select__control" id="countrySelect">
-                    <option value="">Select a country...</option>
-                    <option value="us">United States</option>
-                    <option value="ca">Canada</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="au">Australia</option>
-                    <option value="de">Germany</option>
-                    <option value="fr">France</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Short Text</div>
+            <button class="checkmark-button" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">Yes</span>
+            </button>
         </div>
 
         <div class="demo-item">
-            <label for="categorySelect" class="select__label">Category</label>
-            <div class="select">
-                <select class="select__control" id="categorySelect">
-                    <option value="">All categories...</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing & Accessories</option>
-                    <option value="books">Books & Media</option>
-                    <option value="home">Home & Garden</option>
-                    <option value="sports">Sports & Outdoors</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+            <div class="demo-label">Medium Text</div>
+            <button class="checkmark-button checkmark-button--checked" data-checked="true">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" fill="currentColor"/>
+                    <path d="M13.9226 8.61029C14.248 8.93573 14.248 9.46336 13.9226 9.7888L10.5893 13.1221C10.2638 13.4476 9.73618 13.4476 9.41074 13.1221L7.74408 11.4555C7.41864 11.13 7.41864 10.6024 7.74408 10.277C8.06951 9.95152 8.59715 9.95152 8.92259 10.277L10 11.3544L12.7441 8.61029C13.0695 8.28485 13.5972 8.28485 13.9226 8.61029Z" fill="white"/>
+                </svg>
+                <span class="checkmark-button__text">Schedule Appointment</span>
+            </button>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Long Text</div>
+            <button class="checkmark-button" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">Complete Baseline Visit Questionnaire</span>
+            </button>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Select Sizes</h2>
-    <p class="mb-24">Different select sizes for various UI contexts.</p>
+    <h2>Interactive Demo</h2>
+    <p class="mb-24">Click the buttons below to see the interactive checkmark functionality.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Small Size</div>
-            <div class="select select--small">
-                <select class="select__control">
-                    <option value="">Small select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                </div>
+            <div class="demo-label">Interactive Selection</div>
+            <div class="flex flex-col gap-12 w-full">
+                <button class="checkmark-button" data-checked="false" onclick="toggleCheckmarkButton(this)">
+                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="checkmark-button__text">Option 1: Self-Guided</span>
+                </button>
+                
+                <button class="checkmark-button" data-checked="false" onclick="toggleCheckmarkButton(this)">
+                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="checkmark-button__text">Option 2: Guided Tour</span>
+                </button>
+                
+                <button class="checkmark-button" data-checked="false" onclick="toggleCheckmarkButton(this)">
+                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="checkmark-button__text">Option 3: Schedule Later</span>
+                </button>
             </div>
         </div>
 
         <div class="demo-item">
-            <div class="demo-label">Large Size</div>
-            <div class="select select--large">
-                <select class="select__control">
-                    <option value="">Large select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
+            <div class="demo-label">Single Selection Mode</div>
+            <div class="flex flex-col gap-12 w-full">
+                <button class="checkmark-button" data-checked="false" data-group="single-select" onclick="toggleSingleSelect(this)">
+                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="checkmark-button__text">Morning Appointment</span>
+                </button>
+                
+                <button class="checkmark-button" data-checked="false" data-group="single-select" onclick="toggleSingleSelect(this)">
+                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="checkmark-button__text">Afternoon Appointment</span>
+                </button>
+                
+                <button class="checkmark-button" data-checked="false" data-group="single-select" onclick="toggleSingleSelect(this)">
+                    <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="checkmark-button__text">Evening Appointment</span>
+                </button>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Select States</h2>
-    <p class="mb-24">Different states for form validation feedback.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">Error State</div>
-            <div class="select select--error">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-            <div class="select__error-message">This field is required</div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Success State</div>
-            <div class="select select--success">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2" selected>Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-            <div class="select__success-message">Valid selection</div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Multiple Select</h2>
-    <p class="mb-24">Select components that allow multiple selections.</p>
-    
-    <div class="demo-item">
-        <label for="skillsSelect" class="select__label">Skills (Hold Ctrl/Cmd to select multiple)</label>
-        <div class="select select--multiple">
-            <select class="select__control" id="skillsSelect" multiple>
-                <option value="javascript">JavaScript</option>
-                <option value="python">Python</option>
-                <option value="react">React</option>
-                <option value="vue">Vue.js</option>
-                <option value="angular">Angular</option>
-                <option value="nodejs">Node.js</option>
-                <option value="css">CSS</option>
-                <option value="html">HTML</option>
-            </select>
-        </div>
-        <div class="select__help-text">Hold Ctrl (or Cmd on Mac) while clicking to select multiple options</div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Grouped Options</h2>
-    <p class="mb-24">Select with optgroups for organized option lists.</p>
-    
-    <div class="demo-item">
-        <label for="vehicleSelect" class="select__label">Vehicle Type</label>
-        <div class="select">
-            <select class="select__control" id="vehicleSelect">
-                <option value="">Choose a vehicle...</option>
-                <optgroup label="Cars">
-                    <option value="sedan">Sedan</option>
-                    <option value="suv">SUV</option>
-                    <option value="hatchback">Hatchback</option>
-                    <option value="convertible">Convertible</option>
-                </optgroup>
-                <optgroup label="Motorcycles">
-                    <option value="sport">Sport Bike</option>
-                    <option value="cruiser">Cruiser</option>
-                    <option value="touring">Touring</option>
-                </optgroup>
-                <optgroup label="Trucks">
-                    <option value="pickup">Pickup Truck</option>
-                    <option value="delivery">Delivery Van</option>
-                    <option value="semi">Semi Truck</option>
-                </optgroup>
-            </select>
-            <div class="select__icon">
-                <span class="heroicon heroicon-chevron-down"></span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Interactive Examples</h2>
-    <p class="mb-24">Demonstrates dynamic interactions between select components.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <label for="regionSelect" class="select__label">Region</label>
-            <div class="select">
-                <select class="select__control" id="regionSelect">
-                    <option value="">Select region...</option>
-                    <option value="north-america">North America</option>
-                    <option value="europe">Europe</option>
-                    <option value="asia">Asia</option>
-                    <option value="south-america">South America</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <label for="countryDependentSelect" class="select__label">Country</label>
-            <div class="select">
-                <select class="select__control" id="countryDependentSelect" disabled>
-                    <option value="">First select a region...</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="demo-output" id="selectionOutput">
-        Region: None selected<br>
-        Country: None selected
     </div>
 </section>
 
 <section class="component-section">
     <h2>Form Integration</h2>
-    <p class="mb-24">Select components within a complete form context with validation.</p>
+    <p class="mb-24">Checkmark buttons integrated within form contexts with validation states.</p>
     
-    <div class="demo-item">
-        <form id="profileForm" class="profile-form">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="titleSelect" class="select__label">Title</label>
-                    <div class="select select--small">
-                        <select class="select__control" id="titleSelect" name="title">
-                            <option value="">Select...</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="ms">Ms.</option>
-                            <option value="dr">Dr.</option>
-                            <option value="prof">Prof.</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                        </div>
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Form Example</div>
+            <form class="w-full" onsubmit="handleFormSubmit(event)">
+                <fieldset class="border border-gray-300 rounded p-16 mb-16">
+                    <legend class="body-sm font-semibold px-8">Select your preferred baseline visit type:</legend>
+                    <div class="flex flex-col gap-12 mt-12">
+                        <button type="button" class="checkmark-button" data-checked="false" data-name="visit-type" data-value="self-guided" onclick="toggleFormOption(this)">
+                            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span class="checkmark-button__text">Self-Guided Onboarding</span>
+                        </button>
+                        
+                        <button type="button" class="checkmark-button" data-checked="false" data-name="visit-type" data-value="assisted" onclick="toggleFormOption(this)">
+                            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            <span class="checkmark-button__text">Assisted Onboarding</span>
+                        </button>
                     </div>
+                </fieldset>
+                
+                <div class="flex gap-12">
+                    <button type="submit" class="button button--primary">Continue</button>
+                    <button type="button" class="button button--secondary" onclick="resetForm()">Reset</button>
                 </div>
-
-                <div class="form-group">
-                    <label for="industrySelect" class="select__label">Industry *</label>
-                    <div class="select" id="industrySelectWrapper">
-                        <select class="select__control" id="industrySelect" name="industry" required>
-                            <option value="">Select industry...</option>
-                            <option value="technology">Technology</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="finance">Finance</option>
-                            <option value="education">Education</option>
-                            <option value="retail">Retail</option>
-                            <option value="manufacturing">Manufacturing</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                    <div class="select__error-message" id="industryError" style="display: none;">
-                        Please select an industry
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="experienceSelect" class="select__label">Years of Experience</label>
-                    <div class="select">
-                        <select class="select__control" id="experienceSelect" name="experience">
-                            <option value="">Select...</option>
-                            <option value="0-1">0-1 years</option>
-                            <option value="2-5">2-5 years</option>
-                            <option value="6-10">6-10 years</option>
-                            <option value="11-15">11-15 years</option>
-                            <option value="16+">16+ years</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferenceSelect" class="select__label">Contact Preference</label>
-                    <div class="select">
-                        <select class="select__control" id="preferenceSelect" name="preference">
-                            <option value="">Select...</option>
-                            <option value="email">Email</option>
-                            <option value="phone">Phone</option>
-                            <option value="both">Both Email and Phone</option>
-                            <option value="none">No contact</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-actions">
-                <button type="button" class="button button--outline" onclick="resetProfileForm()">Reset</button>
-                <button type="submit" class="button button--primary">Save Profile</button>
-            </div>
-        </form>
-        
-        <div id="profileResults" class="form-results" style="display: none;">
-            <h3>Profile Data:</h3>
-            <div id="profileResultsContent"></div>
+                
+                <div id="form-status" class="mt-16 text-sm" style="display: none;"></div>
+            </form>
         </div>
     </div>
 </section>
 
+<section class="component-section">
+    <h2>Usage Guidelines</h2>
+    <p class="mb-24">Best practices for implementing checkmark buttons in your applications.</p>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div>
+            <h3 class="heading-lg mb-16">HTML Structure</h3>
+            <p class="body-sm text-gray-600 mb-16">
+                Use semantic button elements with proper ARIA attributes for accessibility:
+            </p>
+            <div class="bg-gray-50 border rounded p-16 mb-16">
+                <code class="body-sm">
+                    &lt;button class="checkmark-button" data-checked="false"&gt;<br>
+                    &nbsp;&nbsp;&lt;svg class="checkmark-button__icon"&gt;...&lt;/svg&gt;<br>
+                    &nbsp;&nbsp;&lt;span class="checkmark-button__text"&gt;Label&lt;/span&gt;<br>
+                    &lt;/button&gt;
+                </code>
+            </div>
+        </div>
+        
+        <div>
+            <h3 class="heading-lg mb-16">JavaScript Integration</h3>
+            <p class="body-sm text-gray-600 mb-16">
+                Update button state and icon dynamically:
+            </p>
+            <div class="bg-gray-50 border rounded p-16 mb-16">
+                <code class="body-sm">
+                    // Toggle checked state<br>
+                    toggleCheckmarkButton(buttonElement);<br>
+                    <br>
+                    // Set specific state<br>
+                    setCheckmarkButtonState(buttonElement, true);
+                </code>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-24">
+        <h3 class="heading-lg mb-16">Accessibility</h3>
+        <ul class="body-sm text-gray-600">
+            <li class="mb-8">• Use semantic <code>&lt;button&gt;</code> elements for proper keyboard navigation</li>
+            <li class="mb-8">• Include <code>aria-pressed</code> attribute to indicate selection state</li>
+            <li class="mb-8">• Provide clear visual feedback for hover, focus, and active states</li>
+            <li class="mb-8">• Ensure sufficient color contrast for all states</li>
+            <li class="mb-8">• Use descriptive text labels that clearly indicate the action or choice</li>
+            <li class="mb-8">• Group related options with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code></li>
+        </ul>
+    </div>
+</section>
 </article>
         
       </main>

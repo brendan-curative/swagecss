@@ -1,0 +1,270 @@
+---
+layout: layout.html
+title: Swageblocks &bull; BLV &bull; Horizontal Stepper
+heading: Horizontal Stepper Component
+secondary: Progress indicator for baseline visit workflow
+section: BLV Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Horizontal Stepper component provides a visual progress indicator for multi-step workflows, 
+        showing completion status and current progress through a series of connected steps.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Basic Horizontal Stepper</h2>
+    <p class="mb-24">A horizontal progress indicator with multiple steps showing different completion states.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Default State</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">First Step Complete</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Partial Progress</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Nearly Complete</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 75%;"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">All Steps Complete</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Different Step Counts</h2>
+    <p class="mb-24">Horizontal steppers can accommodate different numbers of steps based on workflow requirements.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">3 Steps</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 60%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">5 Steps</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 30%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">6 Steps</div>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 45%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Demo</h2>
+    <p class="mb-24">Use the buttons below to simulate progress through a multi-step workflow.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Interactive Stepper</div>
+            <ol class="horizontal-stepper mb-24" id="interactive-stepper" data-testid="HorizontalStepper">
+                <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+                <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                </li>
+            </ol>
+            
+            <div class="flex gap-8">
+                <button class="button button--secondary" onclick="resetStepper()">Reset</button>
+                <button class="button button--primary" onclick="nextStep()">Next Step</button>
+                <button class="button button--secondary" onclick="prevStep()">Previous Step</button>
+            </div>
+            
+            <div class="mt-16">
+                <p class="body-sm text-gray-600">
+                    Current Step: <span id="current-step-display">1</span> of 4
+                </p>
+                <p class="body-sm text-gray-600">
+                    Overall Progress: <span id="overall-progress">0%</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage Guidelines</h2>
+    <p class="mb-24">Best practices for implementing horizontal steppers in your applications.</p>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div>
+            <h3 class="heading-lg mb-16">HTML Structure</h3>
+            <p class="body-sm text-gray-600 mb-16">
+                Use semantic HTML with ordered lists and proper ARIA attributes:
+            </p>
+            <div class="bg-gray-50 border rounded p-16 mb-16">
+                <code class="body-sm">
+                    &lt;ol class="horizontal-stepper"&gt;<br>
+                    &nbsp;&nbsp;&lt;li class="horizontal-stepper__step horizontal-stepper__step--first"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="horizontal-stepper__progress" style="width: 50%;"&gt;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;...<br>
+                    &lt;/ol&gt;
+                </code>
+            </div>
+        </div>
+        
+        <div>
+            <h3 class="heading-lg mb-16">Progress Updates</h3>
+            <p class="body-sm text-gray-600 mb-16">
+                Update progress by modifying the width style property:
+            </p>
+            <div class="bg-gray-50 border rounded p-16 mb-16">
+                <code class="body-sm">
+                    // Update progress to 75%<br>
+                    progressEl.style.width = '75%';<br>
+                    <br>
+                    // Complete step<br>
+                    progressEl.style.width = '100%';
+                </code>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-24">
+        <h3 class="heading-lg mb-16">Accessibility</h3>
+        <ul class="body-sm text-gray-600">
+            <li class="mb-8">• Use semantic <code>&lt;ol&gt;</code> elements to indicate step sequence</li>
+            <li class="mb-8">• Include <code>aria-label</code> or <code>aria-describedby</code> for screen readers</li>
+            <li class="mb-8">• Provide text alternatives for progress information</li>
+            <li class="mb-8">• Ensure sufficient color contrast for progress indicators</li>
+            <li class="mb-8">• Consider adding step labels for complex workflows</li>
+        </ul>
+    </div>
+</section>

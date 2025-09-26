@@ -1558,4 +1558,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeTable();
     initializeToggle();
     initializeTextfield();
+    
+    // BLV Components
+    if (typeof initializeHorizontalStepper === 'function') {
+        initializeHorizontalStepper();
+    }
+    if (typeof initializeCheckmarkButton === 'function') {
+        initializeCheckmarkButton();
+    }
 });

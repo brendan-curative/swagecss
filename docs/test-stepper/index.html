@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Horizontal Stepper</title>
+    <link rel="stylesheet" href="src/swage.css">
+</head>
+<body style="padding: 24px; background: white;">
+    <h1>Test Horizontal Stepper</h1>
+    
+    <h2>Basic Test</h2>
+    <ol class="horizontal-stepper" style="margin-bottom: 24px;">
+        <li class="horizontal-stepper__step horizontal-stepper__step--first">
+            <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+        </li>
+        <li class="horizontal-stepper__step">
+            <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+        </li>
+        <li class="horizontal-stepper__step">
+            <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+        </li>
+        <li class="horizontal-stepper__step horizontal-stepper__step--last">
+            <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+        </li>
+    </ol>
+
+    <h2>With Progress</h2>
+    <ol class="horizontal-stepper" style="margin-bottom: 24px;">
+        <li class="horizontal-stepper__step horizontal-stepper__step--first">
+            <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+        </li>
+        <li class="horizontal-stepper__step">
+            <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
+        </li>
+        <li class="horizontal-stepper__step">
+            <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+        </li>
+        <li class="horizontal-stepper__step horizontal-stepper__step--last">
+            <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+        </li>
+    </ol>
+
+    <h2>All Complete</h2>
+    <ol class="horizontal-stepper">
+        <li class="horizontal-stepper__step horizontal-stepper__step--first">
+            <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+        </li>
+        <li class="horizontal-stepper__step">
+            <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+        </li>
+        <li class="horizontal-stepper__step">
+            <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+        </li>
+        <li class="horizontal-stepper__step horizontal-stepper__step--last">
+            <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+        </li>
+    </ol>
+</body>
+</html>
