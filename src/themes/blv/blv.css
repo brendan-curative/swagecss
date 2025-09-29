@@ -139,4 +139,8 @@ h2 + .card {
 h3 + .card {
     margin-top: 0;
 }
+
+.card p + p {
+    padding-top: var(--spacing-16);
+}
 /* #endregion */

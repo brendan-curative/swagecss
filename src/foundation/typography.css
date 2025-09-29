@@ -353,6 +353,37 @@ body {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
 }
+/* #endregion */
+
+/* #region Lists */
+ul.bulleted {
+  list-style: disc;
+  padding-left: var(--spacing-8);
+}
+
+  ul.bulleted ul {
+    list-style: circle;
+    padding-top: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+    padding-left: var(--spacing-8);
+  }
+
+ul.numbered {
+  list-style: decimal;
+  padding-left: var(--spacing-8);
+}
+
+  ul.numbered ul {
+    list-style: decimal;  
+    padding-top: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+    padding-left: var(--spacing-8);
+  }
+
+  ul.bulleted li,
+  ul.numbered li {
+    margin-bottom: var(--spacing-8);
+  }
 
 /* #endregion */
 
