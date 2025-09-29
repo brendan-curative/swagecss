@@ -1,5 +1,17 @@
 /* #region Drawer Plugin */
 
+/* Immediate hiding of all drawers before JavaScript loads */
+[data-drawer] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateX(-100%) !important;
+}
+
+[data-drawer][data-drawer-position="right"] {
+    transform: translateX(100%) !important;
+}
+
 /* Drawer overlay backdrop */
 .drawer-overlay {
     position: fixed;
@@ -31,11 +43,26 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     z-index: 1001;
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
     font-family: var(--font-family-sans);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    /* Ensure drawer is hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Only add transitions after initialization to prevent flash */
+.drawer.drawer--initialized {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Force all non-open initialized drawers to be hidden */
+.drawer.drawer--initialized:not(.drawer--open) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 /* Left drawer (default) */
@@ -45,7 +72,10 @@
 }
 
 .drawer--left.drawer--open {
-    transform: translateX(0);
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 /* Right drawer */
@@ -55,7 +85,10 @@
 }
 
 .drawer--right.drawer--open {
-    transform: translateX(0);
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 /* Drawer header */

@@ -35,6 +35,9 @@ class Drawer {
         
         // Store reference for global access
         this.element.drawerInstance = this;
+        
+        // Add initialized class to enable transitions
+        this.element.classList.add('drawer--initialized');
     }
 
     setupDrawer() {
@@ -43,7 +46,8 @@ class Drawer {
         this.element.classList.add(`drawer--${this.options.position}`);
         this.element.classList.add(`drawer--${this.options.size}`);
         
-        // Set initial state
+        // Set initial state - ensure drawer is closed
+        this.element.classList.remove('drawer--open');
         this.element.setAttribute('aria-hidden', 'true');
         this.element.setAttribute('aria-modal', 'true');
         this.element.setAttribute('role', 'dialog');
@@ -59,6 +63,9 @@ class Drawer {
         this.overlay = document.createElement('div');
         this.overlay.className = 'drawer-overlay';
         this.overlay.setAttribute('aria-hidden', 'true');
+        
+        // Ensure overlay is initially hidden
+        this.overlay.classList.remove('drawer-overlay--open');
         
         // Insert overlay before drawer
         this.element.parentNode.insertBefore(this.overlay, this.element);

@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span></span> 
+             </a>  <span>Sep 29, 2025, 3:40 PM</span> 
              
         </div>
 
@@ -251,14 +251,22 @@
         <h3 class="heading-lg mb-16">Configuration Options</h3>
         <div class="space-y-16">
             <div>
-                <h4 class="heading-md mb-8">Data Attributes</h4>
+                <h4 class="heading-md mb-8">Drawer Container Attributes</h4>
                 <ul class="body-sm text-gray-600 space-y-4">
+                    <li><code>data-drawer</code> - Required: Marks element as a drawer</li>
                     <li><code>data-drawer-position</code> - "left" or "right" (default: "left")</li>
                     <li><code>data-drawer-size</code> - "small", "medium", "large", "full" (default: "medium")</li>
                     <li><code>data-drawer-close-on-overlay</code> - "true" or "false" (default: "true")</li>
                     <li><code>data-drawer-close-on-escape</code> - "true" or "false" (default: "true")</li>
                     <li><code>data-drawer-focus-trap</code> - "true" or "false" (default: "true")</li>
                     <li><code>data-drawer-auto-focus</code> - "true" or "false" (default: "true")</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="heading-md mb-8">Trigger Button Attributes</h4>
+                <ul class="body-sm text-gray-600 space-y-4">
+                    <li><code>data-drawer-target</code> - Required: ID of the drawer to control</li>
                 </ul>
             </div>
             
@@ -275,9 +283,14 @@ closeDrawer('my-drawer');<br>
 // Toggle drawer<br>
 toggleDrawer('my-drawer');<br>
 <br>
+// Position override example<br>
+// Trigger buttons automatically handle position changes<br>
+// No manual JavaScript needed for trigger-based positioning<br>
+<br>
 // Event listeners<br>
 document.addEventListener('drawer:open', (e) =&gt; {<br>
 &nbsp;&nbsp;console.log('Drawer opened:', e.detail.drawer);<br>
+&nbsp;&nbsp;console.log('Current position:', e.detail.drawer.options.position);<br>
 });<br>
 <br>
 document.addEventListener('drawer:close', (e) =&gt; {<br>
@@ -333,14 +346,14 @@ document.addEventListener('drawer:close', (e) =&gt; {<br>
 <!-- Left Drawer -->
 <div id="demo-drawer-left" data-drawer data-drawer-position="left" data-drawer-size="medium">
     <div class="drawer__header">
-        <h3 class="drawer__title">Left Drawer</h3>
+        <h3 class="drawer__title">Left Navigation</h3>
         <button class="drawer__close" aria-label="Close drawer">
             <span class="heroicon heroicon-x-mark"></span>
         </button>
     </div>
     
     <div class="drawer__content">
-        <p class="body-md mb-16">This is a left-positioned drawer that slides in from the left side of the screen.</p>
+        <p class="body-md mb-16">This drawer slides in from the left side of the screen.</p>
         
         <nav class="drawer-nav">
             <ul class="drawer-nav">
@@ -370,31 +383,22 @@ document.addEventListener('drawer:close', (e) =&gt; {<br>
 <!-- Right Drawer -->
 <div id="demo-drawer-right" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
-        <h3 class="drawer__title">Right Drawer</h3>
+        <h3 class="drawer__title">Right Panel</h3>
         <button class="drawer__close" aria-label="Close drawer">
             <span class="heroicon heroicon-x-mark"></span>
         </button>
     </div>
     
     <div class="drawer__content">
-        <p class="body-md mb-16">This drawer slides in from the right side and can contain any type of content.</p>
+        <p class="body-md mb-16">This drawer slides in from the right side of the screen.</p>
         
         <div class="space-y-16">
             <div>
                 <h4 class="heading-md mb-8">Quick Actions</h4>
-                <div class="flex flex-col gap-8">
-                    <button class="button button--secondary">
-                        <span class="heroicon heroicon-plus icon-text-left"></span>
-                        New Item
-                    </button>
-                    <button class="button button--secondary">
-                        <span class="heroicon heroicon-arrow-up-tray icon-text-left"></span>
-                        Upload
-                    </button>
-                    <button class="button button--secondary">
-                        <span class="heroicon heroicon-share icon-text-left"></span>
-                        Share
-                    </button>
+                <div class="space-y-8">
+                    <button class="button button--primary w-full">Create New</button>
+                    <button class="button button--secondary w-full">Settings</button>
+                    <button class="button button--secondary w-full">Help</button>
                 </div>
             </div>
         </div>
