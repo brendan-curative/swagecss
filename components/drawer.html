@@ -1,0 +1,492 @@
+---
+layout: layout.html
+title: Swageblocks &bull; Components &bull; Drawer
+heading: Drawer Component
+secondary: Slide-out panel with overlay
+section: Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Drawer component provides a slide-out panel that appears over the existing page content. 
+        It supports left and right positioning, multiple sizes, keyboard navigation, and full accessibility features.
+    </p>
+    
+    <div class="alert alert--info mb-24">
+        <div class="alert__content">
+            <h4 class="heading-md mb-8">✨ Plugin Architecture</h4>
+            <p class="body-md">
+                The Drawer is implemented as a standalone plugin with automatic initialization, 
+                focus management, and accessibility features built-in.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Basic Drawer Examples</h2>
+    <p class="mb-24">Left and right positioning with different trigger styles.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Left Drawer</div>
+            <button class="button button--primary" data-drawer-target="demo-drawer-left">
+                <span class="heroicon heroicon-bars-3 icon-text-left"></span>
+                Open Left Drawer
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Slides in from the left side</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Right Drawer</div>
+            <button class="button button--secondary" data-drawer-target="demo-drawer-right">
+                Open Right Drawer
+                <span class="heroicon heroicon-bars-3 icon-text-right"></span>
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Slides in from the right side</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Icon Trigger</div>
+            <button class="drawer-trigger" data-drawer-target="demo-drawer-left" title="Open menu">
+                <span class="heroicon heroicon-bars-3"></span>
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Minimal icon-only trigger</p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Drawer Sizes</h2>
+    <p class="mb-24">Different width options to accommodate various content needs.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Small Drawer</div>
+            <button class="button button--secondary" data-drawer-target="demo-drawer-small">
+                Small (240px)
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Compact sidebar for simple navigation</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Medium Drawer</div>
+            <button class="button button--secondary" data-drawer-target="demo-drawer-medium">
+                Medium (320px)
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Standard width for most content</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Large Drawer</div>
+            <button class="button button--secondary" data-drawer-target="demo-drawer-large">
+                Large (400px)
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Wider panel for detailed content</p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Content Examples</h2>
+    <p class="mb-24">Different drawer content patterns and layouts.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Navigation Drawer</div>
+            <button class="button button--primary" data-drawer-target="demo-drawer-nav">
+                <span class="heroicon heroicon-list-bullet icon-text-left"></span>
+                Navigation Menu
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Hierarchical navigation structure</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Form Drawer</div>
+            <button class="button button--primary" data-drawer-target="demo-drawer-form">
+                <span class="heroicon heroicon-pencil icon-text-left"></span>
+                Edit Settings
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Form content with header and footer</p>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Content Drawer</div>
+            <button class="button button--primary" data-drawer-target="demo-drawer-content">
+                <span class="heroicon heroicon-document-text icon-text-left"></span>
+                View Details
+            </button>
+            <p class="body-sm text-gray-600 mt-8">Rich content with scrollable area</p>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Implementation Guide</h2>
+    <p class="mb-24">How to implement and customize drawer components.</p>
+    
+    <div class="bg-gray-50 border rounded p-24 mb-24">
+        <h3 class="heading-lg mb-16">Basic HTML Structure</h3>
+        <div class="bg-white p-16 rounded border mb-16">
+            <code class="body-sm">
+&lt;!-- Trigger Button --&gt;<br>
+&lt;button data-drawer-target="my-drawer"&gt;Open Drawer&lt;/button&gt;<br>
+<br>
+&lt;!-- Drawer Container --&gt;<br>
+&lt;div id="my-drawer" data-drawer data-drawer-position="left" data-drawer-size="medium"&gt;<br>
+&nbsp;&nbsp;&lt;div class="drawer__header"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h3 class="drawer__title"&gt;Drawer Title&lt;/h3&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="drawer__close" aria-label="Close drawer"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="heroicon heroicon-x-mark"&gt;&lt;/span&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;<br>
+&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&lt;div class="drawer__content"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Your content here --&gt;<br>
+&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&lt;div class="drawer__footer"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Optional footer content --&gt;<br>
+&nbsp;&nbsp;&lt;/div&gt;<br>
+&lt;/div&gt;
+            </code>
+        </div>
+        
+        <h3 class="heading-lg mb-16">Configuration Options</h3>
+        <div class="space-y-16">
+            <div>
+                <h4 class="heading-md mb-8">Data Attributes</h4>
+                <ul class="body-sm text-gray-600 space-y-4">
+                    <li><code>data-drawer-position</code> - "left" or "right" (default: "left")</li>
+                    <li><code>data-drawer-size</code> - "small", "medium", "large", "full" (default: "medium")</li>
+                    <li><code>data-drawer-close-on-overlay</code> - "true" or "false" (default: "true")</li>
+                    <li><code>data-drawer-close-on-escape</code> - "true" or "false" (default: "true")</li>
+                    <li><code>data-drawer-focus-trap</code> - "true" or "false" (default: "true")</li>
+                    <li><code>data-drawer-auto-focus</code> - "true" or "false" (default: "true")</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="heading-md mb-8">JavaScript API</h4>
+                <div class="bg-white p-16 rounded border">
+                    <code class="body-sm">
+// Open drawer<br>
+openDrawer('my-drawer');<br>
+<br>
+// Close drawer<br>
+closeDrawer('my-drawer');<br>
+<br>
+// Toggle drawer<br>
+toggleDrawer('my-drawer');<br>
+<br>
+// Event listeners<br>
+document.addEventListener('drawer:open', (e) =&gt; {<br>
+&nbsp;&nbsp;console.log('Drawer opened:', e.detail.drawer);<br>
+});<br>
+<br>
+document.addEventListener('drawer:close', (e) =&gt; {<br>
+&nbsp;&nbsp;console.log('Drawer closed:', e.detail.drawer);<br>
+});
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Accessibility Features</h2>
+    <p class="mb-24">Built-in accessibility support for screen readers and keyboard navigation.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Keyboard Navigation</div>
+            <ul class="body-sm text-gray-600 space-y-4">
+                <li>• <kbd>Escape</kbd> - Close drawer</li>
+                <li>• <kbd>Tab</kbd> - Navigate forward through focusable elements</li>
+                <li>• <kbd>Shift+Tab</kbd> - Navigate backward through focusable elements</li>
+                <li>• Focus trap keeps focus within drawer when open</li>
+            </ul>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Screen Reader Support</div>
+            <ul class="body-sm text-gray-600 space-y-4">
+                <li>• <code>role="dialog"</code> for proper announcement</li>
+                <li>• <code>aria-modal="true"</code> when open</li>
+                <li>• <code>aria-hidden</code> state management</li>
+                <li>• <code>aria-expanded</code> on trigger buttons</li>
+                <li>• Automatic focus management</li>
+            </ul>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Focus Management</div>
+            <ul class="body-sm text-gray-600 space-y-4">
+                <li>• Auto-focus first interactive element when opened</li>
+                <li>• Return focus to trigger when closed</li>
+                <li>• Focus trap within drawer content</li>
+                <li>• Skip to close button with proper labeling</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Drawer Examples -->
+
+<!-- Left Drawer -->
+<div id="demo-drawer-left" data-drawer data-drawer-position="left" data-drawer-size="medium">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Left Drawer</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    
+    <div class="drawer__content">
+        <p class="body-md mb-16">This is a left-positioned drawer that slides in from the left side of the screen.</p>
+        
+        <nav class="drawer-nav">
+            <ul class="drawer-nav">
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link drawer-nav__link--active">
+                        <span class="heroicon heroicon-home icon-text-left"></span>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link">
+                        <span class="heroicon heroicon-user icon-text-left"></span>
+                        Profile
+                    </a>
+                </li>
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link">
+                        <span class="heroicon heroicon-cog-6-tooth icon-text-left"></span>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- Right Drawer -->
+<div id="demo-drawer-right" data-drawer data-drawer-position="right" data-drawer-size="medium">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Right Drawer</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    
+    <div class="drawer__content">
+        <p class="body-md mb-16">This drawer slides in from the right side and can contain any type of content.</p>
+        
+        <div class="space-y-16">
+            <div>
+                <h4 class="heading-md mb-8">Quick Actions</h4>
+                <div class="flex flex-col gap-8">
+                    <button class="button button--secondary">
+                        <span class="heroicon heroicon-plus icon-text-left"></span>
+                        New Item
+                    </button>
+                    <button class="button button--secondary">
+                        <span class="heroicon heroicon-arrow-up-tray icon-text-left"></span>
+                        Upload
+                    </button>
+                    <button class="button button--secondary">
+                        <span class="heroicon heroicon-share icon-text-left"></span>
+                        Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Size Examples -->
+<div id="demo-drawer-small" data-drawer data-drawer-position="left" data-drawer-size="small">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Small</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    <div class="drawer__content">
+        <p class="body-md">Small drawer (240px wide) perfect for simple navigation.</p>
+    </div>
+</div>
+
+<div id="demo-drawer-medium" data-drawer data-drawer-position="left" data-drawer-size="medium">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Medium</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    <div class="drawer__content">
+        <p class="body-md">Medium drawer (320px wide) is the default size for most use cases.</p>
+    </div>
+</div>
+
+<div id="demo-drawer-large" data-drawer data-drawer-position="left" data-drawer-size="large">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Large</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    <div class="drawer__content">
+        <p class="body-md">Large drawer (400px wide) provides more space for detailed content.</p>
+    </div>
+</div>
+
+<!-- Content Examples -->
+<div id="demo-drawer-nav" data-drawer data-drawer-position="left" data-drawer-size="medium">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Navigation</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    
+    <div class="drawer__content">
+        <nav>
+            <h4 class="drawer__section-header">Main</h4>
+            <ul class="drawer-nav">
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link drawer-nav__link--active">
+                        <span class="heroicon heroicon-home icon-text-left"></span>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link">
+                        <span class="heroicon heroicon-chart-bar icon-text-left"></span>
+                        Analytics
+                    </a>
+                </li>
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link">
+                        <span class="heroicon heroicon-users icon-text-left"></span>
+                        Users
+                    </a>
+                </li>
+            </ul>
+            
+            <h4 class="drawer__section-header">Settings</h4>
+            <ul class="drawer-nav">
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link">
+                        <span class="heroicon heroicon-cog-6-tooth icon-text-left"></span>
+                        Preferences
+                    </a>
+                </li>
+                <li class="drawer-nav__item">
+                    <a href="#" class="drawer-nav__link">
+                        <span class="heroicon heroicon-key icon-text-left"></span>
+                        Security
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div id="demo-drawer-form" data-drawer data-drawer-position="right" data-drawer-size="large">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Edit Settings</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    
+    <div class="drawer__content">
+        <form class="space-y-16">
+            <div>
+                <label for="user-name" class="textfield__label">Full Name</label>
+                <input type="text" id="user-name" class="textfield" value="John Doe">
+            </div>
+            
+            <div>
+                <label for="user-email" class="textfield__label">Email Address</label>
+                <input type="email" id="user-email" class="textfield" value="john@example.com">
+            </div>
+            
+            <div>
+                <label for="user-bio" class="textfield__label">Bio</label>
+                <textarea id="user-bio" class="textfield" rows="4" placeholder="Tell us about yourself..."></textarea>
+            </div>
+            
+            <div>
+                <label class="checkbox">
+                    <input type="checkbox" class="checkbox__input" checked>
+                    <span class="checkbox__indicator"></span>
+                    <span class="checkbox__label">Receive email notifications</span>
+                </label>
+            </div>
+        </form>
+    </div>
+    
+    <div class="drawer__footer">
+        <div class="flex gap-8 justify-end">
+            <button class="button button--secondary" onclick="closeDrawer('demo-drawer-form')">Cancel</button>
+            <button class="button button--primary">Save Changes</button>
+        </div>
+    </div>
+</div>
+
+<div id="demo-drawer-content" data-drawer data-drawer-position="right" data-drawer-size="large">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Content Details</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    
+    <div class="drawer__content">
+        <div class="space-y-24">
+            <div>
+                <h4 class="heading-lg mb-8">Article Title</h4>
+                <p class="body-md text-gray-600 mb-16">Published on January 15, 2024</p>
+                
+                <p class="body-md mb-16">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                    nostrud exercitation ullamco laboris.
+                </p>
+                
+                <p class="body-md mb-16">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                    sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="heading-lg mb-8">Tags</h4>
+                <div class="flex gap-8 flex-wrap">
+                    <span class="badge badge--secondary">Design</span>
+                    <span class="badge badge--secondary">Frontend</span>
+                    <span class="badge badge--secondary">CSS</span>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="heading-lg mb-8">Related Articles</h4>
+                <div class="space-y-8">
+                    <a href="#" class="block p-16 border rounded hover:bg-gray-50">
+                        <h5 class="heading-md mb-4">Getting Started with CSS Grid</h5>
+                        <p class="body-sm text-gray-600">Learn the fundamentals of CSS Grid layout...</p>
+                    </a>
+                    <a href="#" class="block p-16 border rounded hover:bg-gray-50">
+                        <h5 class="heading-md mb-4">Modern JavaScript Patterns</h5>
+                        <p class="body-sm text-gray-600">Explore contemporary JavaScript development...</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
