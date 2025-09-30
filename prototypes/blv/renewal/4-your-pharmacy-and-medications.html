@@ -1,176 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your pharmacy and medications</title>
-</head>
-<body>
-<div>Step 3 of 9 - Your pharmacy and medications</div>
+---
+layout: templates/blv/layout.html
+title: BLV Prototype
+heading: BLV Prototype
+secondary: Secondary
+section: Part 1
+status: draft
+previous: 3-your-go-to-facilities/
+next: 5-your-screenings/
+button-text: Continue
+---
 
-                <h1>
-                    Your pharmacy and medications
-                </h1>
-                <p>
-                    Let's make sure your pharmacy and medication list is up to date so we can verify coverage and identify any potential savings.
-                </p>
+<section>
+    <h1>Your pharmacy and medications</h1>
+    
+    <p>Let's make sure your pharmacy and medication list is up to date so we can verify coverage and identify any potential savings.</p>
 
-            <!-- Your Preferred Pharmacy Section -->
-            
-                <h2>
-                    Your Preferred Pharmacy
-                </h2>
+    <!-- Your Preferred Pharmacy Section -->
+    <h2>Your Preferred Pharmacy</h2>
 
-                        <!-- Pharmacy Type -->
-                        
-                            <h4>Preferred Pharmacy</h4>
+    <!-- Pharmacy Type -->
+    <h4>Preferred Pharmacy</h4>
 
-                        <!-- Pharmacy Info Section (shown when pharmacy is selected) -->
+    <!-- Pharmacy Info Section (shown when pharmacy is selected) -->
+    <h5>CVS Pharmacy</h5>
+    <p>123 Main Street, Los Angeles, CA 90210</p>
 
-                                    <h5>CVS Pharmacy</h5>
-                                    <p>123 Main Street, Los Angeles, CA 90210</p>
+    <button title="Edit Pharmacy">✏️</button>
+    <button title="Delete Pharmacy">🗑️</button>
 
-                                    <button title="Edit Pharmacy">
-                                        ✏️
-                                    </button>
-                                    <button title="Delete Pharmacy">
-                                        🗑️
-                                    </button>
+    <!-- No Pharmacy State (shown when no pharmacy selected) -->
+    <button>🔍 Find my Preferred Pharmacy</button>
 
-                        <!-- No Pharmacy State (shown when no pharmacy selected) -->
-                        
-                            <button>
-                                🔍 Find my Preferred Pharmacy
-                            </button>
+    <!-- None Selected State (shown when "none of these work for me" is selected) -->
+    <p>None selected - Care Navigator to assist</p>
+    <button title="Edit Pharmacy">✏️</button>
 
-                        <!-- None Selected State (shown when "none of these work for me" is selected) -->
+    <p>Having a preferred pharmacy helps ensure consistent medication management and can provide better pricing through your insurance network.</p>
 
-                                    <p>None selected - Care Navigator to assist</p>
+    <!-- Your Medications Section -->
+    <h2>Your Medications</h2>
+    
+    <!-- Medications List -->
+    <!-- Medications will be populated here dynamically -->
 
-                                    <button title="Edit Pharmacy">
-                                        ✏️
-                                    </button>
+    <!-- Add Medication Button -->
+    <button>+ Add Another Medication</button>
 
-                            <p>
-                                Having a preferred pharmacy helps ensure consistent medication management and can provide better pricing through your insurance network.
-                            </p>
+    <!-- Medication Search Modal -->
+    <h3>Add Medication</h3>
+    <button>&times;</button>
 
-            <!-- Your Medications Section -->
-            
-                <h2>
-                    Your Medications
-                </h2>
-                
-                <!-- Medications List -->
-                
-                    <!-- Medications will be populated here dynamically -->
+    <label for="medication-search">Search for your medication:</label>
+    
+    <input type="text" placeholder="Start typing medication name..." onkeypress="if(event.key==='Enter') searchMedications()" oninput="searchMedications()">
+    <button>🔍</button>
 
-                <!-- Add Medication Button -->
-                
-                    <button>
-                        + Add Another Medication
-                    </button>
+    <!-- Results will be populated here -->
 
-                <button>Continue</button>
+    <button type="button">Cancel</button>
+    <button type="button" disabled>Save Medication</button>
 
-        <!-- Medication Search Modal -->
+    <!-- Pharmacy Search Modal -->
+    <h3>Find Your Preferred Pharmacy</h3>
+    <button>&times;</button>
 
-                    <h3>Add Medication</h3>
-                    <button>&times;</button>
+    <label for="pharmacy-search">Enter your location to find pharmacies nearby:</label>
+    
+    <input type="text" placeholder="City, State or ZIP code" onkeypress="if(event.key==='Enter') searchPharmacies()">
+    <button>🔍</button>
 
-                        <label for="medication-search">Search for your medication:</label>
-                        
-                            <input type="text" placeholder="Start typing medication name..." onkeypress="if(event.key==='Enter') searchMedications()" oninput="searchMedications()">
-                            <button>🔍</button>
+    <!-- Results will be populated here -->
 
-                        <!-- Results will be populated here -->
-
-                    <button type="button">Cancel</button>
-                    <button type="button" disabled>Save Medication</button>
-
-        <!-- Pharmacy Search Modal -->
-
-                    <h3>Find Your Preferred Pharmacy</h3>
-                    <button>&times;</button>
-
-                        <label for="pharmacy-search">Enter your location to find pharmacies nearby:</label>
-                        
-                            <input type="text" placeholder="City, State or ZIP code" onkeypress="if(event.key==='Enter') searchPharmacies()">
-                            <button>🔍</button>
-
-                        <!-- Results will be populated here -->
-
-                    <button type="button">Cancel</button>
-                    <button type="button">Save Pharmacy</button>
-
-        </div>
-
-    <style>
-        /* Modal Styles */
-        .modal {
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .modal-content {
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 600px;
-            max-height: 90%;
-            overflow-y: auto;
-            margin: auto;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem;
-            border-bottom: 1px solid rgb(226 230 236);
-        }
-
-        .modal-header h3 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 600;
-        }
-
-        .modal-body {
-            padding: 1.5rem;
-        }
-
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            gap: 1rem;
-            padding: 1.5rem;
-            border-top: 1px solid rgb(226 230 236);
-        }
-        
-        .medication-result-item {
-            padding: 1rem;
-            border-bottom: 1px solid rgb(226 230 236);
-            cursor: pointer;
-        }
-        
-        .medication-result-item:hover {
-            background-color: rgb(248 250 252);
-        }
-        
-        .medication-result-item:last-child {
-            border-bottom: none;
-        }
-    </style>
-</body>
-</html>
+    <button type="button">Cancel</button>
+    <button type="button">Save Pharmacy</button>
+</section>

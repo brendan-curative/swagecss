@@ -51,62 +51,68 @@
         
               <article>
 <section>
-   
-    <div class="flex-row flex-justify-between flex-items-center mb-24">
-        <h1 class="mb-0">Are you ready to book the Baseline Visit?</h1>
-
-        <div>
-            <div class="badge badge--default badge--small">
-                <span class="badge__content">Step 1 of 35 - Welcome back</span>
-            </div>
-        </div>
-    </div>
+    <h1>Your pharmacy and medications</h1>
     
-    <div class="card">
-        <p>Answer the following pre-visit questions to <strong>help the clinician review your medical history</strong>, and better develop the <strong>personalized wellness plan for you</strong>.</p>
-    </div>
+    <p>Let's make sure your pharmacy and medication list is up to date so we can verify coverage and identify any potential savings.</p>
+
+    <!-- Your Preferred Pharmacy Section -->
+    <h2>Your Preferred Pharmacy</h2>
+
+    <!-- Pharmacy Type -->
+    <h4>Preferred Pharmacy</h4>
+
+    <!-- Pharmacy Info Section (shown when pharmacy is selected) -->
+    <h5>CVS Pharmacy</h5>
+    <p>123 Main Street, Los Angeles, CA 90210</p>
+
+    <button title="Edit Pharmacy">✏️</button>
+    <button title="Delete Pharmacy">🗑️</button>
+
+    <!-- No Pharmacy State (shown when no pharmacy selected) -->
+    <button>🔍 Find my Preferred Pharmacy</button>
+
+    <!-- None Selected State (shown when "none of these work for me" is selected) -->
+    <p>None selected - Care Navigator to assist</p>
+    <button title="Edit Pharmacy">✏️</button>
+
+    <p>Having a preferred pharmacy helps ensure consistent medication management and can provide better pricing through your insurance network.</p>
+
+    <!-- Your Medications Section -->
+    <h2>Your Medications</h2>
     
-    <div class="card">
-        <p class="text-center">The scheduling process will take about <strong>10 minutes</strong> to complete.</p>
-    </div>
+    <!-- Medications List -->
+    <!-- Medications will be populated here dynamically -->
 
-    <h2>Remember, at your Baseline Visit, you will get to:</h2>
+    <!-- Add Medication Button -->
+    <button>+ Add Another Medication</button>
 
-    <ol class="ordered-list" role="list">
-        <li class="ordered-list__item" data-order="1" data-color="blue" role="listitem" tabindex="0">
-            <div class="ordered-list__number">
-                <span>1</span>
-            </div>
-            <div class="ordered-list__content">
-                <p class="ordered-list__text">Learn more about your unique Curative health plan benefits</p>
-            </div>
-        </li>
-        <li class="ordered-list__item" data-order="2" data-color="blue" role="listitem" tabindex="0">
-            <div class="ordered-list__number">
-                <span>2</span>
-            </div>
-            <div class="ordered-list__content">
-                <p class="ordered-list__text">Complete relevant blood work</p>
-            </div>
-        </li>
-        <li class="ordered-list__item" data-order="3" data-color="blue" role="listitem" tabindex="0">
-            <div class="ordered-list__number">
-                <span>3</span>
-            </div>
-            <div class="ordered-list__content">
-                <p class="ordered-list__text">No need to fast, but remember to still hydrate</p>
-            </div>
-        </li>
-        <li class="ordered-list__item" data-order="4" data-color="blue" role="listitem" tabindex="0">
-            <div class="ordered-list__number">
-                <span>4</span>
-            </div>
-            <div class="ordered-list__content">
-                <p class="ordered-list__text">Chat with our clinician about your specific health questions</p>
-            </div>
-        </li>
-    </ol>
+    <!-- Medication Search Modal -->
+    <h3>Add Medication</h3>
+    <button>&times;</button>
 
+    <label for="medication-search">Search for your medication:</label>
+    
+    <input type="text" placeholder="Start typing medication name..." onkeypress="if(event.key==='Enter') searchMedications()" oninput="searchMedications()">
+    <button>🔍</button>
+
+    <!-- Results will be populated here -->
+
+    <button type="button">Cancel</button>
+    <button type="button" disabled>Save Medication</button>
+
+    <!-- Pharmacy Search Modal -->
+    <h3>Find Your Preferred Pharmacy</h3>
+    <button>&times;</button>
+
+    <label for="pharmacy-search">Enter your location to find pharmacies nearby:</label>
+    
+    <input type="text" placeholder="City, State or ZIP code" onkeypress="if(event.key==='Enter') searchPharmacies()">
+    <button>🔍</button>
+
+    <!-- Results will be populated here -->
+
+    <button type="button">Cancel</button>
+    <button type="button">Save Pharmacy</button>
 </section></article>
         
       </main>
@@ -115,7 +121,7 @@
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/1-highlights/">
+            <a class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/5-your-screenings/">
                 Continue
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>

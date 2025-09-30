@@ -1,62 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procedures and Surgeries</title>
-</head>
-<body>
-<div>Step 8 of 9 - Procedures and Surgeries</div>
+---
+layout: templates/blv/layout.html
+title: BLV Prototype
+heading: BLV Prototype
+secondary: Secondary
+section: Part 1
+status: draft
+previous: 8-barriers-to-care/
+next: 10-clinical-scheduling/
+button-text: Continue
+---
 
-                <h1>
-                    Procedures and Surgeries
-                </h1>
-                <p>
-                    Let's plan for any upcoming procedures or surgeries you may need in the coming year.
-                </p>
+<section>
+    <h1>Procedures and Surgeries</h1>
+    
+    <p>Let's plan for any upcoming procedures or surgeries you may need in the coming year.</p>
 
-            <!-- Upcoming Procedures Question -->
-            
-                <h4>Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
+    <!-- Upcoming Procedures Question -->
+    <h4>Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
 
-                            <input type="checkbox" onchange="togglePreparationInfo()">
-                            <label for="surgery-major">Major surgery (requiring hospitalization)</label>
+    <input type="checkbox" onchange="togglePreparationInfo()">
+    <label for="surgery-major">Major surgery (requiring hospitalization)</label>
 
-                            <input type="checkbox" onchange="togglePreparationInfo()">
-                            <label for="surgery-outpatient">Outpatient procedure</label>
+    <input type="checkbox" onchange="togglePreparationInfo()">
+    <label for="surgery-outpatient">Outpatient procedure</label>
 
-                            <input type="checkbox" onchange="togglePreparationInfo()">
-                            <label for="procedure-diagnostic">Diagnostic procedure (colonoscopy, endoscopy, etc.)</label>
+    <input type="checkbox" onchange="togglePreparationInfo()">
+    <label for="procedure-diagnostic">Diagnostic procedure (colonoscopy, endoscopy, etc.)</label>
 
-                            <input type="checkbox" onchange="togglePreparationInfo()">
-                            <label for="procedure-preventive">Preventive screening</label>
+    <input type="checkbox" onchange="togglePreparationInfo()">
+    <label for="procedure-preventive">Preventive screening</label>
 
-                            <input type="checkbox" onchange="togglePreparationInfo()">
-                            <label for="none-planned">None currently planned</label>
+    <input type="checkbox" onchange="togglePreparationInfo()">
+    <label for="none-planned">None currently planned</label>
 
-            <!-- Preparation Information (appears when procedures are selected) -->
-            
-                <h4>Let's help you prepare for your upcoming care</h4>
-                <p>Here are important items to verify before your procedure:</p>
+    <!-- Preparation Information (appears when procedures are selected) -->
+    <h4>Let's help you prepare for your upcoming care</h4>
+    <p>Here are important items to verify before your procedure:</p>
 
-                    <h5>✓ Network Status</h5>
-                    <p>
-                        Confirm your provider and facility are in-network to avoid unexpected costs.
-                    </p>
-                    
-                    <h5>✓ Medication Coverage</h5>
-                    <p>
-                        Verify any new medications are on your plan's formulary.
-                    </p>
-                    
-                    <h5>✓ Prior Authorization</h5>
-                    <p>
-                        Your provider should handle prior authorization, but confirm it's been approved before your procedure date.
-                    </p>
-                    
-                    <h5>✓ Care Coordination</h5>
-                    <p>
-                        Inform your primary care doctor about any upcoming procedures for better care coordination.
-                    </p>
-</body>
-</html>
+    <h5>✓ Network Status</h5>
+    <p>Confirm your provider and facility are in-network to avoid unexpected costs.</p>
+    
+    <h5>✓ Medication Coverage</h5>
+    <p>Verify any new medications are on your plan's formulary.</p>
+    
+    <h5>✓ Prior Authorization</h5>
+    <p>Your provider should handle prior authorization, but confirm it's been approved before your procedure date.</p>
+    
+    <h5>✓ Care Coordination</h5>
+    <p>Inform your primary care doctor about any upcoming procedures for better care coordination.</p>
+</section>

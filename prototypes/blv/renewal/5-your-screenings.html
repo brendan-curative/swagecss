@@ -1,59 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your screenings</title>
-</head>
-<body>
-<div>Step 4 of 9 - Your screenings</div>
+---
+layout: templates/blv/layout.html
+title: BLV Prototype
+heading: BLV Prototype
+secondary: Secondary
+section: Part 1
+status: draft
+previous: 4-your-pharmacy-and-medications/
+next: 6-lifestyle/
+button-text: Continue
+---
 
-                <h1>
-                    Your screenings
-                </h1>
-                <p>
-                    Let's review your recent screening results and identify any due screenings.
-                </p>
+<section>
+    <h1>Your screenings</h1>
+    
+    <p>Let's review your recent screening results and identify any due screenings.</p>
 
-            <!-- Preventive Screenings List -->
-            
-                <!-- Screening 1 - Due -->
+    <!-- Preventive Screenings List -->
+    
+    <!-- Screening 1 - Due -->
+    <h5>Mammogram</h5>
+    <span>DUE</span>
 
-                        <h5>Mammogram</h5>
-                        <span>DUE</span>
+    <span>Last completed:</span>
+    <input type="text" placeholder="2022">
 
-                        <span>Last completed:</span>
-                        <input type="text" placeholder="2022">
+    <!-- Screening 2 - Due -->
+    <h5>Colonoscopy</h5>
+    <span>DUE</span>
 
-                <!-- Screening 2 - Due -->
+    <span>Last completed:</span>
+    <input type="text" placeholder="Enter year">
 
-                        <h5>Colonoscopy</h5>
-                        <span>DUE</span>
+    <!-- Screening 3 -->
+    <h5>Bone Density Scan</h5>
+    
+    <span>Last completed:</span>
+    <input type="text" value="2021">
 
-                        <span>Last completed:</span>
-                        <input type="text" placeholder="Enter year">
+    <!-- Screening 4 -->
+    <h5>Eye Exam</h5>
+    
+    <span>Last completed:</span>
+    <input type="text" value="2023">
 
-                <!-- Screening 3 -->
-                
-                    <h5>Bone Density Scan</h5>
-                    
-                        <span>Last completed:</span>
-                        <input type="text" value="2021">
-
-                <!-- Screening 4 -->
-                
-                    <h5>Eye Exam</h5>
-                    
-                        <span>Last completed:</span>
-                        <input type="text" value="2023">
-
-                <!-- Screening 5 -->
-                
-                    <h5>Skin Cancer Screening</h5>
-                    
-                        <span>Last completed:</span>
-                        <input type="text" placeholder="Enter year">
-
-                <button>Continue</button>
-</body>
-</html>
+    <!-- Screening 5 -->
+    <h5>Skin Cancer Screening</h5>
+    
+    <span>Last completed:</span>
+    <input type="text" placeholder="Enter year">
+</section>

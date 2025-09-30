@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html data-theme="blv">
+  <head>
+    <meta name="robots" content="noindex,nofollow">
+    <title>BLV Prototype BLV Prototype</title>
+    <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
+
+    <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
+    <link href="/swagecss/src/themes/blv/blv.css" rel="stylesheet" type="text/css" />
+
+
+    
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="container">
+            <div class="flex-row flex-justify-between">
+                <div class="logo logo--s32">
+                    <img src="https://static.curative.com/logos/Curative_Symbol_RedOrange.svg" alt="Curative Logo - SIGNAL_ORANGE_SYMBOL_ONLY" class="logo__image">
+                </div>
+
+                <div>
+                    <span>ENG</span>
+                    <span>Help</span>
+                </div>
+            </div>
+        </div>
+            <nav>
+    <div class="container">
+        <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+            <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+            </li>
+            <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+            </li>
+        </ol>
+    </div>
+</nav>
+        
+      </header>
+  
+      <main>
+        
+              <article>
+<section>
+    <h1>Your go-to facilities</h1>
+    
+    <p>Let's check in on your urgent care and emergency facilities, and ensure you know where to go when you need care now.</p>
+
+    <!-- Facilities List -->
+    
+    <!-- Virtual Urgent Care -->
+    <h4>Virtual Urgent Care</h4>
+    
+    <div>5</div>
+    <div>visits last year</div>
+
+    <!-- Specific Facility Info -->
+    <h5>Curative Telehealth</h5>
+    <p>Telehealth is a great option for when you want care from the comfort of your home.</p>
+
+    <!-- Urgent Care Center -->
+    <h4>Urgent Care Center</h4>
+    
+    <div>2</div>
+    <div>visits last year</div>
+
+    <!-- Facility Info Section (shown when facility is selected) -->
+    <h5>Westside Urgent Care</h5>
+    <p>1234 Main Street, Los Angeles, CA 90210</p>
+
+    <button title="Edit Facility">✏️</button>
+    <button title="Delete Facility">🗑️</button>
+
+    <!-- No Facility State (shown when no facility selected) -->
+    <button>🔍 Find my Urgent Care Center</button>
+
+    <!-- None Selected State (shown when "none of these work for me" is selected) -->
+    <p>None selected - Care Navigator to assist</p>
+    <button title="Edit Facility">✏️</button>
+
+    <p>Urgent care often has shorter wait times and can be used for <strong>non-life-threatening situations</strong> needing prompt attention, like cold, flu or COVID symptoms, minor injuries, and infections.</p>
+
+    <!-- Emergency Room -->
+    <h4>Emergency Room</h4>
+    
+    <div>0</div>
+    <div>visits last year</div>
+
+    <!-- Facility Info Section (shown when facility is selected) -->
+    <h5></h5>
+    <p></p>
+
+    <button title="Edit Facility">✏️</button>
+    <button title="Delete Facility">🗑️</button>
+
+    <!-- No Facility State (shown when no facility selected) -->
+    <button>🔍 Find my Emergency Room</button>
+
+    <!-- None Selected State (shown when "none of these work for me" is selected) -->
+    <p>None selected - Care Navigator to assist</p>
+    <button title="Edit Facility">✏️</button>
+
+    <p><strong>Life-threatening situations</strong> like chest pain or severe bleeding and conditions requiring immediate attention.</p>
+
+    <!-- Facility Search Modal -->
+    <h3>Find Your Facility</h3>
+    <button>&times;</button>
+
+    <p>Select a facility near you:</p>
+    <p>Remember, <strong>you can go to any facility that shows up in our provider search!</strong> We just want to make sure you have at least one option ahead of time</p>
+
+    <label for="facility-location">Location (search by address, zip, or city, state)</label>
+    
+    <input type="text" placeholder="Enter location..." onkeypress="if(event.key==='Enter') searchFacilities()">
+    <button>🔍</button>
+
+    <!-- Results will be populated here -->
+
+    <button type="button">Cancel</button>
+    <button type="button" disabled>Save Selection</button>
+</section></article>
+        
+      </main>
+  
+      
+  
+      <footer>
+        <div class="container flex-row flex-justify-center">
+            <a class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/4-your-pharmacy-and-medications/">
+                Continue
+                <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                  </svg>
+                </a>
+        </div>
+      </footer>
+  
+    </div>
+
+
+    
+
+
+  <script src="/swagecss/src/components.js"></script>
+
+  <script>
+// Prevent default behavior for links with href="#"
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('click', function(event) {
+    const link = event.target.closest('a[href="#"]');
+    if (link) {
+      event.preventDefault();
+    }
+  });
+});
+    </script>
+
+  </body>
+</html>
