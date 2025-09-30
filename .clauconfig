@@ -1,0 +1,45 @@
+{
+  "description": "SwageCSS - A utility-first CSS framework based on Curative Design System",
+  "version": "0.2",
+  "css_constraint": {
+    "foundation_dir": "src/foundation/",
+    "instruction": "Only use CSS classes and variables defined in src/foundation/. Do not create custom CSS outside this directory.",
+    "available_files": [
+      "reset.css (38 lines) - Base reset styles",
+      "colors.css (243 lines) - Color variables and utilities",
+      "spacing.css (377 lines) - Margin/padding utilities",
+      "typography.css (560 lines) - Font styles and text utilities",
+      "display.css (325 lines) - Layout and display utilities",
+      "icons.css (5307 lines) - Icon definitions"
+    ]
+  },
+  "project_structure": {
+    "foundation": "Core CSS utilities in src/foundation/ (6855 lines total)",
+    "components": "22 pre-built components in src/components/ and components/",
+    "plugins": "Additional features in src/plugins/ (drawer, theme toggle)",
+    "templates": "Eleventy templates in _includes/",
+    "output": "docs/ directory (Eleventy build output)",
+    "build": "Static site built with Eleventy (11ty)"
+  },
+  "naming_conventions": {
+    "css_classes": "BEM-style for components (e.g., .card, .card__heading, .card--with-border)",
+    "utilities": "Tailwind-style utilities (e.g., m-4, p-24, flex-row, text-lg)",
+    "css_variables": "kebab-case with prefixes (e.g., --spacing-24, --color-blue-500, --font-size-lg)"
+  },
+  "theme_system": {
+    "default": "data-theme=\"cui\" (Curative UI)",
+    "alternate": "data-theme=\"blv\" (BLV theme)",
+    "implementation": "HTML attribute on root or component level"
+  },
+  "key_patterns": {
+    "spacing_values": "0, 1, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 160, 240, 320",
+    "color_scales": "Primary (signal-orange, sky-blue), Neutral (black, eggshell, off-white, white), Scales (blue, green, red, yellow, gray in 100-900)",
+    "typography_sizes": "2xs, xs, sm, md, lg, xl, 2xl, 3xl, 4xl, 5xl with corresponding line-heights"
+  },
+  "development_workflow": {
+    "build_command": "eleventy",
+    "config_file": ".eleventy.js",
+    "template_engine": "Liquid (Eleventy default)",
+    "css_entry": "src/swage.css (imports foundation, components, blocks, plugins)"
+  }
+}

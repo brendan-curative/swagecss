@@ -1,0 +1,243 @@
+# SwageCSS Project Rules
+
+## Core Principle
+SwageCSS is a utility-first CSS framework. ALL styling must use pre-defined classes and variables from `src/foundation/`. No custom CSS rules or inline styles allowed.
+
+---
+
+## CSS Development Rules
+
+### ✅ MUST DO
+- Only use CSS variables and classes from `src/foundation/`
+- Reference existing components in `src/components/` as patterns
+- Use utility classes for all layout and styling (e.g., `m-24`, `p-16`, `flex-row`)
+- Follow BEM naming for new components (`.block__element--modifier`)
+- Use approved spacing scale: 0, 1, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 160, 240, 320
+- Use theme-aware colors via CSS variables (e.g., `--color-text-default`)
+
+### ❌ NEVER DO
+- Never write inline styles (`style=""` attributes)
+- Never create custom CSS rules outside foundation
+- Never use arbitrary values (e.g., `padding: 15px` instead of `p-16`)
+- Never modify files in `src/foundation/` without explicit permission
+- Never use `!important` (proper specificity should handle all cases)
+- Never add vendor prefixes manually (handled by build tools if needed)
+
+---
+
+## File Organization
+
+### Read-Only (Foundation)
+```
+src/foundation/
+  ├── foundation.css   (main import file)
+  ├── reset.css        (base reset)
+  ├── colors.css       (color variables & utilities)
+  ├── spacing.css      (margin/padding utilities)
+  ├── typography.css   (font styles & text utilities)
+  ├── display.css      (layout utilities)
+  └── icons.css        (icon definitions)
+```
+
+### Development Areas
+```
+src/components/      (Component HTML + CSS files)
+components/          (Component documentation pages)
+_includes/           (Eleventy templates)
+src/plugins/         (Additional features like drawer, theme toggle)
+```
+
+### Generated (Do Not Edit)
+```
+docs/                (Eleventy build output)
+```
+
+---
+
+## Common Utility Patterns
+
+### Spacing
+```html
+<!-- Margin: m-{size}, mt-, mr-, mb-, ml-, mx-, my- -->
+<div class="m-24">All sides margin</div>
+<div class="mt-16 mb-32">Top and bottom margin</div>
+<div class="mx-auto">Centered with auto margins</div>
+
+<!-- Padding: p-{size}, pt-, pr-, pb-, pl-, px-, py- -->
+<div class="p-16">All sides padding</div>
+<div class="px-24 py-16">Horizontal and vertical padding</div>
+```
+
+### Layout
+```html
+<!-- Flexbox -->
+<div class="flex-row flex-justify-between flex-align-center">
+  <span>Left</span>
+  <span>Right</span>
+</div>
+
+<!-- Grid (if available) -->
+<div class="grid grid-cols-3 gap-16">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+
+### Typography
+```html
+<!-- Size and weight -->
+<h1 class="text-2xl font-bold">Heading</h1>
+<p class="text-md font-normal">Body text</p>
+<small class="text-sm font-semibold">Small text</small>
+```
+
+### Colors
+```html
+<!-- Use semantic color variables -->
+<div class="text-primary bg-surface-default border-border-default">
+  Content with theme-aware colors
+</div>
+```
+
+---
+
+## Component Development
+
+### Creating New Components
+
+1. **HTML Structure** - Use semantic HTML
+2. **Apply Foundation Classes** - Style with utility classes
+3. **Component CSS** (if needed) - Only for component-specific behavior
+4. **Follow BEM** - Use `.component__element--modifier` pattern
+
+### Example Component Pattern
+```html
+<!-- Card component using foundation classes -->
+<div class="card card--with-border p-24 mb-16">
+  <h2 class="card__heading text-lg font-semibold mb-12">Card Title</h2>
+  <div class="card__content text-md">
+    <p class="mb-8">Card content here</p>
+  </div>
+</div>
+```
+
+---
+
+## Theme System
+
+SwageCSS supports multiple themes via `data-theme` attribute:
+
+```html
+<html data-theme="cui">  <!-- Default: Curative UI theme -->
+<html data-theme="blv">  <!-- Alternate: BLV theme -->
+```
+
+Components automatically adapt to themes using CSS variables. Always use semantic variables (`--color-text-default`) instead of direct colors (`--color-blue-500`) for theme compatibility.
+
+---
+
+## Eleventy Context
+
+### Build Commands
+```bash
+# Build the site
+npx @11ty/eleventy
+
+# Watch mode (if configured)
+npx @11ty/eleventy --watch
+```
+
+### Template System
+- **Engine**: Liquid (Eleventy default)
+- **Layout**: `_includes/layout.html`
+- **Config**: `.eleventy.js`
+- **Output**: `docs/` directory
+- **Path Prefix**: `/swagecss/`
+
+### Template Variables
+```liquid
+{{ title }}          <!-- Page title -->
+{{ heading }}        <!-- Page heading -->
+{{ content }}        <!-- Main content -->
+{{ '/' | url }}      <!-- Base URL with path prefix -->
+```
+
+---
+
+## CSS Variables Quick Reference
+
+### Spacing Scale
+```
+--spacing-0, --spacing-1, --spacing-2, --spacing-4, --spacing-6, --spacing-8
+--spacing-12, --spacing-16, --spacing-20, --spacing-24, --spacing-32, --spacing-40
+--spacing-48, --spacing-64, --spacing-80, --spacing-160, --spacing-240, --spacing-320
+```
+
+### Color Variables
+```
+Primary:  --color-primary-signal-orange, --color-primary-sky-blue
+Neutral:  --color-neutral-black, --color-neutral-eggshell, --color-neutral-off-white
+Semantic: --color-text-default, --color-surface-default, --color-border-default
+Scales:   --color-{blue,green,red,yellow,gray}-{100-900}
+```
+
+### Typography
+```
+Sizes:   --font-size-{2xs,xs,sm,md,lg,xl,2xl,3xl,4xl,5xl}
+Heights: --line-height-{2xs,xs,sm,md,lg,xl,2xl,3xl,4xl,5xl}
+Weights: --font-weight-{normal,semibold,bold}
+Family:  --font-family-sans (Figtree)
+```
+
+---
+
+## AI Assistant Guidelines
+
+When working with AI assistants (Claude, Cursor, etc.):
+
+### Good Prompts
+- "Create a button using SwageCSS foundation classes"
+- "Add a card layout with only utility classes from src/foundation/"
+- "Which spacing class should I use for 24px margin?"
+
+### Bad Prompts
+- "Add custom CSS for this component"
+- "Style this with inline styles"
+- "Create a new color variable"
+
+### Before Accepting AI Suggestions
+- ✓ Check all classes exist in `src/foundation/`
+- ✓ Verify no inline styles are used
+- ✓ Confirm spacing uses approved scale
+- ✓ Ensure colors use CSS variables
+- ✓ Validate BEM naming for components
+
+---
+
+## Validation Checklist
+
+Before committing code:
+
+- [ ] All CSS classes exist in `src/foundation/`
+- [ ] No inline styles (`style=""` attributes)
+- [ ] No custom CSS rules created
+- [ ] Only approved CSS variables used
+- [ ] Spacing follows approved scale (not arbitrary values)
+- [ ] Colors use semantic variables for theme support
+- [ ] Components follow BEM naming convention
+- [ ] HTML is semantic and accessible
+- [ ] Build succeeds without errors
+
+---
+
+## Getting Help
+
+1. **Check Foundation Files**: Look in `src/foundation/` for available classes
+2. **Review Components**: See `src/components/` for examples
+3. **Read agents.md**: Detailed CSS constraint documentation
+4. **Check CLAUDE_GUIDE.md**: Quick reference guide
+
+---
+
+*Generated for SwageCSS v0.2*
