@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your go-to facilities</title>
+</head>
+<body>
+<div>Step 2 of 9 - Your go-to facilities</div>
+
+                <h1>
+                    Your go-to facilities
+                </h1>
+                <p>
+                    Let's check in on your urgent care and emergency facilities, and ensure you know where to go when you need care now.
+                </p>
+
+            <!-- Facilities List -->
+            
+                <!-- Virtual Urgent Care -->
+
+                        <!-- Facility Type with Visit Badge -->
+                        
+                            <h4>Virtual Urgent Care</h4>
+                            
+                                <div>5</div>
+                                <div>visits last year</div>
+
+                        <!-- Specific Facility Info -->
+                        <h5>Curative Telehealth</h5>
+                        <p>
+                            Telehealth is a great option for when you want care from the comfort of your home.
+                        </p>
+
+                <!-- Urgent Care Center -->
+
+                        <!-- Facility Type with Visit Badge -->
+                        
+                            <h4>Urgent Care Center</h4>
+                            
+                                <div>2</div>
+                                <div>visits last year</div>
+
+                        <!-- Facility Info Section (shown when facility is selected) -->
+
+                                    <h5>Westside Urgent Care</h5>
+                                    <p>1234 Main Street, Los Angeles, CA 90210</p>
+
+                                    <button title="Edit Facility">
+                                        ✏️
+                                    </button>
+                                    <button title="Delete Facility">
+                                        🗑️
+                                    </button>
+
+                        <!-- No Facility State (shown when no facility selected) -->
+                        
+                            <button>
+                                🔍 Find my Urgent Care Center
+                            </button>
+
+                        <!-- None Selected State (shown when "none of these work for me" is selected) -->
+
+                                    <p>None selected - Care Navigator to assist</p>
+
+                                    <button title="Edit Facility">
+                                        ✏️
+                                    </button>
+
+                            <p>
+                                Urgent care often has shorter wait times and can be used for <strong>non-life-threatening situations</strong> needing prompt attention, like cold, flu or COVID symptoms, minor injuries, and infections.
+                            </p>
+
+                <!-- Emergency Room -->
+
+                        <!-- Facility Type with Visit Badge -->
+                        
+                            <h4>Emergency Room</h4>
+                            
+                                <div>0</div>
+                                <div>visits last year</div>
+
+                        <!-- Facility Info Section (shown when facility is selected) -->
+
+                                    <h5></h5>
+                                    <p></p>
+
+                                    <button title="Edit Facility">
+                                        ✏️
+                                    </button>
+                                    <button title="Delete Facility">
+                                        🗑️
+                                    </button>
+
+                        <!-- No Facility State (shown when no facility selected) -->
+                        
+                            <button>
+                                🔍 Find my Emergency Room
+                            </button>
+
+                        <!-- None Selected State (shown when "none of these work for me" is selected) -->
+
+                                    <p>None selected - Care Navigator to assist</p>
+
+                                    <button title="Edit Facility">
+                                        ✏️
+                                    </button>
+
+                            <p>
+                                <strong>Life-threatening situations</strong> like chest pain or severe bleeding and conditions requiring immediate attention.
+                            </p>
+
+        <!-- Facility Search Modal -->
+
+                    <h3>Find Your Facility</h3>
+                    <button>&times;</button>
+
+                        <p>Select a facility near you:</p>
+                        <p>
+                            Remember, <strong>you can go to any facility that shows up in our provider search!</strong> We just want to make sure you have at least one option ahead of time
+                        </p>
+
+                        <label for="facility-location">Location (search by address, zip, or city, state)</label>
+                        
+                            <input type="text" placeholder="Enter location..." onkeypress="if(event.key==='Enter') searchFacilities()">
+                            <button>🔍</button>
+
+                        <!-- Results will be populated here -->
+
+                    <button type="button">Cancel</button>
+                    <button type="button" disabled>Save Selection</button>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            max-height: 90%;
+            overflow-y: auto;
+            margin: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgb(226 230 236);
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            padding: 1.5rem;
+            border-top: 1px solid rgb(226 230 236);
+        }
+    </style>
+</body>
+</html>
