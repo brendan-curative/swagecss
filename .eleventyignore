@@ -1,2 +1,12 @@
+# Ignore all markdown documentation files
+*.md
+
+# Specific documentation files (redundant with *.md but listed for clarity)
 readme.md
-AGENTS.md
+agents.md
+CLAUDE_GUIDE.md
+ELEVENTY_GUIDE.md
+
+# IDE and config files
+.clauconfig
+.cursorrules
