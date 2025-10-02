@@ -113,6 +113,18 @@ article {
     padding: var(--spacing-24) var(--spacing-32) 96px var(--spacing-32); 
 }
 
+.constrain {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.constrain-80 {width: 80%;}
+.constrain-60 {width: 60%;}
+.constrain-40 {width: 40%;}
+.constrain-33 {width: 33%;}
+.constrain-20 {width: 20%;}
+
 h1 {
     font-size: var(--font-size-3xl);
     line-height: var(--line-height-3xl);

@@ -14,3 +14,8 @@ nav a.back:hover, nav a.back:focus {
 nav .horizontal-stepper {
     width: calc(100% - var(--spacing-24));
 }
+
+.card {
+    margin-right: var(--spacing-32);
+    margin-left: var(--spacing-32);
+}
