@@ -16,6 +16,7 @@
   --color-neutral-off-white: #F6F3EB;
   --color-neutral-white: #FDFDFD;
   --color-white: #FFFFFF;
+  --color-primary: var(--color-blue-700);
 }
 
 /* #endregion */
@@ -168,6 +169,7 @@
 :root {
   --color-text-default: var(--color-neutral-black);
   --color-text-subdued: var(--color-gray-700);
+  --color-text-primary: var(--color-blue-700);
   --color-text-highlight-default: var(--color-blue-700);
   --color-text-highlight-hover: var(--color-blue-500);
   --color-text-highlight-depressed: var(--color-blue-900);
@@ -221,6 +223,7 @@
 /* Text Colors */
 .text-default { color: var(--color-text-default); }
 .text-subdued { color: var(--color-text-subdued); }
+.text-primary { color: var(--color-text-primary); }
 .text-highlight { color: var(--color-text-highlight-default); }
 .text-critical { color: var(--color-text-critical); }
 .text-warning { color: var(--color-text-warning); }

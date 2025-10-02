@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>SwageCSS v0.2 &bull; Swageblocks &bull; BLV Components</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; BLV &bull; Stat</title>
     <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>BLV Components</h1> 
+                <h1>Stat Card Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Baseline Visit Components Library</p>
+                  <p>Replicated from Figma design - stat card component</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/curative/swage">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Sep 26, 2025, 12:40 PM</span> 
+             </a>  <span></span> 
              
         </div>
 
@@ -104,183 +104,17 @@
               <article>
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        The BLV (Baseline Visit) Components Library contains UI components specifically designed for baseline visit workflows. 
-        These components have been replicated from the original baseline visit implementation and adapted to use the Swage CSS foundation system.
+        The Stat component displays key metrics and statistics with visual emphasis, supporting both numerical values and icon representations.
     </p>
 </section>
 
 <section class="component-section">
-    <h2>Component Overview</h2>
-    <p class="mb-24">Browse all available BLV components with descriptions and direct links to their documentation.</p>
-    
+    <h2>Numerical Stat Card</h2>
+    <p class="mb-24">Display statistics with large numerical values.</p>
+
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="flex items-center justify-between mb-16">
-                <div>
-                    <h3 class="heading-lg mb-4">Horizontal Stepper</h3>
-                    <p class="body-sm text-gray-600">Progress indicator showing completion steps with visual progress bars</p>
-                </div>
-                <a href="horizontal-stepper/" class="button button--primary">
-                    View Component
-                </a>
-            </div>
-            <div class="horizontal-stepper mb-16">
-                <div class="horizontal-stepper__step horizontal-stepper__step--first">
-                    <div class="horizontal-stepper__progress" style="width: 100%;"></div>
-                </div>
-                <div class="horizontal-stepper__step">
-                    <div class="horizontal-stepper__progress" style="width: 75%;"></div>
-                </div>
-                <div class="horizontal-stepper__step">
-                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-                </div>
-                <div class="horizontal-stepper__step horizontal-stepper__step--last">
-                    <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="flex items-center justify-between mb-16">
-                <div>
-                    <h3 class="heading-lg mb-4">Checkmark Button</h3>
-                    <p class="body-sm text-gray-600">Interactive button with integrated checkmark for selection states</p>
-                </div>
-                <a href="checkmark-button/" class="button button--primary">
-                    View Component
-                </a>
-            </div>
-            <div class="checkmark-button checkmark-button--checked" data-checked="true">
-                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="10.5" cy="10.8672" r="8" fill="currentColor"/>
-                    <path d="M13.9226 8.61029C14.248 8.93573 14.248 9.46336 13.9226 9.7888L10.5893 13.1221C10.2638 13.4476 9.73618 13.4476 9.41074 13.1221L7.74408 11.4555C7.41864 11.13 7.41864 10.6024 7.74408 10.277C8.06951 9.95152 8.59715 9.95152 8.92259 10.277L10 11.3544L12.7441 8.61029C13.0695 8.28485 13.5972 8.28485 13.9226 8.61029Z" fill="white"/>
-                </svg>
-                <span class="checkmark-button__text">Self-Guided Onboarding</span>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="flex items-center justify-between mb-16">
-                <div>
-                    <h3 class="heading-lg mb-4">Rating Picker</h3>
-                    <p class="body-sm text-gray-600">Three-option rating selector with visual icons for user feedback</p>
-                </div>
-                <a href="rating-picker/" class="button button--primary">
-                    View Component
-                </a>
-            </div>
-            <div class="rating-picker" data-name="preview">
-                <div class="rating-picker__option rating-picker__option--selected" data-value="positive">
-                    <svg class="rating-picker__icon" width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M32.1094 58.9C25.2318 58.9 18.1006 56.7419 12.6982 52.2409C7.30859 47.7506 3.60938 40.9051 3.60938 31.45C3.60938 21.9949 7.30859 15.1494 12.6982 10.6591C18.1006 6.15813 25.2318 4 32.1094 4C39.7503 4 46.779 6.51359 51.9784 11.0748C57.6094 16.0696 60.6094 23.1272 60.6094 31.45C60.6094 39.7716 57.6102 46.7795 51.9788 51.7749C46.7676 56.3378 39.6981 58.9 32.1094 58.9Z" stroke="currentColor"/>
-                        <path d="M22.5 20.47C20.405 20.47 18.5 22.24 18.5 25.18C18.5 28.12 20.405 29.885 22.5 29.885C24.6 29.885 26.5 28.115 26.5 25.18C26.5 22.245 24.62 20.47 22.5 20.47Z" fill="currentColor"/>
-                        <path d="M41.6992 20.47C39.6042 20.47 37.6992 22.24 37.6992 25.18C37.6992 28.12 39.6042 29.885 41.6992 29.885C43.7942 29.885 45.6992 28.115 45.6992 25.18C45.6992 22.245 43.7942 20.47 41.6992 20.47Z" fill="currentColor"/>
-                        <path d="M48.104 34.98L48.1226 34.9746L48.1408 34.9677C49.2584 34.5455 50.5155 35.0045 51.0954 36.05C51.6437 37.0641 51.2713 38.2764 50.6937 39.5586C47.5703 46.4066 40.6896 50.56 32.2091 50.56L32.1305 50.56C32.1303 50.56 32.1301 50.56 32.1299 50.56C23.6468 50.5353 16.7668 46.405 13.6491 39.5578L13.6487 39.5567C13.0683 38.29 12.6991 37.0554 13.2475 36.0405C13.8267 35.0005 15.0834 34.5453 16.1968 34.9675L16.2153 34.9745L16.2342 34.98C21.4098 36.4883 26.7769 37.24 32.1691 37.215C37.5613 37.24 42.9284 36.4883 48.104 34.98Z" fill="currentColor" stroke="currentColor"/>
-                    </svg>
-                    <p class="rating-picker__label">I completely understand</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="flex items-center justify-between mb-16">
-                <div>
-                    <h3 class="heading-lg mb-4">Checkmark Label</h3>
-                    <p class="body-sm text-gray-600">Status indicator with checkmark icon and completion text</p>
-                </div>
-                <a href="checkmark-label/" class="button button--primary">
-                    View Component
-                </a>
-            </div>
-            <div class="checkmark-label">
-                <div class="checkmark-label__icon">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <p class="checkmark-label__text">
-                    Part 1 of your Baseline Visit: <span class="checkmark-label__status">Complete</span>
-                </p>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="flex items-center justify-between mb-16">
-                <div>
-                    <h3 class="heading-lg mb-4">Ordered List</h3>
-                    <p class="body-sm text-gray-600">Numbered list items with backdrop effects and custom styling</p>
-                </div>
-                <a href="ordered-list/" class="button button--primary">
-                    View Component
-                </a>
-            </div>
-            <ol class="ordered-list mb-16">
-                <li class="ordered-list__item" data-order="1" data-color="blue">
-                    <div class="ordered-list__number">
-                        <span>1</span>
-                    </div>
-                    <div class="ordered-list__content">
-                        <p class="ordered-list__text">Your Benefits</p>
-                    </div>
-                </li>
-                <li class="ordered-list__item" data-order="2" data-color="blue">
-                    <div class="ordered-list__number">
-                        <span>2</span>
-                    </div>
-                    <div class="ordered-list__content">
-                        <p class="ordered-list__text">Finding Care</p>
-                    </div>
-                </li>
-            </ol>
-        </div>
-
-        <div class="demo-item">
-            <div class="flex items-center justify-between mb-16">
-                <div>
-                    <h3 class="heading-lg mb-4">Radio Selection List</h3>
-                    <p class="body-sm text-gray-600">Scrollable radio list with backdrop effects and custom styling</p>
-                </div>
-                <a href="radio-selection-list/" class="button button--primary">
-                    View Component
-                </a>
-            </div>
-            <div class="radio-selection-list" data-name="preview-radio" style="max-width: 400px;">
-                <div class="radio-selection-list__header">
-                    <p class="radio-selection-list__results">2 results found</p>
-                </div>
-                <div class="radio-selection-list__container" style="min-height: 150px;">
-                    <div class="radio-selection-list__backdrop"></div>
-                    <div class="radio-selection-list__missing-option">
-                        <label class="radio-selection-list__option">
-                            <input type="radio" name="preview-radio" value="none" class="radio-selection-list__radio" />
-                            <span class="radio-selection-list__label">None of these work for me</span>
-                        </label>
-                    </div>
-                    <div class="radio-selection-list__options">
-                        <fieldset class="radio-selection-list__fieldset">
-                            <label class="radio-selection-list__option">
-                                <input type="radio" name="preview-radio" value="option1" class="radio-selection-list__radio" checked />
-                                <div class="radio-selection-list__content">
-                                    <h3 class="radio-selection-list__title">Dr. Sarah Johnson</h3>
-                                    <p class="radio-selection-list__description">Internal Medicine</p>
-                                </div>
-                            </label>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="flex items-center justify-between mb-16">
-                <div>
-                    <h3 class="heading-lg mb-4">Stat Card</h3>
-                    <p class="body-sm text-gray-600">Display statistics with large numbers or icons</p>
-                </div>
-                <a href="stat/" class="button button--primary">
-                    View Component
-                </a>
-            </div>
+            <div class="demo-label">Numerical Example</div>
             <div class="stat-card">
                 <div class="stat-card__title">
                     <p class="stat-card__title-text">Provider Visits</p>
@@ -293,273 +127,156 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<section class="component-section">
-    <h2>Component Status</h2>
-    <p class="mb-24">Current implementation status of all BLV components.</p>
-    
-    <div class="table-container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Component</th>
-                    <th>Status</th>
-                    <th>Features</th>
-                    <th>Foundation Colors</th>
-                    <th>Accessibility</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="flex items-center gap-8">
-                            <span class="heading-sm">Horizontal Stepper</span>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="badge badge--success">Complete</span>
-                    </td>
-                    <td>
-                        <div class="body-sm text-gray-600">
-                            Progress tracking, animations, responsive design
-                        </div>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex items-center gap-8">
-                            <span class="heading-sm">Checkmark Button</span>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="badge badge--success">Complete</span>
-                    </td>
-                    <td>
-                        <div class="body-sm text-gray-600">
-                            Toggle states, keyboard navigation, form integration
-                        </div>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex items-center gap-8">
-                            <span class="heading-sm">Rating Picker</span>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="badge badge--success">Complete</span>
-                    </td>
-                    <td>
-                        <div class="body-sm text-gray-600">
-                            Three rating options, visual feedback, selection states
-                        </div>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex items-center gap-8">
-                            <span class="heading-sm">Checkmark Label</span>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="badge badge--success">Complete</span>
-                    </td>
-                    <td>
-                        <div class="body-sm text-gray-600">
-                            Status display, dynamic content, size variants
-                        </div>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex items-center gap-8">
-                            <span class="heading-sm">Ordered List</span>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="badge badge--success">Complete</span>
-                    </td>
-                    <td>
-                        <div class="body-sm text-gray-600">
-                            Numbered items, backdrop effects, color themes
-                        </div>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex items-center gap-8">
-                            <span class="heading-sm">Radio Selection List</span>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="badge badge--success">Complete</span>
-                    </td>
-                    <td>
-                        <div class="body-sm text-gray-600">
-                            Scrollable list, custom scrollbar, loading/error states
-                        </div>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="flex items-center gap-8">
-                            <span class="heading-sm">Stat Card</span>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="badge badge--success">Complete</span>
-                    </td>
-                    <td>
-                        <div class="body-sm text-gray-600">
-                            Display statistics with numbers or icons, backdrop effects
-                        </div>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                    <td>
-                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Foundation Integration</h2>
-    <p class="mb-24">All BLV components are built using the Swage CSS foundation system.</p>
-    
-    <div class="bg-gray-50 border rounded p-24 mb-24">
-        <h3 class="heading-lg mb-16">Foundation Compliance</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-            <div>
-                <h4 class="heading-md mb-8">✅ Colors</h4>
-                <ul class="body-sm text-gray-600 space-y-4">
-                    <li>• All colors use foundation variables</li>
-                    <li>• Semantic color naming (primary, success, etc.)</li>
-                    <li>• No hardcoded hex values</li>
-                    <li>• Consistent theming support</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="heading-md mb-8">✅ Typography</h4>
-                <ul class="body-sm text-gray-600 space-y-4">
-                    <li>• Foundation font family (Figtree)</li>
-                    <li>• Consistent font sizes and line heights</li>
-                    <li>• Semantic typography classes</li>
-                    <li>• Responsive text scaling</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="heading-md mb-8">✅ Spacing</h4>
-                <ul class="body-sm text-gray-600 space-y-4">
-                    <li>• 4px base grid system</li>
-                    <li>• Foundation spacing variables</li>
-                    <li>• Consistent margins and padding</li>
-                    <li>• Logical spacing relationships</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="heading-md mb-8">✅ Layout</h4>
-                <ul class="body-sm text-gray-600 space-y-4">
-                    <li>• Flexbox and grid utilities</li>
-                    <li>• Responsive design patterns</li>
-                    <li>• Foundation display classes</li>
-                    <li>• Mobile-first approach</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Usage Guidelines</h2>
-    <p class="mb-24">Best practices for implementing and using BLV components.</p>
-    
-    <div class="alert alert--info mb-24">
-        <div class="alert__content">
-            <h4 class="heading-md mb-8">Important Note</h4>
-            <p class="body-md">
-                These components are specifically designed for baseline visit workflows and replicate the exact behavior 
-                and styling of the original implementation while using foundation CSS variables.
-            </p>
-        </div>
-    </div>
-    
-    <div class="bg-gray-50 border rounded p-24">
-        <h3 class="heading-lg mb-16">Implementation Guidelines</h3>
-        <div class="space-y-16">
-            <div>
-                <h4 class="heading-md mb-8">CSS Import</h4>
-                <p class="body-sm text-gray-600 mb-8">All BLV components are automatically included when importing the main CSS:</p>
-                <code class="body-sm bg-white p-8 rounded border">@import 'src/swage.css';</code>
-            </div>
-            
-            <div>
-                <h4 class="heading-md mb-8">JavaScript Initialization</h4>
-                <p class="body-sm text-gray-600 mb-8">Components are automatically initialized on page load. Individual component scripts are included:</p>
-                <div class="bg-white p-8 rounded border body-sm">
-                    <code>src/components/blv/horizontal-stepper.js</code><br>
-                    <code>src/components/blv/checkmark-button.js</code><br>
-                    <code>src/components/blv/rating-picker.js</code><br>
-                    <code>src/components/blv/checkmark-label.js</code><br>
-                    <code>src/components/blv/ordered-list.js</code><br>
-                    <code>src/components/blv/radio-selection-list.js</code><br>
-                    <code>src/components/blv/stat-card.css</code>
+        <div class="demo-item">
+            <div class="demo-label">Different Value</div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Medications</p>
+                </div>
+                <div class="stat-card__stat">
+                    <p class="stat-card__stat-number text-critical">5</p>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">active prescriptions</p>
                 </div>
             </div>
-            
-            <div>
-                <h4 class="heading-md mb-8">Accessibility</h4>
-                <p class="body-sm text-gray-600 mb-8">All components include:</p>
-                <ul class="body-sm text-gray-600 space-y-4">
-                    <li>• Proper ARIA attributes and roles</li>
-                    <li>• Keyboard navigation support</li>
-                    <li>• Focus management</li>
-                    <li>• Screen reader compatibility</li>
-                    <li>• High contrast mode support</li>
-                </ul>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Icon Stat Card</h2>
+    <p class="mb-24">Display statistics with icons instead of numbers.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Icon Example</div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Telehealth</p>
+                </div>
+                <div class="stat-card__stat">
+                    <span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-highlight"></span>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">Used convenient virtual care</p>
+                </div>
             </div>
         </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Custom Icon</div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Lab Results</p>
+                </div>
+                <div class="stat-card__stat">
+                    <span class="heroicon heroicon-beaker stat-card__stat-icon text-subdued"></span>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">All results within normal range</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Design Specifications</h2>
+    <p class="mb-24">Visual design details from the Figma component.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Card Container</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Width: <code>389px</code></li>
+            <li>• Padding: <code>24px</code></li>
+            <li>• Background: <code>rgba(255,255,255,0.75)</code> with <code>backdrop-blur(5px)</code></li>
+            <li>• Border Radius: <code>4px</code></li>
+            <li>• Box Shadow: <code>0px 2px 16px 0px rgba(102,114,125,0.25)</code></li>
+            <li>• Inner Shadow: <code>0px 4px 200px 0px inset rgba(255,255,255,0.01)</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Typography</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Title:</strong> <code>20px</code>, <code>Sohne Halbfett (600)</code>, <code>24px line-height</code>, <code>--color-text-default</code></li>
+            <li>• <strong>Stat Number:</strong> <code>96px</code>, <code>Sohne Halbfett (600)</code>, <code>96px line-height</code>, <code>--color-text-success</code></li>
+            <li>• <strong>Description:</strong> <code>16px</code>, <code>Sohne Buch (400)</code>, <code>24px line-height</code>, <code>--color-text-default</code></li>
+            <li>• All text has <code>text-shadow: #ffffff 0px 1px 0px</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Layout Structure</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Container: <code>flex flex-col</code></li>
+            <li>• Title section: <code>flex gap-10px items-center justify-center</code></li>
+            <li>• Stat section: <code>padding: 8px 0</code>, <code>flex items-center justify-center</code></li>
+            <li>• Description section: <code>flex gap-10px items-center justify-center</code></li>
+            <li>• Icon size: <code>96px × 96px</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Color Mapping</h2>
+    <p class="mb-24">Figma variables mapped to foundation CSS variables.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Text Colors</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <code>Text/Default: #181B25</code> → <code>var(--color-text-default)</code></li>
+            <li>• <code>Text/Success: #18543C</code> → <code>var(--color-text-success)</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Typography Tokens</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <code>XL/BOLD_SHORT</code>: <code>Sohne Halbfett, 20px, 600 weight, 24px line-height</code></li>
+            <li>• <code>MD/REGULAR</code>: <code>Sohne Buch, 16px, 400 weight, 24px line-height</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure for the stat component.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Numerical Stat</h3>
+        <code class="body-sm">
+            &lt;div class="stat-card"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__title"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__title-text"&gt;Provider Visits&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__stat"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__stat-number"&gt;12&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__description"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__description-text"&gt;visits with healthcare providers&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Icon Stat</h3>
+        <code class="body-sm">
+            &lt;div class="stat-card"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__title"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__title-text"&gt;Telehealth&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__stat"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="stat-card__stat-icon"&gt;...&lt;/svg&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__description"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__description-text"&gt;Used convenient virtual care&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </code>
     </div>
 </section>
 </article>
