@@ -228,6 +228,8 @@
 .text-critical { color: var(--color-text-critical); }
 .text-warning { color: var(--color-text-warning); }
 .text-success { color: var(--color-text-success); }
+.text-sky-blue { color: var(--color-primary-sky-blue); }
+.text-signal-orange { color: var(--color-primary-signal-orange); }
 
 /* Border Colors */
 .border-default { border-color: var(--color-border-default); }
