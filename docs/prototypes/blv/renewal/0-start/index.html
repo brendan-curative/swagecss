@@ -15,25 +15,26 @@
     <div class="wrap">
       <header>
         <div class="container">
-            <div class="flex-row flex-justify-between">
+            <div class="flex-row flex-justify-between flex-items-center">
                 <div class="logo logo--s32">
                     <img src="https://static.curative.com/logos/Curative_Symbol_RedOrange.svg" alt="Curative Logo - SIGNAL_ORANGE_SYMBOL_ONLY" class="logo__image">
                 </div>
 
                 <div>
-                    <span>ENG</span>
-                    <span>Help</span>
+                    <a class="button button--flat button--with-icon" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</a>
                 </div>
             </div>
         </div>
             <nav>
     <div class="container">
-        <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+        <div class=" flex-row flex-items-center flex-justify-between">
+            <a class="back" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-chevron-left"></span></a>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
-                <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                <div class="horizontal-stepper__progress" style="width: 50%;"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
+                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 0%;"></div>
             </li>
             <li class="horizontal-stepper__step">
                 <div class="horizontal-stepper__progress" style="width: 0%;"></div>
@@ -41,7 +42,11 @@
             <li class="horizontal-stepper__step horizontal-stepper__step--last">
                 <div class="horizontal-stepper__progress" style="width: 0%;"></div>
             </li>
+            <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+            </li>
         </ol>
+        </div>
     </div>
 </nav>
         
@@ -56,9 +61,11 @@
         <h1 class="mb-0">Are you ready to book the Baseline Visit?</h1>
 
         <div>
+            <!-- 
             <div class="badge badge--default badge--small">
                 <span class="badge__content">Step 1 of 35 - Welcome back</span>
-            </div>
+            </div> 
+            -->
         </div>
     </div>
     
@@ -66,13 +73,14 @@
         <p>Answer the following pre-visit questions to <strong>help the clinician review your medical history</strong>, and better develop the <strong>personalized wellness plan for you</strong>.</p>
     </div>
     
-    <div class="card">
-        <p class="text-center">The scheduling process will take about <strong>10 minutes</strong> to complete.</p>
-    </div>
 
-    <h2>Remember, at your Baseline Visit, you will get to:</h2>
+        <h2 class="text-center pt-24 pb-48">The scheduling process will take about <strong>10 minutes</strong> to complete.</h2>
 
-    <ol class="ordered-list" role="list">
+
+    <h3 class="mb-16">Remember, at your Baseline Visit, you will get to:</h3>
+
+    <div class="constrain constrain-80">
+        <ol class="ordered-list" role="list">
         <li class="ordered-list__item" data-order="1" data-color="blue" role="listitem" tabindex="0">
             <div class="ordered-list__number">
                 <span>1</span>
@@ -106,6 +114,7 @@
             </div>
         </li>
     </ol>
+    </div>
 
 </section></article>
         

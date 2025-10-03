@@ -1,0 +1,255 @@
+---
+layout: layout.html
+title: Swageblocks &bull; BLV &bull; Stat
+heading: Stat Card Component
+secondary: Replicated from Figma design - stat card component
+section: BLV Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Stat component displays key metrics and statistics with visual emphasis, supporting both numerical values and icon representations.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>Numerical Stat Card</h2>
+    <p class="mb-24">Display statistics with large numerical values.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Numerical Example</div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Provider Visits</p>
+                </div>
+                <div class="stat-card__stat">
+                    <p class="stat-card__stat-number text-success">12</p>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">visits with healthcare providers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Different Value</div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Medications</p>
+                </div>
+                <div class="stat-card__stat">
+                    <p class="stat-card__stat-number text-critical">5</p>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">active prescriptions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Grid Layout</h2>
+    <p class="mb-24">Display multiple stat cards in a 2-column grid with 24px gap.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item" style="grid-column: 1 / -1;">
+            <div class="demo-label">2×2 Grid Example</div>
+            <div class="stat-cards">
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Provider Visits</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <p class="stat-card__stat-number text-success">12</p>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">visits with healthcare providers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Telehealth</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-highlight"></span>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">Used convenient virtual care</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Medications</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <p class="stat-card__stat-number text-success">5</p>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">active prescriptions</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Lab Results</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <span class="heroicon heroicon-beaker stat-card__stat-icon text-success"></span>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">All results within normal range</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Icon Stat Card</h2>
+    <p class="mb-24">Display statistics with icons instead of numbers.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Icon Example</div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Telehealth</p>
+                </div>
+                <div class="stat-card__stat">
+                    <span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-highlight"></span>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">Used convenient virtual care</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Custom Icon</div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Lab Results</p>
+                </div>
+                <div class="stat-card__stat">
+                    <span class="heroicon heroicon-beaker stat-card__stat-icon text-subdued"></span>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">All results within normal range</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Design Specifications</h2>
+    <p class="mb-24">Visual design details from the Figma component.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Card Container</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Width: <code>389px</code></li>
+            <li>• Padding: <code>24px</code></li>
+            <li>• Background: <code>rgba(255,255,255,0.75)</code> with <code>backdrop-blur(5px)</code></li>
+            <li>• Border Radius: <code>4px</code></li>
+            <li>• Box Shadow: <code>0px 2px 16px 0px rgba(102,114,125,0.25)</code></li>
+            <li>• Inner Shadow: <code>0px 4px 200px 0px inset rgba(255,255,255,0.01)</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Typography</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Title:</strong> <code>20px</code>, <code>Sohne Halbfett (600)</code>, <code>24px line-height</code>, <code>--color-text-default</code></li>
+            <li>• <strong>Stat Number:</strong> <code>96px</code>, <code>Sohne Halbfett (600)</code>, <code>96px line-height</code>, <code>--color-text-success</code></li>
+            <li>• <strong>Description:</strong> <code>16px</code>, <code>Sohne Buch (400)</code>, <code>24px line-height</code>, <code>--color-text-default</code></li>
+            <li>• All text has <code>text-shadow: #ffffff 0px 1px 0px</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Layout Structure</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Container: <code>flex flex-col</code></li>
+            <li>• Title section: <code>flex gap-10px items-center justify-center</code></li>
+            <li>• Stat section: <code>padding: 8px 0</code>, <code>flex items-center justify-center</code></li>
+            <li>• Description section: <code>flex gap-10px items-center justify-center</code></li>
+            <li>• Icon size: <code>96px × 96px</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Color Mapping</h2>
+    <p class="mb-24">Figma variables mapped to foundation CSS variables.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Text Colors</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <code>Text/Default: #181B25</code> → <code>var(--color-text-default)</code></li>
+            <li>• <code>Text/Success: #18543C</code> → <code>var(--color-text-success)</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Typography Tokens</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <code>XL/BOLD_SHORT</code>: <code>Sohne Halbfett, 20px, 600 weight, 24px line-height</code></li>
+            <li>• <code>MD/REGULAR</code>: <code>Sohne Buch, 16px, 400 weight, 24px line-height</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure for the stat component.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Numerical Stat</h3>
+        <code class="body-sm">
+            &lt;div class="stat-card"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__title"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__title-text"&gt;Provider Visits&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__stat"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__stat-number"&gt;12&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__description"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__description-text"&gt;visits with healthcare providers&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Icon Stat</h3>
+        <code class="body-sm">
+            &lt;div class="stat-card"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__title"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__title-text"&gt;Telehealth&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__stat"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-highlight"&gt;&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card__description"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__description-text"&gt;Used convenient virtual care&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Grid Layout (2 columns with 24px gap)</h3>
+        <code class="body-sm">
+            &lt;div class="stat-cards"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+</section>

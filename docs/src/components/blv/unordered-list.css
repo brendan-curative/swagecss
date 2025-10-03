@@ -1,0 +1,183 @@
+/* #region Unordered List Component */
+
+/* Base unordered list container - identical to ordered list */
+.unordered-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-sans);
+}
+
+/* Unordered list item - identical layout to ordered list */
+.unordered-list__item {
+    position: relative;
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    gap: var(--spacing-32);
+    border-radius: 4px;
+    padding: var(--spacing-12) var(--spacing-16);
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
+    box-shadow:
+        0px 2px 16px 0px rgba(102, 114, 125, 0.25),
+        0px 4px 200px 0px rgba(255, 255, 255, 0.01) inset;
+}
+
+/* Icon container - circular like the number, but holds an icon */
+.unordered-list__icon {
+    display: flex !important;
+    width: var(--spacing-24);
+    height: var(--spacing-24);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid;
+    background-color: var(--color-white);
+    flex-shrink: 0;
+}
+
+/* Icon styling */
+.unordered-list__icon .heroicon {
+    width: var(--spacing-16);
+    height: var(--spacing-16);
+    color: inherit;
+}
+
+/* Content container - identical to ordered list */
+.unordered-list__content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+    flex: 1;
+}
+
+/* Content text - identical to ordered list */
+.unordered-list__text {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-default);
+    margin: 0;
+}
+
+/* Blue color variant */
+.unordered-list__item[data-color="blue"] .unordered-list__icon {
+    border-color: var(--color-primary-sky-blue);
+    color: var(--color-primary-sky-blue);
+}
+
+/* Orange color variant */
+.unordered-list__item[data-color="orange"] .unordered-list__icon {
+    border-color: var(--color-primary-signal-orange);
+    color: var(--color-primary-signal-orange);
+}
+
+/* Hover states for better interactivity */
+.unordered-list__item:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow:
+        0px 4px 20px 0px rgba(102, 114, 125, 0.35),
+        0px 4px 200px 0px rgba(255, 255, 255, 0.02) inset;
+    transform: translateY(-1px);
+    transition: all 0.2s ease-in-out;
+}
+
+.unordered-list__item:hover .unordered-list__icon {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Focus states for accessibility */
+.unordered-list__item:focus-visible {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+}
+
+/* Animation for newly added items */
+@keyframes slideInFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.unordered-list__item--animate {
+    animation: slideInFade 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .unordered-list__item {
+        gap: var(--spacing-20);
+        padding: var(--spacing-8) var(--spacing-12);
+    }
+
+    .unordered-list__icon {
+        width: var(--spacing-20);
+        height: var(--spacing-20);
+    }
+
+    .unordered-list__icon .heroicon {
+        width: var(--spacing-12);
+        height: var(--spacing-12);
+    }
+
+    .unordered-list__text {
+        font-size: var(--font-size-md);
+        line-height: var(--line-height-md);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .unordered-list__item {
+        background-color: var(--color-white);
+        border: 2px solid var(--color-gray-400);
+    }
+
+    .unordered-list__icon {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .unordered-list__item {
+        transition: none;
+    }
+
+    .unordered-list__item:hover {
+        transform: none;
+    }
+
+    .unordered-list__item:hover .unordered-list__icon {
+        transform: none;
+    }
+
+    .unordered-list__item--animate {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .unordered-list__item {
+        background-color: var(--color-white);
+        box-shadow: none;
+        border: 1px solid var(--color-gray-300);
+    }
+
+    .unordered-list__icon {
+        background-color: var(--color-white);
+    }
+}
+
+/* #endregion */

@@ -1,11 +1,13 @@
 <nav>
     <div class="container">
-        <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+        <div class=" flex-row flex-items-center flex-justify-between">
+            <a class="back" href="{{ '/' | url }}prototypes/blv/renewal/{{ previous }}"><span class="heroicon heroicon-chevron-left"></span></a>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
-                <div class="horizontal-stepper__progress" style="width: 100%;"></div>
+                <div class="horizontal-stepper__progress" style="width: 50%;"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 50%;"></div>
+                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 0%;"></div>
             </li>
             <li class="horizontal-stepper__step">
                 <div class="horizontal-stepper__progress" style="width: 0%;"></div>
@@ -13,6 +15,10 @@
             <li class="horizontal-stepper__step horizontal-stepper__step--last">
                 <div class="horizontal-stepper__progress" style="width: 0%;"></div>
             </li>
+            <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+            </li>
         </ol>
+        </div>
     </div>
 </nav>

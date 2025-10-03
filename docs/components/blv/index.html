@@ -46,9 +46,9 @@
         </div>
         </div>
         <div class="descr flex-row">
-            <a class="colophon mr-8" href="https://github.com/curative/swage">
+            <a class="colophon mr-8" href="https://github.com/brendan-curative/swagecss">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Sep 26, 2025, 12:40 PM</span> 
+             </a>  <span>Oct 3, 2025, 5:14 PM</span> 
              
         </div>
 
@@ -95,7 +95,9 @@
     <a href="/swagecss/components/blv/rating-picker/">Rating Picker</a>
     <a href="/swagecss/components/blv/checkmark-label/">Checkmark Label</a>
     <a href="/swagecss/components/blv/ordered-list/">Ordered List</a>
+    <a href="/swagecss/components/blv/unordered-list/">Unordered List</a>
     <a href="/swagecss/components/blv/radio-selection-list/">Radio Selection List</a>
+    <a href="/swagecss/components/blv/stat/">Stat Card</a>
 
 
 </nav>
@@ -237,6 +239,36 @@
         <div class="demo-item">
             <div class="flex items-center justify-between mb-16">
                 <div>
+                    <h3 class="heading-lg mb-4">Unordered List</h3>
+                    <p class="body-sm text-gray-600">Icon-based list items with backdrop effects</p>
+                </div>
+                <a href="unordered-list/" class="button button--primary">
+                    View Component
+                </a>
+            </div>
+            <ul class="unordered-list mb-16">
+                <li class="unordered-list__item" data-color="blue">
+                    <div class="unordered-list__icon">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p class="unordered-list__text">Your Benefits</p>
+                    </div>
+                </li>
+                <li class="unordered-list__item" data-color="blue">
+                    <div class="unordered-list__icon">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p class="unordered-list__text">Finding Care</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="demo-item">
+            <div class="flex items-center justify-between mb-16">
+                <div>
                     <h3 class="heading-lg mb-4">Radio Selection List</h3>
                     <p class="body-sm text-gray-600">Scrollable radio list with backdrop effects and custom styling</p>
                 </div>
@@ -267,6 +299,29 @@
                             </label>
                         </fieldset>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="flex items-center justify-between mb-16">
+                <div>
+                    <h3 class="heading-lg mb-4">Stat Card</h3>
+                    <p class="body-sm text-gray-600">Display statistics with large numbers or icons</p>
+                </div>
+                <a href="stat/" class="button button--primary">
+                    View Component
+                </a>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__title">
+                    <p class="stat-card__title-text">Provider Visits</p>
+                </div>
+                <div class="stat-card__stat">
+                    <p class="stat-card__stat-number text-success">12</p>
+                </div>
+                <div class="stat-card__description">
+                    <p class="stat-card__description-text">visits with healthcare providers</p>
                 </div>
             </div>
         </div>
@@ -397,6 +452,27 @@
                 <tr>
                     <td>
                         <div class="flex items-center gap-8">
+                            <span class="heading-sm">Unordered List</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="badge badge--success">Complete</span>
+                    </td>
+                    <td>
+                        <div class="body-sm text-gray-600">
+                            Icon bullets, backdrop effects, foundation icons
+                        </div>
+                    </td>
+                    <td>
+                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
+                    </td>
+                    <td>
+                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="flex items-center gap-8">
                             <span class="heading-sm">Radio Selection List</span>
                         </div>
                     </td>
@@ -406,6 +482,27 @@
                     <td>
                         <div class="body-sm text-gray-600">
                             Scrollable list, custom scrollbar, loading/error states
+                        </div>
+                    </td>
+                    <td>
+                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
+                    </td>
+                    <td>
+                        <span class="heroicon heroicon-16 heroicon-check text-green-600"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="flex items-center gap-8">
+                            <span class="heading-sm">Stat Card</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="badge badge--success">Complete</span>
+                    </td>
+                    <td>
+                        <div class="body-sm text-gray-600">
+                            Display statistics with numbers or icons, backdrop effects
                         </div>
                     </td>
                     <td>
@@ -499,7 +596,9 @@
                     <code>src/components/blv/rating-picker.js</code><br>
                     <code>src/components/blv/checkmark-label.js</code><br>
                     <code>src/components/blv/ordered-list.js</code><br>
-                    <code>src/components/blv/radio-selection-list.js</code>
+                    <code>src/components/blv/unordered-list.css</code><br>
+                    <code>src/components/blv/radio-selection-list.js</code><br>
+                    <code>src/components/blv/stat-card.css</code>
                 </div>
             </div>
             

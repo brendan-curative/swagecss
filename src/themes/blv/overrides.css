@@ -1,0 +1,22 @@
+nav a.back, nav a.back:visited {
+    color: var(--color-gray-600);
+    width: var(--spacing-24);
+    height: var(--spacing-24);
+    margin-left: -8px;
+    transition: all 0.5s ease;
+}
+
+nav a.back:hover, nav a.back:focus {
+    color: var(--color-blue-600);
+    transform: scale(0.9);
+}
+
+nav .horizontal-stepper {
+    width: calc(100% - var(--spacing-24));
+}
+
+.card {
+    margin-right: var(--spacing-32);
+    margin-left: var(--spacing-32);
+}
+
