@@ -158,3 +158,11 @@ h3 + .card {
     padding-top: var(--spacing-16);
 }
 /* #endregion */
+
+/* #region Utilities */
+.rotate-5 {transform: rotate(-5deg);}
+.rotate-15 {transform: rotate(-15deg);}
+.rotate-30 {transform: rotate(-30deg);}
+.rotate-45 {transform: rotate(45deg);}
+
+/* #endregion */

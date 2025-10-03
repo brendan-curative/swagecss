@@ -96,6 +96,7 @@
     <a href="/swagecss/components/blv/checkmark-label/">Checkmark Label</a>
     <a href="/swagecss/components/blv/ordered-list/">Ordered List</a>
     <a href="/swagecss/components/blv/radio-selection-list/">Radio Selection List</a>
+    <a href="/swagecss/components/blv/stat/">Stat Card</a>
 
 
 </nav>
@@ -139,6 +140,63 @@
                 </div>
                 <div class="stat-card__description">
                     <p class="stat-card__description-text">active prescriptions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Grid Layout</h2>
+    <p class="mb-24">Display multiple stat cards in a 2-column grid with 24px gap.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item" style="grid-column: 1 / -1;">
+            <div class="demo-label">2×2 Grid Example</div>
+            <div class="stat-cards">
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Provider Visits</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <p class="stat-card__stat-number text-success">12</p>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">visits with healthcare providers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Telehealth</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-highlight"></span>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">Used convenient virtual care</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Medications</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <p class="stat-card__stat-number text-success">5</p>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">active prescriptions</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card__title">
+                        <p class="stat-card__title-text">Lab Results</p>
+                    </div>
+                    <div class="stat-card__stat">
+                        <span class="heroicon heroicon-beaker stat-card__stat-icon text-success"></span>
+                    </div>
+                    <div class="stat-card__description">
+                        <p class="stat-card__description-text">All results within normal range</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,11 +328,23 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__title-text"&gt;Telehealth&lt;/p&gt;<br>
             &nbsp;&nbsp;&lt;/div&gt;<br>
             &nbsp;&nbsp;&lt;div class="stat-card__stat"&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;svg class="stat-card__stat-icon"&gt;...&lt;/svg&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-highlight"&gt;&lt;/span&gt;<br>
             &nbsp;&nbsp;&lt;/div&gt;<br>
             &nbsp;&nbsp;&lt;div class="stat-card__description"&gt;<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="stat-card__description-text"&gt;Used convenient virtual care&lt;/p&gt;<br>
             &nbsp;&nbsp;&lt;/div&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Grid Layout (2 columns with 24px gap)</h3>
+        <code class="body-sm">
+            &lt;div class="stat-cards"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-card"&gt;...&lt;/div&gt;<br>
             &lt;/div&gt;
         </code>
     </div>

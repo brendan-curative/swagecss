@@ -150,6 +150,13 @@ components/
    - See existing files like `components/card.html` for patterns
    - Will be built to `docs/components/my-component/`
 
+6. **Add navigation link:** Update `_includes/_nav.html`
+   - Add a link to your new component in the appropriate section
+   - For standard components: Add under `<h2>Components</h2>`
+   - For BLV components: Add under `<h2>BLV Components</h2>`
+   - Format: `<a href="{{ '/' | url }}components/my-component/">My Component</a>`
+   - For BLV: `<a href="{{ '/' | url }}components/blv/my-component/">My Component</a>`
+
 **Component Naming Rules:**
 
 - **BEM Pattern**: `.block__element--modifier`

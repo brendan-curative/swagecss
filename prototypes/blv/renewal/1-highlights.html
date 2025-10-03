@@ -13,9 +13,9 @@ button-text: Start Annual Check-in
 <section>
     <h1>Welcome back, Sarah!</h1>
 
-    <h2 class="pt-16 pb-32 px-32">We're glad to see you again. <br />Here's how we've been <strong>supporting your health journey</strong> this year:</h2>                 
+    <h2 class="pt-16 pb-48 px-32">We're glad to see you again. <br />Here's how we've been <strong>supporting your health journey</strong> this year:</h2>                 
 
-                    <h3 class="px-32">Your Wins This Year</h3>
+                    <h2 class="px-32">Your Wins This Year</h2>
 
                    <div class="card">
                     <div class="checkmark-label mb-16" role="status" aria-label="Completion status">
@@ -44,79 +44,89 @@ button-text: Start Annual Check-in
                 </p>
               
 
-            <!-- Care Access Section -->
-            
-                <h3 class="px-32 pb-16 text-center">
-                    Healthcare Access
-                </h3>
 
-                <div class="flex-row flex-justify-around">
+            <div class="stat-cards constrain constrain-80 mb-32">
+
+
                     <div class="stat-card">
-                <div class="stat-card__title">
-                    <p class="stat-card__title-text">Provider Visits</p>
-                </div>
-                <div class="stat-card__stat">
-                    <p class="stat-card__stat-number text-success">12</p>
-                </div>
-                <div class="stat-card__description">
-                    <p class="stat-card__description-text">visits with healthcare providers</p>
-                </div>
-            </div>
+                        <div class="stat-card__title">
+                            <p class="stat-card__title-text">Provider Visits</p>
+                        </div>
+                        <div class="stat-card__stat">
+                            <p class="stat-card__stat-number text-primary">12</p>
+                        </div>
+                        <div class="stat-card__description">
+                            <p class="stat-card__description-text">visits with healthcare providers</p>
+                        </div>
+                    </div>
     
-            <div class="stat-card">
-                <div class="stat-card__title">
-                    <p class="stat-card__title-text">Telehealth</p>
+                    <div class="stat-card">
+                        <div class="stat-card__title">
+                            <p class="stat-card__title-text">Telehealth</p>
+                        </div>
+                        <div class="stat-card__stat">
+                            <span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-signal-orange"></span>
+                        </div>
+                        <div class="stat-card__description mb-24">
+                            <p class="stat-card__description-text">Used convenient virtual care</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card__title">
+                            <p class="stat-card__title-text">Annual Health Assessment</p>
+                        </div>
+                        <div class="stat-card__stat">
+                            <span class="heroicon heroicon-outline-check-circle stat-card__stat-icon text-success"></span>
+                        </div>
+                        <div class="stat-card__description">
+                            <p class="stat-card__description-text">Completed</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card__title">
+                            <p class="stat-card__title-text">Pharmacy</p>
+                        </div>
+                        <div class="stat-card__stat">
+                            <p class="stat-card__stat-number text-sky-blue">8</p>
+                        </div>
+                        <div class="stat-card__description">
+                            <p class="stat-card__description-text">prescriptions covered</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card__title">
+                            <p class="stat-card__title-text">Coverage Value</p>
+                        </div>
+                        <div class="stat-card__stat">
+                            <p class="stat-card__stat-number smaller-stat text-sky-blue">$4,850</p>
+                        </div>
+                        <div class="stat-card__description">
+                            <p class="stat-card__description-text">in care we helped provide</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card__title">
+                            <p class="stat-card__title-text">Curative Cash Card</p>
+                        </div>
+                        <div class="stat-card__stat">
+                            <img src="{{ '/' | url }}src/themes/blv/img/cashcard.png" alt="Curative Cash Card">
+                        </div>
+                        <div class="stat-card__description">
+                            <p class="stat-card__description-text">$0 care when and where you need it</p>
+                        </div>      
+                    </div>
+
                 </div>
-                <div class="stat-card__stat">
-                    <span class="heroicon heroicon-computer-desktop stat-card__stat-icon text-sky-blue"></span>
-                </div>
-                <div class="stat-card__description">
-                    <p class="stat-card__description-text">Used convenient virtual care</p>
-                </div>
-            </div>
-                </div>
+        
 
-            <!-- Pharmacy & Wellness Section -->
-            
-                <h3>
-                    <span>💊</span>
-                    Pharmacy & Wellness
-                </h3>
 
-                            <span>💊</span>
-                            <span>Prescriptions</span>
 
-                        <div>8</div>
-                        <p>prescriptions covered</p>
 
-                            <span>✓</span>
-                            <span>Baseline Visit</span>
-
-                        <div>✓ Completed</div>
-                        <p>annual health assessment</p>
-
-            <!-- Benefits & Support Section -->
-            
-                <h3>
-                    <span>💰</span>
-                    Benefits & Support
-                </h3>
-
-                            <span>🛡️</span>
-                            <span>Coverage Value</span>
-
-                            <span>$4,850</span>
-                            <div>We're here when you need us most</div>
-
-                        <p>in care we helped provide</p>
-
-                            <span>💳</span>
-                            <span>Curative Cash Card</span>
-
-                        <div>✓ Active</div>
-                        <p>for health expenses</p>
-                        
-                            <button>Activate Now</button>
+          
 
             <!-- Looking Forward Section -->
 
