@@ -231,6 +231,9 @@
 .text-sky-blue { color: var(--color-primary-sky-blue); }
 .text-signal-orange { color: var(--color-primary-signal-orange); }
 
+.text-green-500 { color: var(--color-green-500); }
+.text-teal-500 { color: var(--color-teal-500); }
+
 /* Color Scale Text Utilities - 700 weights */
 .text-blue-700 { color: var(--color-blue-700); }
 .text-green-700 { color: var(--color-green-700); }
