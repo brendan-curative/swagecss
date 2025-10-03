@@ -231,6 +231,26 @@
 .text-sky-blue { color: var(--color-primary-sky-blue); }
 .text-signal-orange { color: var(--color-primary-signal-orange); }
 
+/* Color Scale Text Utilities - 700 weights */
+.text-blue-700 { color: var(--color-blue-700); }
+.text-green-700 { color: var(--color-green-700); }
+.text-red-700 { color: var(--color-red-700); }
+.text-orange-700 { color: var(--color-orange-700); }
+.text-teal-700 { color: var(--color-teal-700); }
+.text-purple-700 { color: var(--color-purple-700); }
+.text-pink-700 { color: var(--color-pink-700); }
+.text-gray-700 { color: var(--color-gray-700); }
+
+/* Color Scale Text Utilities - 900 weights */
+.text-blue-900 { color: var(--color-blue-900); }
+.text-green-900 { color: var(--color-green-900); }
+.text-red-900 { color: var(--color-red-900); }
+.text-orange-900 { color: var(--color-orange-900); }
+.text-teal-900 { color: var(--color-teal-900); }
+.text-purple-900 { color: var(--color-purple-900); }
+.text-pink-900 { color: var(--color-pink-900); }
+.text-gray-900 { color: var(--color-gray-900); }
+
 /* Border Colors */
 .border-default { border-color: var(--color-border-default); }
 .border-control { border-color: var(--color-border-control); }
