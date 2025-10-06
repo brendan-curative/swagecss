@@ -33,7 +33,7 @@ swagecss/
 │   │   ├── display.css      (325 lines)
 │   │   └── icons.css        (5,307 lines)
 │   ├── components/          ← Component CSS files (22 components)
-│   ├── plugins/             ← Drawer, theme toggle, etc.
+│   ├── modules/             ← Drawer, theme toggle, etc.
 │   ├── blocks/              ← Block-level styles
 │   └── swage.css            ← Main entry (imports all)
 ├── components/              ← Component documentation pages

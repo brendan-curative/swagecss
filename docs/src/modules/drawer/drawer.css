@@ -1,0 +1,313 @@
+/* #region Drawer Plugin */
+
+/* Immediate hiding of all drawers before JavaScript loads */
+[data-drawer] {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateX(-100%) !important;
+}
+
+[data-drawer][data-drawer-position="right"] {
+    transform: translateX(100%) !important;
+}
+
+/* Drawer overlay backdrop */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    backdrop-filter: blur(2px);
+}
+
+.drawer-overlay.drawer-overlay--open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Base drawer container */
+.drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: var(--spacing-320);
+    max-width: 80vw;
+    background-color: var(--color-surface-default);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 1001;
+    transform: translateX(-100%);
+    font-family: var(--font-family-sans);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    /* Ensure drawer is hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Only add transitions after initialization to prevent flash */
+.drawer.drawer--initialized {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Force all non-open initialized drawers to be hidden */
+.drawer.drawer--initialized:not(.drawer--open) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Left drawer (default) */
+.drawer--left {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.drawer--left.drawer--open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Right drawer */
+.drawer--right {
+    right: 0;
+    transform: translateX(100%);
+}
+
+.drawer--right.drawer--open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Drawer header */
+.drawer__header {
+    padding: var(--spacing-24);
+    border-bottom: 1px solid var(--color-border-default);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-surface-default);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.drawer__title {
+    color: var(--color-text-default);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-lg);
+    margin: 0;
+}
+
+.drawer__close {
+    background: none;
+    border: none;
+    padding: var(--spacing-8);
+    cursor: pointer;
+    border-radius: var(--spacing-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    transition: all 0.2s ease-in-out;
+}
+
+.drawer__close:hover {
+    color: var(--color-text-default);
+    background-color: var(--color-surface-neutral);
+}
+
+.drawer__close:focus {
+    outline: 2px solid var(--color-foundation-primary);
+    outline-offset: 2px;
+}
+
+/* Drawer content */
+.drawer__content {
+    padding: var(--spacing-24);
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Drawer footer */
+.drawer__footer {
+    padding: var(--spacing-24);
+    border-top: 1px solid var(--color-border-default);
+    flex-shrink: 0;
+    background-color: var(--color-surface-default);
+    position: sticky;
+    bottom: 0;
+}
+
+/* Drawer sizes */
+.drawer--small {
+    width: var(--spacing-240);
+}
+
+.drawer--medium {
+    width: var(--spacing-320);
+}
+
+.drawer--large {
+    width: 400px;
+}
+
+.drawer--full {
+    width: 100vw;
+    max-width: 100vw;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .drawer {
+        width: 100vw;
+        max-width: 100vw;
+    }
+    
+    .drawer--small,
+    .drawer--medium,
+    .drawer--large {
+        width: 100vw;
+        max-width: 100vw;
+    }
+}
+
+/* Body scroll lock when drawer is open */
+body.drawer-open {
+    overflow: hidden;
+}
+
+/* Drawer trigger button styles */
+.drawer-trigger {
+    background: none;
+    border: none;
+    padding: var(--spacing-8);
+    cursor: pointer;
+    border-radius: var(--spacing-4);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-8);
+    color: var(--color-text-default);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    transition: all 0.2s ease-in-out;
+}
+
+.drawer-trigger:hover {
+    background-color: var(--color-surface-neutral);
+}
+
+.drawer-trigger:focus {
+    outline: 2px solid var(--color-foundation-primary);
+    outline-offset: 2px;
+}
+
+/* Drawer navigation styles */
+.drawer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.drawer-nav__item {
+    margin-bottom: var(--spacing-4);
+}
+
+.drawer-nav__link {
+    display: block;
+    padding: var(--spacing-12) var(--spacing-16);
+    color: var(--color-text-default);
+    text-decoration: none;
+    border-radius: var(--spacing-4);
+    transition: all 0.2s ease-in-out;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+}
+
+.drawer-nav__link:hover {
+    background-color: var(--color-surface-neutral);
+    color: var(--color-foundation-primary);
+}
+
+.drawer-nav__link:focus {
+    outline: 2px solid var(--color-foundation-primary);
+    outline-offset: 2px;
+}
+
+.drawer-nav__link--active {
+    background-color: var(--color-foundation-primary);
+    color: var(--color-white);
+}
+
+.drawer-nav__link--active:hover {
+    background-color: var(--color-blue-600);
+}
+
+/* Drawer section headers */
+.drawer__section-header {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: var(--spacing-24) 0 var(--spacing-8) 0;
+    padding: 0 var(--spacing-16);
+}
+
+.drawer__section-header:first-child {
+    margin-top: 0;
+}
+
+/* Animation states */
+.drawer--animating {
+    pointer-events: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .drawer {
+        border: 2px solid var(--color-border-default);
+    }
+    
+    .drawer__header,
+    .drawer__footer {
+        border-color: var(--color-border-default);
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .drawer,
+    .drawer-overlay,
+    .drawer-trigger,
+    .drawer__close,
+    .drawer-nav__link {
+        transition: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .drawer,
+    .drawer-overlay,
+    .drawer-trigger {
+        display: none !important;
+    }
+}
+
+/* #endregion */

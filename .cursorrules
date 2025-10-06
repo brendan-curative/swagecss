@@ -44,7 +44,7 @@ src/foundation/
 src/components/      (Component HTML + CSS files)
 components/          (Component documentation pages)
 _includes/           (Eleventy templates)
-src/plugins/         (Additional features like drawer, theme toggle)
+src/modules/         (Additional features like drawer, theme toggle)
 ```
 
 ### Generated (⚠️ NEVER EDIT DIRECTLY)

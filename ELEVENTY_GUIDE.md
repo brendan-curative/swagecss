@@ -110,7 +110,7 @@ _includes/:
 src/ → docs/src/ (copied unchanged)
   ├── foundation/
   ├── components/
-  ├── plugins/
+  ├── modules/
   ├── swage.css
   └── demo.css
 ```
