@@ -24,7 +24,7 @@
               <div class="flex-column pagetitle">
                 <h1>Select Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Select imported from CUI</p>
+                  <p>Select imported from CUI and Figma</p>
                   
                 </div>
 
@@ -104,58 +104,78 @@
 </aside>
   
               <article>
+                <!-- #swage editable-start -->
+                
 <section>
     <p class="body-lg text-gray-600 mb-24">
-        Select dropdown component for choosing from a list of options. 
-        Features multiple states, sizes, and interactive functionality.
+        Select dropdown component for choosing from a list of options.
+        Features multiple states, sizes, and interactive functionality matching the Figma design.
     </p>
 </section>
 
 <section class="component-section">
-    <h2>Basic Select</h2>
-    <p class="mb-24">Standard select dropdown with various states.</p>
-    
+    <h2>States</h2>
+    <p class="mb-24">Different states for the select component matching the Figma design.</p>
+
     <div class="demo-grid">
         <div class="demo-item">
-            <div class="demo-label">Default State</div>
+            <div class="demo-label">With description</div>
             <div class="select">
-                <select class="select__control" id="basicSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+                <div class="select__label-group">
+                    <label for="relationshipSelect1" class="select__label">Your relationship</label>
+                    <p class="select__description">Description of the form</p>
+                </div>
+                <div class="select__input-wrapper">
+                    <select class="select__control" id="relationshipSelect1">
+                        <option value="">Choose a relationship</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="child">Child</option>
+                        <option value="other-adult">Other Adult</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="select__icon">
+                        <span class="heroicon heroicon-chevron-down"></span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="demo-item">
-            <div class="demo-label">With Selected Value</div>
+            <div class="demo-label">With no description</div>
             <div class="select">
-                <select class="select__control" id="selectedSelect">
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2" selected>Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+                <div class="select__label-group">
+                    <label for="relationshipSelect2" class="select__label">Your relationship</label>
+                </div>
+                <div class="select__input-wrapper">
+                    <select class="select__control" id="relationshipSelect2">
+                        <option value="">Choose a relationship</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="child">Child</option>
+                        <option value="other-adult">Other Adult</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="select__icon">
+                        <span class="heroicon heroicon-chevron-down"></span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="demo-item">
-            <div class="demo-label">Disabled State</div>
-            <div class="select select--disabled">
-                <select class="select__control" disabled>
-                    <option value="">Choose an option...</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+            <div class="demo-label">With hidden label</div>
+            <div class="select">
+                <label for="relationshipSelect3" class="select__label select__label--sr-only">Your relationship</label>
+                <div class="select__input-wrapper">
+                    <select class="select__control" id="relationshipSelect3">
+                        <option value="">Choose a relationship</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="child">Child</option>
+                        <option value="other-adult">Other Adult</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="select__icon">
+                        <span class="heroicon heroicon-chevron-down"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,310 +183,112 @@
 </section>
 
 <section class="component-section">
-    <h2>Select with Label</h2>
-    <p class="mb-24">Select components with associated labels for better accessibility.</p>
-    
+    <h2>Additional States</h2>
+    <p class="mb-24">Disabled and error states for the select component.</p>
+
     <div class="demo-grid">
         <div class="demo-item">
-            <label for="countrySelect" class="select__label">Country</label>
+            <div class="demo-label">Disabled</div>
             <div class="select">
-                <select class="select__control" id="countrySelect">
-                    <option value="">Select a country...</option>
-                    <option value="us">United States</option>
-                    <option value="ca">Canada</option>
-                    <option value="uk">United Kingdom</option>
-                    <option value="au">Australia</option>
-                    <option value="de">Germany</option>
-                    <option value="fr">France</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+                <div class="select__label-group">
+                    <label for="relationshipSelect4" class="select__label">Your relationship</label>
+                    <p class="select__description">Description of the form</p>
+                </div>
+                <div class="select__input-wrapper">
+                    <select class="select__control" id="relationshipSelect4" disabled>
+                        <option value="">Choose a relationship</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="child">Child</option>
+                        <option value="other-adult">Other Adult</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="select__icon">
+                        <span class="heroicon heroicon-chevron-down"></span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="demo-item">
-            <label for="categorySelect" class="select__label">Category</label>
-            <div class="select">
-                <select class="select__control" id="categorySelect">
-                    <option value="">All categories...</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="clothing">Clothing & Accessories</option>
-                    <option value="books">Books & Media</option>
-                    <option value="home">Home & Garden</option>
-                    <option value="sports">Sports & Outdoors</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Select Sizes</h2>
-    <p class="mb-24">Different select sizes for various UI contexts.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">Small Size</div>
-            <div class="select select--small">
-                <select class="select__control">
-                    <option value="">Small select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Large Size</div>
-            <div class="select select--large">
-                <select class="select__control">
-                    <option value="">Large select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Select States</h2>
-    <p class="mb-24">Different states for form validation feedback.</p>
-    
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">Error State</div>
+            <div class="demo-label">Error</div>
             <div class="select select--error">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+                <div class="select__label-group">
+                    <label for="relationshipSelect5" class="select__label">Your relationship</label>
+                </div>
+                <div class="select__input-wrapper">
+                    <select class="select__control" id="relationshipSelect5">
+                        <option value="">Choose a relationship</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="child">Child</option>
+                        <option value="other-adult">Other Adult</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="select__icon">
+                        <span class="heroicon heroicon-chevron-down"></span>
+                    </div>
+                </div>
+                <div class="select__error-message">
+                    <span class="heroicon heroicon-16 heroicon-exclamation-circle"></span>
+                    This field is required
                 </div>
             </div>
-            <div class="select__error-message">This field is required</div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Success State</div>
-            <div class="select select--success">
-                <select class="select__control">
-                    <option value="">Please select...</option>
-                    <option value="1">Option 1</option>
-                    <option value="2" selected>Option 2</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-            <div class="select__success-message">Valid selection</div>
         </div>
     </div>
 </section>
 
 <section class="component-section">
-    <h2>Multiple Select</h2>
-    <p class="mb-24">Select components that allow multiple selections.</p>
-    
-    <div class="demo-item">
-        <label for="skillsSelect" class="select__label">Skills (Hold Ctrl/Cmd to select multiple)</label>
-        <div class="select select--multiple">
-            <select class="select__control" id="skillsSelect" multiple>
-                <option value="javascript">JavaScript</option>
-                <option value="python">Python</option>
-                <option value="react">React</option>
-                <option value="vue">Vue.js</option>
-                <option value="angular">Angular</option>
-                <option value="nodejs">Node.js</option>
-                <option value="css">CSS</option>
-                <option value="html">HTML</option>
-            </select>
-        </div>
-        <div class="select__help-text">Hold Ctrl (or Cmd on Mac) while clicking to select multiple options</div>
-    </div>
-</section>
+    <h2>Additional Examples</h2>
+    <p class="mb-24">Additional select examples with various options.</p>
 
-<section class="component-section">
-    <h2>Grouped Options</h2>
-    <p class="mb-24">Select with optgroups for organized option lists.</p>
-    
-    <div class="demo-item">
-        <label for="vehicleSelect" class="select__label">Vehicle Type</label>
-        <div class="select">
-            <select class="select__control" id="vehicleSelect">
-                <option value="">Choose a vehicle...</option>
-                <optgroup label="Cars">
-                    <option value="sedan">Sedan</option>
-                    <option value="suv">SUV</option>
-                    <option value="hatchback">Hatchback</option>
-                    <option value="convertible">Convertible</option>
-                </optgroup>
-                <optgroup label="Motorcycles">
-                    <option value="sport">Sport Bike</option>
-                    <option value="cruiser">Cruiser</option>
-                    <option value="touring">Touring</option>
-                </optgroup>
-                <optgroup label="Trucks">
-                    <option value="pickup">Pickup Truck</option>
-                    <option value="delivery">Delivery Van</option>
-                    <option value="semi">Semi Truck</option>
-                </optgroup>
-            </select>
-            <div class="select__icon">
-                <span class="heroicon heroicon-chevron-down"></span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="component-section">
-    <h2>Interactive Examples</h2>
-    <p class="mb-24">Demonstrates dynamic interactions between select components.</p>
-    
     <div class="demo-grid">
         <div class="demo-item">
-            <label for="regionSelect" class="select__label">Region</label>
+            <div class="demo-label">With different options</div>
             <div class="select">
-                <select class="select__control" id="regionSelect">
-                    <option value="">Select region...</option>
-                    <option value="north-america">North America</option>
-                    <option value="europe">Europe</option>
-                    <option value="asia">Asia</option>
-                    <option value="south-america">South America</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+                <div class="select__label-group">
+                    <label for="countrySelect" class="select__label">Country</label>
+                    <p class="select__description">Select your country</p>
+                </div>
+                <div class="select__input-wrapper">
+                    <select class="select__control" id="countrySelect">
+                        <option value="">Select a country...</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                    </select>
+                    <div class="select__icon">
+                        <span class="heroicon heroicon-chevron-down"></span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="demo-item">
-            <label for="countryDependentSelect" class="select__label">Country</label>
+            <div class="demo-label">Dropdown</div>
             <div class="select">
-                <select class="select__control" id="countryDependentSelect" disabled>
-                    <option value="">First select a region...</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
+                <div class="select__label-group">
+                    <label for="relationshipSelect6" class="select__label">Your relationship</label>
+                    <p class="select__description">Description of the form</p>
+                </div>
+                <div class="select__input-wrapper">
+                    <select class="select__control" id="relationshipSelect6">
+                        <option value="">Choose a relationship</option>
+                        <option value="spouse">Spouse</option>
+                        <option value="child">Child</option>
+                        <option value="other-adult">Other Adult</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div class="select__icon">
+                        <span class="heroicon heroicon-chevron-down"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="demo-output" id="selectionOutput">
-        Region: None selected<br>
-        Country: None selected
-    </div>
 </section>
 
-<section class="component-section">
-    <h2>Form Integration</h2>
-    <p class="mb-24">Select components within a complete form context with validation.</p>
-    
-    <div class="demo-item">
-        <form id="profileForm" class="profile-form">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="titleSelect" class="select__label">Title</label>
-                    <div class="select select--small">
-                        <select class="select__control" id="titleSelect" name="title">
-                            <option value="">Select...</option>
-                            <option value="mr">Mr.</option>
-                            <option value="mrs">Mrs.</option>
-                            <option value="ms">Ms.</option>
-                            <option value="dr">Dr.</option>
-                            <option value="prof">Prof.</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-16 heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="industrySelect" class="select__label">Industry *</label>
-                    <div class="select" id="industrySelectWrapper">
-                        <select class="select__control" id="industrySelect" name="industry" required>
-                            <option value="">Select industry...</option>
-                            <option value="technology">Technology</option>
-                            <option value="healthcare">Healthcare</option>
-                            <option value="finance">Finance</option>
-                            <option value="education">Education</option>
-                            <option value="retail">Retail</option>
-                            <option value="manufacturing">Manufacturing</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                    <div class="select__error-message" id="industryError" style="display: none;">
-                        Please select an industry
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="experienceSelect" class="select__label">Years of Experience</label>
-                    <div class="select">
-                        <select class="select__control" id="experienceSelect" name="experience">
-                            <option value="">Select...</option>
-                            <option value="0-1">0-1 years</option>
-                            <option value="2-5">2-5 years</option>
-                            <option value="6-10">6-10 years</option>
-                            <option value="11-15">11-15 years</option>
-                            <option value="16+">16+ years</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="preferenceSelect" class="select__label">Contact Preference</label>
-                    <div class="select">
-                        <select class="select__control" id="preferenceSelect" name="preference">
-                            <option value="">Select...</option>
-                            <option value="email">Email</option>
-                            <option value="phone">Phone</option>
-                            <option value="both">Both Email and Phone</option>
-                            <option value="none">No contact</option>
-                        </select>
-                        <div class="select__icon">
-                            <span class="heroicon heroicon-chevron-down"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-actions">
-                <button type="button" class="button button--outline" onclick="resetProfileForm()">Reset</button>
-                <button type="submit" class="button button--primary">Save Profile</button>
-            </div>
-        </form>
-        
-        <div id="profileResults" class="form-results" style="display: none;">
-            <h3>Profile Data:</h3>
-            <div id="profileResultsContent"></div>
-        </div>
-    </div>
-</section>
-
-</article>
+                <!-- #swage editable-end -->
+              </article>
         
       </main>
   

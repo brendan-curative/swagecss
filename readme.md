@@ -19,7 +19,7 @@ A utility-first CSS framework based on the Curative Design System, built with El
 npm install
 
 # Build the site
-npx @11ty/eleventy
+npx @11ty/eleventy --serve
 
 # View output
 open docs/index.html
