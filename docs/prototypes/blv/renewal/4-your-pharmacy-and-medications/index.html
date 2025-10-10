@@ -100,10 +100,15 @@
     <h3>Add Medication</h3>
     <button>&times;</button>
 
-    <label for="medication-search">Search for your medication:</label>
-    
-    <input type="text" placeholder="Start typing medication name..." onkeypress="if(event.key==='Enter') searchMedications()" oninput="searchMedications()">
-    <button>🔍</button>
+    <div class="textfield textfield--with-button">
+        <label class="textfield__label" for="medication-search">Search for your medication:</label>
+        <div class="textfield__input-wrapper">
+            <input class="textfield__input" type="text" id="medication-search" name="medication-search" placeholder="Start typing medication name..." onkeypress="if(event.key==='Enter') searchMedications()" oninput="searchMedications()">
+            <button class="textfield__button textfield__button--primary" type="button" aria-label="Search">
+                <span>🔍</span>
+            </button>
+        </div>
+    </div>
 
     <!-- Results will be populated here -->
 
@@ -114,10 +119,15 @@
     <h3>Find Your Preferred Pharmacy</h3>
     <button>&times;</button>
 
-    <label for="pharmacy-search">Enter your location to find pharmacies nearby:</label>
-    
-    <input type="text" placeholder="City, State or ZIP code" onkeypress="if(event.key==='Enter') searchPharmacies()">
-    <button>🔍</button>
+    <div class="textfield textfield--with-button">
+        <label class="textfield__label" for="pharmacy-search">Enter your location to find pharmacies nearby:</label>
+        <div class="textfield__input-wrapper">
+            <input class="textfield__input" type="text" id="pharmacy-search" name="pharmacy-search" placeholder="City, State or ZIP code" onkeypress="if(event.key==='Enter') searchPharmacies()">
+            <button class="textfield__button textfield__button--primary" type="button" aria-label="Search">
+                <span>🔍</span>
+            </button>
+        </div>
+    </div>
 
     <!-- Results will be populated here -->
 

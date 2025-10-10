@@ -111,18 +111,30 @@
             <option value="MI">Michigan</option>
         </select>
 
-        <label for="provider-search">Provider Name:</label>
-        <input type="text" placeholder="Start typing provider name..." autocomplete="off">
+        <div class="textfield">
+            <label class="textfield__label" for="provider-search">Provider Name:</label>
+            <div class="textfield__input-wrapper">
+                <input class="textfield__input" type="text" id="provider-search" name="provider-search" placeholder="Start typing provider name..." autocomplete="off">
+            </div>
+        </div>
         <div></div>
     </form>
 
     <p>Enter your provider's information:</p>
-    
-    <label for="manual-provider-name">Provider Name:</label>
-    <input type="text" placeholder="e.g., Dr. John Smith, MD">
 
-    <label for="manual-location">City/State or Address:</label>
-    <input type="text" placeholder="e.g., Los Angeles, CA or 123 Main St, City, State">
+    <div class="textfield">
+        <label class="textfield__label" for="manual-provider-name">Provider Name:</label>
+        <div class="textfield__input-wrapper">
+            <input class="textfield__input" type="text" id="manual-provider-name" name="manual-provider-name" placeholder="e.g., Dr. John Smith, MD">
+        </div>
+    </div>
+
+    <div class="textfield">
+        <label class="textfield__label" for="manual-location">City/State or Address:</label>
+        <div class="textfield__input-wrapper">
+            <input class="textfield__input" type="text" id="manual-location" name="manual-location" placeholder="e.g., Los Angeles, CA or 123 Main St, City, State">
+        </div>
+    </div>
 
     <button type="button">← Back to Search</button>
 

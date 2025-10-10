@@ -78,10 +78,15 @@ button-text: Continue
     <p>Select a facility near you:</p>
     <p>Remember, <strong>you can go to any facility that shows up in our provider search!</strong> We just want to make sure you have at least one option ahead of time</p>
 
-    <label for="facility-location">Location (search by address, zip, or city, state)</label>
-    
-    <input type="text" placeholder="Enter location..." onkeypress="if(event.key==='Enter') searchFacilities()">
-    <button>🔍</button>
+    <div class="textfield textfield--with-button">
+        <label class="textfield__label" for="facility-location">Location (search by address, zip, or city, state)</label>
+        <div class="textfield__input-wrapper">
+            <input class="textfield__input" type="text" id="facility-location" name="facility-location" placeholder="Enter location..." onkeypress="if(event.key==='Enter') searchFacilities()">
+            <button class="textfield__button textfield__button--primary" type="button" aria-label="Search">
+                <span>🔍</span>
+            </button>
+        </div>
+    </div>
 
     <!-- Results will be populated here -->
 

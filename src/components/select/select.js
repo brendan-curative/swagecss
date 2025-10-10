@@ -183,3 +183,151 @@
 
     console.log('Select component JavaScript loaded');
 })();
+
+// Multi-select functionality
+(function() {
+    'use strict';
+
+    function initializeMultiSelects() {
+        const multiSelects = document.querySelectorAll('.select--multi');
+
+        multiSelects.forEach(function(selectContainer) {
+            const button = selectContainer.querySelector('.select__button');
+            const dropdown = selectContainer.querySelector('.select__dropdown');
+            const checkboxes = selectContainer.querySelectorAll('.select__checkbox-option input[type="checkbox"]');
+            const selectedItemsContainer = selectContainer.querySelector('.select__selected-items');
+            const placeholder = selectContainer.querySelector('.select__placeholder');
+
+            if (!button || !dropdown) return;
+
+            // Toggle dropdown on button click
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleDropdown();
+            });
+
+            // Handle keyboard events for button (Enter and Space)
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleDropdown();
+                }
+            });
+
+            function toggleDropdown() {
+                const isOpen = dropdown.classList.contains('select__dropdown--open');
+
+                // Close all other dropdowns
+                document.querySelectorAll('.select__dropdown--open').forEach(function(openDropdown) {
+                    openDropdown.classList.remove('select__dropdown--open');
+                    const otherButton = openDropdown.parentElement.querySelector('.select__button');
+                    if (otherButton) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Toggle current dropdown
+                if (isOpen) {
+                    dropdown.classList.remove('select__dropdown--open');
+                    button.setAttribute('aria-expanded', 'false');
+                } else {
+                    dropdown.classList.add('select__dropdown--open');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Handle checkbox changes
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    updateSelectedItems();
+                });
+            });
+
+            // Handle badge remove buttons
+            function attachBadgeRemoveHandlers() {
+                const removeButtons = selectContainer.querySelectorAll('.select__badge-remove');
+                removeButtons.forEach(function(removeButton) {
+                    removeButton.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const badge = this.closest('.select__badge');
+                        const value = this.getAttribute('aria-label').replace('Remove ', '');
+
+                        // Find and uncheck the corresponding checkbox
+                        checkboxes.forEach(function(checkbox) {
+                            const label = checkbox.nextElementSibling;
+                            if (label && label.textContent.trim() === value) {
+                                checkbox.checked = false;
+                            }
+                        });
+
+                        updateSelectedItems();
+                    });
+                });
+            }
+
+            // Update selected items display
+            function updateSelectedItems() {
+                const selectedValues = [];
+
+                checkboxes.forEach(function(checkbox) {
+                    if (checkbox.checked) {
+                        const label = checkbox.nextElementSibling;
+                        if (label) {
+                            selectedValues.push(label.textContent.trim());
+                        }
+                    }
+                });
+
+                if (selectedValues.length === 0) {
+                    // Show placeholder
+                    if (placeholder) {
+                        placeholder.style.display = 'inline';
+                    }
+                    if (selectedItemsContainer) {
+                        selectedItemsContainer.innerHTML = '';
+                        selectedItemsContainer.style.display = 'none';
+                    }
+                } else {
+                    // Hide placeholder and show badges
+                    if (placeholder) {
+                        placeholder.style.display = 'none';
+                    }
+                    if (selectedItemsContainer) {
+                        selectedItemsContainer.style.display = 'flex';
+                        selectedItemsContainer.innerHTML = selectedValues.map(function(value) {
+                            return '<span class="select__badge">' +
+                                '<button type="button" class="select__badge-remove" aria-label="Remove ' + value + '">' +
+                                '<span class="heroicon heroicon-16 heroicon-x"></span>' +
+                                '</button>' +
+                                value +
+                                '</span>';
+                        }).join('');
+
+                        // Reattach handlers to new remove buttons
+                        attachBadgeRemoveHandlers();
+                    }
+                }
+            }
+
+            // Initial setup of remove button handlers
+            attachBadgeRemoveHandlers();
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!selectContainer.contains(e.target)) {
+                    dropdown.classList.remove('select__dropdown--open');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        console.log('Multi-select component JavaScript initialized');
+    }
+
+    // Auto-initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeMultiSelects);
+    } else {
+        initializeMultiSelects();
+    }
+})();
