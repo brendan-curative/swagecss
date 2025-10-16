@@ -68,20 +68,32 @@
     <!-- Upcoming Procedures Question -->
     <h4>Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
 
-    <input type="checkbox" onchange="togglePreparationInfo()">
-    <label for="surgery-major">Major surgery (requiring hospitalization)</label>
+    <div class="space-y-12">
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" id="surgery-major" name="procedures" value="surgery-major" onchange="togglePreparationInfo()">
+            <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
+        </label>
 
-    <input type="checkbox" onchange="togglePreparationInfo()">
-    <label for="surgery-outpatient">Outpatient procedure</label>
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" name="procedures" value="surgery-outpatient" onchange="togglePreparationInfo()">
+            <span class="checkbox__label">Outpatient procedure</span>
+        </label>
 
-    <input type="checkbox" onchange="togglePreparationInfo()">
-    <label for="procedure-diagnostic">Diagnostic procedure (colonoscopy, endoscopy, etc.)</label>
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" name="procedures" value="procedure-diagnostic" onchange="togglePreparationInfo()">
+            <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
+        </label>
 
-    <input type="checkbox" onchange="togglePreparationInfo()">
-    <label for="procedure-preventive">Preventive screening</label>
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" id="procedure-preventive" name="procedures" value="procedure-preventive" onchange="togglePreparationInfo()">
+            <span class="checkbox__label">Preventive screening</span>
+        </label>
 
-    <input type="checkbox" onchange="togglePreparationInfo()">
-    <label for="none-planned">None currently planned</label>
+        <label class="checkbox">
+            <input type="checkbox" class="checkbox__input" id="none-planned" name="procedures" value="none-planned" onchange="togglePreparationInfo()">
+            <span class="checkbox__label">None currently planned</span>
+        </label>
+    </div>
 
     <!-- Preparation Information (appears when procedures are selected) -->
     <h4>Let's help you prepare for your upcoming care</h4>
