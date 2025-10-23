@@ -157,6 +157,10 @@
     display: inline;
 }
 
+.hidden {
+    display: none;
+}
+
 /* #endregion */
 
 /* #region Float */

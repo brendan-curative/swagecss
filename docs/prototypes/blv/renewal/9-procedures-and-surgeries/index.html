@@ -10,9 +10,9 @@
     <link href="/swagecss/src/themes/blv/blv.css" rel="stylesheet" type="text/css" />
 
 
-    
+
   </head>
-  <body>
+    <body class="page-procedures">
     <div class="wrap">
       <header>
         <div class="container">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div>
-                    <a class="button button--flat button--with-icon" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</a>
+                    <button class="button button--flat button--with-icon" onclick="restartPrototype()"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</button>
 
                     <button class="drawer-trigger" data-drawer-target="contents" title="Open menu" aria-expanded="false" aria-controls="contents">
                 <span class="heroicon heroicon-outline-map"></span>
@@ -36,19 +36,19 @@
             <a class="back" href="/swagecss/prototypes/blv/renewal/8-barriers-to-care/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
-                <div class="horizontal-stepper__progress" style="width: 50%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-1"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-2"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-3"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress stepper-progress-4"></div>
             </li>
             <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-            </li>
-            <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-5"></div>
             </li>
         </ol>
         </div>
@@ -60,57 +60,109 @@
       <main>
         
               <article>
-<section>
-    <h1>Procedures and Surgeries</h1>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Procedures and Surgeries</h1>
     
-    <p>Let's plan for any upcoming procedures or surgeries you may need in the coming year.</p>
+    <p class="body-lg text-gray-600 mb-32">Let's plan for any upcoming procedures or surgeries you may need in the coming year.</p>
 
     <!-- Upcoming Procedures Question -->
-    <h4>Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
+    <div class="py-24 px-80 mb-24">
+        <h4 class="heading-lg mb-24">Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
 
-    <div class="space-y-12">
-        <label class="checkbox">
-            <input type="checkbox" class="checkbox__input" id="surgery-major" name="procedures" value="surgery-major" onchange="togglePreparationInfo()">
-            <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
-        </label>
-
-        <label class="checkbox">
-            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" name="procedures" value="surgery-outpatient" onchange="togglePreparationInfo()">
-            <span class="checkbox__label">Outpatient procedure</span>
-        </label>
-
-        <label class="checkbox">
-            <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" name="procedures" value="procedure-diagnostic" onchange="togglePreparationInfo()">
-            <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
-        </label>
-
-        <label class="checkbox">
-            <input type="checkbox" class="checkbox__input" id="procedure-preventive" name="procedures" value="procedure-preventive" onchange="togglePreparationInfo()">
-            <span class="checkbox__label">Preventive screening</span>
-        </label>
-
-        <label class="checkbox">
-            <input type="checkbox" class="checkbox__input" id="none-planned" name="procedures" value="none-planned" onchange="togglePreparationInfo()">
-            <span class="checkbox__label">None currently planned</span>
-        </label>
+        <div class="flex-column gap-12">
+            <ul class="unordered-list">
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" id="surgery-major" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">Outpatient procedure</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" onchange="togglePreparationInfo()">
+                        <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
+                    </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" id="procedure-preventive" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">Preventive screening</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" id="none-planned" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">None currently planned</span>
+                        </label>
+                    </div>
+                </li>
+        </ul>
+        </div>
     </div>
 
     <!-- Preparation Information (appears when procedures are selected) -->
-    <h4>Let's help you prepare for your upcoming care</h4>
-    <p>Here are important items to verify before your procedure:</p>
+    <div id="preparation-info" class="py-24 px-80 mb-24" style="display: none;">
+        <h4 class="heading-lg mb-16">Let's help you prepare for your upcoming care</h4>
+        <p class="body-md text-gray-600 mb-24">Here are important items to verify before your procedure:</p>
 
-    <h5>✓ Network Status</h5>
-    <p>Confirm your provider and facility are in-network to avoid unexpected costs.</p>
-    
-    <h5>✓ Medication Coverage</h5>
-    <p>Verify any new medications are on your plan's formulary.</p>
-    
-    <h5>✓ Prior Authorization</h5>
-    <p>Your provider should handle prior authorization, but confirm it's been approved before your procedure date.</p>
-    
-    <h5>✓ Care Coordination</h5>
-    <p>Inform your primary care doctor about any upcoming procedures for better care coordination.</p>
-</section></article>
+        <div class="flex-column gap-16">
+            <ul class="unordered-list">   
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Network Status</strong><br/>
+                            Confirm your provider and facility are in-network to avoid unexpected costs.</p>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Medication Coverage</strong><br/>
+                            Verify any new medications are on your plan's formulary.</p>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Prior Authorization</strong><br/>
+                            Your provider should handle prior authorization, but confirm it's been approved before your procedure date.</p>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Care Coordination</strong><br/>
+                            Inform your primary care doctor about any upcoming procedures for better care coordination.</p>
+                    </div>
+            </ul>
+
+        </div>
+    </div>
+</section>
+</article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
@@ -191,7 +243,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Global restart/reset function for prototype
+function restartPrototype() {
+  if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
+    localStorage.removeItem('baselineVisitData');
+    window.location.href = '/swagecss/prototypes/blv/renewal/';
+  }
+}
+
+// Also make resetPrototype available globally for scheduling page
+function resetPrototype() {
+  restartPrototype();
+}
     </script>
+
+  
+  <script src="/swagecss/prototypes/blv/renewal/src/procedures.js?v=2.1"></script>
+  
 
   </body>
 </html>
