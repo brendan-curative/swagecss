@@ -52,33 +52,33 @@
 .tile__content {
     flex: 1;
     min-width: 0;
-    display: inline-grid;
-    grid-template-columns: max-content;
-    grid-template-rows: max-content;
-    place-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-/* Subtitle text - appears above title visually but second in grid */
-.tile__subtitle {
-    grid-area: 1 / 1;
-    font-family: var(--font-family-sans);
-    font-size: var(--font-size-xs);
-    line-height: 14px;
-    color: var(--color-gray-600);
-    margin: 0;
-    margin-top: 24px;
-    width: 249px;
+.card .tile__content p + p {
+    padding-top: 0;
 }
 
-/* Title text - main content */
+/* Title text - main content, appears first */
 .tile__title {
-    grid-area: 1 / 1;
     font-family: var(--font-family-sans);
     font-size: var(--font-size-md);
     line-height: var(--line-height-lg);
     color: var(--color-text-default);
     margin: 0;
-    width: 249px;
+    max-width: 249px;
+}
+
+/* Subtitle text - appears below title */
+.tile__subtitle {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-xs);
+    line-height: 14px;
+    color: var(--color-gray-600);
+    margin: 0;
+    max-width: 249px;
 }
 
 /* Dismiss button - x-circle icon on right */

@@ -340,11 +340,11 @@ function addProviderToDisplay(provider, index, type, container) {
         <div class="tile ${tileClass} mb-16">
             <span class="tile__icon heroicon heroicon-${icon}"></span>
             <div class="tile__content">
-                <p class="tile__subtitle">${provider.specialty}</p>
                 <p class="tile__title">${provider.name}</p>
+                <p class="tile__subtitle">${provider.specialty}</p>
             </div>
             <button class="tile__dismiss" aria-label="Delete Provider" onclick="deleteProvider(${index}, '${type}')">
-                <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
             </button>
         </div>
     `;
