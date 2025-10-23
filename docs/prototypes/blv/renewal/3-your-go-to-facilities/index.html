@@ -69,24 +69,35 @@
     <div class="flex-column gap-16">
         
         <!-- Virtual Urgent Care (Static - No editing) -->
-        <div class="card p-24">
-            <div class="flex-row flex-justify-between flex-align-center mb-16">
-                <h4 class="heading-lg">Virtual Urgent Care</h4>
-                <div class="bg-gray-800 text-white px-12 py-8 rounded text-center">
+        <div class="card transparent py-24 px-80">
+            <div class="flex-row flex-justify-between flex-items-center mb-16">
+                <h4 class="heading-xl">Virtual Urgent Care</h4>
+                <div class="tile-mini text-white px-12 py-8 rounded text-center">
                     <div class="text-xl font-bold">5</div>
                     <div class="text-2xs font-semibold">visits last year</div>
                 </div>
             </div>
+
+            <div class="tile">
+                <span class="tile__icon heroicon heroicon-computer-desktop"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Curative Telehealth</p>
+                    <p class="tile__subtitle">Fast, easy access to care directly from the Curative Member Portal</p>
+                </div>
+            </div>
             
-            <h5 class="text-md font-semibold mb-4">Curative Telehealth</h5>
-            <p class="text-sm text-gray-600">Telehealth is a great option for when you want care from the comfort of your home.</p>
+            <div class="border-t border-gray-200 pt-16">
+                <p class="text-sm text-gray-600">
+                    Telehealth is a great option for when you want care from the comfort of your home.
+                </p>
+            </div>
         </div>
 
         <!-- Urgent Care Center -->
-        <div class="card p-24">
-            <div class="flex-row flex-justify-between flex-align-center mb-16">
-                <h4 class="heading-lg">Urgent Care Center</h4>
-                <div class="bg-gray-800 text-white px-12 py-8 rounded text-center">
+        <div class="card p-24 transparent py-24 px-80">
+            <div class="flex-row flex-justify-between flex-items-center mb-16">
+                <h4 class="heading-xl">Urgent Care Center</h4>
+                <div class="tile-mini text-white px-12 py-8 rounded text-center">
                     <div class="text-xl font-bold">2</div>
                     <div class="text-2xs font-semibold">visits last year</div>
                 </div>
@@ -94,25 +105,32 @@
             
             <!-- Facility Info Section (shown when facility is selected) -->
             <div id="urgent-care-facility-info" class="mb-16" style="display: none;">
-                <div class="flex-row flex-justify-between flex-align-start mb-16">
-                    <div class="flex-1">
-                        <h5 id="urgent-care-name" class="text-md font-semibold mb-4"></h5>
-                        <p id="urgent-care-address" class="text-sm text-gray-600"></p>
+                <div class="tile">
+                    <span class="tile__icon heroicon heroicon-building-office"></span>
+                    <div class="tile__content">
+                        <p id="urgent-care-name" class="tile__title">Curative Telehealth</p>
+                        <p id="urgent-care-address" class="tile__subtitle">Telehealth is a great option for when you want care from the comfort of your home.</p>
                     </div>
-                    <div class="flex-row gap-8 ml-16">
-                        <button class="button button--small-outline" onclick="editFacility('urgent-care')" title="Edit Facility">
-                            <span class="heroicon heroicon-16 heroicon-pencil"></span>
-                        </button>
-                        <button class="button button--small-outline" onclick="deleteFacility('urgent-care')" title="Delete Facility">
-                            <span class="heroicon heroicon-16 heroicon-trash"></span>
-                        </button>
-                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('urgent-care')">
+                        <span class="tile__dismiss-icon heroicon heroicon-16 heroicon-pencil"></span>
+                    </button>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('urgent-care')">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                    </button>
                 </div>
+
+                <div class="border-t border-gray-200 pt-16">
+                <p class="text-sm text-gray-600">
+                    Urgent care often has shorter wait times and can be used for <strong>non-life-threatening situations</strong> needing prompt attention, like cold, flu or COVID symptoms, minor injuries, and infections.
+                </p>
             </div>
+            </div>
+
+            
             
             <!-- No Facility State (shown when no facility selected) -->
             <div id="urgent-care-no-facility" class="mb-16" style="display: none;">
-                <button onclick="editFacility('urgent-care')" class="button button--primary">
+                <button onclick="editFacility('urgent-care')" class="button button--small-outline">
                     <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
                     Find my Urgent Care Center
                 </button>
@@ -128,18 +146,14 @@
                 </div>
             </div>
             
-            <div class="border-t border-gray-200 pt-16">
-                <p class="text-sm text-gray-600">
-                    Urgent care often has shorter wait times and can be used for <strong>non-life-threatening situations</strong> needing prompt attention, like cold, flu or COVID symptoms, minor injuries, and infections.
-                </p>
-            </div>
+           
         </div>
 
         <!-- Emergency Room -->
-        <div class="card p-24">
+        <div class="card transparent p-24">
             <div class="flex-row flex-justify-between flex-align-center mb-16">
                 <h4 class="heading-lg">Emergency Room</h4>
-                <div class="bg-gray-800 text-white px-12 py-8 rounded text-center">
+                <div class="tile-mini text-white px-12 py-8 rounded text-center">
                     <div class="text-xl font-bold">0</div>
                     <div class="text-2xs font-semibold">visits last year</div>
                 </div>
@@ -147,25 +161,25 @@
             
             <!-- Facility Info Section (shown when facility is selected) -->
             <div id="emergency-facility-info" class="mb-16" style="display: none;">
-                <div class="flex-row flex-justify-between flex-align-start mb-16">
-                    <div class="flex-1">
-                        <h5 id="emergency-name" class="text-md font-semibold mb-4"></h5>
-                        <p id="emergency-address" class="text-sm text-gray-600"></p>
+                <div class="tile">
+                    <span class="tile__icon heroicon heroicon-building-office"></span>
+                    <div class="tile__content">
+                        <p id="emergency-name" class="tile__title"></p>
+                        <p id="emergency-address" class="tile__subtitle"></p>
                     </div>
-                    <div class="flex-row gap-8 ml-16">
-                        <button class="button button--small-outline" onclick="editFacility('emergency')" title="Edit Facility">
-                            <span class="heroicon heroicon-16 heroicon-pencil"></span>
-                        </button>
-                        <button class="button button--small-outline" onclick="deleteFacility('emergency')" title="Delete Facility">
-                            <span class="heroicon heroicon-16 heroicon-trash"></span>
-                        </button>
-                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('emergency')">
+                        <span class="tile__dismiss-icon heroicon heroicon-16 heroicon-pencil"></span>
+                    </button>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('emergency')">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                    </button>
                 </div>
+
             </div>
             
             <!-- No Facility State (shown when no facility selected) -->
             <div id="emergency-no-facility" class="mb-16" style="display: none;">
-                <button onclick="editFacility('emergency')" class="button button--primary">
+                <button onclick="editFacility('emergency')" class="button button--small-outline">
                     <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
                     Find my Emergency Room
                 </button>

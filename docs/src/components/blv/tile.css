@@ -71,7 +71,6 @@
     line-height: var(--line-height-lg);
     color: var(--color-text-default);
     margin: 0;
-    max-width: 249px;
 }
 
 /* Subtitle text - appears below title */
@@ -81,7 +80,6 @@
     line-height: 14px;
     color: var(--color-gray-600);
     margin: 0;
-    max-width: 249px;
 }
 
 /* Dismiss button - x-circle icon on right */
