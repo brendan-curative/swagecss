@@ -1,4 +1,4 @@
-console.log('Health Services page JavaScript loaded - v1.0');
+console.log('Health Services page JavaScript loaded - v1.1 - Fixed healthServices initialization');
 
 // Data persistence using localStorage
 class BaselineVisitPrototype {
@@ -33,7 +33,12 @@ class BaselineVisitPrototype {
     }
 
     getHealthServices() {
-        return this.data.healthServices || [];
+        // Initialize healthServices if it doesn't exist
+        if (!this.data.healthServices) {
+            this.data.healthServices = this.getDefaultData().healthServices;
+            this.saveData();
+        }
+        return this.data.healthServices;
     }
 
     updateService(id, date) {
@@ -51,7 +56,13 @@ const prototype = new BaselineVisitPrototype();
 // Render health services list
 function renderHealthServices() {
     const container = document.getElementById('health-services-list');
+    if (!container) {
+        console.error('Container #health-services-list not found');
+        return;
+    }
+    
     const services = prototype.getHealthServices();
+    console.log('Rendering health services:', services.length, 'services');
     container.innerHTML = '';
     
     services.forEach(service => {
