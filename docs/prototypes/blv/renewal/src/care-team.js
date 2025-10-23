@@ -162,7 +162,10 @@ function resetModal() {
 
 // Show "No PCP" message
 function noPCPOption() {
-    document.getElementById('no-pcp-message').classList.remove('hidden');
+    const message = document.getElementById('no-pcp-message');
+    if (message) {
+        message.style.display = 'flex'; // Show as flex to match alert component
+    }
 }
 
 // Open modal
@@ -292,11 +295,23 @@ function updatePCPDisplay() {
     pcpList.innerHTML = '';
     
     if (currentPCPs.length === 0) {
-        noPCPOptions.classList.remove('hidden');
-        noPCPMessage.classList.add('hidden'); // Hide message when tiles are dismissed
+        // No PCP providers - show the "Find PCP" and "No PCP" buttons
+        if (noPCPOptions) {
+            noPCPOptions.classList.remove('hidden');
+        }
+        // Always hide the Care Navigator message when tiles are dismissed
+        // Message should only show when "I don't have a PCP" button is clicked
+        if (noPCPMessage) {
+            noPCPMessage.style.display = 'none';
+        }
     } else {
-        noPCPOptions.classList.add('hidden');
-        noPCPMessage.classList.add('hidden');
+        // Has PCP providers - hide both the options and message
+        if (noPCPOptions) {
+            noPCPOptions.classList.add('hidden');
+        }
+        if (noPCPMessage) {
+            noPCPMessage.style.display = 'none';
+        }
         currentPCPs.forEach((provider, index) => {
             addProviderToDisplay(provider, index, 'pcp', pcpList);
         });
