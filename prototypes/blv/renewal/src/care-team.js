@@ -168,25 +168,19 @@ function noPCPOption() {
     }
 }
 
-// Open modal
+// Open modal - simple class toggle
 function openModal() {
     const modal = document.getElementById('provider-modal');
-    modal.style.display = 'block';
-    setTimeout(() => {
-        modal.classList.add('modal--open');
-    }, 10);
+    modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
 }
 
-// Close modal
+// Close modal - simple class toggle
 function closeModal() {
     const modal = document.getElementById('provider-modal');
-    modal.classList.remove('modal--open');
-    setTimeout(() => {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        resetModal();
-    }, 200);
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    resetModal();
 }
 
 // Show manual entry mode
@@ -395,6 +389,8 @@ function getStatusBadgeHTML(status) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Care team page JavaScript loaded - v2.0 - Using new form-modal component');
+    
     // Initialize provider displays
     updateAllProviderDisplays();
     
@@ -452,9 +448,11 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSaveButtonState();
     });
     
-    // Close modal when clicking outside
-    document.getElementById('provider-modal').addEventListener('click', function(event) {
-        if (event.target === this || event.target.classList.contains('modal__backdrop')) {
+    // Close modal when clicking on the overlay (not the dialog)
+    const providerModal = document.getElementById('provider-modal');
+    providerModal.addEventListener('click', function(event) {
+        // Only close if the click is directly on the overlay, not on any child elements
+        if (event.target === providerModal) {
             closeModal();
         }
     });

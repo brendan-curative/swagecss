@@ -82,18 +82,16 @@ page-js: care-team
 </section>
 
 <!-- Provider Edit/Add Modal -->
-<div id="provider-modal" class="modal" style="display: none;">
-    <div class="modal__backdrop"></div>
-    <div class="modal__container">
-        <div class="modal__panel">
-            <div class="modal__header">
-                <h3 id="modal-title" class="modal__title">Edit Provider</h3>
-                <button class="modal__close" onclick="closeModal()" aria-label="Close modal">
-                    <span class="heroicon heroicon-x-mark"></span>
-                </button>
-            </div>
-            
-            <div class="modal__body">
+<div id="provider-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="modal-title" class="form-modal__title">Edit Provider</h3>
+            <button class="form-modal__close" onclick="closeModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        
+        <div class="form-modal__body">
                 <div id="search-mode">
                     <form id="provider-form">
                         <div class="select mb-16">
@@ -168,14 +166,13 @@ page-js: care-team
                         Back to Search
                     </button>
                 </div>
-            </div>
-            
-            <div class="modal__footer">
-                <button type="button" class="button button--small-outline" onclick="closeModal()">Cancel</button>
-                <button type="button" id="save-provider-btn" class="button button--primary" onclick="saveProvider()" disabled>
-                    Save Provider
-                </button>
-            </div>
+        </div>
+        
+        <div class="form-modal__footer">
+            <button type="button" class="button button--small-outline" onclick="closeModal()">Cancel</button>
+            <button type="button" id="save-provider-btn" class="button button--primary" onclick="saveProvider()" disabled>
+                Save Provider
+            </button>
         </div>
     </div>
 </div>
