@@ -111,7 +111,7 @@ function renderMedicationsList() {
         
         const medicationHTML = `
             <div class="tile">
-                <span class="tile__icon heroicon heroicon-outline-building-storefront"></span>
+                <span class="tile__icon heroicon heroicon-pill-single"></span>
                 <div class="tile__content">
                     <p class="tile__title">${medication.name}</p>
                     <p class="tile__subtitle">${subtitle}</p>
