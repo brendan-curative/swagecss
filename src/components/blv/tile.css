@@ -1,0 +1,113 @@
+/* #region Tile Component */
+
+/* Base tile component - matches Figma design with 3 states */
+.tile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+    width: 100%;
+    max-width: 361px;
+    padding: var(--spacing-8) var(--spacing-16);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 4px;
+    box-shadow: 0px 2px 16px 0px rgba(102, 114, 125, 0.25);
+    position: relative;
+}
+
+/* Inner shadow effect from Figma design */
+.tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: 0px 4px 200px 0px inset rgba(255, 255, 255, 0.01);
+    pointer-events: none;
+}
+
+/* Status icon - left side */
+.tile__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+/* In Network state - green check-circle */
+.tile--in-network .tile__icon {
+    color: var(--color-green-700);
+}
+
+/* Cash Card state - signal orange check-circle */
+.tile--cash-card .tile__icon {
+    color: var(--color-primary-signal-orange);
+}
+
+/* Not Listed state - blue information-circle */
+.tile--not-listed .tile__icon {
+    color: var(--color-blue-700);
+}
+
+/* Content area with title and subtitle */
+.tile__content {
+    flex: 1;
+    min-width: 0;
+    display: inline-grid;
+    grid-template-columns: max-content;
+    grid-template-rows: max-content;
+    place-items: start;
+}
+
+/* Subtitle text - appears above title visually but second in grid */
+.tile__subtitle {
+    grid-area: 1 / 1;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-xs);
+    line-height: 14px;
+    color: var(--color-gray-600);
+    margin: 0;
+    margin-top: 24px;
+    width: 249px;
+}
+
+/* Title text - main content */
+.tile__title {
+    grid-area: 1 / 1;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-lg);
+    color: var(--color-text-default);
+    margin: 0;
+    width: 249px;
+}
+
+/* Dismiss button - x-circle icon on right */
+.tile__dismiss {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--color-blue-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile__dismiss:hover {
+    opacity: 0.8;
+}
+
+.tile__dismiss:active {
+    opacity: 0.6;
+}
+
+/* Dismiss icon */
+.tile__dismiss-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* #endregion */

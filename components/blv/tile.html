@@ -1,0 +1,348 @@
+---
+layout: layout.html
+title: Swageblocks &bull; BLV &bull; Tile
+heading: Tile Component
+secondary: Replicated from Figma design - tile component with dismissible states
+section: BLV Components
+status: draft
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Tile component displays provider or service information with visual status indicators. It supports three states: In Network (green check), Cash Card (orange check), and Not Listed (blue info icon). Tiles can be dismissed via the x-circle icon.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>In Network State</h2>
+    <p class="mb-24">Displays providers or services that are in-network, using a green check-circle icon.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">In Network Example</div>
+            <div class="tile tile--in-network">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__subtitle">Primary Care Physician</p>
+                    <p class="tile__title">Rosemary Hahn, MD</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Dismiss">
+                    <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Another In Network Example</div>
+            <div class="tile tile--in-network">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__subtitle">Family Medicine</p>
+                    <p class="tile__title">Sarah Johnson, MD</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Dismiss">
+                    <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Cash Card State</h2>
+    <p class="mb-24">Displays providers or services available through cash card payment, using a signal orange check-circle icon.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Cash Card Example</div>
+            <div class="tile tile--cash-card">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__subtitle">Cardiologist</p>
+                    <p class="tile__title">Mariah Holden, MD</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Dismiss">
+                    <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Another Cash Card Example</div>
+            <div class="tile tile--cash-card">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__subtitle">Dermatologist</p>
+                    <p class="tile__title">Michael Chen, MD</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Dismiss">
+                    <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Not Listed State</h2>
+    <p class="mb-24">Displays providers or services that are not listed in the network, using a blue information-circle icon.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Not Listed Example</div>
+            <div class="tile tile--not-listed">
+                <span class="tile__icon heroicon heroicon-information-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__subtitle">Physical Therapist</p>
+                    <p class="tile__title">Derrick Lisbonnette</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Dismiss">
+                    <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="demo-label">Another Not Listed Example</div>
+            <div class="tile tile--not-listed">
+                <span class="tile__icon heroicon heroicon-information-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__subtitle">Nutritionist</p>
+                    <p class="tile__title">Emily Rodriguez</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Dismiss">
+                    <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>All States Together</h2>
+    <p class="mb-24">View all three tile states side by side.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item" style="grid-column: 1 / -1;">
+            <div class="demo-label">Mixed States Example</div>
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-16); max-width: 400px;">
+                <div class="tile tile--in-network">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__subtitle">Primary Care Physician</p>
+                        <p class="tile__title">Rosemary Hahn, MD</p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss">
+                        <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                    </button>
+                </div>
+
+                <div class="tile tile--cash-card">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__subtitle">Cardiologist</p>
+                        <p class="tile__title">Mariah Holden, MD</p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss">
+                        <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                    </button>
+                </div>
+
+                <div class="tile tile--not-listed">
+                    <span class="tile__icon heroicon heroicon-information-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__subtitle">Physical Therapist</p>
+                        <p class="tile__title">Derrick Lisbonnette</p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss">
+                        <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Interactive Demo</h2>
+    <p class="mb-24">Click the dismiss button to remove tiles.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item" style="grid-column: 1 / -1;">
+            <div class="demo-label">Dismissible Tiles</div>
+            <div style="display: flex; flex-direction: column; gap: var(--spacing-16); max-width: 400px;">
+                <div class="tile tile--in-network" id="demo-tile-1">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__subtitle">Primary Care Physician</p>
+                        <p class="tile__title">Rosemary Hahn, MD</p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="dismissTile('demo-tile-1')">
+                        <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                    </button>
+                </div>
+
+                <div class="tile tile--cash-card" id="demo-tile-2">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__subtitle">Cardiologist</p>
+                        <p class="tile__title">Mariah Holden, MD</p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="dismissTile('demo-tile-2')">
+                        <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                    </button>
+                </div>
+
+                <div class="tile tile--not-listed" id="demo-tile-3">
+                    <span class="tile__icon heroicon heroicon-information-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__subtitle">Physical Therapist</p>
+                        <p class="tile__title">Derrick Lisbonnette</p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="dismissTile('demo-tile-3')">
+                        <span class="tile__dismiss-icon heroicon heroicon-x-circle"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Design Specifications</h2>
+    <p class="mb-24">Visual design details from the Figma component.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Tile Container</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Max Width: <code>361px</code></li>
+            <li>• Padding: <code>8px 16px</code></li>
+            <li>• Background: <code>rgba(255,255,255,0.75)</code> with <code>backdrop-blur(5px)</code></li>
+            <li>• Border Radius: <code>4px</code></li>
+            <li>• Box Shadow: <code>0px 2px 16px 0px rgba(102,114,125,0.25)</code></li>
+            <li>• Inner Shadow: <code>0px 4px 200px 0px inset rgba(255,255,255,0.01)</code></li>
+            <li>• Layout: <code>flex row</code> with <code>16px gap</code></li>
+            <li>• Min Height: <code>54px</code> (auto based on content)</li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Typography</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Title:</strong> <code>16px</code>, <code>Sohne Buch (400)</code>, <code>24px line-height</code>, <code>--color-text-default</code></li>
+            <li>• <strong>Subtitle:</strong> <code>12px</code>, <code>Sohne Buch (400)</code>, <code>14px line-height</code>, <code>--color-gray-600</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Icon States</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <strong>Status Icon:</strong> <code>24px × 24px</code>, positioned on left</li>
+            <li>• <strong>In Network:</strong> <code>heroicon-check-circle</code>, <code>--color-green-700</code> (#0E6345)</li>
+            <li>• <strong>Cash Card:</strong> <code>heroicon-check-circle</code>, <code>--color-primary-signal-orange</code> (#FC5C50)</li>
+            <li>• <strong>Not Listed:</strong> <code>heroicon-information-circle</code>, <code>--color-blue-700</code> (#074ADF)</li>
+            <li>• <strong>Dismiss Icon:</strong> <code>heroicon-x-circle</code>, <code>24px × 24px</code>, <code>--color-blue-700</code></li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Content Layout</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• Content area uses <code>inline-grid</code> with overlapping text</li>
+            <li>• Grid: <code>grid-template-columns: max-content</code></li>
+            <li>• Grid: <code>grid-template-rows: max-content</code></li>
+            <li>• Both title and subtitle use <code>grid-area: 1 / 1</code> (same cell)</li>
+            <li>• Subtitle has <code>margin-top: 24px</code> to appear above title</li>
+            <li>• Max width: <code>249px</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Color Mapping</h2>
+    <p class="mb-24">Figma variables mapped to foundation CSS variables.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">State Colors</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <code>Foundation/Success: #0E6345</code> → <code>var(--color-green-700)</code> (In Network)</li>
+            <li>• <code>Foundation/Accent B: #FC5C50</code> → <code>var(--color-primary-signal-orange)</code> (Cash Card)</li>
+            <li>• <code>Text/Highlight/Depressed: #0C2F91</code> → <code>var(--color-blue-700)</code> (Not Listed & Dismiss)</li>
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Text Colors</h3>
+        <ul class="body-sm text-gray-600">
+            <li>• <code>Text/Default: #181B25</code> → <code>var(--color-text-default)</code></li>
+            <li>• <code>Text/Secondary: #525B64</code> → <code>var(--color-gray-600)</code></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Usage</h2>
+    <p class="mb-24">Basic HTML structure for the tile component.</p>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">In Network Tile</h3>
+        <code class="body-sm">
+            &lt;div class="tile tile--in-network"&gt;<br>
+            &nbsp;&nbsp;&lt;span class="tile__icon heroicon heroicon-check-circle"&gt;&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;div class="tile__content"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="tile__subtitle"&gt;Primary Care Physician&lt;/p&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="tile__title"&gt;Rosemary Hahn, MD&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;button class="tile__dismiss" aria-label="Dismiss"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tile__dismiss-icon heroicon heroicon-x-circle"&gt;&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;/button&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Cash Card Tile</h3>
+        <code class="body-sm">
+            &lt;div class="tile tile--cash-card"&gt;<br>
+            &nbsp;&nbsp;&lt;span class="tile__icon heroicon heroicon-check-circle"&gt;&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;div class="tile__content"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="tile__subtitle"&gt;Cardiologist&lt;/p&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="tile__title"&gt;Mariah Holden, MD&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;button class="tile__dismiss" aria-label="Dismiss"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tile__dismiss-icon heroicon heroicon-x-circle"&gt;&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;/button&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Not Listed Tile</h3>
+        <code class="body-sm">
+            &lt;div class="tile tile--not-listed"&gt;<br>
+            &nbsp;&nbsp;&lt;span class="tile__icon heroicon heroicon-information-circle"&gt;&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;div class="tile__content"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="tile__subtitle"&gt;Physical Therapist&lt;/p&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="tile__title"&gt;Derrick Lisbonnette&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;button class="tile__dismiss" aria-label="Dismiss"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tile__dismiss-icon heroicon heroicon-x-circle"&gt;&lt;/span&gt;<br>
+            &nbsp;&nbsp;&lt;/button&gt;<br>
+            &lt;/div&gt;
+        </code>
+    </div>
+</section>
+
+<script>
+function dismissTile(tileId) {
+    const tile = document.getElementById(tileId);
+    if (tile) {
+        tile.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        tile.style.opacity = '0';
+        tile.style.transform = 'translateX(20px)';
+        setTimeout(() => {
+            tile.style.display = 'none';
+        }, 300);
+    }
+}
+</script>
