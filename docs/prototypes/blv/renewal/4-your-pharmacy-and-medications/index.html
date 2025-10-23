@@ -60,80 +60,159 @@
       <main>
         
               <article>
-<section>
-    <h1>Your pharmacy and medications</h1>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Your pharmacy and medications</h1>
     
-    <p>Let's make sure your pharmacy and medication list is up to date so we can verify coverage and identify any potential savings.</p>
+    <p class="body-lg text-gray-600 mb-32">Let's make sure your pharmacy and medication list is up to date so we can verify coverage and identify any potential savings.</p>
 
     <!-- Your Preferred Pharmacy Section -->
-    <h2>Your Preferred Pharmacy</h2>
-
-    <!-- Pharmacy Type -->
-    <h4>Preferred Pharmacy</h4>
-
-    <!-- Pharmacy Info Section (shown when pharmacy is selected) -->
-    <h5>CVS Pharmacy</h5>
-    <p>123 Main Street, Los Angeles, CA 90210</p>
-
-    <button title="Edit Pharmacy">✏️</button>
-    <button title="Delete Pharmacy">🗑️</button>
-
-    <!-- No Pharmacy State (shown when no pharmacy selected) -->
-    <button>🔍 Find my Preferred Pharmacy</button>
-
-    <!-- None Selected State (shown when "none of these work for me" is selected) -->
-    <p>None selected - Care Navigator to assist</p>
-    <button title="Edit Pharmacy">✏️</button>
-
-    <p>Having a preferred pharmacy helps ensure consistent medication management and can provide better pricing through your insurance network.</p>
+    <div class="mb-48">
+        <h2 class="heading-xl mb-24">Your Preferred Pharmacy</h2>
+        
+        <div class="card p-24">
+            <div class="mb-16">
+                <h4 class="heading-lg mb-16">Preferred Pharmacy</h4>
+                
+                <!-- Pharmacy Info Section (shown when pharmacy is selected) -->
+                <div id="pharmacy-facility-info" class="mb-16" style="display: none;">
+                    <div class="flex-row flex-justify-between flex-align-start mb-16">
+                        <div class="flex-1">
+                            <h5 id="pharmacy-name" class="text-md font-semibold mb-4"></h5>
+                            <p id="pharmacy-address" class="text-sm text-gray-600"></p>
+                        </div>
+                        <div class="flex-row gap-8 ml-16">
+                            <button class="button button--small-outline" onclick="editPharmacy()" title="Edit Pharmacy">
+                                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                            </button>
+                            <button class="button button--small-outline" onclick="deletePharmacy()" title="Delete Pharmacy">
+                                <span class="heroicon heroicon-16 heroicon-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- No Pharmacy State (shown when no pharmacy selected) -->
+                <div id="pharmacy-no-facility" class="mb-16" style="display: none;">
+                    <button onclick="editPharmacy()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
+                        Find my Preferred Pharmacy
+                    </button>
+                </div>
+                
+                <!-- None Selected State (shown when "none of these work for me" is selected) -->
+                <div id="pharmacy-none-selected" class="mb-16" style="display: none;">
+                    <div class="flex-row flex-justify-between flex-align-start">
+                        <p class="text-sm text-gray-600 italic flex-1">None selected - Care Navigator to assist</p>
+                        <button class="button button--small-outline ml-16" onclick="editPharmacy()" title="Edit Pharmacy">
+                            <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-200 pt-16">
+                    <p class="text-sm text-gray-600">
+                        Having a preferred pharmacy helps ensure consistent medication management and can provide better pricing through your insurance network.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Your Medications Section -->
-    <h2>Your Medications</h2>
-    
-    <!-- Medications List -->
-    <!-- Medications will be populated here dynamically -->
+    <div class="mb-32">
+        <h2 class="heading-xl mb-24">Your Medications</h2>
+        
+        <!-- Medications List -->
+        <div id="medications-list" class="mb-24">
+            <!-- Medications will be populated here dynamically -->
+        </div>
 
-    <!-- Add Medication Button -->
-    <button>+ Add Another Medication</button>
+        <!-- Add Medication Button -->
+        <button class="button button--small-outline w-100" onclick="addMedication()">
+            <span class="heroicon heroicon-16 heroicon-plus mr-8"></span>
+            Add Another Medication
+        </button>
+    </div>
+</section>
 
-    <!-- Medication Search Modal -->
-    <h3>Add Medication</h3>
-    <button>&times;</button>
-
-    <div class="textfield textfield--with-button">
-        <label class="textfield__label" for="medication-search">Search for your medication:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="medication-search" name="medication-search" placeholder="Start typing medication name..." onkeypress="if(event.key==='Enter') searchMedications()" oninput="searchMedications()">
-            <button class="textfield__button textfield__button--primary" type="button" aria-label="Search">
-                <span>🔍</span>
+<!-- Medication Search Modal -->
+<div id="medication-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="medication-modal-title" class="form-modal__title">Add Medication</h3>
+            <button class="form-modal__close" onclick="closeMedicationModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <label for="medication-search" class="block mb-8 font-semibold">Search for your medication:</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="medication-search" 
+                        placeholder="Start typing medication name..." 
+                        oninput="searchMedications()"
+                        onkeypress="if(event.key==='Enter') searchMedications()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchMedications()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="medication-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closeMedicationModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-medication-btn" onclick="saveMedicationSelection()" class="button button--primary" disabled>
+                Save Medication
             </button>
         </div>
     </div>
+</div>
 
-    <!-- Results will be populated here -->
-
-    <button type="button">Cancel</button>
-    <button type="button" disabled>Save Medication</button>
-
-    <!-- Pharmacy Search Modal -->
-    <h3>Find Your Preferred Pharmacy</h3>
-    <button>&times;</button>
-
-    <div class="textfield textfield--with-button">
-        <label class="textfield__label" for="pharmacy-search">Enter your location to find pharmacies nearby:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="pharmacy-search" name="pharmacy-search" placeholder="City, State or ZIP code" onkeypress="if(event.key==='Enter') searchPharmacies()">
-            <button class="textfield__button textfield__button--primary" type="button" aria-label="Search">
-                <span>🔍</span>
+<!-- Pharmacy Search Modal -->
+<div id="pharmacy-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="pharmacy-modal-title" class="form-modal__title">Find Your Preferred Pharmacy</h3>
+            <button class="form-modal__close" onclick="closePharmacyModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <label for="pharmacy-search" class="block mb-8 font-semibold">Enter your location to find pharmacies nearby:</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="pharmacy-search" 
+                        placeholder="City, State or ZIP code" 
+                        onkeypress="if(event.key==='Enter') searchPharmacies()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchPharmacies()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="pharmacy-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closePharmacyModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-pharmacy-btn" onclick="savePharmacySelection()" class="button button--primary" style="display: none;">
+                Save Pharmacy
             </button>
         </div>
     </div>
-
-    <!-- Results will be populated here -->
-
-    <button type="button">Cancel</button>
-    <button type="button">Save Pharmacy</button>
-</section></article>
+</div></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
@@ -216,6 +295,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
     </script>
 
+  
+  <script src="/swagecss/prototypes/blv/renewal/src/medications.js?v=2.0"></script>
   
 
   </body>
