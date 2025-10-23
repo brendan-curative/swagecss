@@ -75,14 +75,8 @@ function viewSavedData() {
     }
 }
 
-// Reset prototype
-function resetPrototype() {
-    if (confirm('Are you sure you want to reset all prototype data? This cannot be undone.')) {
-        localStorage.removeItem('baselineVisitData');
-        alert('Prototype data has been reset.');
-        window.location.reload();
-    }
-}
+// Reset prototype - now uses global function from layout
+// (function is available globally as restartPrototype/resetPrototype)
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {

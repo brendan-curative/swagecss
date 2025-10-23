@@ -22,7 +22,7 @@
                 </div>
 
                 <div>
-                    <a class="button button--flat button--with-icon" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</a>
+                    <button class="button button--flat button--with-icon" onclick="restartPrototype()"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</button>
 
                     <button class="drawer-trigger" data-drawer-target="contents" title="Open menu" aria-expanded="false" aria-controls="contents">
                 <span class="heroicon heroicon-outline-map"></span>
@@ -282,6 +282,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Global restart/reset function for prototype
+function restartPrototype() {
+  if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
+    localStorage.removeItem('baselineVisitData');
+    window.location.href = '/swagecss/prototypes/blv/renewal/';
+  }
+}
+
+// Also make resetPrototype available globally for scheduling page
+function resetPrototype() {
+  restartPrototype();
+}
     </script>
 
   
