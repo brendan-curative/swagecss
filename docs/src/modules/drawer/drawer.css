@@ -201,7 +201,7 @@ body.drawer-open {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-8);
-    color: var(--color-text-default);
+    color: var(--color-gray-700);
     font-family: var(--font-family-sans);
     font-size: var(--font-size-md);
     transition: all 0.2s ease-in-out;

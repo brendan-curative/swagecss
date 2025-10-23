@@ -366,3 +366,28 @@ h3 + .card {
     line-height: var(--line-height-xs);
     font-weight: var(--font-weight-semibold);
 }
+
+.button--utility {
+    background: none;
+    border: none;
+    color: var(--color-gray-700);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    padding: var(--spacing-4);
+    text-decoration: none;
+}
+
+.button--utility:hover:not(:disabled) {
+    color: var(--color-blue-900);
+    text-decoration: underline;
+}
+
+.button--utility:active:not(:disabled) {
+    background-color: var(--color-blue-900);
+    color: var(--color-neutral-white);
+}
+
+.button--utility:focus:not(:disabled) {
+    border-color: var(--color-blue-500);
+}
