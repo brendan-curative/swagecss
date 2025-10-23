@@ -8,41 +8,54 @@ status: draft
 previous: 7-health-services-used/
 next: 9-procedures-and-surgeries/
 button-text: Continue
+page-js: barriers
 ---
 
-<section>
-    <h1>Barriers to Care</h1>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Barriers to Care</h1>
     
-    <p>Help us understand any challenges you've faced in accessing healthcare so we can better support you.</p>
+    <p class="body-lg text-gray-600 mb-32">Help us understand any challenges you've faced in accessing healthcare so we can better support you.</p>
 
     <!-- Barriers to Care Question -->
-    <h4>What barriers did you encounter in getting healthcare over the last year?</h4>
+    <div class="card p-24">
+        <h4 class="heading-lg mb-24">What barriers did you encounter in getting healthcare over the last year?</h4>
 
-    <div class="select">
-        <div class="select__label-group">
-            <label for="barrier-select" class="select__label">Select the main barrier you experienced:</label>
+        <div class="select mb-24">
+            <div class="select__label-group">
+                <label for="barrier-select" class="select__label">Select the main barrier you experienced:</label>
+            </div>
+            <div class="select__input-wrapper">
+                <select class="select__control" id="barrier-select" onchange="updateBarrierSelect(this.value)">
+                    <option value="">Choose a barrier...</option>
+                    <option value="transportation">Transportation barriers</option>
+                    <option value="scheduling">Scheduling difficulties</option>
+                    <option value="location">Location/accessibility issues</option>
+                    <option value="cost">Financial barriers (cost, insurance coverage)</option>
+                    <option value="communication">Communication barriers (language, health literacy)</option>
+                    <option value="cultural">Cultural barriers and preferences</option>
+                    <option value="technology">Technology barriers (telehealth, online scheduling)</option>
+                    <option value="support">Lack of support system</option>
+                    <option value="provider">Provider availability</option>
+                    <option value="other">Other</option>
+                    <option value="none">No significant barriers</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
+            </div>
         </div>
-        <div class="select__input-wrapper">
-            <select class="select__control" id="barrier-select">
-                <option value="">Choose a barrier...</option>
-                <option value="transportation">Transportation barriers</option>
-                <option value="scheduling">Scheduling difficulties</option>
-                <option value="location">Location/accessibility issues</option>
-                <option value="cost">Financial barriers (cost, insurance coverage)</option>
-                <option value="communication">Communication barriers (language, health literacy)</option>
-                <option value="cultural">Cultural barriers and preferences</option>
-                <option value="technology">Technology barriers (telehealth, online scheduling)</option>
-                <option value="support">Lack of support system</option>
-                <option value="provider">Provider availability</option>
-                <option value="other">Other</option>
-                <option value="none">No significant barriers</option>
-            </select>
-            <div class="select__icon">
-                <span class="heroicon heroicon-chevron-down"></span>
+
+        <div class="textfield">
+            <label for="barrier-comments" class="textfield__label">Please provide additional details about the barriers you experienced:</label>
+            <div class="textfield__input-wrapper">
+                <textarea 
+                    id="barrier-comments" 
+                    class="textfield__input" 
+                    rows="4" 
+                    placeholder="Tell us more about the challenges you faced accessing healthcare..."
+                    onchange="updateBarrierComments(this.value)"
+                ></textarea>
             </div>
         </div>
     </div>
-
-    <label for="barrier-comments">Please provide additional details about the barriers you experienced:</label>
-    <textarea rows="4" placeholder="Tell us more about the challenges you faced accessing healthcare..."></textarea>
 </section>
