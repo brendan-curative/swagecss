@@ -15,6 +15,11 @@
     min-height: 100vh;
 }
 
+/* Modal hidden state */
+.modal--hidden {
+    display: none !important;
+}
+
 /* Modal open state */
 .modal--open {
     display: flex;

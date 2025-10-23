@@ -4,68 +4,21 @@ title: BLV Prototype
 heading: BLV Prototype
 secondary: Secondary
 section: Checking in
+location: screenings
 status: draft
 previous: 4-your-pharmacy-and-medications/
 next: 6-lifestyle/
 button-text: Continue
+page-js: screenings
 ---
 
-<section>
-    <h1>Your screenings</h1>
+<section class="mb-32 px-80">
+    <h1 class="heading-2xl mb-16">Your screenings</h1>
     
-    <p>Let's review your recent screening results and identify any due screenings.</p>
+    <p class="body-lg text-gray-600 mb-32">Let's review your recent screening results and identify any due screenings.</p>
 
     <!-- Preventive Screenings List -->
-    
-    <!-- Screening 1 - Due -->
-    <h5>Mammogram</h5>
-    <span>DUE</span>
-
-    <div class="textfield">
-        <label class="textfield__label" for="mammogram-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="mammogram-year" name="mammogram-year" placeholder="2022">
-        </div>
-    </div>
-
-    <!-- Screening 2 - Due -->
-    <h5>Colonoscopy</h5>
-    <span>DUE</span>
-
-    <div class="textfield">
-        <label class="textfield__label" for="colonoscopy-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="colonoscopy-year" name="colonoscopy-year" placeholder="Enter year">
-        </div>
-    </div>
-
-    <!-- Screening 3 -->
-    <h5>Bone Density Scan</h5>
-
-    <div class="textfield">
-        <label class="textfield__label" for="bone-density-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="bone-density-year" name="bone-density-year" value="2021">
-        </div>
-    </div>
-
-    <!-- Screening 4 -->
-    <h5>Eye Exam</h5>
-
-    <div class="textfield">
-        <label class="textfield__label" for="eye-exam-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="eye-exam-year" name="eye-exam-year" value="2023">
-        </div>
-    </div>
-
-    <!-- Screening 5 -->
-    <h5>Skin Cancer Screening</h5>
-
-    <div class="textfield">
-        <label class="textfield__label" for="skin-cancer-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="skin-cancer-year" name="skin-cancer-year" placeholder="Enter year">
-        </div>
+    <div id="screenings-list" class="mb-24">
+        <!-- Screenings will be populated here dynamically -->
     </div>
 </section>

@@ -10,9 +10,9 @@
     <link href="/swagecss/src/themes/blv/blv.css" rel="stylesheet" type="text/css" />
 
 
-    
+
   </head>
-  <body>
+    <body class="page-start">
     <div class="wrap">
       <header>
         <div class="container">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div>
-                    <a class="button button--flat button--with-icon" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</a>
+                    <button class="button button--flat button--with-icon" onclick="restartPrototype()"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</button>
 
                     <button class="drawer-trigger" data-drawer-target="contents" title="Open menu" aria-expanded="false" aria-controls="contents">
                 <span class="heroicon heroicon-outline-map"></span>
@@ -36,19 +36,19 @@
             <a class="back" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
-                <div class="horizontal-stepper__progress" style="width: 50%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-1"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-2"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-3"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress stepper-progress-4"></div>
             </li>
             <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-            </li>
-            <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-5"></div>
             </li>
         </ol>
         </div>
@@ -60,11 +60,12 @@
       <main>
         
               <article>
-<section>
-    <h1>Baseline Visit Prototype</h1>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Baseline Visit Prototype</h1>
 
-    <div class="card">
-        <p>Building from Blumie's prototype.</p>
+    <div class="card p-24 mb-32">
+        <p class="body-md mb-8">Welcome to the Baseline Visit digital renewal flow prototype.</p>
+        <p class="text-sm text-gray-600">This prototype demonstrates the member experience for completing their annual baseline visit, including care team management, facility selection, medication review, health screenings, and clinical appointment scheduling.</p>
     </div>
 
     <h2>Contents</h2>
@@ -157,8 +158,8 @@
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/0-start/">
-                Begin
+            <a class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/1-highlights/">
+                Begin Baseline Visit
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                   </svg>
@@ -186,7 +187,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Global restart/reset function for prototype
+function restartPrototype() {
+  if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
+    localStorage.removeItem('baselineVisitData');
+    window.location.href = '/swagecss/prototypes/blv/renewal/';
+  }
+}
+
+// Also make resetPrototype available globally for scheduling page
+function resetPrototype() {
+  restartPrototype();
+}
     </script>
+
+  
 
   </body>
 </html>

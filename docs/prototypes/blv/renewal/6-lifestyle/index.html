@@ -10,9 +10,9 @@
     <link href="/swagecss/src/themes/blv/blv.css" rel="stylesheet" type="text/css" />
 
 
-    
+
   </head>
-  <body>
+    <body class="page-lifestyle">
     <div class="wrap">
       <header>
         <div class="container">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div>
-                    <a class="button button--flat button--with-icon" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</a>
+                    <button class="button button--flat button--with-icon" onclick="restartPrototype()"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</button>
 
                     <button class="drawer-trigger" data-drawer-target="contents" title="Open menu" aria-expanded="false" aria-controls="contents">
                 <span class="heroicon heroicon-outline-map"></span>
@@ -36,19 +36,19 @@
             <a class="back" href="/swagecss/prototypes/blv/renewal/5-your-screenings/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
-                <div class="horizontal-stepper__progress" style="width: 50%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-1"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-2"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-3"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress stepper-progress-4"></div>
             </li>
             <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-            </li>
-            <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-5"></div>
             </li>
         </ol>
         </div>
@@ -60,20 +60,52 @@
       <main>
         
               <article>
-<section>
-    <h1>Lifestyle</h1>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Lifestyle</h1>
     
-    <p>Let's understand your lifestyle factors that might impact your health and wellbeing.</p>
+    <p class="body-lg text-gray-600 mb-32">Let's understand your lifestyle factors that might impact your health and wellbeing.</p>
 
     <!-- Lifestyle Content -->
-    <h4>Lifestyle Assessment</h4>
-    <ul>
-        <li>Drugs</li>
-        <li>Alcohol</li>
-        <li>Nicotine</li>
-        <li>Height/weight</li>
+    <div class="py-24 px-80">
+        <h4 class="heading-lg mb-16">Lifestyle Assessment</h4>
+        <ul class="unordered-list">
+            <li class="unordered-list__item">
+                <div class="unordered-list__icon text-subdued">
+                    <span class="heroicon heroicon-arrow-right"></span>
+                </div>
+                <div class="unordered-list__content">
+                    <p class="unordered-list__text">Drugs</p>
+                </div>
+            </li>
+            <li class="unordered-list__item text-subdued">
+                <div class="unordered-list__icon">
+                    <span class="heroicon heroicon-arrow-right"></span>
+                </div>
+                <div class="unordered-list__content">
+                    <p class="unordered-list__text">Alcohol</p>
+                </div>
+            </li>
+            <li class="unordered-list__item text-subdued">
+                <div class="unordered-list__icon">
+                    <span class="heroicon heroicon-arrow-right"></span>
+                </div>
+                <div class="unordered-list__content">
+                    <p class="unordered-list__text">Nicotine</p>
+                </div>
+            </li>
+            <li class="unordered-list__item text-subdued">
+                <div class="unordered-list__icon">
+                    <span class="heroicon heroicon-arrow-right"></span>
+                </div>
+                <div class="unordered-list__content">
+                    <p class="unordered-list__text">Height/weight</p>
+                </div>
+            </li>
     </ul>
-    <p><em>Content will be developed to assess lifestyle factors affecting health.</em></p>
+        <p class="text-sm text-gray-600 italic mt-24">Content will be developed to assess lifestyle factors affecting health.</p>
+    </div>
+
+    
 </section></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
@@ -155,7 +187,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Global restart/reset function for prototype
+function restartPrototype() {
+  if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
+    localStorage.removeItem('baselineVisitData');
+    window.location.href = '/swagecss/prototypes/blv/renewal/';
+  }
+}
+
+// Also make resetPrototype available globally for scheduling page
+function resetPrototype() {
+  restartPrototype();
+}
     </script>
+
+  
 
   </body>
 </html>

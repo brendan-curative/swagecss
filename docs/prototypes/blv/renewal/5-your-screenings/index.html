@@ -10,9 +10,9 @@
     <link href="/swagecss/src/themes/blv/blv.css" rel="stylesheet" type="text/css" />
 
 
-    
+
   </head>
-  <body>
+    <body class="page-screenings">
     <div class="wrap">
       <header>
         <div class="container">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div>
-                    <a class="button button--flat button--with-icon" href="/swagecss/prototypes/blv/renewal/"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</a>
+                    <button class="button button--flat button--with-icon" onclick="restartPrototype()"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</button>
 
                     <button class="drawer-trigger" data-drawer-target="contents" title="Open menu" aria-expanded="false" aria-controls="contents">
                 <span class="heroicon heroicon-outline-map"></span>
@@ -36,19 +36,19 @@
             <a class="back" href="/swagecss/prototypes/blv/renewal/4-your-pharmacy-and-medications/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
-                <div class="horizontal-stepper__progress" style="width: 50%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-1"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress horizontal-stepper__progress--partial" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-2"></div>
             </li>
             <li class="horizontal-stepper__step">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-3"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress stepper-progress-4"></div>
             </li>
             <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
-            </li>
-            <li class="horizontal-stepper__step horizontal-stepper__step--last">
-                <div class="horizontal-stepper__progress" style="width: 0%;"></div>
+                <div class="horizontal-stepper__progress stepper-progress-5"></div>
             </li>
         </ol>
         </div>
@@ -60,63 +60,14 @@
       <main>
         
               <article>
-<section>
-    <h1>Your screenings</h1>
+<section class="mb-32 px-80">
+    <h1 class="heading-2xl mb-16">Your screenings</h1>
     
-    <p>Let's review your recent screening results and identify any due screenings.</p>
+    <p class="body-lg text-gray-600 mb-32">Let's review your recent screening results and identify any due screenings.</p>
 
     <!-- Preventive Screenings List -->
-    
-    <!-- Screening 1 - Due -->
-    <h5>Mammogram</h5>
-    <span>DUE</span>
-
-    <div class="textfield">
-        <label class="textfield__label" for="mammogram-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="mammogram-year" name="mammogram-year" placeholder="2022">
-        </div>
-    </div>
-
-    <!-- Screening 2 - Due -->
-    <h5>Colonoscopy</h5>
-    <span>DUE</span>
-
-    <div class="textfield">
-        <label class="textfield__label" for="colonoscopy-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="colonoscopy-year" name="colonoscopy-year" placeholder="Enter year">
-        </div>
-    </div>
-
-    <!-- Screening 3 -->
-    <h5>Bone Density Scan</h5>
-
-    <div class="textfield">
-        <label class="textfield__label" for="bone-density-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="bone-density-year" name="bone-density-year" value="2021">
-        </div>
-    </div>
-
-    <!-- Screening 4 -->
-    <h5>Eye Exam</h5>
-
-    <div class="textfield">
-        <label class="textfield__label" for="eye-exam-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="eye-exam-year" name="eye-exam-year" value="2023">
-        </div>
-    </div>
-
-    <!-- Screening 5 -->
-    <h5>Skin Cancer Screening</h5>
-
-    <div class="textfield">
-        <label class="textfield__label" for="skin-cancer-year">Last completed:</label>
-        <div class="textfield__input-wrapper">
-            <input class="textfield__input" type="text" id="skin-cancer-year" name="skin-cancer-year" placeholder="Enter year">
-        </div>
+    <div id="screenings-list" class="mb-24">
+        <!-- Screenings will be populated here dynamically -->
     </div>
 </section></article>
 
@@ -199,7 +150,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Global restart/reset function for prototype
+function restartPrototype() {
+  if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
+    localStorage.removeItem('baselineVisitData');
+    window.location.href = '/swagecss/prototypes/blv/renewal/';
+  }
+}
+
+// Also make resetPrototype available globally for scheduling page
+function resetPrototype() {
+  restartPrototype();
+}
     </script>
+
+  
+  <script src="/swagecss/prototypes/blv/renewal/src/screenings.js?v=2.1"></script>
+  
 
   </body>
 </html>

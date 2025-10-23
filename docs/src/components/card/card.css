@@ -26,6 +26,10 @@ html[data-theme="blv"] .card {
     margin-bottom: var(--spacing-24);
 }
 
+html[data-theme="blv"] .card.transparent {
+    background: transparent;
+}
+
 /* Card heading styling */
 .card__heading {
     margin-bottom: var(--spacing-16); /* mb-4 */
