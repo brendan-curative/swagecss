@@ -22,16 +22,57 @@ html[data-theme="blv"] body {
 
 
 /* #region waves */
-html[data-theme="blv"] body.page-highlights {background-position: -515px 50%;}
-html[data-theme="blv"] body.page-care-team {background-position: -965px 50%;}
-html[data-theme="blv"] body.page-facilities {background-position: -1415px 50%;}
-html[data-theme="blv"] body.page-medications {background-position: -1865px 50%;}
-html[data-theme="blv"] body.page-screenings {background-position: -2315px 50%;}
-html[data-theme="blv"] body.page-lifestyle {background-position: -2765px 50%;}
-html[data-theme="blv"] body.page-health-services {background-position: -3215px 50%;}
-html[data-theme="blv"] body.page-barriers {background-position: -3665px 50%;}
-html[data-theme="blv"] body.page-procedures {background-position: -4115px 50%;}
-html[data-theme="blv"] body.page-scheduling {background-position: -4749px 50%;}
+@keyframes slideWavesHighlights { from { background-position: -200px 50%; } to { background-position: -515px 50%; } }
+@keyframes slideWavesCareTeam { from { background-position: -515px 50%; } to { background-position: -965px 50%; } }
+@keyframes slideWavesFacilities { from { background-position: -965px 50%; } to { background-position: -1415px 50%; } }
+@keyframes slideWavesMedications { from { background-position: -1415px 50%; } to { background-position: -1865px 50%; } }
+@keyframes slideWavesScreenings { from { background-position: -1865px 50%; } to { background-position: -2315px 50%; } }
+@keyframes slideWavesLifestyle { from { background-position: -2315px 50%; } to { background-position: -2765px 50%; } }
+@keyframes slideWavesHealthServices { from { background-position: -2765px 50%; } to { background-position: -3215px 50%; } }
+@keyframes slideWavesBarriers { from { background-position: -3215px 50%; } to { background-position: -3665px 50%; } }
+@keyframes slideWavesProcedures { from { background-position: -3665px 50%; } to { background-position: -4115px 50%; } }
+@keyframes slideWavesScheduling { from { background-position: -4115px 50%; } to { background-position: -4749px 50%; } }
+
+html[data-theme="blv"] body.page-highlights {
+    background-position: -515px 50%;
+    animation: slideWavesHighlights 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-care-team {
+    background-position: -965px 50%;
+    animation: slideWavesCareTeam 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-facilities {
+    background-position: -1415px 50%;
+    animation: slideWavesFacilities 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-medications {
+    background-position: -1865px 50%;
+    animation: slideWavesMedications 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-screenings {
+    background-position: -2315px 50%;
+    animation: slideWavesScreenings 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-lifestyle {
+    background-position: -2765px 50%;
+    animation: slideWavesLifestyle 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-services {
+    background-position: -3215px 50%;
+    animation: slideWavesHealthServices 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-barriers {
+    background-position: -3665px 50%;
+    animation: slideWavesBarriers 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-procedures {
+    background-position: -4115px 50%;
+    animation: slideWavesProcedures 1.2s ease-out;
+}
+html[data-theme="blv"] body.page-scheduling {
+    background-position: -4749px 50%;
+    animation: slideWavesScheduling 1.2s ease-out;
+}
 /* #endregion */
 
 
