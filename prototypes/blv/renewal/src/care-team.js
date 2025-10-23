@@ -337,7 +337,7 @@ function addProviderToDisplay(provider, index, type, container) {
     
     // Create tile HTML
     const tileHTML = `
-        <div class="tile ${tileClass} mb-16">
+        <div class="tile ${tileClass}">
             <span class="tile__icon heroicon heroicon-${icon}"></span>
             <div class="tile__content">
                 <p class="tile__title">${provider.name}</p>

@@ -63,13 +63,13 @@
 <section>
     <h1 class="mb-16">Your care team</h1>
     
-    <p class="body-lg mb-24">Let's make sure your list of providers from last year is up to date.</p>
+    <p class="body-lg mb-32">Let's make sure your list of providers from last year is up to date.</p>
     
     <!-- Family Member Selector -->
-    <div class="card mb-24">
+    <div class="mb-32 px-80">
         <div class="select">
             <div class="select__label-group">
-                <label for="family-member-select" class="select__label">Select Family Member:</label>
+                <label for="family-member-select" class="select__label font-bold">Select Family Member:</label>
             </div>
             <div class="select__input-wrapper">
                 <select class="select__control" id="family-member-select" onchange="switchFamilyMember()">
@@ -84,8 +84,8 @@
     </div>
 
     <!-- Primary Care Provider Section -->
-    <div class="card mb-24">
-        <h3 class="heading-lg mb-16">Primary Care Provider:</h3>
+    <div class="mb-32 px-80">
+        <h3 class="heading-lg mb-8">Primary Care Provider:</h3>
         
         <div id="pcp-providers-list" class="mb-16">
             <!-- Primary Care Provider tiles will be rendered here -->
@@ -93,13 +93,13 @@
 
         <!-- No PCP Options (shown when no PCP is listed) -->
         <div id="no-pcp-options" class="hidden">
-            <div class="flex-row gap-16 mb-16">
+            <div class="flex-row flex-justify-center gap-16 mb-16">
                 <button class="button button--small-outline" onclick="findMyPCP()">
                     <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
                     Find my PCP
                 </button>
                 <button class="button button--small-outline" onclick="noPCPOption()">
-                    <span class="heroicon heroicon-16 heroicon-x-mark"></span>
+                    <span class="heroicon heroicon-16 heroicon-outline-exclamation-circle"></span>
                     I don't have a PCP
                 </button>
             </div>
@@ -115,18 +115,20 @@
     </div>
 
     <!-- Other Providers Section -->
-    <div class="card mb-24">
-        <h3 class="heading-lg mb-16">Other Providers:</h3>
+    <div class="mb-24 px-80">
+        <h3 class="heading-lg mb-8">Other Providers:</h3>
         
-        <div id="other-providers-list" class="mb-16">
+        <div id="other-providers-list" class="mb-32">
             <!-- Other provider tiles will be rendered here -->
         </div>
 
-        <!-- Add Provider Button -->
-        <button class="button button--small-outline w-100" onclick="addProvider()">
+        <div class="flex-row flex-justify-center gap-16 mb-16">
+            <!-- Add Provider Button -->
+        <button class="button button--small-outline" onclick="addProvider()">
             <span class="heroicon heroicon-16 heroicon-plus"></span>
             Add Another Provider
         </button>
+        </div>
     </div>
 </section>
 
