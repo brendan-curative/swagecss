@@ -1143,6 +1143,10 @@
   -webkit-mask-image: url('../img/hero-icons/24/solid/phone.svg');
 }
 
+.heroicon-pill-single {
+  -webkit-mask-image: url('../img/hero-icons/24/solid/pill-single.svg');
+}
+
 .heroicon-photo {
   -webkit-mask-image: url('../img/hero-icons/24/solid/photo.svg');
 }
@@ -3744,6 +3748,10 @@
   -webkit-mask-image: url('../img/hero-icons/20/solid/phone.svg');
 }
 
+.heroicon-20.heroicon-pill-single {
+  -webkit-mask-image: url('../img/hero-icons/20/solid/pill-single.svg');
+}
+
 .heroicon-20.heroicon-photo {
   -webkit-mask-image: url('../img/hero-icons/20/solid/photo.svg');
 }
@@ -5015,6 +5023,10 @@
 
 .heroicon-16.heroicon-phone {
   -webkit-mask-image: url('../img/hero-icons/16/solid/phone.svg');
+}
+
+.heroicon-16.heroicon-pill-single {
+  -webkit-mask-image: url('../img/hero-icons/16/solid/pill-single.svg');
 }
 
 .heroicon-16.heroicon-photo {
