@@ -353,6 +353,7 @@
 .w-48 { width: var(--spacing-48); }
 .w-64 { width: var(--spacing-64); }
 .w-80 { width: var(--spacing-80); }
+.w-100 { width: 100%; }
 
 /* Height */
 .h-0 { height: var(--spacing-0); }

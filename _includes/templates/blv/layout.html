@@ -76,5 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
     </script>
 
+  {% if page-js %}
+  <script src="{{ '/' | url }}prototypes/blv/renewal/src/{{ page-js }}.js"></script>
+  {% endif %}
+
   </body>
 </html>
