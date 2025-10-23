@@ -64,7 +64,7 @@ function renderScreenings() {
                     <h5 class="text-md font-semibold">${screening.name}</h5>
                     ${badgeHTML}
                 </div>
-                <div class="flex-row flex-align-center gap-16">
+                <div class="flex-row flex-items-center gap-16">
                     <span class="text-sm text-gray-600">Last completed:</span>
                     <div class="textfield">
                         <input 
@@ -74,7 +74,7 @@ function renderScreenings() {
                             placeholder="${placeholder}"
                             onchange="updateScreening('${screening.id}', this.value)"
                             class="textfield__input"
-                            style="width: 100px; text-align: center; border-style: dashed;"
+                            style="width: 150px; text-align: center;"
                         >
                     </div>
                 </div>

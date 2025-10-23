@@ -168,7 +168,7 @@ function searchFacilities() {
         // "None of these work for me" option
         resultsHTML += `
             <div class="p-16 border-b border-gray-200">
-                <label class="flex-row flex-align-center cursor-pointer">
+                <label class="flex-row flex-items-center cursor-pointer">
                     <input type="radio" name="facility-selection" value="none" onchange="selectFacilityOption('none')" class="mr-12">
                     <span class="font-semibold">None of these work for me</span>
                 </label>
@@ -180,8 +180,8 @@ function searchFacilities() {
             const isLast = index === facilities.length - 1;
             resultsHTML += `
                 <div class="p-16 ${!isLast ? 'border-b border-gray-200' : ''}">
-                    <label class="flex-row flex-justify-between flex-align-center cursor-pointer">
-                        <div class="flex-row flex-align-center flex-1">
+                    <label class="flex-row flex-justify-between flex-items-center cursor-pointer">
+                        <div class="flex-row flex-items-center flex-1">
                             <input type="radio" name="facility-selection" value="${index}" onchange="selectFacilityOption(${index})" class="mr-12">
                             <div>
                                 <div class="font-semibold text-gray-800">${facility.name}</div>

@@ -206,7 +206,7 @@ components/
 
 **Flexbox:**
 ```html
-<div class="flex-row flex-justify-between flex-align-center gap-16">
+<div class="flex-row flex-justify-between flex-items-center gap-16">
   <div>Left</div>
   <div>Right</div>
 </div>
@@ -449,7 +449,7 @@ cat src/components/button/button.css
 → Use `var(--color-blue-500)`
 
 "How do I center content with flexbox?"
-→ Use `flex-row flex-justify-center flex-align-center`
+→ Use `flex-row flex-justify-center flex-items-center`
 
 ---
 

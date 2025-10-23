@@ -78,7 +78,7 @@ docs/                (Eleventy build output - AUTO-GENERATED)
 ### Layout
 ```html
 <!-- Flexbox -->
-<div class="flex-row flex-justify-between flex-align-center">
+<div class="flex-row flex-justify-between flex-items-center">
   <span>Left</span>
   <span>Right</span>
 </div>

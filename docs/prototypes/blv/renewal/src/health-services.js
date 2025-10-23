@@ -68,7 +68,7 @@ function renderHealthServices() {
     services.forEach(service => {
         const serviceHTML = `
             <div class="card p-16 mb-16">
-                <div class="flex-row flex-justify-between flex-align-center">
+                <div class="flex-row flex-justify-between flex-items-center">
                     <h5 class="text-md font-semibold flex-1">${service.name}</h5>
                     <input 
                         type="date" 
@@ -76,7 +76,7 @@ function renderHealthServices() {
                         value="${service.date}" 
                         onchange="updateService('${service.id}', this.value)"
                         class="textfield__input"
-                        style="width: 160px; border-style: dashed;"
+                        style="width: 160px;"
                     >
                 </div>
             </div>

@@ -53,7 +53,7 @@ function renderScreenings() {
     screenings.forEach(screening => {
         const borderClass = screening.isDue ? 'border-left border-4x' : '';
         const badgeHTML = screening.isDue ? 
-            '<span class="bg-gray-600 text-white px-8 py-4 text-xs font-semibold" style="border-radius: 4px;">DUE</span>' : '';
+            '<span class="badge badge--warning badge--large">DUE</span>' : '';
         
         const placeholder = screening.lastCompleted ? screening.lastCompleted : 'Enter year';
         const marginBottom = screening.isDue ? 'mb-8' : 'mb-0';
@@ -61,10 +61,10 @@ function renderScreenings() {
         const screeningHTML = `
             <div class="card p-16 mb-16 ${borderClass}">
                 <div class="flex-row flex-justify-between flex-align-start ${marginBottom}">
-                    <h5 class="text-md font-semibold">${screening.name}</h5>
+                    <h5 class="text-md font-semibold mb-8">${screening.name}</h5>
                     ${badgeHTML}
                 </div>
-                <div class="flex-row flex-align-center gap-16">
+                <div class="flex-row flex-items-center gap-16">
                     <span class="text-sm text-gray-600">Last completed:</span>
                     <div class="textfield">
                         <input 
@@ -74,7 +74,7 @@ function renderScreenings() {
                             placeholder="${placeholder}"
                             onchange="updateScreening('${screening.id}', this.value)"
                             class="textfield__input"
-                            style="width: 100px; text-align: center; border-style: dashed;"
+                            style="width: 160px; text-align: center;"
                         >
                     </div>
                 </div>
