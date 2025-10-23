@@ -102,35 +102,26 @@ function renderMedicationsList() {
     container.innerHTML = '';
     
     medications.forEach((medication, index) => {
-        const copayClass = medication.copay === '$0' ? 'text-gray-800' : 
-                          medication.copay === 'Not covered' ? 'text-gray-400' : 'text-gray-600';
-        
-        const priorAuthHTML = medication.priorAuthStatus ? 
-            `<div class="mt-4 text-sm">
-                <span class="text-gray-800 font-semibold">Prior Authorization: ${medication.priorAuthStatus}</span>
-            </div>` : '';
+        // Build subtitle with all medication details
+        let subtitle = medication.instructions;
+        subtitle += `<br>Copay: ${medication.copay} | Limits: ${medication.limits}`;
+        if (medication.priorAuthStatus) {
+            subtitle += `<br>Prior Authorization: ${medication.priorAuthStatus}`;
+        }
         
         const medicationHTML = `
-            <div class="card p-16 mb-16">
-                <div class="flex-row flex-justify-between flex-align-start">
-                    <div class="flex-1">
-                        <h5 class="text-md font-semibold mb-4">${medication.name}</h5>
-                        <p class="text-sm text-gray-600 mb-4">${medication.instructions}</p>
-                        <div class="flex-row gap-16 text-sm">
-                            <span class="${copayClass} font-semibold">Copay: ${medication.copay}</span>
-                            <span class="text-gray-600">Limits: ${medication.limits}</span>
-                        </div>
-                        ${priorAuthHTML}
-                    </div>
-                    <div class="flex-row gap-8 ml-16">
-                        <button class="button button--small-outline" onclick="editMedication(${index})" title="Edit Medication">
-                            <span class="heroicon heroicon-16 heroicon-pencil"></span>
-                        </button>
-                        <button class="button button--small-outline" onclick="deleteMedication(${index})" title="Delete Medication">
-                            <span class="heroicon heroicon-16 heroicon-trash"></span>
-                        </button>
-                    </div>
+            <div class="tile">
+                <span class="tile__icon heroicon heroicon-outline-building-storefront"></span>
+                <div class="tile__content">
+                    <p class="tile__title">${medication.name}</p>
+                    <p class="tile__subtitle">${subtitle}</p>
                 </div>
+                <button class="tile__dismiss" aria-label="Edit Medication" onclick="editMedication(${index})">
+                    <span class="tile__dismiss-icon heroicon heroicon-16 heroicon-pencil"></span>
+                </button>
+                <button class="tile__dismiss" aria-label="Delete Medication" onclick="deleteMedication(${index})">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                </button>
             </div>
         `;
         container.insertAdjacentHTML('beforeend', medicationHTML);
