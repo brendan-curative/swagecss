@@ -244,9 +244,25 @@ function saveNoResultsState() {
 }
 
 // Delete facility
-function deleteFacility(facilityType) {
-    prototype.deleteFacility(facilityType);
-    updateFacilityDisplay(facilityType);
+function deleteFacility(facilityType, event) {
+    // Find the tile element to animate
+    const button = event?.target.closest('.tile__dismiss');
+    const tile = button?.closest('.tile');
+    
+    if (tile) {
+        // Add dismissing animation
+        tile.classList.add('tile--dismissing');
+        
+        // Wait for animation to complete before removing
+        setTimeout(() => {
+            prototype.deleteFacility(facilityType);
+            updateFacilityDisplay(facilityType);
+        }, 300); // Match animation duration
+    } else {
+        // Fallback if tile not found
+        prototype.deleteFacility(facilityType);
+        updateFacilityDisplay(facilityType);
+    }
 }
 
 // Update facility display on main page

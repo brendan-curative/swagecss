@@ -106,13 +106,33 @@ function updateSaveButtonState() {
 }
 
 // Delete provider
-function deleteProvider(index, type) {
-    if (type === 'pcp') {
-        getCurrentPCPProviders().splice(index, 1);
+function deleteProvider(index, type, event) {
+    // Find the tile element to animate
+    const button = event?.target.closest('.tile__dismiss');
+    const tile = button?.closest('.tile');
+    
+    if (tile) {
+        // Add dismissing animation
+        tile.classList.add('tile--dismissing');
+        
+        // Wait for animation to complete before removing
+        setTimeout(() => {
+            if (type === 'pcp') {
+                getCurrentPCPProviders().splice(index, 1);
+            } else {
+                getCurrentOtherProviders().splice(index, 1);
+            }
+            updateAllProviderDisplays();
+        }, 300); // Match animation duration
     } else {
-        getCurrentOtherProviders().splice(index, 1);
+        // Fallback if tile not found
+        if (type === 'pcp') {
+            getCurrentPCPProviders().splice(index, 1);
+        } else {
+            getCurrentOtherProviders().splice(index, 1);
+        }
+        updateAllProviderDisplays();
     }
-    updateAllProviderDisplays();
 }
 
 // Edit provider
@@ -343,7 +363,7 @@ function addProviderToDisplay(provider, index, type, container) {
                 <p class="tile__title">${provider.name}</p>
                 <p class="tile__subtitle">${provider.specialty}</p>
             </div>
-            <button class="tile__dismiss" aria-label="Delete Provider" onclick="deleteProvider(${index}, '${type}')">
+            <button class="tile__dismiss" aria-label="Delete Provider" onclick="deleteProvider(${index}, '${type}', event)">
                 <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
             </button>
         </div>

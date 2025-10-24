@@ -119,7 +119,7 @@ function renderMedicationsList() {
                 <button class="tile__dismiss" aria-label="Edit Medication" onclick="editMedication(${index})">
                     <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
                 </button>
-                <button class="tile__dismiss" aria-label="Delete Medication" onclick="deleteMedication(${index})">
+                <button class="tile__dismiss" aria-label="Delete Medication" onclick="deleteMedication(${index}, event)">
                     <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
                 </button>
             </div>
@@ -142,11 +142,29 @@ function editMedication(index) {
     openMedicationModal();
 }
 
-function deleteMedication(index) {
-    const medications = prototype.getMedications();
-    medications.splice(index, 1);
-    prototype.setMedications(medications);
-    renderMedicationsList();
+function deleteMedication(index, event) {
+    // Find the tile element to animate
+    const button = event?.target.closest('.tile__dismiss');
+    const tile = button?.closest('.tile');
+    
+    if (tile) {
+        // Add dismissing animation
+        tile.classList.add('tile--dismissing');
+        
+        // Wait for animation to complete before removing
+        setTimeout(() => {
+            const medications = prototype.getMedications();
+            medications.splice(index, 1);
+            prototype.setMedications(medications);
+            renderMedicationsList();
+        }, 300); // Match animation duration
+    } else {
+        // Fallback if tile not found
+        const medications = prototype.getMedications();
+        medications.splice(index, 1);
+        prototype.setMedications(medications);
+        renderMedicationsList();
+    }
 }
 
 function addMedication() {
@@ -334,9 +352,25 @@ function closePharmacyModal() {
     document.body.style.overflow = '';
 }
 
-function deletePharmacy() {
-    prototype.setPharmacy(null);
-    updatePharmacyDisplay();
+function deletePharmacy(event) {
+    // Find the tile element to animate
+    const button = event?.target.closest('.tile__dismiss');
+    const tile = button?.closest('.tile');
+    
+    if (tile) {
+        // Add dismissing animation
+        tile.classList.add('tile--dismissing');
+        
+        // Wait for animation to complete before removing
+        setTimeout(() => {
+            prototype.setPharmacy(null);
+            updatePharmacyDisplay();
+        }, 300); // Match animation duration
+    } else {
+        // Fallback if tile not found
+        prototype.setPharmacy(null);
+        updatePharmacyDisplay();
+    }
 }
 
 function searchPharmacies() {
