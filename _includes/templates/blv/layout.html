@@ -12,7 +12,7 @@
 
 
   </head>
-    <body class="page-{{ location | default: 'start' }}">
+    <body class="page-{{ location | default: 'start' }}"{% if confetti-auto %} data-confetti-auto{% if confetti-delay %} data-confetti-delay="{{ confetti-delay }}"{% endif %}{% if confetti-count %} data-confetti-count="{{ confetti-count }}"{% endif %}{% if confetti-bursts %} data-confetti-bursts="{{ confetti-bursts }}"{% endif %}{% endif %}>
     <div class="wrap">
       <header>
         <div class="container">
@@ -92,6 +92,9 @@ function resetPrototype() {
   {% if page-js %}
   <script src="{{ '/' | url }}prototypes/blv/renewal/src/{{ page-js }}.js?v=2.1"></script>
   {% endif %}
+
+  <!-- Confetti animation system -->
+  <script src="{{ '/' | url }}src/themes/blv/components/confetti.js"></script>
 
   </body>
 </html>

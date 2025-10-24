@@ -1,4 +1,5 @@
 @import url(overrides.css);
+@import url(components/confetti.css);
 
 :root {
     --blv-width: 900px;
@@ -277,6 +278,7 @@ header {
 
     footer .button {
         align-self: center;
+        letter-spacing: 1.4px;
     }
 
         footer .button svg {
@@ -391,3 +393,4 @@ h3 + .card {
 .button--utility:focus:not(:disabled) {
     border-color: var(--color-blue-500);
 }
+

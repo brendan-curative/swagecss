@@ -1,0 +1,25 @@
+/* #region Confetti Component */
+
+/**
+ * BLV Confetti Component Styles
+ * Minimal styles - canvas-confetti handles rendering
+ */
+
+/* Confetti trigger buttons - optional styling enhancement */
+[data-confetti] {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Add subtle animation on confetti button hover */
+[data-confetti]:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+}
+
+[data-confetti]:active {
+    transform: scale(0.98);
+}
+
+/* #endregion */
+

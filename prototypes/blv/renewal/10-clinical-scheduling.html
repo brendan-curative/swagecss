@@ -10,6 +10,10 @@ previous: 9-procedures-and-surgeries/
 next: /
 button-text: Schedule My Visit
 page-js: scheduling
+confetti-auto: true
+confetti-delay: 200
+confetti-count: 400
+confetti-bursts: 3
 ---
 
 <section class="mb-32">
@@ -68,6 +72,12 @@ page-js: scheduling
         <h4 class="heading-lg mb-8">Prototype Complete!</h4>
         <p class="text-sm text-gray-600 mb-16">This concludes the baseline visit flow prototype.</p>
         <div class="flex-row gap-8 flex-wrap">
+            <a class="button button--small-outline" 
+   data-confetti 
+   data-confetti-count="200" 
+>
+    Boom
+</a>
             <button onclick="viewSavedData()" class="button button--small-outline">View Saved Data</button>
             <button onclick="resetPrototype()" class="button button--small-outline">Reset Prototype</button>
             <button onclick="window.location.href='/swagecss/prototypes/blv/renewal/'" class="button button--small-outline">Start Over</button>

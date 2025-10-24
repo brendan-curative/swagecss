@@ -85,5 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (appointmentType) {
         selectAppointmentType(appointmentType);
     }
+    
+    // Initialize interactive confetti button
+    const interactiveButton = document.getElementById('interactive-confetti');
+    if (interactiveButton && typeof createInteractiveConfetti === 'function') {
+        createInteractiveConfetti(interactiveButton);
+    }
 });
 
