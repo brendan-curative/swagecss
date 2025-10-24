@@ -108,8 +108,8 @@
                 <!-- #swage editable-start -->
                 
 <section>
-    <p class="body-lg text-gray-600 mb-24">
-        The Swage.CSS display system provides comprehensive layout utilities including flexbox, grid, display types, positioning, borders, and more for creating modern, responsive layouts.
+    <p class="body-lg text-subdued mb-24">
+        The Swage.CSS display system provides comprehensive layout utilities including flexbox layouts, display types, borders, overflow control, and more for creating modern, responsive layouts.
     </p>
 </section>
 
@@ -133,12 +133,12 @@
             
             <div class="demo-item">
                 <h4>Flex Column</h4>
-                <div class="flex flex-col" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 120px;">
+                <div class="flex flex-column" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 120px;">
                     <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
                     <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">C</div>
                 </div>
-                <code>.flex .flex-col</code>
+                <code>.flex .flex-column</code>
             </div>
             
             <div class="demo-item">
@@ -161,6 +161,26 @@
                 </div>
                 <code>.flex .flex-nowrap</code>
             </div>
+            
+            <div class="demo-item">
+                <h4>Row Reverse</h4>
+                <div class="flex flex-row-reverse" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                    <div style="background: var(--color-pink-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">1st</div>
+                    <div style="background: var(--color-pink-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">2nd</div>
+                    <div style="background: var(--color-pink-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">3rd</div>
+                </div>
+                <code>.flex-row-reverse</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Column Reverse</h4>
+                <div class="flex flex-column-reverse" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 120px;">
+                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">1st</div>
+                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">2nd</div>
+                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">3rd</div>
+                </div>
+                <code>.flex-column-reverse</code>
+            </div>
         </div>
     </div>
     
@@ -169,56 +189,47 @@
         <div class="demo-grid">
             <div class="demo-item">
                 <h4>Start</h4>
-                <div class="flex justify-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                <div class="flex flex-justify-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
                 </div>
-                <code>.justify-start</code>
+                <code>.flex-justify-start</code>
             </div>
             
             <div class="demo-item">
                 <h4>Center</h4>
-                <div class="flex justify-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                <div class="flex flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
                 </div>
-                <code>.justify-center</code>
+                <code>.flex-justify-center</code>
             </div>
             
             <div class="demo-item">
                 <h4>End</h4>
-                <div class="flex justify-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                <div class="flex flex-justify-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
                 </div>
-                <code>.justify-end</code>
+                <code>.flex-justify-end</code>
             </div>
             
             <div class="demo-item">
                 <h4>Between</h4>
-                <div class="flex justify-between" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                <div class="flex flex-justify-between" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
                 </div>
-                <code>.justify-between</code>
+                <code>.flex-justify-between</code>
             </div>
             
             <div class="demo-item">
                 <h4>Around</h4>
-                <div class="flex justify-around" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                <div class="flex flex-justify-around" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
                 </div>
-                <code>.justify-around</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Evenly</h4>
-                <div class="flex justify-evenly" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
-                    <div style="background: var(--color-red-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
-                </div>
-                <code>.justify-evenly</code>
+                <code>.flex-justify-around</code>
             </div>
         </div>
     </div>
@@ -228,144 +239,105 @@
         <div class="demo-grid">
             <div class="demo-item">
                 <h4>Start</h4>
-                <div class="flex items-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
+                <div class="flex flex-items-start" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
                 </div>
-                <code>.items-start</code>
+                <code>.flex-items-start</code>
             </div>
             
             <div class="demo-item">
                 <h4>Center</h4>
-                <div class="flex items-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
+                <div class="flex flex-items-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
                 </div>
-                <code>.items-center</code>
+                <code>.flex-items-center</code>
             </div>
             
             <div class="demo-item">
                 <h4>End</h4>
-                <div class="flex items-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
+                <div class="flex flex-items-end" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); height: 40px;">B</div>
                 </div>
-                <code>.items-end</code>
+                <code>.flex-items-end</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Baseline</h4>
+                <div class="flex flex-items-baseline" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
+                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
+                    <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2); font-size: var(--font-size-lg);">B</div>
+                </div>
+                <code>.flex-items-baseline</code>
             </div>
             
             <div class="demo-item">
                 <h4>Stretch</h4>
-                <div class="flex items-stretch" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
+                <div class="flex flex-items-stretch" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); height: 80px;">
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">A</div>
                     <div style="background: var(--color-teal-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">B</div>
                 </div>
-                <code>.items-stretch</code>
+                <code>.flex-items-stretch</code>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Flex Row Grid System</h3>
+        <p class="body-sm text-subdued mb-16">Use flex-row for responsive grid layouts with flexible items</p>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <h4>Flex Row</h4>
+                <div class="flex-row" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                    <div class="flex-item" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 1</div>
+                    <div class="flex-item" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 2</div>
+                    <div class="flex-item" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Item 3</div>
+                </div>
+                <code>.flex-row .flex-item</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Variable Widths</h4>
+                <div class="flex-row" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                    <div class="flex-item" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">1x</div>
+                    <div class="flex-item-2x" style="background: var(--color-green-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">2x</div>
+                    <div class="flex-item" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">1x</div>
+                </div>
+                <code>.flex-item .flex-item-2x</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Proportional Sizing</h4>
+                <div class="flex-row" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                    <div class="flex-item-2x" style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">2x</div>
+                    <div class="flex-item-3x" style="background: var(--color-purple-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">3x</div>
+                </div>
+                <code>.flex-item-2x .flex-item-3x</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Complex Layout</h4>
+                <div class="flex-row" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
+                    <div class="flex-item-2x" style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">2x wide</div>
+                    <div class="flex-item-4x" style="background: var(--color-orange-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">4x wide</div>
+                    <div class="flex-item" style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">1x</div>
+                </div>
+                <code>.flex-item-2x .flex-item-4x</code>
             </div>
         </div>
     </div>
     
     <div>
-        <h3>Flex Item Properties</h3>
+        <h3>Center X & Y</h3>
         <div class="demo-grid">
             <div class="demo-item">
-                <h4>Flex 1</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-1" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flex 1</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Fixed</div>
+                <h4>Centered</h4>
+                <div class="flex-center-x-y" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 100px;">
+                    <div style="background: var(--color-blue-200); padding: var(--spacing-16); border-radius: var(--spacing-4);">Perfectly Centered</div>
                 </div>
-                <code>.flex-1</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Auto</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-auto" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flex Auto</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Fixed</div>
-                </div>
-                <code>.flex-auto</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex None</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8);">
-                    <div class="flex-none" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">No Flex</div>
-                    <div class="flex-1" style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2);">Flexible</div>
-                </div>
-                <code>.flex-none</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>Flex Shrink 0</h4>
-                <div class="flex" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); gap: var(--spacing-8); width: 200px;">
-                    <div class="flex-shrink-0" style="background: var(--color-indigo-200); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 100px;">No Shrink</div>
-                    <div style="background: var(--color-gray-300); padding: var(--spacing-8); border-radius: var(--spacing-2); min-width: 100px;">Shrinks</div>
-                </div>
-                <code>.flex-shrink-0</code>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Grid System -->
-<section class="component-section">
-    <h2>Grid System</h2>
-    <p class="mb-24">CSS Grid utilities for creating complex two-dimensional layouts with precise control.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Grid Columns</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <h4>2 Columns</h4>
-                <div class="grid grid-cols-2 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                </div>
-                <code>.grid .grid-cols-2</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>3 Columns</h4>
-                <div class="grid grid-cols-3 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">5</div>
-                    <div style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">6</div>
-                </div>
-                <code>.grid .grid-cols-3</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>4 Columns</h4>
-                <div class="grid grid-cols-4 gap-8" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">1</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">2</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">3</div>
-                    <div style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); text-align: center;">4</div>
-                </div>
-                <code>.grid .grid-cols-4</code>
-            </div>
-            
-            <div class="demo-item">
-                <h4>12 Columns</h4>
-                <div class="grid grid-cols-12 gap-4" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">1</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">2</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">3</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">4</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">5</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">6</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">7</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">8</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">9</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">10</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">11</div>
-                    <div style="background: var(--color-purple-200); padding: var(--spacing-4); border-radius: var(--spacing-2); text-align: center; font-size: var(--font-size-xs);">12</div>
-                </div>
-                <code>.grid .grid-cols-12</code>
+                <code>.flex-center-x-y</code>
             </div>
         </div>
     </div>
@@ -415,45 +387,37 @@
     </div>
 </section>
 
-<!-- Positioning -->
+<!-- Float Utilities -->
 <section class="component-section">
-    <h2>Positioning</h2>
-    <p class="mb-24">Classes for controlling element positioning and stacking context.</p>
+    <h2>Float Utilities</h2>
+    <p class="mb-24">Classes for floating elements and clearing floats.</p>
     
     <div class="demo-grid">
         <div class="demo-item">
-            <h4>Relative</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px; position: relative;">
-                <div class="relative" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: var(--spacing-8); left: var(--spacing-8);">Relative</div>
+            <h4>Float Left</h4>
+            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                <div class="float-left" style="background: var(--color-blue-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-right: var(--spacing-8);">Floated Left</div>
+                <p style="font-size: var(--font-size-sm);">Text flows around the floated element on the right side.</p>
             </div>
-            <code>.relative</code>
+            <code>.float-left</code>
         </div>
         
         <div class="demo-item">
-            <h4>Absolute</h4>
-            <div class="relative" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px;">
-                <div class="absolute" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: var(--spacing-8); right: var(--spacing-8);">Absolute</div>
+            <h4>Float Right</h4>
+            <div style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                <div class="float-right" style="background: var(--color-green-200); padding: var(--spacing-8); border-radius: var(--spacing-2); margin-left: var(--spacing-8);">Floated Right</div>
+                <p style="font-size: var(--font-size-sm);">Text flows around the floated element on the left side.</p>
             </div>
-            <code>.absolute</code>
+            <code>.float-right</code>
         </div>
         
         <div class="demo-item">
-            <h4>Fixed</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px;">
-                <p style="font-size: var(--font-size-sm);">Fixed elements are positioned relative to the viewport</p>
+            <h4>Clearfix</h4>
+            <div class="clearfix" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                <div class="float-left" style="background: var(--color-purple-200); padding: var(--spacing-8); border-radius: var(--spacing-2);">Floated</div>
+                <p style="font-size: var(--font-size-sm); margin-top: var(--spacing-40);">Clearfix contains floats</p>
             </div>
-            <code>.fixed</code>
-        </div>
-        
-        <div class="demo-item">
-            <h4>Sticky</h4>
-            <div style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 100px; overflow-y: auto;">
-                <div class="sticky" style="background: var(--color-orange-200); padding: var(--spacing-8); border-radius: var(--spacing-2); top: 0;">Sticky Header</div>
-                <div style="height: 200px; background: var(--color-gray-50); margin-top: var(--spacing-8); padding: var(--spacing-8);">
-                    Scroll content...
-                </div>
-            </div>
-            <code>.sticky</code>
+            <code>.clearfix</code>
         </div>
     </div>
 </section>
@@ -464,102 +428,90 @@
     <p class="mb-24">Classes for adding borders and controlling border properties.</p>
     
     <div style="margin-bottom: var(--spacing-32);">
-        <h3>Border Styles</h3>
+        <h3>Border Width</h3>
         <div class="demo-grid">
             <div class="demo-item">
                 <div class="border" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Basic Border
+                    Basic Border (1px)
                 </div>
                 <code>.border</code>
             </div>
             
             <div class="demo-item">
-                <div class="border-2x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                <div class="border-2x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center; border-color: var(--color-gray-200); border-style: solid;">
                     2px Border
                 </div>
                 <code>.border-2x</code>
             </div>
             
             <div class="demo-item">
-                <div class="border-4x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                <div class="border-4x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center; border-color: var(--color-gray-200); border-style: solid;">
                     4px Border
                 </div>
                 <code>.border-4x</code>
             </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Directional Borders</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div class="border-top" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                    Top Border
+                </div>
+                <code>.border-top</code>
+            </div>
             
             <div class="demo-item">
-                <div class="border-0" style="padding: var(--spacing-16); background: var(--color-gray-100); border-radius: var(--spacing-4); text-align: center;">
-                    No Border
+                <div class="border-right" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                    Right Border
                 </div>
-                <code>.border-0</code>
+                <code>.border-right</code>
+            </div>
+            
+            <div class="demo-item">
+                <div class="border-bottom" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                    Bottom Border
+                </div>
+                <code>.border-bottom</code>
+            </div>
+            
+            <div class="demo-item">
+                <div class="border-left" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                    Left Border
+                </div>
+                <code>.border-left</code>
             </div>
         </div>
     </div>
     
     <div>
-        <h3>Directional Borders</h3>
+        <h3>Axis Borders</h3>
         <div class="demo-grid">
             <div class="demo-item">
-                <div class="border-t" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Top Border
+                <div class="border-x" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                    Horizontal Borders
                 </div>
-                <code>.border-t</code>
+                <code>.border-x</code>
+                <p class="body-sm text-subdued mt-8">Left and right borders</p>
             </div>
             
             <div class="demo-item">
-                <div class="border-r" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Right Border
+                <div class="border-y" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
+                    Vertical Borders
                 </div>
-                <code>.border-r</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-b" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Bottom Border
-                </div>
-                <code>.border-b</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="border-l" style="padding: var(--spacing-16); border-radius: var(--spacing-4); text-align: center;">
-                    Left Border
-                </div>
-                <code>.border-l</code>
+                <code>.border-y</code>
+                <p class="body-sm text-subdued mt-8">Top and bottom borders</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Miscellaneous Utilities -->
+<!-- Overflow and Sizing -->
 <section class="component-section">
-    <h2>Miscellaneous Utilities</h2>
-    <p class="mb-24">Additional layout utilities for overflow, alignment, and sizing.</p>
-    
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Text Alignment</h3>
-        <div class="demo-grid">
-            <div class="demo-item">
-                <div class="align-left" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Left aligned text content
-                </div>
-                <code>.align-left</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="align-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Center aligned text content
-                </div>
-                <code>.align-center</code>
-            </div>
-            
-            <div class="demo-item">
-                <div class="align-right" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
-                    Right aligned text content
-                </div>
-                <code>.align-right</code>
-            </div>
-        </div>
-    </div>
+    <h2>Overflow & Sizing</h2>
+    <p class="mb-24">Control overflow behavior and element sizing.</p>
     
     <div style="margin-bottom: var(--spacing-32);">
         <h3>Overflow Control</h3>
@@ -567,7 +519,7 @@
             <div class="demo-item">
                 <h4>Hidden</h4>
                 <div class="overflow-hidden" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This is a long text that would normally overflow the container but is hidden instead.
+                    This is a long text that would normally overflow the container but is hidden instead of showing.
                 </div>
                 <code>.overflow-hidden</code>
             </div>
@@ -575,105 +527,170 @@
             <div class="demo-item">
                 <h4>Scroll</h4>
                 <div class="overflow-scroll" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This is a long text that overflows the container and shows scrollbars when needed.
+                    This is a long text that overflows the container and always shows scrollbars for both directions.
                 </div>
                 <code>.overflow-scroll</code>
             </div>
             
             <div class="demo-item">
-                <h4>Auto</h4>
-                <div class="overflow-auto" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
-                    This content shows scrollbars only when necessary for overflow.
+                <h4>Scroll Y</h4>
+                <div class="overflow-y-scroll" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px; width: 150px;">
+                    This text overflows vertically and shows a vertical scrollbar only.
                 </div>
-                <code>.overflow-auto</code>
+                <code>.overflow-y-scroll</code>
+            </div>
+            
+            <div class="demo-item">
+                <h4>Scroll X</h4>
+                <div class="overflow-x-scroll" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); width: 150px;">
+                    <div style="width: 300px;">This content is wider than container</div>
+                </div>
+                <code>.overflow-x-scroll</code>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: var(--spacing-32);">
+        <h3>Height Utilities</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div style="background: var(--color-gray-200); height: 100px; display: flex; flex-direction: column;">
+                    <div class="h-100" style="background: var(--color-blue-100); display: flex; align-items: center; justify-content: center;">
+                        100% Height
+                    </div>
+                </div>
+                <code>.h-100</code>
             </div>
         </div>
     </div>
     
     <div>
-        <h3>Sizing Utilities</h3>
+        <h3>Text Alignment</h3>
         <div class="demo-grid">
             <div class="demo-item">
-                <div class="h-100 w-100" style="background: var(--color-blue-100); border: 1px dashed var(--color-blue-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    100% Width & Height
+                <div class="align-left" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    Left aligned text
                 </div>
-                <code>.h-100 .w-100</code>
+                <code>.align-left</code>
             </div>
             
             <div class="demo-item">
-                <div class="min-h-screen" style="background: var(--color-green-100); border: 1px dashed var(--color-green-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    Min Height Screen
+                <div class="align-center" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    Center aligned text
                 </div>
-                <code>.min-h-screen</code>
+                <code>.align-center</code>
             </div>
             
             <div class="demo-item">
-                <div class="min-h-full" style="background: var(--color-orange-100); border: 1px dashed var(--color-orange-400); display: flex; align-items: center; justify-content: center; height: 60px;">
-                    Min Height Full
+                <div class="align-right" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4);">
+                    Right aligned text
                 </div>
-                <code>.min-h-full</code>
+                <code>.align-right</code>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Layout Examples -->
+<!-- SVG Icon Sizing -->
 <section class="component-section">
-    <h2>Layout Examples</h2>
-    <p class="mb-24">Common layout patterns using the display utilities.</p>
+    <h2>SVG Icon Sizing</h2>
+    <p class="mb-24">Predefined sizes for SVG icons with display and alignment utilities.</p>
     
     <div style="margin-bottom: var(--spacing-32);">
-        <h3>Card Layout</h3>
-        <div class="border rounded p-24 bg-white">
-            <div class="flex items-center justify-between mb-16">
-                <h4 class="heading-lg">Card Title</h4>
-                <button class="button button--outline">Action</button>
+        <h3>Icon Sizes</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-xs" style="fill: var(--color-blue-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-xs</code>
+                <p class="body-sm text-subdued mt-4">12px × 12px</p>
             </div>
-            <p class="body-md text-gray-600 mb-16">Card content with flexible layout using flexbox utilities.</p>
-            <div class="flex gap-8">
-                <span class="badge badge--default badge--small">Tag 1</span>
-                <span class="badge badge--default badge--small">Tag 2</span>
+            
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-sm" style="fill: var(--color-green-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-sm</code>
+                <p class="body-sm text-subdued mt-4">16px × 16px</p>
+            </div>
+            
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-md" style="fill: var(--color-orange-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-md</code>
+                <p class="body-sm text-subdued mt-4">20px × 20px</p>
+            </div>
+            
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-lg" style="fill: var(--color-purple-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-lg</code>
+                <p class="body-sm text-subdued mt-4">24px × 24px</p>
+            </div>
+            
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-xl" style="fill: var(--color-pink-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-xl</code>
+                <p class="body-sm text-subdued mt-4">32px × 32px</p>
+            </div>
+            
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-2xl" style="fill: var(--color-teal-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-2xl</code>
+                <p class="body-sm text-subdued mt-4">40px × 40px</p>
+            </div>
+            
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-3xl" style="fill: var(--color-red-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-3xl</code>
+                <p class="body-sm text-subdued mt-4">48px × 48px</p>
+            </div>
+            
+            <div class="demo-item">
+                <div class="flex flex-items-center flex-justify-center" style="background: var(--color-gray-100); padding: var(--spacing-16); border-radius: var(--spacing-4); height: 80px;">
+                    <svg class="icon-4xl" style="fill: var(--color-blue-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-4xl</code>
+                <p class="body-sm text-subdued mt-4">64px × 64px</p>
             </div>
         </div>
     </div>
     
-    <div style="margin-bottom: var(--spacing-32);">
-        <h3>Navigation Layout</h3>
-        <nav class="flex items-center justify-between p-16 border-b bg-white">
-            <div class="flex items-center gap-16">
-                <div style="width: var(--spacing-32); height: var(--spacing-32); background: var(--color-foundation-primary); border-radius: var(--spacing-4);"></div>
-                <span class="heading-md">Brand</span>
-            </div>
-            <div class="flex items-center gap-24">
-                <a href="#" class="body-sm">Home</a>
-                <a href="#" class="body-sm">About</a>
-                <a href="#" class="body-sm">Contact</a>
-                <button class="button button--primary">Sign Up</button>
-            </div>
-        </nav>
-    </div>
-    
     <div>
-        <h3>Grid Gallery</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 1</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
+        <h3>Icon Display Utilities</h3>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <p class="mb-8">Inline with text <svg class="icon icon-sm" style="fill: var(--color-blue-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> middle-aligned</p>
+                <code>.icon</code>
+                <p class="body-sm text-subdued mt-4">Inline-block, middle-aligned</p>
             </div>
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 2</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
+            
+            <div class="demo-item">
+                <svg class="icon-block icon-lg" style="fill: var(--color-green-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                <code>.icon-block</code>
+                <p class="body-sm text-subdued mt-4">Display: block</p>
             </div>
-            <div class="border rounded p-16 bg-white">
-                <div style="height: 120px; background: var(--color-gray-200); border-radius: var(--spacing-4); margin-bottom: var(--spacing-12);"></div>
-                <h5 class="heading-sm mb-8">Gallery Item 3</h5>
-                <p class="body-sm text-gray-600">Description of the gallery item.</p>
+            
+            <div class="demo-item">
+                <div class="icon-flex icon-lg" style="background: var(--color-gray-100); padding: var(--spacing-12); border-radius: var(--spacing-4); height: 60px;">
+                    <svg style="fill: var(--color-purple-600);" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                <code>.icon-flex</code>
+                <p class="body-sm text-subdued mt-4">Flexbox centered</p>
             </div>
         </div>
     </div>
 </section>
+
                 <!-- #swage editable-end -->
               </article>
         
