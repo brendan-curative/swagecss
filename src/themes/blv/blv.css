@@ -19,6 +19,13 @@ html[data-theme="blv"] body {
     background-attachment: fixed;
     text-shadow: 0 1px 0 var(--color-white);
 }
+
+html[data-theme="blv"] .whitewaves {
+    background-color: transparent;
+    background-image: url(img/waves-white.svg);
+    background-position: -600px 0%;
+    background-repeat: no-repeat;
+}
 /* #endregion */
 
 
