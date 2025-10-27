@@ -1559,23 +1559,26 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeToggle();
     initializeTextfield();
     
-        // BLV Components
-        if (typeof initializeHorizontalStepper === 'function') {
-            initializeHorizontalStepper();
-        }
-        if (typeof initializeCheckmarkButton === 'function') {
-            initializeCheckmarkButton();
-        }
-        if (typeof initializeRatingPicker === 'function') {
-            initializeRatingPicker();
-        }
-        if (typeof initializeCheckmarkLabel === 'function') {
-            initializeCheckmarkLabel();
-        }
-        if (typeof initializeOrderedList === 'function') {
-            initializeOrderedList();
-        }
-        if (typeof initializeRadioSelectionList === 'function') {
-            initializeRadioSelectionList();
-        }
+    // BLV Components
+    if (typeof initializeHorizontalStepper === 'function') {
+        initializeHorizontalStepper();
+    }
+    if (typeof initializeCheckmarkButton === 'function') {
+        initializeCheckmarkButton();
+    }
+    if (typeof initializeRatingPicker === 'function') {
+        initializeRatingPicker();
+    }
+    if (typeof initializeCheckmarkLabel === 'function') {
+        initializeCheckmarkLabel();
+    }
+    if (typeof initializeOrderedList === 'function') {
+        initializeOrderedList();
+    }
+    if (typeof initializeRadioSelectionList === 'function') {
+        initializeRadioSelectionList();
+    }
+    if (typeof initializeCarousel === 'function') {
+        initializeCarousel();
+    }
 });

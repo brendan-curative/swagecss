@@ -1,0 +1,135 @@
+/* #region Carousel Component */
+
+/* Carousel container */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Carousel track - holds all slides */
+.carousel__track {
+    display: flex;
+    transition: transform 400ms ease-in-out;
+    width: 100%;
+}
+
+/* Individual carousel slides */
+.carousel__slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Carousel controls container */
+.carousel__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-16);
+    gap: var(--spacing-16);
+}
+
+/* Navigation buttons container */
+.carousel__nav {
+    display: flex;
+    gap: var(--spacing-8);
+}
+
+/* Carousel button styling - using Small Outline button variant */
+.carousel__button {
+    display: inline-block;
+    font-family: var(--font-family-sans);
+    text-align: center;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    border: 1px solid var(--color-foundation-primary);
+    background-color: var(--color-neutral-white);
+    color: var(--color-foundation-primary);
+    border-radius: var(--spacing-8);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    padding: var(--spacing-6) var(--spacing-16);
+    outline: none;
+}
+
+.carousel__button:hover:not(:disabled) {
+    background-color: var(--color-blue-100);
+}
+
+.carousel__button:active:not(:disabled) {
+    background-color: var(--color-foundation-primary);
+    color: var(--color-neutral-white);
+}
+
+.carousel__button:focus:not(:disabled),
+.carousel__button:focus-visible:not(:disabled) {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-blue-500), 0 0 0 3px var(--color-blue-500);
+    border-color: var(--color-blue-500);
+    color: var(--color-foundation-primary);
+}
+
+.carousel__button:disabled {
+    background-color: var(--color-gray-200);
+    border-color: var(--color-gray-700);
+    color: var(--color-gray-700);
+    cursor: not-allowed;
+}
+
+/* Carousel indicator dots */
+.carousel__indicators {
+    display: flex;
+    gap: var(--spacing-8);
+    align-items: center;
+}
+
+.carousel__indicator {
+    width: var(--spacing-8);
+    height: var(--spacing-8);
+    border-radius: 50%;
+    background-color: var(--color-gray-300);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.carousel__indicator:hover {
+    background-color: var(--color-gray-400);
+}
+
+.carousel__indicator--active {
+    background-color: var(--color-foundation-primary);
+    width: var(--spacing-24);
+    border-radius: var(--spacing-4);
+}
+
+.carousel__indicator:focus,
+.carousel__indicator:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-blue-500);
+}
+
+/* Carousel slide counter */
+.carousel__counter {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* BLV Theme overrides */
+html[data-theme="blv"] .carousel__button {
+    border-radius: 4px;
+}
+
+html[data-theme="blv"] .carousel__indicator {
+    border-radius: 4px;
+}
+
+html[data-theme="blv"] .carousel__indicator--active {
+    border-radius: 4px;
+}
+
+/* #endregion */
+
