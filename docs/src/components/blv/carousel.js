@@ -86,7 +86,29 @@ function initializeCarousel() {
             if (!controlledButton) return;
             
             const allSlidesViewed = viewedSlides.size === totalSlides;
-            controlledButton.disabled = !allSlidesViewed;
+            
+            // Handle differently for <a> vs <button> elements
+            if (controlledButton.tagName.toLowerCase() === 'a') {
+                // For anchor tags, use class instead of disabled attribute
+                // Detect which button variant to apply the correct disabled class
+                let disabledClass = 'button--primary-disabled';
+                if (controlledButton.classList.contains('button--big-primary')) {
+                    disabledClass = 'button--big-primary-disabled';
+                } else if (controlledButton.classList.contains('button--small-primary')) {
+                    disabledClass = 'button--small-primary-disabled';
+                }
+                
+                if (allSlidesViewed) {
+                    controlledButton.classList.remove(disabledClass);
+                    controlledButton.style.pointerEvents = '';
+                } else {
+                    controlledButton.classList.add(disabledClass);
+                    controlledButton.style.pointerEvents = 'none';
+                }
+            } else {
+                // For button tags, use disabled attribute
+                controlledButton.disabled = !allSlidesViewed;
+            }
             
             if (allSlidesViewed) {
                 console.log('All slides viewed - button enabled');

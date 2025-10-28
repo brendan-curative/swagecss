@@ -62,11 +62,15 @@
     border-color: var(--color-blue-600);
 }
 
-.button--primary:disabled {
+.button--primary:disabled, .button--primary-disabled {
     background-color: var(--color-gray-200);
     border-color: var(--color-gray-200);
     color: var(--color-gray-700);
 }
+
+.button--primary-disabled {
+    pointer-events: none;
+    cursor: default;}
 
 /* Button variants - Big Primary */
 .button--big-primary {
@@ -95,10 +99,15 @@
     border-color: var(--color-blue-600);
 }
 
-.button--big-primary:disabled {
+.button--big-primary:disabled, .button--big-primary-disabled {
     background-color: var(--color-gray-200);
     border-color: var(--color-gray-200);
     color: var(--color-gray-700);
+}
+
+.button--big-primary-disabled {
+    pointer-events: none;
+    cursor: default;
 }
 
 /* Button variants - Small Primary */
@@ -128,10 +137,15 @@
     border-color: var(--color-blue-600);
 }
 
-.button--small-primary:disabled {
+.button--small-primary:disabled, .button--small-primary-disabled {
     background-color: var(--color-gray-200);
     border-color: var(--color-gray-200);
     color: var(--color-gray-700);
+}
+
+.button--small-primary-disabled {
+    pointer-events: none;
+    cursor: default;
 }
 
 /* Button variants - Outline */

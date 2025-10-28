@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/brendan-curative/swagecss">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Oct 27, 2025, 5:16 PM</span> 
+             </a>  <span>Oct 28, 2025, 2:16 PM</span> 
              
         </div>
 
@@ -399,9 +399,11 @@
         <p class="body-md mb-12">Add two data attributes to your carousel:</p>
         <ul class="ml-24">
             <li class="body-md mb-8"><code>data-carousel-track-views</code> - Enables slide view tracking</li>
-            <li class="body-md mb-8"><code>data-carousel-controlled-button="buttonId"</code> - ID of the button to control</li>
+            <li class="body-md mb-8"><code>data-carousel-controlled-button="buttonId"</code> - ID of the button or link to control</li>
         </ul>
-        <p class="body-md mt-16 mb-8">The controlled button should have <code>disabled</code> attribute initially:</p>
+        
+        <h4 class="heading-md mt-24 mb-12">For Button Elements</h4>
+        <p class="body-md mb-8">The controlled button should have <code>disabled</code> attribute initially:</p>
         <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;div class="carousel" 
      data-carousel-track-views 
      data-carousel-controlled-button="myButton"&gt;
@@ -411,6 +413,25 @@
 &lt;button id="myButton" class="button button--primary" disabled&gt;
     Continue
 &lt;/button&gt;</code></pre>
+
+        <h4 class="heading-md mt-24 mb-12">For Anchor Elements</h4>
+        <p class="body-md mb-8">For anchor tags, the script automatically adds the appropriate disabled class:</p>
+        <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;div class="carousel" 
+     data-carousel-track-views 
+     data-carousel-controlled-button="continueLink"&gt;
+    &lt;!-- carousel content --&gt;
+&lt;/div&gt;
+
+&lt;a id="continueLink" 
+   href="/next-page/" 
+   class="button button--big-primary"&gt;
+    Continue
+&lt;/a&gt;</code></pre>
+        <p class="body-sm text-gray-600 mt-12">
+            <strong>Note:</strong> The script automatically detects the button variant 
+            (<code>button--primary</code>, <code>button--big-primary</code>, or <code>button--small-primary</code>) 
+            and applies the correct disabled class (<code>-disabled</code> suffix) for anchor tags.
+        </p>
     </div>
 </section>
 
