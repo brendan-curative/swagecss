@@ -157,7 +157,7 @@
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/0-start/">
+            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/0-start/">
                 Begin
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
@@ -175,8 +175,51 @@
   <script src="/swagecss/src/components.js"></script>
   <script src="/swagecss/src/modules/drawer/drawer.js"></script>
   <script src="/swagecss/src/modules/page-transition/page-transition.js"></script>
+  
+  <!-- BLV Component Scripts -->
+  <script src="/swagecss/src/components/blv/carousel.js"></script>
+  <script src="/swagecss/src/components/blv/horizontal-stepper.js"></script>
+  <script src="/swagecss/src/components/blv/checkmark-button.js"></script>
+  <script src="/swagecss/src/components/blv/rating-picker.js"></script>
+  <script src="/swagecss/src/components/blv/checkmark-label.js"></script>
+  <script src="/swagecss/src/components/blv/ordered-list.js"></script>
+  <script src="/swagecss/src/components/blv/radio-selection-list.js"></script>
 
   <script>
+// Initialize BLV components
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeBLVComponents);
+} else {
+  initializeBLVComponents();
+}
+
+function initializeBLVComponents() {
+  // Initialize carousel
+  if (typeof initializeCarousel === 'function') {
+    initializeCarousel();
+  }
+  
+  // Initialize other BLV components as needed
+  if (typeof initializeHorizontalStepper === 'function') {
+    initializeHorizontalStepper();
+  }
+  if (typeof initializeCheckmarkButton === 'function') {
+    initializeCheckmarkButton();
+  }
+  if (typeof initializeRatingPicker === 'function') {
+    initializeRatingPicker();
+  }
+  if (typeof initializeCheckmarkLabel === 'function') {
+    initializeCheckmarkLabel();
+  }
+  if (typeof initializeOrderedList === 'function') {
+    initializeOrderedList();
+  }
+  if (typeof initializeRadioSelectionList === 'function') {
+    initializeRadioSelectionList();
+  }
+}
+
 // Prevent default behavior for links with href="#"
 document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function(event) {

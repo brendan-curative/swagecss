@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/brendan-curative/swagecss">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span></span> 
+             </a>  <span>Oct 27, 2025, 5:16 PM</span> 
              
         </div>
 
@@ -331,6 +331,90 @@
 </section>
 
 <section class="component-section">
+    <h2>Track Views Feature</h2>
+    <p class="mb-24">The carousel can track which slides have been viewed and disable a button until all slides are seen. This is useful for onboarding flows or ensuring users review all content.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Carousel with Controlled Button</div>
+            <div class="carousel" id="trackedCarousel" data-carousel-track-views data-carousel-controlled-button="continueButton">
+                <div class="carousel__track">
+                    <div class="carousel__slide">
+                        <div class="p-32 bg-blue-100 border border-blue-300">
+                            <div class="heroicon heroicon-document-text mb-16 text-blue-700" style="width: 48px; height: 48px;"></div>
+                            <h3 class="heading-xl mb-12">Terms of Service</h3>
+                            <p class="body-md text-gray-700 mb-12">Please review our terms of service before continuing.</p>
+                            <p class="body-sm text-gray-600">Navigate through all slides to enable the Continue button.</p>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-32 bg-green-100 border border-green-300">
+                            <div class="heroicon heroicon-shield-check mb-16 text-green-700" style="width: 48px; height: 48px;"></div>
+                            <h3 class="heading-xl mb-12">Privacy Policy</h3>
+                            <p class="body-md text-gray-700 mb-12">Your privacy is important to us. Review how we protect your data.</p>
+                            <p class="body-sm text-gray-600">Slide 2 of 3 - Keep going!</p>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-32 bg-orange-100 border border-orange-300">
+                            <div class="heroicon heroicon-check-circle mb-16 text-orange-700" style="width: 48px; height: 48px;"></div>
+                            <h3 class="heading-xl mb-12">Getting Started</h3>
+                            <p class="body-md text-gray-700 mb-12">You're all set! Click Continue below to proceed.</p>
+                            <p class="body-sm text-green-700 font-semibold">✓ All slides viewed - Continue button is now enabled!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel__controls">
+                    <div class="carousel__nav">
+                        <button class="carousel__button" data-carousel-prev aria-label="Previous slide">
+                            <span class="heroicon heroicon-16 heroicon-chevron-left"></span>
+                            Previous
+                        </button>
+                        <button class="carousel__button" data-carousel-next aria-label="Next slide">
+                            Next
+                            <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                        </button>
+                    </div>
+                    <div class="carousel__indicators" role="tablist" aria-label="Slide indicators">
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 1"></button>
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 2"></button>
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 3"></button>
+                    </div>
+                    <div class="carousel__counter" aria-live="polite" aria-atomic="true">1 / 3</div>
+                </div>
+            </div>
+            
+            <div class="mt-24 p-24 bg-neutral-off-white border">
+                <button class="button button--primary" id="continueButton" disabled>
+                    Continue to Next Step
+                    <span class="heroicon heroicon-16 heroicon-arrow-right"></span>
+                </button>
+                <p class="body-sm text-gray-600 mt-12">This button will be enabled once you view all slides in the carousel above.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-neutral-off-white p-24 border mt-24">
+        <h3 class="heading-lg mb-16">How to Enable Track Views</h3>
+        <p class="body-md mb-12">Add two data attributes to your carousel:</p>
+        <ul class="ml-24">
+            <li class="body-md mb-8"><code>data-carousel-track-views</code> - Enables slide view tracking</li>
+            <li class="body-md mb-8"><code>data-carousel-controlled-button="buttonId"</code> - ID of the button to control</li>
+        </ul>
+        <p class="body-md mt-16 mb-8">The controlled button should have <code>disabled</code> attribute initially:</p>
+        <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;div class="carousel" 
+     data-carousel-track-views 
+     data-carousel-controlled-button="myButton"&gt;
+    &lt;!-- carousel content --&gt;
+&lt;/div&gt;
+
+&lt;button id="myButton" class="button button--primary" disabled&gt;
+    Continue
+&lt;/button&gt;</code></pre>
+    </div>
+</section>
+
+<section class="component-section">
     <h2>Accessibility Features</h2>
     <p class="mb-24">The Carousel component includes comprehensive accessibility support.</p>
     
@@ -389,7 +473,9 @@ carousel.carouselAPI.next();     // Go to next slide
 carousel.carouselAPI.prev();     // Go to previous slide
 carousel.carouselAPI.goTo(2);    // Go to slide index 2
 carousel.carouselAPI.getCurrentIndex(); // Get current slide index
-carousel.carouselAPI.getTotalSlides();  // Get total slide count</code></pre>
+carousel.carouselAPI.getTotalSlides();  // Get total slide count
+carousel.carouselAPI.getViewedSlides(); // Get array of viewed slide indices
+carousel.carouselAPI.areAllSlidesViewed(); // Check if all slides viewed</code></pre>
         </div>
     </div>
 </section>

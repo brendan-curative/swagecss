@@ -22,6 +22,17 @@ function initializeCarousel() {
         let currentIndex = 0;
         const totalSlides = slides.length;
         
+        // Track viewed slides feature
+        const trackViews = carousel.hasAttribute('data-carousel-track-views');
+        const controlledButtonId = carousel.getAttribute('data-carousel-controlled-button');
+        const controlledButton = controlledButtonId ? document.getElementById(controlledButtonId) : null;
+        const viewedSlides = new Set();
+        
+        // Mark first slide as viewed
+        if (trackViews) {
+            viewedSlides.add(0);
+        }
+        
         // Update carousel display
         function updateCarousel() {
             // Move track
@@ -61,7 +72,27 @@ function initializeCarousel() {
                 }
             });
             
+            // Track viewed slides
+            if (trackViews) {
+                viewedSlides.add(currentIndex);
+                updateControlledButton();
+            }
+            
             console.log(`Carousel moved to slide ${currentIndex + 1} of ${totalSlides}`);
+        }
+        
+        // Update controlled button state
+        function updateControlledButton() {
+            if (!controlledButton) return;
+            
+            const allSlidesViewed = viewedSlides.size === totalSlides;
+            controlledButton.disabled = !allSlidesViewed;
+            
+            if (allSlidesViewed) {
+                console.log('All slides viewed - button enabled');
+            } else {
+                console.log(`Viewed ${viewedSlides.size} of ${totalSlides} slides`);
+            }
         }
         
         // Go to previous slide
@@ -127,7 +158,9 @@ function initializeCarousel() {
             prev: prevSlide,
             goTo: goToSlide,
             getCurrentIndex: () => currentIndex,
-            getTotalSlides: () => totalSlides
+            getTotalSlides: () => totalSlides,
+            getViewedSlides: () => Array.from(viewedSlides),
+            areAllSlidesViewed: () => viewedSlides.size === totalSlides
         };
     });
 }
