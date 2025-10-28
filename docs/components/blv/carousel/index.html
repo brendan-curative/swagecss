@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/brendan-curative/swagecss">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Oct 28, 2025, 2:16 PM</span> 
+             </a>  <span>Oct 28, 2025, 2:42 PM</span> 
              
         </div>
 
@@ -331,6 +331,290 @@
 </section>
 
 <section class="component-section">
+    <h2>Side Navigation Variant</h2>
+    <p class="mb-24">Position navigation buttons on the sides of the slides with circular icon buttons. Perfect for image galleries and hero carousels.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Side Navigation Carousel</div>
+            <div class="carousel carousel--side-nav" id="sideNavCarousel">
+                <div class="carousel__track">
+                    <div class="carousel__slide">
+                        <div class="p-64 bg-gradient-to-br from-blue-400 to-blue-600 text-center" style="background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);">
+                            <div class="heroicon heroicon-photo mb-24 mx-auto" style="width: 64px; height: 64px; filter: brightness(0) invert(1);"></div>
+                            <h3 class="heading-2xl mb-12 text-white">Beautiful Gallery</h3>
+                            <p class="body-lg text-white" style="opacity: 0.9;">Navigate with side arrows</p>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-64 bg-gradient-to-br from-purple-400 to-purple-600 text-center" style="background: linear-gradient(135deg, #c084fc 0%, #9333ea 100%);">
+                            <div class="heroicon heroicon-sparkles mb-24 mx-auto" style="width: 64px; height: 64px; filter: brightness(0) invert(1);"></div>
+                            <h3 class="heading-2xl mb-12 text-white">Amazing Features</h3>
+                            <p class="body-lg text-white" style="opacity: 0.9;">Smooth transitions</p>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-64 bg-gradient-to-br from-orange-400 to-orange-600 text-center" style="background: linear-gradient(135deg, #fb923c 0%, #ea580c 100%);">
+                            <div class="heroicon heroicon-rocket-launch mb-24 mx-auto" style="width: 64px; height: 64px; filter: brightness(0) invert(1);"></div>
+                            <h3 class="heading-2xl mb-12 text-white">Get Started</h3>
+                            <p class="body-lg text-white" style="opacity: 0.9;">Easy to implement</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel__controls">
+                    <div class="carousel__nav">
+                        <button class="carousel__button" data-carousel-prev aria-label="Previous slide">
+                            <span class="carousel__button-text">Previous</span>
+                            <span class="heroicon heroicon-20 heroicon-chevron-left"></span>
+                        </button>
+                        <button class="carousel__button" data-carousel-next aria-label="Next slide">
+                            <span class="heroicon heroicon-20 heroicon-chevron-right"></span>
+                            <span class="carousel__button-text">Next</span>
+                        </button>
+                    </div>
+                    <div class="carousel__indicators" role="tablist" aria-label="Slide indicators">
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 1"></button>
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 2"></button>
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 3"></button>
+                    </div>
+                    <div class="carousel__counter" aria-live="polite" aria-atomic="true">1 / 3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="demo-grid mt-24">
+        <div class="demo-item">
+            <div class="demo-label">Side Nav with Bottom Indicators</div>
+            <div class="carousel carousel--side-nav carousel--show-indicators" id="sideNavIndicatorsCarousel">
+                <div class="carousel__track">
+                    <div class="carousel__slide">
+                        <div class="p-48 bg-green-100 border border-green-300 text-center">
+                            <h3 class="heading-xl mb-12 text-green-900">Slide 1</h3>
+                            <p class="body-md text-green-700">With indicators below</p>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-48 bg-teal-100 border border-teal-300 text-center">
+                            <h3 class="heading-xl mb-12 text-teal-900">Slide 2</h3>
+                            <p class="body-md text-teal-700">Navigate easily</p>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-48 bg-blue-100 border border-blue-300 text-center">
+                            <h3 class="heading-xl mb-12 text-blue-900">Slide 3</h3>
+                            <p class="body-md text-blue-700">Beautiful design</p>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-48 bg-purple-100 border border-purple-300 text-center">
+                            <h3 class="heading-xl mb-12 text-purple-900">Slide 4</h3>
+                            <p class="body-md text-purple-700">Easy integration</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel__controls">
+                    <div class="carousel__nav">
+                        <button class="carousel__button" data-carousel-prev aria-label="Previous slide">
+                            <span class="carousel__button-text">Previous</span>
+                            <span class="heroicon heroicon-20 heroicon-chevron-left"></span>
+                        </button>
+                        <button class="carousel__button" data-carousel-next aria-label="Next slide">
+                            <span class="heroicon heroicon-20 heroicon-chevron-right"></span>
+                            <span class="carousel__button-text">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Optional bottom indicators -->
+                <div class="carousel__indicators-bottom" role="tablist" aria-label="Slide indicators">
+                    <button class="carousel__indicator" role="tab" aria-label="Go to slide 1"></button>
+                    <button class="carousel__indicator" role="tab" aria-label="Go to slide 2"></button>
+                    <button class="carousel__indicator" role="tab" aria-label="Go to slide 3"></button>
+                    <button class="carousel__indicator" role="tab" aria-label="Go to slide 4"></button>
+                </div>
+                <div class="carousel__counter-bottom" aria-live="polite" aria-atomic="true">1 / 4</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-neutral-off-white p-24 border mt-24">
+        <h3 class="heading-lg mb-16">How to Enable Side Navigation</h3>
+        <p class="body-md mb-12">Add the <code>carousel--side-nav</code> class to the carousel container:</p>
+        <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;div class="carousel carousel--side-nav"&gt;
+    &lt;div class="carousel__track"&gt;
+        &lt;!-- slides --&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel__controls"&gt;
+        &lt;div class="carousel__nav"&gt;
+            &lt;button class="carousel__button" data-carousel-prev&gt;
+                &lt;span class="carousel__button-text"&gt;Previous&lt;/span&gt;
+                &lt;span class="heroicon heroicon-20 heroicon-chevron-left"&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class="carousel__button" data-carousel-next&gt;
+                &lt;span class="heroicon heroicon-20 heroicon-chevron-right"&gt;&lt;/span&gt;
+                &lt;span class="carousel__button-text"&gt;Next&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        
+        <h4 class="heading-md mt-24 mb-12">With Bottom Indicators (Optional)</h4>
+        <p class="body-md mb-8">Add <code>carousel--show-indicators</code> class and create separate indicator elements below:</p>
+        <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;div class="carousel carousel--side-nav carousel--show-indicators"&gt;
+    &lt;!-- carousel content --&gt;
+    &lt;div class="carousel__indicators-bottom"&gt;
+        &lt;button class="carousel__indicator"&gt;&lt;/button&gt;
+        &lt;!-- more indicators --&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel__counter-bottom"&gt;1 / 4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        
+        <h4 class="heading-md mt-24 mb-12">Side Nav Features</h4>
+        <ul class="ml-24">
+            <li class="body-md mb-8">Circular icon-only buttons positioned on carousel sides</li>
+            <li class="body-md mb-8">Button text hidden automatically (use <code>.carousel__button-text</code>)</li>
+            <li class="body-md mb-8">Semi-transparent white background with subtle shadow</li>
+            <li class="body-md mb-8">Controls positioned absolutely over slides</li>
+            <li class="body-md mb-8">Optional bottom indicators with <code>carousel--show-indicators</code></li>
+            <li class="body-md mb-8 text-primary"><strong>Previous button hidden on first slide, Next button hidden on last slide</strong></li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>In-Slide Navigation</h2>
+    <p class="mb-24">Add data attributes to any element inside a slide to navigate the carousel. Perfect for interactive content, call-to-action buttons, or clickable cards.</p>
+    
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Interactive Slides with Navigation Buttons</div>
+            <div class="carousel" id="interactiveCarousel">
+                <div class="carousel__track">
+                    <div class="carousel__slide">
+                        <div class="p-32 bg-blue-100 border border-blue-300">
+                            <h3 class="heading-xl mb-12 text-blue-900">Welcome!</h3>
+                            <p class="body-md text-blue-700 mb-24">Let's take a tour of our features. Click the button below to continue.</p>
+                            <button class="button button--primary" data-carousel-next-slide>
+                                Get Started
+                                <span class="heroicon heroicon-16 heroicon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-32 bg-green-100 border border-green-300">
+                            <h3 class="heading-xl mb-12 text-green-900">Feature Overview</h3>
+                            <p class="body-md text-green-700 mb-24">Discover what makes our product amazing.</p>
+                            <div class="flex gap-8">
+                                <button class="button button--small-outline" data-carousel-prev-slide>
+                                    <span class="heroicon heroicon-16 heroicon-arrow-left"></span>
+                                    Back
+                                </button>
+                                <button class="button button--primary" data-carousel-next-slide>
+                                    Next Feature
+                                    <span class="heroicon heroicon-16 heroicon-arrow-right"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel__slide">
+                        <div class="p-32 bg-purple-100 border border-purple-300">
+                            <h3 class="heading-xl mb-12 text-purple-900">Get Started</h3>
+                            <p class="body-md text-purple-700 mb-24">Ready to begin? Click below to start.</p>
+                            <div class="flex gap-8">
+                                <button class="button button--small-outline" data-carousel-prev-slide>
+                                    <span class="heroicon heroicon-16 heroicon-arrow-left"></span>
+                                    Back
+                                </button>
+                                <button class="button button--primary" data-carousel-goto-slide="0">
+                                    Start Over
+                                    <span class="heroicon heroicon-16 heroicon-arrow-path"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel__controls">
+                    <div class="carousel__nav">
+                        <button class="carousel__button" data-carousel-prev aria-label="Previous slide">
+                            <span class="heroicon heroicon-16 heroicon-chevron-left"></span>
+                            Previous
+                        </button>
+                        <button class="carousel__button" data-carousel-next aria-label="Next slide">
+                            Next
+                            <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                        </button>
+                    </div>
+                    <div class="carousel__indicators" role="tablist" aria-label="Slide indicators">
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 1"></button>
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 2"></button>
+                        <button class="carousel__indicator" role="tab" aria-label="Go to slide 3"></button>
+                    </div>
+                    <div class="carousel__counter" aria-live="polite" aria-atomic="true">1 / 3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-neutral-off-white p-24 border mt-24">
+        <h3 class="heading-lg mb-16">In-Slide Navigation Attributes</h3>
+        <p class="body-md mb-16">Add these data attributes to any element inside a slide to enable navigation:</p>
+        
+        <div class="mb-24">
+            <h4 class="heading-md mb-8"><code>data-carousel-next-slide</code></h4>
+            <p class="body-md mb-8">Navigate to the next slide when clicked:</p>
+            <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;button class="button button--primary" data-carousel-next-slide&gt;
+    Continue
+&lt;/button&gt;</code></pre>
+        </div>
+        
+        <div class="mb-24">
+            <h4 class="heading-md mb-8"><code>data-carousel-prev-slide</code></h4>
+            <p class="body-md mb-8">Navigate to the previous slide when clicked:</p>
+            <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;button class="button button--outline" data-carousel-prev-slide&gt;
+    Go Back
+&lt;/button&gt;</code></pre>
+        </div>
+        
+        <div class="mb-24">
+            <h4 class="heading-md mb-8"><code>data-carousel-goto-slide="index"</code></h4>
+            <p class="body-md mb-8">Navigate to a specific slide by index (0-based):</p>
+            <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;button class="button button--outline" data-carousel-goto-slide="0"&gt;
+    Start Over
+&lt;/button&gt;
+
+&lt;button class="button button--primary" data-carousel-goto-slide="3"&gt;
+    Skip to Results
+&lt;/button&gt;</code></pre>
+        </div>
+        
+        <h4 class="heading-md mt-24 mb-12">Works on Any Element</h4>
+        <p class="body-md mb-8">These attributes work on any clickable element inside a slide:</p>
+        <pre class="bg-white p-16 border overflow-x-scroll"><code>&lt;!-- Buttons --&gt;
+&lt;button data-carousel-next-slide&gt;Next&lt;/button&gt;
+
+&lt;!-- Links --&gt;
+&lt;a href="#" data-carousel-next-slide&gt;Learn More&lt;/a&gt;
+
+&lt;!-- Cards/Divs --&gt;
+&lt;div class="card" data-carousel-next-slide style="cursor: pointer;"&gt;
+    &lt;h3&gt;Click to continue&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;!-- Images --&gt;
+&lt;img src="image.jpg" data-carousel-next-slide style="cursor: pointer;" alt="Click to advance"&gt;</code></pre>
+        
+        <h4 class="heading-md mt-24 mb-12">Use Cases</h4>
+        <ul class="ml-24">
+            <li class="body-md mb-8">Onboarding flows with "Get Started" or "Next" buttons in slides</li>
+            <li class="body-md mb-8">Interactive tutorials with step-by-step navigation</li>
+            <li class="body-md mb-8">Product showcases with "Learn More" call-to-actions</li>
+            <li class="body-md mb-8">Clickable card carousels where entire cards advance slides</li>
+            <li class="body-md mb-8">Image galleries with clickable images to advance</li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
     <h2>Track Views Feature</h2>
     <p class="mb-24">The carousel can track which slides have been viewed and disable a button until all slides are seen. This is useful for onboarding flows or ensuring users review all content.</p>
     
@@ -440,7 +724,15 @@
     <p class="mb-24">The Carousel component includes comprehensive accessibility support.</p>
     
     <div class="bg-neutral-off-white p-24 border mb-24">
-        <h3 class="heading-lg mb-16">Keyboard Navigation</h3>
+        <h3 class="heading-lg mb-16">Navigation Behavior</h3>
+        <ul class="ml-24">
+            <li class="body-md mb-8"><strong>Previous Button:</strong> Hidden when on first slide</li>
+            <li class="body-md mb-8"><strong>Next Button:</strong> Hidden when on last slide</li>
+            <li class="body-md mb-8"><strong>Indicators:</strong> Show current slide position with active state</li>
+            <li class="body-md mb-8"><strong>Counter:</strong> Displays "current / total" slide numbers</li>
+        </ul>
+        
+        <h3 class="heading-lg mb-16 mt-24">Keyboard Navigation</h3>
         <ul class="ml-24">
             <li class="body-md mb-8"><strong>Left Arrow:</strong> Navigate to previous slide</li>
             <li class="body-md mb-8"><strong>Right Arrow:</strong> Navigate to next slide</li>

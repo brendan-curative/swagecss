@@ -17,6 +17,11 @@ function initializeCarousel() {
         const indicators = carousel.querySelectorAll('.carousel__indicator');
         const counter = carousel.querySelector('.carousel__counter');
         
+        // Support for side nav bottom indicators/counter
+        const indicatorsBottom = carousel.querySelector('.carousel__indicators-bottom');
+        const bottomIndicators = indicatorsBottom ? indicatorsBottom.querySelectorAll('.carousel__indicator') : [];
+        const counterBottom = carousel.querySelector('.carousel__counter-bottom');
+        
         if (!track || slides.length === 0) return;
         
         let currentIndex = 0;
@@ -58,9 +63,25 @@ function initializeCarousel() {
                 }
             });
             
+            // Update bottom indicators (for side nav variant)
+            bottomIndicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('carousel__indicator--active');
+                    indicator.setAttribute('aria-current', 'true');
+                } else {
+                    indicator.classList.remove('carousel__indicator--active');
+                    indicator.setAttribute('aria-current', 'false');
+                }
+            });
+            
             // Update counter
             if (counter) {
                 counter.textContent = `${currentIndex + 1} / ${totalSlides}`;
+            }
+            
+            // Update bottom counter (for side nav variant)
+            if (counterBottom) {
+                counterBottom.textContent = `${currentIndex + 1} / ${totalSlides}`;
             }
             
             // Update ARIA attributes
@@ -156,6 +177,53 @@ function initializeCarousel() {
                 goToSlide(index);
             });
         });
+        
+        // Event listeners for bottom indicators (side nav variant)
+        bottomIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+        
+        // Click handlers for in-slide navigation elements
+        carousel.addEventListener('click', (e) => {
+            console.log('Carousel click detected:', e.target);
+            
+            // Ignore clicks on carousel controls (buttons, indicators)
+            const isControlClick = e.target.closest('.carousel__controls');
+            if (isControlClick) {
+                console.log('Click is on controls, ignoring for in-slide nav');
+                return;
+            }
+            
+            const nextSlideElement = e.target.closest('[data-carousel-next-slide]');
+            const prevSlideElement = e.target.closest('[data-carousel-prev-slide]');
+            const goToSlideElement = e.target.closest('[data-carousel-goto-slide]');
+            
+            console.log('Next element:', nextSlideElement);
+            console.log('Prev element:', prevSlideElement);
+            console.log('GoTo element:', goToSlideElement);
+            
+            if (nextSlideElement) {
+                e.preventDefault();
+                e.stopPropagation();
+                nextSlide();
+                console.log('✓ In-slide navigation: next slide triggered');
+            } else if (prevSlideElement) {
+                e.preventDefault();
+                e.stopPropagation();
+                prevSlide();
+                console.log('✓ In-slide navigation: previous slide triggered');
+            } else if (goToSlideElement) {
+                e.preventDefault();
+                e.stopPropagation();
+                const slideIndex = parseInt(goToSlideElement.getAttribute('data-carousel-goto-slide'), 10);
+                if (!isNaN(slideIndex) && slideIndex >= 0 && slideIndex < totalSlides) {
+                    goToSlide(slideIndex);
+                    console.log(`✓ In-slide navigation: go to slide ${slideIndex}`);
+                }
+            }
+        }, true);
         
         // Keyboard navigation
         carousel.addEventListener('keydown', (e) => {
