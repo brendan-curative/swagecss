@@ -41,6 +41,31 @@ function initializeCarousel() {
         
         // Update carousel display
         function updateCarousel() {
+            // Animate slides
+            slides.forEach((slide, index) => {
+                // Remove all animation classes first
+                slide.classList.remove('carousel__slide--exiting', 'carousel__slide--entering', 'carousel__slide--active');
+                
+                if (index === currentIndex) {
+                    // Current slide - entering
+                    if (!isInitializing) {
+                        slide.classList.add('carousel__slide--entering');
+                        // After animation completes (300ms delay + 400ms animation = 700ms total)
+                        setTimeout(() => {
+                            slide.classList.remove('carousel__slide--entering');
+                            slide.classList.add('carousel__slide--active');
+                        }, 700);
+                    } else {
+                        slide.classList.add('carousel__slide--active');
+                    }
+                } else if (Math.abs(index - currentIndex) === 1) {
+                    // Adjacent slides - exiting
+                    if (!isInitializing) {
+                        slide.classList.add('carousel__slide--exiting');
+                    }
+                }
+            });
+            
             // Move track
             const offset = -currentIndex * 100;
             track.style.transform = `translateX(${offset}%)`;
@@ -193,12 +218,9 @@ function initializeCarousel() {
         
         // Click handlers for in-slide navigation elements
         carousel.addEventListener('click', (e) => {
-            console.log('Carousel click detected:', e.target);
-            
             // Ignore clicks on carousel controls (buttons, indicators)
             const isControlClick = e.target.closest('.carousel__controls');
             if (isControlClick) {
-                console.log('Click is on controls, ignoring for in-slide nav');
                 return;
             }
             
@@ -206,27 +228,20 @@ function initializeCarousel() {
             const prevSlideElement = e.target.closest('[data-carousel-prev-slide]');
             const goToSlideElement = e.target.closest('[data-carousel-goto-slide]');
             
-            console.log('Next element:', nextSlideElement);
-            console.log('Prev element:', prevSlideElement);
-            console.log('GoTo element:', goToSlideElement);
-            
             if (nextSlideElement) {
                 e.preventDefault();
                 e.stopPropagation();
                 nextSlide();
-                console.log('✓ In-slide navigation: next slide triggered');
             } else if (prevSlideElement) {
                 e.preventDefault();
                 e.stopPropagation();
                 prevSlide();
-                console.log('✓ In-slide navigation: previous slide triggered');
             } else if (goToSlideElement) {
                 e.preventDefault();
                 e.stopPropagation();
                 const slideIndex = parseInt(goToSlideElement.getAttribute('data-carousel-goto-slide'), 10);
                 if (!isNaN(slideIndex) && slideIndex >= 0 && slideIndex < totalSlides) {
                     goToSlide(slideIndex);
-                    console.log(`✓ In-slide navigation: go to slide ${slideIndex}`);
                 }
             }
         }, true);

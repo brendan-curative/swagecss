@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/brendan-curative/swagecss">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Oct 28, 2025, 4:48 PM</span> 
+             </a>  <span>Oct 28, 2025, 5:04 PM</span> 
              
         </div>
 
@@ -111,8 +111,12 @@
 <section>
     <p class="body-lg text-gray-600 mb-24">
         The Carousel component provides a slide-based interface for navigating through multiple content panels. 
-        It includes navigation buttons styled as Small Outline buttons, indicator dots, and keyboard support.
+        It includes navigation buttons styled as Small Outline buttons, indicator dots, keyboard support, and smooth fade-in/scale animations.
     </p>
+    
+    <div class="bg-blue-50 border border-blue-200 p-16 mb-24">
+        <p class="body-md text-blue-900"><strong>✨ Staggered Animation:</strong> Exiting slides fade out and slide left (300ms), then incoming slides fade in and scale up from zero (400ms), creating a smooth, staggered visual transition.</p>
+    </div>
 </section>
 
 <section class="component-section">
@@ -731,6 +735,7 @@
             <li class="body-md mb-8"><strong>Indicators:</strong> Show current slide position with active state</li>
             <li class="body-md mb-8"><strong>Counter:</strong> Displays "current / total" slide numbers</li>
             <li class="body-md mb-8 text-primary"><strong>Auto Scroll:</strong> Automatically scrolls to the top of the carousel when navigating to a new slide</li>
+            <li class="body-md mb-8 text-primary"><strong>Staggered Animations:</strong> Exit animation (fade out + slide left, 300ms) completes before entry animation (fade in + scale up, 400ms) begins</li>
         </ul>
         
         <h3 class="heading-lg mb-16 mt-24">Keyboard Navigation</h3>
