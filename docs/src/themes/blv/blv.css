@@ -401,3 +401,12 @@ h3 + .card {
     border-color: var(--color-blue-500);
 }
 
+.hide {
+    display: none !important;
+}
+
+html[data-theme="blv"] .carousel__nav [data-carousel-next] {
+    height: 0;
+    width: 0;
+    opacity: 0;
+}

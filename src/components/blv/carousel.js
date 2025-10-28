@@ -26,6 +26,7 @@ function initializeCarousel() {
         
         let currentIndex = 0;
         const totalSlides = slides.length;
+        let isInitializing = true;
         
         // Track viewed slides feature
         const trackViews = carousel.hasAttribute('data-carousel-track-views');
@@ -43,6 +44,11 @@ function initializeCarousel() {
             // Move track
             const offset = -currentIndex * 100;
             track.style.transform = `translateX(${offset}%)`;
+            
+            // Scroll to top of carousel (skip on initial load)
+            if (!isInitializing) {
+                carousel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
             
             // Update button states
             if (prevButton) {
@@ -236,6 +242,9 @@ function initializeCarousel() {
         
         // Initialize display
         updateCarousel();
+        
+        // Mark initialization complete
+        isInitializing = false;
         
         // Add ARIA attributes to carousel
         carousel.setAttribute('role', 'region');
