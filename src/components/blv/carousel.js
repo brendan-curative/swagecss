@@ -70,9 +70,15 @@ function initializeCarousel() {
             const offset = -currentIndex * 100;
             track.style.transform = `translateX(${offset}%)`;
             
-            // Scroll to top of carousel (skip on initial load)
+            // Scroll to top of carousel with offset (skip on initial load)
             if (!isInitializing) {
-                carousel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const carouselTop = carousel.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = carouselTop - 124; // 124px offset for header and padding
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
             
             // Update button states
