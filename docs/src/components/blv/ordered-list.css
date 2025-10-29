@@ -11,6 +11,14 @@
     font-family: var(--font-family-sans);
 }
 
+.ordered-list-gap-16 {
+    gap: var(--spacing-16);
+}
+
+.ordered-list-gap-24 {
+    gap: var(--spacing-24);
+}
+
 /* Ordered list item - replicating relative flex w-full items-center gap-8 rounded-[4px] px-4 py-3 bg-white/75 backdrop-blur-[5px] */
 .ordered-list__item {
     position: relative;

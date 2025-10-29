@@ -11,6 +11,14 @@
     font-family: var(--font-family-sans);
 }
 
+.unordered-list-gap-16 {
+    gap: var(--spacing-16);
+}
+
+.unordered-list-gap-24 {
+    gap: var(--spacing-24);
+}
+
 /* Unordered list item - identical layout to ordered list */
 .unordered-list__item {
     position: relative;
