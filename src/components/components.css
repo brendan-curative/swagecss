@@ -15,6 +15,7 @@
 @import 'modal/modal.css';
 
 /* BLV Components */
+@import 'blv/agreement.css';
 @import 'blv/horizontal-stepper.css';
 @import 'blv/checkmark-button.css';
 @import 'blv/rating-picker.css';

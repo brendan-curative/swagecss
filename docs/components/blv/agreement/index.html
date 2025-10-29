@@ -2,7 +2,7 @@
 <html data-theme="cui">
   <head>
     <meta name="robots" content="noindex,nofollow">
-    <title>SwageCSS v0.2 &bull; Swageblocks &bull; Foundation &bull; Select</title>
+    <title>SwageCSS v0.2 &bull; Swageblocks &bull; BLV Components &bull; Agreement</title>
     <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
 
     <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
                 </svg>
           </a>
               <div class="flex-column pagetitle">
-                <h1>Select Component</h1> 
+                <h1>Agreement Component</h1> 
                 <div class="flex-row flex-item flex-justify-between">
-                  <p>Select imported from CUI and Figma</p>
+                  <p>Scrollable terms and conditions with checkbox agreement</p>
                   
                 </div>
 
@@ -48,7 +48,7 @@
         <div class="descr flex-row">
             <a class="colophon mr-8" href="https://github.com/brendan-curative/swagecss">
                 <img src="/swagecss/src/img/github.png" alt="SwageCSS github repo">
-             </a>  <span>Oct 10, 2025, 3:30 PM</span> 
+             </a>  <span></span> 
              
         </div>
 
@@ -109,184 +109,211 @@
               <article>
                 <!-- #swage editable-start -->
                 
-<section>
-    <p class="body-lg text-gray-600 mb-24">
-        Select dropdown component for choosing from a list of options.
-        Features multiple states, sizes, and interactive functionality matching the Figma design.
-    </p>
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Overview</h2>
+    <p class="body-lg mb-16">The Agreement component displays large bodies of text in a scrollable container with a checkbox for user agreement. Designed for terms of service, privacy policies, and other legal agreements in the BLV prototype theme.</p>
+    
+    <div class="bg-gray-100 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-8">Key Features</h3>
+        <ul class="list-disc ml-24 body-md">
+            <li>Scrollable content area with fixed height (300px)</li>
+            <li>Control Short Variant checkbox styling</li>
+            <li>Footer button disabled until all agreements are checked</li>
+            <li>Supports multiple agreements on one page</li>
+            <li>BLV theme with glassmorphism effects</li>
+        </ul>
+    </div>
 </section>
 
-<section class="component-section">
-    <h2>States</h2>
-    <p class="mb-24">Different states for the select component matching the Figma design.</p>
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Front Matter Setup</h2>
+    <p class="body-lg mb-16">Enable the component by adding <code>agreement-enabled: true</code> to your page's front matter:</p>
+    
+    <div class="bg-gray-900 text-white rounded p-16 mb-16 font-mono text-sm">
+        <pre>---
+layout: templates/blv/layout.html
+title: Terms and Conditions
+agreement-enabled: true
+---</pre>
+    </div>
+</section>
 
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">With description</div>
-            <div class="select">
-                <div class="select__label-group">
-                    <label for="relationshipSelect1" class="select__label">Your relationship</label>
-                    <p class="select__description">Description of the form</p>
-                </div>
-                <div class="select__input-wrapper">
-                    <select class="select__control" id="relationshipSelect1">
-                        <option value="">Choose a relationship</option>
-                        <option value="spouse">Spouse</option>
-                        <option value="child">Child</option>
-                        <option value="other-adult">Other Adult</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="select__icon">
-                        <span class="heroicon heroicon-chevron-down"></span>
-                    </div>
-                </div>
-            </div>
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Single Agreement Example</h2>
+    
+    <div class="agreement">
+        <div class="agreement__content">
+            <h1>Terms of Service</h1>
+            
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using this service, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+            
+            <h2>2. Use License</h2>
+            <p>Permission is granted to temporarily download one copy of the materials (information or software) on our website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+            <ul>
+                <li>Modify or copy the materials;</li>
+                <li>Use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+                <li>Attempt to decompile or reverse engineer any software contained on our website;</li>
+                <li>Remove any copyright or other proprietary notations from the materials;</li>
+                <li>Transfer the materials to another person or "mirror" the materials on any other server.</li>
+            </ul>
+            
+            <h2>3. Disclaimer</h2>
+            <p>The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            
+            <h2>4. Limitations</h2>
+            <p>In no event shall our company or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website, even if we or our authorized representative has been notified orally or in writing of the possibility of such damage.</p>
         </div>
+        
+        <button class="checkmark-button agreement__button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">I have read and agree to the Terms of Service</span>
+        </button>
+    </div>
+</section>
 
-        <div class="demo-item">
-            <div class="demo-label">With no description</div>
-            <div class="select">
-                <div class="select__label-group">
-                    <label for="relationshipSelect2" class="select__label">Your relationship</label>
-                </div>
-                <div class="select__input-wrapper">
-                    <select class="select__control" id="relationshipSelect2">
-                        <option value="">Choose a relationship</option>
-                        <option value="spouse">Spouse</option>
-                        <option value="child">Child</option>
-                        <option value="other-adult">Other Adult</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="select__icon">
-                        <span class="heroicon heroicon-chevron-down"></span>
-                    </div>
-                </div>
-            </div>
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Multiple Agreements Example</h2>
+    <p class="body-lg mb-16">All agreements must be checked before proceeding:</p>
+    
+    <div class="agreement">
+        <div class="agreement__content">
+            <h1>Terms of Service</h1>
+            
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using this service, you accept and agree to be bound by the terms and provision of this agreement.</p>
+            
+            <h2>2. Use License</h2>
+            <p>Permission is granted to temporarily download one copy of the materials on our website for personal, non-commercial transitory viewing only.</p>
+            
+            <h2>3. Disclaimer</h2>
+            <p>The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied.</p>
         </div>
+        
+        <button class="checkmark-button agreement__button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">I have read and agree to the Terms of Service</span>
+        </button>
+    </div>
 
-        <div class="demo-item">
-            <div class="demo-label">With hidden label</div>
-            <div class="select">
-                <label for="relationshipSelect3" class="select__label select__label--sr-only">Your relationship</label>
-                <div class="select__input-wrapper">
-                    <select class="select__control" id="relationshipSelect3">
-                        <option value="">Choose a relationship</option>
-                        <option value="spouse">Spouse</option>
-                        <option value="child">Child</option>
-                        <option value="other-adult">Other Adult</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="select__icon">
-                        <span class="heroicon heroicon-chevron-down"></span>
-                    </div>
-                </div>
-            </div>
+    <div class="agreement">
+        <div class="agreement__content">
+            <h1>Privacy Policy</h1>
+            
+            <h2>1. Information We Collect</h2>
+            <p>We collect information from you when you register on our site, place an order, subscribe to our newsletter, respond to a survey or fill out a form.</p>
+            
+            <h2>2. How We Use Your Information</h2>
+            <p>Any of the information we collect from you may be used in one of the following ways:</p>
+            <ul>
+                <li>To personalize your experience</li>
+                <li>To improve our website</li>
+                <li>To improve customer service</li>
+                <li>To process transactions</li>
+                <li>To send periodic emails</li>
+            </ul>
+            
+            <h2>3. How We Protect Your Information</h2>
+            <p>We implement a variety of security measures to maintain the safety of your personal information.</p>
+        </div>
+        
+        <button class="checkmark-button agreement__button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">I have read and agree to the Privacy Policy</span>
+        </button>
+    </div>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">HTML Structure</h2>
+    
+    <div class="bg-gray-900 text-white rounded p-16 mb-16 font-mono text-sm overflow-x-auto">
+        <pre>&lt;div class="agreement"&gt;
+    &lt;!-- Scrollable content --&gt;
+    &lt;div class="agreement__content"&gt;
+        &lt;h1&gt;Terms of Service&lt;/h1&gt;
+        &lt;p&gt;Your content here...&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Agreement checkmark button --&gt;
+    &lt;button class="checkmark-button agreement__button" data-checked="false"&gt;
+        &lt;svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21"&gt;
+            &lt;circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/&gt;
+        &lt;/svg&gt;
+        &lt;span class="checkmark-button__text"&gt;I agree to the Terms of Service&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</pre>
+    </div>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">CSS Classes</h2>
+    
+    <div class="bg-white border rounded p-24">
+        <div class="mb-24">
+            <h3 class="heading-lg mb-8">Main Classes</h3>
+            <ul class="list-disc ml-24 body-md space-y-4">
+                <li><code>.agreement</code> - Container for the entire agreement section</li>
+                <li><code>.agreement__content</code> - Scrollable content area</li>
+                <li><code>.agreement__button</code> - Checkmark button wrapper (inherits from <code>.checkmark-button</code>)</li>
+                <li><code>.checkmark-button</code> - Base checkmark button styling (BLV component)</li>
+                <li><code>.checkmark-button__icon</code> - Checkmark icon SVG</li>
+                <li><code>.checkmark-button__text</code> - Button text label</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h3 class="heading-lg mb-8">State Classes</h3>
+            <ul class="list-disc ml-24 body-md space-y-4">
+                <li><code>.checkmark-button--checked</code> - Applied when button is checked</li>
+                <li><code>data-checked="true"</code> - Data attribute indicating checked state</li>
+                <li><code>data-checked="false"</code> - Data attribute indicating unchecked state</li>
+            </ul>
         </div>
     </div>
 </section>
 
-<section class="component-section">
-    <h2>Additional States</h2>
-    <p class="mb-24">Disabled and error states for the select component.</p>
-
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">Disabled</div>
-            <div class="select">
-                <div class="select__label-group">
-                    <label for="relationshipSelect4" class="select__label">Your relationship</label>
-                    <p class="select__description">Description of the form</p>
-                </div>
-                <div class="select__input-wrapper">
-                    <select class="select__control" id="relationshipSelect4" disabled>
-                        <option value="">Choose a relationship</option>
-                        <option value="spouse">Spouse</option>
-                        <option value="child">Child</option>
-                        <option value="other-adult">Other Adult</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="select__icon">
-                        <span class="heroicon heroicon-chevron-down"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Error</div>
-            <div class="select select--error">
-                <div class="select__label-group">
-                    <label for="relationshipSelect5" class="select__label">Your relationship</label>
-                </div>
-                <div class="select__input-wrapper">
-                    <select class="select__control" id="relationshipSelect5">
-                        <option value="">Choose a relationship</option>
-                        <option value="spouse">Spouse</option>
-                        <option value="child">Child</option>
-                        <option value="other-adult">Other Adult</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="select__icon">
-                        <span class="heroicon heroicon-chevron-down"></span>
-                    </div>
-                </div>
-                <div class="select__error-message">
-                    <span class="heroicon heroicon-16 heroicon-exclamation-circle"></span>
-                    This field is required
-                </div>
-            </div>
-        </div>
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Behavior</h2>
+    
+    <div class="bg-blue-50 border border-blue-200 rounded p-24 mb-16">
+        <h3 class="heading-lg mb-8">Footer Button State Management</h3>
+        <ul class="list-disc ml-24 body-md space-y-4">
+            <li><strong>Initial State:</strong> Button is disabled (<code>button--big-primary-disabled</code>)</li>
+            <li><strong>Tracking:</strong> Component monitors all agreement checkmark buttons on the page</li>
+            <li><strong>Enabled:</strong> Button becomes clickable once ALL agreements are checked</li>
+            <li><strong>Re-disabled:</strong> Button is disabled again if any button is unchecked</li>
+        </ul>
+    </div>
+    
+    <div class="bg-gray-100 border rounded p-24">
+        <h3 class="heading-lg mb-8">Checkmark Button Interaction</h3>
+        <ol class="list-decimal ml-24 body-md space-y-4">
+            <li><strong>Unchecked:</strong> Gray border, gray text, empty circle icon</li>
+            <li><strong>Hover:</strong> Visual feedback on hover state</li>
+            <li><strong>Checked:</strong> Primary color border and text, filled circle with checkmark</li>
+            <li><strong>Click:</strong> Toggles between checked and unchecked states</li>
+        </ol>
     </div>
 </section>
 
-<section class="component-section">
-    <h2>Additional Examples</h2>
-    <p class="mb-24">Additional select examples with various options.</p>
-
-    <div class="demo-grid">
-        <div class="demo-item">
-            <div class="demo-label">With different options</div>
-            <div class="select">
-                <div class="select__label-group">
-                    <label for="countrySelect" class="select__label">Country</label>
-                    <p class="select__description">Select your country</p>
-                </div>
-                <div class="select__input-wrapper">
-                    <select class="select__control" id="countrySelect">
-                        <option value="">Select a country...</option>
-                        <option value="us">United States</option>
-                        <option value="ca">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="au">Australia</option>
-                    </select>
-                    <div class="select__icon">
-                        <span class="heroicon heroicon-chevron-down"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-item">
-            <div class="demo-label">Dropdown</div>
-            <div class="select">
-                <div class="select__label-group">
-                    <label for="relationshipSelect6" class="select__label">Your relationship</label>
-                    <p class="select__description">Description of the form</p>
-                </div>
-                <div class="select__input-wrapper">
-                    <select class="select__control" id="relationshipSelect6">
-                        <option value="">Choose a relationship</option>
-                        <option value="spouse">Spouse</option>
-                        <option value="child">Child</option>
-                        <option value="other-adult">Other Adult</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div class="select__icon">
-                        <span class="heroicon heroicon-chevron-down"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Files</h2>
+    
+    <div class="bg-white border rounded p-24">
+        <ul class="list-disc ml-24 body-md space-y-4">
+            <li><strong>CSS:</strong> <code>/src/components/blv/agreement.css</code></li>
+            <li><strong>JavaScript:</strong> <code>/src/components/blv/agreement.js</code></li>
+            <li><strong>Documentation:</strong> <code>/src/components/blv/AGREEMENT_GUIDE.md</code></li>
+            <li><strong>Layout Integration:</strong> <code>/_includes/templates/blv/layout.html</code></li>
+            <li><strong>Import:</strong> <code>/src/themes/blv/blv.css</code> (line 4)</li>
+        </ul>
     </div>
 </section>
 

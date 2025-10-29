@@ -201,6 +201,7 @@
   <script src="/swagecss/src/components/blv/checkmark-label.js"></script>
   <script src="/swagecss/src/components/blv/ordered-list.js"></script>
   <script src="/swagecss/src/components/blv/radio-selection-list.js"></script>
+  <script src="/swagecss/src/components/blv/agreement.js"></script>
   <script src="/swagecss/src/themes/blv/components/scrollto.js"></script>
 
   <script>
@@ -235,6 +236,9 @@ function initializeBLVComponents() {
   }
   if (typeof initializeRadioSelectionList === 'function') {
     initializeRadioSelectionList();
+  }
+  if (typeof initializeAgreement === 'function') {
+    initializeAgreement();
   }
   if (typeof initializeScrollTo === 'function') {
     initializeScrollTo();

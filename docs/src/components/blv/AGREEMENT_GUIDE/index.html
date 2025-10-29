@@ -1,0 +1,218 @@
+<h1>Agreement Component</h1>
+<p>The Agreement component displays large bodies of text in a scrollable container with a checkmark button for user agreement. It's designed for terms of service, privacy policies, and other legal agreements in the BLV prototype theme.</p>
+<h2>Features</h2>
+<ul>
+<li><strong>Scrollable Content</strong>: Large text bodies in a fixed-height scrollable container</li>
+<li><strong>Checkmark Button</strong>: Uses the BLV Checkmark Button component for agreement</li>
+<li><strong>Button State Management</strong>: Footer button is disabled until all agreements are checked</li>
+<li><strong>Multiple Agreements</strong>: Supports multiple agreement sections on one page</li>
+<li><strong>Front Matter Enabled</strong>: Easy to enable/disable per page</li>
+<li><strong>BLV Themed</strong>: Styled for the BLV prototype theme</li>
+</ul>
+<h2>Usage</h2>
+<h3>1. Enable in Front Matter</h3>
+<p>Add <code>agreement-enabled: true</code> to your page's front matter:</p>
+<pre><code class="language-yaml">---
+layout: templates/blv/layout.html
+title: Terms and Conditions
+agreement-enabled: true
+---
+</code></pre>
+<h3>2. HTML Structure</h3>
+<pre><code class="language-html">&lt;div class=&quot;agreement&quot;&gt;
+    &lt;!-- Scrollable content --&gt;
+    &lt;div class=&quot;agreement__content&quot;&gt;
+        &lt;h1&gt;Terms of Service&lt;/h1&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
+        &lt;h2&gt;Section 1: User Responsibilities&lt;/h2&gt;
+        &lt;p&gt;More content here...&lt;/p&gt;
+        &lt;!-- Add as much content as needed --&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Agreement checkmark button --&gt;
+    &lt;button class=&quot;checkmark-button agreement__button&quot; data-checked=&quot;false&quot;&gt;
+        &lt;svg class=&quot;checkmark-button__icon&quot; width=&quot;21&quot; height=&quot;21&quot; viewBox=&quot;0 0 21 21&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+            &lt;circle cx=&quot;10.5&quot; cy=&quot;10.8672&quot; r=&quot;8&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;checkmark-button__text&quot;&gt;I agree to the Terms of Service&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>3. Multiple Agreements</h3>
+<p>You can have multiple agreement sections on one page. All must be checked before the footer button is enabled:</p>
+<pre><code class="language-html">&lt;div class=&quot;agreement&quot;&gt;
+    &lt;div class=&quot;agreement__content&quot;&gt;
+        &lt;h1&gt;Terms of Service&lt;/h1&gt;
+        &lt;p&gt;Content...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;checkmark-button agreement__button&quot; data-checked=&quot;false&quot;&gt;
+        &lt;svg class=&quot;checkmark-button__icon&quot; width=&quot;21&quot; height=&quot;21&quot; viewBox=&quot;0 0 21 21&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+            &lt;circle cx=&quot;10.5&quot; cy=&quot;10.8672&quot; r=&quot;8&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;checkmark-button__text&quot;&gt;I agree to the Terms of Service&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;agreement&quot;&gt;
+    &lt;div class=&quot;agreement__content&quot;&gt;
+        &lt;h1&gt;Privacy Policy&lt;/h1&gt;
+        &lt;p&gt;Content...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;checkmark-button agreement__button&quot; data-checked=&quot;false&quot;&gt;
+        &lt;svg class=&quot;checkmark-button__icon&quot; width=&quot;21&quot; height=&quot;21&quot; viewBox=&quot;0 0 21 21&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+            &lt;circle cx=&quot;10.5&quot; cy=&quot;10.8672&quot; r=&quot;8&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;checkmark-button__text&quot;&gt;I agree to the Privacy Policy&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>CSS Classes</h2>
+<h3>Main Classes</h3>
+<ul>
+<li><code>.agreement</code> - Container for the entire agreement section</li>
+<li><code>.agreement__content</code> - Scrollable content area</li>
+<li><code>.agreement__button</code> - Checkmark button wrapper (inherits from <code>.checkmark-button</code>)</li>
+<li><code>.checkmark-button</code> - Base checkmark button styling (BLV component)</li>
+<li><code>.checkmark-button__icon</code> - Checkmark icon SVG</li>
+<li><code>.checkmark-button__text</code> - Button text label</li>
+</ul>
+<h3>State Classes</h3>
+<ul>
+<li><code>.checkmark-button--checked</code> - Applied when button is checked</li>
+<li><code>data-checked=&quot;true&quot;</code> - Data attribute indicating checked state</li>
+<li><code>data-checked=&quot;false&quot;</code> - Data attribute indicating unchecked state</li>
+</ul>
+<h2>Behavior</h2>
+<h3>Content Scrolling</h3>
+<ul>
+<li>Maximum height: 300px</li>
+<li>Scrollable overflow with styled scrollbar</li>
+<li>Supports all HTML content (headings, paragraphs, lists, etc.)</li>
+</ul>
+<h3>Checkmark Button Interaction</h3>
+<ol>
+<li><strong>Unchecked state</strong>: Gray border, gray text, empty circle icon</li>
+<li><strong>Hover</strong>: Visual feedback on hover state</li>
+<li><strong>Checked state</strong>: Primary color border and text, filled circle with checkmark</li>
+<li><strong>Click</strong>: Toggles between checked and unchecked states</li>
+</ol>
+<h3>Footer Button State</h3>
+<ul>
+<li><strong>Initial</strong>: Button is disabled (<code>button--big-primary-disabled</code>)</li>
+<li><strong>Tracking</strong>: Monitors all agreement checkmark buttons on the page</li>
+<li><strong>Enabled</strong>: Button becomes clickable once ALL agreements are checked</li>
+<li><strong>Re-disabled</strong>: Button is disabled again if any button is unchecked</li>
+<li><strong>Coordination</strong>: If both <code>agreement-enabled</code> and <code>scrollto-enabled</code> are active, the button will only enable when BOTH all agreements are checked AND all scrollto sections have been viewed</li>
+</ul>
+<h2>Styling</h2>
+<h3>Content Area</h3>
+<p>The scrollable content area supports:</p>
+<ul>
+<li>Headings (h1, h2, h3)</li>
+<li>Paragraphs with spacing</li>
+<li>Lists (ul, ol)</li>
+<li>Custom scrollbar styling</li>
+</ul>
+<h3>BLV Theme</h3>
+<p>The component includes special styling for the BLV theme:</p>
+<ul>
+<li>Semi-transparent white background</li>
+<li>Backdrop blur effect</li>
+<li>BLV shadow styling</li>
+</ul>
+<h2>Customization</h2>
+<h3>Adjust Content Height</h3>
+<pre><code class="language-css">.agreement__content {
+    max-height: 400px; /* Change from default 300px */
+}
+</code></pre>
+<h3>Custom Scrollbar Colors</h3>
+<pre><code class="language-css">.agreement__content::-webkit-scrollbar-thumb {
+    background: var(--color-blue-500); /* Change thumb color */
+}
+</code></pre>
+<h3>Button Text Styling</h3>
+<pre><code class="language-css">.checkmark-button__text {
+    font-size: var(--font-size-md); /* Adjust font size */
+}
+</code></pre>
+<h2>Example</h2>
+<p>View the working examples at <code>/components/blv/agreement/</code></p>
+<h3>Full Example Code</h3>
+<pre><code class="language-html">---
+layout: templates/blv/layout.html
+title: Accept Terms
+agreement-enabled: true
+---
+
+&lt;div class=&quot;agreement&quot;&gt;
+    &lt;div class=&quot;agreement__content&quot;&gt;
+        &lt;h1&gt;Terms of Service&lt;/h1&gt;
+        
+        &lt;h2&gt;1. Acceptance of Terms&lt;/h2&gt;
+        &lt;p&gt;By accessing and using this service, you accept and agree to be bound by the terms and provision of this agreement.&lt;/p&gt;
+        
+        &lt;h2&gt;2. Use License&lt;/h2&gt;
+        &lt;p&gt;Permission is granted to temporarily download one copy of the materials on our website for personal, non-commercial transitory viewing only.&lt;/p&gt;
+        
+        &lt;h2&gt;3. Disclaimer&lt;/h2&gt;
+        &lt;p&gt;The materials on our website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties or conditions of merchantability.&lt;/p&gt;
+        
+        &lt;!-- More sections... --&gt;
+    &lt;/div&gt;
+    
+    &lt;button class=&quot;checkmark-button agreement__button&quot; data-checked=&quot;false&quot;&gt;
+        &lt;svg class=&quot;checkmark-button__icon&quot; width=&quot;21&quot; height=&quot;21&quot; viewBox=&quot;0 0 21 21&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+            &lt;circle cx=&quot;10.5&quot; cy=&quot;10.8672&quot; r=&quot;8&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; fill=&quot;none&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;checkmark-button__text&quot;&gt;I have read and agree to the Terms of Service&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Accessibility</h2>
+<ul>
+<li>Checkmark button uses proper button semantics</li>
+<li>Focus states are clearly visible</li>
+<li>ARIA attributes managed by checkmark button component</li>
+<li><code>data-checked</code> attribute provides state information</li>
+<li>Screen reader compatible</li>
+</ul>
+<h2>Browser Support</h2>
+<p>Works in all modern browsers. Uses:</p>
+<ul>
+<li>CSS flexbox for layout</li>
+<li>CSS custom properties for theming</li>
+<li>Webkit scrollbar styling (graceful degradation in Firefox)</li>
+</ul>
+<h2>Troubleshooting</h2>
+<h3>Button not enabling</h3>
+<ul>
+<li>Ensure <code>agreement-enabled: true</code> is in front matter</li>
+<li>Check that all buttons have class <code>checkmark-button agreement__button</code></li>
+<li>Verify <code>data-checked</code> attribute is present on buttons</li>
+<li>Check that checkmark button JavaScript is loading</li>
+</ul>
+<h3>Buttons not toggling</h3>
+<ul>
+<li>Ensure <code>toggleCheckmarkButton()</code> function is available</li>
+<li>Check browser console for JavaScript errors</li>
+<li>Verify checkmark-button.js is loaded before agreement.js</li>
+</ul>
+<h3>Content not scrolling</h3>
+<ul>
+<li>Check that content exceeds 300px height</li>
+<li>Verify <code>overflow-y: auto</code> is not being overridden</li>
+</ul>
+<h3>Styling issues</h3>
+<ul>
+<li>Ensure both agreement.css and checkmark-button.css are loading</li>
+<li>Check that agreement.css is imported in components.css</li>
+<li>Verify no conflicting CSS rules</li>
+</ul>
+<h2>Files</h2>
+<ul>
+<li><strong>CSS</strong>: <code>/src/components/blv/agreement.css</code></li>
+<li><strong>JavaScript</strong>: <code>/src/components/blv/agreement.js</code></li>
+<li><strong>Layout Integration</strong>: <code>/_includes/templates/blv/layout.html</code></li>
+<li><strong>Import</strong>: <code>/src/themes/blv/blv.css</code> (line 4)</li>
+</ul>

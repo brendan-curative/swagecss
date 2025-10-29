@@ -21,6 +21,9 @@ function initializeScrollTo() {
     let isScrolling = false;
     const viewedSections = new Set([0]); // Track which sections have been viewed (first is viewed on load)
 
+    // Initialize global state object
+    window.blvComponentState = window.blvComponentState || {};
+
     // Get footer button and disable it initially
     const footerButton = document.getElementById('continue-button');
     if (footerButton) {
@@ -36,21 +39,45 @@ function initializeScrollTo() {
     }
 
     // Function to check if all sections have been viewed
-    function checkAllSectionsViewed() {
-        if (viewedSections.size === sections.length) {
-            if (footerButton) {
-                footerButton.classList.remove('button--big-primary-disabled');
-                footerButton.removeAttribute('aria-disabled');
-                
-                // Add animation class
+    function areAllSectionsViewed() {
+        return viewedSections.size === sections.length;
+    }
+
+    // Expose state to global coordinator
+    window.blvComponentState.areAllSectionsViewed = areAllSectionsViewed;
+    window.blvComponentState.scrolltoEnabled = true;
+
+    // Function to update footer button based on all component states
+    function updateFooterButton() {
+        if (!footerButton) return;
+
+        // Check if agreement is also enabled
+        const agreementEnabled = window.blvComponentState.agreementEnabled;
+        const sectionsViewed = areAllSectionsViewed();
+        const agreementsChecked = !agreementEnabled || (window.blvComponentState.areAllAgreementsChecked && window.blvComponentState.areAllAgreementsChecked());
+
+        // Only enable button if all conditions are met
+        if (sectionsViewed && agreementsChecked) {
+            const wasDisabled = footerButton.classList.contains('button--big-primary-disabled');
+            footerButton.classList.remove('button--big-primary-disabled');
+            footerButton.removeAttribute('aria-disabled');
+            
+            // Only animate if this was the scrollto component that enabled it
+            if (wasDisabled && sectionsViewed) {
                 footerButton.classList.add('scrollto-button-enabled');
-                
-                // Remove animation class after it completes
                 setTimeout(() => {
                     footerButton.classList.remove('scrollto-button-enabled');
                 }, 500);
             }
+        } else {
+            footerButton.classList.add('button--big-primary-disabled');
+            footerButton.setAttribute('aria-disabled', 'true');
         }
+    }
+
+    // Expose update function for other components to call
+    if (!window.blvComponentState.updateFooterButton) {
+        window.blvComponentState.updateFooterButton = updateFooterButton;
     }
 
     // Initialize: show first section
@@ -68,7 +95,9 @@ function initializeScrollTo() {
         
         // Mark section as viewed
         viewedSections.add(index);
-        checkAllSectionsViewed();
+        
+        // Update footer button based on all component states
+        updateFooterButton();
         
         currentIndex = index;
     }
