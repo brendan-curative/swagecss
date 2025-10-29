@@ -1,0 +1,361 @@
+/* #region Radio Selection List Component */
+
+/* Base radio selection list container */
+.radio-selection-list {
+    font-family: var(--font-family-sans);
+    width: 100%;
+}
+
+/* Header with results count and map button - replicating flex w-full items-center justify-between pb-2 */
+.radio-selection-list__header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--spacing-8); /* pb-2 */
+}
+
+/* Results text - replicating my-2 text-md font-bold */
+.radio-selection-list__results {
+    margin: var(--spacing-8) 0; /* my-2 */
+    font-size: var(--font-size-md); /* text-md */
+    font-weight: var(--font-weight-bold); /* font-bold */
+    color: var(--color-text-default);
+}
+
+/* Map button - replicating Button SmallOutline variant */
+.radio-selection-list__map-button {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-6) var(--spacing-12);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--spacing-4);
+    background-color: transparent;
+    color: var(--color-text-default);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.radio-selection-list__map-button:hover {
+    background-color: var(--color-surface-highlight);
+    border-color: var(--color-border-hover);
+}
+
+/* Map icon */
+.radio-selection-list__map-icon {
+    width: var(--spacing-24); /* size-6 */
+    height: var(--spacing-24);
+    margin-right: var(--spacing-8); /* mr-2 */
+}
+
+/* Main container - replicating relative min-h-[300px] overflow-hidden rounded shadow-md */
+.radio-selection-list__container {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    border-radius: var(--spacing-6); /* rounded */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+/* Backdrop - replicating BaselineVisitPanelBackdrop */
+.radio-selection-list__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.8) 0%, 
+        rgba(240, 248, 255, 0.6) 50%, 
+        rgba(255, 255, 255, 0.8) 100%);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+/* Missing value option container - replicating border-b border-gray-100 bg-white px-4 py-3 */
+.radio-selection-list__missing-option {
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid var(--color-gray-200); /* border-gray-100 → closest foundation match */
+    background-color: var(--color-white); /* bg-white */
+    padding: var(--spacing-12) var(--spacing-16); /* py-3 px-4 */
+}
+
+/* Options container */
+.radio-selection-list__options {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fieldset - replicating max-h-[400px] w-full flex-col overflow-y-auto divide-y divide-gray-100 */
+.radio-selection-list__fieldset {
+    max-height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom scrollbar - replicating styles.module.css */
+.radio-selection-list__fieldset::-webkit-scrollbar {
+    width: 6px;
+}
+
+.radio-selection-list__fieldset::-webkit-scrollbar-track {
+    width: 500px;
+}
+
+.radio-selection-list__fieldset::-webkit-scrollbar-thumb {
+    background: rgba(184, 203, 253, 0.6); /* Original color */
+    border-radius: 25px;
+}
+
+/* Individual option - replicating group flex cursor-pointer flex-col hover:bg-white/75 px-4 py-3 */
+.radio-selection-list__option {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    padding: var(--spacing-12) var(--spacing-16); /* py-3 px-4 */
+    border-bottom: 1px solid var(--color-gray-200); /* divide-y divide-gray-100 */
+    background-color: var(--color-white);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.radio-selection-list__option:hover {
+    background-color: rgba(255, 255, 255, 0.75); /* hover:bg-white/75 */
+}
+
+.radio-selection-list__option:last-child {
+    border-bottom: none;
+}
+
+/* Option inner container - replicating flex w-full flex-row items-center gap-8 */
+.radio-selection-list__option > * {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-32); /* gap-8 */
+}
+
+/* Radio input - replicating size-5 border-2 border-gray-600 bg-transparent checked:border-white hover:ring-2 hover:ring-gray-100 */
+.radio-selection-list__radio {
+    width: var(--spacing-20); /* size-5 */
+    height: var(--spacing-20);
+    border: 2px solid var(--color-gray-700); /* border-gray-600 → closest foundation match */
+    background-color: transparent; /* bg-transparent */
+    border-radius: 50%;
+    flex-shrink: 0;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.radio-selection-list__radio:checked {
+    border-color: var(--color-white); /* checked:border-white */
+    background-color: var(--color-primary-sky-blue);
+}
+
+.radio-selection-list__radio:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--spacing-8);
+    height: var(--spacing-8);
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+.radio-selection-list__radio:hover {
+    box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.1); /* hover:ring-2 hover:ring-gray-100 */
+}
+
+.radio-selection-list__radio:focus-visible {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+}
+
+/* Label text - replicating text-md font-bold */
+.radio-selection-list__label {
+    font-size: var(--font-size-md); /* text-md */
+    font-weight: var(--font-weight-bold); /* font-bold */
+    color: var(--color-text-default);
+    flex: 1;
+}
+
+/* Content container for complex options */
+.radio-selection-list__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+/* Title in content */
+.radio-selection-list__title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-default);
+    margin: 0;
+}
+
+/* Description in content */
+.radio-selection-list__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* Loading state */
+.radio-selection-list--loading .radio-selection-list__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75); /* bg-white/75 */
+    padding: var(--spacing-16); /* p-4 */
+}
+
+.radio-selection-list__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-64) 0; /* my-16 */
+    z-index: 3;
+    position: relative;
+}
+
+/* Spinner */
+.radio-selection-list__spinner {
+    width: var(--spacing-32);
+    height: var(--spacing-32);
+    border: 3px solid var(--color-gray-200);
+    border-top: 3px solid var(--color-primary-sky-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error state */
+.radio-selection-list--error .radio-selection-list__container {
+    background-color: rgba(255, 255, 255, 0.75); /* bg-white/75 */
+    padding: var(--spacing-16); /* p-4 */
+    margin-top: var(--spacing-16); /* mt-4 */
+}
+
+.radio-selection-list__error {
+    position: relative;
+    z-index: 3;
+    color: var(--color-text-critical);
+    text-align: center;
+}
+
+/* Empty state */
+.radio-selection-list__empty {
+    position: relative;
+    z-index: 3;
+    min-height: 158px;
+    padding: var(--spacing-16); /* p-4 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+/* Backdrop blur overlay for null selection */
+.radio-selection-list__null-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-16); /* px-4 */
+    backdrop-filter: blur(5px); /* backdrop-blur-[5px] */
+    z-index: 4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .radio-selection-list__fieldset {
+        max-height: 400px; /* Maintain scroll on mobile */
+    }
+    
+    .radio-selection-list__header {
+        flex-direction: column;
+        gap: var(--spacing-12);
+        align-items: flex-start;
+    }
+    
+    .radio-selection-list__map-button {
+        align-self: flex-end;
+    }
+}
+
+@media (min-width: 768px) {
+    .radio-selection-list__fieldset {
+        max-height: none; /* md:max-h-min */
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .radio-selection-list__radio {
+        border-width: 3px;
+    }
+    
+    .radio-selection-list__radio:checked {
+        background-color: var(--color-text-default);
+    }
+    
+    .radio-selection-list__backdrop {
+        background: var(--color-white);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .radio-selection-list__option {
+        transition: none;
+    }
+    
+    .radio-selection-list__radio {
+        transition: none;
+    }
+    
+    .radio-selection-list__spinner {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .radio-selection-list__container {
+        box-shadow: none;
+        border: 1px solid var(--color-gray-300);
+    }
+    
+    .radio-selection-list__backdrop {
+        background: var(--color-white);
+    }
+    
+    .radio-selection-list__option {
+        background-color: var(--color-white);
+    }
+}
+
+/* #endregion */

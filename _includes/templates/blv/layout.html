@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="blv">
+<html data-theme="blv"{% if scrollto-enabled %} data-scrollto-enabled{% endif %}>
   <head>
     <meta name="robots" content="noindex,nofollow">
     <title>BLV Prototype {{ title }}</title>
@@ -72,6 +72,7 @@
   <script src="{{ '/' | url }}src/components/blv/checkmark-label.js"></script>
   <script src="{{ '/' | url }}src/components/blv/ordered-list.js"></script>
   <script src="{{ '/' | url }}src/components/blv/radio-selection-list.js"></script>
+  <script src="{{ '/' | url }}src/themes/blv/components/scrollto.js"></script>
 
   <script>
 // Initialize BLV components
@@ -105,6 +106,9 @@ function initializeBLVComponents() {
   }
   if (typeof initializeRadioSelectionList === 'function') {
     initializeRadioSelectionList();
+  }
+  if (typeof initializeScrollTo === 'function') {
+    initializeScrollTo();
   }
 }
 

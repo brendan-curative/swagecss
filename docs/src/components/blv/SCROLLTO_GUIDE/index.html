@@ -1,0 +1,146 @@
+<h1>ScrollTo Component</h1>
+<p>The ScrollTo component provides progressive section reveal with smooth fade in/out animations for BLV prototype pages.</p>
+<h2>Features</h2>
+<ul>
+<li><strong>Progressive Reveal</strong>: Shows only one section at a time, revealing the next as you scroll</li>
+<li><strong>Smooth Transitions</strong>: Fade in/out animations with scale and stagger effects</li>
+<li><strong>Bidirectional</strong>: Works when scrolling up or down</li>
+<li><strong>Navigation Dots</strong>: Visual indicator showing current section and allowing quick navigation</li>
+<li><strong>Keyboard Support</strong>: Arrow keys and Page Up/Down for navigation</li>
+<li><strong>Anchor Link Support</strong>: Works with anchor links to specific sections</li>
+<li><strong>Front Matter Enabled</strong>: Easy to enable/disable per page</li>
+<li><strong>Progress Tracking</strong>: Footer button is disabled until all sections have been viewed</li>
+</ul>
+<h2>Usage</h2>
+<h3>1. Enable in Front Matter</h3>
+<p>Add <code>scrollto-enabled: true</code> to your page's front matter:</p>
+<pre><code class="language-yaml">---
+layout: templates/blv/layout.html
+title: My Page
+scrollto-enabled: true
+---
+</code></pre>
+<h3>2. Add ScrollTo Class to Sections</h3>
+<p>Add the <code>scrollto</code> class to each section you want to progressively reveal:</p>
+<pre><code class="language-html">&lt;section id=&quot;welcome&quot; class=&quot;scrollto&quot;&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;Content here...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;features&quot; class=&quot;scrollto&quot;&gt;
+    &lt;h2&gt;Features&lt;/h2&gt;
+    &lt;p&gt;More content...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id=&quot;conclusion&quot; class=&quot;scrollto&quot;&gt;
+    &lt;h2&gt;Conclusion&lt;/h2&gt;
+    &lt;p&gt;Final content...&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<h3>3. Add Anchor Links (Optional)</h3>
+<p>Link between sections using anchor links:</p>
+<pre><code class="language-html">&lt;a href=&quot;#features&quot; class=&quot;button&quot;&gt;Next Section&lt;/a&gt;
+</code></pre>
+<h2>Behavior</h2>
+<h3>Section Visibility</h3>
+<ul>
+<li>Only the first section is visible on page load</li>
+<li>As you scroll down, the next section fades in while the current one fades out</li>
+<li>Scrolling up reverses the behavior</li>
+</ul>
+<h3>Child Element Animation</h3>
+<p>Child elements within each section have:</p>
+<ul>
+<li><strong>Staggered entrance</strong>: Each child element animates in sequence</li>
+<li><strong>Scale + fade effect</strong>: Elements start scaled (1.15x) and fade in as they appear</li>
+<li><strong>Smooth timing</strong>: 0.6s transitions with spring easing</li>
+</ul>
+<h3>Navigation Dots</h3>
+<ul>
+<li>Positioned in the upper right corner of the article</li>
+<li>Shows total number of sections</li>
+<li>Highlights current active section</li>
+<li>Click to jump to any section</li>
+</ul>
+<h3>Keyboard Navigation</h3>
+<ul>
+<li><strong>Arrow Down / Page Down</strong>: Go to next section</li>
+<li><strong>Arrow Up / Page Up</strong>: Go to previous section</li>
+</ul>
+<h3>Footer Button State</h3>
+<ul>
+<li><strong>Initial State</strong>: Button is disabled when page loads</li>
+<li><strong>Tracking</strong>: Component tracks which sections have been viewed</li>
+<li><strong>Enabled</strong>: Button becomes enabled once all sections have been viewed</li>
+<li><strong>Click Prevention</strong>: Disabled button clicks are prevented programmatically</li>
+</ul>
+<h2>CSS Structure</h2>
+<p>The component uses these CSS classes:</p>
+<ul>
+<li><code>.scrollto</code> - Applied to each section</li>
+<li><code>.scrollto-active</code> - Added to the currently visible section</li>
+<li><code>.scrollto-dots</code> - Container for navigation dots</li>
+<li><code>.scrollto-dot</code> - Individual navigation dot</li>
+<li><code>.scrollto-dot.active</code> - Active navigation dot</li>
+</ul>
+<h2>How It Works</h2>
+<ol>
+<li><strong>Initialization</strong>: JavaScript detects <code>data-scrollto-enabled</code> attribute on <code>&lt;html&gt;</code></li>
+<li><strong>Setup</strong>: First section is marked as active, others are hidden</li>
+<li><strong>Scroll Detection</strong>: Monitors scroll position and detects section changes</li>
+<li><strong>State Management</strong>: Adds/removes <code>scrollto-active</code> class to control visibility</li>
+<li><strong>Animation</strong>: CSS transitions handle the fade/scale effects</li>
+</ol>
+<h2>Customization</h2>
+<h3>Adjust Animation Speed</h3>
+<p>Edit <code>/src/themes/blv/components/scrollto.css</code>:</p>
+<pre><code class="language-css">/* Change transition duration */
+html[data-theme=&quot;blv&quot;][data-scrollto-enabled] .scrollto {
+    transition: opacity 1.2s ease-in-out; /* default: 0.8s */
+}
+</code></pre>
+<h3>Disable Navigation Dots</h3>
+<p>Comment out the <code>createNavigationDots()</code> call in <code>/src/themes/blv/components/scrollto.js</code>:</p>
+<pre><code class="language-javascript">// createNavigationDots(); // Comment this line to disable
+</code></pre>
+<h3>Change Minimum Section Height</h3>
+<p>Edit the <code>min-block-size</code> in the CSS:</p>
+<pre><code class="language-css">html[data-theme=&quot;blv&quot;][data-scrollto-enabled] .scrollto {
+    min-block-size: 80vh; /* default: 100vh */
+}
+</code></pre>
+<h2>Example Page</h2>
+<p>See <code>/prototypes/blv/renewal/01/index.html</code> for a complete working example.</p>
+<h2>Browser Support</h2>
+<p>Works in all modern browsers. Uses:</p>
+<ul>
+<li>CSS transitions</li>
+<li>Intersection Observer API (for scroll detection)</li>
+<li>Smooth scrolling</li>
+</ul>
+<h2>Troubleshooting</h2>
+<h3>Sections not appearing</h3>
+<ul>
+<li>Ensure <code>scrollto-enabled: true</code> is in front matter</li>
+<li>Check that sections have <code>class=&quot;scrollto&quot;</code></li>
+<li>Verify JavaScript is loading (check browser console)</li>
+</ul>
+<h3>Animations not smooth</h3>
+<ul>
+<li>Check browser performance</li>
+<li>Reduce number of child elements if needed</li>
+<li>Adjust transition timing in CSS</li>
+</ul>
+<h3>Navigation dots not showing</h3>
+<ul>
+<li>Verify <code>createNavigationDots()</code> is called in JS</li>
+<li>Check z-index isn't being overridden</li>
+<li>Ensure right-side space is available</li>
+</ul>
+<h2>Files</h2>
+<ul>
+<li><strong>CSS</strong>: <code>/src/themes/blv/components/scrollto.css</code></li>
+<li><strong>JavaScript</strong>: <code>/src/themes/blv/components/scrollto.js</code></li>
+<li><strong>Layout Integration</strong>: <code>/_includes/templates/blv/layout.html</code></li>
+<li><strong>Import</strong>: <code>/src/themes/blv/blv.css</code> (line 3)</li>
+</ul>

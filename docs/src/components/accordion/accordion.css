@@ -1,0 +1,100 @@
+/* #region Accordion Component */
+
+/* Base accordion wrapper */
+.accordion {
+    font-family: var(--font-family-sans);
+    color: var(--color-text-default);
+}
+
+/* Accordion item container */
+.accordion__item {
+    width: 100%; /* w-full */
+    border-left: 4px solid var(--color-surface-default); /* border-l-4 border-l-white */
+    background-color: var(--color-surface-default); /* bg-white */
+    padding: var(--spacing-16) var(--spacing-16) var(--spacing-16) var(--spacing-12); /* py-4 pl-3 pr-4 */
+    transition: border-left-color 0.2s ease-in-out;
+}
+
+/* Accordion item when open - primary border */
+.accordion__item--open {
+    border-left-color: var(--color-foundation-primary); /* border-l-foundation-primary */
+}
+
+/* Accordion toggle button */
+.accordion__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+}
+
+.accordion__toggle:focus {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+    border-radius: var(--spacing-2);
+}
+
+/* Accordion toggle header content */
+.accordion__toggle-content {
+    display: flex;
+    align-items: center; /* items-center */
+}
+
+/* Accordion toggle icon */
+.accordion__toggle-icon {
+    display: inline-block;
+    width: var(--spacing-16); /* w-4 (SpacingVariant.S16) */
+    height: var(--spacing-16); /* h-4 (SpacingVariant.S16) */
+    flex-shrink: 0;
+}
+
+/* Accordion toggle text */
+.accordion__toggle-text {
+    margin-left: var(--spacing-8); /* ml-2 */
+    font-weight: var(--font-weight-semibold); /* font-semibold */
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+}
+
+/* Accordion panel container */
+.accordion__panel {
+    color: var(--color-text-default); /* text-textColor-default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Accordion panel hidden state */
+.accordion__panel--hidden {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Accordion panel visible state */
+.accordion__panel--visible {
+    max-height: 500px; /* Reasonable max height for content */
+    opacity: 1;
+}
+
+/* Accordion panel content */
+.accordion__panel-content {
+    padding-top: var(--spacing-12);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+}
+
+/* Icon states for chevron rotation */
+.accordion__toggle-icon .heroicon {
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Rotate chevron when open */
+.accordion__item--open .accordion__toggle-icon .heroicon-chevron-right {
+    transform: rotate(90deg);
+}
+
+/* #endregion */

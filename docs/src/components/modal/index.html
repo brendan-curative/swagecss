@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Modal Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Modal Component</h1>
+        <p class="body-lg text-gray-600 mb-24">
+            The Modal component renders a pop-up dialog that grabs the user's attention, informing them of something or seeking confirmation from them. It supports different style variants, sizes, and interactive elements.
+        </p>
+
+        <!-- Basic Modal Examples -->
+        <section class="component-section">
+            <h2>Basic Modal Examples</h2>
+            <p class="mb-24">Different modal configurations demonstrating the core functionality.</p>
+            
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Default Style Modal</h3>
+                    <button class="button button--primary" data-modal-trigger="default-modal">
+                        Open Default Modal
+                    </button>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Simple Style Modal</h3>
+                    <button class="button button--primary" data-modal-trigger="simple-modal">
+                        Open Simple Modal
+                    </button>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Confirmation Modal</h3>
+                    <button class="button button--critical" data-modal-trigger="confirm-modal">
+                        Delete Item
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Size Variants -->
+        <section class="component-section">
+            <h2>Size Variants</h2>
+            <p class="mb-24">Different maximum width options for various content needs.</p>
+            
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Small Modal</h3>
+                    <button class="button button--outline" data-modal-trigger="small-modal">
+                        Small (384px)
+                    </button>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Medium Modal</h3>
+                    <button class="button button--outline" data-modal-trigger="medium-modal">
+                        Medium (448px)
+                    </button>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Large Modal</h3>
+                    <button class="button button--outline" data-modal-trigger="large-modal">
+                        Large (512px)
+                    </button>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Extra Large Modal</h3>
+                    <button class="button button--outline" data-modal-trigger="xl-modal">
+                        Extra Large (576px)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Modal Features -->
+        <section class="component-section">
+            <h2>Interactive Features</h2>
+            <p class="mb-24">Modals with loading states, disabled buttons, and dynamic content.</p>
+            
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Loading Button Modal</h3>
+                    <button class="button button--primary" data-modal-trigger="loading-modal">
+                        Modal with Loading
+                    </button>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Two Button Modal</h3>
+                    <button class="button button--outline" data-modal-trigger="two-button-modal">
+                        Primary + Secondary
+                    </button>
+                </div>
+                
+                <div class="demo-item">
+                    <h3>Custom Content Modal</h3>
+                    <button class="button button--accent-a" data-modal-trigger="content-modal">
+                        Rich Content
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal with Alert -->
+        <section class="component-section">
+            <h2>Modal with Alert</h2>
+            <p class="mb-24">Modal containing an alert message at the top.</p>
+            
+            <div class="demo-item">
+                <button class="button button--warning" data-modal-trigger="alert-modal">
+                    Open Modal with Alert
+                </button>
+            </div>
+        </section>
+
+        <!-- Usage Documentation -->
+        <section class="component-section">
+            <h2>Usage</h2>
+            <p class="mb-24">How to implement and customize the modal component.</p>
+            
+            <div class="usage-section">
+                <h3>Basic HTML Structure</h3>
+                <div class="code-block">
+&lt;!-- Trigger Button --&gt;
+&lt;button data-modal-trigger="my-modal"&gt;Open Modal&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div id="my-modal" class="modal modal--hidden" aria-hidden="true"&gt;
+    &lt;div class="modal__container"&gt;
+        &lt;div class="modal__panel modal__panel--default modal__panel--md"&gt;
+            &lt;div class="modal__header"&gt;
+                &lt;h3 class="modal__title modal__title--default"&gt;Modal Title&lt;/h3&gt;
+                &lt;button data-modal-close class="modal__close-button"&gt;
+                    &lt;div class="heroicon heroicon-24 heroicon-x-mark"&gt;&lt;/div&gt;
+                    &lt;span class="modal__sr-only"&gt;Close&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            
+            &lt;p class="modal__message modal__message--default"&gt;
+                Your message content here.
+            &lt;/p&gt;
+            
+            &lt;div class="modal__button-container"&gt;
+                &lt;button data-modal-primary class="modal__button modal__button--primary"&gt;
+                    Continue
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+                
+                <h3>JavaScript API</h3>
+                <div class="code-block">
+// Open a modal programmatically
+window.ModalComponent.open('my-modal');
+
+// Close a modal programmatically
+window.ModalComponent.close('my-modal');
+
+// Set loading state
+window.ModalComponent.setLoading('my-modal', true);
+
+// Update modal content
+window.ModalComponent.updateMessage('my-modal', 'New message');
+window.ModalComponent.updateTitle('my-modal', 'New title');</div>
+
+                <h3>Event Listeners</h3>
+                <div class="code-block">
+const modal = document.getElementById('my-modal');
+
+modal.addEventListener('modalOpen', (e) => {
+    console.log('Modal opened:', e.detail.modalId);
+});
+
+modal.addEventListener('modalClose', (e) => {
+    console.log('Modal closed:', e.detail.modalId);
+});
+
+modal.addEventListener('modalPrimaryClick', (e) => {
+    console.log('Primary button clicked:', e.detail);
+});</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal Definitions -->
+    
+    <!-- Default Style Modal -->
+    <div id="default-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--md">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Default Style Modal</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    This is the default modal style variant. It has larger text, more padding, and no border.
+                </p>
+                
+                <div class="modal__content">
+                    <p>This modal also accepts JSX children in this section.</p>
+                </div>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple Style Modal -->
+    <div id="simple-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--simple modal__panel--lg">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--simple">Simple Style Modal</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--simple">
+                    This is the simple modal style variant. It has smaller text, less padding, and a border.
+                </p>
+                
+                <div class="modal__content">
+                    <p>This modal also accepts JSX children in this section.</p>
+                </div>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--sm">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Confirm Deletion</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    Are you sure you want to delete this item? This action cannot be undone.
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary data-modal-action="delete" class="modal__button modal__button--primary" style="background-color: var(--color-foundation-critical);">
+                        Delete
+                    </button>
+                    <button data-modal-secondary class="modal__button modal__button--outline">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Small Modal -->
+    <div id="small-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--sm">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Small Modal</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    This is a small modal (384px max-width).
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Medium Modal -->
+    <div id="medium-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--md">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Medium Modal</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    This is a medium modal (448px max-width).
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Large Modal -->
+    <div id="large-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--lg">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Large Modal</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    This is a large modal (512px max-width).
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Extra Large Modal -->
+    <div id="xl-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--xl">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Extra Large Modal</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    This is an extra large modal (576px max-width).
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loading-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--md">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Processing Request</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    Please wait while we process your request...
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary data-modal-action="process" class="modal__button modal__button--primary">
+                        Start Processing
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Two Button Modal -->
+    <div id="two-button-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--md">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Save Changes?</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    You have unsaved changes. Would you like to save them before continuing?
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary data-modal-action="save" class="modal__button modal__button--primary">
+                        Save Changes
+                    </button>
+                    <button data-modal-secondary class="modal__button modal__button--outline">
+                        Discard Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Modal -->
+    <div id="content-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--lg">
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Rich Content Modal</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    This modal demonstrates how custom content can be included.
+                </p>
+                
+                <div class="modal__content">
+                    <div class="textfield mb-16">
+                        <label for="modal-input" class="textfield__label">Your Name</label>
+                        <input type="text" id="modal-input" class="textfield__input" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="textfield mb-16">
+                        <label for="modal-email" class="textfield__label">Email Address</label>
+                        <input type="email" id="modal-email" class="textfield__input" placeholder="you@example.com">
+                    </div>
+                    
+                    <div class="checkbox mb-16">
+                        <input type="checkbox" id="modal-checkbox" class="checkbox__input">
+                        <label for="modal-checkbox" class="checkbox__label">
+                            <span class="checkbox__indicator"></span>
+                            <span class="checkbox__text">I agree to the terms and conditions</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        Submit
+                    </button>
+                    <button data-modal-secondary class="modal__button modal__button--outline">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div id="alert-modal" class="modal modal--hidden" aria-hidden="true">
+        <div class="modal__container">
+            <div class="modal__panel modal__panel--default modal__panel--md">
+                <div class="modal__alert">
+                    <div class="alert alert--warning">
+                        <div class="alert__content">
+                            <div class="alert__icon">
+                                <div class="heroicon heroicon-24 heroicon-exclamation-triangle"></div>
+                            </div>
+                            <div class="alert__text">
+                                <div class="alert__title">Warning</div>
+                                <div class="alert__message">This action requires administrator privileges.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal__header">
+                    <h3 class="modal__title modal__title--default">Administrative Action</h3>
+                    <button data-modal-close class="modal__close-button">
+                        <div class="heroicon heroicon-24 heroicon-x-mark"></div>
+                        <span class="modal__sr-only">Close</span>
+                    </button>
+                </div>
+                
+                <p class="modal__message modal__message--default">
+                    You are about to perform an action that requires administrator privileges. Please confirm that you want to proceed.
+                </p>
+                
+                <div class="modal__button-container">
+                    <button data-modal-primary class="modal__button modal__button--primary">
+                        Proceed
+                    </button>
+                    <button data-modal-secondary class="modal__button modal__button--outline">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="modal.js"></script>
+</body>
+</html>

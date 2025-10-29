@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Select Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+    <style>
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-background-default);
+            padding: var(--spacing-32);
+            color: var(--color-text-default);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: var(--spacing-32);
+        }
+        .component-section {
+            background-color: var(--color-surface-default);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--spacing-8);
+            padding: var(--spacing-24);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-24);
+            color: var(--color-text-default);
+        }
+        h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-20);
+            color: var(--color-text-default);
+        }
+        h3 {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-16);
+            color: var(--color-text-default);
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-24);
+        }
+        .demo-grid--single {
+            grid-template-columns: 1fr;
+        }
+        .demo-item {
+            min-height: 300px;
+            padding: var(--spacing-16);
+            border: 1px dashed var(--color-gray-300);
+            border-radius: var(--spacing-4);
+        }
+        .mb-24 { margin-bottom: var(--spacing-24); }
+        .text-gray-600 { color: var(--color-gray-600); }
+        .body-lg {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-lg);
+        }
+        .status-text {
+            margin-top: var(--spacing-16);
+            padding: var(--spacing-8);
+            background-color: var(--color-surface-neutral);
+            border-radius: var(--spacing-4);
+            font-size: var(--font-size-sm);
+            line-height: var(--line-height-sm);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Component</h1>
+        <p class="body-lg text-gray-600 mb-24">
+            A flexible dropdown selection component with single and multi-select options, search functionality,
+            and various styling variants, replicated from the Curative UI design system.
+        </p>
+
+        <section class="component-section">
+            <h2>Basic Select</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Default Select</h3>
+                    <div class="select">
+                        <div class="select__label-text">
+                            <label class="select__label" for="basic-select">Select a person</label>
+                            <div class="select__description">Description of the form</div>
+                        </div>
+                        <div class="select__button-container">
+                            <button class="select__button" id="basic-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                                <div class="select__option" data-value="4">
+                                    <span class="select__option-text">Tom Cook</span>
+                                </div>
+                                <div class="select__option" data-value="5">
+                                    <span class="select__option-text">Tanya Fox</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="basic-status">Current selection: None</div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>With Search</h3>
+                    <div class="select">
+                        <div class="select__label-text">
+                            <label class="select__label" for="search-select">Select a person</label>
+                            <div class="select__description">Search enabled select</div>
+                        </div>
+                        <div class="select__button-container">
+                            <button class="select__button" id="search-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__options-header">
+                                    <input type="text" class="select__search" placeholder="Search..." />
+                                </div>
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                                <div class="select__option" data-value="4">
+                                    <span class="select__option-text">Tom Cook</span>
+                                </div>
+                                <div class="select__option" data-value="5">
+                                    <span class="select__option-text">Tanya Fox</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="search-status">Current selection: None</div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>No Description</h3>
+                    <div class="select">
+                        <label class="select__label" for="no-desc-select">Select a person</label>
+                        <div class="select__button-container">
+                            <button class="select__button" id="no-desc-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="no-desc-status">Current selection: None</div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>SR Only Label</h3>
+                    <div class="select">
+                        <label class="select__label select__label--sr-only" for="sr-only-select">Select a person</label>
+                        <div class="select__button-container select__button-container--no-margin">
+                            <button class="select__button" id="sr-only-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="sr-only-status">Current selection: None</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Error States</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>With Short Error</h3>
+                    <div class="select">
+                        <div class="select__label-text">
+                            <label class="select__label" for="short-error-select">Select a person</label>
+                        </div>
+                        <div class="select__button-container">
+                            <button class="select__button select__button--error" id="short-error-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select__error-message">
+                            <div class="heroicon heroicon-16 heroicon-exclamation-circle"></div>
+                            <span>This field is required</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>Disabled</h3>
+                    <div class="select">
+                        <div class="select__label-text">
+                            <label class="select__label" for="disabled-select">Select a person</label>
+                            <div class="select__description">Description of the form</div>
+                        </div>
+                        <div class="select__button-container">
+                            <button class="select__button select__button--disabled" id="disabled-select" type="button" disabled>
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Clearable Select</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Clearable</h3>
+                    <div class="select">
+                        <label class="select__label" for="clearable-select">Select a person</label>
+                        <div class="select__button-container">
+                            <button class="select__button" id="clearable-select" type="button">
+                                <span class="select__value">Wade Cooper</span>
+                                <div class="select__icon-container select__icon-container--with-clear">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                                <button class="select__clear-button" type="button" aria-label="Clear selection">
+                                    <div class="heroicon heroicon-16 heroicon-x-mark"></div>
+                                </button>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="clearable-status">Current selection: Wade Cooper</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Simple Variant</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Simple Default</h3>
+                    <div class="select select--simple">
+                        <label class="select__label" for="simple-select">Select a person</label>
+                        <div class="select__description">Description of the form</div>
+                        <div class="select__button-container">
+                            <button class="select__button" id="simple-select" type="button">
+                                <span class="select__value">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="simple-status">Current selection: None</div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>Simple with Error</h3>
+                    <div class="select select--simple select--error">
+                        <label class="select__label" for="simple-error-select">Select a person</label>
+                        <div class="select__description">Description of the form</div>
+                        <div class="select__button-container">
+                            <button class="select__button" id="simple-error-select" type="button">
+                                <span class="select__value">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select__error-message">
+                            <div class="heroicon heroicon-16 heroicon-exclamation-circle"></div>
+                            <span>This field is required</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>Simple Disabled</h3>
+                    <div class="select select--simple select--disabled">
+                        <label class="select__label" for="simple-disabled-select">Select a person</label>
+                        <div class="select__description">Description of the form</div>
+                        <div class="select__button-container">
+                            <button class="select__button" id="simple-disabled-select" type="button" disabled>
+                                <span class="select__value">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Multi-Select</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Multi-Select</h3>
+                    <div class="select">
+                        <label class="select__label" for="multi-select">Select people</label>
+                        <div class="select__button-container">
+                            <button class="select__button" id="multi-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__options-header">
+                                    <div class="select__select-all">
+                                        <div class="checkbox checkbox--decorative">
+                                            <div class="heroicon heroicon-16 heroicon-check" style="color: var(--color-neutral-white);"></div>
+                                        </div>
+                                        <span>Select All</span>
+                                    </div>
+                                </div>
+                                <div class="select__option select__option--multi" data-value="1">
+                                    <div class="select__option-checkbox checkbox checkbox--decorative">
+                                        <div class="heroicon heroicon-16 heroicon-check" style="color: var(--color-neutral-white);"></div>
+                                    </div>
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option select__option--multi" data-value="2">
+                                    <div class="select__option-checkbox checkbox checkbox--decorative">
+                                        <div class="heroicon heroicon-16 heroicon-check" style="color: var(--color-neutral-white);"></div>
+                                    </div>
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option select__option--multi" data-value="3">
+                                    <div class="select__option-checkbox checkbox checkbox--decorative">
+                                        <div class="heroicon heroicon-16 heroicon-check" style="color: var(--color-neutral-white);"></div>
+                                    </div>
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="multi-status">Current selection: None</div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>Multi-Select Simple</h3>
+                    <div class="select select--simple">
+                        <label class="select__label" for="multi-simple-select">Select people</label>
+                        <div class="select__button-container">
+                            <button class="select__button" id="multi-simple-select" type="button">
+                                <span class="select__value">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option select__option--multi" data-value="1">
+                                    <div class="select__option-checkbox checkbox checkbox--decorative">
+                                        <div class="heroicon heroicon-16 heroicon-check" style="color: var(--color-neutral-white);"></div>
+                                    </div>
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option select__option--multi" data-value="2">
+                                    <div class="select__option-checkbox checkbox checkbox--decorative">
+                                        <div class="heroicon heroicon-16 heroicon-check" style="color: var(--color-neutral-white);"></div>
+                                    </div>
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option select__option--multi" data-value="3">
+                                    <div class="select__option-checkbox checkbox checkbox--decorative">
+                                        <div class="heroicon heroicon-16 heroicon-check" style="color: var(--color-neutral-white);"></div>
+                                    </div>
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="multi-simple-status">Current selection: None</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Layout Variants</h2>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Horizontal Layout</h3>
+                    <div class="select select--horizontal">
+                        <div class="select__label-container">
+                            <label class="select__label" for="horizontal-select">Select a person</label>
+                        </div>
+                        <div class="select__button-container select__button-container--large">
+                            <button class="select__button" id="horizontal-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="horizontal-status">Current selection: None</div>
+                </div>
+
+                <div class="demo-item">
+                    <h3>Small Button Size</h3>
+                    <div class="select">
+                        <label class="select__label" for="small-select">Select a person</label>
+                        <div class="select__description">Small button variant</div>
+                        <div class="select__button-container select__button-container--small">
+                            <button class="select__button" id="small-select" type="button">
+                                <span class="select__value select__value--placeholder">Placeholder...</span>
+                                <div class="select__icon-container">
+                                    <div class="heroicon heroicon-16 heroicon-chevron-down"></div>
+                                </div>
+                            </button>
+                            <div class="select__options select__options--hidden">
+                                <div class="select__option" data-value="1">
+                                    <span class="select__option-text">Wade Cooper</span>
+                                </div>
+                                <div class="select__option" data-value="2">
+                                    <span class="select__option-text">Arlene Mccoy</span>
+                                </div>
+                                <div class="select__option" data-value="3">
+                                    <span class="select__option-text">Devon Webb</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-text" id="small-status">Current selection: None</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="select.js"></script>
+    <script>
+        // Component demo initialization - enhanced functionality for demo
+        document.addEventListener('DOMContentLoaded', () => {
+            const people = [
+                { id: 1, name: 'Wade Cooper' },
+                { id: 2, name: 'Arlene Mccoy' },
+                { id: 3, name: 'Devon Webb' },
+                { id: 4, name: 'Tom Cook' },
+                { id: 5, name: 'Tanya Fox' }
+            ];
+
+            // Initialize all selects
+            const selects = document.querySelectorAll('.select');
+            
+            selects.forEach(selectElement => {
+                const button = selectElement.querySelector('.select__button');
+                const options = selectElement.querySelector('.select__options');
+                const valueSpan = selectElement.querySelector('.select__value');
+                const statusElement = selectElement.parentElement.querySelector('.status-text');
+                const clearButton = selectElement.querySelector('.select__clear-button');
+                const searchInput = selectElement.querySelector('.select__search');
+                const optionElements = selectElement.querySelectorAll('.select__option');
+                const icon = selectElement.querySelector('.select__icon-container .heroicon');
+                
+                let isOpen = false;
+                let selectedValue = null;
+                let selectedValues = []; // For multi-select
+                
+                // Check if this is a multi-select
+                const isMulti = selectElement.id.includes('multi');
+                
+                // Toggle dropdown
+                function toggleDropdown() {
+                    if (button.disabled) return;
+                    
+                    isOpen = !isOpen;
+                    options.classList.toggle('select__options--hidden', !isOpen);
+                    
+                    // Update icon and button state
+                    if (isOpen) {
+                        icon.className = icon.className.replace('chevron-down', 'chevron-up');
+                        button.classList.add('select__button--open');
+                    } else {
+                        icon.className = icon.className.replace('chevron-up', 'chevron-down');
+                        button.classList.remove('select__button--open');
+                    }
+                }
+                
+                // Close dropdown when clicking outside
+                function closeOnOutsideClick(event) {
+                    if (!selectElement.contains(event.target)) {
+                        if (isOpen) {
+                            toggleDropdown();
+                        }
+                    }
+                }
+                
+                // Handle option selection
+                function selectOption(optionElement) {
+                    const value = optionElement.dataset.value;
+                    const text = optionElement.querySelector('.select__option-text').textContent;
+                    
+                    if (isMulti) {
+                        // Multi-select logic
+                        const checkbox = optionElement.querySelector('.checkbox');
+                        const isSelected = selectedValues.includes(value);
+                        
+                        if (isSelected) {
+                            // Remove from selection
+                            selectedValues = selectedValues.filter(v => v !== value);
+                            checkbox.classList.remove('checkbox--checked');
+                            optionElement.classList.remove('select__option--selected');
+                        } else {
+                            // Add to selection
+                            selectedValues.push(value);
+                            checkbox.classList.add('checkbox--checked');
+                            optionElement.classList.add('select__option--selected');
+                        }
+                        
+                        // Update display value
+                        if (selectedValues.length === 0) {
+                            valueSpan.textContent = 'Placeholder...';
+                            valueSpan.classList.add('select__value--placeholder');
+                        } else {
+                            const selectedNames = selectedValues.map(val => {
+                                const person = people.find(p => p.id === parseInt(val));
+                                return person ? person.name : '';
+                            }).filter(Boolean);
+                            valueSpan.textContent = selectedNames.join(', ');
+                            valueSpan.classList.remove('select__value--placeholder');
+                        }
+                        
+                        // Update status
+                        if (statusElement) {
+                            if (selectedValues.length === 0) {
+                                statusElement.textContent = 'Current selection: None';
+                            } else {
+                                const selectedNames = selectedValues.map(val => {
+                                    const person = people.find(p => p.id === parseInt(val));
+                                    return person ? person.name : '';
+                                }).filter(Boolean);
+                                statusElement.textContent = `Current selection: ${selectedNames.join(', ')}`;
+                            }
+                        }
+                    } else {
+                        // Single select logic
+                        selectedValue = value;
+                        
+                        // Clear previous selection
+                        optionElements.forEach(opt => opt.classList.remove('select__option--selected'));
+                        
+                        // Mark new selection
+                        optionElement.classList.add('select__option--selected');
+                        
+                        // Update display value
+                        valueSpan.textContent = text;
+                        valueSpan.classList.remove('select__value--placeholder');
+                        
+                        // Update status
+                        if (statusElement) {
+                            statusElement.textContent = `Current selection: ${text}`;
+                        }
+                        
+                        // Close dropdown for single select
+                        toggleDropdown();
+                    }
+                }
+                
+                // Clear selection
+                function clearSelection() {
+                    selectedValue = null;
+                    selectedValues = [];
+                    
+                    // Reset display
+                    valueSpan.textContent = 'Placeholder...';
+                    valueSpan.classList.add('select__value--placeholder');
+                    
+                    // Clear option selections
+                    optionElements.forEach(opt => {
+                        opt.classList.remove('select__option--selected');
+                        const checkbox = opt.querySelector('.checkbox');
+                        if (checkbox) {
+                            checkbox.classList.remove('checkbox--checked');
+                        }
+                    });
+                    
+                    // Update status
+                    if (statusElement) {
+                        statusElement.textContent = 'Current selection: None';
+                    }
+                }
+                
+                // Search functionality
+                function filterOptions(searchTerm) {
+                    optionElements.forEach(option => {
+                        const text = option.querySelector('.select__option-text').textContent.toLowerCase();
+                        const matches = text.includes(searchTerm.toLowerCase());
+                        option.style.display = matches ? '' : 'none';
+                    });
+                }
+                
+                // Event listeners
+                button.addEventListener('click', toggleDropdown);
+                document.addEventListener('click', closeOnOutsideClick);
+                
+                if (clearButton) {
+                    clearButton.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        clearSelection();
+                    });
+                }
+                
+                if (searchInput) {
+                    searchInput.addEventListener('input', (e) => {
+                        filterOptions(e.target.value);
+                    });
+                    
+                    searchInput.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                    });
+                }
+                
+                optionElements.forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (!option.classList.contains('select__option--disabled')) {
+                            selectOption(option);
+                        }
+                    });
+                });
+                
+                // Keyboard navigation
+                button.addEventListener('keydown', (e) => {
+                    switch (e.key) {
+                        case 'Enter':
+                        case ' ':
+                            e.preventDefault();
+                            toggleDropdown();
+                            break;
+                        case 'Escape':
+                            if (isOpen) {
+                                toggleDropdown();
+                            }
+                            break;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

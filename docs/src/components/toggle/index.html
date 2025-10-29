@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Toggle Component - Swage.CSS</title>
+    <link rel="stylesheet" href="../../swage.css">
+    <link rel="stylesheet" href="../../demo.css">
+    <style>
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-background-default);
+            padding: var(--spacing-32);
+            color: var(--color-text-default);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: var(--spacing-32);
+        }
+        .component-section {
+            background-color: var(--color-surface-default);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--spacing-8);
+            padding: var(--spacing-24);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-24);
+            color: var(--color-text-default);
+        }
+        h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-20);
+            color: var(--color-text-default);
+        }
+        .mb-24 { margin-bottom: var(--spacing-24); }
+        .text-gray-600 { color: var(--color-gray-600); }
+        .body-lg {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-lg);
+        }
+        
+        .toggle-demo {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-16);
+            margin-bottom: var(--spacing-32);
+        }
+        
+        .toggle-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-16);
+        }
+        
+        .toggle-label {
+            font-size: var(--font-size-md);
+            color: var(--color-text-default);
+        }
+        
+        .usage-section {
+            background-color: var(--color-gray-50);
+            padding: var(--spacing-16);
+            border-radius: var(--spacing-4);
+            margin-top: var(--spacing-24);
+        }
+        
+        .code-block {
+            background-color: var(--color-gray-100);
+            padding: var(--spacing-12);
+            border-radius: var(--spacing-4);
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: var(--font-size-sm);
+            overflow-x: auto;
+            margin: var(--spacing-8) 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Toggle Component</h1>
+        <p class="body-lg text-gray-600 mb-24">
+            `Toggle` component renders an interface for toggling a value between two states, 
+            exactly as implemented in the Curative UI design system.
+        </p>
+
+        <section class="component-section">
+            <h2>Toggle Sizes</h2>
+            <p class="mb-24">The two toggle sizes available in the Curative UI Toggle component.</p>
+            
+            <div class="toggle-demo">
+                <!-- Large Toggle (Default) -->
+                <div class="toggle-item">
+                    <button 
+                        class="toggle toggle--large toggle--unchecked" 
+                        id="largeDemoToggle"
+                        type="button" 
+                        aria-pressed="false"
+                        data-size="large"
+                    >
+                        <span class="toggle__sr-only">Large Toggle</span>
+                        <span class="toggle__indicator"></span>
+                    </button>
+                    <span class="toggle-label">Large Toggle (Default Size)</span>
+                </div>
+
+                <!-- Small Toggle -->
+                <div class="toggle-item">
+                    <button 
+                        class="toggle toggle--small toggle--unchecked" 
+                        id="smallDemoToggle"
+                        type="button" 
+                        aria-pressed="false"
+                        data-size="small"
+                    >
+                        <span class="toggle__sr-only">Small Toggle</span>
+                        <span class="toggle__indicator"></span>
+                    </button>
+                    <span class="toggle-label">Small Toggle</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Toggle States</h2>
+            <p class="mb-24">Toggles in different states showing the color and position changes.</p>
+            
+            <div class="toggle-demo">
+                <!-- Large - Unchecked -->
+                <div class="toggle-item">
+                    <button 
+                        class="toggle toggle--large toggle--unchecked" 
+                        type="button" 
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="toggle__sr-only">Large Toggle - Unchecked</span>
+                        <span class="toggle__indicator"></span>
+                    </button>
+                    <span class="toggle-label">Large - Unchecked State</span>
+                </div>
+
+                <!-- Large - Checked -->
+                <div class="toggle-item">
+                    <button 
+                        class="toggle toggle--large toggle--checked" 
+                        type="button" 
+                        aria-pressed="true"
+                        disabled
+                    >
+                        <span class="toggle__sr-only">Large Toggle - Checked</span>
+                        <span class="toggle__indicator"></span>
+                    </button>
+                    <span class="toggle-label">Large - Checked State</span>
+                </div>
+
+                <!-- Small - Unchecked -->
+                <div class="toggle-item">
+                    <button 
+                        class="toggle toggle--small toggle--unchecked" 
+                        type="button" 
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="toggle__sr-only">Small Toggle - Unchecked</span>
+                        <span class="toggle__indicator"></span>
+                    </button>
+                    <span class="toggle-label">Small - Unchecked State</span>
+                </div>
+
+                <!-- Small - Checked -->
+                <div class="toggle-item">
+                    <button 
+                        class="toggle toggle--small toggle--checked" 
+                        type="button" 
+                        aria-pressed="true"
+                        disabled
+                    >
+                        <span class="toggle__sr-only">Small Toggle - Checked</span>
+                        <span class="toggle__indicator"></span>
+                    </button>
+                    <span class="toggle-label">Small - Checked State</span>
+                </div>
+
+                <!-- Disabled States -->
+                <div class="toggle-item">
+                    <button 
+                        class="toggle toggle--large toggle--unchecked" 
+                        type="button" 
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="toggle__sr-only">Disabled Large Toggle</span>
+                        <span class="toggle__indicator"></span>
+                    </button>
+                    <span class="toggle-label">Disabled Toggle</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="component-section">
+            <h2>Usage</h2>
+            <p class="mb-24">How to implement the Toggle component with the exact Curative UI structure.</p>
+            
+            <h3>Props Interface</h3>
+            <div class="code-block">
+export type ToggleProps = {
+  onRequestChangeValue: (v: boolean) => void;
+  size?: ToggleSize; // LARGE (default) | SMALL
+  srOnlyLabel: string;
+  value: boolean;
+  disabled?: boolean;
+};
+            </div>
+
+            <h3>HTML Structure</h3>
+            <div class="code-block">
+&lt;button 
+  class="toggle toggle--large toggle--unchecked" 
+  type="button" 
+  aria-pressed="false"
+&gt;
+  &lt;span class="toggle__sr-only"&gt;Large Toggle&lt;/span&gt;
+  &lt;span class="toggle__indicator"&gt;&lt;/span&gt;
+&lt;/button&gt;
+            </div>
+
+            <h3>Size Classes</h3>
+            <div class="code-block">
+/* Large (Default) */
+.toggle--large     /* w-16 (64px width) */
+.toggle__indicator /* h-6 w-6 (24px) */
+/* translate-x-8 (32px) when checked */
+
+/* Small */
+.toggle--small     /* w-8 (32px width) */  
+.toggle__indicator /* h-3 w-3 (12px) */
+/* translate-x-3 (12px) when checked */
+            </div>
+
+            <h3>Color Mapping</h3>
+            <div class="code-block">
+/* Unchecked */
+background-color: var(--color-text-subdued); /* bg-textColor-subdued */
+
+/* Checked */  
+background-color: var(--color-foundation-primary); /* bg-foundation-primary */
+
+/* Indicator */
+background-color: var(--color-surface-default); /* bg-surface-default */
+            </div>
+        </section>
+    </div>
+
+    <script src="toggle.js"></script>
+    <script>
+        // Component demo initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Toggle component demo loaded');
+            console.log('Found toggles:', document.querySelectorAll('.toggle').length);
+            
+            // Demo-specific functionality
+            window.onToggleChange = function(newState) {
+                console.log(`Demo: Toggle state changed to ${newState}`);
+            };
+        });
+    </script>
+</body>
+</html>

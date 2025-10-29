@@ -1,0 +1,167 @@
+/* #region Toggle Component */
+
+/* Base toggle wrapper for input + label structure */
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    cursor: pointer;
+    font-family: var(--font-family-sans);
+}
+
+/* Hidden checkbox input */
+.toggle__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Toggle label containing switch and text */
+.toggle__label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-12);
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    color: var(--color-gray-700);
+}
+
+/* Toggle switch - the clickable track */
+.toggle__switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: var(--spacing-48); /* Default size: 48px wide */
+    height: var(--spacing-24); /* Default size: 24px tall */
+    border-radius: var(--spacing-24); /* Full rounded */
+    background-color: var(--color-gray-300);
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+    padding: var(--spacing-2);
+    border: none;
+    outline: none;
+}
+
+/* Toggle slider - the moving circle */
+.toggle__slider {
+    display: block;
+    width: var(--spacing-20); /* Default slider: 20px */
+    height: var(--spacing-20); /* Default slider: 20px */
+    border-radius: 50%;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    transform: translateX(0);
+}
+
+/* Checked state */
+.toggle__input:checked + .toggle__label .toggle__switch {
+    background-color: var(--color-foundation-primary);
+}
+
+.toggle__input:checked + .toggle__label .toggle__switch .toggle__slider {
+    transform: translateX(var(--spacing-24)); /* Move 24px for default size */
+}
+
+/* Focus state */
+.toggle__input:focus + .toggle__label .toggle__switch {
+    outline: 2px solid var(--color-foundation-primary);
+    outline-offset: 2px;
+}
+
+/* Disabled state */
+.toggle__input:disabled + .toggle__label {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.toggle__input:disabled + .toggle__label .toggle__switch {
+    cursor: not-allowed;
+}
+
+/* Small size variant */
+.toggle--small .toggle__switch {
+    width: var(--spacing-32); /* Small: 32px wide */
+    height: var(--spacing-16); /* Small: 16px tall */
+    border-radius: var(--spacing-16);
+}
+
+.toggle--small .toggle__slider {
+    width: var(--spacing-12); /* Small slider: 12px */
+    height: var(--spacing-12); /* Small slider: 12px */
+}
+
+.toggle--small .toggle__input:checked + .toggle__label .toggle__switch .toggle__slider {
+    transform: translateX(var(--spacing-16)); /* Move 16px for small size */
+}
+
+/* Large size variant */
+.toggle--large .toggle__switch {
+    width: var(--spacing-64); /* Large: 64px wide */
+    height: var(--spacing-32); /* Large: 32px tall */
+    border-radius: var(--spacing-32);
+    padding: var(--spacing-4);
+}
+
+.toggle--large .toggle__slider {
+    width: var(--spacing-24); /* Large slider: 24px */
+    height: var(--spacing-24); /* Large slider: 24px */
+}
+
+.toggle--large .toggle__input:checked + .toggle__label .toggle__switch .toggle__slider {
+    transform: translateX(var(--spacing-32)); /* Move 32px for large size */
+}
+
+/* Toggle with description */
+.toggle--with-description .toggle__label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+}
+
+.toggle--with-description .toggle__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.toggle__text {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-gray-900);
+}
+
+.toggle__description {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    line-height: var(--line-height-sm);
+}
+
+/* Focused state styling */
+.toggle--focused .toggle__switch {
+    outline: 2px solid var(--color-foundation-primary);
+    outline-offset: 2px;
+}
+
+/* Success/Error states */
+.toggle--success .toggle__input:checked + .toggle__label .toggle__switch {
+    background-color: var(--color-foundation-success);
+}
+
+.toggle--error .toggle__input:checked + .toggle__label .toggle__switch {
+    background-color: var(--color-foundation-critical);
+}
+
+/* Animation enhancement */
+.toggle__slider--animating {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* #endregion */

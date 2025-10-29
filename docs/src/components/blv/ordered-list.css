@@ -1,0 +1,185 @@
+/* #region Ordered List Component */
+
+/* Base ordered list container - replicating space-y-2 */
+.ordered-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8); /* space-y-2 = 8px */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-sans);
+}
+
+/* Ordered list item - replicating relative flex w-full items-center gap-8 rounded-[4px] px-4 py-3 bg-white/75 backdrop-blur-[5px] */
+.ordered-list__item {
+    position: relative;
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    gap: var(--spacing-32); /* gap-8 = 32px */
+    border-radius: 4px; /* rounded-[4px] */
+    padding: var(--spacing-12) var(--spacing-16); /* py-3 px-4 = 12px 16px */
+    background-color: rgba(255, 255, 255, 0.75); /* bg-white/75 */
+    backdrop-filter: blur(5px); /* backdrop-blur-[5px] */
+    /* Complex shadow from original: shadow-[0px_2px_16px_0px_rgba(102,114,125,0.25),_0px_4px_200px_0px_rgba(255,255,255,0.01)_inset] */
+    box-shadow: 
+        0px 2px 16px 0px rgba(102, 114, 125, 0.25),
+        0px 4px 200px 0px rgba(255, 255, 255, 0.01) inset;
+}
+
+/* Number container - replicating flex size-6 items-center justify-center rounded-full border bg-white */
+.ordered-list__number {
+    display: flex !important;
+    width: var(--spacing-24); /* size-6 = 24px */
+    height: var(--spacing-24); /* size-6 = 24px */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* rounded-full */
+    border: 1px solid; /* border - color set by variants */
+    background-color: var(--color-white); /* bg-white */
+    flex-shrink: 0;
+}
+
+/* Number text - replicating font-semibold with text-shadow */
+.ordered-list__number span {
+    font-weight: var(--font-weight-semibold); /* font-semibold */
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    text-shadow: 0px 1px 0px #FFF; /* [text-shadow:_0px_1px_0px_#FFF] */
+    color: inherit; /* Color set by variants */
+}
+
+/* Content container - replicating flex items-center space-x-4 */
+.ordered-list__content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16); /* space-x-4 = 16px */
+    flex: 1;
+}
+
+/* Content text - replicating text-lg font-bold text-textColor-default */
+.ordered-list__text {
+    font-size: var(--font-size-lg); /* text-lg */
+    line-height: var(--line-height-lg);
+    font-weight: var(--font-weight-bold); /* font-bold */
+    color: var(--color-text-default); /* text-textColor-default */
+    margin: 0;
+}
+
+/* Blue color variant - replicating border-skyBlue text-skyBlue */
+.ordered-list__item[data-color="blue"] .ordered-list__number {
+    border-color: var(--color-primary-sky-blue); /* border-skyBlue */
+    color: var(--color-primary-sky-blue); /* text-skyBlue */
+}
+
+/* Orange color variant - replicating border-signalOrange text-signalOrange */
+.ordered-list__item[data-color="orange"] .ordered-list__number {
+    border-color: var(--color-primary-signal-orange); /* border-signalOrange */
+    color: var(--color-primary-signal-orange); /* text-signalOrange */
+}
+
+/* Hover states for better interactivity */
+.ordered-list__item:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 
+        0px 4px 20px 0px rgba(102, 114, 125, 0.35),
+        0px 4px 200px 0px rgba(255, 255, 255, 0.02) inset;
+    transform: translateY(-1px);
+    transition: all 0.2s ease-in-out;
+}
+
+.ordered-list__item:hover .ordered-list__number {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Focus states for accessibility */
+.ordered-list__item:focus-visible {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+}
+
+/* Animation for newly added items */
+@keyframes slideInFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ordered-list__item--animate {
+    animation: slideInFade 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ordered-list__item {
+        gap: var(--spacing-20); /* Smaller gap on mobile */
+        padding: var(--spacing-8) var(--spacing-12); /* Smaller padding */
+    }
+    
+    .ordered-list__number {
+        width: var(--spacing-20); /* Smaller number circle */
+        height: var(--spacing-20);
+    }
+    
+    .ordered-list__number span {
+        font-size: var(--font-size-xs);
+    }
+    
+    .ordered-list__text {
+        font-size: var(--font-size-md); /* Smaller text on mobile */
+        line-height: var(--line-height-md);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .ordered-list__item {
+        background-color: var(--color-white);
+        border: 2px solid var(--color-gray-400);
+    }
+    
+    .ordered-list__number {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .ordered-list__item {
+        transition: none;
+    }
+    
+    .ordered-list__item:hover {
+        transform: none;
+    }
+    
+    .ordered-list__item:hover .ordered-list__number {
+        transform: none;
+    }
+    
+    .ordered-list__item--animate {
+        animation: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .ordered-list__item {
+        background-color: var(--color-white);
+        box-shadow: none;
+        border: 1px solid var(--color-gray-300);
+    }
+    
+    .ordered-list__number {
+        background-color: var(--color-white);
+    }
+}
+
+/* #endregion */

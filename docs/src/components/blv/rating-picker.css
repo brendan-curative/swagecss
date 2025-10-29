@@ -1,0 +1,89 @@
+/* #region Rating Picker Component */
+
+/* Base rating picker container - replicating grid grid-cols-3 gap-[10px] */
+.rating-picker {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    font-family: var(--font-family-sans);
+}
+
+/* Rating option card - replicating flex cursor-pointer flex-col items-center justify-between space-y-1 rounded border border-gray-100 bg-white p-2 text-center transition-all */
+.rating-picker__option {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4); /* space-y-1 */
+    border-radius: var(--spacing-6); /* rounded */
+    border: 1px solid var(--color-gray-200); /* border-gray-100 → closest foundation match */
+    background-color: var(--color-white); /* bg-white */
+    padding: var(--spacing-8); /* p-2 */
+    text-align: center;
+    transition: all 0.2s ease-in-out; /* transition-all */
+}
+
+/* Icon styling */
+.rating-picker__icon {
+    width: 65px;
+    height: 64px;
+    flex-shrink: 0;
+    color: inherit;
+}
+
+/* Label styling - replicating text-sm/relaxed */
+.rating-picker__label {
+    font-size: var(--font-size-sm); /* text-sm */
+    line-height: var(--line-height-lg); /* relaxed line height */
+    color: inherit;
+    margin: 0;
+}
+
+/* Color variants based on rating type */
+
+/* Negative rating - text-[theme(colors.signalOrange)] */
+.rating-picker__option[data-value="negative"] {
+    color: var(--color-primary-signal-orange);
+}
+
+/* Neutral rating - text-textColor-highlight-default */
+.rating-picker__option[data-value="neutral"] {
+    color: var(--color-text-highlight-default);
+}
+
+/* Positive rating - text-textColor-success */
+.rating-picker__option[data-value="positive"] {
+    color: var(--color-text-success);
+}
+
+/* Selected state - font-black [box-shadow:_0px_2px_16px_0px_rgba(102,114,125,0.25),_0px_4px_200px_0px_rgba(0,0,0,0.01)_inset] [stroke-width:2px] */
+.rating-picker__option--selected {
+    font-weight: 900; /* font-black */
+    box-shadow: 0px 2px 16px 0px rgba(102, 114, 125, 0.25), 0px 4px 200px 0px rgba(0, 0, 0, 0.01) inset;
+    stroke-width: 2px;
+}
+
+/* Unselected state when any option is selected - opacity-50 */
+.rating-picker--has-selection .rating-picker__option:not(.rating-picker__option--selected) {
+    opacity: 0.5;
+}
+
+/* Hover states for better interactivity */
+.rating-picker__option:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 20px 0px rgba(102, 114, 125, 0.15);
+}
+
+.rating-picker__option--selected:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 20px 0px rgba(102, 114, 125, 0.35), 0px 4px 200px 0px rgba(0, 0, 0, 0.01) inset;
+}
+
+/* Focus states for accessibility */
+.rating-picker__option:focus-visible {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+}
+
+/* #endregion */
