@@ -267,6 +267,15 @@ function deleteFacility(facilityType, event) {
 
 // Update facility display on main page
 function updateFacilityDisplay(facilityType) {
+    // Check if this facility type exists on the current page
+    const nameElement = document.getElementById(`${facilityType}-name`);
+    const addressElement = document.getElementById(`${facilityType}-address`);
+    
+    // If the elements don't exist on this page, skip updating
+    if (!nameElement || !addressElement) {
+        return;
+    }
+    
     const facility = prototype.getFacility(facilityType);
     
     if (!facility) {
@@ -277,8 +286,8 @@ function updateFacilityDisplay(facilityType) {
         showFacilityState(facilityType, 'none-selected');
     } else {
         // Show selected facility
-        document.getElementById(`${facilityType}-name`).textContent = facility.name;
-        document.getElementById(`${facilityType}-address`).textContent = `${facility.address}, ${facility.city}`;
+        nameElement.textContent = facility.name;
+        addressElement.textContent = `${facility.address}, ${facility.city}`;
         showFacilityState(facilityType, 'facility-info');
     }
 }

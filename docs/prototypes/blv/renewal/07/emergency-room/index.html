@@ -68,20 +68,21 @@
     <div class="flex-column gap-16">
 
         <div id="emergency-facility-info" class="mb-16" style="display: none;">
-            <div class="tile">
-                <span class="tile__icon heroicon heroicon-outline-building-office"></span>
-                <div class="tile__content">
-                    <p id="emergency-name" class="tile__title"></p>
-                    <p id="emergency-address" class="tile__subtitle"></p>
+            <div class="card p-24 transparent py-24 px-80">
+                <div class="tile">
+                    <span class="tile__icon heroicon heroicon-outline-building-office"></span>
+                    <div class="tile__content">
+                        <p id="emergency-name" class="tile__title"></p>
+                        <p id="emergency-address" class="tile__subtitle"></p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('emergency')">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
+                    </button>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('emergency', event)">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                    </button>
                 </div>
-                <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('emergency')">
-                    <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
-                </button>
-                <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('emergency', event)">
-                    <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
-                </button>
             </div>
-
         </div>
        
 
@@ -104,9 +105,9 @@
         </div>
             
             <div class="constrain constrain-80">
-                <p class="body-lg pt-24 mb-24">Urgent Care is your best option when you need in-person help for something that can't wait — but isn't life-threatening.</p>
+                <p class="body-lg pt-24 mb-24">The ER is for <strong>life-threatening emergencies</strong> or when every minute counts. </p>
         
-                <h3 class="heading-lg mb-16">Think sprains, stitches, ear infections, or high fevers.</h3>
+                <p class="body-lg pt-24 mb-24">If you're experiencing chest pain, trouble breathing, heavy bleeding, or signs of stroke, <strong>call 911 or go to the nearest ER</strong>.</p>
         
                 <ul class="unordered-list">
                     <li class="unordered-list__item">
@@ -114,7 +115,7 @@
                         <span class="heroicon heroicon-check"></span>
                         </div>
                         <div class="unordered-list__content">
-                        <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Flu or COVID symptoms, minor injuries, infections</span></p>
+                        <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Chest pain, seizures, major fractures, stroke symptoms</span></p>
                         </div>
                     </li>
                     <li class="unordered-list__item mb-24">
@@ -122,7 +123,7 @@
                         <span class="heroicon heroicon-x-mark"></span>
                         </div>
                         <div class="unordered-list__content">
-                        <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Chest pain, severe bleeding, or head injuries</span></p>
+                        <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Not for: Cold, flu, minor injuries, or routine prescriptions</span></p>
                         </div>
                     </li>
                 </ul>
