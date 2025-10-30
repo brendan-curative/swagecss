@@ -12,7 +12,7 @@
 
 
   </head>
-    <body class="page-services">
+    <body class="page-medications">
     <div class="wrap">
       <header>
         <div class="container">
@@ -33,7 +33,7 @@
             <nav>
     <div class="container">
         <div class=" flex-row flex-items-center flex-justify-between">
-            <a class="back" href="/swagecss/prototypes/blv/renewal/07/"><span class="heroicon heroicon-chevron-left"></span></a>
+            <a class="back" href="/swagecss/prototypes/blv/renewal/08/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
                 <div class="horizontal-stepper__progress stepper-progress-1"></div>
@@ -60,23 +60,112 @@
       <main>
         
               <article>
-<section>
-    <h1 class="heading-2xl mb-16">Your Pharmacy and Medications </h1>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Your Medications</h1>
+    
 
-    <div class="flex-center-x-y pb-24">
-        <img src="/swagecss/src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
+    <!-- Your Medications Section -->
+    <div class="mb-32 px-80">
+        
+        <div class="card transparent py-24 px-80">
+            <!-- Medications List -->
+        <div id="medications-list" class="mb-24">
+            <!-- Medications will be populated here dynamically -->
+        </div>
+        
+
+        <div class="flex-row flex-justify-center">
+            <!-- Add Medication Button -->
+        <button class="button button--small-outline" onclick="addMedication()">
+            <span class="heroicon heroicon-16 heroicon-plus mr-8"></span>
+            Add Another Medication
+        </button>
+        </div>
     </div>
-
-    <div class="constrain constrain-80">
-        <p class="body-lg mb-24">Let's make sure your medication list and pharmacy are up to date so we can confirm coverage, flag any changes, and keep your prescriptions running smoothly.</p>
-
-        <p class="body-lg mb-24">Each year, our formulary &ndash; the list of covered medications &ndash; may change. </p>
-
-        <p class="body-lg mb-24">Reviewing your list helps prevent gaps and ensures your prescriptions remain covered at $0 whenever possible.</p>
     </div>
 </section>
 
+<section>
+    <h2 class="heading-lg mb-16">Let's Make Your Medication Routine Easier</h2>
 
+    <p class="body-lg mb-24">We know life gets busy and staying on top of prescriptions can be tough.</p>
+
+    <p class="body-lg mb-24"></p>Whether it's remembering daily doses, managing side effects, or wondering if your meds are really working, you're not alone.</p>
+
+    <p class="body-lg mb-24"></p>Here are some simple tips you can take today to stay on track with your medication routine. </p>
+
+    <h3 class="heading-md mb-16">1. Build Your Routine</h3>
+    <p class="body-lg mb-24">Small daily cues help turn medication time into second nature.</p>
+
+    <ul class="bulleted">
+        <li><span class="font-semibold">Set Reminders</span> — Use a phone app or alarm to keep your schedule on track. (Try Round, Medisafe, MyTherapy, or Mango CARE.)</li>
+        <li><span class="font-semibold">Keep Your Meds in Sight</span> — Store them somewhere visible, like your kitchen counter or bedside table.</li>
+        <li><span class="font-semibold">Link to Daily Habits</span> — Pair your meds with something you already do — brushing your teeth, making coffee, or walking the dog.</li>
+    </ul>
+
+    <h3 class="heading-md mb-16">2. Stay Organized and Prepared</h3>
+    <p class="body-lg mb-24">Reduce stress by keeping everything in order and easy to access.</p>
+
+    <ul class="bulleted">
+        <li><span class="font-semibold">Find the $0 Option</span> — Many conditions have medications available at $0 through the Curative formulary. Ask your provider or pharmacist to check for $0 preferred prescriptions to keep your care affordable and consistent. You can reach out to Curative anytime as well as check curative.com/drugs. </li>
+        <li><span class="font-semibold">Automate Refills</span> — Ask your pharmacy about auto-refills or syncing prescriptions so they're ready at once.</li>
+        <li><span class="font-semibold">Try Home Delivery</span> — Many pharmacies — including Curative Pharmacy — deliver prescriptions for free. Fewer trips, fewer missed doses.</li>
+        <li><span class="font-semibold">Simplify Your Routine</span> — Use a pill organizer to see what you've taken. You can request one for free from Curative Pharmacy.</li>
+        <li><span class="font-semibold">Understand Your Meds</span> — Make a quick list of what each medication treats. It helps you understand why they matter and how they're connected.</li>
+    </ul>
+
+    <h3 class="heading-md mb-16">3. Get Support When You Need It</h3>
+    <p class="body-lg mb-24">You don't have to figure this out alone.</p>
+
+    <ul class="bulleted">
+        <li><span class="font-semibold">Ask Questions Early</span> — If you're unsure about side effects, cost, or how to take a medication, your pharmacist or doctor can help.</li>
+        <li><span class="font-semibold">Reach Out To Us</span> — Your Curative team — from pharmacists to Care Navigators — is here to help you feel confident and supported every step of the way.</li>
+    </ul>
+
+    <p class="body-lg mb-24">Taking medications consistently keeps you healthier, longer.
+        Start with one or two of these small changes — and build from there.</p>
+
+</section>
+
+<!-- Medication Search Modal -->
+<div id="medication-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="medication-modal-title" class="form-modal__title">Add Medication</h3>
+            <button class="form-modal__close" onclick="closeMedicationModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <label for="medication-search" class="block mb-8 font-semibold">Search for your medication:</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="medication-search" 
+                        placeholder="Start typing medication name..." 
+                        oninput="searchMedications()"
+                        onkeypress="if(event.key==='Enter') searchMedications()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchMedications()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="medication-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closeMedicationModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-medication-btn" onclick="saveMedicationSelection()" class="button button--primary" disabled>
+                Save Medication
+            </button>
+        </div>
+    </div>
+</div>
 </article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
@@ -112,8 +201,8 @@
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/08/medications/">
-                Your Medications
+            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/08/pharmacy/">
+                Your Pharmacy
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                   </svg>
