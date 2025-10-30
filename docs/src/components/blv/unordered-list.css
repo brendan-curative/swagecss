@@ -11,10 +11,6 @@
     font-family: var(--font-family-sans);
 }
 
-.unordered-list-gap-16 {
-    gap: var(--spacing-16);
-}
-
 .unordered-list-gap-24 {
     gap: var(--spacing-24);
 }
@@ -25,7 +21,7 @@
     display: flex !important;
     width: 100%;
     align-items: center;
-    gap: var(--spacing-32);
+    gap: var(--spacing-16);
     border-radius: 4px;
     padding: var(--spacing-12) var(--spacing-16);
     background-color: rgba(255, 255, 255, 0.75);
@@ -33,6 +29,14 @@
     box-shadow:
         0px 2px 16px 0px rgba(102, 114, 125, 0.25),
         0px 4px 200px 0px rgba(255, 255, 255, 0.01) inset;
+}
+
+.unordered-list__item.gap-16 {
+    gap: var(--spacing-16);
+}
+
+.unordered-list__item.flex-items-start {
+    align-items: flex-start;
 }
 
 /* Icon container - circular like the number, but holds an icon */
