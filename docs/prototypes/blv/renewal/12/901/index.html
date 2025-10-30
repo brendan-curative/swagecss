@@ -12,7 +12,7 @@
 
 
   </head>
-    <body class="page-procedures">
+    <body class="page-barriers">
     <div class="wrap">
       <header>
         <div class="container">
@@ -33,7 +33,7 @@
             <nav>
     <div class="container">
         <div class=" flex-row flex-items-center flex-justify-between">
-            <a class="back" href="/swagecss/prototypes/blv/renewal/09/"><span class="heroicon heroicon-chevron-left"></span></a>
+            <a class="back" href="/swagecss/prototypes/blv/renewal/08/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
                 <div class="horizontal-stepper__progress stepper-progress-1"></div>
@@ -61,115 +61,52 @@
         
               <article>
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Ongoing Support for Your Health</h1>
+    <h1 class="heading-2xl mb-16">Barriers to Care</h1>
     
-    <h2 class="heading-lg mb-16">Let's start with how you're feeling overall.</h2>
+    <p class="body-lg text-gray-600 mb-32">Help us understand any challenges you've faced in accessing healthcare so we can better support you.</p>
 
+    <!-- Barriers to Care Question -->
+    <div class="card p-24">
+        <h4 class="heading-lg mb-24">What barriers did you encounter in getting healthcare over the last year?</h4>
 
-    <pre>
-        I’m feeling great and mostly just need to stay on track
-        I’m managing a few health conditions and could use help coordinating care
-        I’m trying to build new habits — sleep, stress, nutrition, or weight
-        I’ve had some challenges managing a specific condition lately
-        → (If they select “specific condition,” prompt:)
-        Which areas do you want more support in?
-        High blood pressure management
-        Diabetes management
-        COPD management
-        Asthma management
-        Heart disease management
-        Pregnancy support
-        Weight management and nutrition - clinician
-        Fostering healthy alcohol or tobacco habits - Pelago
-        Mental health support - Rula, Televero (TX), TwoChairs
-        Cancer screening (50+) - Galleri
-        Something else (free text)
-        
-        → (content for each condition selected only appears)
+        <div class="select mb-24">
+            <div class="select__label-group">
+                <label for="barrier-select" class="select__label">Select the main barrier you experienced:</label>
+            </div>
+            <div class="select__input-wrapper">
+                <select class="select__control" id="barrier-select" onchange="updateBarrierSelect(this.value)">
+                    <option value="">Choose a barrier...</option>
+                    <option value="transportation">Transportation barriers</option>
+                    <option value="scheduling">Scheduling difficulties</option>
+                    <option value="location">Location/accessibility issues</option>
+                    <option value="cost">Financial barriers (cost, insurance coverage)</option>
+                    <option value="communication">Communication barriers (language, health literacy)</option>
+                    <option value="cultural">Cultural barriers and preferences</option>
+                    <option value="technology">Technology barriers (telehealth, online scheduling)</option>
+                    <option value="support">Lack of support system</option>
+                    <option value="provider">Provider availability</option>
+                    <option value="other">Other</option>
+                    <option value="none">No significant barriers</option>
+                </select>
+                <div class="select__icon">
+                    <span class="heroicon heroicon-chevron-down"></span>
+                </div>
+            </div>
+        </div>
 
-        Heart Health and Blood Pressure
-Intro
- High blood pressure — or hypertension — is common, but it doesn’t have to be complicated.
- Even small steps can make a big difference for your heart, brain, and kidneys.
- 
-Curative is here to help you keep your numbers in range and connect you to care if you need it.
-
-What best describes you?
-I’m managing it well
-I have high blood pressure but need better control
-I think I might have high blood pressure, but not sure
-
-I’m managing it well
-That’s great to hear! Staying consistent is key.
-
-
-If you already track your blood pressure or take medication, you’re doing the right things to protect your heart.
-
-
-Your Care Navigator can still help you:
-###
-Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
-
-
-CTA: [Message My Care Navigator →]
-
-I have high blood pressure but need better control
-You’re not alone — many people need extra support at some point.
- Curative’s clinical and Care Navigator teams can help you:
-###
-
-
-Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
-
-
-CTA: [Get Help Managing Blood Pressure →]
-
-⚪ I’m not sure if I have high blood pressure
-That’s okay — high blood pressure often has no symptoms.
- A quick reading at your primary care visit or with a home blood pressure monitor can give you a clear answer.
- Your Care Navigator can help you:
-Find a nearby provider for a blood pressure check
-
-
-Get guidance on healthy ranges and follow-up steps
-
-
-CTA: [Find a Provider →]
-
-A: [Find a Provider →]
-
-🩺 When to Reach Out
-You may need extra support if you:
-Have readings consistently above 130/80 mmHg
-
-
-Take more than one medication to control your blood pressure
-
-
-Feel dizzy, tired, or have headaches related to blood pressure changes
-
-
-Your Care Navigator can connect you to Curative’s hypertension management program or help you book a covered visit with your PCP.
-
-
-
-
-Diabetes management
-COPD management
-Asthma management
-Heart disease management
-Pregnancy support
-Weight management and nutrition - clinician
-Fostering healthy alcohol or tobacco habits - Pelago
-Mental health support - Rula, Televero (TX), TwoChairs
-Cancer screening (50+) - Galleri
-Something else (free text)
-
-    </pre>
-</section>
-
-<section>
-    <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
+        <div class="textfield">
+            <label for="barrier-comments" class="textfield__label">Please provide additional details about the barriers you experienced:</label>
+            <div class="textfield__input-wrapper">
+                <textarea 
+                    id="barrier-comments" 
+                    class="textfield__input" 
+                    rows="4" 
+                    placeholder="Tell us more about the challenges you faced accessing healthcare..."
+                    onchange="updateBarrierComments(this.value)"
+                ></textarea>
+            </div>
+        </div>
+    </div>
 </section>
 </article>
 
@@ -206,8 +143,8 @@ Something else (free text)
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/11/">
-                Health Services
+            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/10/">
+                Continue
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                   </svg>
@@ -302,7 +239,7 @@ function resetPrototype() {
     </script>
 
   
-  <script src="/swagecss/prototypes/blv/renewal/src/procedures.js?v=2.1"></script>
+  <script src="/swagecss/prototypes/blv/renewal/src/barriers.js?v=2.1"></script>
   
 
   <!-- Confetti animation system -->

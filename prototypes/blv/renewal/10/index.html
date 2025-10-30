@@ -8,109 +8,118 @@ location: procedures
 status: draft
 previous: 09/
 next: 11/
-button-text: Continue
+button-text: Health Services
 page-js: procedures
 ---
 
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Procedures and Surgeries</h1>
+    <h1 class="heading-2xl mb-16">Ongoing Support for Your Health</h1>
     
-    <p class="body-lg text-gray-600 mb-32">Let's plan for any upcoming procedures or surgeries you may need in the coming year.</p>
+    <h2 class="heading-lg mb-16">Let's start with how you're feeling overall.</h2>
 
-    <!-- Upcoming Procedures Question -->
-    <div class="py-24 px-80 mb-24">
-        <h4 class="heading-lg mb-24">Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
 
-        <div class="flex-column gap-12">
-            <ul class="unordered-list">
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-major" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Outpatient procedure</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" onchange="togglePreparationInfo()">
-                        <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
-                    </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="procedure-preventive" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Preventive screening</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="none-planned" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">None currently planned</span>
-                        </label>
-                    </div>
-                </li>
-        </ul>
-        </div>
-    </div>
+    <pre>
+        I’m feeling great and mostly just need to stay on track
+        I’m managing a few health conditions and could use help coordinating care
+        I’m trying to build new habits — sleep, stress, nutrition, or weight
+        I’ve had some challenges managing a specific condition lately
+        → (If they select “specific condition,” prompt:)
+        Which areas do you want more support in?
+        High blood pressure management
+        Diabetes management
+        COPD management
+        Asthma management
+        Heart disease management
+        Pregnancy support
+        Weight management and nutrition - clinician
+        Fostering healthy alcohol or tobacco habits - Pelago
+        Mental health support - Rula, Televero (TX), TwoChairs
+        Cancer screening (50+) - Galleri
+        Something else (free text)
+        
+        → (content for each condition selected only appears)
 
-    <!-- Preparation Information (appears when procedures are selected) -->
-    <div id="preparation-info" class="py-24 px-80 mb-24" style="display: none;">
-        <h4 class="heading-lg mb-16">Let's help you prepare for your upcoming care</h4>
-        <p class="body-md text-gray-600 mb-24">Here are important items to verify before your procedure:</p>
+        Heart Health and Blood Pressure
+Intro
+ High blood pressure — or hypertension — is common, but it doesn’t have to be complicated.
+ Even small steps can make a big difference for your heart, brain, and kidneys.
+ 
+Curative is here to help you keep your numbers in range and connect you to care if you need it.
 
-        <div class="flex-column gap-16">
-            <ul class="unordered-list">   
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Network Status</strong><br/>
-                            Confirm your provider and facility are in-network to avoid unexpected costs.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Medication Coverage</strong><br/>
-                            Verify any new medications are on your plan's formulary.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Prior Authorization</strong><br/>
-                            Your provider should handle prior authorization, but confirm it's been approved before your procedure date.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Care Coordination</strong><br/>
-                            Inform your primary care doctor about any upcoming procedures for better care coordination.</p>
-                    </div>
-            </ul>
+What best describes you?
+I’m managing it well
+I have high blood pressure but need better control
+I think I might have high blood pressure, but not sure
 
-        </div>
-    </div>
+I’m managing it well
+That’s great to hear! Staying consistent is key.
+
+
+If you already track your blood pressure or take medication, you’re doing the right things to protect your heart.
+
+
+Your Care Navigator can still help you:
+###
+Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
+
+
+CTA: [Message My Care Navigator →]
+
+I have high blood pressure but need better control
+You’re not alone — many people need extra support at some point.
+ Curative’s clinical and Care Navigator teams can help you:
+###
+
+
+Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
+
+
+CTA: [Get Help Managing Blood Pressure →]
+
+⚪ I’m not sure if I have high blood pressure
+That’s okay — high blood pressure often has no symptoms.
+ A quick reading at your primary care visit or with a home blood pressure monitor can give you a clear answer.
+ Your Care Navigator can help you:
+Find a nearby provider for a blood pressure check
+
+
+Get guidance on healthy ranges and follow-up steps
+
+
+CTA: [Find a Provider →]
+
+A: [Find a Provider →]
+
+🩺 When to Reach Out
+You may need extra support if you:
+Have readings consistently above 130/80 mmHg
+
+
+Take more than one medication to control your blood pressure
+
+
+Feel dizzy, tired, or have headaches related to blood pressure changes
+
+
+Your Care Navigator can connect you to Curative’s hypertension management program or help you book a covered visit with your PCP.
+
+
+
+
+Diabetes management
+COPD management
+Asthma management
+Heart disease management
+Pregnancy support
+Weight management and nutrition - clinician
+Fostering healthy alcohol or tobacco habits - Pelago
+Mental health support - Rula, Televero (TX), TwoChairs
+Cancer screening (50+) - Galleri
+Something else (free text)
+
+    </pre>
+</section>
+
+<section>
+    <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
 </section>

@@ -61,105 +61,13 @@
         
               <article>
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Procedures and Surgeries</h1>
+    <h1 class="heading-2xl mb-16">Health Services Used</h1>
     
-    <p class="body-lg text-gray-600 mb-32">Let's plan for any upcoming procedures or surgeries you may need in the coming year.</p>
+    <p class="body-lg text-gray-600 mb-32">Let's review the health services you used over the past year and identify any patterns or trends.</p>
 
-    <!-- Upcoming Procedures Question -->
-    <div class="py-24 px-80 mb-24">
-        <h4 class="heading-lg mb-24">Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
-
-        <div class="flex-column gap-12">
-            <ul class="unordered-list">
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-major" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Outpatient procedure</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" onchange="togglePreparationInfo()">
-                        <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
-                    </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="procedure-preventive" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Preventive screening</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="none-planned" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">None currently planned</span>
-                        </label>
-                    </div>
-                </li>
-        </ul>
-        </div>
-    </div>
-
-    <!-- Preparation Information (appears when procedures are selected) -->
-    <div id="preparation-info" class="py-24 px-80 mb-24" style="display: none;">
-        <h4 class="heading-lg mb-16">Let's help you prepare for your upcoming care</h4>
-        <p class="body-md text-gray-600 mb-24">Here are important items to verify before your procedure:</p>
-
-        <div class="flex-column gap-16">
-            <ul class="unordered-list">   
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Network Status</strong><br/>
-                            Confirm your provider and facility are in-network to avoid unexpected costs.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Medication Coverage</strong><br/>
-                            Verify any new medications are on your plan's formulary.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Prior Authorization</strong><br/>
-                            Your provider should handle prior authorization, but confirm it's been approved before your procedure date.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Care Coordination</strong><br/>
-                            Inform your primary care doctor about any upcoming procedures for better care coordination.</p>
-                    </div>
-            </ul>
-
-        </div>
+    <!-- Health Services List -->
+    <div id="health-services-list">
+        <!-- Services will be populated here dynamically -->
     </div>
 </section>
 </article>
@@ -293,7 +201,7 @@ function resetPrototype() {
     </script>
 
   
-  <script src="/swagecss/prototypes/blv/renewal/src/procedures.js?v=2.1"></script>
+  <script src="/swagecss/prototypes/blv/renewal/src/health-services.js?v=2.1"></script>
   
 
   <!-- Confetti animation system -->
