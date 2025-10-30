@@ -2,6 +2,7 @@ const pluginGitCommitDate = require("eleventy-plugin-git-commit-date");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src");
+    eleventyConfig.addPassthroughCopy("prototypes/blv/renewal/src");
     eleventyConfig.addPlugin(pluginGitCommitDate);
 
     eleventyConfig.addFilter("formatCommitDateTime", function(date) {

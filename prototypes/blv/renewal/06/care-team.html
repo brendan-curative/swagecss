@@ -13,9 +13,7 @@ page-js: care-team
 ---
 
 <section>
-    <h1 class="mb-16">Your care team</h1>
-    
-    <p class="body-lg mb-32">Let's make sure your list of providers from last year is up to date.</p>
+    <h1 class="mb-16">Confirm Your Providers</h1>
     
     <!-- Family Member Selector -->
     <div class="mb-32 px-80">
@@ -38,7 +36,7 @@ page-js: care-team
     <!-- Primary Care Provider Section -->
     <div class="mb-32 px-80">
         <h3 class="heading-lg mb-8">Primary Care Provider:</h3>
-        
+
         <div id="pcp-providers-list" class="mb-16">
             <!-- Primary Care Provider tiles will be rendered here -->
         </div>
@@ -75,11 +73,57 @@ page-js: care-team
         </div>
 
         <div class="flex-row flex-justify-center gap-16 mb-16">
+            <p>Have specialists, therapists, or other clinicians you see regularly? 
+            </p>
             <!-- Add Provider Button -->
         <button class="button button--small-outline" onclick="addProvider()">
             <span class="heroicon heroicon-16 heroicon-plus"></span>
             Add Another Provider
         </button>
+        </div>
+    </div>
+
+    <h2 class="pt-24">REMINDER: How to Find a Provider </h2>
+
+    
+
+    <div class="constrain constrain-80 mt-16">
+        <p class="mb-16">Finding the right PCP or specialist is simple with <strong>Provider Search</strong>, your digital tool for browsing Curative's $0 network.</p>
+        <ol class="ordered-list">
+            <li class="ordered-list__item" data-order="1" data-color="blue">
+              <div class="ordered-list__number">
+                <span>1</span>
+              </div>
+              <div class="ordered-list__content">
+                <p class="ordered-list__text"><span class="font-semibold">Go to Provider Search.</span> <br><span class="text-gray-600 font-normal">You'll see doctors, nurse practitioners, facilities and other types of providers covered at $0.</span></p>
+              </div>
+            </li>
+            <li class="ordered-list__item" data-order="1" data-color="blue">
+                <div class="ordered-list__number">
+                  <span>2</span>
+                </div>
+                <div class="ordered-list__content">
+                  <p class="ordered-list__text"><span class="font-semibold">Filter by what matters to you.</span> <br><span class="text-gray-600 font-normal">Choose by location, specialty, gender, or language.</span></p>
+                </div>
+              </li>
+              <li class="ordered-list__item" data-order="1" data-color="blue">
+                <div class="ordered-list__number">
+                  <span>3</span>
+                </div>
+                <div class="ordered-list__content">
+                  <p class="ordered-list__text"><span class="font-semibold">Check availability and schedule.</span> <br><span class="text-gray-600 font-normal">Call to ask about earliest appointment availability. </span></p>
+                </div>
+              </li>
+        </ol>
+
+        <h3 class="text-center pt-32 pb-8"><em>Need help? Your Care Navigator can walk you through Provider Search.</em></h3>
+
+        <div class="flex-center-x-y">
+            <button class="button button--outline button--with-icon">
+                <span class="heroicon heroicon-16 heroicon-arrow-top-right-on-square"></span>
+                Open Provider Search
+            </button>
+
         </div>
     </div>
 </section>
