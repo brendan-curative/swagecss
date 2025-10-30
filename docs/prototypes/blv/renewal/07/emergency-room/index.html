@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="blv" data-scrollto-enabled>
+<html data-theme="blv">
   <head>
     <meta name="robots" content="noindex,nofollow">
     <title>BLV Prototype BLV Prototype</title>
@@ -12,7 +12,7 @@
 
 
   </head>
-    <body class="page-lifestyle">
+    <body class="page-facilities">
     <div class="wrap">
       <header>
         <div class="container">
@@ -33,7 +33,7 @@
             <nav>
     <div class="container">
         <div class=" flex-row flex-items-center flex-justify-between">
-            <a class="back" href="/swagecss/prototypes/blv/renewal/06/care-team/"><span class="heroicon heroicon-chevron-left"></span></a>
+            <a class="back" href="/swagecss/prototypes/blv/renewal/07/urgent-care/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
                 <div class="horizontal-stepper__progress stepper-progress-1"></div>
@@ -60,56 +60,122 @@
       <main>
         
               <article>
-<section id="facilities" class="scrollto">
-    <h1 class="heading-2xl mb-16">Your Go-To Facilities</h1>
-
-    <div class="flex-center-x-y pb-24">
-        <img src="/swagecss/src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
-    </div>
-
-    <div class="constrain constrain-80">
-        <p class="body-lg mb-24">Let's make sure your go-to care locations are up to date and that you know where to go when you need care fast.</p>
-
-        <p class="body-lg mb-24">Knowing this ahead of time helps you skip the stress and get the right care, right away.</p>
-    </div>
-
-    <div class="flex-center-x-y">
-        <a href="#telehealth" class="button button--outline button--icon-only scrollto-next">
-            <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
-        </a>
-    </div>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Emergency Room</h1>
     
+
+    <!-- Facilities List -->
+    <div class="flex-column gap-16">
+
+        <div id="emergency-facility-info" class="mb-16" style="display: none;">
+            <div class="tile">
+                <span class="tile__icon heroicon heroicon-outline-building-office"></span>
+                <div class="tile__content">
+                    <p id="emergency-name" class="tile__title"></p>
+                    <p id="emergency-address" class="tile__subtitle"></p>
+                </div>
+                <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('emergency')">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
+                </button>
+                <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('emergency', event)">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                </button>
+            </div>
+
+        </div>
+       
+
+         <!-- No Facility State (shown when no facility selected) -->
+         <div id="emergency-no-facility" class="mb-16" style="display: none;">
+            <button onclick="editFacility('emergency')" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
+                Find my Emergency Room
+            </button>
+        </div>
+        
+        <!-- None Selected State (shown when "none of these work for me" is selected) -->
+        <div id="emergency-none-selected" class="mb-16" style="display: none;">
+            <div class="flex-row flex-justify-between flex-align-start">
+                <p class="text-sm text-gray-600 italic flex-1">None selected - Care Navigator to assist</p>
+                <button class="button button--small-outline ml-16" onclick="editFacility('emergency')" title="Edit Facility">
+                    <span class="heroicon heroicon-outline-cog-6-tooth"></span>
+                </button>
+            </div>
+        </div>
+            
+            <div class="constrain constrain-80">
+                <p class="body-lg pt-24 mb-24">Urgent Care is your best option when you need in-person help for something that can't wait — but isn't life-threatening.</p>
+        
+                <h3 class="heading-lg mb-16">Think sprains, stitches, ear infections, or high fevers.</h3>
+        
+                <ul class="unordered-list">
+                    <li class="unordered-list__item">
+                        <div class="unordered-list__icon text-success">
+                        <span class="heroicon heroicon-check"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Flu or COVID symptoms, minor injuries, infections</span></p>
+                        </div>
+                    </li>
+                    <li class="unordered-list__item mb-24">
+                        <div class="unordered-list__icon text-critical">
+                        <span class="heroicon heroicon-x-mark"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Chest pain, severe bleeding, or head injuries</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
 </section>
 
-<section id="telehealth" class="scrollto">
-    <h2 class="px-32 pb-24">Curative Telehealth</h2>
-
-    <div class="constrain constrain-80">
-        <p class="body-lg mb-24">Telehealth gives you fast access to care from the comfort of home 24/7 &mdash; perfect for minor issues like colds, rashes, allergies, and medication refills.</p>
-
-        <h3 class="heading-lg mb-16"> Your virtual care visits are <strong>always $0</strong>.</h3>
-
-        <ul class="unordered-list">
-            <li class="unordered-list__item">
-                <div class="unordered-list__icon text-success">
-                <span class="heroicon heroicon-check"></span>
-                </div>
-                <div class="unordered-list__content">
-                <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Mild illnesses, rashes, medication questions</span></p>
-                </div>
-            </li>
-            <li class="unordered-list__item mb-24">
-                <div class="unordered-list__icon text-critical">
+<!-- Facility Search Modal -->
+<div id="facility-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="facility-modal-title" class="form-modal__title">Find Your Facility</h3>
+            <button class="form-modal__close" onclick="closeModal()" aria-label="Close modal">
                 <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <p id="facility-modal-subtitle" class="mb-8">Select a facility near you:</p>
+                <p class="text-sm text-gray-600 mb-16">
+                    Remember, <strong id="facility-modal-reminder">you can go to any facility that shows up in our provider search!</strong> We just want to make sure you have at least one option ahead of time
+                </p>
+            </div>
+            
+            <div class="mb-24">
+                <label for="facility-location" class="block mb-8 font-semibold">Location (search by address, zip, or city, state)</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="facility-location" 
+                        placeholder="Enter location..." 
+                        onkeypress="if(event.key==='Enter') searchFacilities()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchFacilities()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
                 </div>
-                <div class="unordered-list__content">
-                <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Emergencies or conditions needing physical exams</span></p>
-                </div>
-            </li>
-        </ul>
+            </div>
+            
+            <div id="facility-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closeModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-facility-btn" onclick="saveFacilitySelection()" class="button button--primary" disabled>
+                Save Selection
+            </button>
+        </div>
     </div>
-
-</section></article>
+</div></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
@@ -144,8 +210,8 @@
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/07/urgent-care/">
-                Urgent Care Center
+            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/07/find/">
+                Finding Facilities
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                   </svg>
@@ -239,6 +305,8 @@ function resetPrototype() {
 }
     </script>
 
+  
+  <script src="/swagecss/prototypes/blv/renewal/src/facilities.js?v=2.1"></script>
   
 
   <!-- Confetti animation system -->
