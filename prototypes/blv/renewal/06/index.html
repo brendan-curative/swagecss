@@ -3,57 +3,62 @@ layout: templates/blv/layout.html
 title: BLV Prototype
 heading: BLV Prototype
 secondary: Secondary
-section: Checking in
-location: screenings
+section: Year in review 
+location: lifestyle
 status: draft
-previous: 05/
-next: 06/care-team/
-button-text: Continue
-page-js: care-team
+previous: 05/care-team/
+next: 06/urgent-care/
+button-text: Urgent Care Center
+scrollto-enabled: true
 ---
 
-<section id="care-team">
-    <h1 class="heading-2xl mb-16">Your Care Team </h1>
+<section id="facilities" class="scrollto">
+    <h1 class="heading-2xl mb-16">Your Go-To Facilities</h1>
 
     <div class="flex-center-x-y pb-24">
         <img src="{{ '/' | url }}src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
     </div>
 
     <div class="constrain constrain-80">
-        <p class="body-lg mb-24">Let's make sure your list of providers is current, especially your <strong>Primary Care Provider (PCP)</strong>.</p>
+        <p class="body-lg mb-24">Let's make sure your go-to care locations are up to date and that you know where to go when you need care fast.</p>
 
-    <p class="body-lg mb-24">Your PCP is your main point of care. Having a primary care provider means: </p>
+        <p class="body-lg mb-24">Knowing this ahead of time helps you skip the stress and get the right care, right away.</p>
+    </div>
+
+    <div class="flex-center-x-y">
+        <a href="#telehealth" class="button button--outline button--icon-only scrollto-next">
+            <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
+        </a>
+    </div>
+    
+</section>
+
+<section id="telehealth" class="scrollto">
+    <h2 class="px-32 pb-24">Curative Telehealth</h2>
 
     <div class="constrain constrain-80">
-        <ul class="unordered-list unordered-list-gap-24" role="list">
-            <li class="unordered-list__item flex-items-start" role="listitem" tabindex="0">
+        <p class="body-lg mb-24">Telehealth gives you fast access to care from the comfort of home 24/7 &mdash; perfect for minor issues like colds, rashes, allergies, and medication refills.</p>
+
+        <h3 class="heading-lg mb-16"> Your virtual care visits are <strong>always $0</strong>.</h3>
+
+        <ul class="unordered-list">
+            <li class="unordered-list__item">
                 <div class="unordered-list__icon text-success">
-                    <span class="heroicon heroicon-16 heroicon-check"></span>
+                <span class="heroicon heroicon-check"></span>
                 </div>
                 <div class="unordered-list__content">
-                    <p class="unordered-list__text">One person knows your full health story.</p>
+                <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Mild illnesses, rashes, medication questions</span></p>
                 </div>
             </li>
-            <li class="unordered-list__item flex-items-start" role="listitem" tabindex="0">
-                <div class="unordered-list__icon text-success">
-                    <span class="heroicon heroicon-16 heroicon-check"></span>
+            <li class="unordered-list__item mb-24">
+                <div class="unordered-list__icon text-critical">
+                <span class="heroicon heroicon-x-mark"></span>
                 </div>
                 <div class="unordered-list__content">
-                    <p class="unordered-list__text">You can stay on track to get preventive care and screenings on time.</p>
-                </div>
-            </li>
-            <li class="unordered-list__item flex-items-start" role="listitem" tabindex="0">
-                <div class="unordered-list__icon text-success">
-                    <span class="heroicon heroicon-16 heroicon-check"></span>
-                </div>
-                <div class="unordered-list__content">
-                    <p class="unordered-list__text">It's easier to catch small issues before they become big ones.</p>
+                <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Emergencies or conditions needing physical exams</span></p>
                 </div>
             </li>
         </ul>
-    </div>
-
-    <p class="body-lg my-24">Keeping your care team up to date helps us make sure you get the most from your $0 coverage.</p>
     </div>
 
 </section>

@@ -12,7 +12,7 @@
 
 
   </head>
-    <body class="page-procedures">
+    <body class="page-medications">
     <div class="wrap">
       <header>
         <div class="container">
@@ -33,7 +33,7 @@
             <nav>
     <div class="container">
         <div class=" flex-row flex-items-center flex-justify-between">
-            <a class="back" href="/swagecss/prototypes/blv/renewal/08/"><span class="heroicon heroicon-chevron-left"></span></a>
+            <a class="back" href="/swagecss/prototypes/blv/renewal/07/pharmacy/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
                 <div class="horizontal-stepper__progress stepper-progress-1"></div>
@@ -61,117 +61,124 @@
         
               <article>
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Ongoing Support for Your Health</h1>
+    <h1 class="heading-2xl mb-16">Your Preferred Pharmacy</h1>
     
-    <h2 class="heading-lg mb-16">Let's start with how you're feeling overall.</h2>
+    <p class="body-lg text-gray-600 mb-32">lease confirm your preferred pharmacy or find convenient, in-network options near you.</p>
 
-
-    <pre>
-        I’m feeling great and mostly just need to stay on track
-        I’m managing a few health conditions and could use help coordinating care
-        I’m trying to build new habits — sleep, stress, nutrition, or weight
-        I’ve had some challenges managing a specific condition lately
-        → (If they select “specific condition,” prompt:)
-        Which areas do you want more support in?
-        High blood pressure management
-        Diabetes management
-        COPD management
-        Asthma management
-        Heart disease management
-        Pregnancy support
-        Weight management and nutrition - clinician
-        Fostering healthy alcohol or tobacco habits - Pelago
-        Mental health support - Rula, Televero (TX), TwoChairs
-        Cancer screening (50+) - Galleri
-        Something else (free text)
+    <!-- Your Preferred Pharmacy Section -->
+    <div class="mb-48">
         
-        → (content for each condition selected only appears)
+        
+        <div class="card transparent py-24 px-80">
+            <h2 class="heading-xl mb-24">Your Preferred Pharmacy</h2>
+            <div class="mb-16">
+            
+                <!-- Pharmacy Info Section (shown when pharmacy is selected) -->
+                <div id="pharmacy-facility-info" class="mb-16" style="display: none;">
 
-        Heart Health and Blood Pressure
-Intro
- High blood pressure — or hypertension — is common, but it doesn’t have to be complicated.
- Even small steps can make a big difference for your heart, brain, and kidneys.
- 
-Curative is here to help you keep your numbers in range and connect you to care if you need it.
+                    <div class="tile">
+                        <span class="tile__icon heroicon heroicon-outline-building-storefront"></span>
+                        <div class="tile__content">
+                            <p id="pharmacy-name" class="tile__title"></p>
+                            <p id="pharmacy-address" class="tile__subtitle"></p>
+                        </div>
+                        <button class="tile__dismiss" aria-label="Edit Pharmacy" onclick="editPharmacy()">
+                            <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
+                        </button>
+                        <button class="tile__dismiss" aria-label="Delete Pharmacy" onclick="deletePharmacy(event)">
+                            <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- No Pharmacy State (shown when no pharmacy selected) -->
+                <div id="pharmacy-no-facility" class="mb-16" style="display: none;">
+                    <button onclick="editPharmacy()" class="button button--small-outline">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
+                        Find my Preferred Pharmacy
+                    </button>
+                </div>
+                
+                <!-- None Selected State (shown when "none of these work for me" is selected) -->
+                <div id="pharmacy-none-selected" class="mb-16" style="display: none;">
+                    <div class="flex-row flex-justify-between flex-align-start">
+                        <p class="text-sm text-gray-600 italic flex-1">None selected - Care Navigator to assist</p>
+                        <button class="button button--small-outline ml-16" onclick="editPharmacy()" title="Edit Pharmacy">
+                            <span class="heroicon heroicon-outline-cog-6-tooth"></span>
+                        </button>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
 
-What best describes you?
-I’m managing it well
-I have high blood pressure but need better control
-I think I might have high blood pressure, but not sure
-
-I’m managing it well
-That’s great to hear! Staying consistent is key.
-
-
-If you already track your blood pressure or take medication, you’re doing the right things to protect your heart.
-
-
-Your Care Navigator can still help you:
-###
-Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
-
-
-CTA: [Message My Care Navigator →]
-
-I have high blood pressure but need better control
-You’re not alone — many people need extra support at some point.
- Curative’s clinical and Care Navigator teams can help you:
-###
-
-
-Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
-
-
-CTA: [Get Help Managing Blood Pressure →]
-
-⚪ I’m not sure if I have high blood pressure
-That’s okay — high blood pressure often has no symptoms.
- A quick reading at your primary care visit or with a home blood pressure monitor can give you a clear answer.
- Your Care Navigator can help you:
-Find a nearby provider for a blood pressure check
-
-
-Get guidance on healthy ranges and follow-up steps
-
-
-CTA: [Find a Provider →]
-
-A: [Find a Provider →]
-
-🩺 When to Reach Out
-You may need extra support if you:
-Have readings consistently above 130/80 mmHg
-
-
-Take more than one medication to control your blood pressure
-
-
-Feel dizzy, tired, or have headaches related to blood pressure changes
-
-
-Your Care Navigator can connect you to Curative’s hypertension management program or help you book a covered visit with your PCP.
-
-
-
-
-Diabetes management
-COPD management
-Asthma management
-Heart disease management
-Pregnancy support
-Weight management and nutrition - clinician
-Fostering healthy alcohol or tobacco habits - Pelago
-Mental health support - Rula, Televero (TX), TwoChairs
-Cancer screening (50+) - Galleri
-Something else (free text)
-
-    </pre>
+    <p class="body-lg text-gray-600">
+        Having a preferred pharmacy keeps your medications consistent, helps avoid delays, and ensures you always get the best price under your Curative plan.
+    </p>
 </section>
 
 <section>
-    <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
+    <h2 class="heading-lg mb-16">How to Find a Covered Pharmacy</h2>
+
+    <p class="body-lg mb-24">Finding a pharmacy in your $0 network is easy with Provider Search.</p>
+
+    <h3 class="mb-16">Here's how:</h3>
+    <ol class="numbered-list mb-24 ml-24">
+        <li class="mb-16"><span class="font-semibold">Go to Provider Search → Pharmacy.</span></li>
+
+    <li class="mb-16"><span class="font-semibold">Enter your ZIP code or city</span> to find in-network options near home or work.</li>
+
+    <li class="mb-16"><span class="font-semibold">Select a convenient option.</span> Use an in-network pharmacy to get plan pricing</li>
+    </ol>
+
+    <div class="flex-center-x-y my-16">
+        <button class="button button--outline button--with-icon">
+            <span class="heroicon heroicon-16 heroicon-arrow-top-right-on-square"></span>
+            Open Pharmacy Search
+        </button>
+    </div>
 </section>
-</article>
+
+
+<!-- Pharmacy Search Modal -->
+<div id="pharmacy-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="pharmacy-modal-title" class="form-modal__title">Find Your Preferred Pharmacy</h3>
+            <button class="form-modal__close" onclick="closePharmacyModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <label for="pharmacy-search" class="block mb-8 font-semibold">Enter your location to find pharmacies nearby:</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="pharmacy-search" 
+                        placeholder="City, State or ZIP code" 
+                        onkeypress="if(event.key==='Enter') searchPharmacies()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchPharmacies()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="pharmacy-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closePharmacyModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-pharmacy-btn" onclick="savePharmacySelection()" class="button button--primary" style="display: none;">
+                Save Pharmacy
+            </button>
+        </div>
+    </div>
+</div></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
@@ -206,8 +213,8 @@ Something else (free text)
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/10/">
-                Health Services
+            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/08/">
+                Your Screenings
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                   </svg>
@@ -302,7 +309,7 @@ function resetPrototype() {
     </script>
 
   
-  <script src="/swagecss/prototypes/blv/renewal/src/procedures.js?v=2.1"></script>
+  <script src="/swagecss/prototypes/blv/renewal/src/pharmacy.js?v=2.1"></script>
   
 
   <!-- Confetti animation system -->

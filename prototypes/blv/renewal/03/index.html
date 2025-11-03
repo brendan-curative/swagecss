@@ -4,77 +4,164 @@ title: BLV Prototype
 heading: BLV Prototype
 secondary: Secondary
 section: Checking in
-location: care-team
+location: facilities
 status: draft
 previous: 02/
 next: 04/
 button-text: Continue
-page-js: legal
+page-js: cashcard
 scrollto-enabled: true
-agreement-enabled: true
 ---
 
-<section id="legal" class="scrollto">
-    <h1 class="mb-16"> Legal Agreements &amp; Consents</h1>
-    
-    <p class="body-lg mb-32"> Please review and acknowledge these important agreements to continue with your annual check-in:</p>
+<section id="cashcard" class="scrollto">
+    <h1 class="heading-2xl mb-16">The Curative Cash Card</h1>
 
-    <div class="agreement">
-        <!-- Scrollable content -->
-        <div class="agreement__content">
-            <h1>Health Information Sharing Consent</h1>
-            <p>I consent to Curative collecting, using, and sharing my health information as described in the 
-                Notice of Privacy Practices to provide care coordination, care management services, and to improve quality of care.
-            
-           <h2>This consent allows us to:</h2>
-           <ul>
-            <li></li>Coordinate your care with healthcare providers</li>
-            <li>Share relevant health information for treatment purposes</li>
-            <li>Provide care management and wellness programs</li>
-            <li>Analyze health trends to improve our services</li>
-           </ul>
-           
-        </div>
-        
-        <!-- Agreement checkmark button -->
-        <button class="checkmark-button agreement__button" data-checked="false">
-            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21">
-                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-            </svg>
-            <span class="checkmark-button__text">I agree to the Health Information Sharing Consent</span>
-        </button>
+    <div class="flex-center-x-y pb-24">
+        <img src="{{ '/' | url }}src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
+    </div>
+    
+    <div class="constrain constrain-80">
+        <p class="body-lg mb-32">Your Curative Cash Card makes paying for care simple, predictable, and stress-free—so you can focus on your health, not the bill.</p>
+
+    <p class="body-lg mb-32">Whether you're renewing your plan or using the card for the first time, here's a quick refresh on how it works and what's new.</p>
     </div>
 
-    <div class="flex-center-x-y pt-24">
-        <a href="#telehealth" class="button button--outline button--icon-only scrollto-next">
+    <div class="flex-center-x-y">
+        <a href="#new" class="button button--outline button--icon-only scrollto-next">
             <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
         </a>
     </div>
-    </section>
-<section id="telehealth" class="scrollto">
-<div class="agreement">
-    <!-- Scrollable content -->
-    <div class="agreement__content">
-        <h1>Telehealth Services Consent</h1>
-        <p> I consent to receiving telehealth services, including video consultations and remote monitoring, 
-            and understand the benefits and limitations of virtual healthcare delivery.</p>
-           
-        
-         <ul>
-            <li>Benefits: Convenient access to care, reduced travel time, and timely consultations.</li>
-            <li>Limitations: Not suitable for emergencies or physical examinations requiring in-person care.</li>
-            <li>Technology Requirements: Stable internet connection and compatible device with camera/microphone.</li>
-         </ul>
-            
-       
+
+</section>
+
+<section id="new" class="scrollto">
+    <h2 class="pb-24">What's New for 2025</h2>
+
+    <ul class="unordered-list unordered-list-gap-16" role="list">
+        <li class="unordered-list__item" role="listitem" tabindex="0">
+            <div class="unordered-list__icon text-signal-orange">
+                <span class="heroicon heroicon-16 heroicon-credit-card"></span>
+            </div>
+            <div class="unordered-list__content">
+                <p class="unordered-list__text">A familiar card with a new name. <br>
+                    <span class="text-sm text-gray-600 font-normal">The Curative Cash Card —formerly the Zero Card— still gives you an easy way to access covered services at $0 out of pocket.</span></p>
+                
+            </div>
+        </li>
+        <li class="unordered-list__item" role="listitem" tabindex="0">
+            <div class="unordered-list__icon text-signal-orange">
+                <span class="heroicon heroicon-16 heroicon-credit-card"></span>
+            </div>
+            <div class="unordered-list__content">
+                <p class="unordered-list__text">Expanded network flexibility. <br>
+                    <span class="text-sm text-gray-600 font-normal">Use your card at any provider listed in the Curative directory for eligible services, or nominate a new provider to be reviewed for Cash Card use.</span></p>
+                
+            </div>
+        </li>
+        <li class="unordered-list__item" role="listitem" tabindex="0">
+            <div class="unordered-list__icon text-signal-orange">
+                <span class="heroicon heroicon-16 heroicon-credit-card"></span>
+            </div>
+            <div class="unordered-list__content">
+                <p class="unordered-list__text">Smarter oversight for big-ticket care <br>
+                    <span class="text-sm text-gray-600 font-normal">High-cost or complex procedures automatically go through our clinical review to confirm the right site of care and keep your plan affordable.</span></p>
+            </div>
+        </li>
+        <li class="unordered-list__item" role="listitem" tabindex="0">
+            <div class="unordered-list__icon text-signal-orange">
+                <span class="heroicon heroicon-16 heroicon-credit-card"></span>
+            </div>
+            <div class="unordered-list__content">
+                <p class="unordered-list__text">More support for mental health. <br>
+                    <span class="text-sm text-gray-600 font-normal">Many therapists don't take insurance—but with the Cash Card, you can easily pay cash at approved mental-health providers and still enjoy $0 cost when covered.</span></p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="flex-center-x-y pt-24">
+        <a href="#most" class="button button--outline button--icon-only scrollto-next">
+            <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
+        </a>
     </div>
-    
-    <!-- Agreement checkmark button -->
-    <button class="checkmark-button agreement__button" data-checked="false">
-        <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21">
-            <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
-        </svg>
-        <span class="checkmark-button__text">I agree to the Telehealth Services Consent</span>
-    </button>
-</div>
+</section>
+
+<section id="most" class="scrollto">
+    <h2 class="pb-24">How to Get the Most From Your Cash Card</h2>
+
+    <div class="constrain constrain-80">
+        <h3 class="pb-16">Use it for:</h3>
+
+    <ul class="unordered-list unordered-list-gap-16" role="list">
+        <li class="unordered-list__item" role="listitem" tabindex="0">
+            <div class="unordered-list__icon text-signal-orange">
+                <span class="heroicon heroicon-16 heroicon-check"></span>
+            </div>
+            <div class="unordered-list__content">
+                <p class="unordered-list__text">Office visits, imaging, labs, or procedures with in-network providers</p>
+            </div>
+        </li>
+        <li class="unordered-list__item" role="listitem" tabindex="0">
+            <div class="unordered-list__icon text-signal-orange">
+                <span class="heroicon heroicon-16 heroicon-check"></span>
+            </div>
+            <div class="unordered-list__content">
+                <p class="unordered-list__text">Covered mental-health or substance-use services</p>
+            </div>
+        </li>
+        <li class="unordered-list__item" role="listitem" tabindex="0">
+            <div class="unordered-list__icon text-signal-orange">
+                <span class="heroicon heroicon-16 heroicon-check"></span>
+            </div>
+            <div class="unordered-list__content">
+                <p class="unordered-list__text">Prescription or preventive care visits listed in your benefits booklet</p>
+            </div>
+        </li>
+    </ul>
+    </div>
+
+    <div class="constrain constrain-40 pt-32">
+        <div class="card">
+            <h3>Need help finding where to use it?
+                ####</h3>
+
+        </div>
+    </div>
+
+    <div class="flex-center-x-y pt-24">
+        <a href="#reminders" class="button button--outline button--icon-only scrollto-next">
+            <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
+        </a>
+    </div>
+</section>
+
+<section id="reminders" class="scrollto">
+    <h3>Quick Reminders</h3>
+
+    <div class="constrain constrain-80 pt-32">
+        <ul class="unordered-list unordered-list-gap-16" role="list">
+            <li class="unordered-list__item" role="listitem" tabindex="0">
+                <div class="unordered-list__icon text-signal-orange">
+                    <span class="heroicon heroicon-16 heroicon-check"></span>
+                </div>
+                <div class="unordered-list__content">
+                    <p class="unordered-list__text">Only use your Cash Card for services covered in your benefits booklet.</p>
+                </div>
+            </li>
+            <li class="unordered-list__item" role="listitem" tabindex="0">
+                <div class="unordered-list__icon text-signal-orange">
+                    <span class="heroicon heroicon-16 heroicon-check"></span>
+                </div>
+                <div class="unordered-list__content">
+                    <p class="unordered-list__text">Some high-cost services may require prior authorization before payment.</p>
+                </div>
+            </li>
+            <li class="unordered-list__item" role="listitem" tabindex="0">
+                <div class="unordered-list__icon text-signal-orange">
+                    <span class="heroicon heroicon-16 heroicon-check"></span>
+                </div>
+                <div class="unordered-list__content">
+                    <p class="unordered-list__text">Always confirm a provider’s eligibility before scheduling care.</p>
+                </div>
+            </li>
+        </ul>
 </section>

@@ -12,7 +12,7 @@
 
 
   </head>
-    <body class="page-procedures">
+    <body class="page-facilities">
     <div class="wrap">
       <header>
         <div class="container">
@@ -33,7 +33,7 @@
             <nav>
     <div class="container">
         <div class=" flex-row flex-items-center flex-justify-between">
-            <a class="back" href="/swagecss/prototypes/blv/renewal/08/"><span class="heroicon heroicon-chevron-left"></span></a>
+            <a class="back" href="/swagecss/prototypes/blv/renewal/06/"><span class="heroicon heroicon-chevron-left"></span></a>
             <ol class="horizontal-stepper" data-testid="HorizontalStepper">
             <li class="horizontal-stepper__step horizontal-stepper__step--first">
                 <div class="horizontal-stepper__progress stepper-progress-1"></div>
@@ -61,117 +61,134 @@
         
               <article>
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Ongoing Support for Your Health</h1>
+    <h1 class="heading-2xl mb-16">Urgent Care Center</h1>
     
-    <h2 class="heading-lg mb-16">Let's start with how you're feeling overall.</h2>
 
+    <!-- Facilities List -->
+    <div class="flex-column gap-16">
 
-    <pre>
-        I’m feeling great and mostly just need to stay on track
-        I’m managing a few health conditions and could use help coordinating care
-        I’m trying to build new habits — sleep, stress, nutrition, or weight
-        I’ve had some challenges managing a specific condition lately
-        → (If they select “specific condition,” prompt:)
-        Which areas do you want more support in?
-        High blood pressure management
-        Diabetes management
-        COPD management
-        Asthma management
-        Heart disease management
-        Pregnancy support
-        Weight management and nutrition - clinician
-        Fostering healthy alcohol or tobacco habits - Pelago
-        Mental health support - Rula, Televero (TX), TwoChairs
-        Cancer screening (50+) - Galleri
-        Something else (free text)
+        <div id="urgent-care-facility-info" class="mb-16" style="display: none;">
+            <div class="card p-24 transparent py-24 px-80">
+                <div class="tile">
+                    <span class="tile__icon heroicon heroicon-outline-building-office"></span>
+                    <div class="tile__content">
+                        <p id="urgent-care-name" class="tile__title">Curative Telehealth</p>
+                        <p id="urgent-care-address" class="tile__subtitle">Telehealth is a great option for when you want care from the comfort of your home.</p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('urgent-care')">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
+                    </button>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('urgent-care', event)">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+       
+
         
-        → (content for each condition selected only appears)
 
-        Heart Health and Blood Pressure
-Intro
- High blood pressure — or hypertension — is common, but it doesn’t have to be complicated.
- Even small steps can make a big difference for your heart, brain, and kidneys.
- 
-Curative is here to help you keep your numbers in range and connect you to care if you need it.
+            
+            
+            <!-- No Facility State (shown when no facility selected) -->
+            <div id="urgent-care-no-facility" class="mb-16" style="display: none;">
+                <div class="flex-center-x-y">
+                    <button onclick="editFacility('urgent-care')" class="button button--small-outline">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
+                        Find my Urgent Care Center
+                    </button>
+                </div>
+            </div>
+            
+            <!-- None Selected State (shown when "none of these work for me" is selected) -->
+            <div id="urgent-care-none-selected" class="mb-16" style="display: none;">
+                <div class="card p-24 transparent py-24 px-80">
+                    <div class="tile">
+                        <span class="tile__icon heroicon heroicon-no-symbol"></span>
+                        <div class="tile__content">
+                            <p class="tile__title">None selected</p>
+                            <p class="tile__subtitle">Care Navigator to assist</p>
+                        </div>
+                        <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('urgent-care')">
+                            <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="constrain constrain-80">
+                <p class="body-lg pt-24 mb-24">Urgent Care is your best option when you need in-person help for something that can't wait — but isn't life-threatening.</p>
+        
+                <h3 class="heading-lg mb-16">Think sprains, stitches, ear infections, or high fevers.</h3>
+        
+                <ul class="unordered-list">
+                    <li class="unordered-list__item">
+                        <div class="unordered-list__icon text-success">
+                        <span class="heroicon heroicon-check"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Flu or COVID symptoms, minor injuries, infections</span></p>
+                        </div>
+                    </li>
+                    <li class="unordered-list__item mb-24">
+                        <div class="unordered-list__icon text-critical">
+                        <span class="heroicon heroicon-x-mark"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Chest pain, severe bleeding, or head injuries</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-What best describes you?
-I’m managing it well
-I have high blood pressure but need better control
-I think I might have high blood pressure, but not sure
-
-I’m managing it well
-That’s great to hear! Staying consistent is key.
-
-
-If you already track your blood pressure or take medication, you’re doing the right things to protect your heart.
-
-
-Your Care Navigator can still help you:
-###
-Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
-
-
-CTA: [Message My Care Navigator →]
-
-I have high blood pressure but need better control
-You’re not alone — many people need extra support at some point.
- Curative’s clinical and Care Navigator teams can help you:
-###
-
-
-Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
-
-
-CTA: [Get Help Managing Blood Pressure →]
-
-⚪ I’m not sure if I have high blood pressure
-That’s okay — high blood pressure often has no symptoms.
- A quick reading at your primary care visit or with a home blood pressure monitor can give you a clear answer.
- Your Care Navigator can help you:
-Find a nearby provider for a blood pressure check
-
-
-Get guidance on healthy ranges and follow-up steps
-
-
-CTA: [Find a Provider →]
-
-A: [Find a Provider →]
-
-🩺 When to Reach Out
-You may need extra support if you:
-Have readings consistently above 130/80 mmHg
-
-
-Take more than one medication to control your blood pressure
-
-
-Feel dizzy, tired, or have headaches related to blood pressure changes
-
-
-Your Care Navigator can connect you to Curative’s hypertension management program or help you book a covered visit with your PCP.
-
-
-
-
-Diabetes management
-COPD management
-Asthma management
-Heart disease management
-Pregnancy support
-Weight management and nutrition - clinician
-Fostering healthy alcohol or tobacco habits - Pelago
-Mental health support - Rula, Televero (TX), TwoChairs
-Cancer screening (50+) - Galleri
-Something else (free text)
-
-    </pre>
 </section>
 
-<section>
-    <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
-</section>
-</article>
+<!-- Facility Search Modal -->
+<div id="facility-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="facility-modal-title" class="form-modal__title">Find Your Facility</h3>
+            <button class="form-modal__close" onclick="closeModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <p id="facility-modal-subtitle" class="mb-8">Select a facility near you:</p>
+                <p class="text-sm text-gray-600 mb-16">
+                    Remember, <strong id="facility-modal-reminder">you can go to any facility that shows up in our provider search!</strong> We just want to make sure you have at least one option ahead of time
+                </p>
+            </div>
+            
+            <div class="mb-24">
+                <label for="facility-location" class="block mb-8 font-semibold">Location (search by address, zip, or city, state)</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="facility-location" 
+                        placeholder="Enter location..." 
+                        onkeypress="if(event.key==='Enter') searchFacilities()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchFacilities()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="facility-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closeModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-facility-btn" onclick="saveFacilitySelection()" class="button button--primary" disabled>
+                Save Selection
+            </button>
+        </div>
+    </div>
+</div></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
@@ -206,8 +223,8 @@ Something else (free text)
   
       <footer>
         <div class="container flex-row flex-justify-center">
-            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/10/">
-                Health Services
+            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/06/emergency-room/">
+                Emergency Room
                 <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                   </svg>
@@ -302,7 +319,7 @@ function resetPrototype() {
     </script>
 
   
-  <script src="/swagecss/prototypes/blv/renewal/src/procedures.js?v=2.1"></script>
+  <script src="/swagecss/prototypes/blv/renewal/src/facilities.js?v=2.1"></script>
   
 
   <!-- Confetti animation system -->

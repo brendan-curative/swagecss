@@ -3,60 +3,114 @@ layout: templates/blv/layout.html
 title: BLV Prototype
 heading: BLV Prototype
 secondary: Secondary
-section: Year in review
-location: barriers
+section: Looking ahead
+location: procedures
 status: draft
 previous: 11/
 next: 13/
 button-text: Continue
-page-js: barriers
+page-js: procedures
 ---
 
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Barriers to Care</h1>
+    <h1 class="heading-2xl mb-16">Procedures and Surgeries</h1>
     
-    <p class="body-lg text-gray-600 mb-32">Help us understand any challenges you've faced in accessing healthcare so we can better support you.</p>
+    <p class="body-lg text-gray-600 mb-32">Let's plan for any upcoming procedures or surgeries you may need in the coming year.</p>
 
-    <!-- Barriers to Care Question -->
-    <div class="card p-24">
-        <h4 class="heading-lg mb-24">What barriers did you encounter in getting healthcare over the last year?</h4>
+    <!-- Upcoming Procedures Question -->
+    <div class="py-24 px-80 mb-24">
+        <h4 class="heading-lg mb-24">Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
 
-        <div class="select mb-24">
-            <div class="select__label-group">
-                <label for="barrier-select" class="select__label">Select the main barrier you experienced:</label>
-            </div>
-            <div class="select__input-wrapper">
-                <select class="select__control" id="barrier-select" onchange="updateBarrierSelect(this.value)">
-                    <option value="">Choose a barrier...</option>
-                    <option value="transportation">Transportation barriers</option>
-                    <option value="scheduling">Scheduling difficulties</option>
-                    <option value="location">Location/accessibility issues</option>
-                    <option value="cost">Financial barriers (cost, insurance coverage)</option>
-                    <option value="communication">Communication barriers (language, health literacy)</option>
-                    <option value="cultural">Cultural barriers and preferences</option>
-                    <option value="technology">Technology barriers (telehealth, online scheduling)</option>
-                    <option value="support">Lack of support system</option>
-                    <option value="provider">Provider availability</option>
-                    <option value="other">Other</option>
-                    <option value="none">No significant barriers</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
+        <div class="flex-column gap-12">
+            <ul class="unordered-list">
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" id="surgery-major" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">Outpatient procedure</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" onchange="togglePreparationInfo()">
+                        <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
+                    </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox__input" id="procedure-preventive" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">Preventive screening</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__content">
+                        <label class="checkbox">
+                        <input type="checkbox" class="checkbox__input" id="none-planned" onchange="togglePreparationInfo()">
+                            <span class="checkbox__label">None currently planned</span>
+                        </label>
+                    </div>
+                </li>
+        </ul>
         </div>
+    </div>
 
-        <div class="textfield">
-            <label for="barrier-comments" class="textfield__label">Please provide additional details about the barriers you experienced:</label>
-            <div class="textfield__input-wrapper">
-                <textarea 
-                    id="barrier-comments" 
-                    class="textfield__input" 
-                    rows="4" 
-                    placeholder="Tell us more about the challenges you faced accessing healthcare..."
-                    onchange="updateBarrierComments(this.value)"
-                ></textarea>
-            </div>
+    <!-- Preparation Information (appears when procedures are selected) -->
+    <div id="preparation-info" class="py-24 px-80 mb-24" style="display: none;">
+        <h4 class="heading-lg mb-16">Let's help you prepare for your upcoming care</h4>
+        <p class="body-md text-gray-600 mb-24">Here are important items to verify before your procedure:</p>
+
+        <div class="flex-column gap-16">
+            <ul class="unordered-list">   
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Network Status</strong><br/>
+                            Confirm your provider and facility are in-network to avoid unexpected costs.</p>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Medication Coverage</strong><br/>
+                            Verify any new medications are on your plan's formulary.</p>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Prior Authorization</strong><br/>
+                            Your provider should handle prior authorization, but confirm it's been approved before your procedure date.</p>
+                    </div>
+                </li>
+                <li class="unordered-list__item">
+                    <div class="unordered-list__icon text-green-500">
+                        <span class="heroicon heroicon-check"></span>
+                    </div>
+                    <div class="unordered-list__content">
+                        <p><strong>Care Coordination</strong><br/>
+                            Inform your primary care doctor about any upcoming procedures for better care coordination.</p>
+                    </div>
+            </ul>
+
         </div>
     </div>
 </section>

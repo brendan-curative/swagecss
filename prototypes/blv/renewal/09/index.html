@@ -3,149 +3,123 @@ layout: templates/blv/layout.html
 title: BLV Prototype
 heading: BLV Prototype
 secondary: Secondary
-section: Checking in
-location: screenings
+section: Looking ahead
+location: procedures
 status: draft
 previous: 08/
 next: 10/
-button-text: Continue
-page-js: screenings
+button-text: Health Services
+page-js: procedures
 ---
 
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Your Screenings</h1>
+    <h1 class="heading-2xl mb-16">Ongoing Support for Your Health</h1>
+    
+    <h2 class="heading-lg mb-16">Let's start with how you're feeling overall.</h2>
 
-    <div class="flex-center-x-y pb-24">
-        <img src="{{ '/' | url }}src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
-    </div>
 
-    <p class="body-lg mb-24">Let's make sure you're up to date on preventive screenings that can help catch health issues early when they're easier to treat. These screenings are covered at $0 under your Curative plan.</p>
-
-    <p class="body-lg mb-24">creening recommendations can vary depending on your personal or family health history, so you may have already completed some outside the usual age range.</p>
-
-    <p class="body-lg mb-16 italic">If you've had a screening in the last year, please update your record below.</p>
-
-    <div class="screenings p-24">
-        <div id="cervical-cancer-screening" class="card transparent p-24">
-            <h3 class="mb-16">Cervical Cancer Screening (Ages 21-65, Women)</h3>
-            <p class="body-lg mb-24">A Pap test or HPV test checks for changes in cervical cells that could lead to cancer. These screenings are usually done by a primary care provider or OB/GYN during a routine visit</p>
+    <pre>
+        I’m feeling great and mostly just need to stay on track
+        I’m managing a few health conditions and could use help coordinating care
+        I’m trying to build new habits — sleep, stress, nutrition, or weight
+        I’ve had some challenges managing a specific condition lately
+        → (If they select “specific condition,” prompt:)
+        Which areas do you want more support in?
+        High blood pressure management
+        Diabetes management
+        COPD management
+        Asthma management
+        Heart disease management
+        Pregnancy support
+        Weight management and nutrition - clinician
+        Fostering healthy alcohol or tobacco habits - Pelago
+        Mental health support - Rula, Televero (TX), TwoChairs
+        Cancer screening (50+) - Galleri
+        Something else (free text)
         
-            <p class="body-lg mb-24">Depending on your results, your provider may recommend testing every 3 to 5 years or more often if you have a higher risk or family history.</p>
-        
-            <p class="body-lg mb-24">Early detection can prevent most cervical cancers before they start.</p>
+        → (content for each condition selected only appears)
 
-            <div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
-                </div>
-            </div>
-        </div>
+        Heart Health and Blood Pressure
+Intro
+ High blood pressure — or hypertension — is common, but it doesn’t have to be complicated.
+ Even small steps can make a big difference for your heart, brain, and kidneys.
+ 
+Curative is here to help you keep your numbers in range and connect you to care if you need it.
 
-        <div id="breast-cancer-screening" class="card transparent p-24">
-            <h3 class="mb-16">Breast Cancer Screening (Ages 40-74, Women)</h3>
-            <p class="body-lg mb-24">A mammogram is an X-ray that takes detailed images of breast tissue to look for early signs of cancer — often before anything can be felt</p>
-        
-            <p class="body-lg mb-24">It's ordered by your primary care provider or OB/GYN and done at a mammography center or imaging facility.</p>
-        
-            <p class="body-lg mb-24">Most women benefit from screening every 1-2 years, but your provider may recommend starting earlier or screening more often if you have a family history or genetic risk factors.</p>
+What best describes you?
+I’m managing it well
+I have high blood pressure but need better control
+I think I might have high blood pressure, but not sure
 
-            <p class="body-lg mb-24">If your results show dense breast tissue, your provider may order a follow-up test like an ultrasound or MRI — this is common and helps get a clearer picture.</p>
+I’m managing it well
+That’s great to hear! Staying consistent is key.
 
-            <p class="body-lg mb-24 italic">It also helps to stay familiar with how your breasts normally look and feel. If you notice any new lumps, skin changes, or discharge between screenings, let your provider know right away.</p>
 
-            <p class="body-lg mb-24 italic">Regular mammograms and awareness of your own body work together to support early detection, when treatment is more effective.</p>
+If you already track your blood pressure or take medication, you’re doing the right things to protect your heart.
 
-            <div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-colonoscopy" value="" placeholder="Enter year" onchange="updateScreening('colonoscopy', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
-                </div>
-            </div>
-        </div>
 
-        <div id="colon-cancer-screening" class="card transparent p-24">
-            <h3 class="mb-16">Colon Cancer Screening (Ages 45-75, Men & Women)</h3>
-            <p class="body-lg mb-24">Colorectal screenings look for early signs of cancer or precancerous growths in the colon and rectum. They can be done through a colonoscopy — a simple procedure where a gastroenterologist uses a small camera to look inside your colon while you're asleep or relaxed at a medical center — or a stool-based test (like Cologuard), which you can do at home and mail to a lab.</p>
+Your Care Navigator can still help you:
+###
+Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
 
-            <p class="body-lg mb-24">Your primary care provider can help you choose the best option and order the test.</p>
 
-            <p class="body-lg mb-24">Most people start screening at age 45 and repeat it every year (for stool-based tests) or every 10 years (for colonoscopy).</p>
+CTA: [Message My Care Navigator →]
 
-            <p class="body-lg mb-24 italic">If you have a family history of colorectal cancer, inflammatory bowel disease, or a genetic condition like Lynch syndrome, you may need to start earlier or test more often.</p>
+I have high blood pressure but need better control
+You’re not alone — many people need extra support at some point.
+ Curative’s clinical and Care Navigator teams can help you:
+###
 
-            <p class="body-lg mb-24 italic">Curative Primary Care offers the Cologuard test for convenient, at-home screening.</p>
 
-            <div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2021" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
-                </div>
-            </div>
-        </div>
+Find a primary care provider or a specialist (like a cardiologist or nephrologist, if needed)
 
-        <div id="lung-cancer-screening" class="card transparent p-24">
-            <h3 class="mb-16">Lung Cancer Screening (Ages 50-80, Men & Women)</h3>
-            <p class="body-lg mb-24">A low-dose CT scan is a quick imaging test that looks for early signs of lung cancer — long before symptoms show up. It's a quick, painless imaging test that uses X-rays to take detailed pictures of your lungs. It's usually ordered by your primary care provider and done at an imaging center.</p>
 
-            <p class="body-lg mb-24">This screening is meant for people ages 50-80 who smoke now or used to smoke heavily but quit within the last 15 years. Your provider will help you decide whether you qualify and if screening makes sense for you.</p>
+CTA: [Get Help Managing Blood Pressure →]
 
-            <p class="body-lg mb-24 italic">If you've ever been a long-term smoker, this is an easy way to stay proactive about your health.</p>
+⚪ I’m not sure if I have high blood pressure
+That’s okay — high blood pressure often has no symptoms.
+ A quick reading at your primary care visit or with a home blood pressure monitor can give you a clear answer.
+ Your Care Navigator can help you:
+Find a nearby provider for a blood pressure check
 
-            <div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
-                </div>
-            </div>
-        </div>
 
-        <div id="prostate-cancer-screening" class="card transparent p-24">
-            <h3 class="mb-16">Prostate Cancer Screening (Ages 55-69, Men)</h3>
-            <p class="body-lg mb-24">A PSA test is a simple blood test that measures the amount of a protein made by the prostate. Higher levels don't always mean cancer, but they can signal the need for further testing.</p>
+Get guidance on healthy ranges and follow-up steps
 
-            <p class="body-lg mb-24">This test is usually ordered by your primary care provider or a urologist as part of a conversation about your overall health and risk factors.</p>
 
-            <p class="body-lg mb-24 italic">Because the benefits and risks can vary, prostate cancer screening isn't automatic for everyone. It's best to decide together with your provider whether it's right for you especially if any of the below apply:</p>
+CTA: [Find a Provider →]
 
-            <ul class="bulleted">
-                <li class="mb-16">Age 55-69</li>
-                <li class="mb-16">Family history of prostate cancer</li>
-                <li class="mb-16">Higher-risk group</li>
-            </ul>
+A: [Find a Provider →]
 
-            <div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
-                </div>
-            </div>
-    </div>
+🩺 When to Reach Out
+You may need extra support if you:
+Have readings consistently above 130/80 mmHg
 
-    <div id="skin-cancer-screening" class="card transparent p-24">
-        <h3 class="mb-16">Skin Cancer Screening (Ages 20+, Men & Women)</h3>
-A skin exam is a simple visual check of your skin for new or changing moles, freckles, or spots. It can be done by your primary care provider during a routine visit or by a dermatologist if you'd like a more detailed check.
 
-            <p class="body-lg mb-24">During the exam, your provider will look closely at areas that get a lot of sun,  like your face, arms, back, and legs. They may use a small light or a magnifier to get a clearer view.</p>
+Take more than one medication to control your blood pressure
 
-            <p class="body-lg mb-24">If you spend a lot of time in the sun, have fair skin, many moles, or a family history of melanoma, your provider may recommend annual skin checks or refer you to a dermatologist.</p>
 
-            <p class="body-lg mb-24">Between visits, you can also do monthly self-checks at home — look for spots that are changing in size, color, or shape.</p>
+Feel dizzy, tired, or have headaches related to blood pressure changes
 
-            <p class="body-lg mb-24 italic">Getting familiar with your own skin helps you notice changes early — when they're easiest to treat.</p>
 
-            <div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
-                </div>
-            </div>
-        </div>
-</div>
+Your Care Navigator can connect you to Curative’s hypertension management program or help you book a covered visit with your PCP.
 
-<p class="body-lg mb-24">Keeping your screenings current helps you stay ahead of potential health issues — and every one of these preventive services is typically covered at $0 under your Curative plan.
-</p>
 
-    <p class="body-lg mb-24">Not sure what you're due for? We'll help you confirm with your care team.</p>
 
+
+Diabetes management
+COPD management
+Asthma management
+Heart disease management
+Pregnancy support
+Weight management and nutrition - clinician
+Fostering healthy alcohol or tobacco habits - Pelago
+Mental health support - Rula, Televero (TX), TwoChairs
+Cancer screening (50+) - Galleri
+Something else (free text)
+
+    </pre>
+</section>
+
+<section>
+    <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
 </section>

@@ -3,114 +3,78 @@ layout: templates/blv/layout.html
 title: BLV Prototype
 heading: BLV Prototype
 secondary: Secondary
-section: Looking ahead
-location: procedures
+section: Transition to clinical scheduling
+location: scheduling
 status: draft
 previous: 12/
-next: 14/
-button-text: Continue
-page-js: procedures
+next: /
+button-text: Schedule My Visit
+page-js: scheduling
+confetti-auto: true
+confetti-delay: 200
+confetti-count: 400
+confetti-bursts: 3
 ---
 
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Procedures and Surgeries</h1>
-    
-    <p class="body-lg text-gray-600 mb-32">Let's plan for any upcoming procedures or surgeries you may need in the coming year.</p>
+    <div class="text-center mb-32">
+        <div class="text-6xl mb-16">🎉</div>
+        <h1 class="heading-2xl mb-8">Congratulations!</h1>
+        <p class="body-lg text-gray-600">You've completed the Digital Baseline Visit (Part 1)</p>
+    </div>
 
-    <!-- Upcoming Procedures Question -->
-    <div class="py-24 px-80 mb-24">
-        <h4 class="heading-lg mb-24">Do you have any upcoming procedures or surgeries scheduled in the next year?</h4>
+    <!-- Next Steps -->
+    <div class="card p-24 mb-24">
+        <h4 class="heading-lg mb-16">Next Steps:</h4>
+        <ol class="mb-0" style="list-style: decimal; padding-left: 1.5rem;">
+            <li class="mb-12"><strong>Schedule your clinical visit</strong> - Choose a convenient time for your in-person or virtual appointment</li>
+            <li class="mb-12"><strong>Prepare for your visit</strong> - Bring any relevant medical records or questions</li>
+            <li class="mb-0"><strong>Meet with your clinician</strong> - Complete your health assessment and get personalized recommendations</li>
+        </ol>
+    </div>
 
-        <div class="flex-column gap-12">
-            <ul class="unordered-list">
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-major" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Outpatient procedure</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" onchange="togglePreparationInfo()">
-                        <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
-                    </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="procedure-preventive" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">Preventive screening</span>
-                        </label>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__content">
-                        <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="none-planned" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">None currently planned</span>
-                        </label>
-                    </div>
-                </li>
+    <!-- Care Navigator Info -->
+    <div class="card p-24 mb-24">
+        <h4 class="heading-lg mb-16">Your Care Navigator Will:</h4>
+        <ul class="mb-0" style="list-style: disc; padding-left: 1.5rem;">
+            <li class="mb-8">Review your responses from today</li>
+            <li class="mb-8">Answer your questions about Curative benefits</li>
+            <li class="mb-8">Help coordinate your care</li>
+            <li class="mb-0">Follow up within 2-3 business days</li>
         </ul>
+    </div>
+
+    <!-- Appointment Type Selection -->
+    <div class="card p-24 mb-32">
+        <h3 class="heading-xl mb-16">Preferred Appointment Type</h3>
+        <div class="flex-row gap-16">
+            <button 
+                type="button" 
+                id="appointment-virtual" 
+                class="button button--small-outline flex-1"
+                onclick="selectAppointmentType('virtual')"
+            >
+                Virtual Visit
+            </button>
+            <button 
+                type="button" 
+                id="appointment-inperson" 
+                class="button button--small-outline flex-1"
+                onclick="selectAppointmentType('in-person')"
+            >
+                In-Person Visit
+            </button>
         </div>
     </div>
 
-    <!-- Preparation Information (appears when procedures are selected) -->
-    <div id="preparation-info" class="py-24 px-80 mb-24" style="display: none;">
-        <h4 class="heading-lg mb-16">Let's help you prepare for your upcoming care</h4>
-        <p class="body-md text-gray-600 mb-24">Here are important items to verify before your procedure:</p>
-
-        <div class="flex-column gap-16">
-            <ul class="unordered-list">   
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Network Status</strong><br/>
-                            Confirm your provider and facility are in-network to avoid unexpected costs.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Medication Coverage</strong><br/>
-                            Verify any new medications are on your plan's formulary.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Prior Authorization</strong><br/>
-                            Your provider should handle prior authorization, but confirm it's been approved before your procedure date.</p>
-                    </div>
-                </li>
-                <li class="unordered-list__item">
-                    <div class="unordered-list__icon text-green-500">
-                        <span class="heroicon heroicon-check"></span>
-                    </div>
-                    <div class="unordered-list__content">
-                        <p><strong>Care Coordination</strong><br/>
-                            Inform your primary care doctor about any upcoming procedures for better care coordination.</p>
-                    </div>
-            </ul>
-
+    <!-- Prototype Controls -->
+    <div class="card p-24 bg-gray-50 border-t-4 border-t-gray-400">
+        <h4 class="heading-lg mb-8">Prototype Complete!</h4>
+        <p class="text-sm text-gray-600 mb-16">This concludes the baseline visit flow prototype.</p>
+        <div class="flex-row gap-8 flex-wrap">
+            <button onclick="viewSavedData()" class="button button--small-outline">View Saved Data</button>
+            <button onclick="resetPrototype()" class="button button--small-outline">Reset Prototype</button>
+            <button onclick="window.location.href='/swagecss/prototypes/blv/renewal/'" class="button button--small-outline">Start Over</button>
         </div>
     </div>
 </section>
