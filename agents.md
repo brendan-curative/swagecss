@@ -10,16 +10,35 @@ Create an AI agent that generates CSS code exclusively based on the predefined C
 - **No modifications**: Never modify or alter the existing rules unless explicitly instructed.
 - **Reference only provided rules**: When generating CSS, only reference the classes, IDs, and properties defined in `src/foundation/`.
 
-## Available Foundation CSS (6855 lines)
+## Available Foundation CSS (6895 lines)
 
 The following files contain all approved CSS rules:
 
 1. **reset.css** (38 lines) - Base reset styles
-2. **colors.css** (243 lines) - Color variables and utilities
-3. **spacing.css** (377 lines) - Margin/padding utilities (m-, p-, mx-, my-, mt-, mr-, mb-, ml-, etc.)
+2. **colors.css** (271 lines) - Color variables and utilities
+3. **spacing.css** (378 lines) - Margin/padding utilities (m-, p-, mx-, my-, mt-, mr-, mb-, ml-, etc.)
 4. **typography.css** (560 lines) - Font styles and text utilities
-5. **display.css** (325 lines) - Layout and display utilities (flex-, grid-, block, inline, etc.)
-6. **icons.css** (5307 lines) - Icon definitions
+5. **display.css** (329 lines) - Layout and display utilities (flex-, grid-, block, inline, etc.)
+6. **icons.css** (5319 lines) - Icon definitions
+
+## Foundation Structure
+
+The CSS foundation is organized into modular files:
+- **foundation.css** - Main entry point that imports all modules
+- **reset.css** (38 lines) - Base reset styles
+- **colors.css** (271 lines) - Color system with primitives, scales, and semantic aliases
+- **spacing.css** (378 lines) - Spacing variables and utilities
+- **typography.css** (560 lines) - Font system and text utilities
+- **display.css** (329 lines) - Layout and display utilities
+- **icons.css** (5319 lines) - Heroicon utility classes
+
+## Code Organization Pattern
+
+All CSS files use `/* #region {section name} */` and `/* #endregion */` comments to organize code sections.
+
+## Main CSS Output
+
+The compiled CSS is output to `src/swage.css` which imports the foundation system.
 
 ## Implementation Details
 

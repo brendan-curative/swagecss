@@ -59,6 +59,8 @@ src/
 
 ## Component Creation Quick Steps
 
+> **Note:** This is a quick reference. For detailed component development instructions, CSS templates, integration workflows, and best practices, see [Component Development Guide](component-development.mdc).
+
 ### 1. Create Directory Structure
 ```bash
 mkdir -p src/components/{component-name}

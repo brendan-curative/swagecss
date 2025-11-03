@@ -12,10 +12,12 @@ All approved CSS rules are in:
 src/foundation/
 ```
 
-**Total: 6,855 lines** across 6 files
+**Total: 6,895 lines** across 6 files
 
 ### Core Rule
 > Only use CSS classes and variables from `src/foundation/`. Never create custom CSS or use inline styles.
+
+**Detailed Constraints:** See [agents.md](agents.md) for complete CSS constraint rules, validation checklist, and AI agent configuration.
 
 ---
 
@@ -27,11 +29,11 @@ swagecss/
 │   ├── foundation/          ← ALL CSS rules here (read-only)
 │   │   ├── foundation.css   (main import)
 │   │   ├── reset.css        (38 lines)
-│   │   ├── colors.css       (243 lines)
-│   │   ├── spacing.css      (377 lines)
+│   │   ├── colors.css       (271 lines)
+│   │   ├── spacing.css      (378 lines)
 │   │   ├── typography.css   (560 lines)
-│   │   ├── display.css      (325 lines)
-│   │   └── icons.css        (5,307 lines)
+│   │   ├── display.css      (329 lines)
+│   │   └── icons.css        (5,319 lines)
 │   ├── components/          ← Component CSS files (22 components)
 │   ├── modules/             ← Drawer, theme toggle, etc.
 │   ├── blocks/              ← Block-level styles
@@ -55,11 +57,11 @@ swagecss/
 | File | Lines | Purpose | Examples |
 |------|-------|---------|----------|
 | **reset.css** | 38 | Base reset | `*, *::before, *::after { box-sizing: border-box; }` |
-| **colors.css** | 243 | Color variables & utilities | `--color-blue-500`, `--color-text-default` |
-| **spacing.css** | 377 | Margin/padding utilities | `.m-24`, `.p-16`, `.mx-auto`, `.pt-8` |
+| **colors.css** | 271 | Color variables & utilities | `--color-blue-500`, `--color-text-default` |
+| **spacing.css** | 378 | Margin/padding utilities | `.m-24`, `.p-16`, `.mx-auto`, `.pt-8` |
 | **typography.css** | 560 | Font styles & text utilities | `.text-lg`, `.font-semibold`, `--font-size-md` |
-| **display.css** | 325 | Layout & display utilities | `.flex-row`, `.grid-cols-3`, `.block` |
-| **icons.css** | 5,307 | Icon definitions | Icon SVG data URLs |
+| **display.css** | 329 | Layout & display utilities | `.flex-row`, `.grid-cols-3`, `.block` |
+| **icons.css** | 5,319 | Icon definitions | Icon SVG data URLs |
 
 ---
 
@@ -67,103 +69,16 @@ swagecss/
 
 ### Task: Create a New Component
 
-**File Structure:** Components require 2-3 files in specific locations:
+**Quick Overview:**
+1. Create directory: `src/components/my-component/`
+2. Add CSS: `my-component.css` (using foundation variables only)
+3. Register: Add import to `src/components/components.css`
+4. Create demo: `index.html` (optional but recommended)
+5. Document: Create `components/my-component.html` (optional, Eleventy)
 
-```
-src/components/{component-name}/
-├── {component-name}.css         ← Component-specific CSS (required)
-├── index.html                   ← Demo page with examples (optional but recommended)
+**Detailed Guide:** See [Component Development Guide](.cursor/rules/component-development.mdc) for complete step-by-step instructions, CSS templates, HTML patterns, BEM naming conventions, and integration workflows.
 
-src/components/components.css    ← Update to import your new component
-
-components/
-└── {component-name}.html        ← Documentation page (Eleventy-generated, optional)
-```
-
-**Step-by-Step Process:**
-
-1. **Create component directory**
-   ```bash
-   mkdir src/components/my-component
-   ```
-
-2. **Create component CSS file:** `src/components/my-component/my-component.css`
-   ```css
-   /* Use only foundation variables - never arbitrary values */
-   .my-component {
-       display: flex;
-       padding: var(--spacing-24);
-       background-color: var(--color-surface-default);
-       border-radius: var(--spacing-8);
-   }
-
-   .my-component__header {
-       font-size: var(--font-size-lg);
-       font-weight: var(--font-weight-semibold);
-       margin-bottom: var(--spacing-12);
-   }
-
-   .my-component--variant {
-       background-color: var(--color-surface-highlight);
-   }
-
-   /* Theme overrides if needed */
-   html[data-theme="blv"] .my-component {
-       border-radius: 4px;
-   }
-   ```
-
-3. **Register component CSS:** Add import to `src/components/components.css`
-   ```css
-   @import 'my-component/my-component.css';
-   ```
-
-4. **Create demo page (optional):** `src/components/my-component/index.html`
-   ```html
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <title>My Component - Swage.CSS</title>
-       <link rel="stylesheet" href="../../swage.css">
-       <link rel="stylesheet" href="../../demo.css">
-   </head>
-   <body>
-       <h1>My Component</h1>
-
-       <!-- Examples -->
-       <div class="my-component">
-           <h2 class="my-component__header">Example</h2>
-           <p>Content here</p>
-       </div>
-
-       <div class="my-component my-component--variant">
-           <h2 class="my-component__header">Variant Example</h2>
-           <p>Different style</p>
-       </div>
-   </body>
-   </html>
-   ```
-
-5. **Create documentation page (optional):** `components/my-component.html`
-   - Uses Eleventy front matter and templates
-   - See existing files like `components/card.html` for patterns
-   - Will be built to `docs/components/my-component/`
-
-6. **Add navigation link:** Update `_includes/_nav.html`
-   - Add a link to your new component in the appropriate section
-   - For standard components: Add under `<h2>Components</h2>`
-   - For BLV components: Add under `<h2>BLV Components</h2>`
-   - Format: `<a href="{{ '/' | url }}components/my-component/">My Component</a>`
-   - For BLV: `<a href="{{ '/' | url }}components/blv/my-component/">My Component</a>`
-
-**Component Naming Rules:**
-
-- **BEM Pattern**: `.block__element--modifier`
-- **Base class**: `.my-component` (block)
-- **Child elements**: `.my-component__header`, `.my-component__body` (elements)
-- **Variants**: `.my-component--large`, `.my-component--primary` (modifiers)
-- **Apply utility classes in HTML**, not in component CSS
+**Quick Reference:** See [Component Architecture Reference](.cursor/rules/component-architecture.mdc) for quick component creation steps and file structure patterns.
 
 ### Task: Add Spacing
 
@@ -253,19 +168,7 @@ Components automatically adapt when using semantic color variables.
 
 ### Task: Add to Eleventy Template
 
-**Common template patterns:**
-```liquid
-<!-- In _includes/layout.html or similar -->
-{% include '_nav.html' %}
-{% include '_titleblock.html' %}
-
-{{ content }}  <!-- Main content area -->
-{{ title }}    <!-- Page title -->
-{{ heading }}  <!-- Page heading -->
-
-<!-- URL with path prefix -->
-<link href="{{ '/' | url }}src/swage.css" rel="stylesheet">
-```
+**Quick Reference:** For Eleventy template patterns, front matter, Liquid syntax, filters, and layout system, see [ELEVENTY_GUIDE.md](ELEVENTY_GUIDE.md).
 
 ---
 
@@ -455,16 +358,11 @@ cat src/components/button/button.css
 
 ## 🔨 Build Commands
 
-```bash
-# Build the site
-npx @11ty/eleventy
+**Quick Commands:**
+- Build: `npx @11ty/eleventy`
+- Watch/Serve: `npx @11ty/eleventy --watch --serve`
 
-# Watch mode (if configured)
-npx @11ty/eleventy --watch --serve
-
-# View output
-open docs/index.html
-```
+**Complete Guide:** See [ELEVENTY_GUIDE.md](ELEVENTY_GUIDE.md) for detailed build commands, configuration, file processing, and workflow instructions.
 
 ---
 
@@ -476,6 +374,7 @@ open docs/index.html
 | **[.cursorrules](.cursorrules)** | Comprehensive rules for Cursor AI |
 | **[agents.md](agents.md)** | Detailed CSS constraints and validation checklist |
 | **[readme.md](readme.md)** | Project overview |
+| **[.cursor/rules/development-patterns.mdc](.cursor/rules/development-patterns.mdc)** | Development patterns, code organization, and best practices |
 | **This file** | Quick reference for common tasks |
 
 ---
@@ -550,58 +449,9 @@ open docs/index.html
 
 ## ⚠️ CRITICAL: Never Edit docs/ Directory
 
-The `docs/` directory is **completely auto-generated** by Eleventy.
+**The `docs/` directory is completely auto-generated by Eleventy.** Never edit files in `docs/` directly - all changes will be overwritten on the next build. Always edit source files (components/, foundation/, _includes/, etc.) and run `npx @11ty/eleventy` to regenerate.
 
-### Why?
-- Eleventy is a static site generator
-- It reads source files and generates HTML output
-- Output directory is configured in `.eleventy.js` as `"docs"`
-
-### Rules:
-- ❌ **NEVER** edit files in `docs/` directly
-- ❌ **NEVER** create new files in `docs/` manually
-- ❌ All changes in `docs/` will be **OVERWRITTEN** on next build
-
-### Where to Edit Instead:
-
-| What You Want | Edit This | Not This |
-|---------------|-----------|----------|
-| Component page | `components/card.html` | ~~`docs/components/card/index.html`~~ |
-| Foundation page | `foundation/spacing.html` | ~~`docs/foundation/spacing/index.html`~~ |
-| Layout/template | `_includes/layout.html` | ~~`docs/*/index.html`~~ |
-| Component CSS | `src/components/card/card.css` | ~~Never in docs/~~ |
-| Home page | `index.html` (root) | ~~`docs/index.html`~~ |
-
-### Build Process:
-```bash
-# Source files → Eleventy → docs/ (output)
-npx @11ty/eleventy
-
-# Eleventy reads:
-- *.html (root)
-- components/*.html
-- foundation/*.html
-- _includes/*.html
-- .eleventy.js config
-
-# Eleventy generates:
-- docs/index.html
-- docs/components/*/index.html
-- docs/foundation/*/index.html
-- + copies src/ to docs/src/
-```
-
-### If You Accidentally Edited docs/:
-1. ❌ Discard those changes
-2. ✅ Find the source file that generates that page
-3. ✅ Edit the source file instead
-4. ✅ Run `npx @11ty/eleventy` to regenerate
-
-### Note on Git:
-- `docs/` is tracked in git (likely for GitHub Pages deployment)
-- When you edit source files and run Eleventy, docs/ will be regenerated
-- Commit both source files AND regenerated docs/ together
-- Never manually edit files in docs/ even if you see them in git
+**Complete Guide:** See [ELEVENTY_GUIDE.md](ELEVENTY_GUIDE.md) for detailed information about the build process, file processing, source vs. output files, and workflow.
 
 ---
 

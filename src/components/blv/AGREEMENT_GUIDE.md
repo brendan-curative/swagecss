@@ -236,5 +236,5 @@ Works in all modern browsers. Uses:
 - **CSS**: `/src/components/blv/agreement.css`
 - **JavaScript**: `/src/components/blv/agreement.js`
 - **Layout Integration**: `/_includes/templates/blv/layout.html`
-- **Import**: `/src/themes/blv/blv.css` (line 4)
+- **Import**: `/src/components/components.css` (registered with other BLV components)
 

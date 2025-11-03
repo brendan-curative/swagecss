@@ -31,6 +31,13 @@ html[data-theme="blv"] .whitewaves {
     background-position: -600px 0%;
     background-repeat: no-repeat;
 }
+
+html[data-theme="blv"] .graph {
+    background-image: url(img/soundwave.svg);
+    background-color: transparent;
+    background-position: -50% 0%;
+    background-repeat: no-repeat;
+}
 /* #endregion */
 
 

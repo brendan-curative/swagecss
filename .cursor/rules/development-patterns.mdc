@@ -17,7 +17,7 @@ All CSS files must use the standardized code region pattern:
 
 ### File Structure
 - Keep CSS modular in separate foundation files
-- Use [foundation.css](mdc:src/css/foundation/foundation.css) as the main entry point
+- Use [foundation.css](mdc:src/foundation/foundation.css) as the main entry point
 - Import order: reset → display → colors → spacing → typography → icons
 
 ### Variable Naming
