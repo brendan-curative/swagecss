@@ -15,23 +15,7 @@ page-js: care-team
 <section>
     <h1 class="mb-16">Confirm Your Providers</h1>
     
-    <!-- Family Member Selector -->
-    <div class="mb-32 px-80">
-        <div class="select">
-            <div class="select__label-group">
-                <label for="family-member-select" class="select__label font-bold">Select Family Member:</label>
-            </div>
-            <div class="select__input-wrapper">
-                <select class="select__control" id="family-member-select" onchange="switchFamilyMember()">
-                    <option value="primary">Sarah Martinez (ID: 123456789) - Policyholder</option>
-                    <option value="child">Emma Martinez (ID: 123456790) - Dependent Child</option>
-                </select>
-                <div class="select__icon">
-                    <span class="heroicon heroicon-chevron-down"></span>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Primary Care Provider Section -->
     <div class="mb-32 px-80">
@@ -83,11 +67,20 @@ page-js: care-team
         </div>
     </div>
 
-    <h2 class="pt-24">REMINDER: How to Find a Provider </h2>
-
-    <div class="constrain constrain-80 mt-16">
-        <p class="mb-16">Finding the right PCP or specialist is simple with <strong>Provider Search</strong>, your digital tool for browsing Curative's $0 network.</p>
-        <ol class="ordered-list">
+    <div class="accordion helper my-32" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item mb-8" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-24 heroicon-outline-question-mark-circle"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Need help finding a provider?</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content mx-16 pb-24">
+                    <ol class="ordered-list">
             <li class="ordered-list__item" data-order="1" data-color="blue">
               <div class="ordered-list__number">
                 <span>1</span>
@@ -112,18 +105,21 @@ page-js: care-team
                   <p class="ordered-list__text"><span class="font-semibold">Check availability and schedule.</span> <br><span class="text-gray-600 font-normal">Call to ask about earliest appointment availability. </span></p>
                 </div>
               </li>
+              <li class="ordered-list__item" data-order="1" data-color="blue">
+                <div class="ordered-list__number">
+                  <span>!</span>
+                </div>
+                <div class="ordered-list__content">
+                  <p class="ordered-list__text"><span class="text-gray-600 font-normal">If you need additional help, your Care Navigator can walk you through Provider Search.</span></p>
+                </div>
+              </li>
         </ol>
-
-        <h3 class="text-center pt-32 pb-8"><em>Need help? Your Care Navigator can walk you through Provider Search.</em></h3>
-
-        <div class="flex-center-x-y">
-            <button class="button button--outline button--with-icon">
-                <span class="heroicon heroicon-16 heroicon-arrow-top-right-on-square"></span>
-                Open Provider Search
-            </button>
-
+                </div>
+            </div>
         </div>
+
     </div>
+
 </section>
 
 <!-- Provider Edit/Add Modal -->

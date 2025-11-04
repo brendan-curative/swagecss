@@ -498,3 +498,22 @@ html[data-theme="blv"] .button--primary:not(.button--primary-disabled), html[dat
 
 .highlight.logo img + p {padding-top: 8px;}
 
+.accordion.helper {
+    box-shadow: 0 2px 16px 0 rgba(102, 114, 125, 0.25), 0 4px 200px 0 rgba(255, 255, 255, 0.01) inset;
+    border-radius: 8px;
+}
+
+    .accordion.helper .accordion__toggle {
+        background: rgba(255, 255, 255, 0.5);
+        color: var(--color-text-primary);
+    }
+
+    .accordion.helper .accordion__toggle-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .accordion.helper .accordion__toggle-text {
+        font-size: var(--font-size-xl);
+        line-height: var(--line-height-xl);
+    }
