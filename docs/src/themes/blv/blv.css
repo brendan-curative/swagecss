@@ -454,6 +454,10 @@ html[data-theme="blv"] .button--primary:not(.button--primary-disabled), html[dat
   align-items: center;
 }
 
+.highlight.nobg {
+    background-image: none;
+}
+
 .highlight.signalorange {
     color: var(--color-primary-signal-orange);
 }
@@ -484,5 +488,13 @@ html[data-theme="blv"] .button--primary:not(.button--primary-disabled), html[dat
     transform: translateY(8px) rotate(-4deg);
 }
 
+.highlight.logo img {
+    height: 60px;
+    width: auto;
+    transform: translateY(8px) rotate(0deg);
+}
+
 .highlight img + p {padding-top: 24px;}
+
+.highlight.logo img + p {padding-top: 8px;}
 
