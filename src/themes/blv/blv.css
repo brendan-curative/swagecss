@@ -462,10 +462,18 @@ html[data-theme="blv"] .button--primary:not(.button--primary-disabled), html[dat
     color: var(--color-primary-signal-orange);
 }
 
+.highlight.highlight.infotile {align-items: flex-start;}
+
 .highlight h2 {
   font-size: clamp(16px, 64px, 64px);
   line-height: 1;
   margin-bottom: 0;
+}
+
+.highlight.infotile h2 {
+color: var(--color-text-default);
+  font-size: 24px;
+  text-align: left;
 }
 
 .highlight p {
@@ -474,6 +482,8 @@ html[data-theme="blv"] .button--primary:not(.button--primary-disabled), html[dat
   text-align: center;
   padding-top: 8px
 }
+
+.highlight.infotile p {text-align: left;}
 
 .highlight .heroicon {
 

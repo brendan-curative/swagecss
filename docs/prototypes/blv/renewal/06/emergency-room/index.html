@@ -88,10 +88,12 @@
 
          <!-- No Facility State (shown when no facility selected) -->
          <div id="emergency-no-facility" class="mb-16" style="display: none;">
-            <button onclick="editFacility('emergency')" class="button button--small-outline">
+            <div class="flex-center-x-y">
+                <button onclick="editFacility('emergency')" class="button button--small-outline">
                 <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
                 Find my Emergency Room
             </button>
+            </div>
         </div>
         
         <!-- None Selected State (shown when "none of these work for me" is selected) -->
@@ -105,9 +107,9 @@
         </div>
             
             <div class="constrain constrain-80">
-                <p class="body-lg pt-24 mb-16">The ER is for <strong>life-threatening emergencies</strong> or when every minute counts. </p>
+                <p class="body-lg pt-24 mb-8">The ER is for <strong>life-threatening emergencies</strong> or when every minute counts. </p>
         
-                <p class="body-lg pt-24 mb-24">If you're experiencing chest pain, trouble breathing, heavy bleeding, or signs of stroke, <strong>call 911 or go to the nearest ER</strong>.</p>
+                <p class="body-lg pt-8 mb-24">If you're experiencing chest pain, trouble breathing, heavy bleeding, or signs of stroke, <strong>call 911 or go to the nearest ER</strong>.</p>
         
                 <ul class="unordered-list">
                     <li class="unordered-list__item">
@@ -130,10 +132,19 @@
             </div>
         </div>
 
-        <h2 class="pt-24">How to Find a Facility </h2>
-
-        <div class="constrain constrain-80 mt-16">
-            <p class="mb-16">It's easy to find covered facilities nearby using <strong>Provider Search</strong>.</p>
+        <div class="accordion helper my-32" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item mb-8" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-24 heroicon-outline-question-mark-circle"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Need help finding a facility?</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content mx-16 pb-24">
             <ol class="ordered-list">
                 <li class="ordered-list__item" data-order="1" data-color="blue">
                   <div class="ordered-list__number">
@@ -160,16 +171,12 @@
                     </div>
                   </li>
             </ol>
-
-    
-            <div class="flex-center-x-y mt-16">
-                <button class="button button--outline button--with-icon">
-                    <span class="heroicon heroicon-16 heroicon-arrow-top-right-on-square"></span>
-                    Open Provider Search
-                </button>
-    
+                </div>
             </div>
         </div>
+
+    </div>
+
 </section>
 
 <!-- Facility Search Modal -->
