@@ -63,9 +63,11 @@
 <section id="cashcard" class="scrollto">
     <h1 class="heading-2xl mb-16">The Curative Cash Card</h1>
 
+    <!--
     <div class="flex-center-x-y pb-24">
         <img src="/swagecss/src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
     </div>
+    -->
     
     <div class="constrain constrain-80">
         <p class="body-lg mb-32">Your Curative Cash Card makes paying for care simple, predictable, and stress-free—so you can focus on your health, not the bill.</p>
@@ -73,16 +75,7 @@
     <p class="body-lg mb-32">Whether you're renewing your plan or using the card for the first time, here's a quick refresh on how it works and what's new.</p>
     </div>
 
-    <div class="flex-center-x-y">
-        <a href="#new" class="button button--outline button--icon-only scrollto-next">
-            <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
-        </a>
-    </div>
-
-</section>
-
-<section id="new" class="scrollto">
-    <h2 class="pb-24">What's New for 2025</h2>
+    <h2 class="pb-8">What's New for 2025</h2>
 
     <ul class="unordered-list unordered-list-gap-16" role="list">
         <li class="unordered-list__item" role="listitem" tabindex="0">
@@ -125,66 +118,84 @@
         </li>
     </ul>
 
-    <div class="flex-center-x-y pt-24">
+    <div class="flex-center-x-y mt-24">
         <a href="#most" class="button button--outline button--icon-only scrollto-next">
             <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
         </a>
     </div>
+
 </section>
 
 <section id="most" class="scrollto">
-    <h2 class="pb-24">How to Get the Most From Your Cash Card</h2>
+    <div class="accordion my-32" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">How to Get the Most From Your Cash Card</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content">
+                    <h3 class="pb-16">Use it for:</h3>
 
-    <div class="constrain constrain-80">
-        <h3 class="pb-16">Use it for:</h3>
-
-    <ul class="unordered-list unordered-list-gap-16" role="list">
-        <li class="unordered-list__item" role="listitem" tabindex="0">
-            <div class="unordered-list__icon text-signal-orange">
-                <span class="heroicon heroicon-16 heroicon-check"></span>
+                    <ul class="unordered-list unordered-list-gap-16" role="list">
+                        <li class="unordered-list__item" role="listitem" tabindex="0">
+                            <div class="unordered-list__icon text-signal-orange">
+                                <span class="heroicon heroicon-16 heroicon-check"></span>
+                            </div>
+                            <div class="unordered-list__content">
+                                <p class="unordered-list__text">Office visits, imaging, labs, or procedures with in-network providers</p>
+                            </div>
+                        </li>
+                        <li class="unordered-list__item" role="listitem" tabindex="0">
+                            <div class="unordered-list__icon text-signal-orange">
+                                <span class="heroicon heroicon-16 heroicon-check"></span>
+                            </div>
+                            <div class="unordered-list__content">
+                                <p class="unordered-list__text">Covered mental-health or substance-use services</p>
+                            </div>
+                        </li>
+                        <li class="unordered-list__item" role="listitem" tabindex="0">
+                            <div class="unordered-list__icon text-signal-orange">
+                                <span class="heroicon heroicon-16 heroicon-check"></span>
+                            </div>
+                            <div class="unordered-list__content">
+                                <p class="unordered-list__text">Prescription or preventive care visits listed in your benefits booklet</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="unordered-list__content">
-                <p class="unordered-list__text">Office visits, imaging, labs, or procedures with in-network providers</p>
-            </div>
-        </li>
-        <li class="unordered-list__item" role="listitem" tabindex="0">
-            <div class="unordered-list__icon text-signal-orange">
-                <span class="heroicon heroicon-16 heroicon-check"></span>
-            </div>
-            <div class="unordered-list__content">
-                <p class="unordered-list__text">Covered mental-health or substance-use services</p>
-            </div>
-        </li>
-        <li class="unordered-list__item" role="listitem" tabindex="0">
-            <div class="unordered-list__icon text-signal-orange">
-                <span class="heroicon heroicon-16 heroicon-check"></span>
-            </div>
-            <div class="unordered-list__content">
-                <p class="unordered-list__text">Prescription or preventive care visits listed in your benefits booklet</p>
-            </div>
-        </li>
-    </ul>
-    </div>
-
-    <div class="constrain constrain-40 pt-32">
-        <div class="card">
-            <h3>Need help finding where to use it?
-                ####</h3>
-
         </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion__item" data-testid="accordion-item-2">
+            <button class="accordion__toggle" data-testid="accordion-item-2_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-16 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Need help finding where to use it?</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-2_panel-content">
+                <div class="accordion__panel-content">
+                    <h3>
+                ####</h3>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
-    <div class="flex-center-x-y pt-24">
-        <a href="#reminders" class="button button--outline button--icon-only scrollto-next">
-            <span class="heroicon heroicon-16 heroicon-arrow-down"></span>
-        </a>
-    </div>
-</section>
+    <h3 class="mt-24">Quick Reminders</h3>
 
-<section id="reminders" class="scrollto">
-    <h3>Quick Reminders</h3>
-
-    <div class="constrain constrain-80 pt-32">
+    <div class="pt-8">
         <ul class="unordered-list unordered-list-gap-16" role="list">
             <li class="unordered-list__item" role="listitem" tabindex="0">
                 <div class="unordered-list__icon text-signal-orange">
@@ -207,12 +218,12 @@
                     <span class="heroicon heroicon-16 heroicon-check"></span>
                 </div>
                 <div class="unordered-list__content">
-                    <p class="unordered-list__text">Always confirm a provider’s eligibility before scheduling care.</p>
+                    <p class="unordered-list__text">Always confirm a provider's eligibility before scheduling care.</p>
                 </div>
             </li>
         </ul>
-</section>
-</article>
+    </div>
+</section></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
