@@ -78,6 +78,7 @@
 .accordion__panel--visible {
     max-height: 500px; /* Reasonable max height for content */
     opacity: 1;
+    overflow-y: scroll;
 }
 
 /* Accordion panel content */

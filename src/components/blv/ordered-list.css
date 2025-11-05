@@ -15,6 +15,10 @@
     gap: var(--spacing-24);
 }
 
+.ordered-list__item.flex-items-start {
+    align-items: flex-start;
+}
+
 /* Ordered list item - replicating relative flex w-full items-center gap-8 rounded-[4px] px-4 py-3 bg-white/75 backdrop-blur-[5px] */
 .ordered-list__item {
     position: relative;
