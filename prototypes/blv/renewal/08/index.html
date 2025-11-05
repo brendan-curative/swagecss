@@ -15,9 +15,11 @@ page-js: screenings
 <section class="mb-32">
     <h1 class="heading-2xl mb-16">Your Screenings</h1>
 
+    <!--
     <div class="flex-center-x-y pb-24">
         <img src="{{ '/' | url }}src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
     </div>
+    -->
 
     <p class="body-lg mb-24">Let's make sure you're up to date on preventive screenings that can help catch health issues early when they're easier to treat. These screenings are covered at $0 under your Curative plan.</p>
 
@@ -29,15 +31,26 @@ page-js: screenings
         <div id="cervical-cancer-screening" class="card transparent p-24">
             <h3 class="mb-16">Cervical Cancer Screening (Ages 21-65, Women)</h3>
             <p class="body-lg mb-24">A Pap test or HPV test checks for changes in cervical cells that could lead to cancer. These screenings are usually done by a primary care provider or OB/GYN during a routine visit</p>
-        
+
             <p class="body-lg mb-24">Depending on your results, your provider may recommend testing every 3 to 5 years or more often if you have a higher risk or family history.</p>
-        
+
             <p class="body-lg mb-24">Early detection can prevent most cervical cancers before they start.</p>
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
+                <div class="select" style="width: 150px;">
+                    <div class="select__input-wrapper">
+                        <select class="select__control" id="screening-cervical" onchange="updateScreening('cervical', this.value)">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022" selected>2022</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,8 +71,19 @@ page-js: screenings
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-colonoscopy" value="" placeholder="Enter year" onchange="updateScreening('colonoscopy', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
+                <div class="select" style="width: 150px;">
+                    <div class="select__input-wrapper">
+                        <select class="select__control" id="screening-breast" onchange="updateScreening('breast', this.value)">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,8 +102,19 @@ page-js: screenings
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2021" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
+                <div class="select" style="width: 150px;">
+                    <div class="select__input-wrapper">
+                        <select class="select__control" id="screening-colon" onchange="updateScreening('colon', this.value)">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022" selected>2022</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,8 +129,19 @@ page-js: screenings
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
+                <div class="select" style="width: 150px;">
+                    <div class="select__input-wrapper">
+                        <select class="select__control" id="screening-lung" onchange="updateScreening('lung', this.value)">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022" selected>2022</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,8 +162,19 @@ page-js: screenings
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
+                <div class="select" style="width: 150px;">
+                    <div class="select__input-wrapper">
+                        <select class="select__control" id="screening-prostate" onchange="updateScreening('prostate', this.value)">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022" selected>2022</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
     </div>
@@ -136,8 +193,19 @@ A skin exam is a simple visual check of your skin for new or changing moles, fre
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="textfield">
-                    <input type="text" id="screening-mammogram" value="2022" placeholder="2022" onchange="updateScreening('mammogram', this.value)" class="textfield__input" style="width: 150px; text-align: center;">
+                <div class="select" style="width: 150px;">
+                    <div class="select__input-wrapper">
+                        <select class="select__control" id="screening-skin" onchange="updateScreening('skin', this.value)">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022" selected>2022</option>
+                        </select>
+                        <div class="select__icon">
+                            <span class="heroicon heroicon-chevron-down"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
