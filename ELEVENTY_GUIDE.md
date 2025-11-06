@@ -128,7 +128,8 @@ title: Page Title
 heading: Main Heading
 secondary: Subtitle
 section: Components or Foundation
-status: draft
+design-status: in-progress
+content-status: in-progress
 ---
 
 <section>
@@ -259,7 +260,8 @@ title: Swageblocks • Components • My Component
 heading: My Component
 secondary: Component description
 section: Components
-status: draft
+design-status: in-progress
+content-status: in-progress
 ---
 ```
 

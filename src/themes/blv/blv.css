@@ -531,18 +531,47 @@ color: var(--color-text-default);
     }
 
     .status {
-        position: absolute;
-        top: 120px;
+        position: fixed;
+        top: 40px;
         right: 20px;
         background: rgba(243, 245, 250, .5);
-        border: 1px solid rgb(243, 245, 250);
+        border: 1px solid rgba(243, 245, 250, 1);
         border-radius: 8px;
-        padding: 8px 4px
+        padding: 8px;
+        z-index: 1000;
+        backdrop-filter: blur(4);
+    }
+
+    .status:has(.na) {
+      display: none;
     }
 
         .status div {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
         }
+
+            .status .part {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                background-color: var(--color-blue-100);
+                color: var(--color-text-subdued);
+                padding: 2px 6px;
+                border-radius: 4px;
+                font-size: var(--font-size-xs);
+                font-weight: var(--font-weight-normal);
+                border: 1px solid var(--color-blue-300);
+            }
+
+            .in-progress::after {
+                content: "In Progress";
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                color: var(--color-blue-900);
+                font-weight: var(--font-weight-semibold);
+            }
         
