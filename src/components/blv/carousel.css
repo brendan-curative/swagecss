@@ -253,15 +253,15 @@
 
 /* BLV Theme overrides */
 html[data-theme="blv"] .carousel__button {
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 html[data-theme="blv"] .carousel__indicator {
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 html[data-theme="blv"] .carousel__indicator--active {
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 /* #endregion */

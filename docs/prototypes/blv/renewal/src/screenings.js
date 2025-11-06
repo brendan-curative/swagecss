@@ -53,7 +53,7 @@ function renderScreenings() {
     screenings.forEach(screening => {
         const borderClass = screening.isDue ? 'border-left border-4x' : '';
         const badgeHTML = screening.isDue ? 
-            '<span class="bg-gray-600 text-white px-8 py-4 text-xs font-semibold" style="border-radius: 4px;">DUE</span>' : '';
+            '<span class="bg-gray-600 text-white px-8 py-4 text-xs font-semibold" style="border-radius: 8px;">DUE</span>' : '';
         
         const placeholder = screening.lastCompleted ? screening.lastCompleted : 'Enter year';
         const marginBottom = screening.isDue ? 'mb-8' : 'mb-0';
