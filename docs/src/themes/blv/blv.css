@@ -511,12 +511,17 @@ color: var(--color-text-default);
 .highlight.logo img + p {padding-top: 8px;}
 
 .accordion.helper {
-    box-shadow: 0 2px 16px 0 rgba(102, 114, 125, 0.25), 0 4px 200px 0 rgba(255, 255, 255, 0.01) inset;
-    border-radius: 8px;
+    border-left: none;
 }
 
+    .accordion.helper .accordion__item {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
     .accordion.helper .accordion__toggle {
-        background: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.25);
         color: var(--color-text-primary);
     }
 
@@ -566,12 +571,37 @@ color: var(--color-text-default);
                 border: 1px solid var(--color-blue-300);
             }
 
-            .in-progress::after {
-                content: "In Progress";
+            .status .part {
+                content: " ";
                 display: flex;
                 align-items: center;
                 text-transform: uppercase;
-                color: var(--color-blue-900);
+                color: var(--color-gray-600);
                 font-weight: var(--font-weight-semibold);
             }
-        
+
+            .needed::after {
+                content: "Needed";
+                color: var(--color-text-critical);
+            }
+
+            .in-progress::after {
+                content: "In Progress";
+                color: var(--color-blue-900);
+            }
+
+/* 
+ .stagger {
+    padding-right: 48px;
+    padding-left: 48px;
+ }   
+
+    .stagger li:nth-child(odd) {
+    margin-right: 48px; 
+    }
+
+    .stagger li:nth-child(even) {
+    margin-left: 48px; 
+    }
+
+*/
