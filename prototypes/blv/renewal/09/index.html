@@ -6,7 +6,7 @@ secondary: Secondary
 section: Looking ahead
 location: procedures
 design-status: needed
-content-status: in-progress
+content-status: needed
 previous: 08/
 next: 10/
 button-text: Health Services
@@ -16,41 +16,121 @@ page-js: procedures
 <section class="mb-32">
     <h1 class="heading-2xl mb-16">Ongoing Support for Your Health</h1>
     
-    <h2 class="heading-lg mb-16">Let's start with how you're feeling overall.</h2>
+    <h2 class="heading-lg mb-16">Which areas do you want more support in?</h2>
 
 
   
-        I'm feeling great and mostly just need to stay on track
-        I'm managing a few health conditions and could use help coordinating care
-        I'm trying to build new habits — sleep, stress, nutrition, or weight
-        I've had some challenges managing a specific condition lately
-        → (If they select “specific condition,” prompt:)
-        Which areas do you want more support in?
-        High blood pressure management
-        Diabetes management
-        COPD management
-        Asthma management
-        Heart disease management
-        Pregnancy support
-        Weight management and nutrition - clinician
-        Fostering healthy alcohol or tobacco habits - Pelago
-        Mental health support - Rula, Televero (TX), TwoChairs
-        Cancer screening (50+) - Galleri
-        Something else (free text)
+       <div class="support-areas constrain constrain-60 mb-32">
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">High blood pressure management</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Diabetes management</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">COPD management</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Asthma management</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Heart disease management</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Pregnancy support</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Weight management and nutrition - clinician</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Fostering healthy alcohol or tobacco habits - Pelago</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Mental health support - Rula, Televero (TX), TwoChairs</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Cancer screening (50+) - Galleri</span>
+        </button>
+
+        <button class="checkmark-button" data-checked="false">
+            <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span class="checkmark-button__text">Something else (free text)</span>
+        </button>
+       </div>
         
-        → (content for each condition selected only appears)
+   
 
-        Heart Health and Blood Pressure
-Intro
- High blood pressure — or hypertension — is common, but it doesn't have to be complicated.
- Even small steps can make a big difference for your heart, brain, and kidneys.
- 
-Curative is here to help you keep your numbers in range and connect you to care if you need it.
+        <h2>Heart Health and Blood Pressure</h2>
 
-What best describes you?
-I'm managing it well
-I have high blood pressure but need better control
-I think I might have high blood pressure, but not sure
+       <p class="body-lg mb-24"> High blood pressure — or hypertension — is common, but it doesn't have to be complicated. Even small steps can make a big difference for your heart, brain, and kidneys.</p>
+
+       <p class="body-lg mb-24">Curative is here to help you keep your numbers in range and connect you to care if you need it.</p>
+
+        <div class="support-management constrain constrain-60 mb-32">
+            <h3>What best describes you?</h3>
+            <button class="checkmark-button" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">I'm managing it well</span>
+            </button>
+
+            <button class="checkmark-button" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">I have high blood pressure but need better control</span>
+            </button>
+
+            <button class="checkmark-button" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">I think I might have high blood pressure, but not sure</span>
+            </button>
+        </div>
 
 I'm managing it well
 That's great to hear! Staying consistent is key.
@@ -124,3 +204,38 @@ Something else (free text)
 <section>
     <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
 </section>
+
+<script>
+// Toggle checkmark buttons in support-areas and support-management
+document.addEventListener('DOMContentLoaded', function() {
+    const supportButtons = document.querySelectorAll('.support-areas .checkmark-button, .support-management .checkmark-button');
+
+    supportButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Toggle the checked state
+            const isChecked = this.dataset.checked === 'true';
+            this.dataset.checked = !isChecked ? 'true' : 'false';
+
+            // Toggle the checked class
+            if (!isChecked) {
+                this.classList.add('checkmark-button--checked');
+                // Update SVG to checked state
+                const svg = this.querySelector('.checkmark-button__icon');
+                svg.innerHTML = `
+                    <circle cx="10.5" cy="10.8672" r="8" fill="currentColor"/>
+                    <path d="M13.9226 8.61029C14.248 8.93573 14.248 9.46336 13.9226 9.7888L10.5893 13.1221C10.2638 13.4476 9.73618 13.4476 9.41074 13.1221L7.74408 11.4555C7.41864 11.13 7.41864 10.6024 7.74408 10.277C8.06951 9.95152 8.59715 9.95152 8.92259 10.277L10 11.3544L12.7441 8.61029C13.0695 8.28485 13.5972 8.28485 13.9226 8.61029Z" fill="white"/>
+                `;
+            } else {
+                this.classList.remove('checkmark-button--checked');
+                // Update SVG to unchecked state
+                const svg = this.querySelector('.checkmark-button__icon');
+                svg.innerHTML = `
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                `;
+            }
+        });
+    });
+});
+</script>

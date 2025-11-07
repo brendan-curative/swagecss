@@ -590,6 +590,10 @@ color: var(--color-text-default);
                 color: var(--color-blue-900);
             }
 
+.support-areas button, .support-management button {
+    margin-bottom: var(--spacing-16);
+}
+
 /* 
  .stagger {
     padding-right: 48px;
