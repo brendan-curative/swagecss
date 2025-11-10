@@ -600,7 +600,12 @@ color: var(--color-text-default);
 
 
 
-.support-contents div {display: none}
+.support-contents .support-content {display: none}
+
+.support-management button {
+    margin-bottom: var(--spacing-16);
+}
+
 
 /* 
  .stagger {
