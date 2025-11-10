@@ -590,9 +590,17 @@ color: var(--color-text-default);
                 color: var(--color-blue-900);
             }
 
-.support-areas button, .support-management button {
-    margin-bottom: var(--spacing-16);
+
+.support-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr)); 
+  grid-auto-rows: 1fr; 
+  gap: var(--spacing-16); 
 }
+
+
+
+.support-contents div {display: none}
 
 /* 
  .stagger {
