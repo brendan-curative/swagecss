@@ -215,6 +215,16 @@ page-js: procedures
     <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
 </section>
 
+<style>
+/* Hide all support content by default */
+.support-content {
+    display: none;
+}
+.support-content.active {
+    display: block;
+}
+</style>
+
 <script>
 // Toggle checkmark buttons in support-areas and support-management
 document.addEventListener('DOMContentLoaded', function() {
@@ -244,6 +254,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 svg.innerHTML = `
                     <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
                 `;
+            }
+
+            // Show/hide corresponding content for support-areas buttons
+            const category = this.dataset.category;
+            if (category) {
+                const contentDiv = document.querySelector(`.support-contents .support-content[data-content="${category}"]`);
+                if (contentDiv) {
+                    if (!isChecked) {
+                        contentDiv.classList.add('active');
+                    } else {
+                        contentDiv.classList.remove('active');
+                    }
+                }
             }
         });
     });
