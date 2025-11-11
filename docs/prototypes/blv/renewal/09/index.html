@@ -181,7 +181,8 @@
                 </button>
             </div>
 
-            <div class="answer" data-answer="1">
+            <div class="answers">
+                <div class="answer" data-answer="1">
                 <h2>I'm managing it well</h2>
                 <p class="body-lg mb-24">That's great to hear! Staying consistent is key.</p>   
 
@@ -215,6 +216,7 @@
                     <li class="body-lg">Find a nearby provider for a blood pressure check</li>
                     <li class="body-lg">Get guidance on healthy ranges and follow-up steps</li>
                 </ul>
+            </div>
             </div>
 
         </div>
@@ -258,9 +260,7 @@
    </div>
 </section>
 
-<section>
-    <p class="body-lg text-gray-600 mb-32">However you're managing your health this year — whether it's staying consistent or getting back on track — Curative is here to make it easier, together.</p>
-</section>
+
 
 <style>
 /* Hide all support content by default */
@@ -274,6 +274,20 @@
     animation: fadeSlideIn 0.4s ease forwards;
 }
 .support-content.hiding {
+    animation: fadeSlideOut 0.3s ease forwards;
+}
+
+/* Hide all answers by default */
+.answer {
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.answer.active {
+    display: block;
+    animation: fadeSlideIn 0.4s ease forwards;
+}
+.answer.hiding {
     animation: fadeSlideOut 0.3s ease forwards;
 }
 
@@ -350,6 +364,64 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             }
+
+            // Show/hide corresponding answer for support-management buttons (radio button behavior)
+            const question = this.dataset.question;
+            if (question) {
+                // Find the parent support-management container
+                const managementContainer = this.closest('.support-management');
+                if (managementContainer) {
+                    // Find all buttons in this management group
+                    const allButtons = managementContainer.querySelectorAll('.checkmark-button[data-question]');
+                    // Find the answers container (sibling of support-management)
+                    const answersContainer = managementContainer.parentElement.querySelector('.answers');
+
+                    if (!isChecked) {
+                        // Uncheck all other buttons in this group
+                        allButtons.forEach(btn => {
+                            if (btn !== this) {
+                                btn.dataset.checked = 'false';
+                                btn.classList.remove('checkmark-button--checked');
+                                const svg = btn.querySelector('.checkmark-button__icon');
+                                svg.innerHTML = `
+                                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                                `;
+                            }
+                        });
+
+                        // Hide all other answers with animation
+                        if (answersContainer) {
+                            const allAnswers = answersContainer.querySelectorAll('.answer');
+                            allAnswers.forEach(answer => {
+                                if (answer.dataset.answer !== question && answer.classList.contains('active')) {
+                                    answer.classList.add('hiding');
+                                    setTimeout(() => {
+                                        answer.classList.remove('active', 'hiding');
+                                    }, 300);
+                                }
+                            });
+
+                            // Show the selected answer
+                            const answerDiv = answersContainer.querySelector(`.answer[data-answer="${question}"]`);
+                            if (answerDiv) {
+                                answerDiv.classList.remove('hiding');
+                                answerDiv.classList.add('active');
+                            }
+                        }
+                    } else {
+                        // Hide the current answer when unchecked
+                        if (answersContainer) {
+                            const answerDiv = answersContainer.querySelector(`.answer[data-answer="${question}"]`);
+                            if (answerDiv) {
+                                answerDiv.classList.add('hiding');
+                                setTimeout(() => {
+                                    answerDiv.classList.remove('active', 'hiding');
+                                }, 300);
+                            }
+                        }
+                    }
+                }
+            }
         });
     });
 });
@@ -402,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="status">
         <div>
-          <span class="part needed">
+          <span class="part in-progress">
             <span>Design: </span>
             
           </span>

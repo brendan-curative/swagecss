@@ -600,7 +600,8 @@ color: var(--color-text-default);
 
 
 
-.support-contents .support-content {display: none}
+.support-contents .support-content,
+.answers .answer {display: none}
 
 .support-management button {
     margin-bottom: var(--spacing-16);
