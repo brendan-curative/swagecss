@@ -223,6 +223,15 @@
             </li>
         </ul>
     </div>
+
+    <div class="constrain constrain-40 mt-32">
+        <button class="checkmark-button add-resource" data-checked="false" aria-pressed="false" data-topic="cash-card">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                </svg>
+                <span class="checkmark-button__text">I'd like more info</span>
+            </button>
+    </div>
 </section></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
@@ -354,6 +363,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function restartPrototype() {
   if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
     localStorage.removeItem('baselineVisitData');
+    localStorage.removeItem('selectedResources');
     window.location.href = '/swagecss/prototypes/blv/renewal/';
   }
 }

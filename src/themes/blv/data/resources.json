@@ -1,0 +1,31 @@
+
+[
+  {
+    "title": "mental health resources",
+    "url": "https://curative.com/mental-health",
+    "topic": [
+      "mental-health"
+    ]
+  },
+  {
+    "title": "Curative Drug Search",
+    "url": "https://curative.com/drugs",
+    "topic": [
+      "medications"
+    ]
+  },
+  {
+    "title": "Curative Telehealth",
+    "url": "https://curative.com/telehealth",
+    "topic": [
+      "telehealth"
+    ]
+  },
+  {
+    "title": "Curative Cash Card frequently asked questions",
+    "url": "https://curative.com/faq/cash-card",
+    "topic": [
+      "cash-card"
+    ]
+  }
+]

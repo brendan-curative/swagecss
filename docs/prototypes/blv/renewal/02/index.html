@@ -215,17 +215,6 @@
     </ul>
     </div>
 
-    <h3 class="pt-32 pb-8">Need a Hand?</h3>
-    
-    <div class="card">
-        <p class="text-lg">If you get stuck or have questions, help is available:</p>
-
-        <ul class="bulleted">
-            <li>CN</li>
-            <li>MS</li>
-        </ul>
-    </div>
-
     </section>
 
 
@@ -361,6 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function restartPrototype() {
   if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
     localStorage.removeItem('baselineVisitData');
+    localStorage.removeItem('selectedResources');
     window.location.href = '/swagecss/prototypes/blv/renewal/';
   }
 }

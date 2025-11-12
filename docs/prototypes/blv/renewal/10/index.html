@@ -201,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function restartPrototype() {
   if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
     localStorage.removeItem('baselineVisitData');
+    localStorage.removeItem('selectedResources');
     window.location.href = '/swagecss/prototypes/blv/renewal/';
   }
 }
