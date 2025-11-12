@@ -1,0 +1,213 @@
+---
+layout: layout.html
+title: Swageblocks &bull; BLV &bull; Resources Component
+heading: Resources Component
+secondary: Resource Selection and Display
+section: BLV Components
+design-status: in-progress
+content-status: in-progress
+---
+
+<section>
+    <p class="body-lg text-gray-600 mb-24">
+        The Resources component manages user-selected topics and displays relevant resources from a JSON data source. It provides a way for users to indicate interest in topics and later see curated resources based on their selections.
+    </p>
+</section>
+
+<section class="component-section">
+    <h2>How It Works</h2>
+    <div class="bg-gray-50 border rounded p-16 mb-24">
+        <ol class="body-sm mb-0" style="list-style: decimal; padding-left: 1.5rem;">
+            <li class="mb-12"><strong>User Selection:</strong> Users click checkmark buttons with <code>data-resource-action="toggle"</code> to select topics</li>
+            <li class="mb-12"><strong>Local Storage:</strong> Selected topics are stored in localStorage under the key <code>'selectedResources'</code></li>
+            <li class="mb-12"><strong>Resource Display:</strong> Containers with <code>data-resource-action="display"</code> automatically populate with matching resources</li>
+            <li class="mb-0"><strong>Data Source:</strong> Resources are loaded from <code>/src/themes/blv/data/resources.json</code></li>
+        </ol>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Toggle Button Usage</h2>
+    <p class="mb-24">Buttons that let users select topics of interest. Uses the checkmark-button component.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="demo-label">Resource Toggle Button</div>
+            <button class="checkmark-button" data-resource-action="toggle" data-topic="demo-topic" data-checked="false">
+                <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="checkmark-button__text">I'd like more info</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mt-16">
+        <h3 class="heading-md mb-12">HTML Structure</h3>
+        <pre class="body-sm"><code>&lt;button class="checkmark-button"
+        data-resource-action="toggle"
+        data-topic="topic-name"
+        data-checked="false"&gt;
+    &lt;svg class="checkmark-button__icon"&gt;...&lt;/svg&gt;
+    &lt;span class="checkmark-button__text"&gt;I'd like more info&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+    </div>
+
+    <div class="bg-blue-50 border border-blue-200 rounded p-16 mt-16">
+        <h3 class="heading-md mb-12">Required Attributes</h3>
+        <ul class="body-sm mb-0" style="list-style: disc; padding-left: 1.5rem;">
+            <li class="mb-8"><code>data-resource-action="toggle"</code> - Identifies this as a resource toggle button</li>
+            <li class="mb-8"><code>data-topic="topic-name"</code> - The topic identifier (must match topics in resources.json)</li>
+            <li class="mb-0"><code>data-checked="false"</code> - Initial checked state (managed by checkmark-button component)</li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Display Container Usage</h2>
+    <p class="mb-24">Containers that automatically populate with resources based on selected topics.</p>
+
+    <div class="card p-24 mb-24">
+        <h4 class="heading-lg mb-16">Demo: Selected Resources</h4>
+        <ul class="mb-0" data-resource-action="display" data-resource-format="list" style="list-style: disc; padding-left: 1.5rem;">
+            <!-- Resources will be populated here automatically -->
+        </ul>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">HTML Structure</h3>
+        <pre class="body-sm"><code>&lt;ul data-resource-action="display"
+    data-resource-format="list"
+    data-hide-if-empty="true"
+    style="list-style: disc; padding-left: 1.5rem;"&gt;
+    &lt;!-- Resources populated automatically --&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <div class="bg-blue-50 border border-blue-200 rounded p-16">
+        <h3 class="heading-md mb-12">Attributes</h3>
+        <ul class="body-sm mb-0" style="list-style: disc; padding-left: 1.5rem;">
+            <li class="mb-8"><code>data-resource-action="display"</code> - Identifies this as a resource display container</li>
+            <li class="mb-8"><code>data-resource-format="list"</code> - Display format (options: "list", "cards")</li>
+            <li class="mb-0"><code>data-hide-if-empty="true"</code> - (Optional) Hides parent .card if no resources selected</li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Resources Data Format</h2>
+    <p class="mb-24">Resources are defined in <code>/src/themes/blv/data/resources.json</code></p>
+
+    <div class="bg-gray-50 border rounded p-16">
+        <h3 class="heading-md mb-12">JSON Structure</h3>
+        <pre class="body-sm"><code>[
+  {
+    "title": "Article Title",
+    "url": "https://example.com/article",
+    "topic": ["topic-name", "another-topic"]
+  },
+  {
+    "title": "Another Article",
+    "url": "https://example.com/another",
+    "topic": ["topic-name"]
+  }
+]</code></pre>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>JavaScript API</h2>
+    <p class="mb-24">Access the Resources component programmatically.</p>
+
+    <div class="bg-gray-50 border rounded p-16">
+        <h3 class="heading-md mb-12">Available Methods</h3>
+        <pre class="body-sm"><code>// Get the component instance
+const resources = getResourcesComponent();
+
+// Add a topic
+resources.addTopic('topic-name');
+
+// Remove a topic
+resources.removeTopic('topic-name');
+
+// Check if topic is selected
+const hasIt = resources.hasTopic('topic-name');
+
+// Get all selected topics
+const topics = resources.getSelectedTopics();
+
+// Clear all selections
+resources.clearAllTopics();
+
+// Load resources data
+await resources.loadResourcesData();
+
+// Get resources for specific topics
+const items = resources.getResourcesByTopics(['topic1', 'topic2']);</code></pre>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Example Implementation</h2>
+
+    <div class="bg-gray-50 border rounded p-16 mb-24">
+        <h3 class="heading-md mb-12">Page 1: Topic Selection</h3>
+        <pre class="body-sm"><code>&lt;!-- User selects topics they want to learn more about --&gt;
+&lt;h3&gt;Cash Card Information&lt;/h3&gt;
+&lt;button class="checkmark-button"
+        data-resource-action="toggle"
+        data-topic="cash-card"
+        data-checked="false"&gt;
+    &lt;svg class="checkmark-button__icon"&gt;...&lt;/svg&gt;
+    &lt;span class="checkmark-button__text"&gt;I'd like more info&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+    </div>
+
+    <div class="bg-gray-50 border rounded p-16">
+        <h3 class="heading-md mb-12">Page 2: Display Resources</h3>
+        <pre class="body-sm"><code>&lt;!-- Display selected resources to user --&gt;
+&lt;div class="card p-24"&gt;
+    &lt;h4&gt;Here's more info on your selected topics:&lt;/h4&gt;
+    &lt;ul data-resource-action="display"
+        data-resource-format="list"
+        data-hide-if-empty="true"&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</section>
+
+<section class="component-section">
+    <h2>Browser Console Testing</h2>
+    <p class="mb-24">Test the component in your browser's developer console:</p>
+
+    <div class="bg-gray-50 border rounded p-16">
+        <pre class="body-sm"><code>// View currently selected topics
+localStorage.getItem('selectedResources');
+
+// Manually add a topic
+const rc = getResourcesComponent();
+rc.addTopic('mental-health');
+
+// View all available topics in resources.json
+rc.loadResourcesData().then(data => console.log(data));</code></pre>
+    </div>
+</section>
+
+<script>
+// Demo functionality for this page
+document.addEventListener('DOMContentLoaded', function() {
+    // Refresh display when toggle is clicked
+    const toggleButton = document.querySelector('[data-topic="demo-topic"]');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', function() {
+            setTimeout(() => {
+                // Refresh the display container
+                const displayContainer = document.querySelector('[data-resource-action="display"]');
+                if (displayContainer && typeof populateResourceDisplay === 'function') {
+                    populateResourceDisplay(displayContainer);
+                }
+            }, 100);
+        });
+    }
+});
+</script>

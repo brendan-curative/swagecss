@@ -218,6 +218,7 @@
   <script src="/swagecss/src/components/blv/ordered-list.js"></script>
   <script src="/swagecss/src/components/blv/radio-selection-list.js"></script>
   <script src="/swagecss/src/components/blv/agreement.js"></script>
+  <script src="/swagecss/src/components/blv/resources.js"></script>
   <script src="/swagecss/src/themes/blv/components/scrollto.js"></script>
 
   <script>
@@ -233,7 +234,7 @@ function initializeBLVComponents() {
   if (typeof initializeCarousel === 'function') {
     initializeCarousel();
   }
-  
+
   // Initialize other BLV components as needed
   if (typeof initializeHorizontalStepper === 'function') {
     initializeHorizontalStepper();
@@ -255,6 +256,9 @@ function initializeBLVComponents() {
   }
   if (typeof initializeAgreement === 'function') {
     initializeAgreement();
+  }
+  if (typeof initializeResources === 'function') {
+    initializeResources();
   }
   if (typeof initializeScrollTo === 'function') {
     initializeScrollTo();

@@ -225,7 +225,7 @@
     </div>
 
     <div class="constrain constrain-40 mt-32">
-        <button class="checkmark-button add-resource" data-checked="false" aria-pressed="false" data-topic="cash-card">
+        <button class="checkmark-button" data-resource-action="toggle" data-topic="cash-card" data-checked="false" aria-pressed="false">
                 <svg class="checkmark-button__icon" width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="10.5" cy="10.8672" r="8" stroke="currentColor" stroke-width="2" fill="none"></circle>
                 </svg>
@@ -306,6 +306,7 @@
   <script src="/swagecss/src/components/blv/ordered-list.js"></script>
   <script src="/swagecss/src/components/blv/radio-selection-list.js"></script>
   <script src="/swagecss/src/components/blv/agreement.js"></script>
+  <script src="/swagecss/src/components/blv/resources.js"></script>
   <script src="/swagecss/src/themes/blv/components/scrollto.js"></script>
 
   <script>
@@ -321,7 +322,7 @@ function initializeBLVComponents() {
   if (typeof initializeCarousel === 'function') {
     initializeCarousel();
   }
-  
+
   // Initialize other BLV components as needed
   if (typeof initializeHorizontalStepper === 'function') {
     initializeHorizontalStepper();
@@ -343,6 +344,9 @@ function initializeBLVComponents() {
   }
   if (typeof initializeAgreement === 'function') {
     initializeAgreement();
+  }
+  if (typeof initializeResources === 'function') {
+    initializeResources();
   }
   if (typeof initializeScrollTo === 'function') {
     initializeScrollTo();
