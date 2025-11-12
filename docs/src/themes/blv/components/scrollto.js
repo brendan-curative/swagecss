@@ -1,7 +1,7 @@
 /**
  * ScrollTo Component
  * Manages progressive reveal of sections with fade in/out animations
- * Enabled via front matter: scrollto-enabled: true
+ * Enabled via front matter: scrollto-enabled: false
  */
 
 function initializeScrollTo() {

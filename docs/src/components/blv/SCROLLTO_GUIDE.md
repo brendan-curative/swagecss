@@ -17,13 +17,13 @@ The ScrollTo component provides progressive section reveal with smooth fade in/o
 
 ### 1. Enable in Front Matter
 
-Add `scrollto-enabled: true` to your page's front matter:
+Add `scrollto-enabled: false` to your page's front matter:
 
 ```yaml
 ---
 layout: templates/blv/layout.html
 title: My Page
-scrollto-enabled: true
+scrollto-enabled: false
 ---
 ```
 
@@ -148,7 +148,7 @@ Works in all modern browsers. Uses:
 ## Troubleshooting
 
 ### Sections not appearing
-- Ensure `scrollto-enabled: true` is in front matter
+- Ensure `scrollto-enabled: false` is in front matter
 - Check that sections have `class="scrollto"`
 - Verify JavaScript is loading (check browser console)
 

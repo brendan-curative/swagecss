@@ -13,11 +13,11 @@
 </ul>
 <h2>Usage</h2>
 <h3>1. Enable in Front Matter</h3>
-<p>Add <code>scrollto-enabled: true</code> to your page's front matter:</p>
+<p>Add <code>scrollto-enabled: false</code> to your page's front matter:</p>
 <pre><code class="language-yaml">---
 layout: templates/blv/layout.html
 title: My Page
-scrollto-enabled: true
+scrollto-enabled: false
 ---
 </code></pre>
 <h3>2. Add ScrollTo Class to Sections</h3>
@@ -121,7 +121,7 @@ html[data-theme=&quot;blv&quot;][data-scrollto-enabled] .scrollto {
 <h2>Troubleshooting</h2>
 <h3>Sections not appearing</h3>
 <ul>
-<li>Ensure <code>scrollto-enabled: true</code> is in front matter</li>
+<li>Ensure <code>scrollto-enabled: false</code> is in front matter</li>
 <li>Check that sections have <code>class=&quot;scrollto&quot;</code></li>
 <li>Verify JavaScript is loading (check browser console)</li>
 </ul>
