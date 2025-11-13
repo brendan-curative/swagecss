@@ -4,56 +4,217 @@ title: BLV Prototype
 heading: BLV Prototype
 secondary: Secondary
 section: Checking in
-location: screenings
+location: care-team
 design-status: in-progress
 content-status: in-progress
 previous: 04/
-next: 05/care-team/
+next: 06/
 button-text: Continue
 page-js: care-team
 ---
 
-<section id="care-team">
-    <h1 class="heading-2xl mb-16">Your Care Team </h1>
+<section>
+    <h1 class="mb-16">Confirm Your Providers</h1>
+    
 
-    <h2 class="heading-lg mb-8">Accuracy Helps Us Help You</h2>
-    <p class="body-lg mb-24">Accurate, up-to-date information ensures we can coordinate your care properly and keep your coverage running smoothly.</p>
 
-    <p class="body-lg mb-24">Let's make sure your list of providers is current, especially your <strong>Primary Care Provider (PCP)</strong>.</p>
+    <!-- Primary Care Provider Section -->
+    <div class="mb-32 px-80">
+        <h3 class="heading-lg mb-8">Primary Care Provider:</h3>
 
-    <div class="constrain constrain-80">
-    <h2 class="heading-xl mb-16">Your PCP is your main point of care. Having a primary care provider means: </h2>
+        <div id="pcp-providers-list" class="mb-16">
+            <!-- Primary Care Provider tiles will be rendered here -->
+        </div>
 
-    <div class="constrain constrain-80">
-        <ul class="unordered-list" role="list">
-            <li class="unordered-list__item flex-items-start" role="listitem" tabindex="0">
-                <div class="unordered-list__icon text-success">
-                    <span class="heroicon heroicon-16 heroicon-check"></span>
+        <!-- No PCP Options (shown when no PCP is listed) -->
+        <div id="no-pcp-options" class="hidden">
+            <div class="flex-row flex-justify-center gap-16 mb-16">
+                <button class="button button--small-outline" onclick="findMyPCP()">
+                    <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    Find my PCP
+                </button>
+                <button class="button button--small-outline" onclick="noPCPOption()">
+                    <span class="heroicon heroicon-16 heroicon-outline-exclamation-circle"></span>
+                    I don't have a PCP
+                </button>
+            </div>
+            <div id="no-pcp-message" class="alert alert--info" style="display: none;">
+                <div class="alert__icon">
+                    <span class="heroicon heroicon-information-circle"></span>
                 </div>
-                <div class="unordered-list__content">
-                    <p class="unordered-list__text">One person knows your full health story.</p>
+                <div class="alert__content">
+                    <p class="alert__message">Your Care Navigator will assist you with that</p>
                 </div>
-            </li>
-            <li class="unordered-list__item flex-items-start" role="listitem" tabindex="0">
-                <div class="unordered-list__icon text-success">
-                    <span class="heroicon heroicon-16 heroicon-check"></span>
-                </div>
-                <div class="unordered-list__content">
-                    <p class="unordered-list__text">You can stay on track to get preventive care and screenings on time.</p>
-                </div>
-            </li>
-            <li class="unordered-list__item flex-items-start" role="listitem" tabindex="0">
-                <div class="unordered-list__icon text-success">
-                    <span class="heroicon heroicon-16 heroicon-check"></span>
-                </div>
-                <div class="unordered-list__content">
-                    <p class="unordered-list__text">It's easier to catch small issues before they become big ones.</p>
-                </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 
-    <p class="body-lg my-24">Keeping your care team up to date helps us make sure you get the most from your $0 coverage.</p>
+    <!-- Other Providers Section -->
+    <div class="mb-24 px-80">
+        <h3 class="heading-lg mb-8">Other Providers:</h3>
+        
+        <div id="other-providers-list" class="mb-32">
+            <!-- Other provider tiles will be rendered here -->
+        </div>
+
+        <div class="flex-row flex-justify-center gap-16 mb-16">
+            <p>Have specialists, therapists, or other clinicians you see regularly? 
+            </p>
+            <!-- Add Provider Button -->
+        <button class="button button--small-outline" onclick="addProvider()">
+            <span class="heroicon heroicon-16 heroicon-plus"></span>
+            Add Another Provider
+        </button>
+        </div>
+    </div>
+
+    <div class="accordion helper my-32" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item mb-8" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-24 heroicon-outline-question-mark-circle"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Need help finding a provider?</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content mx-16 pb-24">
+                    <ol class="ordered-list">
+            <li class="ordered-list__item" data-order="1" data-color="blue">
+              <div class="ordered-list__number">
+                <span>1</span>
+              </div>
+              <div class="ordered-list__content">
+                <p class="ordered-list__text"><span class="font-semibold">Go to Provider Search.</span> <br><span class="text-gray-600 font-normal">You'll see doctors, nurse practitioners, facilities and other types of providers covered at $0.</span></p>
+              </div>
+            </li>
+            <li class="ordered-list__item" data-order="1" data-color="blue">
+                <div class="ordered-list__number">
+                  <span>2</span>
+                </div>
+                <div class="ordered-list__content">
+                  <p class="ordered-list__text"><span class="font-semibold">Filter by what matters to you.</span> <br><span class="text-gray-600 font-normal">Choose by location, specialty, gender, or language.</span></p>
+                </div>
+              </li>
+              <li class="ordered-list__item" data-order="1" data-color="blue">
+                <div class="ordered-list__number">
+                  <span>3</span>
+                </div>
+                <div class="ordered-list__content">
+                  <p class="ordered-list__text"><span class="font-semibold">Check availability and schedule.</span> <br><span class="text-gray-600 font-normal">Call to ask about earliest appointment availability. </span></p>
+                </div>
+              </li>
+              <li class="ordered-list__item" data-order="1" data-color="blue">
+                <div class="ordered-list__number">
+                  <span>!</span>
+                </div>
+                <div class="ordered-list__content">
+                  <p class="ordered-list__text"><span class="text-gray-600 font-normal">If you need additional help, your Care Navigator can walk you through Provider Search.</span></p>
+                </div>
+              </li>
+        </ol>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </section>
+
+<!-- Provider Edit/Add Modal -->
+<div id="provider-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="modal-title" class="form-modal__title">Edit Provider</h3>
+            <button class="form-modal__close" onclick="closeModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        
+        <div class="form-modal__body">
+                <div id="search-mode">
+                    <form id="provider-form">
+                        <div class="select mb-16">
+                            <div class="select__label-group">
+                                <label for="provider-state" class="select__label">State:</label>
+                            </div>
+                            <div class="select__input-wrapper">
+                                <select id="provider-state" class="select__control" required>
+                                    <option value="">Select State</option>
+                                    <option value="CA">California</option>
+                                    <option value="NY">New York</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="MI">Michigan</option>
+                                </select>
+                                <div class="select__icon">
+                                    <span class="heroicon heroicon-chevron-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="textfield mb-16" style="position: relative;">
+                            <label class="textfield__label" for="provider-search">Provider Name:</label>
+                            <div class="textfield__input-wrapper">
+                                <input 
+                                    class="textfield__input" 
+                                    type="text" 
+                                    id="provider-search" 
+                                    name="provider-search" 
+                                    placeholder="Start typing provider name..." 
+                                    autocomplete="off">
+                            </div>
+                            <div id="search-results" class="search-results" style="display: none;"></div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="manual-entry" class="hidden">
+                    <p class="body-md text-gray-600 mb-16">Enter your provider's information:</p>
+                    
+                    <div class="textfield mb-16">
+                        <label class="textfield__label" for="manual-provider-name">Provider Name:</label>
+                        <div class="textfield__input-wrapper">
+                            <input 
+                                class="textfield__input" 
+                                type="text" 
+                                id="manual-provider-name" 
+                                name="manual-provider-name" 
+                                placeholder="e.g., Dr. John Smith, MD">
+                        </div>
+                    </div>
+
+                    <div class="textfield mb-16">
+                        <label class="textfield__label" for="manual-location">City/State or Address:</label>
+                        <div class="textfield__input-wrapper">
+                            <input 
+                                class="textfield__input" 
+                                type="text" 
+                                id="manual-location" 
+                                name="manual-location" 
+                                placeholder="e.g., Los Angeles, CA or 123 Main St, City, State">
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="button button--flat" onclick="backToSearch()">
+                        <span class="heroicon heroicon-16 heroicon-arrow-left"></span>
+                        Back to Search
+                    </button>
+                </div>
+        </div>
+        
+        <div class="form-modal__footer">
+            <button type="button" class="button button--small-outline" onclick="closeModal()">Cancel</button>
+            <button type="button" id="save-provider-btn" class="button button--primary" onclick="saveProvider()" disabled>
+                Save Provider
+            </button>
+        </div>
+    </div>
+</div>

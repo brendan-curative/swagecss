@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html data-theme="blv">
+  <head>
+    <meta name="robots" content="noindex,nofollow">
+    <title>BLV Prototype BLV Prototype</title>
+    <link rel="icon" href="/swagecss/src/img/favicon.ico" sizes="any" type="image/svg+xml" />
+
+    <link href="/swagecss/src/swage.css" rel="stylesheet" type="text/css" />
+    <link href="/swagecss/src/modules/modules.css" rel="stylesheet" type="text/css" />
+    <link href="/swagecss/src/themes/blv/blv.css" rel="stylesheet" type="text/css" />
+
+
+
+  </head>
+    <body class="page-facilities">
+    <div class="wrap">
+      <header>
+        <div class="container">
+            <div class="flex-row flex-justify-between flex-items-center">
+                <div class="logo logo--s32">
+                   <a href="/swagecss/prototypes/blv/renewal/"><img src="https://static.curative.com/logos/Curative_Symbol_RedOrange.svg" alt="Curative Logo - SIGNAL_ORANGE_SYMBOL_ONLY" class="logo__image"></a>
+                </div>
+
+                <div class="flex-row flex-items-center gap-8">
+                    <button class="button button--utility button--with-icon" onclick="restartPrototype()"><span class="heroicon heroicon-16 heroicon-arrow-path"></span> Restart</button>
+
+                    <button class="drawer-trigger" data-drawer-target="contents" title="Open menu" aria-expanded="false" aria-controls="contents">
+                <span class="heroicon heroicon-outline-map"></span>
+            </button>
+                </div>
+            </div>
+        </div>
+            <nav>
+    <div class="container">
+        <div class=" flex-row flex-items-center flex-justify-between">
+            <a class="back" href="/swagecss/prototypes/blv/renewal/06/a/"><span class="heroicon heroicon-chevron-left"></span></a>
+            <ol class="horizontal-stepper" data-testid="HorizontalStepper">
+            <li class="horizontal-stepper__step horizontal-stepper__step--first">
+                <div class="horizontal-stepper__progress stepper-progress-1"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress stepper-progress-2"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress stepper-progress-3"></div>
+            </li>
+            <li class="horizontal-stepper__step">
+                <div class="horizontal-stepper__progress stepper-progress-4"></div>
+            </li>
+            <li class="horizontal-stepper__step horizontal-stepper__step--last">
+                <div class="horizontal-stepper__progress stepper-progress-5"></div>
+            </li>
+        </ol>
+        </div>
+    </div>
+</nav>
+        
+      </header>
+  
+      <main>
+        
+              <article>
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Emergency Room</h1>
+    
+
+    <!-- Facilities List -->
+    <div class="flex-column gap-16">
+
+        <div id="emergency-facility-info" class="mb-16" style="display: none;">
+            <div class="card p-24 transparent py-24 px-80">
+                <div class="tile">
+                    <span class="tile__icon heroicon heroicon-outline-building-office"></span>
+                    <div class="tile__content">
+                        <p id="emergency-name" class="tile__title"></p>
+                        <p id="emergency-address" class="tile__subtitle"></p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('emergency')">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
+                    </button>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('emergency', event)">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+       
+
+         <!-- No Facility State (shown when no facility selected) -->
+         <div id="emergency-no-facility" class="mb-16" style="display: none;">
+            <div class="flex-center-x-y">
+                <button onclick="editFacility('emergency')" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
+                Find my Emergency Room
+            </button>
+            </div>
+        </div>
+        
+        <!-- None Selected State (shown when "none of these work for me" is selected) -->
+        <div id="emergency-none-selected" class="mb-16" style="display: none;">
+            <div class="flex-row flex-justify-between flex-align-start">
+                <p class="text-sm text-gray-600 italic flex-1">None selected - Care Navigator to assist</p>
+                <button class="button button--small-outline ml-16" onclick="editFacility('emergency')" title="Edit Facility">
+                    <span class="heroicon heroicon-outline-cog-6-tooth"></span>
+                </button>
+            </div>
+        </div>
+            
+            <div class="constrain constrain-80">
+                <p class="body-lg pt-24 mb-8">The ER is for <strong>life-threatening emergencies</strong> or when every minute counts. </p>
+        
+                <p class="body-lg pt-8 mb-24">If you're experiencing chest pain, trouble breathing, heavy bleeding, or signs of stroke, <strong>call 911 or go to the nearest ER</strong>.</p>
+        
+                <ul class="unordered-list">
+                    <li class="unordered-list__item">
+                        <div class="unordered-list__icon text-success">
+                        <span class="heroicon heroicon-check"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Chest pain, seizures, major fractures, stroke symptoms</span></p>
+                        </div>
+                    </li>
+                    <li class="unordered-list__item mb-24">
+                        <div class="unordered-list__icon text-critical">
+                        <span class="heroicon heroicon-x-mark"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Not for: Cold, flu, minor injuries, or routine prescriptions</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion helper my-32" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item mb-8" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-24 heroicon-outline-question-mark-circle"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Need help finding a facility?</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content mx-16 pb-24">
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                  <div class="ordered-list__number">
+                    <span>1</span>
+                  </div>
+                  <div class="ordered-list__content">
+                    <p class="ordered-list__text"><span class="font-semibold">Go to Provider Search.</span> <br><span class="text-gray-600 font-normal">Use your ZIP code or city to find in-network urgent care, ERs, or clinics.</span></p>
+                  </div>
+                </li>
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                      <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                      <p class="ordered-list__text"><span class="font-semibold">Filter by type.</span> <br><span class="text-gray-600 font-normal">Choose “Urgent Care,” “Telehealth,” or “Hospital/Emergency” to narrow results.</span></p>
+                    </div>
+                  </li>
+                  <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                      <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                      <p class="ordered-list__text"><span class="font-semibold">Save your pick.</span> <br><span class="text-gray-600 font-normal">Keep those go-to facilities handy.</span></p>
+                    </div>
+                  </li>
+            </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Facility Search Modal -->
+<div id="facility-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="facility-modal-title" class="form-modal__title">Find Your Facility</h3>
+            <button class="form-modal__close" onclick="closeModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <p id="facility-modal-subtitle" class="mb-8">Select a facility near you:</p>
+                <p class="text-sm text-gray-600 mb-16">
+                    Remember, <strong id="facility-modal-reminder">you can go to any facility that shows up in our provider search!</strong> We just want to make sure you have at least one option ahead of time
+                </p>
+            </div>
+            
+            <div class="mb-24">
+                <label for="facility-location" class="block mb-8 font-semibold">Location (search by address, zip, or city, state)</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="facility-location" 
+                        placeholder="Enter location..." 
+                        onkeypress="if(event.key==='Enter') searchFacilities()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchFacilities()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="facility-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closeModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-facility-btn" onclick="saveFacilitySelection()" class="button button--primary" disabled>
+                Save Selection
+            </button>
+        </div>
+    </div>
+</div></article>
+
+              <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
+    <div class="drawer__header">
+        <h3 class="drawer__title">Navigation</h3>
+        <button class="drawer__close" aria-label="Close drawer">
+            <span class="heroicon heroicon-x-mark"></span>
+        </button>
+    </div>
+    
+    <div class="drawer__content">
+       <ul class="bulleted sitemap">
+            <li>
+                <h3>Welcome Back</h3>
+                <ul>
+                    <li><a href="/swagecss/prototypes/blv/renewal/01/">Highlights</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/02/">What to Expect</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3>What's New</h3>
+                <ul>
+                    <li><a href="/swagecss/prototypes/blv/renewal/03/">Curative Cash Card</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/04/">Mental Health</a></li>
+                </ul>
+            </li>
+            <li>
+            <h3>Reflect and Check</h3>
+                <ul>
+                    <li><a href="/swagecss/prototypes/blv/renewal/05/">Your Providers</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/06/">Know Where to Go</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/06/a/">Urgent Care</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/06/b/">Emergency Room</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/07/">Pharmacy</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/07/b/">Medication</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/08/">Screenings</a></li>
+                    <li><a href="/swagecss/prototypes/blv/renewal/10/">Health Services</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <h3>Schedule Your Visit</h3>
+                <ul>
+                    <li><a href="/swagecss/prototypes/blv/renewal/12/">Procedures &amp; Surgeries</a></li>
+                <li><a href="/swagecss/prototypes/blv/renewal/09/">Health Cost Literacy</a></li>
+                </ul>
+            </li>
+            <li><h3><a href="/swagecss/prototypes/blv/renewal/13/">Clinical scheduling</a></h3></li>
+        </ul>
+    </div>
+</div>
+      </main>
+  
+      
+  
+      <footer>
+        <div class="container flex-row flex-justify-center">
+            <a id="continue-button" class="button button--big-primary button--with-icon" href="/swagecss/prototypes/blv/renewal/07/">
+                Know Where to Go
+                <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                  </svg>
+                </a>
+        </div>
+      </footer>
+  
+    </div>
+
+
+    <div class="status">
+        <div>
+          <span class="part in-progress">
+            <span>Design: </span>
+            
+          </span>
+
+          <span class="part in-progress">
+            <span>Content: </span>
+            
+          </span>
+          </div>
+    </div>
+
+
+  <script src="/swagecss/src/components.js"></script>
+  <script src="/swagecss/src/modules/drawer/drawer.js"></script>
+  <script src="/swagecss/src/modules/page-transition/page-transition.js"></script>
+  
+  <!-- BLV Component Scripts -->
+  <script src="/swagecss/src/components/blv/carousel.js"></script>
+  <script src="/swagecss/src/components/blv/horizontal-stepper.js"></script>
+  <script src="/swagecss/src/components/blv/checkmark-button.js"></script>
+  <script src="/swagecss/src/components/blv/rating-picker.js"></script>
+  <script src="/swagecss/src/components/blv/checkmark-label.js"></script>
+  <script src="/swagecss/src/components/blv/ordered-list.js"></script>
+  <script src="/swagecss/src/components/blv/radio-selection-list.js"></script>
+  <script src="/swagecss/src/components/blv/agreement.js"></script>
+  <script src="/swagecss/src/components/blv/resources.js"></script>
+  <script src="/swagecss/src/themes/blv/components/scrollto.js"></script>
+
+  <script>
+// Initialize BLV components
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeBLVComponents);
+} else {
+  initializeBLVComponents();
+}
+
+function initializeBLVComponents() {
+  // Initialize carousel
+  if (typeof initializeCarousel === 'function') {
+    initializeCarousel();
+  }
+
+  // Initialize other BLV components as needed
+  if (typeof initializeHorizontalStepper === 'function') {
+    initializeHorizontalStepper();
+  }
+  if (typeof initializeCheckmarkButton === 'function') {
+    initializeCheckmarkButton();
+  }
+  if (typeof initializeRatingPicker === 'function') {
+    initializeRatingPicker();
+  }
+  if (typeof initializeCheckmarkLabel === 'function') {
+    initializeCheckmarkLabel();
+  }
+  if (typeof initializeOrderedList === 'function') {
+    initializeOrderedList();
+  }
+  if (typeof initializeRadioSelectionList === 'function') {
+    initializeRadioSelectionList();
+  }
+  if (typeof initializeAgreement === 'function') {
+    initializeAgreement();
+  }
+  if (typeof initializeResources === 'function') {
+    initializeResources();
+  }
+  if (typeof initializeScrollTo === 'function') {
+    initializeScrollTo();
+  }
+}
+
+// Prevent default behavior for links with href="#"
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('click', function(event) {
+    const link = event.target.closest('a[href="#"]');
+    if (link) {
+      event.preventDefault();
+    }
+  });
+});
+
+// Global restart/reset function for prototype
+function restartPrototype() {
+  if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
+    localStorage.removeItem('baselineVisitData');
+    localStorage.removeItem('selectedResources');
+    window.location.href = '/swagecss/prototypes/blv/renewal/';
+  }
+}
+
+// Also make resetPrototype available globally for scheduling page
+function resetPrototype() {
+  restartPrototype();
+}
+    </script>
+
+  
+  <script src="/swagecss/prototypes/blv/renewal/src/facilities.js?v=2.1"></script>
+  
+
+  <!-- Confetti animation system -->
+  <script src="/swagecss/src/themes/blv/components/confetti.js"></script>
+
+  </body>
+</html>

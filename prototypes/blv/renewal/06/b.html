@@ -1,0 +1,179 @@
+---
+layout: templates/blv/layout.html
+title: BLV Prototype
+heading: BLV Prototype
+secondary: Secondary
+section: Checking in
+location: facilities
+design-status: in-progress
+content-status: in-progress
+previous: 06/a/
+next: 07/
+button-text: Know Where to Go
+page-js: facilities
+---
+
+<section class="mb-32">
+    <h1 class="heading-2xl mb-16">Emergency Room</h1>
+    
+
+    <!-- Facilities List -->
+    <div class="flex-column gap-16">
+
+        <div id="emergency-facility-info" class="mb-16" style="display: none;">
+            <div class="card p-24 transparent py-24 px-80">
+                <div class="tile">
+                    <span class="tile__icon heroicon heroicon-outline-building-office"></span>
+                    <div class="tile__content">
+                        <p id="emergency-name" class="tile__title"></p>
+                        <p id="emergency-address" class="tile__subtitle"></p>
+                    </div>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="editFacility('emergency')">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-cog-6-tooth"></span>
+                    </button>
+                    <button class="tile__dismiss" aria-label="Dismiss" onclick="deleteFacility('emergency', event)">
+                        <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+       
+
+         <!-- No Facility State (shown when no facility selected) -->
+         <div id="emergency-no-facility" class="mb-16" style="display: none;">
+            <div class="flex-center-x-y">
+                <button onclick="editFacility('emergency')" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-magnifying-glass mr-8"></span>
+                Find my Emergency Room
+            </button>
+            </div>
+        </div>
+        
+        <!-- None Selected State (shown when "none of these work for me" is selected) -->
+        <div id="emergency-none-selected" class="mb-16" style="display: none;">
+            <div class="flex-row flex-justify-between flex-align-start">
+                <p class="text-sm text-gray-600 italic flex-1">None selected - Care Navigator to assist</p>
+                <button class="button button--small-outline ml-16" onclick="editFacility('emergency')" title="Edit Facility">
+                    <span class="heroicon heroicon-outline-cog-6-tooth"></span>
+                </button>
+            </div>
+        </div>
+            
+            <div class="constrain constrain-80">
+                <p class="body-lg pt-24 mb-8">The ER is for <strong>life-threatening emergencies</strong> or when every minute counts. </p>
+        
+                <p class="body-lg pt-8 mb-24">If you're experiencing chest pain, trouble breathing, heavy bleeding, or signs of stroke, <strong>call 911 or go to the nearest ER</strong>.</p>
+        
+                <ul class="unordered-list">
+                    <li class="unordered-list__item">
+                        <div class="unordered-list__icon text-success">
+                        <span class="heroicon heroicon-check"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Use for:</span> <br><span class="font-semibold">Chest pain, seizures, major fractures, stroke symptoms</span></p>
+                        </div>
+                    </li>
+                    <li class="unordered-list__item mb-24">
+                        <div class="unordered-list__icon text-critical">
+                        <span class="heroicon heroicon-x-mark"></span>
+                        </div>
+                        <div class="unordered-list__content">
+                        <p class="unordered-list__text"><span class="font-normal">Not for:</span> <br><span class="font-semibold">Not for: Cold, flu, minor injuries, or routine prescriptions</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion helper my-32" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item mb-8" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-24 heroicon-outline-question-mark-circle"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Need help finding a facility?</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content mx-16 pb-24">
+            <ol class="ordered-list">
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                  <div class="ordered-list__number">
+                    <span>1</span>
+                  </div>
+                  <div class="ordered-list__content">
+                    <p class="ordered-list__text"><span class="font-semibold">Go to Provider Search.</span> <br><span class="text-gray-600 font-normal">Use your ZIP code or city to find in-network urgent care, ERs, or clinics.</span></p>
+                  </div>
+                </li>
+                <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                      <span>2</span>
+                    </div>
+                    <div class="ordered-list__content">
+                      <p class="ordered-list__text"><span class="font-semibold">Filter by type.</span> <br><span class="text-gray-600 font-normal">Choose “Urgent Care,” “Telehealth,” or “Hospital/Emergency” to narrow results.</span></p>
+                    </div>
+                  </li>
+                  <li class="ordered-list__item" data-order="1" data-color="blue">
+                    <div class="ordered-list__number">
+                      <span>3</span>
+                    </div>
+                    <div class="ordered-list__content">
+                      <p class="ordered-list__text"><span class="font-semibold">Save your pick.</span> <br><span class="text-gray-600 font-normal">Keep those go-to facilities handy.</span></p>
+                    </div>
+                  </li>
+            </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Facility Search Modal -->
+<div id="facility-modal" class="form-modal">
+    <div class="form-modal__dialog">
+        <div class="form-modal__header">
+            <h3 id="facility-modal-title" class="form-modal__title">Find Your Facility</h3>
+            <button class="form-modal__close" onclick="closeModal()" aria-label="Close modal">
+                <span class="heroicon heroicon-x-mark"></span>
+            </button>
+        </div>
+        <div class="form-modal__body">
+            <div class="mb-24">
+                <p id="facility-modal-subtitle" class="mb-8">Select a facility near you:</p>
+                <p class="text-sm text-gray-600 mb-16">
+                    Remember, <strong id="facility-modal-reminder">you can go to any facility that shows up in our provider search!</strong> We just want to make sure you have at least one option ahead of time
+                </p>
+            </div>
+            
+            <div class="mb-24">
+                <label for="facility-location" class="block mb-8 font-semibold">Location (search by address, zip, or city, state)</label>
+                <div class="flex-row gap-8">
+                    <input 
+                        type="text" 
+                        id="facility-location" 
+                        placeholder="Enter location..." 
+                        onkeypress="if(event.key==='Enter') searchFacilities()"
+                        class="textfield__input flex-1"
+                    >
+                    <button onclick="searchFacilities()" class="button button--primary">
+                        <span class="heroicon heroicon-16 heroicon-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="facility-results">
+                <!-- Results will be populated here by JavaScript -->
+            </div>
+        </div>
+        <div class="form-modal__footer">
+            <button type="button" onclick="closeModal()" class="button button--small-outline">Cancel</button>
+            <button type="button" id="save-facility-btn" onclick="saveFacilitySelection()" class="button button--primary" disabled>
+                Save Selection
+            </button>
+        </div>
+    </div>
+</div>
