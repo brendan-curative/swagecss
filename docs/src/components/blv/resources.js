@@ -109,6 +109,12 @@ let resourcesComponent = null;
 function initializeResources() {
     console.log('Resources component initialized');
 
+    // Ensure dependencies are available
+    if (typeof toggleCheckmarkButton !== 'function') {
+        console.error('Resources component requires checkmark-button component to be loaded first');
+        return;
+    }
+
     // Create global instance
     resourcesComponent = new ResourcesComponent();
 
@@ -124,6 +130,7 @@ function initializeResources() {
  */
 function initializeResourceToggleButtons() {
     const toggleButtons = document.querySelectorAll('[data-resource-action="toggle"]');
+    console.log(`Found ${toggleButtons.length} resource toggle buttons`);
 
     toggleButtons.forEach(button => {
         const topic = button.dataset.topic;
@@ -132,8 +139,11 @@ function initializeResourceToggleButtons() {
             return;
         }
 
+        console.log(`Initializing resource toggle for topic: ${topic}`);
+
         // Restore state from localStorage
         if (resourcesComponent.hasTopic(topic)) {
+            console.log(`Restoring checked state for topic: ${topic}`);
             setCheckmarkButtonState(button, true);
         }
 
@@ -148,20 +158,31 @@ function initializeResourceToggleButtons() {
  * Handle toggle button click
  */
 function handleResourceToggle(button, event) {
+    console.log('Resource toggle clicked');
     const topic = button.dataset.topic;
-    if (!topic) return;
+    if (!topic) {
+        console.warn('Button clicked but no topic found');
+        return;
+    }
+
+    console.log(`Toggle button clicked for topic: ${topic}`);
+    console.log(`Current checked state before toggle: ${button.dataset.checked}`);
 
     // Toggle the checkmark button state
     toggleCheckmarkButton(button);
+
+    console.log(`Checked state after toggle: ${button.dataset.checked}`);
 
     // Update resource selections
     const isChecked = button.dataset.checked === 'true';
     if (isChecked) {
         resourcesComponent.addTopic(topic);
         console.log(`Added resource topic: ${topic}`);
+        console.log(`Current selections:`, resourcesComponent.getSelectedTopics());
     } else {
         resourcesComponent.removeTopic(topic);
         console.log(`Removed resource topic: ${topic}`);
+        console.log(`Current selections:`, resourcesComponent.getSelectedTopics());
     }
 }
 
@@ -238,9 +259,5 @@ function getResourcesComponent() {
     return resourcesComponent;
 }
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeResources);
-} else {
-    initializeResources();
-}
+// Note: Initialization is handled by the layout template's initializeBLVComponents() function
+// This ensures proper ordering with other BLV components
