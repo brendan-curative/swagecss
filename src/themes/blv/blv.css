@@ -336,6 +336,14 @@ article {
     margin-right: auto;
 }
 
+.constrain-align-left {
+    margin-left: initial;
+}
+
+.constrain-align-right {
+    margin-right: initial;
+}
+
 .constrain-80 {width: 80%;}
 .constrain-60 {width: 60%;}
 .constrain-40 {width: 40%;}
@@ -605,18 +613,53 @@ color: var(--color-text-default);
 
 button.checkmark-button[data-topic] {
     color: var(--color-primary-sky-blue);
-    background-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: var(--spacing-24) var(--spacing-16);
     border-color: var(--color-primary-sky-blue);
+    border-width: 3px;
+    border-radius: var(--spacing-16);
+    box-shadow: 0 2px 16px 0 rgba(102, 114, 125, 0.25), 0 4px 200px 0 rgba(255, 255, 255, 0.01);
     transition: all 0.3s ease;
-    background-image: url('data:image/svg+xml,<svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path></svg>');
-    background-position: right -24px bottom -23px;
-    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
 }
+
+button.checkmark-button[data-topic] span {
+    padding-right: var(--spacing-24);
+    z-index: 1000;
+}
+
+button.checkmark-button[data-topic]:hover, button.checkmark-button[data-topic]:focus {
+    color: var(--color-blue-500);
+    border-color: var(--color-blue-500);
+    transform: scale(.98);
+}
+
+button.checkmark-button[data-topic]:before {
+    content: '';
+    display: block;
+    width: 96px;
+    height: 96px;
+    background-color: var(--color-primary-sky-blue);
+    mask: url('data:image/svg+xml,<svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path></svg>');
+    position: absolute;
+    right: -24px;
+    bottom: -32px;
+}
+
+    button.checkmark-button[data-topic]:hover:before, button.checkmark-button[data-topic]:focus:before {
+        background-color: var(--color-blue-500);
+    }
 
 button.checkmark-button[data-topic][data-checked="true"] {
     font-weight: var(--font-weight-semibold);
 }
+
+    button.checkmark-button[data-topic][data-checked="true"]:before {
+        background-color: var(--color-foundation-primary);
+        mask: url('data:image/svg+xml,<svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>');
+    }
 
 .sitemap {
     margin-left: var(--spacing-24);
