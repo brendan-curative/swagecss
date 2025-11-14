@@ -89,6 +89,7 @@ content-status: in-progress
         <ul class="body-sm mb-0" style="list-style: disc; padding-left: 1.5rem;">
             <li class="mb-8"><code>data-resource-action="display"</code> - Identifies this as a resource display container</li>
             <li class="mb-8"><code>data-resource-format="list"</code> - Display format (options: "list", "cards")</li>
+            <li class="mb-8"><code>data-group-by-topic="true"</code> - (Optional) Groups resources by topic with &lt;h3&gt; headings</li>
             <li class="mb-0"><code>data-hide-if-empty="true"</code> - (Optional) Hides parent .card if no resources selected</li>
         </ul>
     </div>
@@ -163,9 +164,33 @@ const items = resources.getResourcesByTopics(['topic1', 'topic2']);</code></pre>
 &lt;/button&gt;</code></pre>
     </div>
 
+    <div class="bg-gray-50 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-12">Page 2: Display Resources (Grouped by Topic)</h3>
+        <pre class="body-sm"><code>&lt;!-- Display resources grouped by topic with headings --&gt;
+&lt;div class="card p-24"&gt;
+    &lt;h4&gt;Here's more info on your selected topics:&lt;/h4&gt;
+    &lt;div data-resource-action="display"
+         data-resource-format="list"
+         data-group-by-topic="true"
+         data-hide-if-empty="true"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <p class="body-sm text-gray-600 mt-12">This will generate output like:</p>
+        <pre class="body-sm"><code>&lt;h3&gt;Cash Card&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="..."&gt;Article 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="..."&gt;Article 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Mental Health&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="..."&gt;Article 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
     <div class="bg-gray-50 border rounded p-16">
-        <h3 class="heading-md mb-12">Page 2: Display Resources</h3>
-        <pre class="body-sm"><code>&lt;!-- Display selected resources to user --&gt;
+        <h3 class="heading-md mb-12">Page 2: Display Resources (All Together)</h3>
+        <pre class="body-sm"><code>&lt;!-- Display all resources without grouping --&gt;
 &lt;div class="card p-24"&gt;
     &lt;h4&gt;Here's more info on your selected topics:&lt;/h4&gt;
     &lt;ul data-resource-action="display"

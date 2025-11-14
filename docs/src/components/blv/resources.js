@@ -225,30 +225,89 @@ function populateResourceDisplay(container) {
         return;
     }
 
-    // Get matching resources
-    const resources = resourcesComponent.getResourcesByTopics(selectedTopics);
-
-    if (resources.length === 0) {
-        container.innerHTML = '<li class="mb-8">No resources found for selected topics.</li>';
-        return;
-    }
-
     // Get display format from data attribute (default: 'list')
     const format = container.dataset.resourceFormat || 'list';
+    const groupByTopic = container.dataset.groupByTopic === 'true';
 
-    if (format === 'list') {
-        // Populate as list items
-        container.innerHTML = resources.map(resource =>
-            `<li class="mb-8"><a href="${resource.url}" target="_blank" rel="noopener noreferrer">${resource.title}</a></li>`
-        ).join('');
-    } else if (format === 'cards') {
-        // Future: could support card format
-        container.innerHTML = resources.map(resource =>
-            `<div class="card p-16 mb-16">
-                <a href="${resource.url}" target="_blank" rel="noopener noreferrer">${resource.title}</a>
-            </div>`
-        ).join('');
+    if (groupByTopic) {
+        // Group resources by topic with headings
+        populateResourcesByTopic(container, selectedTopics, format);
+    } else {
+        // Display all resources together
+        const resources = resourcesComponent.getResourcesByTopics(selectedTopics);
+
+        if (resources.length === 0) {
+            container.innerHTML = '<li class="mb-8">No resources found for selected topics.</li>';
+            return;
+        }
+
+        if (format === 'list') {
+            // Populate as list items
+            container.innerHTML = resources.map(resource =>
+                `<li class="mb-8"><a href="${resource.url}" target="_blank" rel="noopener noreferrer">${resource.title}</a></li>`
+            ).join('');
+        } else if (format === 'cards') {
+            // Populate as cards
+            container.innerHTML = resources.map(resource =>
+                `<div class="card p-16 mb-16">
+                    <a href="${resource.url}" target="_blank" rel="noopener noreferrer">${resource.title}</a>
+                </div>`
+            ).join('');
+        }
     }
+}
+
+/**
+ * Populate resources grouped by topic with headings
+ * @param {HTMLElement} container - The container element to populate
+ * @param {Array} selectedTopics - Array of selected topic strings
+ * @param {string} format - Display format ('list' or 'cards')
+ */
+function populateResourcesByTopic(container, selectedTopics, format) {
+    let html = '';
+
+    selectedTopics.forEach(topic => {
+        // Get resources for this specific topic
+        const topicResources = resourcesComponent.getResourcesByTopics([topic]);
+
+        if (topicResources.length === 0) return;
+
+        // Format the topic name as a heading
+        const topicHeading = formatTopicHeading(topic);
+
+        if (format === 'list') {
+            // Add heading and list items
+            html += `<h3 class="heading-lg mt-24 mb-16">${topicHeading}</h3>`;
+            html += `<ul class="mb-0" style="list-style: disc; padding-left: 1.5rem;">`;
+            html += topicResources.map(resource =>
+                `<li class="mb-8"><a href="${resource.url}" target="_blank" rel="noopener noreferrer">${resource.title}</a></li>`
+            ).join('');
+            html += `</ul>`;
+        } else if (format === 'cards') {
+            // Add heading and cards
+            html += `<h3 class="heading-lg mt-24 mb-16">${topicHeading}</h3>`;
+            html += topicResources.map(resource =>
+                `<div class="card p-16 mb-16">
+                    <a href="${resource.url}" target="_blank" rel="noopener noreferrer">${resource.title}</a>
+                </div>`
+            ).join('');
+        }
+    });
+
+    container.innerHTML = html;
+}
+
+/**
+ * Format a topic identifier into a readable heading
+ * @param {string} topic - The topic identifier (e.g., 'cash-card')
+ * @returns {string} Formatted heading (e.g., 'Cash Card')
+ */
+function formatTopicHeading(topic) {
+    // Convert kebab-case to Title Case
+    return topic
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
 }
 
 /**
