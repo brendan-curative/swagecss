@@ -14,36 +14,28 @@ page-js: screenings
 ---
 
 <section class="mb-32">
-    <h1 class="heading-2xl mb-16">Your Screenings</h1>
+    <h1>Your Screenings</h1>
 
-    <!--
-    <div class="flex-center-x-y pb-24">
-        <img src="{{ '/' | url }}src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
-    </div>
-    -->
-
-    <p class="body-lg mb-24">Let's make sure you're up to date on preventive screenings that can help catch health issues early when they're easier to treat. These screenings are covered at $0 under your Curative plan.</p>
-
-    <p class="body-lg mb-24">creening recommendations can vary depending on your personal or family health history, so you may have already completed some outside the usual age range.</p>
-
-    <p class="body-lg mb-16 italic">If you've had a screening in the last year, please update your record below.</p>
+<p>Screenings help you stay informed about your health and guide conversations with your provider.</p>
+    <p>These preventive services are usually covered at $0 under your plan.*</p>
+    <p>Please update your screening status below and indicate if you would like additional information about the screening.</p>
+    <p>If you have a family history that changes your risk, please discuss it with a Curative Clinician in Part 2 or speak with your Primary Care Physician.</p>
 
     <div class="screenings p-24">
         <div id="cervical-cancer-screening" class="card transparent p-24">
             <div class="flex-row flex-items-center flex-justify-between">
                 <h3>Cervical Cancer Screening</h3>
             
-
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
                 <div class="select" style="width: 150px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-cervical" onchange="updateScreening('cervical', this.value)">
-                            <option value="">Select year</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022" selected>2022</option>
+                            <option value="unsure">I'm not sure</option>
+                            <option value="recent">Within the last 12 months</option>
+                            <option value="later">More than 12 months</option>
+                            <option value="never">Never</option>
+                            <option value="na" selected>N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -53,29 +45,9 @@ page-js: screenings
             </div>
             </div>
 
-            <div class="accordion helper my-32" data-testid="default-accordion">
-        <!-- Accordion Item 1 -->
-        <div class="accordion__item mb-8" data-testid="accordion-item-1">
-            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
-                <div class="accordion__toggle-content">
-                    <span class="accordion__toggle-icon">
-                        <span class="heroicon heroicon-24 heroicon-outline-information-circle"></span>
-                    </span>
-                    <span class="accordion__toggle-text">Learn more</span>
-                </div>
-            </button>
-            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
-                <div class="accordion__panel-content">
-                    <p class="body-lg mb-24">A Pap test or HPV test checks for changes in cervical cells that could lead to cancer. These screenings are usually done by a primary care provider or OB/GYN during a routine visit</p>
-
-            <p class="body-lg mb-24">Depending on your results, your provider may recommend testing every 3 to 5 years or more often if you have a higher risk or family history.</p>
-
-            <p class="body-lg mb-24">Early detection can prevent most cervical cancers before they start.</p>
-                </div>
-            </div>
-        </div>
-
-
+            <div class="text-md pt-16">
+                <div class="mb-8"><strong>What it is:</strong> Pap or HPV test done by a PCP or OB/GYN to check for early cell changes.</div>
+                <div><strong>Recommendation:</strong> Women 21-65, every 3-5 years depending on test type and history.</div>
             </div>
         </div>
 
@@ -88,11 +60,11 @@ page-js: screenings
                 <div class="select" style="width: 150px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-breast" onchange="updateScreening('breast', this.value)">
-                            <option value="">Select year</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
+                            <option value="unsure">I'm not sure</option>
+                            <option value="recent">Within the last 12 months</option>
+                            <option value="later">More than 12 months</option>
+                            <option value="never">Never</option>
+                            <option value="na">N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -101,35 +73,9 @@ page-js: screenings
                 </div>
             </div>
             </div>
-            
-
-            <div class="accordion helper my-32" data-testid="default-accordion">
-                <!-- Accordion Item 1 -->
-                <div class="accordion__item mb-8" data-testid="accordion-item-1">
-                    <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
-                        <div class="accordion__toggle-content">
-                            <span class="accordion__toggle-icon">
-                                <span class="heroicon heroicon-24 heroicon-outline-information-circle"></span>
-                            </span>
-                            <span class="accordion__toggle-text">Learn more</span>
-                        </div>
-                    </button>
-                    <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
-                        <div class="accordion__panel-content">
-                        <p class="body-lg mb-24">A mammogram is an X-ray that takes detailed images of breast tissue to look for early signs of cancer — often before anything can be felt</p>
-                
-                    <p class="body-lg mb-24">It's ordered by your primary care provider or OB/GYN and done at a mammography center or imaging facility.</p>
-                
-                    <p class="body-lg mb-24">Most women benefit from screening every 1-2 years, but your provider may recommend starting earlier or screening more often if you have a family history or genetic risk factors.</p>
-
-                    <p class="body-lg mb-24">If your results show dense breast tissue, your provider may order a follow-up test like an ultrasound or MRI — this is common and helps get a clearer picture.</p>
-
-                    <p class="body-lg mb-24 italic">It also helps to stay familiar with how your breasts normally look and feel. If you notice any new lumps, skin changes, or discharge between screenings, let your provider know right away.</p>
-
-                    <p class="body-lg mb-24 italic">Regular mammograms and awareness of your own body work together to support early detection, when treatment is more effective.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-md pt-16">
+                <div class="mb-8"><strong>What it is:</strong> X-ray of the breast to look for early signs of cancer. Additional imaging (ultrasound or MRI) may be recommended for dense breasts or higher risk.</div>
+                <div><strong>Recommendation:</strong> Women 40-74, every 1-2 years.</div>
             </div>
         </div>
 
@@ -142,11 +88,11 @@ page-js: screenings
                 <div class="select" style="width: 150px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-colon" onchange="updateScreening('colon', this.value)">
-                            <option value="">Select year</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022" selected>2022</option>
+                            <option value="unsure">I'm not sure</option>
+                            <option value="recent">Within the last 12 months</option>
+                            <option value="later" selected>More than 12 months</option>
+                            <option value="never">Never</option>
+                            <option value="na">N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -155,31 +101,9 @@ page-js: screenings
                 </div>
             </div>
 </div>
-            <div class="accordion helper my-32" data-testid="default-accordion">
-                <!-- Accordion Item 1 -->
-                <div class="accordion__item mb-8" data-testid="accordion-item-1">
-                    <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
-                        <div class="accordion__toggle-content">
-                            <span class="accordion__toggle-icon">
-                                <span class="heroicon heroicon-24 heroicon-outline-information-circle"></span>
-                            </span>
-                            <span class="accordion__toggle-text">Learn more</span>
-                        </div>
-                    </button>
-                    <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
-                        <div class="accordion__panel-content">
-                        <p class="body-lg mb-24">Colorectal screenings look for early signs of cancer or precancerous growths in the colon and rectum. They can be done through a colonoscopy — a simple procedure where a gastroenterologist uses a small camera to look inside your colon while you're asleep or relaxed at a medical center — or a stool-based test (like Cologuard), which you can do at home and mail to a lab.</p>
-
-            <p class="body-lg mb-24">Your primary care provider can help you choose the best option and order the test.</p>
-
-            <p class="body-lg mb-24">Most people start screening at age 45 and repeat it every year (for stool-based tests) or every 10 years (for colonoscopy).</p>
-
-            <p class="body-lg mb-24 italic">If you have a family history of colorectal cancer, inflammatory bowel disease, or a genetic condition like Lynch syndrome, you may need to start earlier or test more often.</p>
-
-            <p class="body-lg mb-24 italic">Curative Primary Care offers the Cologuard test for convenient, at-home screening.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="text-md pt-16">
+                <div class="mb-8"><strong>What it is:</strong> A colonoscopy (a specialist uses a small camera to check your colon while you're relaxed or asleep) or an at-home stool test like Cologuard. Colonoscopies are performed by a gastroenterologist and are usually ordered by your primary care provider (PCP).</div>
+                <div><strong>Recommendation:</strong> Adults 45-75. Stool tests are typically done every year; colonoscopies about every 10 years, unless your provider recommends earlier or more frequent testing.</div>
             </div>
         </div>
 
@@ -193,11 +117,11 @@ page-js: screenings
                 <div class="select" style="width: 150px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-lung" onchange="updateScreening('lung', this.value)">
-                            <option value="">Select year</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022" selected>2022</option>
+                            <option value="unsure">I'm not sure</option>
+                            <option value="recent">Within the last 12 months</option>
+                            <option value="later" selected>More than 12 months</option>
+                            <option value="never">Never</option>
+                            <option value="na">N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -207,28 +131,9 @@ page-js: screenings
             </div>
 
             </div>
-
-            <div class="accordion helper my-32" data-testid="default-accordion">
-                <!-- Accordion Item 1 -->
-                <div class="accordion__item mb-8" data-testid="accordion-item-1">
-                    <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
-                        <div class="accordion__toggle-content">
-                            <span class="accordion__toggle-icon">
-                                <span class="heroicon heroicon-24 heroicon-outline-information-circle"></span>
-                            </span>
-                            <span class="accordion__toggle-text">Learn more</span>
-                        </div>
-                    </button>
-                    <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
-                        <div class="accordion__panel-content">
-                      <p class="body-lg mb-24">A low-dose CT scan is a quick imaging test that looks for early signs of lung cancer — long before symptoms show up. It's a quick, painless imaging test that uses X-rays to take detailed pictures of your lungs. It's usually ordered by your primary care provider and done at an imaging center.</p>
-
-            <p class="body-lg mb-24">This screening is meant for people ages 50-80 who smoke now or used to smoke heavily but quit within the last 15 years. Your provider will help you decide whether you qualify and if screening makes sense for you.</p>
-
-            <p class="body-lg mb-24 italic">If you've ever been a long-term smoker, this is an easy way to stay proactive about your health.</p>
-                        </div>
-                    </div>
-                </div>
+             <div class="text-md pt-16">
+                <div class="mb-8"><strong>What it is:</strong> Low-dose CT scan to look for early lung changes.</div>
+                <div><strong>Recommendation:</strong> Adults 50-80 with a history of heavy smoking, typically yearly, if eligible.</div>
             </div>
         </div>
 
@@ -240,11 +145,11 @@ page-js: screenings
                 <div class="select" style="width: 150px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-prostate" onchange="updateScreening('prostate', this.value)">
-                            <option value="">Select year</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022" selected>2022</option>
+                            <option value="unsure">I'm not sure</option>
+                            <option value="recent">Within the last 12 months</option>
+                            <option value="later" selected>More than 12 months</option>
+                            <option value="never">Never</option>
+                            <option value="na">N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -253,38 +158,9 @@ page-js: screenings
                 </div>
             </div>
             </div>
-            
-            
-
-            
-
-            <div class="accordion helper my-32" data-testid="default-accordion">
-                <!-- Accordion Item 1 -->
-                <div class="accordion__item mb-8" data-testid="accordion-item-1">
-                    <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
-                        <div class="accordion__toggle-content">
-                            <span class="accordion__toggle-icon">
-                                <span class="heroicon heroicon-24 heroicon-outline-information-circle"></span>
-                            </span>
-                            <span class="accordion__toggle-text">Learn more</span>
-                        </div>
-                    </button>
-                    <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
-                        <div class="accordion__panel-content">
-                      <p class="body-lg mb-24">A PSA test is a simple blood test that measures the amount of a protein made by the prostate. Higher levels don't always mean cancer, but they can signal the need for further testing.</p>
-
-            <p class="body-lg mb-24">This test is usually ordered by your primary care provider or a urologist as part of a conversation about your overall health and risk factors.</p>
-
-            <p class="body-lg mb-24 italic">Because the benefits and risks can vary, prostate cancer screening isn't automatic for everyone. It's best to decide together with your provider whether it's right for you especially if any of the below apply:</p>
-
-            <ul class="bulleted">
-                <li class="mb-16">Age 55-69</li>
-                <li class="mb-16">Family history of prostate cancer</li>
-                <li class="mb-16">Higher-risk group</li>
-            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-md pt-16">
+                <div class="mb-8"><strong>What it is:</strong> Blood test measuring PSA, a protein made by the prostate.</div>
+                <div><strong>Recommendation:</strong> Men 55-69, every 1-2 years, based on shared decision-making with your provider.</div>
             </div>
     </div>
 
@@ -298,11 +174,11 @@ page-js: screenings
                 <div class="select" style="width: 150px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-skin" onchange="updateScreening('skin', this.value)">
-                            <option value="">Select year</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022" selected>2022</option>
+                            <option value="unsure">I'm not sure</option>
+                            <option value="recent">Within the last 12 months</option>
+                            <option value="later" selected>More than 12 months</option>
+                            <option value="never">Never</option>
+                            <option value="na">N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -312,39 +188,32 @@ page-js: screenings
             </div>
 
             </div>
-
-            <div class="accordion helper my-32" data-testid="default-accordion">
-                <!-- Accordion Item 1 -->
-                <div class="accordion__item mb-8" data-testid="accordion-item-1">
-                    <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
-                        <div class="accordion__toggle-content">
-                            <span class="accordion__toggle-icon">
-                                <span class="heroicon heroicon-24 heroicon-outline-information-circle"></span>
-                            </span>
-                            <span class="accordion__toggle-text">Learn more</span>
-                        </div>
-                    </button>
-                    <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
-                        <div class="accordion__panel-content">
-                      <p class="body-lg mb-24">A skin exam is a simple visual check of your skin for new or changing moles, freckles, or spots. It can be done by your primary care provider during a routine visit or by a dermatologist if you'd like a more detailed check.</p>
-
-            <p class="body-lg mb-24">During the exam, your provider will look closely at areas that get a lot of sun,  like your face, arms, back, and legs. They may use a small light or a magnifier to get a clearer view.</p>
-
-            <p class="body-lg mb-24">If you spend a lot of time in the sun, have fair skin, many moles, or a family history of melanoma, your provider may recommend annual skin checks or refer you to a dermatologist.</p>
-
-            <p class="body-lg mb-24">Between visits, you can also do monthly self-checks at home — look for spots that are changing in size, color, or shape.</p>
-
-            <p class="body-lg mb-24 italic">Getting familiar with your own skin helps you notice changes early — when they're easiest to treat.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-md pt-16">
+                <div class="mb-8"><strong>What it is:</strong> Visual skin exam by a PCP or dermatologist to look for new or changing moles or spots.</div>
+                <div><strong>Recommendation:</strong> Adults 20+, as needed based on risk; annual checks may be recommended for higher-risk individuals.</div>
             </div>
+        </div>
+
+        <div class="card transparent p-24">
+            <h3>Additional Screenings</h3>
+            <p>If you had any additional screenings this year that aren't listed, feel free to enter them here:</p>
+            <div class="textfield">
+            
+            <div class="textfield__input-wrapper">
+                <textarea 
+                    id="barrier-comments" 
+                    class="textfield__input" 
+                    rows="4" 
+                    placeholder="List any additional screenings and when they were completed"
+                    onchange="updateBarrierComments(this.value)"
+                ></textarea>
+            </div>
+        </div>
+
+        <p class="pt-24">A Curtative Clinician will go over your answers and make sure you're on track during Part 2 of the Baseline Visit.</p>
         </div>
 </div>
 
-<p class="body-lg mb-24">Keeping your screenings current helps you stay ahead of potential health issues — and every one of these preventive services is typically covered at $0 under your Curative plan.
-</p>
 
-    <p class="body-lg mb-24">Not sure what you're due for? We'll help you confirm with your care team.</p>
 
 </section>
