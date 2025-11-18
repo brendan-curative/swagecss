@@ -94,10 +94,9 @@
 
 .carousel--side-nav .carousel__controls {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 40px);
     left: 0;
     right: 0;
-    transform: translateY(-50%);
     margin-top: 0;
     padding: 0 var(--spacing-16);
     pointer-events: none;
@@ -260,18 +259,20 @@
     font-weight: var(--font-weight-semibold);
 }
 
-/* BLV Theme overrides */
-html[data-theme="blv"] .carousel__button {
-    border-radius: 8px;
-}
-
-html[data-theme="blv"] .carousel__indicator {
-    border-radius: 8px;
-}
-
-html[data-theme="blv"] .carousel__indicator--active {
-    border-radius: 8px;
-}
 
 /* #endregion */
 
+html[data-theme="blv"] .carousel__button {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+html[data-theme="blv"] .carousel__slide {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: var(--spacing-16);
+    padding: var(--spacing-48);
+    text-wrap: balance;
+}
