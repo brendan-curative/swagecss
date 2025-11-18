@@ -276,3 +276,11 @@ html[data-theme="blv"] .carousel__slide {
     padding: var(--spacing-48);
     text-wrap: balance;
 }
+
+html[data-theme="blv"] .carousel__indicator--active {
+    background-color: var(--color-primary-sky-blue);}
+
+    html[data-theme="blv"] .carousel__counter-bottom {
+        font-size: var(--font-size-xs);
+        color: var(--color-gray-600);
+    }

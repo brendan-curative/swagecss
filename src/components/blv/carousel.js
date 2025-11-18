@@ -16,16 +16,47 @@ function initializeCarousel() {
         const nextButton = carousel.querySelector('[data-carousel-next]');
         const indicators = carousel.querySelectorAll('.carousel__indicator');
         const counter = carousel.querySelector('.carousel__counter');
-        
-        // Support for side nav bottom indicators/counter
-        const indicatorsBottom = carousel.querySelector('.carousel__indicators-bottom');
-        const bottomIndicators = indicatorsBottom ? indicatorsBottom.querySelectorAll('.carousel__indicator') : [];
-        const counterBottom = carousel.querySelector('.carousel__counter-bottom');
-        
+
         if (!track || slides.length === 0) return;
-        
-        let currentIndex = 0;
+
         const totalSlides = slides.length;
+
+        // Generate bottom indicators if carousel--show-indicators is present
+        let indicatorsBottom = carousel.querySelector('.carousel__indicators-bottom');
+        let counterBottom = carousel.querySelector('.carousel__counter-bottom');
+
+        if (carousel.classList.contains('carousel--show-indicators') && !indicatorsBottom) {
+            // Create indicators container
+            indicatorsBottom = document.createElement('div');
+            indicatorsBottom.className = 'carousel__indicators-bottom';
+            indicatorsBottom.setAttribute('role', 'tablist');
+            indicatorsBottom.setAttribute('aria-label', 'Slide indicators');
+
+            // Create indicator buttons
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('button');
+                indicator.className = 'carousel__indicator';
+                indicator.setAttribute('role', 'tab');
+                indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                indicatorsBottom.appendChild(indicator);
+            }
+
+            // Create counter
+            counterBottom = document.createElement('div');
+            counterBottom.className = 'carousel__counter-bottom';
+            counterBottom.setAttribute('aria-live', 'polite');
+            counterBottom.setAttribute('aria-atomic', 'true');
+            counterBottom.textContent = `1 / ${totalSlides}`;
+
+            // Append to carousel
+            carousel.appendChild(indicatorsBottom);
+            carousel.appendChild(counterBottom);
+        }
+
+        // Get bottom indicators after potential generation
+        const bottomIndicators = indicatorsBottom ? indicatorsBottom.querySelectorAll('.carousel__indicator') : [];
+
+        let currentIndex = 0;
         let isInitializing = true;
         
         // Track viewed slides feature
