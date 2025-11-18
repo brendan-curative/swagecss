@@ -1,0 +1,136 @@
+/* #region Carousel Component */
+
+/* Base carousel container */
+html[data-theme="blv"] ul.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-16);
+    padding: var(--spacing-16) 0;
+    margin: 0;
+    list-style: none;
+
+    /* Hide scrollbar but keep functionality */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+html[data-theme="blv"] ul.carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Carousel items */
+html[data-theme="blv"] ul.carousel li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin: 0;
+    min-width: 325px;
+}
+
+/* Carousel with snap centering */
+html[data-theme="blv"] ul.carousel--center {
+    scroll-snap-type: x mandatory;
+}
+
+html[data-theme="blv"] ul.carousel--center li {
+    scroll-snap-align: center;
+}
+
+/* Small carousel items variant */
+html[data-theme="blv"] ul.carousel--small li {
+    min-width: 250px;
+}
+
+/* Medium carousel items variant */
+html[data-theme="blv"] ul.carousel--medium li {
+    min-width: 400px;
+}
+
+/* Large carousel items variant */
+html[data-theme="blv"] ul.carousel--large li {
+    min-width: 500px;
+}
+
+/* Carousel navigation buttons */
+.carousel-nav {
+    display: flex;
+    gap: var(--spacing-12);
+    margin-top: var(--spacing-16);
+    justify-content: center;
+}
+
+.carousel-nav__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--color-white);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--blv-shadow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--color-primary-sky-blue);
+    padding: 0;
+}
+
+.carousel-nav__button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+    color: var(--color-blue-500);
+}
+
+.carousel-nav__button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.carousel-nav__button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Carousel dots navigation */
+.carousel-dots {
+    display: flex;
+    gap: var(--spacing-8);
+    justify-content: center;
+    margin-top: var(--spacing-16);
+}
+
+.carousel-dots__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gray-400);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dots__dot:hover {
+    border-color: var(--color-blue-600);
+    transform: scale(1.2);
+}
+
+.carousel-dots__dot--active {
+    background: var(--color-blue-600);
+    border-color: var(--color-blue-600);
+    transform: scale(1.2);
+}
+
+/* Smooth fade animation for items coming into view */
+html[data-theme="blv"] ul.carousel li {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+html[data-theme="blv"] ul.carousel li.carousel-item--visible {
+    opacity: 1;
+}
+
+/* #endregion */

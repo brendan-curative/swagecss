@@ -1,6 +1,7 @@
 @import url(overrides.css);
 @import url(components/confetti.css);
 @import url(components/scrollto.css);
+@import url(components/carousel.css);
 
 :root {
     --blv-width: 900px;

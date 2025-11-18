@@ -115,6 +115,15 @@
     z-index: 15;
 }
 
+/* Maintain button positions when sibling is hidden */
+.carousel--side-nav .carousel__button[data-carousel-prev] {
+    margin-right: auto;
+}
+
+.carousel--side-nav .carousel__button[data-carousel-next] {
+    margin-left: auto;
+}
+
 .carousel--side-nav .carousel__indicators {
     display: none;
 }

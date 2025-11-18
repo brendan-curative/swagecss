@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="blv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Component - BLV Theme - Swage.CSS</title>
+    <link rel="stylesheet" href="../../../swage.css">
+    <style>
+        body {
+            padding: var(--spacing-32);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-24);
+            color: var(--color-text-primary);
+        }
+
+        h2 {
+            font-size: var(--font-size-2xl);
+            margin-top: var(--spacing-48);
+            margin-bottom: var(--spacing-24);
+            color: var(--color-text-primary);
+        }
+
+        p {
+            font-size: var(--font-size-lg);
+            line-height: var(--line-height-lg);
+            margin-bottom: var(--spacing-24);
+            color: var(--color-text-default);
+        }
+
+        .demo-section {
+            margin-bottom: var(--spacing-48);
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid var(--color-white);
+            border-radius: var(--spacing-8);
+            padding: var(--spacing-24);
+            box-shadow: var(--blv-shadow);
+            backdrop-filter: blur(5px);
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .demo-card h3 {
+            font-size: var(--font-size-xl);
+            margin: 0 0 var(--spacing-8) 0;
+            color: var(--color-primary-sky-blue);
+        }
+
+        .demo-card p {
+            font-size: var(--font-size-md);
+            margin: 0;
+            color: var(--color-text-subdued);
+            text-align: center;
+        }
+
+        .demo-card--highlight {
+            background: linear-gradient(135deg, rgba(49, 130, 206, 0.2), rgba(99, 179, 237, 0.2));
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.5);
+            padding: var(--spacing-4) var(--spacing-8);
+            border-radius: var(--spacing-4);
+            font-family: monospace;
+            font-size: var(--font-size-sm);
+        }
+
+        .code-block {
+            background: rgba(255, 255, 255, 0.5);
+            padding: var(--spacing-16);
+            border-radius: var(--spacing-8);
+            margin-bottom: var(--spacing-24);
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            background: none;
+            padding: 0;
+            display: block;
+            white-space: pre;
+        }
+
+        ul:not(.carousel) {
+            margin-left: var(--spacing-24);
+        }
+
+        ul:not(.carousel) li {
+            margin-bottom: var(--spacing-8);
+        }
+    </style>
+</head>
+<body>
+    <h1>Carousel Component</h1>
+    <p>A horizontal scrolling carousel component for the BLV theme that transforms a <code>&lt;ul&gt;</code> element with the class <code>carousel</code> into an interactive scrollable gallery.</p>
+
+    <div class="demo-section">
+        <h2>Basic Carousel</h2>
+        <p>A simple carousel with horizontal scrolling. Users can scroll naturally or swipe on touch devices.</p>
+
+        <ul class="carousel">
+            <li>
+                <div class="demo-card">
+                    <h3>Card 1</h3>
+                    <p>This is the first carousel item</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Card 2</h3>
+                    <p>This is the second carousel item</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Card 3</h3>
+                    <p>This is the third carousel item</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Card 4</h3>
+                    <p>This is the fourth carousel item</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Card 5</h3>
+                    <p>This is the fifth carousel item</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="code-block">
+            <code>&lt;ul class="carousel"&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Carousel with Navigation Buttons</h2>
+        <p>Add <code>data-carousel-nav</code> attribute to enable previous/next navigation buttons.</p>
+
+        <ul class="carousel" data-carousel-nav>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Feature 1</h3>
+                    <p>Navigate with the buttons below</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Feature 2</h3>
+                    <p>Smooth scrolling between items</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Feature 3</h3>
+                    <p>Buttons disable at start/end</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Feature 4</h3>
+                    <p>Accessible with ARIA labels</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Feature 5</h3>
+                    <p>Works great on all devices</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="code-block">
+            <code>&lt;ul class="carousel" data-carousel-nav&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Carousel with Dots Navigation</h2>
+        <p>Add <code>data-carousel-dots</code> attribute to enable dot indicators for each item.</p>
+
+        <ul class="carousel" data-carousel-dots>
+            <li>
+                <div class="demo-card">
+                    <h3>Step 1</h3>
+                    <p>Click the dots below to navigate</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Step 2</h3>
+                    <p>The active dot is highlighted</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Step 3</h3>
+                    <p>Great for showing progress</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Step 4</h3>
+                    <p>Works with any number of items</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="code-block">
+            <code>&lt;ul class="carousel" data-carousel-dots&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Carousel with Both Navigation Types</h2>
+        <p>Combine both <code>data-carousel-nav</code> and <code>data-carousel-dots</code> for complete navigation.</p>
+
+        <ul class="carousel" data-carousel-nav data-carousel-dots>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Item 1</h3>
+                    <p>Full navigation controls</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Item 2</h3>
+                    <p>Use buttons or dots</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Item 3</h3>
+                    <p>Or just scroll naturally</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="code-block">
+            <code>&lt;ul class="carousel" data-carousel-nav data-carousel-dots&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Carousel Variants</h2>
+        <p>Use modifier classes to change the size of carousel items:</p>
+
+        <h3 style="margin-top: var(--spacing-32);">Small Items</h3>
+        <p>Use <code>carousel--small</code> for compact 250px items.</p>
+
+        <ul class="carousel carousel--small" data-carousel-nav>
+            <li>
+                <div class="demo-card">
+                    <h3>Small 1</h3>
+                    <p>250px wide</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Small 2</h3>
+                    <p>250px wide</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Small 3</h3>
+                    <p>250px wide</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Small 4</h3>
+                    <p>250px wide</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Small 5</h3>
+                    <p>250px wide</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3 style="margin-top: var(--spacing-32);">Large Items</h3>
+        <p>Use <code>carousel--large</code> for spacious 500px items.</p>
+
+        <ul class="carousel carousel--large" data-carousel-dots>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Large 1</h3>
+                    <p>500px wide for more content</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Large 2</h3>
+                    <p>500px wide for more content</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card demo-card--highlight">
+                    <h3>Large 3</h3>
+                    <p>500px wide for more content</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="code-block">
+            <code>&lt;ul class="carousel carousel--small"&gt;...&lt;/ul&gt;
+&lt;ul class="carousel"&gt;...&lt;/ul&gt; &lt;!-- Default 325px --&gt;
+&lt;ul class="carousel carousel--medium"&gt;...&lt;/ul&gt; &lt;!-- 400px --&gt;
+&lt;ul class="carousel carousel--large"&gt;...&lt;/ul&gt; &lt;!-- 500px --&gt;</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Center-Aligned Carousel</h2>
+        <p>Use <code>carousel--center</code> to snap items to the center instead of the start.</p>
+
+        <ul class="carousel carousel--center" data-carousel-nav data-carousel-dots>
+            <li>
+                <div class="demo-card">
+                    <h3>Centered 1</h3>
+                    <p>Items snap to center</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Centered 2</h3>
+                    <p>Items snap to center</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Centered 3</h3>
+                    <p>Items snap to center</p>
+                </div>
+            </li>
+            <li>
+                <div class="demo-card">
+                    <h3>Centered 4</h3>
+                    <p>Items snap to center</p>
+                </div>
+            </li>
+        </ul>
+
+        <div class="code-block">
+            <code>&lt;ul class="carousel carousel--center" data-carousel-nav&gt;
+    &lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Native scrolling:</strong> Uses browser's native scroll behavior for best performance</li>
+            <li><strong>Touch-friendly:</strong> Supports swipe gestures on mobile and tablet devices</li>
+            <li><strong>Snap scrolling:</strong> Items snap into place for precise positioning</li>
+            <li><strong>Hidden scrollbar:</strong> Clean appearance while maintaining scroll functionality</li>
+            <li><strong>Optional navigation:</strong> Add buttons or dots as needed</li>
+            <li><strong>Accessible:</strong> Includes proper ARIA labels for screen readers</li>
+            <li><strong>Responsive:</strong> Works on all screen sizes and devices</li>
+            <li><strong>Customizable:</strong> Multiple size variants available</li>
+            <li><strong>Smooth animations:</strong> Fade effects for items coming into view</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>JavaScript API</h2>
+        <p>The carousel component provides a JavaScript API for programmatic control:</p>
+
+        <div class="code-block">
+            <code>// Initialize all carousels
+CarouselComponent.init();
+
+// Scroll to specific index
+const carousel = document.querySelector('.carousel');
+CarouselComponent.scrollToIndex(carousel, 2);
+
+// Get current index
+const index = CarouselComponent.getCurrentIndex(carousel);</code>
+        </div>
+    </div>
+
+    <script src="carousel.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Carousel demo page loaded');
+        });
+    </script>
+</body>
+</html>
