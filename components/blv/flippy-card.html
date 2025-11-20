@@ -1,0 +1,346 @@
+---
+layout: layout.html
+title: Swageblocks &bull; BLV &bull; Flippy Card
+heading: Flippy Card Component
+secondary: Interactive card with 3D flip animation
+section: BLV Components
+design-status: complete
+content-status: complete
+---
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Overview</h2>
+    <p class="body-lg mb-16">
+        The Flippy Card component provides an interactive card that flips to reveal additional content on the back.
+        It inherits all styles from the base card component and adds 3D flip animation triggered by hover, focus, or tap/click interactions.
+    </p>
+
+    <div class="bg-gray-100 border rounded p-16 mb-16">
+        <h3 class="heading-md mb-8">Key Features</h3>
+        <ul class="list-disc ml-24 body-md">
+            <li>Inherits all base .card styles and behaviors</li>
+            <li>3D flip animation with perspective transforms</li>
+            <li>Multiple trigger methods: hover, focus, tap/click</li>
+            <li>Keyboard accessible (Tab to focus, Enter/Space to flip)</li>
+            <li>Touch-friendly with mobile optimization</li>
+            <li>Size variants (small, default, large)</li>
+            <li>Programmatic control via JavaScript API</li>
+            <li>Respects prefers-reduced-motion settings</li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Basic Flippy Card</h2>
+    <p class="body-lg mb-16">
+        The flippy card inherits from the base <code>.card</code> class and adds flip functionality.
+        Hover over or click/tap the card to see the flip animation.
+    </p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="flippy-card card">
+                <div class="flippy-card__inner">
+                    <div class="flippy-card__front">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Front of Card</h3>
+                            <p class="flippy-card__text">
+                                This is the front of the flippy card. Hover, focus, or tap to flip and reveal the back content.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flippy-card__back">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Back of Card</h3>
+                            <p class="flippy-card__text">
+                                This is the back of the card! You can add any content here - text, images, buttons, or other components.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Size Variants</h2>
+    <p class="body-lg mb-16">Flippy cards come in three sizes: small, default, and large.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <h3 class="heading-lg mb-16">Small</h3>
+            <div class="flippy-card flippy-card--small card">
+                <div class="flippy-card__inner">
+                    <div class="flippy-card__front">
+                        <div class="flippy-card__content">
+                            <h4 class="flippy-card__title">Small Card Front</h4>
+                            <p class="flippy-card__text">A compact flippy card with reduced height.</p>
+                        </div>
+                    </div>
+                    <div class="flippy-card__back">
+                        <div class="flippy-card__content">
+                            <h4 class="flippy-card__title">Small Card Back</h4>
+                            <p class="flippy-card__text">Back content for the small card variant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <h3 class="heading-lg mb-16">Default</h3>
+            <div class="flippy-card card">
+                <div class="flippy-card__inner">
+                    <div class="flippy-card__front">
+                        <div class="flippy-card__content">
+                            <h4 class="flippy-card__title">Default Card Front</h4>
+                            <p class="flippy-card__text">Standard size flippy card with balanced proportions.</p>
+                        </div>
+                    </div>
+                    <div class="flippy-card__back">
+                        <div class="flippy-card__content">
+                            <h4 class="flippy-card__title">Default Card Back</h4>
+                            <p class="flippy-card__text">Back content for the default card size.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <h3 class="heading-lg mb-16">Large</h3>
+            <div class="flippy-card flippy-card--large card">
+                <div class="flippy-card__inner">
+                    <div class="flippy-card__front">
+                        <div class="flippy-card__content">
+                            <h4 class="flippy-card__title">Large Card Front</h4>
+                            <p class="flippy-card__text">A larger flippy card with increased height for more content.</p>
+                        </div>
+                    </div>
+                    <div class="flippy-card__back">
+                        <div class="flippy-card__content">
+                            <h4 class="flippy-card__title">Large Card Back</h4>
+                            <p class="flippy-card__text">
+                                Back content for the large card variant. This size provides more space for detailed information or additional elements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">With Rich Content</h2>
+    <p class="body-lg mb-16">Flippy cards can contain various types of content including lists, buttons, and formatted text.</p>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="flippy-card card">
+                <div class="flippy-card__inner">
+                    <div class="flippy-card__front">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Product Features</h3>
+                            <p class="flippy-card__text">
+                                Click to see detailed specifications and benefits of this product.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flippy-card__back">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Specifications</h3>
+                            <div class="flippy-card__text">
+                                <ul class="list-disc ml-24">
+                                    <li>High-performance components</li>
+                                    <li>Energy efficient design</li>
+                                    <li>2-year warranty included</li>
+                                    <li>Free shipping available</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-item">
+            <div class="flippy-card card">
+                <div class="flippy-card__inner">
+                    <div class="flippy-card__front">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Team Member</h3>
+                            <p class="flippy-card__text">
+                                <strong>Jane Smith</strong><br>
+                                Senior Developer<br>
+                                Tap to view contact info
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flippy-card__back">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Contact Information</h3>
+                            <div class="flippy-card__text">
+                                <p><strong>Email:</strong> jane.smith@example.com</p>
+                                <p><strong>Phone:</strong> (555) 123-4567</p>
+                                <p><strong>Location:</strong> San Francisco, CA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Programmatic Control</h2>
+    <p class="body-lg mb-16">You can control flippy cards programmatically using the JavaScript API.</p>
+
+    <div class="interactive-controls mb-24">
+        <button id="flipAllBtn" class="button button--primary">Flip All Cards</button>
+        <button id="resetAllBtn" class="button button--secondary">Reset All Cards</button>
+    </div>
+
+    <div class="demo-grid">
+        <div class="demo-item">
+            <div class="flippy-card card" id="controlled-card">
+                <div class="flippy-card__inner">
+                    <div class="flippy-card__front">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Controlled Card</h3>
+                            <p class="flippy-card__text">
+                                This card can be controlled using the buttons above or by clicking/hovering.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flippy-card__back">
+                        <div class="flippy-card__content">
+                            <h3 class="flippy-card__title">Controlled Back</h3>
+                            <p class="flippy-card__text">
+                                The JavaScript API allows you to flip cards programmatically, perfect for guided tours or interactive experiences.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">Accessibility Features</h2>
+    <p class="body-lg mb-16">
+        Flippy cards are fully accessible:
+    </p>
+    <ul class="list-disc ml-24 body-lg mb-16">
+        <li><strong>Keyboard Navigation:</strong> Press Tab to focus, Enter or Space to flip</li>
+        <li><strong>Screen Readers:</strong> Cards announce their flip state with ARIA labels</li>
+        <li><strong>Reduced Motion:</strong> Respects prefers-reduced-motion settings</li>
+        <li><strong>Touch Support:</strong> Works seamlessly on mobile and tablet devices</li>
+    </ul>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">HTML Structure</h2>
+    <p class="body-lg mb-16">Basic HTML structure for a flippy card:</p>
+
+    <pre class="code-block mb-24"><code>&lt;div class="flippy-card card"&gt;
+    &lt;div class="flippy-card__inner"&gt;
+        &lt;div class="flippy-card__front"&gt;
+            &lt;div class="flippy-card__content"&gt;
+                &lt;h3 class="flippy-card__title"&gt;Front Title&lt;/h3&gt;
+                &lt;p class="flippy-card__text"&gt;Front content...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="flippy-card__back"&gt;
+            &lt;div class="flippy-card__content"&gt;
+                &lt;h3 class="flippy-card__title"&gt;Back Title&lt;/h3&gt;
+                &lt;p class="flippy-card__text"&gt;Back content...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">CSS Classes</h2>
+    <p class="body-lg mb-16">Available CSS classes for the flippy card component:</p>
+
+    <ul class="list-disc ml-24 body-lg mb-16">
+        <li><code>.flippy-card</code> - Main container (add <code>.card</code> to inherit base card styles)</li>
+        <li><code>.flippy-card__inner</code> - Inner flip container (required)</li>
+        <li><code>.flippy-card__front</code> - Front face content</li>
+        <li><code>.flippy-card__back</code> - Back face content</li>
+        <li><code>.flippy-card__content</code> - Content wrapper within front/back</li>
+        <li><code>.flippy-card__title</code> - Title styling</li>
+        <li><code>.flippy-card__text</code> - Text content styling</li>
+        <li><code>.flippy-card--small</code> - Small size variant</li>
+        <li><code>.flippy-card--large</code> - Large size variant</li>
+        <li><code>.flippy-card--flipped</code> - Programmatically flipped state</li>
+    </ul>
+</section>
+
+<section class="component-section mb-48">
+    <h2 class="heading-2xl mb-16">JavaScript API</h2>
+    <p class="body-lg mb-16">The FlippyCardComponent JavaScript API provides the following methods:</p>
+
+    <ul class="list-disc ml-24 body-lg mb-16">
+        <li><code>FlippyCardComponent.init()</code> - Initialize or re-initialize all flippy cards</li>
+        <li><code>FlippyCardComponent.flipTo(card, showBack)</code> - Flip a specific card to front or back</li>
+        <li><code>FlippyCardComponent.flipAll(showBack)</code> - Flip all cards on the page</li>
+        <li><code>FlippyCardComponent.toggle(card)</code> - Toggle a card's flip state</li>
+        <li><code>FlippyCardComponent.isFlipped(card)</code> - Check if a card is currently flipped</li>
+    </ul>
+
+    <p class="body-lg mb-16">Example usage:</p>
+    <pre class="code-block mb-24"><code>// Flip a specific card to back
+const card = document.querySelector('.flippy-card');
+FlippyCardComponent.flipTo(card, true);
+
+// Flip all cards to front
+FlippyCardComponent.flipAll(false);
+
+// Toggle a card
+FlippyCardComponent.toggle(card);
+
+// Listen for flip events
+card.addEventListener('flippyCardFlip', (e) => {
+    console.log('Card flipped:', e.detail.isFlipped);
+});</code></pre>
+</section>
+
+<script src="/swagecss/src/components/blv/flippy-card.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('Flippy Card demo loaded');
+
+        // Set up programmatic control buttons
+        const flipAllBtn = document.getElementById('flipAllBtn');
+        const resetAllBtn = document.getElementById('resetAllBtn');
+
+        if (flipAllBtn) {
+            flipAllBtn.addEventListener('click', () => {
+                FlippyCardComponent.flipAll(true);
+            });
+        }
+
+        if (resetAllBtn) {
+            resetAllBtn.addEventListener('click', () => {
+                FlippyCardComponent.flipAll(false);
+            });
+        }
+
+        // Listen for flip events on all cards
+        const cards = document.querySelectorAll('.flippy-card');
+        cards.forEach(card => {
+            card.addEventListener('flippyCardFlip', (e) => {
+                console.log('Card flipped:', {
+                    isFlipped: e.detail.isFlipped,
+                    card: e.detail.card
+                });
+            });
+        });
+    });
+</script>

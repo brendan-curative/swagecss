@@ -1,0 +1,144 @@
+/* #region Flippy Card Component */
+
+/* Flippy Card - Inherits from base .card class */
+.flippy-card {
+    /* Inherits all .card styles from card.css */
+    perspective: 1000px;
+    cursor: pointer;
+    min-height: 300px;
+    position: relative;
+}
+
+/* Inner container for flip animation */
+.flippy-card__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    text-align: left;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Trigger flip on hover, focus, or when flipped class is added (for tap/touch) */
+.flippy-card:hover .flippy-card__inner,
+.flippy-card:focus .flippy-card__inner,
+.flippy-card--flipped .flippy-card__inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and back face positioning */
+.flippy-card__front,
+.flippy-card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: inherit;
+    padding: var(--spacing-24);
+}
+
+/* Front face - visible by default */
+.flippy-card__front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+/* Back face - rotated 180deg and hidden by default */
+.flippy-card__back {
+    transform: rotateY(180deg);
+}
+
+/* Optional: Add flip indicator icon */
+.flippy-card__flip-indicator {
+    position: absolute;
+    top: var(--spacing-12);
+    right: var(--spacing-12);
+    width: 24px;
+    height: 24px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.flippy-card:hover .flippy-card__flip-indicator,
+.flippy-card:focus .flippy-card__flip-indicator {
+    opacity: 0.8;
+}
+
+/* Content areas within front and back */
+.flippy-card__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.flippy-card__title {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-default);
+    margin-bottom: var(--spacing-16);
+}
+
+.flippy-card__text {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-md);
+    color: var(--color-text-default);
+    flex: 1;
+}
+
+/* Focus state for accessibility */
+.flippy-card:focus {
+    outline: 2px solid var(--color-focused-default);
+    outline-offset: 2px;
+}
+
+/* Ensure smooth transitions on mobile */
+@media (prefers-reduced-motion: reduce) {
+    .flippy-card__inner {
+        transition: none;
+    }
+}
+
+/* Size variants */
+.flippy-card--small {
+    min-height: 200px;
+}
+
+.flippy-card--small .flippy-card__inner,
+.flippy-card--small .flippy-card__front,
+.flippy-card--small .flippy-card__back {
+    min-height: 200px;
+}
+
+.flippy-card--large {
+    min-height: 400px;
+}
+
+.flippy-card--large .flippy-card__inner,
+.flippy-card--large .flippy-card__front,
+.flippy-card--large .flippy-card__back {
+    min-height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .flippy-card {
+        min-height: 250px;
+    }
+
+    .flippy-card__inner,
+    .flippy-card__front,
+    .flippy-card__back {
+        min-height: 250px;
+    }
+
+    .flippy-card__front,
+    .flippy-card__back {
+        padding: var(--spacing-16);
+    }
+}
+
+/* #endregion */
