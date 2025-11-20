@@ -639,12 +639,12 @@ color: var(--color-text-default);
 }
 
 button.checkmark-button[data-topic] {
-    color: var(--color-primary-sky-blue);
+    color: var(--color-gray-600);
     background-color: rgba(255, 255, 255, 0.5);
     padding: var(--spacing-24) var(--spacing-16);
-    border-color: var(--color-primary-sky-blue);
-    border-width: 3px;
-    border-radius: var(--spacing-16);
+    border-color: var(--color-white);
+    border-width: 1px;
+    border-radius: var(--spacing-8);
     box-shadow: 0 2px 16px 0 rgba(102, 114, 125, 0.25), 0 4px 200px 0 rgba(255, 255, 255, 0.01);
     transition: all 0.3s ease;
     position: relative;
@@ -658,8 +658,8 @@ button.checkmark-button[data-topic] span {
 }
 
 button.checkmark-button[data-topic]:hover, button.checkmark-button[data-topic]:focus {
-    color: var(--color-blue-500);
-    border-color: var(--color-blue-500);
+    color: var(--color-primary-sky-blue);
+    border-color: var(--color-primary-sky-blue);
     transform: scale(.98);
 }
 
@@ -668,7 +668,7 @@ button.checkmark-button[data-topic]:before {
     display: block;
     width: 96px;
     height: 96px;
-    background-color: var(--color-primary-sky-blue);
+    background-color: var(--color-white);
     mask: url('data:image/svg+xml,<svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path></svg>');
     position: absolute;
     right: -24px;
@@ -676,7 +676,7 @@ button.checkmark-button[data-topic]:before {
 }
 
     button.checkmark-button[data-topic]:hover:before, button.checkmark-button[data-topic]:focus:before {
-        background-color: var(--color-blue-500);
+        background-color: var(--color-primary-sky-blue);
     }
 
 button.checkmark-button[data-topic][data-checked="true"] {
@@ -750,10 +750,11 @@ button.checkmark-button[data-topic][data-checked="true"] {
   border-radius: 0.25rem;
   flex: 1;
   transform-style: preserve-3d;
-  transition: 0.3s transform;
+  transition: 0.3s ease-in-out transform;
 }
 .flippy-card:hover .flippy-body, .flippy-card:focus .flippy-body {
-  transform: rotateX(-180deg);
+  transform: rotateY(-180deg);
+
 }
 
 .flippy-front, .flippy-back {
@@ -775,7 +776,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
 .flippy-front {gap: 16px}
 
 .flippy-back {
-  transform: rotateX(-180deg) translate(-100%, 0);
+  transform: translateX(-100%) rotateY(-180deg);
 }
 
     .flippy-card img {
