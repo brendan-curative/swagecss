@@ -704,6 +704,32 @@ button.checkmark-button[data-topic][data-checked="true"] {
                 list-style-type: disc;
             }
 
+.asterisk {
+    position: relative;
+    overflow: hidden;
+}
+
+    .asterisk:before {
+        content: '';
+        display: block;
+        width: 250px;
+        height: 250px;
+        background-color: var(--color-white);
+        mask: url('data:image/svg+xml,<svg width="501" height="501" viewBox="0 0 501 501" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M501 209.026H351.284L457.182 103.217L397.882 43.8656L291.984 149.738V0H208.144V149.738L102.246 43.8656L43 103.217L148.907 209.026H291.984V352.128L397.882 458L457.182 398.712L351.284 292.839H501V209.026Z" fill="white"/><path d="M149.79 208H0V291.859H149.79L43.9027 397.789L103.169 457.11L209.128 351.18V501H293V351.18L149.853 208.063L149.79 208Z" fill="white"/></svg>');
+        mask-size: contain;
+        position: absolute;
+        top: -60%;
+        left: 50%;
+        opacity: 0.3;
+    }
+
+
+.asterisk p {
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+}      
+
 
 /* 
  .stagger {
