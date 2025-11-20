@@ -728,8 +728,68 @@ button.checkmark-button[data-topic][data-checked="true"] {
     padding: 0;
     margin: 0;
     z-index: 1000;
-}      
+}   
 
+
+
+.flippy-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-16);
+}
+
+.flippy-card {
+  perspective: 40rem;
+  display: flex;
+  cursor: help;
+  transition-delay: 0.3s, 0s;
+}
+
+.flippy-body {
+  display: flex;
+  border-radius: 0.25rem;
+  flex: 1;
+  transform-style: preserve-3d;
+  transition: 0.3s transform;
+}
+.flippy-card:hover .flippy-body, .flippy-card:focus .flippy-body {
+  transform: rotateX(-180deg);
+}
+
+.flippy-front, .flippy-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--spacing-8);
+   
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 2px 16px 0px rgba(102, 114, 125, 0.25), 0px 4px 200px 0px rgba(255, 255, 255, 0.01) inset;
+}
+
+.flippy-front {gap: 16px}
+
+.flippy-back {
+  transform: rotateX(-180deg) translate(-100%, 0);
+}
+
+    .flippy-card img {
+        padding-top: 24px;
+    }
+
+    .flippy-card p {
+        padding: 0 24px;
+        
+    }
+
+    .flippy-back p:first-of-type {
+        padding-top: 24px;
+    }
 
 /* 
  .stagger {
