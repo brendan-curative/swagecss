@@ -752,9 +752,13 @@ button.checkmark-button[data-topic][data-checked="true"] {
   transform-style: preserve-3d;
   transition: 0.3s ease-in-out transform;
 }
+
 .flippy-card:hover .flippy-body, .flippy-card:focus .flippy-body {
   transform: rotateY(-180deg);
+}
 
+.flippy-card.flipv:hover .flippy-body, .flippy-card.flipv:focus .flippy-body {
+  transform: rotateX(180deg);
 }
 
 .flippy-front, .flippy-back {
@@ -778,6 +782,12 @@ button.checkmark-button[data-topic][data-checked="true"] {
 .flippy-back {
   transform: translateX(-100%) rotateY(-180deg);
 }
+
+.flipv .flippy-back {
+  transform: translateX(-100%) rotateX(-180deg);
+}
+
+
 
     .flippy-card img {
         padding-top: 24px;
