@@ -738,9 +738,11 @@ button.checkmark-button[data-topic][data-checked="true"] {
 
 .flippy-cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   gap: var(--spacing-16);
 }
+
+
 
 .flippy-card {
   perspective: 40rem;
@@ -782,6 +784,20 @@ button.checkmark-button[data-topic][data-checked="true"] {
 }
 
 .flippy-front {gap: 16px}
+
+@media (max-width: 768px) {
+    .flippy-front:before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-primary-sky-blue);
+    mask: url('data:image/svg+xml,<svg data-slot="icon" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M4.22 4.22a.75.75 0 0 0 0 1.06l5.22 5.22H5.75a.75.75 0 0 0 0 1.5h5.5a.75.75 0 0 0 .75-.75v-5.5a.75.75 0 0 0-1.5 0v3.69L5.28 4.22a.75.75 0 0 0-1.06 0Z"></path></svg>');
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+}
+}
 
 .flippy-back {
   transform: translateX(-100%) rotateY(-180deg);
