@@ -531,6 +531,8 @@ color: var(--color-text-default);
     transform: translateY(8px) rotate(-4deg);
 }
 
+.highlight img.norotate {transform: translateY(8px) rotate(0);}
+
 .highlight.logo img {
     height: 60px;
     width: auto;

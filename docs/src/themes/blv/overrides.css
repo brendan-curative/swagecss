@@ -31,3 +31,12 @@ html[data-theme="blv"] .card.m-0 {
     margin-left: 0;
 }
 
+/*
+html[data-theme="blv"]  {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-600);
+    text-transform: uppercase;
+}
+*/
+
+.horizontal-stepper .section {display: none;}
