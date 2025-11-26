@@ -552,19 +552,21 @@ color: var(--color-text-default);
     }
 
     .accordion.helper .accordion__toggle {
-        background: rgba(255, 255, 255, 0.25);
-        color: var(--color-text-primary);
+        color: var(--color-text-subdued);
     }
 
     .accordion.helper .accordion__toggle-icon, .accordion.helper .heroicon {
-        width: 48px;
-        height: 48px;
+        width: 24px;
+        height: 24px;
     }
 
     .accordion.helper .accordion__toggle-text {
-        font-size: var(--font-size-xl);
-        line-height: var(--line-height-xl);
+        font-size: var(--font-size-md);
+        line-height: var(--line-height-md);
+        text-decoration: underline;
     }
+
+  
 
     .status {
         position: fixed;

@@ -67,7 +67,7 @@
         <p>Let's make sure everything in your care profile is current. We'll also highlight a few tips that can help you get even more value from your plan.</p>
 
     <!-- Primary Care Provider Section -->
-    <div class="mb-32 px-80">
+    <div class="mb-0 px-80">
         <h3 class="heading-lg mb-8">Primary Care Provider:</h3>
 
         <div id="pcp-providers-list" class="mb-16">
@@ -97,7 +97,32 @@
         </div>
     </div>
 
-     <h3 class="mb-32 text-pink-700">[ Why have a Primary Care Provider? (collapsible) ]</h3>
+      <div class="accordion helper mb-32 constrain constrain-80" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item mb-8" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-24 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Why have a Primary Care Provider?</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content">
+                    <p class="text-center">Your PCP is your main point of care. Having a primary care provider means: </p>
+
+                    <ul>
+                        <li>One person knows your full health story.</li>
+                        <li>You can stay on track to get preventive care and screenings on time.</li>
+                        <li>It's easier to catch small issues before they become big ones.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <!--
      <p>Your PCP is your main point of care.</p>
     <p>Having a primary care provider means:</p>
@@ -126,19 +151,37 @@
         </div>
     </div>
 
-    <div class="flex-center-x-y pb-24">
+    <div class="flex-center-x-y pb-4 mt-64">
         <img src="/swagecss/src/themes/blv/img/video-placeholder.png" alt="Video placeholder">
     </div>
 
+    <div class="accordion helper mb-32 pl-64 constrain constrain-80" data-testid="default-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion__item mb-8" data-testid="accordion-item-1">
+            <button class="accordion__toggle" data-testid="accordion-item-1_toggle-accordion" aria-expanded="false">
+                <div class="accordion__toggle-content">
+                    <span class="accordion__toggle-icon">
+                        <span class="heroicon heroicon-24 heroicon-chevron-right"></span>
+                    </span>
+                    <span class="accordion__toggle-text">Next time you need care</span>
+                </div>
+            </button>
+            <div class="accordion__panel accordion__panel--hidden" data-testid="accordion-item-1_panel-content">
+                <div class="accordion__panel-content">
+                    <p>Your PCP is your main point of care. Having a primary care provider means: </p>
 
+                    <ol>
+                        <li>Go to Provider Search. You'll see doctors, nurse practitioners, facilities and other types of providers covered at $0.</li>
+                        <li>Filter by what matters to you. Choose by location, specialty, gender, or language.</li>
+                        <li>Check availability and schedule. Call to ask about earliest appointment availability.</li>
+                    </ol>
+                    <p>Need help? Your Care Navigator can walk you through Provider Search.</p>
+                </div>
+            </div>
+        </div>
 
-    <h3>Next time you need care</h3>
-    <ol>
-        <li>Go to Provider Search. You'll see doctors, nurse practitioners, facilities and other types of providers covered at $0.</li>
-        <li>Filter by what matters to you. Choose by location, specialty, gender, or language.</li>
-        <li>Check availability and schedule. Call to ask about earliest appointment availability.</li>
-    </ol>
-    <p>Need help? Your Care Navigator can walk you through Provider Search.</p>
+    </div>
+    
 
 </section>
 
