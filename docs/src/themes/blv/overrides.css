@@ -31,6 +31,24 @@ html[data-theme="blv"] .card.m-0 {
     margin-left: 0;
 }
 
+.tile--in-network .badge--success {
+    background-color: var(--color-green-800);
+    color: var(--color-white);
+    text-shadow: none;
+}
+
+.tile--cash-card .badge--warning {
+    background-color: var(--color-primary-signal-orange);
+    color: var(--color-white);
+    text-shadow: none;
+}
+
+.tile--not-listed .badge--info {
+    background-color: var(--color-foundation-primary);
+    color: var(--color-white);
+    text-shadow: none;
+}
+
 /*
 html[data-theme="blv"]  {
     font-size: var(--font-size-xs);

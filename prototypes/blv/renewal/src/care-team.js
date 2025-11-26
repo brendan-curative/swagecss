@@ -348,17 +348,24 @@ function updateOtherProvidersDisplay() {
 function addProviderToDisplay(provider, index, type, container) {
     // Map status to tile class
     const tileClass = `tile--${provider.status}`;
-    
-    // Determine icon based on status
-    let icon = 'check-circle';
-    if (provider.status === 'not-listed') {
-        icon = 'information-circle';
+
+    // Determine badge variant and text based on status
+    let badgeVariant = 'success';
+    let badgeText = 'In Network';
+    if (provider.status === 'cash-card') {
+        badgeVariant = 'warning';
+        badgeText = 'Cash Card';
+    } else if (provider.status === 'not-listed') {
+        badgeVariant = 'info';
+        badgeText = 'Not Listed';
     }
-    
+
     // Create tile HTML
     const tileHTML = `
         <div class="tile ${tileClass}">
-            <span class="tile__icon heroicon heroicon-${icon}"></span>
+            <div class="badge badge--${badgeVariant} badge--small">
+                <span class="badge__content">${badgeText}</span>
+            </div>
             <div class="tile__content">
                 <p class="tile__title">${provider.name}</p>
                 <p class="tile__subtitle">${provider.specialty}</p>
@@ -368,7 +375,7 @@ function addProviderToDisplay(provider, index, type, container) {
             </button>
         </div>
     `;
-    
+
     container.insertAdjacentHTML('beforeend', tileHTML);
 }
 
