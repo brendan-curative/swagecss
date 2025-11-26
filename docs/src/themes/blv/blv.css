@@ -806,6 +806,42 @@ button.checkmark-button[data-topic][data-checked="true"] {
         padding-top: 24px;
     }
 
+
+flippycard.spin .flippy-body {
+  display: block;
+  border-radius: 0.25rem;
+  flex: 1;
+  transform-style: preserve-3d;
+  animation: spincard 5s linear infinite;
+}
+
+flippycard.spin .flippy-card img {
+        padding-top: 0;
+    }
+
+
+@keyframes spincard {
+			0% {
+				transform: perspective(1000px) rotateY(0deg);
+			}
+			100% {
+				transform: perspective(1000px) rotateY(360deg);
+			}
+		}
+
+
+.herocard {
+    position: relative;
+}
+
+.herocard img {
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    transform: rotate(-10deg);
+}
+
+
 /* 
  .stagger {
     padding-right: 48px;
