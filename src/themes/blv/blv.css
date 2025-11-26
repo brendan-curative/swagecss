@@ -807,20 +807,42 @@ button.checkmark-button[data-topic][data-checked="true"] {
   transform: translateX(-100%) rotateX(-180deg);
 }
 
-
-
     .flippy-card img {
         padding-top: 24px;
+        max-width: 100%;
     }
+
+    .flippy-card .nop img {padding-top: 0;}
+
+    .flippy-card h2 {margin: 0;}
 
     .flippy-card p {
         padding: 0 24px;
-        
     }
 
     .flippy-back p:first-of-type {
         padding-top: 24px;
     }
+
+    .flippy-card .flex-row p {
+        padding: 0;
+    }
+
+    .flippy-card .flex-row p:first-of-type {
+        padding-top: 0;
+    }
+
+    .flippy-card .flex-row h3 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 8px 0;
+        color: var(--color-text-critical)
+    }
+
+    
+
+    .flippy-card .flex-item:first-of-type h3 {color: var(--color-text-success);}
 
 
 flippycard.spin .flippy-body {
