@@ -874,7 +874,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
         padding-top: 0;
     }
 
-    .flippy-card .flex-row h3 {
+    .flippy-card .flex-row, .infocard .flex-row h3 {
         display: flex;
         align-items: center;
         gap: 8px;
@@ -884,7 +884,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
 
     
 
-    .flippy-card .flex-item:first-of-type h3 {color: var(--color-text-success);}
+    .flippy-card .flex-item:first-of-type h3, .infocard .flex-item:first-of-type h3 {color: var(--color-text-success);}
 
 
 flippycard.spin .flippy-body {
@@ -926,8 +926,14 @@ flippycard.spin .flippy-card img {
     height: auto;
 }
 
-
-
+.infocard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--spacing-8);
+}
 
 
 
