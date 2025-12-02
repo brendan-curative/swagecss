@@ -879,6 +879,17 @@ flippycard.spin .flippy-card img {
     transform: rotate(-10deg);
 }
 
+.ct-mp {
+    width: 25%;
+    height: auto;
+}
+
+
+
+
+
+
+
 
 /* 
  .stagger {
