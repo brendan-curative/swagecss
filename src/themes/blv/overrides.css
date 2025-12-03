@@ -13,6 +13,7 @@ nav a.back:hover, nav a.back:focus {
 
 nav .horizontal-stepper {
     width: calc(100% - var(--spacing-24));
+    gap: 4px;
 }
 
 .card {
@@ -57,4 +58,54 @@ html[data-theme="blv"]  {
 }
 */
 
-.horizontal-stepper .section {display: none;}
+header {
+    height: auto;
+    padding-bottom: 16px;
+}
+
+html[data-theme="blv"] nav {
+    padding-top: 16px;
+}
+
+nav a.back, nav a.back:visited {transform: translateY(-4px);}
+
+nav a.back:hover, nav a.back:focus {transform: translateY(-4px);}
+
+
+.horizontal-stepper__step {
+    display: block !important;
+    height: auto !important;
+    flex-direction: column;
+    background-color: transparent !important;
+    gap: 8px;
+}
+
+    .horizontal-stepper__step .stepper-wrap {
+        display: flex !important;
+        flex: 1;
+        height: var(--spacing-6) !important;
+        overflow: hidden;
+        background-color: var(--color-surface-neutral) !important;
+        position: relative;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .horizontal-stepper .section {
+        color: var(--color-gray-600);
+        font-size: 10px;
+        line-height: var(--line-height-xs);
+        text-transform: uppercase;
+        padding: 2px 0 0 4px;
+    }
+
+    .horizontal-stepper .section.section-active {
+        color: var(--color-neutral-black);
+        font-weight: var(--font-weight-600);
+    }
+
+    .horizontal-stepper .section.section-complete {
+        color: var(--color-gray-300);
+        text-decoration: line-through;
+    }
