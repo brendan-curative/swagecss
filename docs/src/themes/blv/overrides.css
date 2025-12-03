@@ -109,3 +109,9 @@ nav a.back:hover, nav a.back:focus {transform: translateY(-4px);}
         color: var(--color-gray-300);
         text-decoration: line-through;
     }
+
+    @media (max-width: 768px) { 
+          .horizontal-stepper .section {
+              display : none;
+          }
+    }
