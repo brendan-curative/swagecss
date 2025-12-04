@@ -378,14 +378,6 @@ article {
 .constrain-33 {width: 33%;}
 .constrain-20 {width: 20%;}
 
-@media (max-width: 768px) {
-    .constrain-80_m {width: 80% !important;}
-    .constrain-60_m {width: 60% !important;}
-    .constrain-40_m {width: 40% !important;}
-    .constrain-33_m {width: 33% !important;}
-    .constrain-20_m {width: 20% !important;}
-}
-
 h1 {
     font-size: var(--font-size-3xl);
     line-height: var(--line-height-3xl);
