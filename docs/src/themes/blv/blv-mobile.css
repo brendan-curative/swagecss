@@ -88,17 +88,21 @@
         border-radius: 8px;
     }
 
-    p.p-transparent, ul p, ol p, .highlight p {
+    p.p-transparent, ul p, ol p, .highlight p, .flippy-card p {
         padding: 0;
         background-color: transparent;
         backdrop-filter: none;
         box-shadow: none;
-        border-radius: none;
+        border-radius: 0;
     }
 
     p.p-transparent {
         font-size: var(--font-size-xl);
     line-height: var(--line-height-xl);
+    }
+
+    .flippy-card p {
+        padding: 0 24px;
     }
 
     /* #endregion */
@@ -162,46 +166,15 @@
 */
     /* #endregion */
 
-    @media (max-width: 768px) {
-    .constrain-100_m {width: 100% !important;}
-    .constrain-80_m {width: 80% !important;}
-    .constrain-60_m {width: 60% !important;}
-    .constrain-40_m {width: 40% !important;}
-    .constrain-33_m {width: 33% !important;}
-    .constrain-20_m {width: 20% !important;}
-}
+
+.constrain-100_m {width: 100% !important;}
+.constrain-80_m {width: 80% !important;}
+.constrain-60_m {width: 60% !important;}
+.constrain-40_m {width: 40% !important;}
+.constrain-33_m {width: 33% !important;}
+.constrain-20_m {width: 20% !important;}
 
 
-    /* #region Flippy Cards Mobile Adjustments */
-
-    /* Disable flip effect on mobile for better usability */
-    .flippy-card {
-        perspective: none;
-        cursor: default;
-    }
-
-    .flippy-body {
-        transform: none !important;
-    }
-
-    /* Stack front and back instead of flipping */
-    .flippy-front, .flippy-back {
-        position: relative;
-        transform: none !important;
-        min-width: 100%;
-        padding: var(--spacing-16);
-    }
-
-    .flippy-back {
-        margin-top: var(--spacing-12);
-    }
-
-    .flippy-card p {
-        padding: 0 var(--spacing-16);
-        font-size: var(--font-size-sm);
-    }
-
-    /* #endregion */
 
     /* #region Decorative Icons - Reduce Size */
 
