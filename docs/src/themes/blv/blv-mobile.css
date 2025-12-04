@@ -88,12 +88,17 @@
         border-radius: 8px;
     }
 
-    ul p, ol p {
+    p.p-transparent, ul p, ol p, .highlight p {
         padding: o;
         background-color: transparent;
         backdrop-filter: none;
         box-shadow: none;
         border-radius: none;
+    }
+
+    p.p-transparent {
+        font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
     }
 
     /* #endregion */
@@ -144,7 +149,7 @@
 
     /* #region Constrain Classes */
 
-    /* Make constrain classes wider on mobile */
+    /* Make constrain classes wider on mobile 
     .constrain {
         width: 100%;
     }
@@ -154,7 +159,7 @@
     .constrain-40 { width: 100%; }
     .constrain-33 { width: 100%; }
     .constrain-20 { width: 50%; }
-
+*/
     /* #endregion */
 
     /* #region Flippy Cards Mobile Adjustments */

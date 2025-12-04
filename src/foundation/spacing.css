@@ -376,3 +376,197 @@
 .h-80 { height: var(--spacing-80); }
 
 /* #endregion */
+
+/* #region Mobile Spacing Utilities */
+/* These utilities override the default spacing on mobile devices (max-width: 768px) */
+/* Usage: Apply both the base class and the _m class, e.g., "p-24 p-16_m" */
+
+@media (max-width: 768px) {
+    /* Mobile Margin All Sides */
+    .m-0_m { margin: var(--spacing-0) !important; }
+    .m-1_m { margin: var(--spacing-1) !important; }
+    .m-2_m { margin: var(--spacing-2) !important; }
+    .m-4_m { margin: var(--spacing-4) !important; }
+    .m-6_m { margin: var(--spacing-6) !important; }
+    .m-8_m { margin: var(--spacing-8) !important; }
+    .m-12_m { margin: var(--spacing-12) !important; }
+    .m-16_m { margin: var(--spacing-16) !important; }
+    .m-20_m { margin: var(--spacing-20) !important; }
+    .m-24_m { margin: var(--spacing-24) !important; }
+    .m-32_m { margin: var(--spacing-32) !important; }
+    .m-40_m { margin: var(--spacing-40) !important; }
+    .m-48_m { margin: var(--spacing-48) !important; }
+
+    /* Mobile Margin X Axis */
+    .mx-0_m { margin-left: var(--spacing-0) !important; margin-right: var(--spacing-0) !important; }
+    .mx-4_m { margin-left: var(--spacing-4) !important; margin-right: var(--spacing-4) !important; }
+    .mx-8_m { margin-left: var(--spacing-8) !important; margin-right: var(--spacing-8) !important; }
+    .mx-12_m { margin-left: var(--spacing-12) !important; margin-right: var(--spacing-12) !important; }
+    .mx-16_m { margin-left: var(--spacing-16) !important; margin-right: var(--spacing-16) !important; }
+    .mx-24_m { margin-left: var(--spacing-24) !important; margin-right: var(--spacing-24) !important; }
+
+    /* Mobile Margin Y Axis */
+    .my-0_m { margin-top: var(--spacing-0) !important; margin-bottom: var(--spacing-0) !important; }
+    .my-4_m { margin-top: var(--spacing-4) !important; margin-bottom: var(--spacing-4) !important; }
+    .my-8_m { margin-top: var(--spacing-8) !important; margin-bottom: var(--spacing-8) !important; }
+    .my-12_m { margin-top: var(--spacing-12) !important; margin-bottom: var(--spacing-12) !important; }
+    .my-16_m { margin-top: var(--spacing-16) !important; margin-bottom: var(--spacing-16) !important; }
+    .my-24_m { margin-top: var(--spacing-24) !important; margin-bottom: var(--spacing-24) !important; }
+
+    /* Mobile Margin Individual Sides */
+    .mt-0_m { margin-top: var(--spacing-0) !important; }
+    .mt-4_m { margin-top: var(--spacing-4) !important; }
+    .mt-8_m { margin-top: var(--spacing-8) !important; }
+    .mt-12_m { margin-top: var(--spacing-12) !important; }
+    .mt-16_m { margin-top: var(--spacing-16) !important; }
+    .mt-24_m { margin-top: var(--spacing-24) !important; }
+    .mt-32_m { margin-top: var(--spacing-32) !important; }
+
+    .mr-0_m { margin-right: var(--spacing-0) !important; }
+    .mr-4_m { margin-right: var(--spacing-4) !important; }
+    .mr-8_m { margin-right: var(--spacing-8) !important; }
+    .mr-12_m { margin-right: var(--spacing-12) !important; }
+    .mr-16_m { margin-right: var(--spacing-16) !important; }
+    .mr-24_m { margin-right: var(--spacing-24) !important; }
+
+    .mb-0_m { margin-bottom: var(--spacing-0) !important; }
+    .mb-4_m { margin-bottom: var(--spacing-4) !important; }
+    .mb-8_m { margin-bottom: var(--spacing-8) !important; }
+    .mb-12_m { margin-bottom: var(--spacing-12) !important; }
+    .mb-16_m { margin-bottom: var(--spacing-16) !important; }
+    .mb-24_m { margin-bottom: var(--spacing-24) !important; }
+    .mb-32_m { margin-bottom: var(--spacing-32) !important; }
+
+    .ml-0_m { margin-left: var(--spacing-0) !important; }
+    .ml-4_m { margin-left: var(--spacing-4) !important; }
+    .ml-8_m { margin-left: var(--spacing-8) !important; }
+    .ml-12_m { margin-left: var(--spacing-12) !important; }
+    .ml-16_m { margin-left: var(--spacing-16) !important; }
+    .ml-24_m { margin-left: var(--spacing-24) !important; }
+
+    /* Mobile Padding All Sides */
+    .p-0_m { padding: var(--spacing-0) !important; }
+    .p-1_m { padding: var(--spacing-1) !important; }
+    .p-2_m { padding: var(--spacing-2) !important; }
+    .p-4_m { padding: var(--spacing-4) !important; }
+    .p-6_m { padding: var(--spacing-6) !important; }
+    .p-8_m { padding: var(--spacing-8) !important; }
+    .p-12_m { padding: var(--spacing-12) !important; }
+    .p-16_m { padding: var(--spacing-16) !important; }
+    .p-20_m { padding: var(--spacing-20) !important; }
+    .p-24_m { padding: var(--spacing-24) !important; }
+    .p-32_m { padding: var(--spacing-32) !important; }
+    .p-40_m { padding: var(--spacing-40) !important; }
+    .p-48_m { padding: var(--spacing-48) !important; }
+
+    /* Mobile Padding X Axis */
+    .px-0_m { padding-left: var(--spacing-0) !important; padding-right: var(--spacing-0) !important; }
+    .px-4_m { padding-left: var(--spacing-4) !important; padding-right: var(--spacing-4) !important; }
+    .px-8_m { padding-left: var(--spacing-8) !important; padding-right: var(--spacing-8) !important; }
+    .px-12_m { padding-left: var(--spacing-12) !important; padding-right: var(--spacing-12) !important; }
+    .px-16_m { padding-left: var(--spacing-16) !important; padding-right: var(--spacing-16) !important; }
+    .px-24_m { padding-left: var(--spacing-24) !important; padding-right: var(--spacing-24) !important; }
+    .px-32_m { padding-left: var(--spacing-32) !important; padding-right: var(--spacing-32) !important; }
+
+    /* Mobile Padding Y Axis */
+    .py-0_m { padding-top: var(--spacing-0) !important; padding-bottom: var(--spacing-0) !important; }
+    .py-4_m { padding-top: var(--spacing-4) !important; padding-bottom: var(--spacing-4) !important; }
+    .py-8_m { padding-top: var(--spacing-8) !important; padding-bottom: var(--spacing-8) !important; }
+    .py-12_m { padding-top: var(--spacing-12) !important; padding-bottom: var(--spacing-12) !important; }
+    .py-16_m { padding-top: var(--spacing-16) !important; padding-bottom: var(--spacing-16) !important; }
+    .py-24_m { padding-top: var(--spacing-24) !important; padding-bottom: var(--spacing-24) !important; }
+    .py-32_m { padding-top: var(--spacing-32) !important; padding-bottom: var(--spacing-32) !important; }
+
+    /* Mobile Padding Individual Sides */
+    .pt-0_m { padding-top: var(--spacing-0) !important; }
+    .pt-4_m { padding-top: var(--spacing-4) !important; }
+    .pt-8_m { padding-top: var(--spacing-8) !important; }
+    .pt-12_m { padding-top: var(--spacing-12) !important; }
+    .pt-16_m { padding-top: var(--spacing-16) !important; }
+    .pt-24_m { padding-top: var(--spacing-24) !important; }
+    .pt-32_m { padding-top: var(--spacing-32) !important; }
+    .pt-40_m { padding-top: var(--spacing-40) !important; }
+
+    .pr-0_m { padding-right: var(--spacing-0) !important; }
+    .pr-4_m { padding-right: var(--spacing-4) !important; }
+    .pr-8_m { padding-right: var(--spacing-8) !important; }
+    .pr-12_m { padding-right: var(--spacing-12) !important; }
+    .pr-16_m { padding-right: var(--spacing-16) !important; }
+    .pr-24_m { padding-right: var(--spacing-24) !important; }
+    .pr-32_m { padding-right: var(--spacing-32) !important; }
+
+    .pb-0_m { padding-bottom: var(--spacing-0) !important; }
+    .pb-4_m { padding-bottom: var(--spacing-4) !important; }
+    .pb-8_m { padding-bottom: var(--spacing-8) !important; }
+    .pb-12_m { padding-bottom: var(--spacing-12) !important; }
+    .pb-16_m { padding-bottom: var(--spacing-16) !important; }
+    .pb-24_m { padding-bottom: var(--spacing-24) !important; }
+    .pb-32_m { padding-bottom: var(--spacing-32) !important; }
+    .pb-40_m { padding-bottom: var(--spacing-40) !important; }
+
+    .pl-0_m { padding-left: var(--spacing-0) !important; }
+    .pl-4_m { padding-left: var(--spacing-4) !important; }
+    .pl-8_m { padding-left: var(--spacing-8) !important; }
+    .pl-12_m { padding-left: var(--spacing-12) !important; }
+    .pl-16_m { padding-left: var(--spacing-16) !important; }
+    .pl-24_m { padding-left: var(--spacing-24) !important; }
+    .pl-32_m { padding-left: var(--spacing-32) !important; }
+
+    /* Mobile Gap Utilities */
+    .gap-0_m { gap: var(--spacing-0) !important; }
+    .gap-2_m { gap: var(--spacing-2) !important; }
+    .gap-4_m { gap: var(--spacing-4) !important; }
+    .gap-6_m { gap: var(--spacing-6) !important; }
+    .gap-8_m { gap: var(--spacing-8) !important; }
+    .gap-12_m { gap: var(--spacing-12) !important; }
+    .gap-16_m { gap: var(--spacing-16) !important; }
+    .gap-20_m { gap: var(--spacing-20) !important; }
+    .gap-24_m { gap: var(--spacing-24) !important; }
+}
+
+/* Small Mobile Utilities (max-width: 480px) */
+/* Use the -sm_m suffix for even smaller screens */
+@media (max-width: 480px) {
+    /* Small Mobile Padding */
+    .p-0-sm_m { padding: var(--spacing-0) !important; }
+    .p-4-sm_m { padding: var(--spacing-4) !important; }
+    .p-8-sm_m { padding: var(--spacing-8) !important; }
+    .p-12-sm_m { padding: var(--spacing-12) !important; }
+    .p-16-sm_m { padding: var(--spacing-16) !important; }
+
+    /* Small Mobile Padding X/Y Axis */
+    .px-0-sm_m { padding-left: var(--spacing-0) !important; padding-right: var(--spacing-0) !important; }
+    .px-4-sm_m { padding-left: var(--spacing-4) !important; padding-right: var(--spacing-4) !important; }
+    .px-8-sm_m { padding-left: var(--spacing-8) !important; padding-right: var(--spacing-8) !important; }
+    .px-12-sm_m { padding-left: var(--spacing-12) !important; padding-right: var(--spacing-12) !important; }
+
+    .py-0-sm_m { padding-top: var(--spacing-0) !important; padding-bottom: var(--spacing-0) !important; }
+    .py-4-sm_m { padding-top: var(--spacing-4) !important; padding-bottom: var(--spacing-4) !important; }
+    .py-8-sm_m { padding-top: var(--spacing-8) !important; padding-bottom: var(--spacing-8) !important; }
+    .py-12-sm_m { padding-top: var(--spacing-12) !important; padding-bottom: var(--spacing-12) !important; }
+
+    /* Small Mobile Margin */
+    .m-0-sm_m { margin: var(--spacing-0) !important; }
+    .m-4-sm_m { margin: var(--spacing-4) !important; }
+    .m-8-sm_m { margin: var(--spacing-8) !important; }
+    .m-12-sm_m { margin: var(--spacing-12) !important; }
+    .m-16-sm_m { margin: var(--spacing-16) !important; }
+
+    /* Small Mobile Margin X/Y Axis */
+    .mx-0-sm_m { margin-left: var(--spacing-0) !important; margin-right: var(--spacing-0) !important; }
+    .mx-4-sm_m { margin-left: var(--spacing-4) !important; margin-right: var(--spacing-4) !important; }
+    .mx-8-sm_m { margin-left: var(--spacing-8) !important; margin-right: var(--spacing-8) !important; }
+
+    .my-0-sm_m { margin-top: var(--spacing-0) !important; margin-bottom: var(--spacing-0) !important; }
+    .my-4-sm_m { margin-top: var(--spacing-4) !important; margin-bottom: var(--spacing-4) !important; }
+    .my-8-sm_m { margin-top: var(--spacing-8) !important; margin-bottom: var(--spacing-8) !important; }
+
+    /* Small Mobile Gap */
+    .gap-0-sm_m { gap: var(--spacing-0) !important; }
+    .gap-4-sm_m { gap: var(--spacing-4) !important; }
+    .gap-6-sm_m { gap: var(--spacing-6) !important; }
+    .gap-8-sm_m { gap: var(--spacing-8) !important; }
+    .gap-12-sm_m { gap: var(--spacing-12) !important; }
+}
+
+/* #endregion */
