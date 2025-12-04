@@ -88,7 +88,7 @@
         border-radius: 8px;
     }
 
-    p.p-transparent, ul p, ol p, .highlight p, .flippy-card p {
+    p.p-transparent, ul p, ol p, .highlight p, .flippy-card p, .tile p {
         padding: 0;
         background-color: transparent;
         backdrop-filter: none;
@@ -176,7 +176,7 @@
 
 
 
-    /* #region Decorative Icons - Reduce Size */
+    /* #region Decorative Icons - Reduce Size 
 
     .asterisk:before {
         width: 180px;
@@ -197,7 +197,7 @@
         height: 180px;
         top: -15%;
     }
-
+*/
     /* #endregion */
 
     /* #region Buttons and Interactive Elements */

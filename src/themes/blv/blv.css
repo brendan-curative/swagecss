@@ -875,7 +875,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
 .flippy-front {gap: 16px}
 
 @media (max-width: 768px) {
-    .flippy-front:before {
+    .flippy-front:after {
     content: '';
     display: block;
     width: 16px;
