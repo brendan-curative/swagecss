@@ -8,8 +8,19 @@ class BaselineVisitPrototype {
     }
 
     loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
+        try {
+            const stored = localStorage.getItem(this.storageKey);
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                // Ensure facilities object exists
+                if (parsed && parsed.facilities) {
+                    return parsed;
+                }
+            }
+        } catch (e) {
+            console.error('Error loading data from localStorage:', e);
+        }
+        return this.getDefaultData();
     }
 
     getDefaultData() {
