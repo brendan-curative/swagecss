@@ -16,8 +16,7 @@ page-js: screenings
 <section class="mb-32">
     <h1>Your Screenings</h1>
 
-<p>Screenings help you stay informed about your health and guide conversations with your provider. These preventive services are usually covered at $0 under your plan.*</p>
-    <p>Please update your screening status below and indicate if you would like additional information about the screening. If you have a family history that changes your risk, please discuss it with a Curative Clinician in Part 2 or speak with your Primary Care Physician.</p>
+    <p>Please update your screening status:</p>
 
     <div class="screenings p-24">
         <div id="cervical-cancer-screening" class="card transparent p-24">
@@ -26,12 +25,12 @@ page-js: screenings
             
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 150px;">
+                <div class="select" style="width: 180px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-cervical" onchange="updateScreening('cervical', this.value)">
-                            <option value="unsure">I'm not sure</option>
-                            <option value="recent">Within the last 12 months</option>
-                            <option value="later">More than 12 months</option>
+                            <option value="unsure">Last Year</option>
+                            <option value="recent">Last 5 Years</option>
+                            <option value="later">Last 10 Years</option>
                             <option value="never">Never</option>
                             <option value="na" selected>N/A</option>
                         </select>
@@ -55,14 +54,14 @@ page-js: screenings
                 
                 <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 150px;">
+                <div class="select" style="width: 180px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-breast" onchange="updateScreening('breast', this.value)">
-                            <option value="unsure">I'm not sure</option>
-                            <option value="recent">Within the last 12 months</option>
-                            <option value="later">More than 12 months</option>
+                            <option value="unsure" selected>Last Year</option>
+                            <option value="recent">Last 5 Years</option>
+                            <option value="later">Last 10 Years</option>
                             <option value="never">Never</option>
-                            <option value="na">N/A</option>
+                            <option value="na" >N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -83,14 +82,14 @@ page-js: screenings
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 150px;">
+                <div class="select" style="width: 180px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-colon" onchange="updateScreening('colon', this.value)">
-                            <option value="unsure">I'm not sure</option>
-                            <option value="recent">Within the last 12 months</option>
-                            <option value="later" selected>More than 12 months</option>
+                            <option value="unsure" selected>Last Year</option>
+                            <option value="recent">Last 5 Years</option>
+                            <option value="later">Last 10 Years</option>
                             <option value="never">Never</option>
-                            <option value="na">N/A</option>
+                            <option value="na" >N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -100,7 +99,7 @@ page-js: screenings
             </div>
 </div>
         <div class="text-md pt-16">
-                <div class="mb-8"><strong>What it is:</strong> A colonoscopy (a specialist uses a small camera to check your colon while you're relaxed or asleep) or an at-home stool test like Cologuard. Colonoscopies are performed by a gastroenterologist and are usually ordered by your primary care provider (PCP).</div>
+                <div class="mb-8"><strong>What it is:</strong> A procedure with a specialist or an at-home stool test like Cologuard.</div>
                 <div><strong>Recommendation:</strong> Adults 45-75. Stool tests are typically done every year; colonoscopies about every 10 years, unless your provider recommends earlier or more frequent testing.</div>
             </div>
         </div>
@@ -112,14 +111,14 @@ page-js: screenings
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 150px;">
+                <div class="select" style="width: 180px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-lung" onchange="updateScreening('lung', this.value)">
-                            <option value="unsure">I'm not sure</option>
-                            <option value="recent">Within the last 12 months</option>
-                            <option value="later" selected>More than 12 months</option>
+                            <option value="unsure">Last Year</option>
+                            <option value="recent">Last 5 Years</option>
+                            <option value="later" selected>Last 10 Years</option>
                             <option value="never">Never</option>
-                            <option value="na">N/A</option>
+                            <option value="na" >N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -140,14 +139,14 @@ page-js: screenings
                 <h3>Prostate Cancer Screening</h3>
 <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 150px;">
+                <div class="select" style="width: 180px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-prostate" onchange="updateScreening('prostate', this.value)">
-                            <option value="unsure">I'm not sure</option>
-                            <option value="recent">Within the last 12 months</option>
-                            <option value="later" selected>More than 12 months</option>
+                            <option value="unsure" selected>Last Year</option>
+                            <option value="recent">Last 5 Years</option>
+                            <option value="later">Last 10 Years</option>
                             <option value="never">Never</option>
-                            <option value="na">N/A</option>
+                            <option value="na" >N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -169,14 +168,14 @@ page-js: screenings
 
             <div class="flex-row flex-items-center gap-16">
                 <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 150px;">
+                <div class="select" style="width: 180px;">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-skin" onchange="updateScreening('skin', this.value)">
-                            <option value="unsure">I'm not sure</option>
-                            <option value="recent">Within the last 12 months</option>
-                            <option value="later" selected>More than 12 months</option>
+                            <option value="unsure" selected>Last Year</option>
+                            <option value="recent">Last 5 Years</option>
+                            <option value="later">Last 10 Years</option>
                             <option value="never">Never</option>
-                            <option value="na">N/A</option>
+                            <option value="na" >N/A</option>
                         </select>
                         <div class="select__icon">
                             <span class="heroicon heroicon-chevron-down"></span>
@@ -208,7 +207,7 @@ page-js: screenings
             </div>
         </div>
 
-        <p class="pt-24">A Curtative Clinician will go over your answers and make sure you're on track during Part 2 of the Baseline Visit.</p>
+        <p class="pt-24">A Curative clinician will review this information and discuss your health goals for the upcoming year</p>
         </div>
 </div>
 
