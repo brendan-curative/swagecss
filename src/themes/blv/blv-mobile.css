@@ -88,7 +88,7 @@
         border-radius: 8px;
     }
 
-    p.p-transparent, ul p, ol p, .highlight p, .flippy-card p, .tile p, .infocard p {
+    p.p-transparent, ul p, ol p, .highlight p, .flippy-card p, .tile p, .infocard p, .form-modal p {
         padding: 0;
         background-color: transparent;
         backdrop-filter: none;
