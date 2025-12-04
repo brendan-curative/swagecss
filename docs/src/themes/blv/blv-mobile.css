@@ -89,7 +89,7 @@
     }
 
     p.p-transparent, ul p, ol p, .highlight p {
-        padding: o;
+        padding: 0;
         background-color: transparent;
         backdrop-filter: none;
         box-shadow: none;

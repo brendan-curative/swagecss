@@ -134,13 +134,13 @@
     }
 
     .unordered-list__icon {
-        width: var(--spacing-20);
-        height: var(--spacing-20);
+        width: var(--spacing-24);
+        height: var(--spacing-24);
     }
 
     .unordered-list__icon .heroicon {
-        width: var(--spacing-12);
-        height: var(--spacing-12);
+        width: var(--spacing-16);
+        height: var(--spacing-16);
     }
 
     .unordered-list__text {
