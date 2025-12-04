@@ -88,3 +88,80 @@
 
 /* #endregion */
 
+/* #region Mobile Styles */
+@media (max-width: 768px) {
+    .form-modal {
+        padding: var(--spacing-16);
+        bottom: 80px;
+    }
+
+    .form-modal__dialog {
+        max-width: 100%;
+        max-height: 90vh;
+    }
+
+    .form-modal__header {
+        padding: var(--spacing-16);
+    }
+
+    .form-modal__title {
+        font-size: var(--font-size-lg);
+    }
+
+    .form-modal__close {
+        padding: var(--spacing-6);
+    }
+
+    .form-modal__body {
+        padding: var(--spacing-16);
+        padding-bottom: 32px;
+    }
+
+    .form-modal__footer {
+        padding: var(--spacing-16);
+        gap: var(--spacing-8);
+        flex-wrap: wrap;
+    }
+
+    .form-modal__footer .button {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-modal {
+        padding: var(--spacing-8);
+        bottom: 64px;
+    }
+
+    .form-modal__dialog {
+        max-height: 85vh;
+        border-radius: 4px;
+    }
+
+    .form-modal__header {
+        padding: var(--spacing-12);
+    }
+
+    .form-modal__title {
+        font-size: var(--font-size-md);
+    }
+
+    .form-modal__body {
+        padding: var(--spacing-12);
+        padding-bottom: 24px;
+    }
+
+    .form-modal__footer {
+        padding: var(--spacing-12);
+        gap: var(--spacing-6);
+    }
+
+    .form-modal__footer .button {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-8) var(--spacing-12);
+    }
+}
+/* #endregion */
+

@@ -87,3 +87,46 @@
 }
 
 /* #endregion */
+
+/* #region Mobile Styles */
+@media (max-width: 768px) {
+    .rating-picker {
+        gap: 8px;
+    }
+
+    .rating-picker__option {
+        padding: var(--spacing-6);
+        gap: var(--spacing-2);
+    }
+
+    .rating-picker__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .rating-picker__label {
+        font-size: var(--font-size-xs);
+        line-height: var(--line-height-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .rating-picker {
+        gap: 6px;
+    }
+
+    .rating-picker__option {
+        padding: var(--spacing-4);
+    }
+
+    .rating-picker__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .rating-picker__label {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+}
+/* #endregion */

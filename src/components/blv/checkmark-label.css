@@ -97,3 +97,42 @@
 }
 
 /* #endregion */
+
+/* #region Mobile Styles */
+@media (max-width: 768px) {
+    .checkmark-label {
+        gap: var(--spacing-2);
+    }
+
+    .checkmark-label__icon {
+        width: var(--spacing-14);
+        height: var(--spacing-14);
+    }
+
+    .checkmark-label__icon svg {
+        width: var(--spacing-10);
+        height: var(--spacing-10);
+    }
+
+    .checkmark-label__text {
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .checkmark-label__icon {
+        width: var(--spacing-12);
+        height: var(--spacing-12);
+    }
+
+    .checkmark-label__icon svg {
+        width: var(--spacing-8);
+        height: var(--spacing-8);
+    }
+
+    .checkmark-label__text {
+        font-size: var(--font-size-xs);
+    }
+}
+/* #endregion */

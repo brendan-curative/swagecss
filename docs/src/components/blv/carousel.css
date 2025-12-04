@@ -284,3 +284,80 @@ html[data-theme="blv"] .carousel__indicator--active {
         font-size: var(--font-size-xs);
         color: var(--color-gray-600);
     }
+
+/* #region Mobile Styles */
+@media (max-width: 768px) {
+    html[data-theme="blv"] .carousel__slide {
+        padding: var(--spacing-24);
+        border-radius: var(--spacing-12);
+    }
+
+    .carousel__controls {
+        margin-top: var(--spacing-12);
+        gap: var(--spacing-12);
+    }
+
+    .carousel__button {
+        padding: var(--spacing-4) var(--spacing-12);
+        font-size: var(--font-size-sm);
+    }
+
+    .carousel--side-nav .carousel__button {
+        width: var(--spacing-40);
+        height: var(--spacing-40);
+    }
+
+    .carousel--side-nav .carousel__controls {
+        padding: 0 var(--spacing-8);
+    }
+
+    .carousel__counter {
+        font-size: var(--font-size-xs);
+    }
+
+    .carousel__indicator {
+        width: var(--spacing-6);
+        height: var(--spacing-6);
+    }
+
+    .carousel__indicator--active {
+        width: var(--spacing-20);
+    }
+}
+
+@media (max-width: 480px) {
+    html[data-theme="blv"] .carousel__slide {
+        padding: var(--spacing-16);
+        border-radius: var(--spacing-8);
+    }
+
+    .carousel__controls {
+        margin-top: var(--spacing-8);
+        gap: var(--spacing-8);
+    }
+
+    .carousel__button {
+        padding: var(--spacing-4) var(--spacing-8);
+        font-size: var(--font-size-xs);
+    }
+
+    .carousel--side-nav .carousel__button {
+        width: var(--spacing-32);
+        height: var(--spacing-32);
+    }
+
+    .carousel--side-nav .carousel__controls {
+        padding: 0 var(--spacing-4);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel__track,
+    .carousel__slide,
+    .carousel__slide--exiting,
+    .carousel__slide--entering {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+/* #endregion */
