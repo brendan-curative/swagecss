@@ -89,10 +89,10 @@ function renderMedicationsList() {
                     <p class="tile__subtitle">${subtitle}</p>
                 </div>
                 <button class="tile__dismiss" aria-label="Edit Medication" onclick="editMedication(${index})">
-                    <span class="tile__dismiss-icon heroicon heroicon-outline-magnifying-glass-circle"></span>
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-magnifying-glass"></span>
                 </button>
                 <button class="tile__dismiss text-critical" aria-label="Delete Medication" onclick="deleteMedication(${index}, event)">
-                    <span class="tile__dismiss-icon heroicon heroicon-outline-x-circle"></span>
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-trash"></span>
                 </button>
             </div>
         `;
