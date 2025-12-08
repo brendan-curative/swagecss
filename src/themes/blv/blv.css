@@ -969,8 +969,8 @@ flippycard.spin .flippy-card img {
 }
 
 .ct-mp {
-    width: 25%;
     height: auto;
+    transform: translateX(-16px);
 }
 
 .infocard {

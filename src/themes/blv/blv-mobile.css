@@ -281,7 +281,9 @@
     }
 
     .ct-mp {
-        width: 50%;
+        width: 80%;
+        transform: translateX(-12px);
+   
     }
 
     /* #endregion */
