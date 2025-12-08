@@ -88,7 +88,7 @@
         border-radius: 8px;
     }
 
-    p.p-transparent, ul p, ol p, .highlight p, .flippy-card p, .tile p, .infocard p, .form-modal p {
+    p.p-transparent, ul p, ol p, .highlight p, .flippy-card p, .tile p, .infocard p, .form-modal p, .card p {
         padding: 0;
         background-color: transparent;
         backdrop-filter: none;
@@ -313,6 +313,12 @@
     .card {
         padding: var(--spacing-16);
     }
+
+    html[data-theme="blv"] .screenings .card.transparent {
+            background: rgba(255, 255, 255, 0.5);
+    }
+
+    .screenings p {background: transparent}
 
     /* #endregion */
 

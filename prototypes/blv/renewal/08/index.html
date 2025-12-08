@@ -16,14 +16,14 @@ page-js: screenings
 <section class="mb-32">
     <h1>Your Screenings</h1>
 
-    <p>Please update your screening status (<em class="text-subdued">all fields are required</em>):</p>
+    <p class="p-transparent">Please update your screening status (<em>all fields are required</em>):</p>
 
     <div class="screenings px-24 pb-24">
         <div id="cervical-cancer-screening" class="card transparent p-24 bg-shapes bg-shapes-rectangle-dots">
 
                 <h3>Cervical Cancer Screening</h3>
 
-                <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24">
+                <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24 px-0_m">
                 <span class="text-lg">Last completed:</span>
                 <div class="select">
                     <div class="select__input-wrapper">
@@ -56,7 +56,7 @@ page-js: screenings
 
                 <h3>Breast Cancer Screening</h3>
 
-                <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24">
+                <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24 px-0_m">
                 <span class="text-lg">Last completed:</span>
                 <div class="select">
                     <div class="select__input-wrapper">
@@ -87,7 +87,7 @@ page-js: screenings
 
                 <h3>Colon Cancer Screening</h3>
 
-               <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24">
+               <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24 px-0_m">
                 <span class="text-lg">Last completed:</span>
                 <div class="select">
                     <div class="select__input-wrapper">
@@ -119,7 +119,7 @@ page-js: screenings
 
                 <h3>Lung Cancer Screening</h3>
 
-               <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24">
+               <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24 px-0_m">
                 <span class="text-lg">Last completed:</span>
                 <div class="select">
                     <div class="select__input-wrapper">
@@ -144,19 +144,18 @@ page-js: screenings
 
         </div>
 
+        <div id="prostate-cancer-screening" class="card transparent p-24 bg-shapes bg-shapes-square-dots_white">
 
-
-        <div id="prostate-cancer-screening" class="card transparent p-24">
-            <div class="flex-row flex-items-center flex-justify-between">
                 <h3>Prostate Cancer Screening</h3>
-<div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 180px;">
+
+               <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24 px-0_m">
+                <span class="text-lg">Last completed:</span>
+                <div class="select">
                     <div class="select__input-wrapper">
-                        <select class="select__control" id="screening-prostate" onchange="updateScreening('prostate', this.value)">
-                            <option value="unsure" selected>Last Year</option>
+                        <select class="select__control" id="screening-prostate" onchange="updateScreening('lung', this.value)">
+                            <option value="unsure">Last Year</option>
                             <option value="recent">Last 5 Years</option>
-                            <option value="later">Last 10 Years</option>
+                            <option value="later" selected>Last 10 Years</option>
                             <option value="never">Never</option>
                             <option value="na" >N/A</option>
                         </select>
@@ -166,26 +165,26 @@ page-js: screenings
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="text-md pt-16">
+
+                <div class="text-md px-24">
                 <div class="mb-8"><strong>What it is:</strong> Blood test measuring PSA, a protein made by the prostate.</div>
-                <div><strong>Recommendation:</strong> Men 55-69, every 1-2 years, based on shared decision-making with your provider.</div>
+                <div>Recommendation:</strong> Men 55-69, every 1-2 years, based on shared decision-making with your provider.</div>
             </div>
-    </div>
 
-    <div id="skin-cancer-screening" class="card transparent p-24">
-        <div class="flex-row flex-items-center flex-justify-between">
-        <h3>Skin Cancer Screening</h3>
-            
+        </div>
 
-            <div class="flex-row flex-items-center gap-16">
-                <span class="text-sm text-gray-600">Last completed:</span>
-                <div class="select" style="width: 180px;">
+ <div id="skin-cancer-screening" class="card transparent p-24 bg-shapes bg-shapes-square-dots_white">
+
+                <h3>Skin Cancer Screening</h3>
+
+               <div class="flex-row flex-items-center gap-8 pt-8 pb-16 px-24 px-0_m">
+                <span class="text-lg">Last completed:</span>
+                <div class="select">
                     <div class="select__input-wrapper">
-                        <select class="select__control" id="screening-skin" onchange="updateScreening('skin', this.value)">
-                            <option value="unsure" selected>Last Year</option>
+                        <select class="select__control" id="screening-skin" onchange="updateScreening('lung', this.value)">
+                            <option value="unsure">Last Year</option>
                             <option value="recent">Last 5 Years</option>
-                            <option value="later">Last 10 Years</option>
+                            <option value="later" selected>Last 10 Years</option>
                             <option value="never">Never</option>
                             <option value="na" >N/A</option>
                         </select>
@@ -196,12 +195,14 @@ page-js: screenings
                 </div>
             </div>
 
-            </div>
-            <div class="text-md pt-16">
+                <div class="text-md px-24">
                 <div class="mb-8"><strong>What it is:</strong> Visual skin exam by a PCP or dermatologist to look for new or changing moles or spots.</div>
                 <div><strong>Recommendation:</strong> Adults 20+, as needed based on risk; annual checks may be recommended for higher-risk individuals.</div>
             </div>
+
         </div>
+
+
 
         <div class="card transparent p-24">
             <h3>Additional Screenings</h3>
@@ -219,7 +220,7 @@ page-js: screenings
             </div>
         </div>
 
-        <p class="pt-24">A Curative clinician will review this information and discuss your health goals for the upcoming year</p>
+        <p class="pt-24 pt-24_m">A Curative clinician will review this information and discuss your health goals for the upcoming year.</p>
         </div>
 </div>
 
