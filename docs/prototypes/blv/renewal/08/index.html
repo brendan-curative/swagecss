@@ -85,10 +85,10 @@
                 <div class="select">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-cervical" onchange="updateScreening('cervical', this.value)">
-                    
+                            <option value="placeholder">Please select an answer</option>
                             <option value="12months">Within the last 12 months</option>
                             <option value="2years">Within the last 1-2 years</option>
-                            <option value="5years">Within the last 2-5 year</option>
+                            <option value="5years" selected>Within the last 2-5 year</option>
                             <option value="10years">Within the last 5-10 years</option>
                             <option value="morethan10">More than 10 years ago</option>
                             <option value="never">Never</option>
@@ -103,7 +103,7 @@
 
             <div class="text-md px-24">
                 <div class="mb-8"><strong>What it is:</strong> Pap or HPV test done by a PCP or OB/GYN to check for early cell changes.</div>
-                <div><strong>Recommendation:</strong> Women 21-65, every 3-5 years depending on test type and history.</div>
+                <div><strong>Recommendation:</strong> Adults 21-65, every 3-5 years depending on test type and history.</div>
             </div>
 
             
@@ -118,7 +118,7 @@
                 <div class="select">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-breast" onchange="updateScreening('cervical', this.value)">
-                    
+                            <option value="placeholder">Please select an answer</option>
                             <option value="12months">Within the last 12 months</option>
                             <option value="2years">Within the last 1-2 years</option>
                             <option value="5years">Within the last 2-5 year</option>
@@ -136,7 +136,7 @@
 
                 <div class="text-md px-24">
                 <div class="mb-8"><strong>What it is:</strong> X-ray of the breast to look for early signs of cancer. Additional imaging (ultrasound or MRI) may be recommended for dense breasts or higher risk.</div>
-                <div><strong>Recommendation:</strong> Women 40-74, every 1-2 years.</div>
+                <div><strong>Recommendation:</strong> Adults 40-74, every 1-2 years.</div>
             </div>
         </div>
 
@@ -149,8 +149,8 @@
                 <div class="select">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-colon" onchange="updateScreening('cervical', this.value)">
-                    
-                            <option value="12months">Within the last 12 months</option>
+                            <option value="placeholder">Please select an answer</option>
+                            <option value="12months" selected>Within the last 12 months</option>
                             <option value="2years">Within the last 1-2 years</option>
                             <option value="5years">Within the last 2-5 year</option>
                             <option value="10years">Within the last 5-10 years</option>
@@ -181,6 +181,7 @@
                 <div class="select">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-lung" onchange="updateScreening('lung', this.value)">
+                            <option value="placeholder">Please select an answer</option>
                             <option value="unsure">Last Year</option>
                             <option value="recent">Last 5 Years</option>
                             <option value="later" selected>Last 10 Years</option>
@@ -210,6 +211,7 @@
                 <div class="select">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-prostate" onchange="updateScreening('lung', this.value)">
+                            <option value="placeholder">Please select an answer</option>
                             <option value="unsure">Last Year</option>
                             <option value="recent">Last 5 Years</option>
                             <option value="later" selected>Last 10 Years</option>
@@ -225,7 +227,7 @@
 
                 <div class="text-md px-24">
                 <div class="mb-8"><strong>What it is:</strong> Blood test measuring PSA, a protein made by the prostate.</div>
-                <div>Recommendation:</strong> Men 55-69, every 1-2 years, based on shared decision-making with your provider.</div>
+                <div>Recommendation:</strong> Adults 55-69, every 1-2 years, based on shared decision-making with your provider.</div>
             </div>
 
         </div>
@@ -239,9 +241,10 @@
                 <div class="select">
                     <div class="select__input-wrapper">
                         <select class="select__control" id="screening-skin" onchange="updateScreening('lung', this.value)">
+                            <option value="placeholder">Please select an answer</option>
                             <option value="unsure">Last Year</option>
                             <option value="recent">Last 5 Years</option>
-                            <option value="later" selected>Last 10 Years</option>
+                            <option value="later">Last 10 Years</option>
                             <option value="never">Never</option>
                             <option value="na" >N/A</option>
                         </select>
