@@ -1085,8 +1085,26 @@ flippycard.spin .flippy-card img {
 
  .bg-shapes-square-dots_white:before {
     background-image: url(img/shapes/square-dots_white.png);
-    background-position: top 16px right 16px;
-    background-size: 15% auto; 
+    background-position: top 16px left 16px;
+    background-size: 20% auto; 
+ }
+
+.bg-shapes-grid-square:before {
+    background-image: url(img/shapes/grid-squares_white.png);
+    background-position: bottom 0 right 0;
+    background-size: 28% auto; 
+ }
+
+ .bg-shapes-1:before {
+    background-image: url(img/shapes/rectangle-dots_white.png), url(img/shapes/square-dots_white.png);
+    background-position: top 16px right -4px, bottom -4px left -4px;
+    background-size: 20% auto, 20% auto; 
+ }
+
+  .bg-shapes-2:before {
+    background-image: url(img/shapes/square-dots_white.png), url(img/shapes/rectangle-dots_white.png);
+    background-position: top -8px right -4px, bottom -4px left -4px;
+    background-size: 20% auto, 30% auto; 
  }
 
 /* 
