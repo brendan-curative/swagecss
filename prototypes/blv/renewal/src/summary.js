@@ -11,7 +11,97 @@ class BaselineVisitPrototype {
         const saved = localStorage.getItem('baselineVisitData');
         if (saved) {
             this.userData = JSON.parse(saved);
+        } else {
+            // Load default data if nothing is saved
+            this.userData = this.getDefaultData();
         }
+    }
+
+    getDefaultData() {
+        return {
+            providers: {
+                primary: {
+                    pcpProviders: [
+                        { name: 'Dr. Sarah Johnson', specialty: 'Family Medicine', status: 'in-network' }
+                    ],
+                    otherProviders: [
+                        { name: 'Dr. Michael Chen', specialty: 'Cardiology', status: 'in-network' },
+                        { name: 'Dr. Emily Rodriguez', specialty: 'Endocrinology', status: 'cash-card' }
+                    ]
+                }
+            },
+            facilities: {
+                'urgent-care': {
+                    name: 'Curative Urgent Care - Downtown',
+                    address: '123 Main Street',
+                    city: 'Los Angeles, CA 90012'
+                },
+                'emergency': {
+                    name: 'LA General Hospital',
+                    address: '456 Hospital Road',
+                    city: 'Los Angeles, CA 90015'
+                },
+                'virtual-urgent-care': {
+                    name: 'Curative Virtual Care',
+                    description: '24/7 virtual urgent care available'
+                }
+            },
+            pharmacy: {
+                name: 'CVS Pharmacy',
+                address: '123 Main Street, Los Angeles, CA 90210'
+            },
+            medications: [
+                { name: 'Lisinopril 10mg', instructions: 'Once daily', copay: '$0', limits: 'None' },
+                { name: 'Metformin 500mg', instructions: 'Twice daily with meals', copay: '$30', limits: 'Quantity limit = 60/30 days' },
+                { name: 'Atorvastatin 20mg', instructions: 'Once daily at bedtime', copay: 'Not covered', limits: 'Prior authorization required', priorAuthStatus: 'Granted through Jan 1, 2026' }
+            ],
+            screenings: [
+                { name: 'Blood Pressure Check', lastCompleted: '3 months ago', isDue: false },
+                { name: 'Cholesterol Screening', lastCompleted: '1 year ago', isDue: false },
+                { name: 'Diabetes Screening', lastCompleted: 'Never', isDue: true },
+                { name: 'Colorectal Cancer Screening', lastCompleted: '2 years ago', isDue: true }
+            ],
+            healthServices: [
+                { name: 'Annual Physical Exam', date: 'March 2024' },
+                { name: 'Flu Shot', date: 'October 2024' }
+            ],
+            proceduresPlanned: true,
+            procedures: {
+                major: false,
+                outpatient: true,
+                diagnostic: true,
+                preventive: false,
+                other: false,
+                none: false
+            },
+            support: {
+                metabolic: {
+                    bloodPressure: true,
+                    diabetes: true,
+                    heartDisease: false
+                },
+                respiratory: {
+                    asthma: false,
+                    copd: false
+                },
+                behavioral: {
+                    weightManagement: true,
+                    substanceUse: false,
+                    mentalHealth: false
+                },
+                specialized: {
+                    pregnancy: false,
+                    cancerScreening: true
+                },
+                other: false,
+                otherText: ''
+            },
+            barriers: {
+                selected: 'Transportation',
+                comments: 'Need assistance with rides to appointments'
+            },
+            appointmentType: 'virtual'
+        };
     }
 }
 
