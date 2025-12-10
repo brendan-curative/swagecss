@@ -86,16 +86,18 @@ function handleRadioChange() {
     const upcomingProceduresSection = document.querySelector('.upcoming-procedures');
 
     if (yesRadio && yesRadio.checked) {
-        // User selected "Yes" - show the procedures list
+        // User selected "Yes" - show the procedures list with fade-in
         prototype.updateRadioSelection(true);
         if (upcomingProceduresSection) {
-            upcomingProceduresSection.style.display = 'block';
+            upcomingProceduresSection.classList.remove('fade-out');
+            upcomingProceduresSection.classList.add('fade-in');
         }
     } else if (noRadio && noRadio.checked) {
-        // User selected "No" - hide the procedures list and clear selections
+        // User selected "No" - hide the procedures list with fade-out and clear selections
         prototype.updateRadioSelection(false);
         if (upcomingProceduresSection) {
-            upcomingProceduresSection.style.display = 'none';
+            upcomingProceduresSection.classList.remove('fade-in');
+            upcomingProceduresSection.classList.add('fade-out');
         }
         // Clear all checkbox selections
         clearAllProcedures();
@@ -239,17 +241,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (radioSelection === true && yesRadio) {
         yesRadio.checked = true;
         if (upcomingProceduresSection) {
-            upcomingProceduresSection.style.display = 'block';
+            upcomingProceduresSection.classList.add('fade-in');
+            upcomingProceduresSection.classList.remove('fade-out');
         }
     } else if (radioSelection === false && noRadio) {
         noRadio.checked = true;
         if (upcomingProceduresSection) {
-            upcomingProceduresSection.style.display = 'none';
+            upcomingProceduresSection.classList.add('fade-out');
+            upcomingProceduresSection.classList.remove('fade-in');
         }
     } else {
         // No selection made yet - hide the procedures section
         if (upcomingProceduresSection) {
-            upcomingProceduresSection.style.display = 'none';
+            upcomingProceduresSection.classList.add('fade-out');
+            upcomingProceduresSection.classList.remove('fade-in');
         }
     }
 

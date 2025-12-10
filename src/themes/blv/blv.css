@@ -1128,18 +1128,42 @@ flippycard.spin .flippy-card img {
     background-position: -600px 50%, -1875px 25%, -759px 60%;
 }
 
-/* 
+/*
  .stagger {
     padding-right: 48px;
     padding-left: 48px;
- }   
+ }
 
     .stagger li:nth-child(odd) {
-    margin-right: 48px; 
+    margin-right: 48px;
     }
 
     .stagger li:nth-child(even) {
-    margin-left: 48px; 
+    margin-left: 48px;
     }
 
 */
+
+/* #region Upcoming Procedures Fade Animation */
+.upcoming-procedures {
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.upcoming-procedures.fade-in {
+    opacity: 1;
+    max-height: 2000px; /* Large enough to accommodate content */
+}
+
+.upcoming-procedures.fade-out {
+    opacity: 0;
+    max-height: 0;
+}
+
+/* Support for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .upcoming-procedures {
+        transition: none;
+    }
+}
+/* #endregion */
