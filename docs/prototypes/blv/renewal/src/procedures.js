@@ -14,13 +14,16 @@ class BaselineVisitPrototype {
 
     getDefaultData() {
         return {
+            proceduresPlanned: null, // null = not answered, true = yes, false = no
             procedures: {
                 major: false,
                 outpatient: false,
                 diagnostic: false,
                 preventive: false,
+                other: false,
                 none: false
-            }
+            },
+            otherText: '' // Free text for "other" option
         };
     }
 
@@ -34,6 +37,7 @@ class BaselineVisitPrototype {
             outpatient: false,
             diagnostic: false,
             preventive: false,
+            other: false,
             none: false
         };
     }
@@ -45,18 +49,124 @@ class BaselineVisitPrototype {
                 outpatient: false,
                 diagnostic: false,
                 preventive: false,
+                other: false,
                 none: false
             };
         }
         this.data.procedures[id] = checked;
         this.saveData();
     }
+
+    updateRadioSelection(value) {
+        this.data.proceduresPlanned = value;
+        this.saveData();
+    }
+
+    updateOtherText(text) {
+        this.data.otherText = text;
+        this.saveData();
+    }
+
+    getRadioSelection() {
+        return this.data.proceduresPlanned;
+    }
+
+    getOtherText() {
+        return this.data.otherText || '';
+    }
 }
 
 // Initialize data
 const prototype = new BaselineVisitPrototype();
 
-// Toggle preparation info based on selections
+// Handle radio button changes (Yes/No for procedures planned)
+function handleRadioChange() {
+    const yesRadio = document.getElementById('procedures-yes');
+    const noRadio = document.getElementById('procedures-no');
+    const upcomingProceduresSection = document.querySelector('.upcoming-procedures');
+
+    if (yesRadio && yesRadio.checked) {
+        // User selected "Yes" - show the procedures list
+        prototype.updateRadioSelection(true);
+        if (upcomingProceduresSection) {
+            upcomingProceduresSection.style.display = 'block';
+        }
+    } else if (noRadio && noRadio.checked) {
+        // User selected "No" - hide the procedures list and clear selections
+        prototype.updateRadioSelection(false);
+        if (upcomingProceduresSection) {
+            upcomingProceduresSection.style.display = 'none';
+        }
+        // Clear all checkbox selections
+        clearAllProcedures();
+    }
+}
+
+// Clear all procedure selections
+function clearAllProcedures() {
+    const checkboxes = ['surgery-major', 'surgery-outpatient', 'procedure-diagnostic', 'procedure-preventive', 'procedure-other'];
+    checkboxes.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox) {
+            checkbox.checked = false;
+            const procedureKey = id.replace('surgery-', '').replace('procedure-', '');
+            prototype.updateProcedure(procedureKey, false);
+        }
+    });
+    // Also clear "other" text
+    const otherText = document.getElementById('procedure-other-text');
+    if (otherText) {
+        otherText.value = '';
+        prototype.updateOtherText('');
+    }
+    // Hide "other" text input
+    const otherInput = document.getElementById('procedure-other-input');
+    if (otherInput) {
+        otherInput.style.display = 'none';
+    }
+}
+
+// Handle checkbox changes
+function handleCheckboxChange(event) {
+    const checkbox = event.target;
+    const procedureKey = checkbox.id.replace('surgery-', '').replace('procedure-', '');
+    prototype.updateProcedure(procedureKey, checkbox.checked);
+
+    // Handle "other" checkbox specially
+    if (checkbox.id === 'procedure-other') {
+        handleOtherCheckbox(checkbox.checked);
+    }
+}
+
+// Handle "other" checkbox - show/hide text input
+function handleOtherCheckbox(isChecked) {
+    const otherInput = document.getElementById('procedure-other-input');
+    const otherText = document.getElementById('procedure-other-text');
+
+    if (isChecked) {
+        if (otherInput) {
+            otherInput.style.display = 'block';
+        }
+        if (otherText) {
+            otherText.focus();
+        }
+    } else {
+        if (otherInput) {
+            otherInput.style.display = 'none';
+        }
+        if (otherText) {
+            otherText.value = '';
+            prototype.updateOtherText('');
+        }
+    }
+}
+
+// Handle "other" text input changes
+function handleOtherTextChange(event) {
+    prototype.updateOtherText(event.target.value);
+}
+
+// Toggle preparation info based on selections (for procedures.html compatibility)
 function togglePreparationInfo() {
     const majorEl = document.getElementById('surgery-major');
     const outpatientEl = document.getElementById('surgery-outpatient');
@@ -64,27 +174,27 @@ function togglePreparationInfo() {
     const preventiveEl = document.getElementById('procedure-preventive');
     const noneEl = document.getElementById('none-planned');
     const preparationInfo = document.getElementById('preparation-info');
-    
+
     // Save states
     if (majorEl) prototype.updateProcedure('major', majorEl.checked);
     if (outpatientEl) prototype.updateProcedure('outpatient', outpatientEl.checked);
     if (diagnosticEl) prototype.updateProcedure('diagnostic', diagnosticEl.checked);
     if (preventiveEl) prototype.updateProcedure('preventive', preventiveEl.checked);
     if (noneEl) prototype.updateProcedure('none', noneEl.checked);
-    
+
     // Check if any procedure is selected (excluding "none planned")
-    const anySelected = (majorEl && majorEl.checked) || 
-                       (outpatientEl && outpatientEl.checked) || 
-                       (diagnosticEl && diagnosticEl.checked) || 
+    const anySelected = (majorEl && majorEl.checked) ||
+                       (outpatientEl && outpatientEl.checked) ||
+                       (diagnosticEl && diagnosticEl.checked) ||
                        (preventiveEl && preventiveEl.checked);
-    
+
     // Show/hide preparation info based on selections
     if (anySelected && noneEl && !noneEl.checked) {
-        preparationInfo.style.display = 'block';
+        if (preparationInfo) preparationInfo.style.display = 'block';
     } else {
-        preparationInfo.style.display = 'none';
+        if (preparationInfo) preparationInfo.style.display = 'none';
     }
-    
+
     // If "none planned" is checked, uncheck all others
     if (noneEl && noneEl.checked) {
         if (majorEl) {
@@ -109,20 +219,80 @@ function togglePreparationInfo() {
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {
     const procedures = prototype.getProcedures();
-    
+    const radioSelection = prototype.getRadioSelection();
+    const otherText = prototype.getOtherText();
+
+    // Get elements
+    const yesRadio = document.getElementById('procedures-yes');
+    const noRadio = document.getElementById('procedures-no');
+    const upcomingProceduresSection = document.querySelector('.upcoming-procedures');
     const majorEl = document.getElementById('surgery-major');
     const outpatientEl = document.getElementById('surgery-outpatient');
     const diagnosticEl = document.getElementById('procedure-diagnostic');
     const preventiveEl = document.getElementById('procedure-preventive');
+    const otherEl = document.getElementById('procedure-other');
     const noneEl = document.getElementById('none-planned');
-    
+    const otherTextInput = document.getElementById('procedure-other-text');
+    const otherInputDiv = document.getElementById('procedure-other-input');
+
+    // Restore radio button state
+    if (radioSelection === true && yesRadio) {
+        yesRadio.checked = true;
+        if (upcomingProceduresSection) {
+            upcomingProceduresSection.style.display = 'block';
+        }
+    } else if (radioSelection === false && noRadio) {
+        noRadio.checked = true;
+        if (upcomingProceduresSection) {
+            upcomingProceduresSection.style.display = 'none';
+        }
+    } else {
+        // No selection made yet - hide the procedures section
+        if (upcomingProceduresSection) {
+            upcomingProceduresSection.style.display = 'none';
+        }
+    }
+
+    // Restore checkbox states
     if (majorEl) majorEl.checked = procedures.major;
     if (outpatientEl) outpatientEl.checked = procedures.outpatient;
     if (diagnosticEl) diagnosticEl.checked = procedures.diagnostic;
     if (preventiveEl) preventiveEl.checked = procedures.preventive;
+    if (otherEl) otherEl.checked = procedures.other;
     if (noneEl) noneEl.checked = procedures.none;
-    
-    // Show preparation info if needed
-    togglePreparationInfo();
+
+    // Restore "other" text and visibility
+    if (otherTextInput && otherText) {
+        otherTextInput.value = otherText;
+    }
+    if (otherInputDiv && procedures.other) {
+        otherInputDiv.style.display = 'block';
+    }
+
+    // Add event listeners to radio buttons
+    if (yesRadio) {
+        yesRadio.addEventListener('change', handleRadioChange);
+    }
+    if (noRadio) {
+        noRadio.addEventListener('change', handleRadioChange);
+    }
+
+    // Add event listeners to checkboxes
+    const checkboxes = [majorEl, outpatientEl, diagnosticEl, preventiveEl, otherEl];
+    checkboxes.forEach(checkbox => {
+        if (checkbox) {
+            checkbox.addEventListener('change', handleCheckboxChange);
+        }
+    });
+
+    // Add event listener to "other" text input
+    if (otherTextInput) {
+        otherTextInput.addEventListener('input', handleOtherTextChange);
+    }
+
+    // Show preparation info if needed (for procedures.html compatibility)
+    if (typeof togglePreparationInfo === 'function') {
+        togglePreparationInfo();
+    }
 });
 

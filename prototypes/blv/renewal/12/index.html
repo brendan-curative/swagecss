@@ -19,7 +19,7 @@ page-js: procedures
     <div class="mb-32">
             
 
-            <div class="screenings constrain constrain-80 constrain-100_m px-24 pb-24">
+            <div id="procedures-planned" class="screenings constrain constrain-80 constrain-100_m px-24 pb-24">
                 <div class="card transparent p-24">
                     <p class="mb-16">Are you planning to have any procedure or surgeries in the next 12 months?</p>
                     <div class="radio-group flex flex-items-center flex-justify-center gap-32  gap-16_m">
@@ -44,11 +44,11 @@ page-js: procedures
     <div class="constrain constrain-60 mb-24">
 
         <div class="flex-column">
-            <ul class="unordered-list">
+            <ul id="upcoming-procedures" class="unordered-list">
                 <li class="unordered-list__item">
                     <div class="unordered-list__content">
                         <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-major" onchange="togglePreparationInfo()">
+                            <input type="checkbox" class="checkbox__input" id="surgery-major">
                             <span class="checkbox__label">Major surgery (requiring hospitalization)</span>
                         </label>
                     </div>
@@ -56,7 +56,7 @@ page-js: procedures
                 <li class="unordered-list__item">
                     <div class="unordered-list__content">
                         <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="surgery-outpatient" onchange="togglePreparationInfo()">
+                            <input type="checkbox" class="checkbox__input" id="surgery-outpatient">
                             <span class="checkbox__label">Outpatient procedure</span>
                         </label>
                     </div>
@@ -64,7 +64,7 @@ page-js: procedures
                 <li class="unordered-list__item">
                     <div class="unordered-list__content">
                         <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="procedure-diagnostic" onchange="togglePreparationInfo()">
+                        <input type="checkbox" class="checkbox__input" id="procedure-diagnostic">
                         <span class="checkbox__label">Diagnostic procedure (colonoscopy, endoscopy, etc.)</span>
                     </label>
                     </div>
@@ -72,7 +72,7 @@ page-js: procedures
                 <li class="unordered-list__item">
                     <div class="unordered-list__content">
                         <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input" id="procedure-preventive" onchange="togglePreparationInfo()">
+                            <input type="checkbox" class="checkbox__input" id="procedure-preventive">
                             <span class="checkbox__label">Preventive screening</span>
                         </label>
                     </div>
@@ -80,9 +80,18 @@ page-js: procedures
                 <li class="unordered-list__item">
                     <div class="unordered-list__content">
                         <label class="checkbox">
-                        <input type="checkbox" class="checkbox__input" id="none-planned" onchange="togglePreparationInfo()">
-                            <span class="checkbox__label">None currently planned</span>
+                        <input type="checkbox" class="checkbox__input" id="procedure-other">
+                            <span class="checkbox__label">Other</span>
                         </label>
+                        <div id="procedure-other-input" style="display: none; margin-top: 12px;">
+                            <input
+                                type="text"
+                                id="procedure-other-text"
+                                class="text-input"
+                                placeholder="Please specify what procedure you're planning"
+                                style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px;"
+                            />
+                        </div>
                     </div>
                 </li>
         </ul>
