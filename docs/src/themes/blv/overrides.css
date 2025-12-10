@@ -115,3 +115,13 @@ nav a.back:hover, nav a.back:focus {transform: translateY(-4px);}
               display : none;
           }
     }
+
+    .checkbox__input[type="checkbox"] {
+        flex-basis: 24px;
+        min-width: 24px;
+        max-width: 24px;
+    }
+
+    .pretty {
+        text-wrap: pretty;
+    }
