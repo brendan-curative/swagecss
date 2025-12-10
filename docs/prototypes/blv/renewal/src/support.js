@@ -33,7 +33,8 @@ class BaselineVisitPrototype {
                     pregnancy: false,
                     cancerScreening: false
                 },
-                other: false
+                other: false,
+                otherText: ''
             }
         };
     }
@@ -63,6 +64,18 @@ class BaselineVisitPrototype {
         }
 
         this.saveData();
+    }
+
+    updateOtherText(text) {
+        if (!this.data.support) {
+            this.data.support = this.getDefaultData().support;
+        }
+        this.data.support.otherText = text;
+        this.saveData();
+    }
+
+    getOtherText() {
+        return this.data.support?.otherText || '';
     }
 }
 
@@ -102,10 +115,42 @@ function handleCheckboxChange(event) {
     if (mapping) {
         if (mapping.category === 'other') {
             prototype.updateSupport('other', null, checkbox.checked);
+            handleOtherCheckbox(checkbox.checked);
         } else {
             prototype.updateSupport(mapping.category, mapping.field, checkbox.checked);
         }
     }
+}
+
+// Handle "other" checkbox - show/hide text input with fade animation
+function handleOtherCheckbox(isChecked) {
+    const otherInput = document.getElementById('other-input');
+    const otherText = document.getElementById('other-text');
+
+    if (isChecked) {
+        if (otherInput) {
+            otherInput.classList.remove('fade-out');
+            otherInput.classList.add('fade-in');
+        }
+        // Focus after animation starts
+        if (otherText) {
+            setTimeout(() => otherText.focus(), 100);
+        }
+    } else {
+        if (otherInput) {
+            otherInput.classList.remove('fade-in');
+            otherInput.classList.add('fade-out');
+        }
+        if (otherText) {
+            otherText.value = '';
+            prototype.updateOtherText('');
+        }
+    }
+}
+
+// Handle "other" text input changes
+function handleOtherTextChange(event) {
+    prototype.updateOtherText(event.target.value);
 }
 
 // Initialize page on load
@@ -145,4 +190,28 @@ document.addEventListener('DOMContentLoaded', function() {
             checkbox.addEventListener('change', handleCheckboxChange);
         }
     });
+
+    // Restore "other" text and visibility
+    const otherText = prototype.getOtherText();
+    const otherTextInput = document.getElementById('other-text');
+    const otherInputDiv = document.getElementById('other-input');
+
+    if (otherTextInput && otherText) {
+        otherTextInput.value = otherText;
+    }
+
+    if (otherInputDiv) {
+        if (support.other) {
+            otherInputDiv.classList.add('fade-in');
+            otherInputDiv.classList.remove('fade-out');
+        } else {
+            otherInputDiv.classList.add('fade-out');
+            otherInputDiv.classList.remove('fade-in');
+        }
+    }
+
+    // Add event listener to "other" text input
+    if (otherTextInput) {
+        otherTextInput.addEventListener('input', handleOtherTextChange);
+    }
 });
