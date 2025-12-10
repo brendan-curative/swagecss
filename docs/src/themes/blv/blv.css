@@ -1160,9 +1160,27 @@ flippycard.spin .flippy-card img {
     max-height: 0;
 }
 
+/* "Other" text input fade animation */
+#procedure-other-input {
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+#procedure-other-input.fade-in {
+    opacity: 1;
+    max-height: 200px; /* Enough for textarea */
+}
+
+#procedure-other-input.fade-out {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0 !important;
+}
+
 /* Support for reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    .upcoming-procedures {
+    .upcoming-procedures,
+    #procedure-other-input {
         transition: none;
     }
 }

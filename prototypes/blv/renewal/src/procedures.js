@@ -121,10 +121,11 @@ function clearAllProcedures() {
         otherText.value = '';
         prototype.updateOtherText('');
     }
-    // Hide "other" text input
+    // Hide "other" text input with fade
     const otherInput = document.getElementById('procedure-other-input');
     if (otherInput) {
-        otherInput.style.display = 'none';
+        otherInput.classList.remove('fade-in');
+        otherInput.classList.add('fade-out');
     }
 }
 
@@ -140,21 +141,24 @@ function handleCheckboxChange(event) {
     }
 }
 
-// Handle "other" checkbox - show/hide text input
+// Handle "other" checkbox - show/hide text input with fade animation
 function handleOtherCheckbox(isChecked) {
     const otherInput = document.getElementById('procedure-other-input');
     const otherText = document.getElementById('procedure-other-text');
 
     if (isChecked) {
         if (otherInput) {
-            otherInput.style.display = 'block';
+            otherInput.classList.remove('fade-out');
+            otherInput.classList.add('fade-in');
         }
+        // Focus after animation starts
         if (otherText) {
-            otherText.focus();
+            setTimeout(() => otherText.focus(), 100);
         }
     } else {
         if (otherInput) {
-            otherInput.style.display = 'none';
+            otherInput.classList.remove('fade-in');
+            otherInput.classList.add('fade-out');
         }
         if (otherText) {
             otherText.value = '';
@@ -270,8 +274,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (otherTextInput && otherText) {
         otherTextInput.value = otherText;
     }
-    if (otherInputDiv && procedures.other) {
-        otherInputDiv.style.display = 'block';
+    if (otherInputDiv) {
+        if (procedures.other) {
+            otherInputDiv.classList.add('fade-in');
+            otherInputDiv.classList.remove('fade-out');
+        } else {
+            otherInputDiv.classList.add('fade-out');
+            otherInputDiv.classList.remove('fade-in');
+        }
     }
 
     // Add event listeners to radio buttons
