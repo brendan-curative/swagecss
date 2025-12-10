@@ -80,7 +80,46 @@
         <div class="card transparent py-24 px-80">
             <!-- Medications List -->
         <div id="medications-list" class="mb-24">
-            <!-- Medications will be populated here dynamically -->
+            <!-- Default medications will be populated on page load -->
+            <div class="tile">
+                <span class="tile__icon heroicon heroicon-pill-single"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Lisinopril 10mg</p>
+                    <p class="tile__subtitle">Once daily<br>Copay: $0 | Limits: None</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Edit Medication" onclick="editMedication(0)">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-magnifying-glass"></span>
+                </button>
+                <button class="tile__dismiss text-critical" aria-label="Delete Medication" onclick="deleteMedication(0, event)">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-trash"></span>
+                </button>
+            </div>
+            <div class="tile">
+                <span class="tile__icon heroicon heroicon-pill-single"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Metformin 500mg</p>
+                    <p class="tile__subtitle">Twice daily with meals<br>Copay: $30 | Limits: Quantity limit = 60/30 days</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Edit Medication" onclick="editMedication(1)">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-magnifying-glass"></span>
+                </button>
+                <button class="tile__dismiss text-critical" aria-label="Delete Medication" onclick="deleteMedication(1, event)">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-trash"></span>
+                </button>
+            </div>
+            <div class="tile">
+                <span class="tile__icon heroicon heroicon-pill-single"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Atorvastatin 20mg</p>
+                    <p class="tile__subtitle">Once daily at bedtime<br>Copay: Not covered | Limits: Prior authorization required<br>Prior Authorization: Granted through Jan 1, 2026</p>
+                </div>
+                <button class="tile__dismiss" aria-label="Edit Medication" onclick="editMedication(2)">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-magnifying-glass"></span>
+                </button>
+                <button class="tile__dismiss text-critical" aria-label="Delete Medication" onclick="deleteMedication(2, event)">
+                    <span class="tile__dismiss-icon heroicon heroicon-outline-trash"></span>
+                </button>
+            </div>
         </div>
         
 
