@@ -1185,3 +1185,8 @@ flippycard.spin .flippy-card img {
     }
 }
 /* #endregion */
+
+html[data-theme="blv"] .highlights .card.p-8 {
+    padding: 8px;
+}
+
