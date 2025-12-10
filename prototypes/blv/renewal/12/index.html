@@ -13,13 +13,13 @@ button-text: Continue
 page-js: procedures
 ---
 
-<section class="mb-32">
+<section class="mb-16">
     <h1>Procedures and Surgeries</h1>
 
-    <div class="mb-32">
+    
             
 
-            <div id="procedures-planned" class="screenings constrain constrain-80 constrain-100_m px-24 pb-24">
+            <div id="procedures-planned" class="screenings constrain constrain-80 constrain-100_m px-24 pb-16">
                 <div class="card transparent p-24">
                     <p class="mb-16">Are you planning to have any procedure or surgeries in the next 12 months?</p>
                     <div class="radio-group flex flex-items-center flex-justify-center gap-32  gap-16_m">
@@ -36,12 +36,14 @@ page-js: procedures
             </div>
 
             
-        </div>
+       
 </section>
 
 <section class="upcoming-procedures fade-out">
     <!-- Upcoming Procedures Question -->
-    <div class="constrain constrain-60 mb-24">
+    <div class="constrain constrain-80 constrain-100_m mb-24 px-48">
+
+        <p>A Curative Clinician will review anything you select during Part 2 and help you get ready for the year ahead.</p>
 
         <div class="flex-column">
             <ul id="upcoming-procedures" class="unordered-list">
@@ -78,18 +80,18 @@ page-js: procedures
                     </div>
                 </li>
                 <li class="unordered-list__item">
-                    <div class="unordered-list__content">
+                    <div class="unordered-list__content flex-items-start">
                         <label class="checkbox">
                         <input type="checkbox" class="checkbox__input" id="procedure-other">
                             <span class="checkbox__label">Other</span>
                         </label>
-                        <div id="procedure-other-input" class="fade-out" style="margin-top: 12px;">
+                        <div id="procedure-other-input" class="fade-out flex flex-item">
                             <textarea
                                 id="procedure-other-text"
-                                class="text-input"
-                                placeholder="Please specify what procedure you're planning"
+                                class="textfield__textarea"
+                                placeholder="Please list any other procedures you're planning"
                                 rows="3"
-                                style="width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"
+                                style="resize: vertical;"
                             ></textarea>
                         </div>
                     </div>
@@ -100,5 +102,5 @@ page-js: procedures
 
 
 
-    <p>A Curative Clinician will review anything you select during Part 2 and help you get ready for the year ahead.</p>
+    
 </section>
