@@ -1161,20 +1161,17 @@ flippycard.spin .flippy-card img {
 }
 
 /* "Other" text input fade animation */
-#procedure-other-input,
-#other-input {
+#procedure-other-input {
     transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out, margin-top 0.3s ease-in-out;
     overflow: hidden;
 }
 
-#procedure-other-input.fade-in,
-#other-input.fade-in {
+#procedure-other-input.fade-in {
     opacity: 1;
     max-height: 200px; /* Enough for textarea */
 }
 
-#procedure-other-input.fade-out,
-#other-input.fade-out {
+#procedure-other-input.fade-out {
     opacity: 0;
     max-height: 0;
     margin-top: 0 !important;
@@ -1183,8 +1180,7 @@ flippycard.spin .flippy-card img {
 /* Support for reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
     .upcoming-procedures,
-    #procedure-other-input,
-    #other-input {
+    #procedure-other-input {
         transition: none;
     }
 }
@@ -1194,4 +1190,3 @@ html[data-theme="blv"] .highlights .card.p-8 {
     padding: 8px;
 }
 
-.fullwidth {width: 100%}
