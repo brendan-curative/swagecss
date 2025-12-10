@@ -44,7 +44,7 @@ let familyMembers = {
     },
     child: {
         name: "Emma Martinez",
-        id: "123456790", 
+        id: "123456790",
         type: "Dependent Child",
         pcpProviders: [
             { name: "Dr. Jennifer Park, MD", specialty: "Pediatrician", status: "in-network" }
@@ -52,6 +52,19 @@ let familyMembers = {
         otherProviders: []
     }
 };
+
+// Load providers from localStorage on initialization
+function loadProvidersFromStorage() {
+    if (prototype.userData.providers) {
+        familyMembers = prototype.userData.providers;
+    }
+}
+
+// Save providers to localStorage
+function saveProvidersToStorage() {
+    prototype.userData.providers = familyMembers;
+    prototype.saveUserData();
+}
 
 let currentFamilyMember = 'primary';
 let currentEditIndex = -1;
@@ -297,6 +310,7 @@ function saveProvider() {
 function updateAllProviderDisplays() {
     updatePCPDisplay();
     updateOtherProvidersDisplay();
+    saveProvidersToStorage();
 }
 
 // Update PCP display
@@ -417,7 +431,10 @@ function getStatusBadgeHTML(status) {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Care team page JavaScript loaded - v2.0 - Using new form-modal component');
-    
+
+    // Load providers from localStorage
+    loadProvidersFromStorage();
+
     // Initialize provider displays
     updateAllProviderDisplays();
     

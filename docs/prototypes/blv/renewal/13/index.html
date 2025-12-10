@@ -74,58 +74,168 @@
     <div class="text-center mb-32">
         <div class="text-6xl mb-16">🎉</div>
         <h1 class="heading-2xl mb-8">Congratulations!</h1>
-        <p class="body-lg text-gray-600">You've completed the Digital Baseline Visit (Part 1)</p>
+        <p class="body-lg text-gray-600">You've completed part 1 of your baseline visit!</p>
     </div>
+
+    <h2></h2>
 
     <!-- Next Steps -->
     <div class="card p-24 mb-24">
         <h4 class="heading-lg mb-16">Next Steps:</h4>
         <ol class="mb-0" style="list-style: decimal; padding-left: 1.5rem;">
-            <li class="mb-12"><strong>Schedule your clinical visit</strong> - Choose a convenient time for your in-person or virtual appointment</li>
-            <li class="mb-12"><strong>Prepare for your visit</strong> - Bring any relevant medical records or questions</li>
-            <li class="mb-0"><strong>Meet with your clinician</strong> - Complete your health assessment and get personalized recommendations</li>
+            <li class="mb-12"><strong>Schedule your clinical visit</strong></li>
+            <li class="mb-0"><strong>Last bullet “Complete your clinical visit and get 0$ care for the upcoming year. </strong></li>
         </ol>
     </div>
 
-    <!-- Care Navigator Info -->
-    <div class="card p-24 mb-24">
-        <h4 class="heading-lg mb-16">Your Care Navigator Will:</h4>
-        <ul class="mb-0" style="list-style: disc; padding-left: 1.5rem;">
-            <li class="mb-8">Review your responses from today</li>
-            <li class="mb-8">Answer your questions about Curative benefits</li>
-            <li class="mb-8">Help coordinate your care</li>
-            <li class="mb-0">Follow up within 2-3 business days</li>
-        </ul>
-    </div>
 
+</section>
+
+<section id="summary">
+    <h2 class="heading-xl mb-24">Your Baseline Visit Summary</h2>
+
+    <!-- Providers Section -->
     <div class="card p-24 mb-24">
-        <h4 class="heading-lg mb-16">Resources for the year ahead</h4>
-        <p>Some resources inspired by your Curative Refresh:</p>
-        <div data-resource-action="display" data-resource-format="list" data-group-by-topic="true" data-hide-if-empty="true">
-            <!-- Resources will be populated automatically by the Resources component -->
-            <!-- Each topic will be displayed with an <h3> heading followed by a <ul> list -->
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Your Providers</h3>
+            <a href="../05/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
         </div>
-
-        
+        <div id="providers-summary">
+            <!-- Providers will be rendered here by summary.js -->
+        </div>
     </div>
 
-    <!-- Appointment Type Selection -->
-    <div class="card p-24 mb-32">
-        <h3>Remember!</h3>
-        <p>Your Annual Baseline has two parts. Completing both within 120 days of your plan start or renewal date keeps your $0 out-of-pocket costs going strong for the year ahead.</p>
+    <!-- Facilities Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Where to Go for Care</h3>
+            <a href="../06/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="facilities-summary">
+            <!-- Facilities will be rendered here by summary.js -->
+        </div>
     </div>
 
-    <!-- Prototype Controls -->
-    <div class="card p-24 bg-gray-50 border-t-4 border-t-gray-400">
-        <h4 class="heading-lg mb-8">Prototype Complete!</h4>
-        <p class="text-sm text-gray-600 mb-16">This concludes the baseline visit flow prototype.</p>
-        <div class="flex-row gap-8 flex-wrap">
-            <button onclick="viewSavedData()" class="button button--small-outline">View Saved Data</button>
-            <button onclick="resetPrototype()" class="button button--small-outline">Reset Prototype</button>
-            <button onclick="window.location.href='/swagecss/prototypes/blv/renewal/'" class="button button--small-outline">Start Over</button>
+    <!-- Pharmacy Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Your Pharmacy</h3>
+            <a href="../07/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="pharmacy-summary">
+            <!-- Pharmacy will be rendered here by summary.js -->
+        </div>
+    </div>
+
+    <!-- Medications Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Your Medications</h3>
+            <a href="../07/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="medications-summary">
+            <!-- Medications will be rendered here by summary.js -->
+        </div>
+    </div>
+
+    <!-- Screenings Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Health Screenings</h3>
+            <a href="../08/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="screenings-summary">
+            <!-- Screenings will be rendered here by summary.js -->
+        </div>
+    </div>
+
+    <!-- Health Services Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Recent Health Services</h3>
+            <a href="../10/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="health-services-summary">
+            <!-- Health services will be rendered here by summary.js -->
+        </div>
+    </div>
+
+    <!-- Procedures Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Planned Procedures</h3>
+            <a href="../12/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="procedures-summary">
+            <!-- Procedures will be rendered here by summary.js -->
+        </div>
+    </div>
+
+    <!-- Support Needs Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Support & Care Management</h3>
+            <a href="../05/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="support-summary">
+            <!-- Support needs will be rendered here by summary.js -->
+        </div>
+    </div>
+
+    <!-- Barriers Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Barriers to Care</h3>
+            <a href="../05/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="barriers-summary">
+            <!-- Barriers will be rendered here by summary.js -->
+        </div>
+    </div>
+
+    <!-- Appointment Type Section -->
+    <div class="card p-24 mb-24">
+        <div class="flex-row flex-justify-between flex-align-center mb-16">
+            <h3 class="heading-lg mb-0">Appointment Preference</h3>
+            <a href="../13/" class="button button--small-outline">
+                <span class="heroicon heroicon-16 heroicon-pencil"></span>
+                Edit
+            </a>
+        </div>
+        <div id="appointment-summary">
+            <!-- Appointment type will be rendered here by summary.js -->
         </div>
     </div>
 </section>
+
+<script src="../src/summary.js"></script>
 </article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
