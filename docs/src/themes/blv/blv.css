@@ -911,7 +911,9 @@ button.checkmark-button[data-topic][data-checked="true"] {
   }
   50% {
     transform: scale(1.2) translate(-4px, -4px); 
-
+  }
+   75% {
+ 
     background-color: var(--color-primary-signal-orange);
   }
   100% {
