@@ -464,21 +464,42 @@ function displaySupportNeeds() {
         return;
     }
 
-    let html = '<ul class="list-disc pl-24">';
+    let html = '';
     let hasData = false;
 
     // Metabolic conditions
     if (support.metabolic) {
         if (support.metabolic.bloodPressure) {
-            html += '<li class="mb-8">Blood Pressure Management</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Blood Pressure Management</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
         if (support.metabolic.diabetes) {
-            html += '<li class="mb-8">Diabetes Management</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Diabetes Management</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
         if (support.metabolic.heartDisease) {
-            html += '<li class="mb-8">Heart Disease Management</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Heart Disease Management</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
     }
@@ -486,11 +507,25 @@ function displaySupportNeeds() {
     // Respiratory conditions
     if (support.respiratory) {
         if (support.respiratory.asthma) {
-            html += '<li class="mb-8">Asthma Management</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Asthma Management</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
         if (support.respiratory.copd) {
-            html += '<li class="mb-8">COPD Management</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">COPD Management</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
     }
@@ -498,15 +533,36 @@ function displaySupportNeeds() {
     // Behavioral health
     if (support.behavioral) {
         if (support.behavioral.weightManagement) {
-            html += '<li class="mb-8">Weight Management</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Weight Management</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
         if (support.behavioral.substanceUse) {
-            html += '<li class="mb-8">Substance Use Support</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Substance Use Support</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
         if (support.behavioral.mentalHealth) {
-            html += '<li class="mb-8">Mental Health Support</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Mental Health Support</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
     }
@@ -514,22 +570,41 @@ function displaySupportNeeds() {
     // Specialized care
     if (support.specialized) {
         if (support.specialized.pregnancy) {
-            html += '<li class="mb-8">Pregnancy Support</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Pregnancy Support</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
         if (support.specialized.cancerScreening) {
-            html += '<li class="mb-8">Cancer Screening</li>';
+            html += `
+                <div class="tile mb-16">
+                    <span class="tile__icon heroicon heroicon-check-circle"></span>
+                    <div class="tile__content">
+                        <p class="tile__title">Cancer Screening</p>
+                    </div>
+                </div>
+            `;
             hasData = true;
         }
     }
 
     // Other
     if (support.other && support.otherText) {
-        html += `<li class="mb-8">Other: ${support.otherText}</li>`;
+        html += `
+            <div class="tile mb-16">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Other: ${support.otherText}</p>
+                </div>
+            </div>
+        `;
         hasData = true;
     }
-
-    html += '</ul>';
 
     if (!hasData) {
         container.innerHTML = `<p class="body-md text-gray-600">No support needs saved yet.</p>`;
