@@ -557,6 +557,5 @@ document.addEventListener('DOMContentLoaded', function() {
     displayHealthServices();
     displayProcedures();
     displaySupportNeeds();
-    displayBarriers();
     displayAppointmentType();
 });
