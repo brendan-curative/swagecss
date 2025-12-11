@@ -285,8 +285,14 @@ html[data-theme="blv"] .carousel__indicator--active {
         color: var(--color-gray-600);
     }
 
-/* #region Mobile Styles */
+/* #region Responsive Styles */
+
+/* Tablet and below (768px and below) */
 @media (max-width: 768px) {
+    .carousel {
+        margin: 0 auto;
+    }
+
     html[data-theme="blv"] .carousel__slide {
         padding: var(--spacing-24);
         border-radius: var(--spacing-12);
@@ -295,10 +301,16 @@ html[data-theme="blv"] .carousel__indicator--active {
     .carousel__controls {
         margin-top: var(--spacing-12);
         gap: var(--spacing-12);
+        flex-wrap: wrap;
     }
 
     .carousel__button {
         padding: var(--spacing-4) var(--spacing-12);
+        font-size: var(--font-size-sm);
+        min-width: var(--spacing-80);
+    }
+
+    .carousel__button-text {
         font-size: var(--font-size-sm);
     }
 
@@ -309,10 +321,24 @@ html[data-theme="blv"] .carousel__indicator--active {
 
     .carousel--side-nav .carousel__controls {
         padding: 0 var(--spacing-8);
+        top: calc(50% - 32px);
+    }
+
+    .carousel__nav {
+        gap: var(--spacing-6);
     }
 
     .carousel__counter {
         font-size: var(--font-size-xs);
+        width: 100%;
+        text-align: center;
+        order: 3;
+    }
+
+    .carousel__indicators {
+        gap: var(--spacing-6);
+        justify-content: center;
+        flex: 1;
     }
 
     .carousel__indicator {
@@ -322,9 +348,22 @@ html[data-theme="blv"] .carousel__indicator--active {
 
     .carousel__indicator--active {
         width: var(--spacing-20);
+        border-radius: var(--spacing-3);
+    }
+
+    /* Stack controls vertically on tablet if needed */
+    .carousel__controls--stacked {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel__controls--stacked .carousel__nav {
+        width: 100%;
+        justify-content: center;
     }
 }
 
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
     html[data-theme="blv"] .carousel__slide {
         padding: var(--spacing-16);
@@ -339,6 +378,11 @@ html[data-theme="blv"] .carousel__indicator--active {
     .carousel__button {
         padding: var(--spacing-4) var(--spacing-8);
         font-size: var(--font-size-xs);
+        min-width: var(--spacing-64);
+    }
+
+    .carousel__button-text {
+        font-size: var(--font-size-xs);
     }
 
     .carousel--side-nav .carousel__button {
@@ -348,16 +392,193 @@ html[data-theme="blv"] .carousel__indicator--active {
 
     .carousel--side-nav .carousel__controls {
         padding: 0 var(--spacing-4);
+        top: calc(50% - 24px);
+    }
+
+    .carousel__nav {
+        gap: var(--spacing-4);
+    }
+
+    .carousel__counter {
+        font-size: var(--font-size-xs);
+        margin-top: var(--spacing-4);
+    }
+
+    .carousel__indicators {
+        gap: var(--spacing-4);
+    }
+
+    .carousel__indicator {
+        width: var(--spacing-6);
+        height: var(--spacing-6);
+    }
+
+    .carousel__indicator--active {
+        width: var(--spacing-16);
+    }
+
+    /* Optimize animations for smaller screens */
+    @keyframes slideExit {
+        0% {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.98) translateX(-50px);
+        }
     }
 }
 
+/* Small mobile (360px and below) */
+@media (max-width: 360px) {
+    html[data-theme="blv"] .carousel__slide {
+        padding: var(--spacing-12);
+        border-radius: var(--spacing-6);
+    }
+
+    .carousel__controls {
+        margin-top: var(--spacing-6);
+        gap: var(--spacing-6);
+    }
+
+    .carousel__button {
+        padding: var(--spacing-3) var(--spacing-6);
+        font-size: var(--font-size-xs);
+        min-width: var(--spacing-56);
+        gap: var(--spacing-4);
+    }
+
+    .carousel--side-nav .carousel__button {
+        width: var(--spacing-28);
+        height: var(--spacing-28);
+    }
+
+    .carousel--side-nav .carousel__controls {
+        padding: 0 var(--spacing-2);
+    }
+
+    .carousel__counter {
+        font-size: var(--font-size-xs);
+    }
+
+    .carousel__indicator {
+        width: var(--spacing-4);
+        height: var(--spacing-4);
+    }
+
+    .carousel__indicator--active {
+        width: var(--spacing-12);
+    }
+}
+
+/* Large desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .carousel {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    html[data-theme="blv"] .carousel__slide {
+        padding: var(--spacing-64);
+    }
+
+    .carousel--side-nav .carousel__controls {
+        padding: 0 var(--spacing-24);
+    }
+
+    .carousel--side-nav .carousel__button {
+        width: var(--spacing-56);
+        height: var(--spacing-56);
+    }
+}
+
+/* Extra large desktop (1600px and above) */
+@media (min-width: 1600px) {
+    .carousel {
+        max-width: 1400px;
+    }
+
+    html[data-theme="blv"] .carousel__slide {
+        padding: var(--spacing-80);
+    }
+}
+
+/* Accessibility: Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     .carousel__track,
     .carousel__slide,
     .carousel__slide--exiting,
-    .carousel__slide--entering {
+    .carousel__slide--entering,
+    .carousel__button,
+    .carousel__indicator {
         transition: none !important;
         animation: none !important;
     }
+
+    .carousel__slide--exiting {
+        opacity: 0;
+    }
+
+    .carousel__slide--entering,
+    .carousel__slide--active {
+        opacity: 1;
+    }
 }
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .carousel__button {
+        min-height: var(--spacing-44);
+        min-width: var(--spacing-44);
+    }
+
+    .carousel__indicator {
+        min-width: var(--spacing-12);
+        min-height: var(--spacing-12);
+    }
+
+    .carousel__indicator--active {
+        min-width: var(--spacing-32);
+    }
+
+    .carousel--side-nav .carousel__button {
+        min-width: var(--spacing-48);
+        min-height: var(--spacing-48);
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .carousel--side-nav .carousel__button {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .carousel--side-nav .carousel__button:hover:not(:disabled) {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+    }
+}
+
+/* Print styles */
+@media print {
+    .carousel__controls,
+    .carousel__nav,
+    .carousel__indicators,
+    .carousel__counter {
+        display: none;
+    }
+
+    .carousel__track {
+        display: block;
+    }
+
+    .carousel__slide {
+        display: block;
+        min-width: 100%;
+        page-break-inside: avoid;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
 /* #endregion */
