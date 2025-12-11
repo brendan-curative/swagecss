@@ -672,5 +672,4 @@ document.addEventListener('DOMContentLoaded', function() {
     displayHealthServices();
     displayProcedures();
     displaySupportNeeds();
-    displayAppointmentType();
 });
