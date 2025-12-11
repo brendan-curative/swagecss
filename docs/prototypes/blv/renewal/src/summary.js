@@ -375,35 +375,75 @@ function displayProcedures() {
         return;
     }
 
-    let html = '<ul class="list-disc pl-24">';
+    let html = '';
     let hasData = false;
 
     if (procedures.major) {
-        html += '<li class="mb-8">Major surgery</li>';
+        html += `
+            <div class="tile mb-16">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Major surgery</p>
+                </div>
+            </div>
+        `;
         hasData = true;
     }
     if (procedures.outpatient) {
-        html += '<li class="mb-8">Outpatient procedure</li>';
+        html += `
+            <div class="tile mb-16">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Outpatient procedure</p>
+                </div>
+            </div>
+        `;
         hasData = true;
     }
     if (procedures.diagnostic) {
-        html += '<li class="mb-8">Diagnostic test</li>';
+        html += `
+            <div class="tile mb-16">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Diagnostic test</p>
+                </div>
+            </div>
+        `;
         hasData = true;
     }
     if (procedures.preventive) {
-        html += '<li class="mb-8">Preventive care</li>';
+        html += `
+            <div class="tile mb-16">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Preventive care</p>
+                </div>
+            </div>
+        `;
         hasData = true;
     }
     if (procedures.other && proceduresData.otherText) {
-        html += `<li class="mb-8">Other: ${proceduresData.otherText}</li>`;
+        html += `
+            <div class="tile mb-16">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__title">Other: ${proceduresData.otherText}</p>
+                </div>
+            </div>
+        `;
         hasData = true;
     }
     if (procedures.none) {
-        html += '<li class="mb-8">None planned</li>';
+        html += `
+            <div class="tile mb-16">
+                <span class="tile__icon heroicon heroicon-check-circle"></span>
+                <div class="tile__content">
+                    <p class="tile__title">None planned</p>
+                </div>
+            </div>
+        `;
         hasData = true;
     }
-
-    html += '</ul>';
 
     if (!hasData) {
         container.innerHTML = `<p class="body-md text-gray-600">No procedure details saved yet.</p>`;
