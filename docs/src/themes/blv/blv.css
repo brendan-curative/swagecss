@@ -1119,6 +1119,12 @@ flippycard.spin .flippy-card img {
     background-repeat: no-repeat;
 }
 
+.waves-stroke-white-6px, html[data-theme="blv"] .card.transparent.waves-stroke-white-6px {
+    background-image: url(img/waves-stroke-6px-white.svg), url(img/waves-stroke-white.svg), url(img/waves-stroke-white.svg);
+    background-position: -600px 30%, -1200px 60%, -2590px 20%;
+    background-repeat: no-repeat;
+}
+
 
 .waves-stroke-white.alt1, html[data-theme="blv"] .card.transparent.waves-stroke-white.alt1 {
     background-position: -3200px 10%, -890px 50%, -1543px 40%;
@@ -1126,6 +1132,52 @@ flippycard.spin .flippy-card img {
 
 .waves-stroke-white.alt2, html[data-theme="blv"] .card.transparent.waves-stroke-white.alt2 {
     background-position: -600px 50%, -1875px 25%, -759px 60%;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white:before {
+    background-image: url(img/waves-white.svg);
+    background-position: bottom -70px left -600px ;
+    background-repeat: no-repeat;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white.alt1:before {
+    background-position: bottom -65px left -1200px ;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white.alt2:before {
+    background-position: bottom -60px left -890px ;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white-2x:before {
+    background-image: url(img/waves-white.svg), url(img/waves-white.svg);
+    background-position: top -120px left -1200px, bottom -120px left -600px;
+    background-repeat: no-repeat;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white-2x.alt1:before {
+    background-position: top -100px left -1600px, bottom -100px left -80px;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white-2x.alt2:before {
+    background-position: top -110px left -890px, bottom -112px left -160px;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white-2x.alt3:before {
+    background-position: top -110px left -890px, bottom -140px left -160px;
+}
+
+@media (max-width: 768px) {
+    html[data-theme="blv"] .card.transparent.waves-white-2x:before {
+        background-position: top -150px left -1200px, bottom -150px left -600px;
+    }
+
+    html[data-theme="blv"] .card.transparent.waves-white-2x.alt1:before {
+    background-position: top -170px left -600px, bottom -130px left -1200px;
+}
+
+html[data-theme="blv"] .card.transparent.waves-white-2x.alt2:before {
+    background-position: top -160px left -890px, bottom -160px left -320px;
+}
 }
 
 /*

@@ -725,9 +725,92 @@
 </section>
 
 <section class="component-section">
+    <h2>Responsive Design</h2>
+    <p class="mb-24">The Carousel component is fully responsive with optimized layouts and interactions for all screen sizes.</p>
+
+    <div class="bg-neutral-off-white p-24 border mb-24">
+        <h3 class="heading-lg mb-16">Responsive Breakpoints</h3>
+        <p class="body-md mb-16">The carousel automatically adapts to different screen sizes:</p>
+
+        <h4 class="heading-md mb-12 mt-24">📱 Mobile (≤480px)</h4>
+        <ul class="ml-24">
+            <li class="body-md mb-8">Compact padding and spacing</li>
+            <li class="body-md mb-8">Smaller buttons with reduced font sizes</li>
+            <li class="body-md mb-8">Optimized animations with less translation</li>
+            <li class="body-md mb-8">Side nav buttons: 32px circular buttons</li>
+            <li class="body-md mb-8">Smaller indicator dots (6px)</li>
+        </ul>
+
+        <h4 class="heading-md mb-12 mt-24">📱 Small Mobile (≤360px)</h4>
+        <ul class="ml-24">
+            <li class="body-md mb-8">Minimal padding for very small screens</li>
+            <li class="body-md mb-8">Extra compact buttons (56px min-width)</li>
+            <li class="body-md mb-8">Side nav buttons: 28px circular buttons</li>
+            <li class="body-md mb-8">Smallest indicator dots (4px)</li>
+        </ul>
+
+        <h4 class="heading-md mb-12 mt-24">💻 Tablet (≤768px)</h4>
+        <ul class="ml-24">
+            <li class="body-md mb-8">Moderate padding adjustments</li>
+            <li class="body-md mb-8">Controls can wrap if needed</li>
+            <li class="body-md mb-8">Counter takes full width and centers</li>
+            <li class="body-md mb-8">Side nav buttons: 40px circular buttons</li>
+        </ul>
+
+        <h4 class="heading-md mb-12 mt-24">🖥️ Desktop (≥1200px)</h4>
+        <ul class="ml-24">
+            <li class="body-md mb-8">Max-width constraint (1200px) with auto-centering</li>
+            <li class="body-md mb-8">Generous padding (64px) for comfortable viewing</li>
+            <li class="body-md mb-8">Larger side nav buttons (56px)</li>
+        </ul>
+
+        <h4 class="heading-md mb-12 mt-24">🖥️ Extra Large Desktop (≥1600px)</h4>
+        <ul class="ml-24">
+            <li class="body-md mb-8">Max-width constraint (1400px)</li>
+            <li class="body-md mb-8">Maximum padding (80px) for spacious layout</li>
+        </ul>
+    </div>
+
+    <div class="bg-neutral-off-white p-24 border mb-24">
+        <h3 class="heading-lg mb-16">Touch Device Optimizations</h3>
+        <p class="body-md mb-12">Enhanced tap targets for touch devices:</p>
+        <ul class="ml-24">
+            <li class="body-md mb-8"><strong>Minimum Button Size:</strong> 44px × 44px for comfortable tapping</li>
+            <li class="body-md mb-8"><strong>Larger Indicators:</strong> 12px minimum size for touch accuracy</li>
+            <li class="body-md mb-8"><strong>Active Indicator:</strong> Expands to 32px width for better visibility</li>
+            <li class="body-md mb-8"><strong>Side Nav Buttons:</strong> Minimum 48px × 48px circular targets</li>
+        </ul>
+    </div>
+
+    <div class="bg-blue-50 border border-blue-200 p-24 mb-24">
+        <h3 class="heading-lg mb-16 text-blue-900">💡 Testing Responsive Behavior</h3>
+        <p class="body-md text-blue-800 mb-12">
+            <strong>Try it now:</strong> Resize your browser window to see the carousel adapt automatically to different screen sizes.
+            Notice how buttons, indicators, and spacing adjust for optimal usability at each breakpoint.
+        </p>
+        <ul class="ml-24">
+            <li class="body-sm text-blue-700 mb-4">At mobile widths, animations become more subtle</li>
+            <li class="body-sm text-blue-700 mb-4">Touch targets increase in size on touch devices</li>
+            <li class="body-sm text-blue-700 mb-4">Side navigation buttons scale appropriately</li>
+            <li class="body-sm text-blue-700">Layouts remain usable at all screen sizes</li>
+        </ul>
+    </div>
+
+    <div class="bg-neutral-off-white p-24 border">
+        <h3 class="heading-lg mb-16">Additional Responsive Features</h3>
+        <ul class="ml-24">
+            <li class="body-md mb-8"><strong>High DPI Support:</strong> Enhanced shadows for retina displays</li>
+            <li class="body-md mb-8"><strong>Reduced Motion:</strong> Respects user preference for reduced motion (disables all animations)</li>
+            <li class="body-md mb-8"><strong>Print Styles:</strong> Shows all slides when printing, hides navigation controls</li>
+            <li class="body-md mb-8"><strong>Flexible Controls:</strong> Optional stacked layout for narrow viewports</li>
+        </ul>
+    </div>
+</section>
+
+<section class="component-section">
     <h2>Accessibility Features</h2>
     <p class="mb-24">The Carousel component includes comprehensive accessibility support.</p>
-    
+
     <div class="bg-neutral-off-white p-24 border mb-24">
         <h3 class="heading-lg mb-16">Navigation Behavior</h3>
         <ul class="ml-24">
@@ -738,7 +821,7 @@
             <li class="body-md mb-8 text-primary"><strong>Auto Scroll:</strong> Automatically scrolls to the top of the carousel when navigating to a new slide (with 124px offset for headers)</li>
             <li class="body-md mb-8 text-primary"><strong>Staggered Animations:</strong> Exit animation (fade out + slide left, 300ms) completes before entry animation (fade in + scale up, 400ms) begins</li>
         </ul>
-        
+
         <h3 class="heading-lg mb-16 mt-24">Keyboard Navigation</h3>
         <ul class="ml-24">
             <li class="body-md mb-8"><strong>Left Arrow:</strong> Navigate to previous slide</li>
