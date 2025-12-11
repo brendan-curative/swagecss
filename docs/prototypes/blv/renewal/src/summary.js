@@ -312,7 +312,7 @@ function displayScreenings() {
 
     let html = '';
     screenings.forEach(screening => {
-        // Display the selected option text instead of badges
+        // Display the selected option text in an info badge
         const selectedText = screening.selectedOption || screening.lastCompleted || 'Not selected';
 
         html += `
@@ -320,8 +320,8 @@ function displayScreenings() {
                 <span class="tile__icon heroicon heroicon-clipboard-document-check"></span>
                 <div class="tile__content">
                     <p class="tile__title">${screening.name}</p>
-                    <p class="tile__subtitle">${selectedText}</p>
                 </div>
+                <span class="badge badge--info badge--small"><span class="badge__content">${selectedText}</span></span>
             </div>
         `;
     });
