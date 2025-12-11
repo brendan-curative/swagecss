@@ -23,7 +23,7 @@
     gap: var(--spacing-16);
     width: 100%;
     padding: var(--spacing-8) var(--spacing-16);
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 8px;

@@ -125,3 +125,7 @@ nav a.back:hover, nav a.back:focus {transform: translateY(-4px);}
     .pretty {
         text-wrap: pretty;
     }
+
+    .medications-summary .tile  {
+        padding: 24px 16px
+    }
