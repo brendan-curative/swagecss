@@ -312,18 +312,16 @@ function displayScreenings() {
 
     let html = '';
     screenings.forEach(screening => {
-        const statusBadge = screening.isDue
-            ? '<span class="badge badge--warning badge--small"><span class="badge__content">Due</span></span>'
-            : '<span class="badge badge--success badge--small"><span class="badge__content">Up to Date</span></span>';
+        // Display the selected option text instead of badges
+        const selectedText = screening.selectedOption || screening.lastCompleted || 'Not selected';
 
         html += `
             <div class="tile mb-16">
                 <span class="tile__icon heroicon heroicon-clipboard-document-check"></span>
                 <div class="tile__content">
                     <p class="tile__title">${screening.name}</p>
-                    <p class="tile__subtitle">Last completed: ${screening.lastCompleted || 'Never'}</p>
+                    <p class="tile__subtitle">${selectedText}</p>
                 </div>
-                ${statusBadge}
             </div>
         `;
     });
