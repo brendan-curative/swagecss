@@ -865,16 +865,16 @@ button.checkmark-button[data-topic][data-checked="true"] {
     justify-content: center;
     min-width: 100%;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.5);
+    
     border-radius: var(--spacing-8);
    
     backdrop-filter: blur(5px);
     box-shadow: 0px 2px 16px 0px rgba(102, 114, 125, 0.25), 0px 4px 200px 0px rgba(255, 255, 255, 0.01) inset;
 }
 
-.flippy-front {gap: 16px}
+.flippy-front {gap: 4px}
 
-@media (max-width: 768px) {
+
     .flippy-front:after {
     content: '';
     display: block;
@@ -885,15 +885,51 @@ button.checkmark-button[data-topic][data-checked="true"] {
     position: absolute;
     right: 8px;
     bottom: 8px;
-}
+    animation: pulse 4000ms infinite ease-in-out;
+    animation-delay: 0;
 }
 
+.flippy-cards .flippy-card:nth-child(2) .flippy-front:after {
+    animation-delay: 300ms;
+    animation-duration: 3500ms;
+}
+
+.flippy-cards .flippy-card:nth-child(3) .flippy-front:after {
+    animation-delay: 750ms;
+    animation-duration: 3800ms;
+}
+
+.flippy-cards .flippy-card:nth-child(4) .flippy-front:after {
+    animation-delay: 1050ms;
+    animation-duration: 4200ms;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) translate(0, 0); 
+    background-color: var(--color-primary-sky-blue);
+  }
+  50% {
+    transform: scale(1.2) translate(-4px, -4px); 
+
+    background-color: var(--color-primary-signal-orange);
+  }
+  100% {
+    transform: scale(1) translate(0, 0); 
+    background-color: var(--color-primary-sky-blue);
+  }
+}
+
+
 .flippy-back {
-  transform: translateX(-100%) rotateY(-180deg);
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-100%) rotateY(-180deg);
 }
 
 .flipv .flippy-back {
-  transform: translateX(-100%) rotateX(-180deg);
+    position: relative;
+    transform: translateX(-100%) rotateX(-180deg);
 }
 
     .flippy-card img {
@@ -929,10 +965,33 @@ button.checkmark-button[data-topic][data-checked="true"] {
         color: var(--color-text-critical)
     }
 
+    .flippy-card .flippy-back img {
+        filter: brightness(0) invert(1);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.5;
+        
+        height: 100%;
+        width: auto;
+        object-fit: fill;
+        z-index: -1;
+    }
     
 
     .flippy-card .flex-item:first-of-type h3, .infocard .flex-item:first-of-type h3 {color: var(--color-text-success);}
 
+    .flippy-back a, .flippy-back a:visited {
+        color: var(--color-gray-600);
+        font-size: var(--text-sm);
+        text-decoration: underline;
+        text-align: right;
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+    }
 
 flippycard.spin .flippy-body {
   display: block;
@@ -942,20 +1001,19 @@ flippycard.spin .flippy-body {
   animation: spincard 5s linear infinite;
 }
 
-flippycard.spin .flippy-card img {
+    flippycard.spin .flippy-card img {
         padding-top: 0;
     }
 
 
 @keyframes spincard {
-			0% {
-				transform: perspective(1000px) rotateY(0deg);
-			}
-			100% {
-				transform: perspective(1000px) rotateY(360deg);
-			}
-		}
-
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
 
 .herocard {
     position: relative;
@@ -1148,13 +1206,13 @@ html[data-theme="blv"] .card.transparent.waves-white.alt2:before {
     background-position: bottom -60px left -890px ;
 }
 
-html[data-theme="blv"] .card.transparent.waves-white-2x:before {
+html[data-theme="blv"] .card.transparent.waves-white-2x:before, .waves-white-2x:before {
     background-image: url(img/waves-white.svg), url(img/waves-white.svg);
     background-position: top -120px left -1200px, bottom -120px left -600px;
     background-repeat: no-repeat;
 }
 
-html[data-theme="blv"] .card.transparent.waves-white-2x.alt1:before {
+html[data-theme="blv"] .card.transparent.waves-white-2x.alt1:before, .waves-white-2x.alt1:before {
     background-position: top -100px left -1600px, bottom -100px left -80px;
 }
 
@@ -1162,22 +1220,34 @@ html[data-theme="blv"] .card.transparent.waves-white-2x.alt2:before {
     background-position: top -110px left -890px, bottom -112px left -160px;
 }
 
-html[data-theme="blv"] .card.transparent.waves-white-2x.alt3:before {
+html[data-theme="blv"] .card.transparent.waves-white-2x.alt3:before, .waves-white-2x.alt3:before {
     background-position: top -110px left -890px, bottom -140px left -160px;
 }
 
 @media (max-width: 768px) {
-    html[data-theme="blv"] .card.transparent.waves-white-2x:before {
+    html[data-theme="blv"] .card.transparent.waves-white-2x:before, .waves-white-2x:before {
         background-position: top -150px left -1200px, bottom -150px left -600px;
     }
 
-    html[data-theme="blv"] .card.transparent.waves-white-2x.alt1:before {
-    background-position: top -170px left -600px, bottom -130px left -1200px;
-}
+    .flippy-front.waves-white-2x:before {
+        background-position: top -80px left -1500px, bottom -70px left -620px;
+    }
 
-html[data-theme="blv"] .card.transparent.waves-white-2x.alt2:before {
-    background-position: top -160px left -890px, bottom -160px left -320px;
-}
+    html[data-theme="blv"] .card.transparent.waves-white-2x.alt1:before, .waves-white-2x.alt1:before {
+    background-position: top -170px left -600px, bottom -130px left -1200px;
+    }
+
+    .flippy-front.waves-white-2x.alt1:before {
+        background-position: top -80px left -600px, bottom -70px left -1200px;
+    }
+
+    html[data-theme="blv"] .card.transparent.waves-white-2x.alt2:before, .waves-white-2x.alt2:before {
+        background-position: top -50px left -600px, bottom -60px left -1200px;
+    }
+
+    .flippy-front.waves-white-2x.alt2:before {
+        background-position: top -80px left -600px, bottom -70px left -1200px;
+    }
 }
 
 /*
