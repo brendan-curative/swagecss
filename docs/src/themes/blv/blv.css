@@ -825,6 +825,8 @@ button.checkmark-button[data-topic][data-checked="true"] {
 
 .screen h2, .talk h2, .stethoscope h2, .hospital h2 {z-index: 1000;}
 
+
+
 .flippy-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
@@ -872,6 +874,12 @@ button.checkmark-button[data-topic][data-checked="true"] {
     box-shadow: 0px 2px 16px 0px rgba(102, 114, 125, 0.25), 0px 4px 200px 0px rgba(255, 255, 255, 0.01) inset;
 }
 
+.wheretogo .flippy-front, .wheretogo .flippy-back {
+    justify-content: flex-start;
+}
+
+.wheretogo h3 {width: 100%;}
+
 .flippy-front {gap: 4px}
 
 
@@ -902,6 +910,11 @@ button.checkmark-button[data-topic][data-checked="true"] {
 .flippy-cards .flippy-card:nth-child(4) .flippy-front:after {
     animation-delay: 1050ms;
     animation-duration: 4200ms;
+}
+
+
+.wheretogo .flippy-front {
+
 }
 
 @keyframes pulse {
@@ -964,7 +977,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
         align-items: center;
         gap: 8px;
         margin: 0 0 8px 0;
-        color: var(--color-text-critical)
+
     }
 
     .flippy-card .flippy-back img {
@@ -983,7 +996,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
     }
     
 
-    .flippy-card .flex-item:first-of-type h3, .infocard .flex-item:first-of-type h3 {color: var(--color-text-success);}
+   
 
     .flippy-back a, .flippy-back a:visited {
         color: var(--color-gray-600);
@@ -1029,6 +1042,7 @@ flippycard.spin .flippy-body {
 }
 
 .ct-mp {
+    width: 60%;
     height: auto;
     
 }
@@ -1061,7 +1075,7 @@ flippycard.spin .flippy-body {
     box-shadow: 0px 2px 16px 0px rgba(102, 114, 125, 0.25), 0px 4px 200px 0px rgba(255, 255, 255, 0.01) inset;
 }
 
-    .do-dont h3 {
+    .do-dont h3, .card-do h3, .card-dont h3 {
         display: flex;
         align-items: center;
         gap: 4px;
@@ -1071,16 +1085,16 @@ flippycard.spin .flippy-body {
         padding: 16px;
     }
 
-        .do-dont h3 .heroicon {
+        .do-dont h3 .heroicon, .card-do h3 .heroicon, .card-dont h3 .heroicon {
             height: 32px;
             width: 32px;
         }
 
-    .do-dont:first-of-type h3 {
+    .do-dont:first-of-type h3, .card-do h3 {
         background-color: var(--color-foundation-success);
     }
 
-    .do-dont:last-of-type h3 {
+    .do-dont:last-of-type h3, .card-dont h3 {
         background-color: var(--color-red-800);
     }
 
