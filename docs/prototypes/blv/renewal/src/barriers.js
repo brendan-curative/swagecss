@@ -1,59 +1,31 @@
-console.log('Barriers to Care page JavaScript loaded - v1.0');
+console.log('Barriers to Care page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
-
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            barriers: {
-                selected: '',
-                comments: ''
-            }
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getBarriers() {
-        return this.data.barriers || { selected: '', comments: '' };
-    }
-
-    updateBarrier(field, value) {
-        if (!this.data.barriers) {
-            this.data.barriers = { selected: '', comments: '' };
-        }
-        this.data.barriers[field] = value;
-        this.saveData();
-    }
-}
-
-// Initialize data
-const prototype = new BaselineVisitPrototype();
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
 // Update barrier selection
 function updateBarrierSelect(value) {
-    prototype.updateBarrier('selected', value);
+    const data = window.dataManager.getData();
+    if (!data.barriers) {
+        data.barriers = { selected: '', comments: '' };
+    }
+    data.barriers.selected = value;
+    window.dataManager.saveData(data);
 }
 
 // Update barrier comments
 function updateBarrierComments(value) {
-    prototype.updateBarrier('comments', value);
+    const data = window.dataManager.getData();
+    if (!data.barriers) {
+        data.barriers = { selected: '', comments: '' };
+    }
+    data.barriers.comments = value;
+    window.dataManager.saveData(data);
 }
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {
-    const barriers = prototype.getBarriers();
+    const barriers = window.dataManager.getData().barriers || { selected: '', comments: '' };
     
     const selectEl = document.getElementById('barrier-select');
     const commentsEl = document.getElementById('barrier-comments');

@@ -1,38 +1,13 @@
-console.log('Procedures page JavaScript loaded - v1.0');
+console.log('Procedures page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            proceduresPlanned: null, // null = not answered, true = yes, false = no
-            procedures: {
-                major: false,
-                outpatient: false,
-                diagnostic: false,
-                preventive: false,
-                other: false,
-                none: false
-            },
-            otherText: '' // Free text for "other" option
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getProcedures() {
-        return this.data.procedures || {
+// Helper function to update procedure data
+function updateProcedureData(procedureKey, checked) {
+    const data = window.dataManager.getData();
+    if (!data.procedures) {
+        data.procedures = {
             major: false,
             outpatient: false,
             diagnostic: false,
@@ -41,43 +16,9 @@ class BaselineVisitPrototype {
             none: false
         };
     }
-
-    updateProcedure(id, checked) {
-        if (!this.data.procedures) {
-            this.data.procedures = {
-                major: false,
-                outpatient: false,
-                diagnostic: false,
-                preventive: false,
-                other: false,
-                none: false
-            };
-        }
-        this.data.procedures[id] = checked;
-        this.saveData();
-    }
-
-    updateRadioSelection(value) {
-        this.data.proceduresPlanned = value;
-        this.saveData();
-    }
-
-    updateOtherText(text) {
-        this.data.otherText = text;
-        this.saveData();
-    }
-
-    getRadioSelection() {
-        return this.data.proceduresPlanned;
-    }
-
-    getOtherText() {
-        return this.data.otherText || '';
-    }
+    data.procedures[procedureKey] = checked;
+    window.dataManager.saveData(data);
 }
-
-// Initialize data
-const prototype = new BaselineVisitPrototype();
 
 // Handle radio button changes (Yes/No for procedures planned)
 function handleRadioChange() {
@@ -87,14 +28,14 @@ function handleRadioChange() {
 
     if (yesRadio && yesRadio.checked) {
         // User selected "Yes" - show the procedures list with fade-in
-        prototype.updateRadioSelection(true);
+        window.dataManager.updateData('proceduresPlanned',true);
         if (upcomingProceduresSection) {
             upcomingProceduresSection.classList.remove('fade-out');
             upcomingProceduresSection.classList.add('fade-in');
         }
     } else if (noRadio && noRadio.checked) {
         // User selected "No" - hide the procedures list with fade-out and clear selections
-        prototype.updateRadioSelection(false);
+        window.dataManager.updateData('proceduresPlanned',false);
         if (upcomingProceduresSection) {
             upcomingProceduresSection.classList.remove('fade-in');
             upcomingProceduresSection.classList.add('fade-out');
@@ -112,14 +53,14 @@ function clearAllProcedures() {
         if (checkbox) {
             checkbox.checked = false;
             const procedureKey = id.replace('surgery-', '').replace('procedure-', '');
-            prototype.updateProcedure(procedureKey, false);
+            updateProcedureData(procedureKey, false);
         }
     });
     // Also clear "other" text
     const otherText = document.getElementById('procedure-other-text');
     if (otherText) {
         otherText.value = '';
-        prototype.updateOtherText('');
+        window.dataManager.updateData('otherText','');
     }
     // Hide "other" text input with fade
     const otherInput = document.getElementById('procedure-other-input');
@@ -133,7 +74,7 @@ function clearAllProcedures() {
 function handleCheckboxChange(event) {
     const checkbox = event.target;
     const procedureKey = checkbox.id.replace('surgery-', '').replace('procedure-', '');
-    prototype.updateProcedure(procedureKey, checkbox.checked);
+    updateProcedureData(procedureKey, checkbox.checked);
 
     // Handle "other" checkbox specially
     if (checkbox.id === 'procedure-other') {
@@ -162,14 +103,14 @@ function handleOtherCheckbox(isChecked) {
         }
         if (otherText) {
             otherText.value = '';
-            prototype.updateOtherText('');
+            window.dataManager.updateData('otherText','');
         }
     }
 }
 
 // Handle "other" text input changes
 function handleOtherTextChange(event) {
-    prototype.updateOtherText(event.target.value);
+    window.dataManager.updateData('otherText',event.target.value);
 }
 
 // Toggle preparation info based on selections (for procedures.html compatibility)
@@ -182,11 +123,11 @@ function togglePreparationInfo() {
     const preparationInfo = document.getElementById('preparation-info');
 
     // Save states
-    if (majorEl) prototype.updateProcedure('major', majorEl.checked);
-    if (outpatientEl) prototype.updateProcedure('outpatient', outpatientEl.checked);
-    if (diagnosticEl) prototype.updateProcedure('diagnostic', diagnosticEl.checked);
-    if (preventiveEl) prototype.updateProcedure('preventive', preventiveEl.checked);
-    if (noneEl) prototype.updateProcedure('none', noneEl.checked);
+    if (majorEl) updateProcedureData('major', majorEl.checked);
+    if (outpatientEl) updateProcedureData('outpatient', outpatientEl.checked);
+    if (diagnosticEl) updateProcedureData('diagnostic', diagnosticEl.checked);
+    if (preventiveEl) updateProcedureData('preventive', preventiveEl.checked);
+    if (noneEl) updateProcedureData('none', noneEl.checked);
 
     // Check if any procedure is selected (excluding "none planned")
     const anySelected = (majorEl && majorEl.checked) ||
@@ -205,28 +146,28 @@ function togglePreparationInfo() {
     if (noneEl && noneEl.checked) {
         if (majorEl) {
             majorEl.checked = false;
-            prototype.updateProcedure('major', false);
+            updateProcedureData('major', false);
         }
         if (outpatientEl) {
             outpatientEl.checked = false;
-            prototype.updateProcedure('outpatient', false);
+            updateProcedureData('outpatient', false);
         }
         if (diagnosticEl) {
             diagnosticEl.checked = false;
-            prototype.updateProcedure('diagnostic', false);
+            updateProcedureData('diagnostic', false);
         }
         if (preventiveEl) {
             preventiveEl.checked = false;
-            prototype.updateProcedure('preventive', false);
+            updateProcedureData('preventive', false);
         }
     }
 }
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {
-    const procedures = prototype.getProcedures();
-    const radioSelection = prototype.getRadioSelection();
-    const otherText = prototype.getOtherText();
+    const procedures = window.dataManager.getData().procedures;
+    const radioSelection = window.dataManager.getData().proceduresPlanned;
+    const otherText = window.dataManager.getData().otherText;
 
     // Get elements
     const yesRadio = document.getElementById('procedures-yes');

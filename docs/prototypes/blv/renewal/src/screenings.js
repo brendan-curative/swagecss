@@ -1,53 +1,27 @@
-console.log('Screenings page JavaScript loaded - v1.0');
+console.log('Screenings page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            screenings: [
-                { id: 'mammogram', name: 'Mammogram', lastCompleted: '2022', isDue: true },
-                { id: 'colonoscopy', name: 'Colonoscopy', lastCompleted: '', isDue: true },
-                { id: 'bone-density', name: 'Bone Density Scan', lastCompleted: '2021', isDue: false },
-                { id: 'eye-exam', name: 'Eye Exam', lastCompleted: '2023', isDue: false },
-                { id: 'skin-cancer', name: 'Skin Cancer Screening', lastCompleted: '', isDue: false }
-            ]
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getScreenings() {
-        return this.data.screenings || [];
-    }
-
-    updateScreening(id, lastCompleted) {
-        const screening = this.data.screenings.find(s => s.id === id);
-        if (screening) {
-            screening.lastCompleted = lastCompleted;
-            this.saveData();
-        }
-    }
+// Helper functions to work with screenings data
+function getScreenings() {
+    const data = window.dataManager.getData();
+    return data.screenings || [];
 }
 
-// Initialize data
-const prototype = new BaselineVisitPrototype();
+function saveScreeningData(id, updates) {
+    const data = window.dataManager.getData();
+    const screening = data.screenings.find(s => s.id === id);
+    if (screening) {
+        Object.assign(screening, updates);
+        window.dataManager.saveData(data);
+    }
+}
 
 // Render screenings list
 function renderScreenings() {
     const container = document.getElementById('screenings-list');
-    const screenings = prototype.getScreenings();
+    const screenings = getScreenings();
     container.innerHTML = '';
     
     screenings.forEach(screening => {
@@ -84,9 +58,9 @@ function renderScreenings() {
     });
 }
 
-// Update screening data
+// Update screening data (called from HTML onchange)
 function updateScreening(id, value) {
-    prototype.updateScreening(id, value);
+    saveScreeningData(id, { lastCompleted: value });
 }
 
 // Initialize page on load

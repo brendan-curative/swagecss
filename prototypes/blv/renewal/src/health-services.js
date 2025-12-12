@@ -1,57 +1,22 @@
-console.log('Health Services page JavaScript loaded - v1.1 - Fixed healthServices initialization');
+console.log('Health Services page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            healthServices: [
-                { id: 'specialist', name: 'Saw a specialist', date: '2024-03-15' },
-                { id: 'physical', name: 'Had a routine physical', date: '2023-11-22' },
-                { id: 'telemedicine', name: 'Had a telemedicine appointment', date: '' },
-                { id: 'outpatient', name: 'Received an out-patient (does not require hospitalization) procedure', date: '2024-01-08' },
-                { id: 'inpatient', name: 'Received an in-patient (hospitalization is required) procedure', date: '' },
-                { id: 'diagnostic', name: 'Had a diagnostic test (blood work) performed', date: '2024-02-14' },
-                { id: 'emergency', name: 'Visited the emergency room/ urgent care facility', date: '' },
-                { id: 'hospital', name: 'Admitted to the hospital for other health concerns', date: '' },
-                { id: 'mental-health', name: 'Sought mental health care', date: '2023-09-10' }
-            ]
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getHealthServices() {
-        // Initialize healthServices if it doesn't exist
-        if (!this.data.healthServices) {
-            this.data.healthServices = this.getDefaultData().healthServices;
-            this.saveData();
-        }
-        return this.data.healthServices;
-    }
-
-    updateService(id, date) {
-        const service = this.data.healthServices.find(s => s.id === id);
-        if (service) {
-            service.date = date;
-            this.saveData();
-        }
-    }
+// Helper functions to work with health services data
+function getHealthServices() {
+    const data = window.dataManager.getData();
+    return data.healthServices || [];
 }
 
-// Initialize data
-const prototype = new BaselineVisitPrototype();
+function saveServiceData(id, date) {
+    const data = window.dataManager.getData();
+    const service = data.healthServices.find(s => s.id === id);
+    if (service) {
+        service.date = date;
+        window.dataManager.saveData(data);
+    }
+}
 
 // Render health services list
 function renderHealthServices() {
@@ -61,7 +26,7 @@ function renderHealthServices() {
         return;
     }
     
-    const services = prototype.getHealthServices();
+    const services = getHealthServices();
     console.log('Rendering health services:', services.length, 'services');
     container.innerHTML = '';
     
@@ -85,9 +50,9 @@ function renderHealthServices() {
     });
 }
 
-// Update service data
+// Update service data (called from HTML onchange)
 function updateService(id, value) {
-    prototype.updateService(id, value);
+    saveServiceData(id, value);
 }
 
 // Initialize page on load

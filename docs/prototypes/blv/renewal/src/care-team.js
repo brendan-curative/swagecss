@@ -1,32 +1,8 @@
 // Care Team Page JavaScript for BLV Prototype
 // Handles provider management, search, and data persistence
 
-// BaselineVisitPrototype class for data persistence
-class BaselineVisitPrototype {
-    constructor() {
-        this.userData = {};
-        this.loadUserData();
-    }
-
-    saveUserData() {
-        localStorage.setItem('baselineVisitData', JSON.stringify(this.userData));
-    }
-
-    loadUserData() {
-        const saved = localStorage.getItem('baselineVisitData');
-        if (saved) {
-            this.userData = JSON.parse(saved);
-        }
-    }
-
-    clearUserData() {
-        localStorage.removeItem('baselineVisitData');
-        this.userData = {};
-    }
-}
-
-// Global instance
-const prototype = new BaselineVisitPrototype();
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
 // Family member data structure
 let familyMembers = {
@@ -55,15 +31,15 @@ let familyMembers = {
 
 // Load providers from localStorage on initialization
 function loadProvidersFromStorage() {
-    if (prototype.userData.providers) {
-        familyMembers = prototype.userData.providers;
+    const data = window.dataManager.getData();
+    if (data.providers) {
+        familyMembers = data.providers;
     }
 }
 
 // Save providers to localStorage
 function saveProvidersToStorage() {
-    prototype.userData.providers = familyMembers;
-    prototype.saveUserData();
+    window.dataManager.updateData('providers', familyMembers);
 }
 
 let currentFamilyMember = 'primary';

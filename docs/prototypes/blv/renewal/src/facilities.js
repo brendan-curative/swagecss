@@ -1,68 +1,25 @@
-console.log('Facilities page JavaScript loaded - v1.0');
+console.log('Facilities page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
-    loadData() {
-        try {
-            const stored = localStorage.getItem(this.storageKey);
-            if (stored) {
-                const parsed = JSON.parse(stored);
-                // Ensure facilities object exists
-                if (parsed && parsed.facilities) {
-                    return parsed;
-                }
-            }
-        } catch (e) {
-            console.error('Error loading data from localStorage:', e);
-        }
-        return this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            facilities: {
-                'urgent-care': {
-                    name: 'Westside Urgent Care',
-                    address: '1234 Main Street',
-                    city: 'Los Angeles, CA 90210',
-                    visits: 2
-                },
-                'emergency': null,
-                'virtual-urgent-care': {
-                    name: 'Curative Telehealth',
-                    description: 'Telehealth is a great option for when you want care from the comfort of your home.',
-                    visits: 5
-                }
-            }
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getFacility(facilityType) {
-        return this.data.facilities[facilityType];
-    }
-
-    setFacility(facilityType, facility) {
-        this.data.facilities[facilityType] = facility;
-        this.saveData();
-    }
-
-    deleteFacility(facilityType) {
-        this.data.facilities[facilityType] = null;
-        this.saveData();
-    }
+// Helper functions to work with facilities data
+function getFacility(facilityType) {
+    const data = window.dataManager.getData();
+    return data.facilities[facilityType];
 }
 
-// Initialize data
-const prototype = new BaselineVisitPrototype();
+function setFacility(facilityType, facility) {
+    const data = window.dataManager.getData();
+    data.facilities[facilityType] = facility;
+    window.dataManager.saveData(data);
+}
+
+function deleteFacilityData(facilityType) {
+    const data = window.dataManager.getData();
+    data.facilities[facilityType] = null;
+    window.dataManager.saveData(data);
+}
 
 // Modal state
 let currentFacilityType = '';
@@ -238,9 +195,9 @@ function selectFacilityOption(selection) {
 function saveFacilitySelection() {
     if (selectedFacility) {
         if (selectedFacility.type === 'none') {
-            prototype.setFacility(currentFacilityType, { type: 'none' });
+            setFacility(currentFacilityType, { type: 'none' });
         } else {
-            prototype.setFacility(currentFacilityType, selectedFacility);
+            setFacility(currentFacilityType, selectedFacility);
         }
         updateFacilityDisplay(currentFacilityType);
         closeModal();
@@ -249,7 +206,7 @@ function saveFacilitySelection() {
 
 // Save "no results" state
 function saveNoResultsState() {
-    prototype.setFacility(currentFacilityType, { type: 'none' });
+    setFacility(currentFacilityType, { type: 'none' });
     updateFacilityDisplay(currentFacilityType);
     closeModal();
 }
@@ -259,19 +216,19 @@ function deleteFacility(facilityType, event) {
     // Find the tile element to animate
     const button = event?.target.closest('.tile__dismiss');
     const tile = button?.closest('.tile');
-    
+
     if (tile) {
         // Add dismissing animation
         tile.classList.add('tile--dismissing');
-        
+
         // Wait for animation to complete before removing
         setTimeout(() => {
-            prototype.deleteFacility(facilityType);
+            deleteFacilityData(facilityType);
             updateFacilityDisplay(facilityType);
         }, 300); // Match animation duration
     } else {
         // Fallback if tile not found
-        prototype.deleteFacility(facilityType);
+        deleteFacilityData(facilityType);
         updateFacilityDisplay(facilityType);
     }
 }
@@ -281,13 +238,13 @@ function updateFacilityDisplay(facilityType) {
     // Check if this facility type exists on the current page
     const nameElement = document.getElementById(`${facilityType}-name`);
     const addressElement = document.getElementById(`${facilityType}-address`);
-    
+
     // If the elements don't exist on this page, skip updating
     if (!nameElement || !addressElement) {
         return;
     }
-    
-    const facility = prototype.getFacility(facilityType);
+
+    const facility = getFacility(facilityType);
     
     if (!facility) {
         // Show "no facility" state

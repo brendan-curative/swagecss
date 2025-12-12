@@ -1,73 +1,28 @@
-console.log('Support page JavaScript loaded - v1.0');
+console.log('Support page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
+
+// Helper function to update support data
+function updateSupportData(category, field, checked) {
+    const data = window.dataManager.getData();
+    if (!data.support) {
+        data.support = window.dataManager.getDefaultData().support;
     }
 
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            support: {
-                metabolic: {
-                    bloodPressure: false,
-                    diabetes: false,
-                    heartDisease: false
-                },
-                respiratory: {
-                    asthma: false,
-                    copd: false
-                },
-                behavioral: {
-                    weightManagement: false,
-                    substanceUse: false,
-                    mentalHealth: false
-                },
-                specialized: {
-                    pregnancy: false,
-                    cancerScreening: false
-                },
-                other: false
-            }
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getSupport() {
-        return this.data.support || this.getDefaultData().support;
-    }
-
-    updateSupport(category, field, checked) {
-        if (!this.data.support) {
-            this.data.support = this.getDefaultData().support;
+    if (category === 'other') {
+        // 'other' is a flat boolean, not nested
+        data.support.other = checked;
+    } else {
+        // Other categories are nested objects
+        if (!data.support[category]) {
+            data.support[category] = {};
         }
-
-        if (category === 'other') {
-            // 'other' is a flat boolean, not nested
-            this.data.support.other = checked;
-        } else {
-            // Other categories are nested objects
-            if (!this.data.support[category]) {
-                this.data.support[category] = {};
-            }
-            this.data.support[category][field] = checked;
-        }
-
-        this.saveData();
+        data.support[category][field] = checked;
     }
+
+    window.dataManager.saveData(data);
 }
-
-// Initialize data
-const prototype = new BaselineVisitPrototype();
 
 // Handle checkbox changes
 function handleCheckboxChange(event) {
@@ -101,16 +56,16 @@ function handleCheckboxChange(event) {
     const mapping = checkboxMap[checkboxId];
     if (mapping) {
         if (mapping.category === 'other') {
-            prototype.updateSupport('other', null, checkbox.checked);
+            updateSupportData('other', null, checkbox.checked);
         } else {
-            prototype.updateSupport(mapping.category, mapping.field, checkbox.checked);
+            updateSupportData(mapping.category, mapping.field, checkbox.checked);
         }
     }
 }
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {
-    const support = prototype.getSupport();
+    const support = window.dataManager.getData().support;
 
     // Map of checkbox IDs to their data paths
     const checkboxes = {

@@ -1,47 +1,17 @@
-console.log('Medications page JavaScript loaded - v1.0');
+console.log('Medications page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            pharmacy: {
-                name: 'CVS Pharmacy',
-                address: '123 Main Street, Los Angeles, CA 90210'
-            },
-            medications: [
-                { name: 'Lisinopril 10mg', instructions: 'Once daily', copay: '$0', limits: 'None' },
-                { name: 'Metformin 500mg', instructions: 'Twice daily with meals', copay: '$30', limits: 'Quantity limit = 60/30 days' },
-                { name: 'Atorvastatin 20mg', instructions: 'Once daily at bedtime', copay: 'Not covered', limits: 'Prior authorization required', priorAuthStatus: 'Granted through Jan 1, 2026' }
-            ]
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getMedications() {
-        return this.data.medications || [];
-    }
-
-    setMedications(medications) {
-        this.data.medications = medications;
-        this.saveData();
-    }
+// Helper functions to work with medications data
+function getMedications() {
+    const data = window.dataManager.getData();
+    return data.medications || [];
 }
 
-// Initialize data
-const prototype = new BaselineVisitPrototype();
+function setMedications(medications) {
+    window.dataManager.updateData('medications', medications);
+}
 
 // Medication modal state
 let currentEditingIndex = -1;
@@ -70,7 +40,7 @@ const medicationDatabase = [
 
 function renderMedicationsList() {
     const container = document.getElementById('medications-list');
-    const medications = prototype.getMedications();
+    const medications = getMedications();
     container.innerHTML = '';
     
     medications.forEach((medication, index) => {
@@ -102,7 +72,7 @@ function renderMedicationsList() {
 
 function editMedication(index) {
     currentEditingIndex = index;
-    const medications = prototype.getMedications();
+    const medications = getMedications();
     const medication = medications[index];
     
     document.getElementById('medication-modal-title').textContent = 'Edit Medication';
@@ -125,16 +95,16 @@ function deleteMedication(index, event) {
         
         // Wait for animation to complete before removing
         setTimeout(() => {
-            const medications = prototype.getMedications();
+            const medications = getMedications();
             medications.splice(index, 1);
-            prototype.setMedications(medications);
+            setMedications(medications);
             renderMedicationsList();
         }, 300); // Match animation duration
     } else {
         // Fallback if tile not found
-        const medications = prototype.getMedications();
+        const medications = getMedications();
         medications.splice(index, 1);
-        prototype.setMedications(medications);
+        setMedications(medications);
         renderMedicationsList();
     }
 }
@@ -255,7 +225,7 @@ function updateSaveMedicationButton() {
 
 function saveMedicationSelection() {
     if (selectedMedication) {
-        const medications = prototype.getMedications();
+        const medications = getMedications();
         
         if (currentEditingIndex >= 0) {
             medications[currentEditingIndex] = { ...selectedMedication };
@@ -263,7 +233,7 @@ function saveMedicationSelection() {
             medications.push({ ...selectedMedication });
         }
         
-        prototype.setMedications(medications);
+        setMedications(medications);
         renderMedicationsList();
         closeMedicationModal();
     }

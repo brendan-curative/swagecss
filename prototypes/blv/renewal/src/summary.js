@@ -1,23 +1,17 @@
 // Summary Page JavaScript for BLV Prototype
 // Displays saved data from localStorage in the summary section
+// Using centralized DataManager - v2.0
 
-class BaselineVisitPrototype {
-    constructor() {
-        this.userData = {};
-        this.loadUserData();
-    }
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
-    loadUserData() {
-        const saved = localStorage.getItem('baselineVisitData');
-        if (saved) {
-            this.userData = JSON.parse(saved);
-        } else {
-            // Load default data if nothing is saved
-            this.userData = this.getDefaultData();
-        }
-    }
+// Get user data for display
+function getUserData() {
+    return window.dataManager.getData();
+}
 
-    getDefaultData() {
+// Legacy getDefaultData function (kept for reference but now unused)
+function getDefaultData() {
         return {
             providers: {
                 primary: {
@@ -102,18 +96,14 @@ class BaselineVisitPrototype {
             },
             appointmentType: 'virtual'
         };
-    }
 }
-
-// Global instance
-const prototype = new BaselineVisitPrototype();
 
 // Display providers in summary
 function displayProviders() {
     const container = document.getElementById('providers-summary');
     if (!container) return;
 
-    const providersData = prototype.userData.providers;
+    const providersData = getUserData().providers;
 
     // If no providers data exists, show empty state
     if (!providersData || !providersData.primary) {
@@ -190,7 +180,7 @@ function displayFacilities() {
     const container = document.getElementById('facilities-summary');
     if (!container) return;
 
-    const facilities = prototype.userData.facilities;
+    const facilities = getUserData().facilities;
 
     if (!facilities) {
         container.innerHTML = `<p class="body-md text-gray-600">No facilities saved yet.</p>`;
@@ -252,7 +242,7 @@ function displayPharmacy() {
     const container = document.getElementById('pharmacy-summary');
     if (!container) return;
 
-    const pharmacy = prototype.userData.pharmacy;
+    const pharmacy = getUserData().pharmacy;
 
     if (!pharmacy) {
         container.innerHTML = `<p class="body-md text-gray-600">No pharmacy saved yet.</p>`;
@@ -275,7 +265,7 @@ function displayMedications() {
     const container = document.getElementById('medications-summary');
     if (!container) return;
 
-    const medications = prototype.userData.medications;
+    const medications = getUserData().medications;
 
     if (!medications || medications.length === 0) {
         container.innerHTML = `<p class="body-md text-gray-600">No medications saved yet.</p>`;
@@ -303,7 +293,7 @@ function displayScreenings() {
     const container = document.getElementById('screenings-summary');
     if (!container) return;
 
-    const screenings = prototype.userData.screenings;
+    const screenings = getUserData().screenings;
 
     if (!screenings || screenings.length === 0) {
         container.innerHTML = `<p class="body-md text-gray-600">No screenings saved yet.</p>`;
@@ -334,7 +324,7 @@ function displayHealthServices() {
     const container = document.getElementById('health-services-summary');
     if (!container) return;
 
-    const healthServices = prototype.userData.healthServices;
+    const healthServices = getUserData().healthServices;
 
     if (!healthServices || healthServices.length === 0) {
         container.innerHTML = `<p class="body-md text-gray-600">No health services saved yet.</p>`;
@@ -362,7 +352,7 @@ function displayProcedures() {
     const container = document.getElementById('procedures-summary');
     if (!container) return;
 
-    const proceduresData = prototype.userData;
+    const proceduresData = getUserData();
 
     if (!proceduresData.proceduresPlanned) {
         container.innerHTML = `<p class="body-md text-gray-600">No procedures planned.</p>`;
@@ -457,7 +447,7 @@ function displaySupportNeeds() {
     const container = document.getElementById('support-summary');
     if (!container) return;
 
-    const support = prototype.userData.support;
+    const support = getUserData().support;
 
     if (!support) {
         container.innerHTML = `<p class="body-md text-gray-600">No support needs saved yet.</p>`;
@@ -618,7 +608,7 @@ function displayBarriers() {
     const container = document.getElementById('barriers-summary');
     if (!container) return;
 
-    const barriers = prototype.userData.barriers;
+    const barriers = getUserData().barriers;
 
     if (!barriers || (!barriers.selected && !barriers.comments)) {
         container.innerHTML = `<p class="body-md text-gray-600">No barriers saved yet.</p>`;
@@ -641,7 +631,7 @@ function displayAppointmentType() {
     const container = document.getElementById('appointment-summary');
     if (!container) return;
 
-    const appointmentType = prototype.userData.appointmentType;
+    const appointmentType = getUserData().appointmentType;
 
     if (!appointmentType) {
         container.innerHTML = `<p class="body-md text-gray-600">No appointment type selected yet.</p>`;

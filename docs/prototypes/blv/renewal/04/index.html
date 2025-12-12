@@ -229,7 +229,10 @@
   <script src="/swagecss/src/components.js"></script>
   <script src="/swagecss/src/modules/drawer/drawer.js"></script>
   <script src="/swagecss/src/modules/page-transition/page-transition.js"></script>
-  
+
+  <!-- BLV Data Manager - MUST load before page-specific scripts -->
+  <script src="/swagecss/prototypes/blv/renewal/src/data-manager.js"></script>
+
   <!-- BLV Component Scripts -->
   <script src="/swagecss/src/components/blv/carousel.js"></script>
   <script src="/swagecss/src/components/blv/horizontal-stepper.js"></script>
@@ -299,8 +302,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // Global restart/reset function for prototype
 function restartPrototype() {
   if (confirm('Are you sure you want to restart the baseline visit? This will clear all your progress and start over.')) {
-    localStorage.removeItem('baselineVisitData');
-    localStorage.removeItem('selectedResources');
+    // Use DataManager's resetData method which clears all localStorage
+    if (window.dataManager) {
+      window.dataManager.resetData();
+    } else {
+      // Fallback if DataManager not loaded
+      localStorage.removeItem('baselineVisitData');
+      localStorage.removeItem('selectedResources');
+    }
     window.location.href = '/swagecss/prototypes/blv/renewal/';
   }
 }

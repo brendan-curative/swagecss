@@ -1,43 +1,11 @@
-console.log('Clinical Scheduling page JavaScript loaded - v1.0');
+console.log('Clinical Scheduling page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
-
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            appointmentType: ''
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getAppointmentType() {
-        return this.data.appointmentType || '';
-    }
-
-    setAppointmentType(type) {
-        this.data.appointmentType = type;
-        this.saveData();
-    }
-}
-
-// Initialize data
-const prototype = new BaselineVisitPrototype();
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
 // Select appointment type
 function selectAppointmentType(type) {
-    prototype.setAppointmentType(type);
+    window.dataManager.updateData('appointmentType', type);
     
     // Update button states
     const virtualBtn = document.getElementById('appointment-virtual');
@@ -80,7 +48,7 @@ function viewSavedData() {
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', function() {
-    const appointmentType = prototype.getAppointmentType();
+    const appointmentType = window.dataManager.getData().appointmentType || '';
 
     if (appointmentType) {
         selectAppointmentType(appointmentType);

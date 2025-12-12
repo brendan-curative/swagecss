@@ -1,43 +1,17 @@
-console.log('Pharmacy page JavaScript loaded - v1.0');
+console.log('Pharmacy page JavaScript loaded - v2.0 - Using DataManager');
 
-// Data persistence using localStorage
-class BaselineVisitPrototype {
-    constructor() {
-        this.storageKey = 'baselineVisitData';
-        this.data = this.loadData();
-    }
+// Import DataManager - ensure data-manager.js is loaded first in HTML
+// The dataManager instance is available globally via window.dataManager
 
-    loadData() {
-        const stored = localStorage.getItem(this.storageKey);
-        return stored ? JSON.parse(stored) : this.getDefaultData();
-    }
-
-    getDefaultData() {
-        return {
-            pharmacy: {
-                name: 'CVS Pharmacy',
-                address: '123 Main Street, Los Angeles, CA 90210'
-            },
-            medications: []
-        };
-    }
-
-    saveData() {
-        localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-    }
-
-    getPharmacy() {
-        return this.data.pharmacy;
-    }
-
-    setPharmacy(pharmacy) {
-        this.data.pharmacy = pharmacy;
-        this.saveData();
-    }
+// Helper functions to work with pharmacy data
+function getPharmacy() {
+    const data = window.dataManager.getData();
+    return data.pharmacy;
 }
 
-// Initialize data
-const prototype = new BaselineVisitPrototype();
+function setPharmacy(pharmacy) {
+    window.dataManager.updateData('pharmacy', pharmacy);
+}
 
 // Pharmacy modal state
 let selectedPharmacy = null;
@@ -72,7 +46,7 @@ function updatePharmacyDisplay() {
         return;
     }
     
-    const pharmacy = prototype.getPharmacy();
+    const pharmacy = getPharmacy();
     
     if (!pharmacy) {
         showPharmacyState('no-facility');
@@ -133,12 +107,12 @@ function deletePharmacy(event) {
         
         // Wait for animation to complete before removing
         setTimeout(() => {
-            prototype.setPharmacy(null);
+            setPharmacy(null);
             updatePharmacyDisplay();
         }, 300); // Match animation duration
     } else {
         // Fallback if tile not found
-        prototype.setPharmacy(null);
+        setPharmacy(null);
         updatePharmacyDisplay();
     }
 }
@@ -225,9 +199,9 @@ function selectPharmacyOption(pharmacyName, pharmacyAddress = null) {
 function savePharmacySelection() {
     if (selectedPharmacy) {
         if (selectedPharmacy.type === 'none') {
-            prototype.setPharmacy({ type: 'none' });
+            setPharmacy({ type: 'none' });
         } else {
-            prototype.setPharmacy({
+            setPharmacy({
                 name: selectedPharmacy.name,
                 address: selectedPharmacy.address
             });
