@@ -131,3 +131,16 @@ nav a.back:hover, nav a.back:focus {transform: translateY(-4px);}
     }
 
     #summary .button {display: none;}
+
+    .alternates button.button--small-outline {
+        padding: 4px 8px;
+        font-size: var(--font-size-xs);
+        color: var(--color-gray-600);
+        border-color: var(--color-gray-600);
+    }
+
+    .alternates button.button--small-outline.active {
+        background-color: var(--color-blue-200);
+        color: var(--color-blue-900);
+        border-color: var(--color-blue-900);
+    }

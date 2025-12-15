@@ -81,7 +81,16 @@
 
     <h2 class="text-center mt-48">Your Year with Curative:</h2>
 
-    <div class="highlights constrain constrain-80">
+    <div class="alternates">
+        
+            <div class="alt-controls flex-row flex-justify-center mb-8 gap-8">
+                <button class="button button--small-outline">Default</button>
+                <button class="button button--small-outline">Alternates</button>
+            </div>
+         
+      
+        <div  data-alternate="1">
+            <div class="highlights constrain constrain-80">
         <div class="highlight">
             <h2>12</h2>
             <p>Providers visited</p>
@@ -114,12 +123,95 @@
             <p>Curative Cash Card: Active!</p>
         </div>
         
+        </div>
+        </div>
+        
+        <div  data-alternate="2">
+            <div class="highlights constrain constrain-80">
+                    <div class="highlight">
+                        <h2>$0</h2>
+                        <p>Care ready!</p>
+                    </div>
+
+                    <div class="highlight signalorange" style="background-position: 35% bottom;">
+                        <span class="heroicon heroicon-pill-single" title=""></span>
+                        <p>No prescriptions? Many are $0</p>
+                    </div>
+
+                    <div class="highlight signalorange" style="background-position: 70% bottom;">
+                        <span class="heroicon heroicon-outline-check-circle" title=""></span>
+                        <p>Completed last years Baseline Visit</p>
+                    </div>
+
+                    
+
+                    <div class="highlight" style="background-position: 20% bottom;">
+                        <img class="norotate" src="/swagecss/src/themes/blv/img/logos/curative-telehealth.png" alt="Curative Telehealth">
+                        <p>Virtual care is a click away</p>
+                    </div>
+
+                    
+
+                    <div class="highlight" style="background-position: 65% bottom;">
+                        <img src="/swagecss/src/themes/blv/img/cashcard.png" alt="Curative Cash Card">
+                        <p>Activate your card in the member portal</p>
+                    </div>
+                    
+                </div>
+        </div>
+    
     </div>
 
 </section>
 
 
-</article>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.alt-controls button');
+    const alternates = document.querySelectorAll('[data-alternate]');
+
+    // Hide all alternates except the first one initially
+    alternates.forEach((alternate, index) => {
+        if (index === 0) {
+            alternate.style.display = 'block';
+        } else {
+            alternate.style.display = 'none';
+        }
+    });
+
+    // Set first button as active initially
+    if (buttons.length > 0) {
+        buttons[0].classList.add('active');
+    }
+
+    // Add click handlers to buttons
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            const targetValue = (index + 1).toString();
+
+            // Remove active class from all buttons
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            // Hide all alternates
+            alternates.forEach(alternate => {
+                alternate.style.display = 'none';
+            });
+
+            // Show the matching alternate(s)
+            alternates.forEach(alternate => {
+                if (alternate.getAttribute('data-alternate') === targetValue) {
+                    alternate.style.display = 'block';
+                }
+            });
+        });
+    });
+});
+</script></article>
 
               <div id="contents" data-drawer data-drawer-position="right" data-drawer-size="medium">
     <div class="drawer__header">
