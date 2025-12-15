@@ -140,7 +140,7 @@ nav a.back:hover, nav a.back:focus {transform: translateY(-4px);}
     }
 
     .alternates button.button--small-outline.active {
-        background-color: var(--color-blue-200);
-        color: var(--color-blue-900);
-        border-color: var(--color-blue-900);
+        background-color: var(--color-purple-200);
+        color: var(--color-purple-900);
+        border-color: var(--color-purple-900);
     }
