@@ -869,7 +869,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
     justify-content: center;
     min-width: 100%;
     box-sizing: border-box;
-    
+    overflow: hidden;
     border-radius: var(--spacing-8);
    
     backdrop-filter: blur(5px);
@@ -940,7 +940,7 @@ button.checkmark-button[data-topic][data-checked="true"] {
 
 .flippy-back {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.5);
+   
     transform: translateX(-100%) rotateY(-180deg);
 }
 
@@ -1082,9 +1082,11 @@ flippycard.spin .flippy-body {
         align-items: center;
         gap: 4px;
         color: var(--color-white);
-        text-shadow: none;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
         border-radius:  var(--spacing-8) var(--spacing-8) 0 0;
         padding: 16px;
+        overflow: hidden;
+        margin: 0;
     }
 
         .do-dont h3 .heroicon, .card-do h3 .heroicon, .card-dont h3 .heroicon {
@@ -1098,6 +1100,53 @@ flippycard.spin .flippy-body {
 
     .do-dont:last-of-type h3, .card-dont h3 {
         background-color: var(--color-red-800);
+    }
+
+    .card-do:before, .card-dont:before,
+    .card-do h3:before, .card-dont h3:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(img/waves-white.svg);
+        
+        background-repeat: no-repeat;
+        background-size: auto 100%; 
+        background-repeat: no-repeat;
+        opacity: 0.2; 
+    }
+
+    .card-do:before, .card-dont:before {opacity: 0.5; z-index: -1;}
+    
+    .card-do:before {background-position: bottom -80px left -600px;} 
+    .card-do h3:before {background-position: top -110px left -1200px;}
+
+    .flippy-card:nth-of-type(2) .card-do:before {background-position: bottom -80px left -900px;}
+    .flippy-card:nth-of-type(2) .card-do h3:before {background-position: top -110px left -700px;}
+
+    .flippy-card:nth-of-type(3) .card-do:before {background-position: bottom -80px left -450px;}
+    .flippy-card:nth-of-type(3) .card-do h3:before {background-position: top -110px left -1280px;}
+
+
+    .card-dont h3:before {background-position: top -110px left -1000px;}
+    .card-dont:before {background-position: bottom -80px left -1200px;} 
+
+    .flippy-card:nth-of-type(2) .card-dont:before {background-position: bottom -80px left -900px;}
+    .flippy-card:nth-of-type(2) .card-dont h3:before {background-position: top -110px left -700px;}
+
+    .flippy-card:nth-of-type(3) .card-dont:before {background-position: bottom -80px left -450px;}
+    .flippy-card:nth-of-type(3) .card-dont h3:before {background-position: top -110px left -1280px;}
+    
+    .card-do p, .card-dont p {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        padding: 0 !important;
+        margin: 0;
+        min-height: 80px;
+        text-align: center;
     }
 
     .do-dont p {
