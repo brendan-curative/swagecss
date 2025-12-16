@@ -1226,7 +1226,7 @@ html[data-theme="blv"] .card.transparent.waves-white.alt2:before {
 
 html[data-theme="blv"] .card.transparent.waves-white-2x:before, .waves-white-2x:before {
     background-image: url(img/waves-white.svg), url(img/waves-white.svg);
-    background-position: top -120px left -1200px, bottom -120px left -600px;
+    background-position: top -130px left -1200px, bottom -150px left -600px;
     background-repeat: no-repeat;
 }
 
