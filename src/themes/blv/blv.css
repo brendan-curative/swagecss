@@ -1138,7 +1138,7 @@ flippycard.spin .flippy-body {
 
     .flippy-card:nth-of-type(3) .card-dont:before {background-position: bottom -80px left -450px;}
     .flippy-card:nth-of-type(3) .card-dont h3:before {background-position: top -110px left -1280px;}
-    
+
     .card-do p, .card-dont p {
         display: flex;
         flex: 1;
@@ -1379,3 +1379,6 @@ html[data-theme="blv"] .highlights .card.p-8 {
     padding: 8px;
 }
 
+.grayscale {
+    filter: brightness(0.5) saturate(0%);
+}
