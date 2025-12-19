@@ -21,6 +21,13 @@ nav .horizontal-stepper {
     margin-left: var(--spacing-32);
 }
 
+@media (max-width: 768px) {
+    .card {
+    margin-right: 0;
+    margin-left: 0;
+}
+}
+
 html[data-theme="blv"] .card.p-16 {
     padding: var(--spacing-16);
 }
@@ -144,3 +151,9 @@ nav a.back:hover, nav a.back:focus {transform: translateY(-4px);}
         color: var(--color-purple-900);
         border-color: var(--color-purple-900);
     }
+
+
+html[data-theme="blv"] .card.noshadow {
+    box-shadow: none !important;}
+
+    .status {display: none}
